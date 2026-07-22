@@ -144,13 +144,17 @@
   .su-card .meta { font-size: 11px; color: var(--ink2); margin: 2px 0 4px; }
   .heatwrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line);
               border-radius: 12px; box-shadow: var(--shadow); }
-  .heatmap { border-collapse: collapse; }
+  .heatmap { border-collapse: collapse; table-layout: fixed; }
   .heatmap th, .heatmap td { border: none; padding: 0; }
   .heatmap thead th { position: sticky; top: 0; background: var(--surface2); font-size: 10px;
-                      color: var(--ink3); padding: 4px 1px; font-weight: 500; text-align: center; }
+                      color: var(--ink3); padding: 4px 0 4px 2px; font-weight: 500;
+                      text-align: left; white-space: nowrap; overflow: visible; }
+  .heatmap thead th:not(.rowlab) { width: 26px; }
+  .heatmap thead th.dlab { z-index: 1; }   /* 日期文字压过相邻空表头的背景 */
   .heatmap td.rowlab, .heatmap th.rowlab { position: sticky; left: 0; background: var(--surface);
       z-index: 2; padding: 3px 10px 3px 6px; font-size: 13px; white-space: nowrap;
-      border-right: 1px solid var(--line); min-width: 150px; max-width: 220px; }
+      border-right: 1px solid var(--line); width: 190px; overflow: hidden;
+      text-overflow: ellipsis; }
   .heatmap tbody tr { cursor: default; }
   .heatmap tbody tr:hover td.rowlab { color: var(--accent); }
   .heatmap td.cell { width: 26px; height: 24px; text-align: center; font-size: 10px;
@@ -217,10 +221,10 @@
     main { padding: 12px 10px 60px; }
     .stat { padding: 6px 12px; } .stat .v { font-size: 17px; }
     .tcard .th .small:not(.lv) { display: none; }  /* 小屏隐藏图例/注释，保留最新值 */
-    .heatmap td.rowlab, .heatmap th.rowlab { min-width: 108px; max-width: 150px;
-      font-size: 12px; padding-left: 2px; }
+    .heatmap td.rowlab, .heatmap th.rowlab { width: 118px; font-size: 12px; padding-left: 2px; }
     .rowlab .rsum { display: block; margin-left: 14px; line-height: 1.1; }
-    .heatmap td.cell { width: 24px; height: 26px; }
+    .heatmap thead th:not(.rowlab) { width: 24px; }
+    .heatmap td.cell { height: 26px; }
     th, td { padding: 6px 8px; }
     .startups { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
     .su-card { min-width: 0; }
@@ -653,7 +657,7 @@ function renderHeat() {
       </div></div>
     <div class="heatwrap"><table class="heatmap">
       <thead><tr><th class="rowlab"></th>${dates.map((d, i) =>
-        `<th>${i % step === 0 ? d.slice(5) : ''}</th>`).join('')}</tr></thead>
+        `<th${i % step === 0 ? ' class="dlab"' : ''}>${i % step === 0 ? d.slice(5) : ''}</th>`).join('')}</tr></thead>
       <tbody>${rows.map(r => heatRowHtml(r, dates, vmax)).join('')}</tbody>
     </table></div></div>`;
 
