@@ -122,6 +122,9 @@
   .seg button.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
   svg .bar { fill: var(--accent); opacity: .82; cursor: pointer; }
   svg .bar:hover { opacity: 1; }
+  svg .bar.on { opacity: 1; stroke: var(--gold); stroke-width: 2; }
+  #tl svg, #tagtl svg { height: 130px; }
+  @media (max-width: 640px) { #tl svg, #tagtl svg { height: 100px; } }
   svg text { fill: var(--ink3); font-size: 10px; }
   svg line.grid { stroke: var(--line); stroke-width: 1; }
 
@@ -897,8 +900,8 @@ function renderTagDay(nm, d) {
     <h2>${cid0 != null && byConcept[cid0]
         ? `<span class="lname" data-cid="${cid0}" style="cursor:pointer">${esc(nm)}</span>` : esc(nm)}
       <span class="muted" style="font-size:14px">· ${d} 共 ${evs.length} 家涨停</span></h2>
-    ${spark(series.slice(Math.max(0, di - 14), di + 1))}
-    <div class="muted small">近15日趋势（截至当日）</div>
+    <div class="muted small" style="margin:4px 0 2px">板块热度时间线 · 金框=当前日 · 点柱子切换日期</div>
+    <div id="tagtl"></div>
   </div>`;
 
   if (groups.length) {
@@ -919,6 +922,7 @@ function renderTagDay(nm, d) {
     html += `<div class="card"><div class="chips">${evs.map(ev => chipHtml(ev, d)).join('')}</div></div>`;
   }
   $('#app').innerHTML = html;
+  drawTagTimeline(nm, di);
 
   $('#prev')?.addEventListener('click', () =>
     go('#/tagday/' + encodeURIComponent(nm) + '/' + D.dates[di - 1]));
@@ -930,6 +934,40 @@ function renderTagDay(nm, d) {
     el.addEventListener('click', () =>
       go('#/tagday/' + encodeURIComponent(el.dataset.nm2) + '/' + d)));
   bindChips();
+}
+
+// 板块下钻页的热度时间线：窗口=当前日前29日~后10日，金框标当前日，点柱子切换
+function drawTagTimeline(nm, di) {
+  const lo = Math.max(0, di - 29), hi = Math.min(D.dates.length - 1, di + 10);
+  const dates = D.dates.slice(lo, hi + 1);
+  const vals = taxSeries(nm).slice(lo, hi + 1);
+  const active = di - lo;
+  const max = Math.max(1, ...vals);
+  const W = 1000, H = 130, padL = 26, padB = 20, padT = 8;
+  const bw = (W - padL - 4) / dates.length;
+  let bars = '', labels = '';
+  vals.forEach((v, i) => {
+    if (!v) return;
+    const x = padL + i * bw, bh = Math.max(2, (H - padB - padT) * v / max);
+    bars += `<rect class="bar${i === active ? ' on' : ''}" x="${(x + bw * 0.15).toFixed(1)}"
+      y="${(H - padB - bh).toFixed(1)}" width="${Math.max(1, bw * 0.7).toFixed(1)}"
+      height="${bh.toFixed(1)}" rx="${Math.min(2, bw / 4)}" data-i="${i}"></rect>`;
+  });
+  const step = Math.ceil(dates.length / 8);
+  dates.forEach((dd, i) => {
+    if (i % step === 0) labels += `<text x="${(padL + i * bw).toFixed(1)}" y="${H - 5}">${dd.slice(5)}</text>`;
+  });
+  $('#tagtl').innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="none" style="display:block">
+    <line class="grid" x1="${padL}" y1="${H - padB}" x2="${W}" y2="${H - padB}"></line>
+    <line class="grid" x1="${padL}" y1="${padT}" x2="${W}" y2="${padT}" stroke-dasharray="3,4"></line>
+    <text x="2" y="${padT + 4}">${max}</text>${bars}${labels}</svg>`;
+  $('#tagtl').querySelectorAll('.bar').forEach(b => {
+    const i = +b.dataset.i;
+    b.addEventListener('mousemove', e => showTip(e, `${dates[i]} · ${vals[i]} 家涨停`));
+    b.addEventListener('mouseleave', hideTip);
+    b.addEventListener('click', () =>
+      go('#/tagday/' + encodeURIComponent(nm) + '/' + dates[i]));
+  });
 }
 
 /* ---------- 视图4：批量归类 ---------- */
