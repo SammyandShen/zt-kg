@@ -19,6 +19,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = REPO_ROOT / "data" / "ztkg.db"
 ALIASES_PATH = REPO_ROOT / "data" / "aliases.json"
+EXPANSIONS_PATH = REPO_ROOT / "data" / "tag_expansions.json"
 
 API = "https://data.10jqka.com.cn/dataapi/limit_up/limit_up_pool"
 HEADERS = {
@@ -230,6 +231,48 @@ def load_aliases() -> dict[str, str]:
     return mapping
 
 
+def load_expansions(alias_map: dict[str, str] | None = None) -> dict[str, list[str]]:
+    """tag_expansions.json {原始标签: [目标标签,...]} 一对多语义拆解表。
+
+    校验：目标非空；不得自展开；目标不得再是展开键（禁止链式）；
+    展开键不得与 aliases 体系（别名或规范名）重叠——同一标签走两条改写路径必然歧义。
+    """
+    if not EXPANSIONS_PATH.exists():
+        return {}
+    raw = json.loads(EXPANSIONS_PATH.read_text(encoding="utf-8"))
+    exp = {k: v for k, v in raw.items() if not k.startswith("$")}
+    if alias_map is None:
+        alias_map = load_aliases()
+    for src, targets in exp.items():
+        if not targets or not isinstance(targets, list):
+            raise ValueError(f"展开 '{src}' 目标必须是非空数组")
+        if src in targets:
+            raise ValueError(f"展开 '{src}' 不能包含自身")
+        for t in targets:
+            if t in exp:
+                raise ValueError(f"展开 '{src}' → '{t}'，但 '{t}' 自己也是展开键（禁止链式）")
+        if src in alias_map:
+            raise ValueError(f"'{src}' 同时出现在 aliases 体系和 tag_expansions 中，二选一")
+    return exp
+
+
+def normalize_tags(reason_type: str | None, alias_map: dict[str, str],
+                   expansions: dict[str, list[str]]) -> list[tuple[str, str]]:
+    """归一化总管线：拆分 → 一对多展开 → 别名归一。
+
+    返回 [(规范名, 原始标签)]，规范名去重保序；raw_tag 记录展开/归一前的原始写法。
+    """
+    out: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for tag in split_tags(reason_type):
+        for t in expansions.get(tag, [tag]):
+            canon = alias_map.get(t, t)
+            if canon not in seen:
+                seen.add(canon)
+                out.append((canon, tag))
+    return out
+
+
 def get_or_create_concept(conn: sqlite3.Connection, name: str, cache: dict[str, int]) -> int:
     if name in cache:
         return cache[name]
@@ -260,11 +303,14 @@ def now_iso() -> str:
 
 
 def upsert_events(conn: sqlite3.Connection, trade_date: str, rows: list[dict],
-                  alias_map: dict[str, str] | None = None, source: str = "ths") -> int:
+                  alias_map: dict[str, str] | None = None, source: str = "ths",
+                  expansions: dict[str, list[str]] | None = None) -> int:
     """单事务幂等入库：events upsert + stocks upsert + 重建该事件概念关系。
     trade_date 格式 'YYYY-MM-DD'。返回入库条数。"""
     if alias_map is None:
         alias_map = load_aliases()
+    if expansions is None:
+        expansions = load_expansions(alias_map)
     cache: dict[str, int] = {}
     fetched_at = now_iso()
     with conn:
@@ -313,8 +359,7 @@ def upsert_events(conn: sqlite3.Connection, trade_date: str, rows: list[dict],
                 (code, r.get("name"), r.get("market_type"), trade_date, trade_date))
 
             conn.execute("DELETE FROM event_concepts WHERE event_id=?", (event_id,))
-            for tag in split_tags(r.get("reason_type")):
-                canon = alias_map.get(tag, tag)
+            for canon, tag in normalize_tags(r.get("reason_type"), alias_map, expansions):
                 cid = get_or_create_concept(conn, canon, cache)
                 conn.execute(
                     "INSERT OR IGNORE INTO event_concepts(event_id, concept_id, raw_tag) "

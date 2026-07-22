@@ -366,35 +366,35 @@
  },
  "参股蓝箭航天": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "成立AI公司": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "投建高阶HDI": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "拟投资阶跃星辰": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "拟收购存储公司": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "磷化铟收购": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "间接投资长鑫科技": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "间接持股宇树科技": {
   "type": "event",
-  "status": "active"
+  "status": "retired"
  },
  "AI应用": {
   "type": "sector",
@@ -1423,5 +1423,9 @@
  "华为合作": {
   "type": "unknown",
   "status": "candidate"
+ },
+ "制冷剂": {
+  "type": "theme",
+  "status": "active"
  }
 }
