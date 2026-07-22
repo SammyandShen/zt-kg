@@ -1,0 +1,8 @@
+data/ztkg.db
+data/ztkg.db-wal
+data/ztkg.db-shm
+logs/
+__pycache__/
+*.pyc
+.deploy-enabled
+.DS_Store

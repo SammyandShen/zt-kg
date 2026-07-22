@@ -1,0 +1,261 @@
+#!/usr/bin/env python3
+"""
+query.py — zt-kg CLI 查询（也是对话内查询接口）。
+
+用法：
+  python3 scripts/query.py stock 300750              # 个股涨停史+概念分布
+  python3 scripts/query.py concept 算力 [--days 30]  # 概念成分股+活跃度时间线
+  python3 scripts/query.py date 2026-07-21           # 某日按概念分组复盘
+  python3 scripts/query.py codes 300750,600519,...   # 批量归类（核心场景）
+  python3 scripts/query.py similar                   # 疑似应合并的概念对
+"""
+
+import argparse
+import re
+import sys
+
+import common
+
+
+def _concept_id(conn, name: str) -> tuple[int, str] | None:
+    """概念名/别名 → (id, 规范名)。"""
+    alias_map = common.load_aliases()
+    canon = alias_map.get(name, name)
+    row = conn.execute("SELECT id, name FROM concepts WHERE name=?", (canon,)).fetchone()
+    return (row[0], row[1]) if row else None
+
+
+def cmd_stock(conn, code: str) -> int:
+    stock = conn.execute("SELECT code, name, market_type FROM stocks WHERE code=?",
+                         (code,)).fetchone()
+    if not stock:
+        # 试按名称查
+        stock = conn.execute("SELECT code, name, market_type FROM stocks WHERE name LIKE ?",
+                             (f"%{code}%",)).fetchone()
+        if not stock:
+            print(f"库内无 {code} 的涨停记录")
+            return 1
+        code = stock[0]
+    print(f"\n{stock[1]} ({code}) [{common.board_of(code)}]")
+
+    print("\n所属概念（按涨停共现次数）：")
+    for name, cnt in conn.execute("""
+        SELECT c.name, COUNT(*) n FROM limit_up_events e
+        JOIN event_concepts ec ON ec.event_id=e.id JOIN concepts c ON c.id=ec.concept_id
+        WHERE e.code=? GROUP BY c.id ORDER BY n DESC""", (code,)):
+        print(f"  {name} ×{cnt}")
+
+    print("\n涨停记录：")
+    for row in conn.execute("""
+        SELECT trade_date, high_days, limit_up_type, open_num, order_amount, reason_type
+        FROM limit_up_events WHERE code=? ORDER BY trade_date DESC""", (code,)):
+        d, hd, lt, opens, amt, reason = row
+        amt_s = f"封单{amt / 1e8:.2f}亿" if amt else ""
+        print(f"  {d}  {hd or '—':<6} {lt or ''} 炸板{opens or 0}次 {amt_s} | {reason or '(无原因)'}")
+    return 0
+
+
+def cmd_concept(conn, name: str, days: int) -> int:
+    hit = _concept_id(conn, name)
+    if not hit:
+        # 模糊提示
+        cands = [r[0] for r in conn.execute(
+            "SELECT name FROM concepts WHERE name LIKE ? LIMIT 10", (f"%{name}%",))]
+        print(f"无概念 '{name}'" + (f"，相近：{', '.join(cands)}" if cands else ""))
+        return 1
+    cid, canon = hit
+    aliases = [r[0] for r in conn.execute(
+        "SELECT alias FROM concept_aliases WHERE concept_id=? AND alias!=?", (cid, canon))]
+    total, ndays, lo, hi = conn.execute("""
+        SELECT COUNT(*), COUNT(DISTINCT e.trade_date), MIN(e.trade_date), MAX(e.trade_date)
+        FROM event_concepts ec JOIN limit_up_events e ON e.id=ec.event_id
+        WHERE ec.concept_id=?""", (cid,)).fetchone()
+    print(f"\n概念：{canon}" + (f"（别名：{'、'.join(aliases)}）" if aliases else ""))
+    print(f"累计涨停 {total} 次 · 活跃 {ndays} 天 · {lo} ~ {hi}")
+
+    print(f"\n近 {days} 天活跃度：")
+    rows = conn.execute("""
+        SELECT e.trade_date, COUNT(*) FROM event_concepts ec
+        JOIN limit_up_events e ON e.id=ec.event_id
+        WHERE ec.concept_id=? GROUP BY e.trade_date ORDER BY e.trade_date DESC LIMIT ?""",
+        (cid, days)).fetchall()
+    for d, n in rows:
+        print(f"  {d}  {'█' * min(n, 40)} {n}")
+
+    print("\n成分股（按涨停次数）：")
+    for code, sname, cnt, maxlb, last in conn.execute("""
+        SELECT e.code, e.name, COUNT(*) n, MAX(e.lb_count), MAX(e.trade_date)
+        FROM event_concepts ec JOIN limit_up_events e ON e.id=ec.event_id
+        WHERE ec.concept_id=? GROUP BY e.code ORDER BY n DESC, last DESC LIMIT 40""", (cid,)):
+        print(f"  {sname}({code}) [{common.board_of(code)}] ×{cnt} 最高{maxlb or '?'}板 最近{last}")
+    return 0
+
+
+def cmd_date(conn, d: str) -> int:
+    d = d.replace("/", "-")
+    if re.fullmatch(r"\d{8}", d):
+        d = f"{d[:4]}-{d[4:6]}-{d[6:]}"
+    stats = conn.execute("SELECT num, history_num, rate, open_num FROM day_stats "
+                         "WHERE trade_date=?", (d,)).fetchone()
+    n_events = conn.execute("SELECT COUNT(*) FROM limit_up_events WHERE trade_date=?",
+                            (d,)).fetchone()[0]
+    if not n_events:
+        print(f"{d} 无涨停数据（非交易日或未抓取）")
+        return 1
+    head = f"\n===== {d} 涨停复盘：{n_events} 只"
+    if stats:
+        num, hist, rate, opens = stats
+        head += f" · 触板{hist} · 封板率{rate * 100:.0f}% · 炸板{opens}家" if rate else ""
+    print(head + " =====")
+
+    groups = conn.execute("""
+        SELECT c.name, COUNT(*) n FROM limit_up_events e
+        JOIN event_concepts ec ON ec.event_id=e.id JOIN concepts c ON c.id=ec.concept_id
+        WHERE e.trade_date=? GROUP BY c.id HAVING n>=2 ORDER BY n DESC""", (d,)).fetchall()
+    for cname, n in groups:
+        print(f"\n【{cname}】{n} 只")
+        for code, sname, hd, lt in conn.execute("""
+            SELECT e.code, e.name, e.high_days, e.limit_up_type FROM limit_up_events e
+            JOIN event_concepts ec ON ec.event_id=e.id JOIN concepts c ON c.id=ec.concept_id
+            WHERE e.trade_date=? AND c.name=? ORDER BY e.lb_count DESC, e.first_time""",
+            (d, cname)):
+            print(f"  {sname}({code}) {hd or ''} {lt or ''}")
+    return 0
+
+
+def cmd_codes(conn, codes_str: str) -> int:
+    codes = re.findall(r"\d{6}", codes_str)
+    if not codes:
+        print("未提取到6位股票代码")
+        return 1
+    recent5 = [r[0] for r in conn.execute(
+        "SELECT DISTINCT trade_date FROM limit_up_events ORDER BY trade_date DESC LIMIT 5")]
+    ph5 = ",".join("?" * len(recent5))
+    for code in codes:
+        row = conn.execute("SELECT name FROM stocks WHERE code=?", (code,)).fetchone()
+        if not row:
+            print(f"\n{code}: 无涨停记录")
+            continue
+        n_zt, last = conn.execute(
+            "SELECT COUNT(*), MAX(trade_date) FROM limit_up_events WHERE code=?",
+            (code,)).fetchone()
+        print(f"\n{row[0]}({code}) [{common.board_of(code)}] 历史涨停{n_zt}次，最近{last}")
+        for cname, cid, n in conn.execute("""
+            SELECT c.name, c.id, COUNT(*) n FROM limit_up_events e
+            JOIN event_concepts ec ON ec.event_id=e.id JOIN concepts c ON c.id=ec.concept_id
+            WHERE e.code=? GROUP BY c.id ORDER BY n DESC LIMIT 8""", (code,)):
+            hot = conn.execute(
+                f"SELECT COUNT(*) FROM event_concepts ec "
+                f"JOIN limit_up_events e ON e.id=ec.event_id "
+                f"WHERE ec.concept_id=? AND e.trade_date IN ({ph5})",
+                [cid] + recent5).fetchone()[0]
+            print(f"  {cname} ×{n}" + (f"  🔥近5日{hot}家涨停" if hot >= 3 else ""))
+    return 0
+
+
+def cmd_tree(conn) -> int:
+    """打印 taxonomy 标签层级树（热度=后代概念去重股·日事件数）。"""
+    import json
+    tax_path = common.REPO_ROOT / "data" / "taxonomy.json"
+    if not tax_path.exists():
+        print("无 data/taxonomy.json")
+        return 1
+    tax = json.loads(tax_path.read_text(encoding="utf-8"))
+    tax.pop("$note", None)
+    children = set(sum(tax.values(), []))
+    roots = [p for p in tax if p not in children]
+    name_cid = {r[1]: r[0] for r in conn.execute("SELECT id, name FROM concepts")}
+
+    def cids_of(name, stack=None):
+        stack = stack or set()
+        if name in stack:
+            return set()
+        s = {name_cid[name]} if name in name_cid else set()
+        for ch in tax.get(name, []):
+            s |= cids_of(ch, stack | {name})
+        return s
+
+    recent5 = [r[0] for r in conn.execute(
+        "SELECT DISTINCT trade_date FROM limit_up_events ORDER BY trade_date DESC LIMIT 5")]
+
+    def heat(cids, dates=None):
+        if not cids:
+            return 0
+        ph = ",".join("?" * len(cids))
+        sql = (f"SELECT COUNT(*) FROM (SELECT DISTINCT e.trade_date, e.code "
+               f"FROM limit_up_events e JOIN event_concepts ec ON ec.event_id=e.id "
+               f"WHERE ec.concept_id IN ({ph})")
+        args = list(cids)
+        if dates:
+            sql += f" AND e.trade_date IN ({','.join('?' * len(dates))})"
+            args += dates
+        return conn.execute(sql + ")", args).fetchone()[0]
+
+    def walk(name, depth):
+        cids = cids_of(name)
+        h5 = heat(cids, recent5)
+        mark = " 🔥" if h5 >= 10 else ""
+        print("  " * depth + f"{name}  [{heat(cids)}次 | 近5日{h5}]{mark}")
+        kids = sorted(tax.get(name, []), key=lambda ch: -heat(cids_of(ch), recent5))
+        for ch in kids:
+            if ch in tax:
+                walk(ch, depth + 1)
+            else:
+                ch5 = heat(cids_of(ch), recent5)
+                print("  " * (depth + 1) + f"{ch}  [{heat(cids_of(ch))}次 | 近5日{ch5}]"
+                      + (" 🔥" if ch5 >= 5 else ""))
+
+    for r in sorted(roots, key=lambda n: -heat(cids_of(n), recent5)):
+        walk(r, 0)
+    return 0
+
+
+def cmd_similar(conn) -> int:
+    names = [r[0] for r in conn.execute(
+        "SELECT c.name FROM concepts c JOIN event_concepts ec ON ec.concept_id=c.id "
+        "GROUP BY c.id HAVING COUNT(*)>=3")]
+    pairs = []
+    for i, a in enumerate(names):
+        for b in names[i + 1:]:
+            if a in b or b in a:
+                pairs.append((a, b))
+    if not pairs:
+        print("无疑似重复概念对")
+        return 0
+    print("疑似应合并的概念对（人工判断后编辑 data/aliases.json 再跑 rebuild_tags.py）：")
+    for a, b in sorted(pairs):
+        print(f"  {a}  ~  {b}")
+    return 0
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    sub.add_parser("stock").add_argument("code")
+    p = sub.add_parser("concept")
+    p.add_argument("name")
+    p.add_argument("--days", type=int, default=30)
+    sub.add_parser("date").add_argument("d")
+    sub.add_parser("codes").add_argument("codes_str")
+    sub.add_parser("similar")
+    sub.add_parser("tree")
+    args = ap.parse_args()
+
+    conn = common.open_db()
+    if args.cmd == "stock":
+        return cmd_stock(conn, args.code)
+    if args.cmd == "concept":
+        return cmd_concept(conn, args.name, args.days)
+    if args.cmd == "date":
+        return cmd_date(conn, args.d)
+    if args.cmd == "codes":
+        return cmd_codes(conn, args.codes_str)
+    if args.cmd == "similar":
+        return cmd_similar(conn)
+    if args.cmd == "tree":
+        return cmd_tree(conn)
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
