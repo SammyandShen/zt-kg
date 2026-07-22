@@ -210,6 +210,48 @@ def cmd_tree(conn) -> int:
     return 0
 
 
+def cmd_review_tags(conn) -> int:
+    """待审核标签清单：达标(单日共振≥3股 或 ≥3股且≥2日)但尚未 active 的标签。"""
+    import json
+    import gen_tag_meta
+    meta_path = common.REPO_ROOT / "data" / "tag_meta.json"
+    meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+    meta.pop("$note", None)
+    tax = json.loads((common.REPO_ROOT / "data" / "taxonomy.json").read_text(encoding="utf-8"))
+    tax.pop("$note", None)
+    taxnames = set(tax) | {c for v in tax.values() for c in v}
+
+    rows = conn.execute("""
+        WITH s AS (SELECT ec.concept_id cid, e.trade_date d, COUNT(DISTINCT e.code) ds
+                   FROM event_concepts ec JOIN limit_up_events e ON e.id=ec.event_id
+                   GROUP BY cid, d),
+        agg AS (SELECT cid, MAX(ds) mx, COUNT(*) days FROM s GROUP BY cid),
+        st AS (SELECT ec.concept_id cid, COUNT(DISTINCT e.code) stocks, COUNT(*) total
+               FROM event_concepts ec JOIN limit_up_events e ON e.id=ec.event_id GROUP BY cid)
+        SELECT c.id, c.name, st.total, st.stocks, agg.days, agg.mx,
+          (SELECT s2.d FROM s s2 WHERE s2.cid=c.id ORDER BY s2.ds DESC LIMIT 1)
+        FROM agg JOIN st USING(cid) JOIN concepts c ON c.id=agg.cid
+        WHERE agg.mx>=3 OR (st.stocks>=3 AND agg.days>=2)
+        ORDER BY agg.mx DESC, st.total DESC""").fetchall()
+
+    n = 0
+    for cid, name, total, stocks, days, mx, mxd in rows:
+        m = meta.get(name)
+        if m and m.get("status") == "active":
+            continue
+        n += 1
+        examples = "、".join(r[0] for r in conn.execute(
+            "SELECT e.name FROM event_concepts ec JOIN limit_up_events e ON e.id=ec.event_id "
+            "WHERE ec.concept_id=? GROUP BY e.code ORDER BY COUNT(*) DESC LIMIT 3", (cid,)))
+        sug = m["type"] if m else gen_tag_meta.infer_type(name)
+        print(f"{name}  ×{total} · {stocks}股 · {days}日 · 最大共振{mx}家({mxd})")
+        print(f"  建议类型: {sug}{'（已登记candidate）' if m else '（未登记）'}"
+              f"{' · 已在taxonomy' if name in taxnames else ''} · 代表: {examples}")
+    print(f"\n共 {n} 个待审核标签。审核方式：改 data/tag_meta.json 的 type/status，"
+          f"需归树的同时编辑 taxonomy.json，然后跑 build_site.py")
+    return 0
+
+
 def cmd_similar(conn) -> int:
     names = [r[0] for r in conn.execute(
         "SELECT c.name FROM concepts c JOIN event_concepts ec ON ec.concept_id=c.id "
@@ -239,6 +281,7 @@ def main() -> int:
     sub.add_parser("codes").add_argument("codes_str")
     sub.add_parser("similar")
     sub.add_parser("tree")
+    sub.add_parser("review-tags")
     args = ap.parse_args()
 
     conn = common.open_db()
@@ -254,6 +297,8 @@ def main() -> int:
         return cmd_similar(conn)
     if args.cmd == "tree":
         return cmd_tree(conn)
+    if args.cmd == "review-tags":
+        return cmd_review_tags(conn)
     return 1
 
 

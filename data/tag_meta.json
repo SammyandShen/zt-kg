@@ -1,0 +1,1427 @@
+{
+ "$note": "标签类型注册表。type: sector/theme/catalyst/attribute/event/unknown；status: active(已审核,可进热度)/candidate(待审核,不进热度)/retired。频道由类型决定：sector|theme→题材热度，catalyst→催化热度，其余不进。由 gen_tag_meta.py 生成草稿（已有条目不会被覆盖），人工修订后即为事实源。",
+ "HDI龙头": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "上海国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "云南国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "北京国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "合肥国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "国企": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "国资背景": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "地方国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "天津国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "央企": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "安徽国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "宜宾国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "山东国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "广东国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "广州国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "扬州国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "新疆国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "无锡国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "武汉国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "江西国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "浙江国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "海外业务": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "深圳国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "湖北国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "湖南国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "炭黑龙头": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "烟台国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "福建国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "贵州国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "长春国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "集成灶龙头": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "青岛国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "黑龙江国资": {
+  "type": "attribute",
+  "status": "active"
+ },
+ "H股上市": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "一季报增长": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "一季报扭亏": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "业绩与分红": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "业绩增长": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "业绩扭亏": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "业绩预增": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "中报减亏": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "中报扭亏": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "中报预增": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "亏损收窄": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "产品涨价": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "产能扩张": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "再融资": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "分红": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "制冷剂涨价": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "半导体级氢氟酸涨价": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "协议转让": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "可转债": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "可转债募资": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "可转债获批": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "回购": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "回购注销": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "国网中标": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "增持": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "复牌": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "定增": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "定增募资": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "定增扩产": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "定增获批": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "定增过会": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "实控人变更": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "年报增长": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "并购重组": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "扭亏为盈": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "承诺不减持": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "控制权变更": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "控制权拟变更": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "控股股东增持": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "摘帽": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "海外大单": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "盈利修复": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "终止减持": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "股东增减持": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "股东增持": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "股份转让": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "股权激励": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "股权转让": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "订单新高": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "资产重组": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "跨界转型": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "转债强赎": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "重组股权事件": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "锆产品涨价": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "高分红": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "高管增持": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "高股息": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "高送转": {
+  "type": "catalyst",
+  "status": "active"
+ },
+ "参股蓝箭航天": {
+  "type": "event",
+  "status": "active"
+ },
+ "成立AI公司": {
+  "type": "event",
+  "status": "active"
+ },
+ "投建高阶HDI": {
+  "type": "event",
+  "status": "active"
+ },
+ "拟投资阶跃星辰": {
+  "type": "event",
+  "status": "active"
+ },
+ "拟收购存储公司": {
+  "type": "event",
+  "status": "active"
+ },
+ "磷化铟收购": {
+  "type": "event",
+  "status": "active"
+ },
+ "间接投资长鑫科技": {
+  "type": "event",
+  "status": "active"
+ },
+ "间接持股宇树科技": {
+  "type": "event",
+  "status": "active"
+ },
+ "AI应用": {
+  "type": "sector",
+  "status": "active"
+ },
+ "军工航天": {
+  "type": "sector",
+  "status": "active"
+ },
+ "医药医疗": {
+  "type": "sector",
+  "status": "active"
+ },
+ "半导体": {
+  "type": "sector",
+  "status": "active"
+ },
+ "周期资源": {
+  "type": "sector",
+  "status": "active"
+ },
+ "地产基建": {
+  "type": "sector",
+  "status": "active"
+ },
+ "大消费": {
+  "type": "sector",
+  "status": "active"
+ },
+ "新能源": {
+  "type": "sector",
+  "status": "active"
+ },
+ "机器人": {
+  "type": "sector",
+  "status": "active"
+ },
+ "汽车": {
+  "type": "sector",
+  "status": "active"
+ },
+ "算力与AI基建": {
+  "type": "sector",
+  "status": "active"
+ },
+ "金融": {
+  "type": "sector",
+  "status": "active"
+ },
+ "1.6T光模块": {
+  "type": "theme",
+  "status": "active"
+ },
+ "3D视觉": {
+  "type": "theme",
+  "status": "active"
+ },
+ "800G光模块": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AIPC": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI医疗": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI大模型": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI手机": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI教育": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI数据中心燃气轮机": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI服务器": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI服务器测试": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI服务器电源": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI眼镜": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI算力": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI算力PCB": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI营销": {
+  "type": "theme",
+  "status": "active"
+ },
+ "AI视觉": {
+  "type": "theme",
+  "status": "active"
+ },
+ "CMOS图像传感器": {
+  "type": "theme",
+  "status": "active"
+ },
+ "CPO": {
+  "type": "theme",
+  "status": "active"
+ },
+ "CPO光引擎": {
+  "type": "theme",
+  "status": "active"
+ },
+ "CRO": {
+  "type": "theme",
+  "status": "active"
+ },
+ "HBM": {
+  "type": "theme",
+  "status": "active"
+ },
+ "MLCC": {
+  "type": "theme",
+  "status": "active"
+ },
+ "PCB": {
+  "type": "theme",
+  "status": "active"
+ },
+ "PCB上游": {
+  "type": "theme",
+  "status": "active"
+ },
+ "PCB用化学试剂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "PEEK材料": {
+  "type": "theme",
+  "status": "active"
+ },
+ "SK海力士": {
+  "type": "theme",
+  "status": "active"
+ },
+ "SOFC": {
+  "type": "theme",
+  "status": "active"
+ },
+ "一带一路": {
+  "type": "theme",
+  "status": "active"
+ },
+ "中药": {
+  "type": "theme",
+  "status": "active"
+ },
+ "互动影游": {
+  "type": "theme",
+  "status": "active"
+ },
+ "交换机": {
+  "type": "theme",
+  "status": "active"
+ },
+ "人形机器人": {
+  "type": "theme",
+  "status": "active"
+ },
+ "企业级SSD": {
+  "type": "theme",
+  "status": "active"
+ },
+ "传感器": {
+  "type": "theme",
+  "status": "active"
+ },
+ "低空经济": {
+  "type": "theme",
+  "status": "active"
+ },
+ "储能": {
+  "type": "theme",
+  "status": "active"
+ },
+ "先进封装": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光伏": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光伏玻璃": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光伏钨丝": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光刻胶": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光刻胶树脂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光刻胶颜料": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光学光电子": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光模块": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光稳定剂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光纤光缆": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光纤概念": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光芯片": {
+  "type": "theme",
+  "status": "active"
+ },
+ "光通信": {
+  "type": "theme",
+  "status": "active"
+ },
+ "六氟化钨": {
+  "type": "theme",
+  "status": "active"
+ },
+ "六氟磷酸锂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "具身智能": {
+  "type": "theme",
+  "status": "active"
+ },
+ "具身智能数据集": {
+  "type": "theme",
+  "status": "active"
+ },
+ "军工": {
+  "type": "theme",
+  "status": "active"
+ },
+ "减肥药": {
+  "type": "theme",
+  "status": "active"
+ },
+ "减速器": {
+  "type": "theme",
+  "status": "active"
+ },
+ "创投": {
+  "type": "theme",
+  "status": "active"
+ },
+ "创新药": {
+  "type": "theme",
+  "status": "active"
+ },
+ "功率半导体": {
+  "type": "theme",
+  "status": "active"
+ },
+ "化学制药": {
+  "type": "theme",
+  "status": "active"
+ },
+ "化工新材料": {
+  "type": "theme",
+  "status": "active"
+ },
+ "医疗器械": {
+  "type": "theme",
+  "status": "active"
+ },
+ "医药": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体前驱体": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体封装": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体材料": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体检测": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体洁净室": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体测试设备": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体硅片": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体设备": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体超纯水膜": {
+  "type": "theme",
+  "status": "active"
+ },
+ "半导体靶材": {
+  "type": "theme",
+  "status": "active"
+ },
+ "华为昇腾": {
+  "type": "theme",
+  "status": "active"
+ },
+ "卫星通信": {
+  "type": "theme",
+  "status": "active"
+ },
+ "压缩空气储能": {
+  "type": "theme",
+  "status": "active"
+ },
+ "可控核聚变": {
+  "type": "theme",
+  "status": "active"
+ },
+ "含硫硅烷": {
+  "type": "theme",
+  "status": "active"
+ },
+ "商业航天": {
+  "type": "theme",
+  "status": "active"
+ },
+ "固态电池": {
+  "type": "theme",
+  "status": "active"
+ },
+ "国产算力": {
+  "type": "theme",
+  "status": "active"
+ },
+ "国企改革": {
+  "type": "theme",
+  "status": "active"
+ },
+ "地产开发": {
+  "type": "theme",
+  "status": "active"
+ },
+ "城市更新": {
+  "type": "theme",
+  "status": "active"
+ },
+ "培育钻石": {
+  "type": "theme",
+  "status": "active"
+ },
+ "基药目录": {
+  "type": "theme",
+  "status": "active"
+ },
+ "复合铜箔": {
+  "type": "theme",
+  "status": "active"
+ },
+ "大圆柱电池": {
+  "type": "theme",
+  "status": "active"
+ },
+ "天然气": {
+  "type": "theme",
+  "status": "active"
+ },
+ "存储芯片": {
+  "type": "theme",
+  "status": "active"
+ },
+ "存储芯片封测": {
+  "type": "theme",
+  "status": "active"
+ },
+ "存储芯片材料": {
+  "type": "theme",
+  "status": "active"
+ },
+ "家居商贸": {
+  "type": "theme",
+  "status": "active"
+ },
+ "小米汽车": {
+  "type": "theme",
+  "status": "active"
+ },
+ "工业机器人": {
+  "type": "theme",
+  "status": "active"
+ },
+ "工业母机": {
+  "type": "theme",
+  "status": "active"
+ },
+ "干散货航运": {
+  "type": "theme",
+  "status": "active"
+ },
+ "建筑幕墙": {
+  "type": "theme",
+  "status": "active"
+ },
+ "房地产": {
+  "type": "theme",
+  "status": "active"
+ },
+ "数据中心": {
+  "type": "theme",
+  "status": "active"
+ },
+ "数据中心交换机": {
+  "type": "theme",
+  "status": "active"
+ },
+ "数据中心液冷": {
+  "type": "theme",
+  "status": "active"
+ },
+ "无人系统": {
+  "type": "theme",
+  "status": "active"
+ },
+ "显示面板": {
+  "type": "theme",
+  "status": "active"
+ },
+ "显示驱动芯片": {
+  "type": "theme",
+  "status": "active"
+ },
+ "智慧水务": {
+  "type": "theme",
+  "status": "active"
+ },
+ "智能家居": {
+  "type": "theme",
+  "status": "active"
+ },
+ "智能驾驶": {
+  "type": "theme",
+  "status": "active"
+ },
+ "智谱AI": {
+  "type": "theme",
+  "status": "active"
+ },
+ "有机硅": {
+  "type": "theme",
+  "status": "active"
+ },
+ "机器人材料": {
+  "type": "theme",
+  "status": "active"
+ },
+ "机器人电子皮肤": {
+  "type": "theme",
+  "status": "active"
+ },
+ "机器人零部件": {
+  "type": "theme",
+  "status": "active"
+ },
+ "机器视觉": {
+  "type": "theme",
+  "status": "active"
+ },
+ "核电": {
+  "type": "theme",
+  "status": "active"
+ },
+ "氟化工": {
+  "type": "theme",
+  "status": "active"
+ },
+ "氢氟酸": {
+  "type": "theme",
+  "status": "active"
+ },
+ "氢能": {
+  "type": "theme",
+  "status": "active"
+ },
+ "氦气": {
+  "type": "theme",
+  "status": "active"
+ },
+ "氧化锆供给缺口": {
+  "type": "theme",
+  "status": "active"
+ },
+ "水务机器狗": {
+  "type": "theme",
+  "status": "active"
+ },
+ "水泥": {
+  "type": "theme",
+  "status": "active"
+ },
+ "汽车内饰皮革": {
+  "type": "theme",
+  "status": "active"
+ },
+ "汽车电子": {
+  "type": "theme",
+  "status": "active"
+ },
+ "汽车轮毂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "汽车零部件": {
+  "type": "theme",
+  "status": "active"
+ },
+ "油气开采": {
+  "type": "theme",
+  "status": "active"
+ },
+ "油气装备": {
+  "type": "theme",
+  "status": "active"
+ },
+ "消费电子": {
+  "type": "theme",
+  "status": "active"
+ },
+ "液冷": {
+  "type": "theme",
+  "status": "active"
+ },
+ "液冷储能": {
+  "type": "theme",
+  "status": "active"
+ },
+ "液冷服务器": {
+  "type": "theme",
+  "status": "active"
+ },
+ "液冷泵": {
+  "type": "theme",
+  "status": "active"
+ },
+ "火电": {
+  "type": "theme",
+  "status": "active"
+ },
+ "灵巧手": {
+  "type": "theme",
+  "status": "active"
+ },
+ "热电联产": {
+  "type": "theme",
+  "status": "active"
+ },
+ "煤化工": {
+  "type": "theme",
+  "status": "active"
+ },
+ "煤炭": {
+  "type": "theme",
+  "status": "active"
+ },
+ "燃气轮机": {
+  "type": "theme",
+  "status": "active"
+ },
+ "物联网": {
+  "type": "theme",
+  "status": "active"
+ },
+ "特高压": {
+  "type": "theme",
+  "status": "active"
+ },
+ "猪肉": {
+  "type": "theme",
+  "status": "active"
+ },
+ "玻璃基板": {
+  "type": "theme",
+  "status": "active"
+ },
+ "生态水利": {
+  "type": "theme",
+  "status": "active"
+ },
+ "生猪养殖": {
+  "type": "theme",
+  "status": "active"
+ },
+ "甲醇": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电力": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电子化学品": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电子布": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电子特气": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电子玻璃": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电子皮肤": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电网设备": {
+  "type": "theme",
+  "status": "active"
+ },
+ "电解铝": {
+  "type": "theme",
+  "status": "active"
+ },
+ "白酒": {
+  "type": "theme",
+  "status": "active"
+ },
+ "白银": {
+  "type": "theme",
+  "status": "active"
+ },
+ "盐湖提锂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "真空灭弧室": {
+  "type": "theme",
+  "status": "active"
+ },
+ "短剧": {
+  "type": "theme",
+  "status": "active"
+ },
+ "石墨烯": {
+  "type": "theme",
+  "status": "active"
+ },
+ "石墨烯散热": {
+  "type": "theme",
+  "status": "active"
+ },
+ "矿山机器人": {
+  "type": "theme",
+  "status": "active"
+ },
+ "碳化硅": {
+  "type": "theme",
+  "status": "active"
+ },
+ "磷化工": {
+  "type": "theme",
+  "status": "active"
+ },
+ "磷化铟": {
+  "type": "theme",
+  "status": "active"
+ },
+ "磷化铟衬底": {
+  "type": "theme",
+  "status": "active"
+ },
+ "磷酸铁锂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "离子注入机": {
+  "type": "theme",
+  "status": "active"
+ },
+ "稀土永磁": {
+  "type": "theme",
+  "status": "active"
+ },
+ "算力": {
+  "type": "theme",
+  "status": "active"
+ },
+ "算力硬件": {
+  "type": "theme",
+  "status": "active"
+ },
+ "算力租赁": {
+  "type": "theme",
+  "status": "active"
+ },
+ "算电协同": {
+  "type": "theme",
+  "status": "active"
+ },
+ "精制磷酸": {
+  "type": "theme",
+  "status": "active"
+ },
+ "精麻药": {
+  "type": "theme",
+  "status": "active"
+ },
+ "绿色电力": {
+  "type": "theme",
+  "status": "active"
+ },
+ "脑机接口": {
+  "type": "theme",
+  "status": "active"
+ },
+ "薄膜电容": {
+  "type": "theme",
+  "status": "active"
+ },
+ "虚拟电厂": {
+  "type": "theme",
+  "status": "active"
+ },
+ "行星滚柱丝杠": {
+  "type": "theme",
+  "status": "active"
+ },
+ "覆铜板": {
+  "type": "theme",
+  "status": "active"
+ },
+ "证券": {
+  "type": "theme",
+  "status": "active"
+ },
+ "超级电容": {
+  "type": "theme",
+  "status": "active"
+ },
+ "超节点": {
+  "type": "theme",
+  "status": "active"
+ },
+ "跨境电商": {
+  "type": "theme",
+  "status": "active"
+ },
+ "边缘计算": {
+  "type": "theme",
+  "status": "active"
+ },
+ "造纸": {
+  "type": "theme",
+  "status": "active"
+ },
+ "醋酸纤维素": {
+  "type": "theme",
+  "status": "active"
+ },
+ "重组胶原蛋白": {
+  "type": "theme",
+  "status": "active"
+ },
+ "金刚石散热": {
+  "type": "theme",
+  "status": "active"
+ },
+ "金融科技": {
+  "type": "theme",
+  "status": "active"
+ },
+ "钛白粉": {
+  "type": "theme",
+  "status": "active"
+ },
+ "钨全产业链": {
+  "type": "theme",
+  "status": "active"
+ },
+ "铝电解电容": {
+  "type": "theme",
+  "status": "active"
+ },
+ "锂电池": {
+  "type": "theme",
+  "status": "active"
+ },
+ "锂盐": {
+  "type": "theme",
+  "status": "active"
+ },
+ "锂矿": {
+  "type": "theme",
+  "status": "active"
+ },
+ "防冰机器人": {
+  "type": "theme",
+  "status": "active"
+ },
+ "陶瓷载板": {
+  "type": "theme",
+  "status": "active"
+ },
+ "集成电路": {
+  "type": "theme",
+  "status": "active"
+ },
+ "零售": {
+  "type": "theme",
+  "status": "active"
+ },
+ "预制菜": {
+  "type": "theme",
+  "status": "active"
+ },
+ "风电": {
+  "type": "theme",
+  "status": "active"
+ },
+ "风电光伏": {
+  "type": "theme",
+  "status": "active"
+ },
+ "飞行汽车": {
+  "type": "theme",
+  "status": "active"
+ },
+ "高纯四氯化硅": {
+  "type": "theme",
+  "status": "active"
+ },
+ "黄金": {
+  "type": "theme",
+  "status": "active"
+ },
+ "山西国资": {
+  "type": "attribute",
+  "status": "candidate"
+ },
+ "次新股": {
+  "type": "attribute",
+  "status": "candidate"
+ },
+ "甘肃国资": {
+  "type": "attribute",
+  "status": "candidate"
+ },
+ "中标": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "全球化产能": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "分红实施": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "海外产能": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "券商看好": {
+  "type": "event",
+  "status": "candidate"
+ },
+ "员工持股": {
+  "type": "event",
+  "status": "candidate"
+ },
+ "3D打印": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "GLP-1": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "PVDF": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "保险": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "出口": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "化工": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "卫星互联网": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "太空光伏": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "家电零部件": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "工业互联网": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "数字人民币": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "智慧交通": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "智能电网": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "模拟芯片": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "氢能源": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "海南自贸区": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "海外扩张": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "液冷散热": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "湿电子化学品": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "物业管理": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "特斯拉产业链": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "磷矿": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "粤港澳大湾区": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "精细化工": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "超跌反弹": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "华为合作": {
+  "type": "unknown",
+  "status": "candidate"
+ }
+}

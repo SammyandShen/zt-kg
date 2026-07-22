@@ -23,7 +23,18 @@ import common
 
 OUT_PATH = common.REPO_ROOT / "docs" / "data.js"
 TAXONOMY_PATH = common.REPO_ROOT / "data" / "taxonomy.json"
+TAG_META_PATH = common.REPO_ROOT / "data" / "tag_meta.json"
 CST = timezone(timedelta(hours=8))
+
+
+def load_tag_meta() -> dict:
+    """{标签名: [type, status]}，未登记的标签前端按 unknown/candidate 处理。"""
+    if not TAG_META_PATH.exists():
+        return {}
+    meta = json.loads(TAG_META_PATH.read_text(encoding="utf-8"))
+    meta.pop("$note", None)
+    return {k: [v.get("type", "unknown"), v.get("status", "candidate")]
+            for k, v in meta.items()}
 
 
 def load_taxonomy(known_names: set[str]) -> dict:
@@ -143,6 +154,7 @@ def main() -> int:
         "stocks": stocks,
         "events": events,
         "taxonomy": load_taxonomy(known_names),
+        "tag_meta": load_tag_meta(),
         "news": news,
         "briefs": briefs,
     }

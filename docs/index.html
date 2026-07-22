@@ -330,6 +330,14 @@ function startupOf(series) {             // 近3日 vs 前15日基线
   return { recent, base, ratio: (recent + .25) / (base + .25) };
 }
 
+/* ---------- 标签类型（tag_meta：六类分型，频道由类型决定） ---------- */
+const META = D.tag_meta || {};                       // name -> [type, status]
+const typeOf = nm => (META[nm] || ['unknown'])[0];
+const isTheme = nm => { const t = typeOf(nm); return t === 'sector' || t === 'theme'; };
+const isCatalyst = nm => typeOf(nm) === 'catalyst';
+const TYPE_LABEL = { sector: '产业', theme: '题材', catalyst: '催化',
+                     attribute: '属性', event: '事件', unknown: '未审核' };
+
 /* ---------- 路由 ---------- */
 function go(hash) { location.hash = hash; }
 window.addEventListener('hashchange', render);
@@ -369,14 +377,18 @@ function renderDate(d) {
   const maxLb = Math.max(1, ...evs.map(e => e[1] || 1));
   const yizi = evs.filter(e => (e[3] || '').includes('一字')).length;
 
-  // 按概念分组（当日 ≥2 只成卡片）
+  // 按概念分组（当日 ≥2 只），再按标签类型分流：题材成卡片、催化进顶部横条
   const groups = new Map();
   for (const ev of evs) for (const cid of ev[9]) {
     if (!groups.has(cid)) groups.set(cid, []);
     groups.get(cid).push(ev);
   }
-  const cards = [...groups].filter(([, l]) => l.length >= 2)
+  const named = [...groups].map(([cid, l]) => ({ cid, nm: D.concepts[cid][0], l }))
+    .filter(g => g.l.length >= 2);
+  const cards = named.filter(g => isTheme(g.nm)).map(g => [g.cid, g.l])
     .sort((a, b) => b[1].length - a[1].length);
+  const catas = named.filter(g => isCatalyst(g.nm))
+    .sort((a, b) => b.l.length - a.l.length);
   const carded = new Set(cards.flatMap(([, l]) => l.map(e => e[0])));
   const rest = evs.filter(e => !carded.has(e[0]));
 
@@ -396,6 +408,12 @@ function renderDate(d) {
     <div class="stat"><div class="v">${yizi}</div><div class="k">一字板</div></div>
   </div>`;
 
+  if (catas.length) {
+    html += `<div class="card" style="padding:8px 14px"><span class="muted small">今日催化：</span>
+      ${catas.map(g => `<span class="concept-chip" data-cid="${g.cid}" style="padding:2px 10px">
+        ${esc(g.nm)} <span class="x">${g.l.length}只</span></span>`).join('')}</div>`;
+  }
+
   for (const [cid, list] of cards) {
     const [cname, total, days] = D.concepts[cid];
     list.sort((a, b) => (b[1] || 1) - (a[1] || 1));
@@ -410,7 +428,8 @@ function renderDate(d) {
   }
   if (rest.length) {
     html += `<div class="card"><div class="card-h">
-      <span class="cname muted">其他 / 独立题材</span><span class="cnt">${rest.length} 只</span></div>
+      <span class="cname muted">其他 / 未入题材卡片</span><span class="cnt">${rest.length} 只</span>
+      <span class="hist">仅催化/属性/事件驱动或独立题材，悬浮看原因</span></div>
       <div class="chips">${rest.map(ev => chipHtml(ev, d)).join('')}</div></div>`;
   }
   if (!evs.length) html += `<div class="empty">当日无涨停数据</div>`;
@@ -536,6 +555,29 @@ function drawTimeline(cid) {
   });
 }
 
+/* ---------- 标签按类型分区展示（个股页/批量归类共用） ---------- */
+function typedTagRows(hist, opts = {}) {
+  const ccount = new Map();
+  for (const { ev } of hist) for (const cid of ev[9])
+    ccount.set(cid, (ccount.get(cid) || 0) + 1);
+  const ent = [...ccount].sort((a, b) => b[1] - a[1])
+    .map(([cid, n]) => ({ cid, n, nm: D.concepts[cid][0], t: typeOf(D.concepts[cid][0]) }));
+  const pick = ts => ent.filter(e => ts.includes(e.t));
+  const chip = (e, hot) => {
+    const h = hot ? hotOf(e.cid) : 0;
+    return `<span class="concept-chip" data-cid="${e.cid}">${esc(e.nm)}
+      <span class="x">×${e.n}${h >= 3 ? ' 🔥近5日' + h + '家' : ''}</span></span>`;
+  };
+  const line = (label, list, hot, cap) => list.length
+    ? `<div style="margin-top:4px"><span class="muted small" style="margin-right:6px">${label}</span>${
+        list.slice(0, cap || 99).map(e => chip(e, hot)).join('')}</div>` : '';
+  const html = line('主线题材', pick(['sector', 'theme']), true, opts.maxTheme)
+             + line('催化', pick(['catalyst']), false, 5)
+             + line('属性', pick(['attribute']), false, 5)
+             + line('事件/未审核', pick(['event', 'unknown']), false, 4);
+  return html || '<div class="muted small" style="margin-top:4px">无概念标签</div>';
+}
+
 /* ---------- 视图3：个股详情 ---------- */
 function renderStock(code) {
   const hist = byStock[code];
@@ -545,14 +587,6 @@ function renderStock(code) {
       <div class="muted">近1年库内无涨停记录</div></div>`;
     return;
   }
-  const ccount = new Map();
-  for (const { ev } of hist) for (const cid of ev[9])
-    ccount.set(cid, (ccount.get(cid) || 0) + 1);
-  const chips = [...ccount].sort((a, b) => b[1] - a[1]).map(([cid, n]) => {
-    const hot = hotOf(cid);
-    return `<span class="concept-chip" data-cid="${cid}">${esc(D.concepts[cid][0])}
-      <span class="x">×${n}${hot >= 3 ? ' 🔥' + hot : ''}</span></span>`;
-  }).join('');
 
   const newsOf = dd => (D.news || {})[code + '|' + dd] || [];
   const briefOf = dd => (D.briefs || {})[code + '|' + dd] || '';
@@ -578,7 +612,7 @@ function renderStock(code) {
   <div class="detail-h">
     <h2>${esc(name)} <span class="muted" style="font-size:14px">${code} · ${boardOf(code)}</span></h2>
     <div class="muted small">近1年涨停 <b>${hist.length}</b> 次 · 最近 ${hist[hist.length - 1].d}</div>
-    <div style="margin-top:8px">${chips || '<span class="muted small">无概念标签</span>'}</div>
+    <div style="margin-top:6px">${typedTagRows(hist)}</div>
   </div>
   <div class="tablewrap"><table>
     <thead><tr><th>日期</th><th>连板</th><th>类型</th><th>炸板</th><th>封单</th><th>首封</th><th>涨停原因</th><th>消息</th></tr></thead>
@@ -600,21 +634,66 @@ let heatRange = 30;
 const heatExpanded = new Set();
 function renderHeat() {
   if (!taxRoots.length) { $('#app').innerHTML = '<div class="empty">未配置 taxonomy.json</div>'; return; }
+  const sortBy5 = arr => arr.sort((a, b) =>
+    taxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
+    taxSeries(a).slice(-5).reduce((x, y) => x + y, 0));
+  const themeRoots = sortBy5(taxRoots.filter(isTheme));
+  const catRoots = sortBy5(taxRoots.filter(isCatalyst));
 
-  // 启动榜：树节点 + 未入树的高频概念
-  const candidates = new Set(Object.keys(TAX).concat(...Object.values(TAX)));
-  const inTreeCids = new Set(taxRoots.flatMap(r => [...taxCids(r)]));
-  for (const cid in D.concepts)
-    if (!inTreeCids.has(+cid) && D.concepts[cid][1] >= 5) candidates.add(D.concepts[cid][0]);
+  // 题材启动榜：仅已审核的 sector/theme 树节点参与判定
+  const themeNodes = new Set();
+  const collect = n => {
+    if (themeNodes.has(n)) return;
+    if (isTheme(n)) themeNodes.add(n);
+    (TAX[n] || []).forEach(collect);
+  };
+  themeRoots.forEach(collect);
   const startups = [];
-  for (const nm of candidates) {
+  for (const nm of themeNodes) {
     const s = startupOf(taxSeries(nm));
     if (s && s.recent >= 3 && s.ratio >= 2.2)
       startups.push({ nm, ...s, isNew: s.base < 0.8 });
   }
   startups.sort((a, b) => b.ratio - a.ratio || b.recent - a.recent);
 
-  let html = `<h2>板块热力 <span class="muted small">热度 = 板块内每日去重涨停家数（含全部子标签）</span></h2>`;
+  // 热力图共用的日期窗口（最新日期在最左）
+  const win = heatRange ? D.dates.slice(-heatRange) : D.dates.slice();
+  const off = D.dates.length - win.length;
+  const dates = [...win].reverse();
+  const step = Math.ceil(dates.length / 15);
+
+  const heatTableHtml = (title, hint, roots) => {
+    const rows = [];
+    const childrenSorted = nm => sortBy5((TAX[nm] || []).filter(ch => taxCids(ch).size));
+    const addRow = (nm, lvl) => {
+      rows.push({ nm, lvl, series: taxSeries(nm).slice(off).reverse(),
+                  sum5: taxSeries(nm).slice(-5).reduce((a, b) => a + b, 0) });
+      if (heatExpanded.has(nm))
+        for (const ch of childrenSorted(nm)) addRow(ch, lvl + 1);
+    };
+    for (const r of roots) addRow(r, 1);
+    if (!rows.length) return '';
+    const vmax = Math.max(4, ...rows.filter(r => r.lvl === 1).flatMap(r => r.series));
+    return `
+    <div class="chart-card" style="padding:0;overflow:hidden;margin-top:14px">
+      <div class="ch-h" style="padding:10px 14px 6px"><b>${title}</b>
+        <span class="muted small">${hint}</span></div>
+      <div class="heatwrap"><table class="heatmap">
+        <thead><tr><th class="rowlab"></th>${dates.map((d, i) =>
+          `<th${i % step === 0 ? ' class="dlab"' : ''}>${i % step === 0 ? d.slice(5) : ''}</th>`).join('')}</tr></thead>
+        <tbody>${rows.map(r => heatRowHtml(r, dates, vmax)).join('')}</tbody>
+      </table></div></div>`;
+  };
+
+  let html = `
+  <div class="datebar"><h2 style="margin:0">板块热力</h2>
+    <span class="muted small">热度 = 板块内每日去重涨停家数（含子标签）· ▸ 展开 · 点格子看当日个股</span>
+    <div class="seg" style="margin-left:auto">
+      <button id="h30" class="${heatRange === 30 ? 'on' : ''}">近30日</button>
+      <button id="h60" class="${heatRange === 60 ? 'on' : ''}">近60日</button>
+      <button id="hall" class="${heatRange === 0 ? 'on' : ''}">全部</button>
+    </div></div>`;
+
   if (startups.length) {
     html += `<div class="startups">${startups.slice(0, 8).map(s => `
       <div class="su-card" data-nm="${esc(s.nm)}">
@@ -623,62 +702,36 @@ function renderHeat() {
         ${spark(taxSeries(s.nm).slice(-15))}
       </div>`).join('')}</div>`;
   } else {
-    html += `<div class="muted small" style="margin-bottom:12px">近3日无明显启动的板块（阈值：日均≥3家且≥2.2×基线）</div>`;
+    html += `<div class="muted small" style="margin-bottom:12px">近3日无明显启动的题材（阈值：日均≥3家且≥2.2×基线）</div>`;
   }
 
-  // 热力图（最新日期在最左，无需横向拖动即见近况）
-  const win = heatRange ? D.dates.slice(-heatRange) : D.dates.slice();
-  const off = D.dates.length - win.length;
-  const dates = [...win].reverse();
-  const rows = [];
-  const addRow = (nm, lvl) => {
-    const series = taxSeries(nm).slice(off).reverse();
-    rows.push({ nm, lvl, series, sum5: taxSeries(nm).slice(-5).reduce((a, b) => a + b, 0) });
-    if (heatExpanded.has(nm))
-      for (const ch of childrenSorted(nm)) addRow(ch, lvl + 1);
-  };
-  const childrenSorted = nm => (TAX[nm] || [])
-    .filter(ch => taxCids(ch).size)
-    .sort((a, b) => taxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
-                    taxSeries(a).slice(-5).reduce((x, y) => x + y, 0));
-  for (const r of [...taxRoots].sort((a, b) =>
-    taxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
-    taxSeries(a).slice(-5).reduce((x, y) => x + y, 0))) addRow(r, 1);
+  html += heatTableHtml('题材热力', '仅已审核的产业/题材标签', themeRoots);
+  html += heatTableHtml('催化热力', '业绩/分红/重组等事件型催化，单独统计不与题材混排', catRoots);
 
-  const vmax = Math.max(4, ...rows.filter(r => r.lvl === 1).flatMap(r => r.series));
-  const step = Math.ceil(dates.length / 15);
-  html += `
-  <div class="chart-card" style="padding:0;overflow:hidden">
-    <div class="ch-h" style="padding:10px 14px 6px"><b>板块 × 日期</b>
-      <span class="muted small">▸ 展开子标签 · 点名称看成分股 · 点格子看板块当日个股</span>
-      <div class="seg">
-        <button id="h30" class="${heatRange === 30 ? 'on' : ''}">近30日</button>
-        <button id="h60" class="${heatRange === 60 ? 'on' : ''}">近60日</button>
-        <button id="hall" class="${heatRange === 0 ? 'on' : ''}">全部</button>
-      </div></div>
-    <div class="heatwrap"><table class="heatmap">
-      <thead><tr><th class="rowlab"></th>${dates.map((d, i) =>
-        `<th${i % step === 0 ? ' class="dlab"' : ''}>${i % step === 0 ? d.slice(5) : ''}</th>`).join('')}</tr></thead>
-      <tbody>${rows.map(r => heatRowHtml(r, dates, vmax)).join('')}</tbody>
-    </table></div></div>`;
-
-  // 未入树的活跃概念（帮助扩充标签库）
+  // 未审核新热点：不进正式榜，但按共振度排序绝不隐身（新题材爆发的第一现场）
+  const inTreeCids = new Set(taxRoots.flatMap(r => [...taxCids(r)]));
   const orphan = [];
   for (const cid in D.concepts) {
     if (inTreeCids.has(+cid)) continue;
     const [nm, total] = D.concepts[cid];
-    if (total < 5) continue;
+    const c = byConcept[cid];
+    let mx = 0, mxd = '';
+    for (const [dd, evs] of c.days) {
+      const n = new Set(evs.map(e => e[0])).size;
+      if (n > mx) { mx = n; mxd = dd; }
+    }
+    if (mx < 2 && total < 5) continue;
     const s5 = taxSeries(nm).slice(-5).reduce((a, b) => a + b, 0);
-    orphan.push({ cid: +cid, nm, total, s5 });
+    orphan.push({ cid: +cid, nm, total, s5, mx, mxd, stocks: c.stocks.size });
   }
-  orphan.sort((a, b) => b.s5 - a.s5 || b.total - a.total);
+  orphan.sort((a, b) => b.mx - a.mx || b.s5 - a.s5 || b.total - a.total);
   if (orphan.length) {
     html += `<div class="card" style="margin-top:14px"><div class="card-h">
-      <span class="cname muted">未入标签库的活跃概念</span>
-      <span class="hist">编辑 data/taxonomy.json 后跑 build_site.py 即可归类</span></div>
-      <div>${orphan.slice(0, 20).map(o =>
-        `<span class="concept-chip" data-cid="${o.cid}">${esc(o.nm)}
-         <span class="x">×${o.total}${o.s5 ? ' · 近5日' + o.s5 : ''}</span></span>`).join('')}</div></div>`;
+      <span class="cname muted">未审核新热点</span>
+      <span class="hist">按单日共振排序 · 确认类型后加入 tag_meta/taxonomy 再跑 build_site.py</span></div>
+      <div>${orphan.slice(0, 24).map(o =>
+        `<span class="concept-chip" data-cid="${o.cid}" ${o.mx >= 3 ? 'style="border-width:2px;font-weight:600"' : ''}>${esc(o.nm)}
+         <span class="x">${o.mx >= 3 ? '🔥共振' + o.mx + '家(' + o.mxd.slice(5) + ')' : o.stocks + '股×' + o.total}${o.s5 ? ' · 近5日' + o.s5 : ''}</span></span>`).join('')}</div></div>`;
   }
 
   $('#app').innerHTML = html;
@@ -1010,21 +1063,12 @@ function runBatch() {
         <span class="hist">近1年无涨停记录</span></div></div>`;
       continue;
     }
-    const ccount = new Map();
-    for (const { ev } of hist) for (const cid of ev[9])
-      ccount.set(cid, (ccount.get(cid) || 0) + 1);
-    const top = [...ccount].sort((a, b) => b[1] - a[1]).slice(0, 6);
     html += `<div class="card">
       <div class="card-h">
         <span class="cname" data-code="${code}">${esc(D.stocks[code])}</span>
         <span class="code muted small">${code} · ${boardOf(code)}</span>
         <span class="hist">涨停 ${hist.length} 次 · 最近 ${hist[hist.length - 1].d}</span>
-      </div>
-      <div>${top.map(([cid, n]) => {
-        const hot = hotOf(cid);
-        return `<span class="concept-chip" data-cid="${cid}">${esc(D.concepts[cid][0])}
-          <span class="x">×${n}${hot >= 3 ? ' 🔥近5日' + hot + '家' : ''}</span></span>`;
-      }).join('')}</div></div>`;
+      </div>${typedTagRows(hist, { maxTheme: 6 })}</div>`;
   }
   $('#bres').innerHTML = html;
   bindChips();
