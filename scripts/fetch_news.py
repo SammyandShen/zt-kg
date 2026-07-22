@@ -3,7 +3,12 @@
 fetch_news.py — 为涨停事件关联新闻（东财搜索接口，按股票名逐只查询）。
 
 关联规则：取发布时间在 [涨停日-2天, 涨停日+1天] 窗口内的新闻，标题含股票名的
-优先，最多存3条。news_log 记录已查过的 (code, trade_date)，重跑只补缺（幂等）。
+优先，每次查询最多存3条（URL去重累积）。
+
+幂等与成熟度：news_log 记录上次抓取时间。若上次抓取早于「涨停日+2天」，说明
+新闻窗口尚未关闭（当晚/次日的解读稿可能还没发），会自动重查补入增量；
+窗口关闭后抓过的即为终态，永久跳过。因此 run-daily 用 --days 2 即可让
+昨日记录在今天自动补齐晚间新闻。
 
 用法：
   python3 scripts/fetch_news.py               # 最新交易日
@@ -87,9 +92,11 @@ def main() -> int:
     todo = []
     for d in dates:
         for code, name in conn.execute(
-                "SELECT DISTINCT code, name FROM limit_up_events WHERE trade_date=? "
-                "AND (code, trade_date) NOT IN (SELECT code, trade_date FROM news_log) "
-                "ORDER BY code", (d,)):
+                "SELECT DISTINCT e.code, e.name FROM limit_up_events e "
+                "LEFT JOIN news_log l ON l.code=e.code AND l.trade_date=e.trade_date "
+                "WHERE e.trade_date=? AND (l.code IS NULL "
+                "  OR l.fetched_at < datetime(e.trade_date, '+2 day')) "
+                "ORDER BY e.code", (d,)):
             todo.append((d, code, name))
     if not todo:
         print("无待抓取（全部已有 news_log 记录）")
