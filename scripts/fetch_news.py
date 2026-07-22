@@ -35,11 +35,11 @@ NOISE_WORDS = ("龙虎榜", "营业部", "板块复盘", "涨停复盘", "收评
                "融资余额", "大宗交易", "解禁", "只股", "指数", "ETF")
 
 
-def search_news(keyword: str) -> list[dict]:
+def _search_once(keyword: str, sort: str) -> list[dict]:
     param = {
         "uid": "", "keyword": keyword, "type": ["cmsArticleWebOld"],
         "client": "web", "clientType": "web", "clientVersion": "curr",
-        "param": {"cmsArticleWebOld": {"searchScope": "default", "sort": "time",
+        "param": {"cmsArticleWebOld": {"searchScope": "default", "sort": sort,
                                        "pageIndex": 1, "pageSize": 30,
                                        "preTag": "", "postTag": ""}},
     }
@@ -49,6 +49,21 @@ def search_news(keyword: str) -> list[dict]:
     txt = urllib.request.urlopen(req, timeout=15).read().decode()
     payload = json.loads(txt[txt.index("(") + 1:txt.rindex(")")])
     return (payload.get("result") or {}).get("cmsArticleWebOld") or []
+
+
+def search_news(keyword: str) -> list[dict]:
+    """时间序 + 相关性序各查一次并按URL去重合并。
+
+    高曝光股每天被大量大盘综述提及，纯时间序前30条会把涨停当晚的点名稿
+    挤出窗口；相关性序（标题命中权重高）正好补回这类文章。
+    """
+    arts = _search_once(keyword, "time")
+    time.sleep(0.15)
+    seen = {a.get("url") for a in arts}
+    for a in _search_once(keyword, "default"):
+        if a.get("url") not in seen:
+            arts.append(a)
+    return arts
 
 
 def pick_news(arts: list[dict], name: str, trade_date: str) -> list[dict]:

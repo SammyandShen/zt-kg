@@ -79,8 +79,10 @@ def summarize_date(conn, claude_bin: str, d: str, force: bool) -> tuple[int, int
     lines = []
     for code, name, reason in rows:
         news = conn.execute(
-            "SELECT title, snippet FROM news WHERE code=? AND trade_date=? LIMIT 3",
-            (code, d)).fetchall()
+            "SELECT title, snippet FROM news WHERE code=? AND trade_date=? "
+            "ORDER BY (CASE WHEN title LIKE '%'||?||'%' THEN 0 ELSE 1 END), "
+            "pub_time DESC LIMIT 3",
+            (code, d, name)).fetchall()
         item = f"{code} {name} | 原因: {reason or '无'}"
         for t, sn in news:
             item += f"\n  新闻: {t} — {(sn or '')[:80]}"
