@@ -123,18 +123,19 @@ def main() -> int:
         "SELECT DISTINCT trade_date FROM limit_up_events "
         "ORDER BY trade_date DESC LIMIT ?", (args.days,))]
 
-    total = 0
+    n_err = 0
     for d in dates:
         try:
             n_stock, n_ok = summarize_date(conn, claude_bin, d, args.force)
-            total += n_ok
             if n_stock:
                 print(f"✅ {d}: {n_stock} 只待总结，写入 {n_ok} 条")
             else:
                 print(f"ℹ️ {d}: 无待总结（已全覆盖）")
         except Exception as e:
+            n_err += 1
             print(f"❌ {d}: {e}", file=sys.stderr)
-    return 0 if total or not dates else 1
+    # 全部已覆盖是正常幂等结果（exit 0）；只有实际出错才返回失败
+    return 1 if n_err else 0
 
 
 if __name__ == "__main__":

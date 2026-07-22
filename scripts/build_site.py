@@ -50,11 +50,32 @@ def hhmm(ts) -> str | None:
         return None
 
 
+# 多源优先级：同一(交易日,代码)存在多个 source 记录时只导出优先级最高的一条，
+# 防止未来接入问财/开盘啦后网页端双计（数值越小优先级越高）
+SOURCE_PRIORITY = {"ths": 0, "wencai": 1, "kpl": 2}
+
+
 def main() -> int:
     conn = common.open_db()
 
+    # 选主记录集合 chosen（临时表），后续所有事件/概念统计都只基于它
+    best: dict[tuple, tuple] = {}
+    for eid, d, code, src in conn.execute(
+            "SELECT id, trade_date, code, source FROM limit_up_events"):
+        p = SOURCE_PRIORITY.get(src, 99)
+        k = (d, code)
+        if k not in best or p < best[k][0]:
+            best[k] = (p, eid)
+    conn.execute("CREATE TEMP TABLE chosen(id INTEGER PRIMARY KEY)")
+    conn.executemany("INSERT INTO chosen VALUES(?)",
+                     [(v[1],) for v in best.values()])
+    n_dup = conn.execute("SELECT COUNT(*) FROM limit_up_events").fetchone()[0] - len(best)
+    if n_dup:
+        print(f"ℹ️ 多源去重：{n_dup} 条低优先级来源记录未导出")
+
     dates = [r[0] for r in conn.execute(
-        "SELECT DISTINCT trade_date FROM limit_up_events ORDER BY trade_date")]
+        "SELECT DISTINCT e.trade_date FROM limit_up_events e "
+        "JOIN chosen c ON c.id=e.id ORDER BY e.trade_date")]
 
     day_stats = {d: [n, h, round(r, 4) if r is not None else None, o]
                  for d, n, h, r, o in conn.execute(
@@ -64,7 +85,8 @@ def main() -> int:
     for cid, name, total, days in conn.execute("""
         SELECT c.id, c.name, COUNT(*), COUNT(DISTINCT e.trade_date)
         FROM concepts c JOIN event_concepts ec ON ec.concept_id=c.id
-        JOIN limit_up_events e ON e.id=ec.event_id GROUP BY c.id"""):
+        JOIN limit_up_events e ON e.id=ec.event_id
+        JOIN chosen ch ON ch.id=e.id GROUP BY c.id"""):
         concepts[cid] = [name, total, days]
 
     aliases = {}
@@ -75,14 +97,17 @@ def main() -> int:
     stocks = dict(conn.execute("SELECT code, name FROM stocks"))
 
     ec_map: dict[int, list[int]] = {}
-    for eid, cid in conn.execute("SELECT event_id, concept_id FROM event_concepts"):
+    for eid, cid in conn.execute(
+            "SELECT event_id, concept_id FROM event_concepts "
+            "WHERE event_id IN (SELECT id FROM chosen)"):
         ec_map.setdefault(eid, []).append(cid)
 
     events: dict[str, list] = {d: [] for d in dates}
     for row in conn.execute("""
-        SELECT id, trade_date, code, lb_count, high_days, limit_up_type, open_num,
-               order_amount, currency_value, first_time, reason_type
-        FROM limit_up_events ORDER BY trade_date, lb_count DESC, first_time"""):
+        SELECT e.id, e.trade_date, e.code, e.lb_count, e.high_days, e.limit_up_type,
+               e.open_num, e.order_amount, e.currency_value, e.first_time, e.reason_type
+        FROM limit_up_events e JOIN chosen ch ON ch.id=e.id
+        ORDER BY e.trade_date, e.lb_count DESC, e.first_time"""):
         (eid, d, code, lb, hd, lt, opens, amt, mcap, ft, reason) = row
         events[d].append([
             code, lb, hd, lt, opens,
