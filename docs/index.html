@@ -626,12 +626,13 @@ function renderHeat() {
     html += `<div class="muted small" style="margin-bottom:12px">近3日无明显启动的板块（阈值：日均≥3家且≥2.2×基线）</div>`;
   }
 
-  // 热力图
-  const dates = heatRange ? D.dates.slice(-heatRange) : D.dates;
-  const off = D.dates.length - dates.length;
+  // 热力图（最新日期在最左，无需横向拖动即见近况）
+  const win = heatRange ? D.dates.slice(-heatRange) : D.dates.slice();
+  const off = D.dates.length - win.length;
+  const dates = [...win].reverse();
   const rows = [];
   const addRow = (nm, lvl) => {
-    const series = taxSeries(nm).slice(off);
+    const series = taxSeries(nm).slice(off).reverse();
     rows.push({ nm, lvl, series, sum5: taxSeries(nm).slice(-5).reduce((a, b) => a + b, 0) });
     if (heatExpanded.has(nm))
       for (const ch of childrenSorted(nm)) addRow(ch, lvl + 1);
