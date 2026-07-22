@@ -54,10 +54,14 @@ open docs/index.html                           # 打开交互网页
 
 ## 公网部署
 
-- 纯静态站（docs/），Cloudflare Pages 免费托管，wrangler CLI 部署（deploy.sh 头部有一次性准备步骤）
-- 开关：项目根 `.deploy-enabled` 存在时 run-daily 每日 17:00 自动推送；删掉即停
+- **线上地址：https://sammyandshen.github.io/zt-kg/**（GitHub Pages，
+  仓库 SammyandShen/zt-kg 公开，main 分支 /docs 目录，含 .nojekyll）
+- deploy.sh = git add/commit/push；`.deploy-enabled` 存在时 run-daily 每日
+  17:00 自动发布（该开关文件在 .gitignore 里，删掉即停）
+- db/logs 不入库（.gitignore），公网只暴露 docs/ 静态内容
 - 移动端已适配（≤640px 压缩头部、双列启动卡、热力图横向滚动+固定首列）
-- 大陆访问 pages.dev 不稳时的升级路径：绑定自有域名，或迁阿里云 OSS 香港
+- 注意：github.io 大陆访问常需科学上网；受众反馈打不开时迁 Cloudflare
+  Pages 或阿里云 OSS 香港（站点纯静态，迁移零改动）
 
 ## 概念归一化工作流
 
