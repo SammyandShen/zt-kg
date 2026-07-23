@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-classify_tags.py — 用 claude CLI（无头模式，走订阅）让 LLM 复核标签六类分型。
+classify_tags.py — 用 claude CLI（无头模式，走订阅）让 LLM 复核标签七类分型。
 
 范围：tag_meta.json 中全部 candidate + active 条目（retired 不动；
 gen_tag_meta.OVERRIDES 里人工拍板的名字受保护不改）。每批 ~70 个标签，
@@ -36,23 +36,27 @@ PARENT_SUG_PATH = common.REPO_ROOT / "data" / "llm_parent_suggestions.json"
 
 MODEL = "claude-sonnet-5"
 TIMEOUT_SEC = 600
-TYPES = {"sector", "theme", "catalyst", "attribute", "event", "unknown"}
+TYPES = {"sector", "product", "theme", "catalyst", "attribute", "event", "unknown"}
 
-PROMPT_HEAD = """你是A股涨停原因标签的分类专家。把每个标签分到六类之一：
-- sector: 大行业/产业（如 半导体、医药、汽车、造纸）
+PROMPT_HEAD = """你是A股涨停原因标签的分类专家。把每个标签分到七类之一：
+- sector: 稳定的大行业/产业骨架（如 半导体、医药医疗、汽车、金融）
+- product: 稳定的细分行业、产品、技术、零部件或业务线（如 PCB、光模块、氦气、PEEK材料）
 - theme: 可形成资金共振的市场题材（如 人形机器人、CPO、算力租赁、低空经济）
 - catalyst: 触发涨停的事件类型，跨公司可复用（如 中报预增、定增获批、产品涨价、中标）
-- attribute: 公司相对稳定的属性/身份（如 央企、山东国资、次新股、华为供应链、苹果概念）
+- attribute: 公司相对稳定的属性/身份（如 央企、山东国资、次新股、华为供应商、苹果供应商）
 - event: 公司级、时点化的一次性事件（如 拟收购欧康诺、紫金矿业入主、拟10亿投建基地）
 - unknown: 信息不足，无法判断
 
 判断要点：
-- 产品名/细分行业名（哪怕很小众，如 盾构机、POF热收缩膜）→ sector 或 theme（能聚多股炒作的偏 theme，纯行业描述偏 sector）
+- sector 只给足以长期充当上层骨架的大产业，禁止把单个产品、材料、零部件判成 sector
+- 产品名/细分行业名默认 product；只有形成跨公司的阶段性交易叙事时才判 theme
+- 同一方向若兼有稳定业务和交易叙事，按标签措辞区分：XX供应商/客户→attribute，
+  XX产业链/XX概念→theme；不得仅凭一次合作把公司永久归入某产业
 - "XX运价""XX价格"类价格指标 → theme；"XX涨价" → catalyst
-- 带具体公司名/具体金额的 → event；"XX概念""XX系""客户XX" → attribute
+- 带具体公司名/具体金额的一次性动作 → event；"XX系""客户XX" → attribute
 - 每个标签给 c=置信度(0~1)，拿不准就低置信度并 t=unknown，禁止硬猜
 
-父节点：仅当类型为 sector/theme/catalyst 且能明确挂到下面"可选父节点"之一时填 p，否则 p 为空串。
+父节点：仅当类型为 sector/product/theme/catalyst 且能明确挂到下面"可选父节点"之一时填 p，否则 p 为空串。
 可选父节点（只能从中选，不得自造）：
 {NODES}
 

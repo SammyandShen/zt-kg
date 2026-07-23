@@ -11,12 +11,21 @@ import gen_tag_meta
 
 META_PATH = common.REPO_ROOT / "data" / "tag_meta.json"
 TAXONOMY_PATH = common.REPO_ROOT / "data" / "taxonomy.json"
-VALID_TYPES = {"sector", "theme", "catalyst", "attribute", "event", "unknown"}
+VALID_TYPES = {"sector", "product", "theme", "catalyst", "attribute", "event", "unknown"}
 VALID_STATUS = {"active", "candidate", "retired"}
+DISALLOWED_TAXONOMY_EDGES = {
+    ("半导体设备", "工业母机"),
+    ("工业母机", "轻型输送带"),
+    ("工业母机", "空分设备"),
+    ("商业航天", "氦气"),
+    ("半导体", "MLCC"),
+    ("半导体", "薄膜电容"),
+    ("半导体", "铝电解电容"),
+}
 
 
 def bucket(tag_type: str) -> str:
-    if tag_type in {"sector", "theme"}:
+    if tag_type in {"sector", "product", "theme"}:
         return "theme"
     return tag_type
 
@@ -64,6 +73,7 @@ def main() -> int:
     invalid_meta = sorted(
         name for name, value in meta.items()
         if value.get("type") not in VALID_TYPES or value.get("status") not in VALID_STATUS
+        or ("virtual" in value and not isinstance(value["virtual"], bool))
     )
     if invalid_meta:
         errors.append("tag_meta 非法枚举：" + "、".join(invalid_meta[:20]))
@@ -105,10 +115,53 @@ def main() -> int:
         errors.append("taxonomy 跨频道父子：" +
                       "、".join(f"{p}→{c}" for p, c in cross_channel[:20]))
 
+    disallowed_edges = sorted(
+        (parent, child)
+        for parent, children in taxonomy.items()
+        for child in children
+        if (parent, child) in DISALLOWED_TAXONOMY_EDGES
+    )
+    if disallowed_edges:
+        errors.append("taxonomy 含已确认错误父子：" +
+                      "、".join(f"{p}→{c}" for p, c in disallowed_edges))
+
+    inverted_sector_edges = sorted(
+        (parent, child)
+        for parent, children in taxonomy.items()
+        for child in children
+        if parent in meta and child in meta
+        and meta[parent].get("type") == "theme"
+        and meta[child].get("type") == "sector"
+    )
+    if inverted_sector_edges:
+        errors.append("题材节点下直接挂大产业（应改为 product/theme 或调整方向）：" +
+                      "、".join(f"{p}→{c}" for p, c in inverted_sector_edges[:20]))
+
+    broad_sector_drift = sorted(
+        name for name, value in meta.items()
+        if value.get("status") != "retired"
+        and value.get("type") == "sector"
+        and name not in gen_tag_meta.SECTOR_NAMES
+    )
+    if broad_sector_drift:
+        errors.append("sector 混入未登记的大产业（细分产品应为 product）：" +
+                      "、".join(broad_sector_drift[:20]))
+
+    narrative_suffix_drift = sorted(
+        name for name, value in meta.items()
+        if value.get("status") != "retired"
+        and value.get("type") not in {"theme", "event", "catalyst"}
+        and name.endswith(("产业链", "概念", "生态"))
+        and "全产业链" not in name
+    )
+    if narrative_suffix_drift:
+        errors.append("产业链/概念/生态叙事未归 theme：" +
+                      "、".join(narrative_suffix_drift[:20]))
+
     active_heat = {
         name for name, value in meta.items()
         if value.get("status") == "active"
-        and value.get("type") in {"sector", "theme", "catalyst"}
+        and value.get("type") in {"sector", "product", "theme", "catalyst"}
     }
     missing_from_tree = sorted(active_heat - nodes)
     if missing_from_tree:
@@ -152,6 +205,7 @@ def main() -> int:
 
     reviewed = Counter((value["status"], value["type"]) for value in meta.values())
     print(f"数据库概念 {len(concepts)}；tag_meta {len(meta)}；taxonomy 节点 {len(nodes)}")
+    print(f"  virtual    {sum(bool(value.get('virtual')) for value in meta.values())}")
     for (status, tag_type), count in sorted(reviewed.items()):
         print(f"  {status:<10} {tag_type:<10} {count}")
     if warnings:

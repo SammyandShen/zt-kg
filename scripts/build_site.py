@@ -29,12 +29,13 @@ CST = timezone(timedelta(hours=8))
 
 
 def load_tag_meta() -> dict:
-    """{标签名: [type, status]}，未登记的标签前端按 unknown/candidate 处理。"""
+    """{标签名: [type, status, virtual]}，未登记的标签按 unknown/candidate 处理。"""
     if not TAG_META_PATH.exists():
         return {}
     meta = json.loads(TAG_META_PATH.read_text(encoding="utf-8"))
     meta.pop("$note", None)
-    return {k: [v.get("type", "unknown"), v.get("status", "candidate")]
+    return {k: [v.get("type", "unknown"), v.get("status", "candidate"),
+                bool(v.get("virtual", False))]
             for k, v in meta.items()}
 
 
@@ -73,7 +74,7 @@ def validate_taxonomy(taxonomy: dict, tag_meta: dict) -> None:
 
     def bucket(name: str) -> str | None:
         tag_type = (tag_meta.get(name) or ["unknown"])[0]
-        if tag_type in ("sector", "theme"):
+        if tag_type in ("sector", "product", "theme"):
             return "题材"
         return {
             "catalyst": "催化",
@@ -88,6 +89,28 @@ def validate_taxonomy(taxonomy: dict, tag_meta: dict) -> None:
         if bucket(parent) != bucket(child)
     )
     errors = []
+    inverted_sector_edges = sorted(
+        (parent, child)
+        for parent, children in taxonomy.items()
+        for child in children
+        if (tag_meta.get(parent) or ["unknown"])[0] == "theme"
+        and (tag_meta.get(child) or ["unknown"])[0] == "sector"
+    )
+    disallowed_edges = {
+        ("半导体设备", "工业母机"),
+        ("工业母机", "轻型输送带"),
+        ("工业母机", "空分设备"),
+        ("商业航天", "氦气"),
+        ("半导体", "MLCC"),
+        ("半导体", "薄膜电容"),
+        ("半导体", "铝电解电容"),
+    }
+    found_disallowed = sorted(
+        (parent, child)
+        for parent, children in taxonomy.items()
+        for child in children
+        if (parent, child) in disallowed_edges
+    )
     if missing:
         errors.append("缺少 tag_meta：" + "、".join(missing[:20]))
     if non_active:
@@ -95,6 +118,12 @@ def validate_taxonomy(taxonomy: dict, tag_meta: dict) -> None:
     if cross_channel:
         errors.append("跨频道父子：" +
                       "、".join(f"{p}→{c}" for p, c in cross_channel[:20]))
+    if inverted_sector_edges:
+        errors.append("题材下直接挂大产业：" +
+                      "、".join(f"{p}→{c}" for p, c in inverted_sector_edges[:20]))
+    if found_disallowed:
+        errors.append("已确认错误父子：" +
+                      "、".join(f"{p}→{c}" for p, c in found_disallowed))
     if errors:
         raise ValueError("taxonomy 质量校验失败；" + "；".join(errors))
 
