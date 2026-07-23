@@ -42,12 +42,17 @@ ATTRIBUTE_PAT = re.compile(r"国资|央企|国企|次新|ST|龙头$|^客户|^供
 
 OVERRIDES = {
     "国企改革": "theme",        # 市场题材，非属性（评审纠错点）
-    "华为昇腾": "theme", "SK海力士": "theme", "小米汽车": "theme",
-    "华为合作": "unknown",      # 待逐条审核后再定
+    "华为昇腾": "theme", "小米汽车": "theme",
+    "SK海力士产业链": "attribute",  # 企业生态/供应关系属于稳定属性
+    "华为合作": "attribute",
     "重组胶原蛋白": "theme",     # "重组"是生物技术，防误判
-    "海外业务": "attribute", "出口": "theme",
-    "海南自贸区": "theme", "3D打印": "theme",
+    "海外业务": "attribute", "出口": "attribute",
+    "海南自贸港": "theme", "粤港澳大湾区": "theme",
+    "国产替代": "theme", "3D打印": "theme",
+    "次新股": "attribute", "特斯拉产业链": "attribute",
+    "海外产能": "attribute", "全球化产能": "attribute",
     "券商看好": "event", "券商推荐": "event",
+    "中标": "catalyst",
     "H股上市": "catalyst",  # 涨停语境=公告拟发H股，非公司属性（LLM复核曾误判attribute）
     "产品涨价": "catalyst", "超跌反弹": "catalyst",
 }
@@ -96,6 +101,15 @@ def main() -> int:
         "status: active(已审核,可进热度)/candidate(待审核,不进热度)/retired。"
         "频道由类型决定：sector|theme→题材热度，catalyst→催化热度，其余不进。"
         "由 gen_tag_meta.py 生成草稿（已有条目不会被覆盖），人工修订后即为事实源。")
+
+    # OVERRIDES 是人工拍板规则，不仅保护新条目，也纠正已存在条目的类型漂移；
+    # retired 的展开/别名源标签不复活。
+    corrected = 0
+    for name, tag_type in OVERRIDES.items():
+        if (name in meta and meta[name].get("status") != "retired"
+                and meta[name].get("type") != tag_type):
+            meta[name]["type"] = tag_type
+            corrected += 1
 
     cat_nodes = set().union(*[subtree(tax, r) for r in CATALYST_ROOTS])
     attr_nodes = set().union(*[subtree(tax, r) for r in ATTRIBUTE_ROOTS])
@@ -156,7 +170,7 @@ def main() -> int:
     for v in meta.values():
         stats[(v["status"], v["type"])] = stats.get((v["status"], v["type"]), 0) + 1
     print(f"tag_meta.json: 共 {len(meta)} 条（本次新增 树内{added['tree']} / 候选{added['cand']}"
-          f" / 长尾{added.get('all', 0)}）")
+          f" / 长尾{added.get('all', 0)}；人工规则纠偏{corrected}）")
     for (st_, t), n in sorted(stats.items()):
         print(f"  {st_:<10} {t:<10} {n}")
     return 0

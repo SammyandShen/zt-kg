@@ -468,8 +468,46 @@ const META = D.tag_meta || {};                       // name -> [type, status]
 for (const nm in FIX)                                // 本地暂存的类型/状态先生效
   if (FIX[nm].type) META[nm] = [FIX[nm].type, FIX[nm].status || 'active'];
 const typeOf = nm => (META[nm] || ['unknown'])[0];
+const statusOf = nm => (META[nm] || ['unknown', 'candidate'])[1];
 const isTheme = nm => { const t = typeOf(nm); return t === 'sector' || t === 'theme'; };
 const isCatalyst = nm => typeOf(nm) === 'catalyst';
+const heatBucketOf = nm => isTheme(nm) ? 'theme' : isCatalyst(nm) ? 'catalyst' : null;
+const isActiveTheme = nm => statusOf(nm) === 'active' && isTheme(nm);
+const isActiveCatalyst = nm => statusOf(nm) === 'active' && isCatalyst(nm);
+const _heatCidsCache = {};
+function heatTaxCids(name, stack) {       // 正式热力：仅 active 且与根节点同频道
+  if (_heatCidsCache[name]) return _heatCidsCache[name];
+  const bucket = heatBucketOf(name);
+  if (!bucket || statusOf(name) !== 'active') return new Set();
+  stack = stack || new Set();
+  if (stack.has(name)) return new Set();
+  stack.add(name);
+  const s = new Set();
+  const own = nameToCid[name];
+  if (own != null && byConcept[own]) s.add(own);
+  for (const ch of TAX[name] || []) {
+    if (statusOf(ch) !== 'active' || heatBucketOf(ch) !== bucket) continue;
+    for (const c of heatTaxCids(ch, stack)) s.add(c);
+  }
+  stack.delete(name);
+  return _heatCidsCache[name] = s;
+}
+const _heatSeriesCache = {};
+function heatTaxSeries(name) {
+  if (_heatSeriesCache[name]) return _heatSeriesCache[name];
+  const cids = heatTaxCids(name);
+  return _heatSeriesCache[name] = D.dates.map(d => {
+    const codes = new Set();
+    for (const cid of cids)
+      for (const ev of (byConcept[cid].days.get(d) || [])) codes.add(ev[0]);
+    return codes.size;
+  });
+}
+const heatChildren = name => {
+  const bucket = heatBucketOf(name);
+  return (TAX[name] || []).filter(ch =>
+    statusOf(ch) === 'active' && heatBucketOf(ch) === bucket && heatTaxCids(ch).size);
+};
 const TYPE_LABEL = { sector: '产业', theme: '题材', catalyst: '催化',
                      attribute: '属性', event: '事件', unknown: '未审核' };
 
@@ -862,22 +900,22 @@ const heatExpanded = new Set();
 function renderHeat() {
   if (!taxRoots.length) { $('#app').innerHTML = '<div class="empty">未配置 taxonomy.json</div>'; return; }
   const sortBy5 = arr => arr.sort((a, b) =>
-    taxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
-    taxSeries(a).slice(-5).reduce((x, y) => x + y, 0));
-  const themeRoots = sortBy5(taxRoots.filter(isTheme));
-  const catRoots = sortBy5(taxRoots.filter(isCatalyst));
+    heatTaxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
+    heatTaxSeries(a).slice(-5).reduce((x, y) => x + y, 0));
+  const themeRoots = sortBy5(taxRoots.filter(isActiveTheme));
+  const catRoots = sortBy5(taxRoots.filter(isActiveCatalyst));
 
   // 题材启动榜：仅已审核的 sector/theme 树节点参与判定
   const themeNodes = new Set();
   const collect = n => {
     if (themeNodes.has(n)) return;
-    if (isTheme(n)) themeNodes.add(n);
-    (TAX[n] || []).forEach(collect);
+    if (isActiveTheme(n)) themeNodes.add(n);
+    heatChildren(n).forEach(collect);
   };
   themeRoots.forEach(collect);
   const startups = [];
   for (const nm of themeNodes) {
-    const s = startupOf(taxSeries(nm));
+    const s = startupOf(heatTaxSeries(nm));
     if (s && s.recent >= 3 && s.ratio >= 2.2)
       startups.push({ nm, ...s, isNew: s.base < 0.8 });
   }
@@ -891,10 +929,10 @@ function renderHeat() {
 
   const heatTableHtml = (title, hint, roots, rgb) => {
     const rows = [];
-    const childrenSorted = nm => sortBy5((TAX[nm] || []).filter(ch => taxCids(ch).size));
+    const childrenSorted = nm => sortBy5(heatChildren(nm));
     const addRow = (nm, lvl) => {
-      rows.push({ nm, lvl, series: taxSeries(nm).slice(off).reverse(),
-                  sum5: taxSeries(nm).slice(-5).reduce((a, b) => a + b, 0) });
+      rows.push({ nm, lvl, series: heatTaxSeries(nm).slice(off).reverse(),
+                  sum5: heatTaxSeries(nm).slice(-5).reduce((a, b) => a + b, 0) });
       if (heatExpanded.has(nm))
         for (const ch of childrenSorted(nm)) addRow(ch, lvl + 1);
     };
@@ -926,7 +964,7 @@ function renderHeat() {
       <div class="su-card" data-nm="${esc(s.nm)}">
         <div class="nm">${esc(s.nm)} ${s.isNew ? '<span class="tagnew">新启动</span>' : '<span class="tagnew" style="background:var(--gold)">加速</span>'}</div>
         <div class="meta">近3日均 ${s.recent.toFixed(1)} 家 / 前15日均 ${s.base.toFixed(1)} 家 · ${s.ratio.toFixed(1)}×</div>
-        ${spark(taxSeries(s.nm).slice(-15))}
+        ${spark(heatTaxSeries(s.nm).slice(-15))}
       </div>`).join('')}</div>`;
   } else {
     html += `<div class="muted small" style="margin-bottom:12px">近3日无明显启动的题材（阈值：日均≥3家且≥2.2×基线）</div>`;
@@ -936,7 +974,7 @@ function renderHeat() {
   const topRoots = themeRoots.slice(0, 8);
   if (topRoots.length >= 3 && win.length >= 8) {
     const roll = nm => {
-      const s = taxSeries(nm);
+      const s = heatTaxSeries(nm);
       return win.map((_, i) => {
         const gi = off + i;
         let t = 0;
@@ -975,7 +1013,13 @@ function renderHeat() {
   html += heatTableHtml('催化热力', '业绩/分红/重组等事件型催化，单独统计不与题材混排', catRoots, '0,166,150');
 
   // 未审核新热点：不进正式榜，但按共振度排序绝不隐身（新题材爆发的第一现场）
-  const inTreeCids = new Set(taxRoots.flatMap(r => [...taxCids(r)]));
+  const inTreeCids = new Set();
+  const allTaxNodes = new Set([...Object.keys(TAX), ...Object.values(TAX).flat()]);
+  for (const nm of allTaxNodes) {
+    if (statusOf(nm) !== 'active') continue;
+    const cid = nameToCid[nm];
+    if (cid != null && byConcept[cid]) inTreeCids.add(cid);
+  }
   const orphan = [];
   for (const cid in D.concepts) {
     if (inTreeCids.has(+cid)) continue;
@@ -1035,7 +1079,7 @@ function renderHeat() {
 }
 function heatRowHtml(r, dates, vmax, rgb) {
   rgb = rgb || '46,107,230';
-  const hasKids = (TAX[r.nm] || []).some(ch => taxCids(ch).size);
+  const hasKids = heatChildren(r.nm).length > 0;
   const cells = r.series.map((v, i) => {
     const a = v ? Math.min(1, Math.sqrt(v / vmax)) : 0;
     const fg = a > 0.55 ? '#fff' : 'var(--ink2)';
@@ -1196,7 +1240,7 @@ function renderTrend() {
 
 /* ---------- 视图6：板块×当日下钻 ---------- */
 function renderTagDay(nm, d) {
-  const cids = taxCids(nm);
+  const cids = heatTaxCids(nm);
   if (!cids.size || !D.dates.includes(d)) {
     $('#app').innerHTML = '<div class="empty">无此板块或日期</div>'; return;
   }
@@ -1205,15 +1249,15 @@ function renderTagDay(nm, d) {
     for (const ev of (byConcept[cid].days.get(d) || [])) evMap.set(ev[0], ev);
   const evs = [...evMap.values()].sort((a, b) => (b[1] || 1) - (a[1] || 1));
   const di = D.dates.indexOf(d);
-  const series = taxSeries(nm);
+  const series = heatTaxSeries(nm);
   const cid0 = nameToCid[nm];
 
   // 按子标签分组（子标签当日≥1只即成组）
-  const kids = (TAX[nm] || []).filter(ch => taxCids(ch).size);
+  const kids = heatChildren(nm);
   const groups = [];
   const covered = new Set();
   for (const ch of kids) {
-    const chCids = taxCids(ch);
+    const chCids = heatTaxCids(ch);
     const list = evs.filter(ev => ev[9].some(c => chCids.has(c)));
     if (list.length) { groups.push([ch, list]); list.forEach(ev => covered.add(ev[0])); }
   }

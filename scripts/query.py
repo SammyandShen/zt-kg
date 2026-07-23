@@ -85,9 +85,11 @@ def cmd_concept(conn, name: str, days: int) -> int:
 
     print("\n成分股（按涨停次数）：")
     for code, sname, cnt, maxlb, last in conn.execute("""
-        SELECT e.code, e.name, COUNT(*) n, MAX(e.lb_count), MAX(e.trade_date)
+        SELECT e.code, e.name, COUNT(*) AS n, MAX(e.lb_count),
+               MAX(e.trade_date) AS last_date
         FROM event_concepts ec JOIN limit_up_events e ON e.id=ec.event_id
-        WHERE ec.concept_id=? GROUP BY e.code ORDER BY n DESC, last DESC LIMIT 40""", (cid,)):
+        WHERE ec.concept_id=? GROUP BY e.code
+        ORDER BY n DESC, last_date DESC LIMIT 40""", (cid,)):
         print(f"  {sname}({code}) [{common.board_of(code)}] ×{cnt} 最高{maxlb or '?'}板 最近{last}")
     return 0
 

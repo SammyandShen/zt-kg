@@ -63,6 +63,42 @@ def load_taxonomy(known_names: set[str]) -> dict:
     return tax
 
 
+def validate_taxonomy(taxonomy: dict, tag_meta: dict) -> None:
+    """正式 taxonomy 只能包含 active 节点，且父子必须在同一展示频道。"""
+    nodes = set(taxonomy)
+    nodes.update(child for kids in taxonomy.values() for child in kids)
+    missing = sorted(n for n in nodes if n not in tag_meta)
+    non_active = sorted(n for n in nodes
+                        if n in tag_meta and tag_meta[n][1] != "active")
+
+    def bucket(name: str) -> str | None:
+        tag_type = (tag_meta.get(name) or ["unknown"])[0]
+        if tag_type in ("sector", "theme"):
+            return "题材"
+        return {
+            "catalyst": "催化",
+            "attribute": "属性",
+            "event": "事件",
+        }.get(tag_type)
+
+    cross_channel = sorted(
+        (parent, child)
+        for parent, children in taxonomy.items()
+        for child in children
+        if bucket(parent) != bucket(child)
+    )
+    errors = []
+    if missing:
+        errors.append("缺少 tag_meta：" + "、".join(missing[:20]))
+    if non_active:
+        errors.append("非 active 节点：" + "、".join(non_active[:20]))
+    if cross_channel:
+        errors.append("跨频道父子：" +
+                      "、".join(f"{p}→{c}" for p, c in cross_channel[:20]))
+    if errors:
+        raise ValueError("taxonomy 质量校验失败；" + "；".join(errors))
+
+
 def hhmm(ts) -> str | None:
     if not ts:
         return None
@@ -162,14 +198,7 @@ def main() -> int:
     known_names = {v[0] for v in concepts.values()}
     tag_meta = load_tag_meta()
     taxonomy = load_taxonomy(known_names)
-    # 频道一致性护栏：题材树里不该挂催化子节点，反之亦然
-    bucket = lambda n: {"sector": "题材", "theme": "题材", "catalyst": "催化"}.get(
-        (tag_meta.get(n) or ["?"])[0])
-    bad = [(p, c) for p, kids in taxonomy.items() for c in kids
-           if bucket(p) and bucket(c) and bucket(p) != bucket(c)]
-    if bad:
-        print("⚠️ taxonomy 频道错位（题材/催化混挂，请修正）：" +
-              "、".join(f"{p}→{c}" for p, c in bad[:10]))
+    validate_taxonomy(taxonomy, tag_meta)
 
     data = {
         "generated_at": common.now_iso(),
