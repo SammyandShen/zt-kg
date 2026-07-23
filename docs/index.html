@@ -222,6 +222,23 @@
   tr.touchrow td { opacity: .72; }
   tr.touchrow td:first-child { border-left: 3px dashed var(--ink3); }
 
+  /* 标签类型分区（个股页/批量归类）：左侧类型色标 + 右侧内容 */
+  .trow { display: flex; gap: 10px; margin-top: 8px; align-items: flex-start; }
+  .tlabel { flex: 0 0 72px; text-align: center; font-size: 11px; font-weight: 600;
+            padding: 3px 0; border-radius: 6px; margin-top: 3px; }
+  .tl-theme { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-line); }
+  .tl-cat   { background: var(--teal-soft);   color: var(--teal);   border: 1px solid var(--teal-line); }
+  .tl-attr  { background: var(--gold-soft);   color: var(--gold);   border: 1px solid var(--gold); }
+  .tl-evt   { background: var(--surface2);    color: var(--ink2);   border: 1px dashed var(--ink3); }
+  .trow .tbody { flex: 1; min-width: 0; }
+  .concept-chip.c-cat { background: var(--teal-soft); color: var(--teal); border-color: var(--teal-line); }
+  .concept-chip.c-cat:hover { background: var(--teal); color: #fff; }
+  .concept-chip.c-attr { background: var(--gold-soft); color: var(--gold); border-color: var(--gold); }
+  .concept-chip.c-attr:hover { background: var(--gold); color: #fff; }
+  .concept-chip.c-evt { background: var(--surface2); color: var(--ink2);
+                        border-style: dashed; border-color: var(--ink3); }
+  .concept-chip.c-evt:hover { background: var(--ink3); color: var(--bg); }
+
   /* 题材树（个股页） */
   .tagtree { margin-top: 4px; }
   .tagtree .tnode { display: flex; align-items: center; gap: 6px; padding: 1px 0; }
@@ -271,6 +288,8 @@
     th, td { padding: 6px 8px; }
     .startups { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
     .su-card { min-width: 0; }
+    .trow { gap: 6px; }
+    .tlabel { flex-basis: 58px; font-size: 10px; }
   }
 </style>
 </head>
@@ -474,8 +493,8 @@ function renderDate(d) {
   </div>`;
 
   if (catas.length) {
-    html += `<div class="card" style="padding:8px 14px"><span class="muted small">今日催化：</span>
-      ${catas.map(g => `<span class="concept-chip" data-cid="${g.cid}" style="padding:2px 10px">
+    html += `<div class="card" style="padding:8px 14px"><span class="tlabel tl-cat" style="padding:3px 10px">今日催化</span>
+      ${catas.map(g => `<span class="concept-chip c-cat" data-cid="${g.cid}" style="padding:2px 10px">
         ${esc(g.nm)} <span class="x">${g.l.length}只</span></span>`).join('')}</div>`;
   }
 
@@ -656,14 +675,14 @@ function typedTagRows(hist, opts = {}) {
   const ent = [...ccount].sort((a, b) => b[1] - a[1])
     .map(([cid, n]) => ({ cid, n, nm: D.concepts[cid][0], t: typeOf(D.concepts[cid][0]) }));
   const pick = ts => ent.filter(e => ts.includes(e.t));
-  const chip = (e, hot) => {
+  const chip = (e, hot, cls) => {
     const h = hot ? hotOf(e.cid) : 0;
-    return `<span class="concept-chip" data-cid="${e.cid}">${esc(e.nm)}
+    return `<span class="concept-chip${cls ? ' ' + cls : ''}" data-cid="${e.cid}">${esc(e.nm)}
       <span class="x">×${e.n}${h >= 3 ? ' 🔥近5日' + h + '家' : ''}</span></span>`;
   };
-  const line = (label, list, hot, cap) => list.length
-    ? `<div style="margin-top:4px"><span class="muted small" style="margin-right:6px">${label}</span>${
-        list.slice(0, cap || 99).map(e => chip(e, hot)).join('')}</div>` : '';
+  const line = (label, lcls, list, hot, cap, ccls) => list.length
+    ? `<div class="trow"><span class="tlabel ${lcls}">${label}</span><div class="tbody">${
+        list.slice(0, cap || 99).map(e => chip(e, hot, ccls)).join('')}</div></div>` : '';
 
   // 主线题材：个股页按 taxonomy 树状展示（共享祖先合并），其余场景保持扁平 chips
   const themes = pick(['sector', 'theme']);
@@ -688,16 +707,17 @@ function typedTagRows(hist, opts = {}) {
       return `<div class="tnode" style="padding-left:${depth * 18}px">${branch}${body}</div>`
         + [...node.kids].map(([k, v]) => renderNode(k, v, depth + 1)).join('');
     };
-    themeHtml = `<div style="margin-top:4px"><span class="muted small">主线题材</span>
-      <div class="tagtree">${[...root].map(([k, v]) => renderNode(k, v, 0)).join('')}</div></div>`;
+    themeHtml = `<div class="trow"><span class="tlabel tl-theme">主线题材</span>
+      <div class="tbody"><div class="tagtree" style="margin-top:0">${
+        [...root].map(([k, v]) => renderNode(k, v, 0)).join('')}</div></div></div>`;
   } else {
-    themeHtml = line('主线题材', themes, true, opts.maxTheme);
+    themeHtml = line('主线题材', 'tl-theme', themes, true, opts.maxTheme);
   }
 
   const html = themeHtml
-             + line('催化', pick(['catalyst']), false, 5)
-             + line('属性', pick(['attribute']), false, 5)
-             + line('事件/未审核', pick(['event', 'unknown']), false, 4);
+             + line('催化', 'tl-cat', pick(['catalyst']), false, 5, 'c-cat')
+             + line('属性', 'tl-attr', pick(['attribute']), false, 5, 'c-attr')
+             + line('事件·未审核', 'tl-evt', pick(['event', 'unknown']), false, 4, 'c-evt');
   return html || '<div class="muted small" style="margin-top:4px">无概念标签</div>';
 }
 
