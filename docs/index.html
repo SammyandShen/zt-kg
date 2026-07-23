@@ -160,6 +160,15 @@
                          border-radius: 0 8px 8px 0; background: var(--accent-soft);
                          color: var(--accent); cursor: pointer; font-size: 12px; }
   .focus-picker button:hover { background: var(--accent); color: #fff; }
+  .metric-guide { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+                  gap: 1px; margin-bottom: 12px; overflow: hidden;
+                  border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
+  .metric-item { padding: 7px 10px; background: var(--surface); color: var(--ink2);
+                 font-size: 10px; line-height: 1.45; }
+  .metric-item b { display: block; margin-bottom: 1px; color: var(--ink); font-size: 11px; }
+  .metric-item code { color: var(--accent); font: inherit; }
+  .tags-metric-guide { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .tags-metric-guide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .layer-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
                     gap: 10px; margin-bottom: 14px; }
   .layer-card { --layer:var(--accent); --layer-soft:var(--accent-soft); background: var(--surface);
@@ -325,11 +334,20 @@
   .trow { display: flex; gap: 10px; margin-top: 8px; align-items: flex-start; }
   .tlabel { flex: 0 0 72px; text-align: center; font-size: 11px; font-weight: 600;
             padding: 3px 0; border-radius: 6px; margin-top: 3px; }
-  .tl-theme { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-line); }
+  .tl-sector { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-line); }
+  .tl-product { background: var(--product-soft); color: var(--product); border: 1px solid var(--product); }
+  .tl-theme { background: var(--theme-soft); color: var(--theme); border: 1px solid var(--theme); }
+  .tl-mixed { background: var(--surface2); color: var(--ink2); border: 1px solid var(--line); }
   .tl-cat   { background: var(--teal-soft);   color: var(--teal);   border: 1px solid var(--teal-line); }
   .tl-attr  { background: var(--gold-soft);   color: var(--gold);   border: 1px solid var(--gold); }
   .tl-evt   { background: var(--surface2);    color: var(--ink2);   border: 1px dashed var(--ink3); }
   .trow .tbody { flex: 1; min-width: 0; }
+  .concept-chip.c-sector { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-line); }
+  .concept-chip.c-sector:hover { background: var(--accent); color: #fff; }
+  .concept-chip.c-product { background: var(--product-soft); color: var(--product); border-color: var(--product); }
+  .concept-chip.c-product:hover { background: var(--product); color: #fff; }
+  .concept-chip.c-theme { background: var(--theme-soft); color: var(--theme); border-color: var(--theme); }
+  .concept-chip.c-theme:hover { background: var(--theme); color: #fff; }
   .concept-chip.c-cat { background: var(--teal-soft); color: var(--teal); border-color: var(--teal-line); }
   .concept-chip.c-cat:hover { background: var(--teal); color: #fff; }
   .concept-chip.c-attr { background: var(--gold-soft); color: var(--gold); border-color: var(--gold); }
@@ -340,6 +358,9 @@
 
   /* 全局筛选：选中态 = 实心填充 */
   .concept-chip.sel { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .concept-chip.c-sector.sel { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .concept-chip.c-product.sel { background: var(--product); color: #fff; border-color: var(--product); }
+  .concept-chip.c-theme.sel { background: var(--theme); color: #fff; border-color: var(--theme); }
   .concept-chip.c-cat.sel { background: var(--teal); color: #fff; border-color: var(--teal); }
   .concept-chip.c-attr.sel { background: var(--gold); color: #fff; border-color: var(--gold); }
   .concept-chip.c-evt.sel { background: var(--ink3); color: var(--bg); border-color: var(--ink3); border-style: solid; }
@@ -362,6 +383,12 @@
   .pnode .pn { overflow: hidden; text-overflow: ellipsis; }
   .pnode .hb { flex: none; height: 8px; border-radius: 2px; background: var(--accent); opacity: .75; }
   .pnode .hn { font-size: 10px; color: var(--ink3); flex: none; }
+  .node-kind { flex: none; padding: 0 3px; border-radius: 3px; font-size: 8px; line-height: 13px; }
+  .node-kind.sector { color: var(--accent); background: var(--accent-soft); }
+  .node-kind.product { color: var(--product); background: var(--product-soft); }
+  .node-kind.theme { color: var(--theme); background: var(--theme-soft); }
+  .node-kind.catalyst { color: var(--teal); background: var(--teal-soft); }
+  .node-kind.other, .node-kind.group { color: var(--ink3); background: var(--surface2); }
   .lc { font-size: 9px; border-radius: 4px; padding: 0 4px; flex: none; line-height: 15px; }
   .lc-start { background: var(--teal); color: #fff; }
   .lc-hot { background: var(--up); color: #fff; }
@@ -396,7 +423,17 @@
   .tagtree .tnode { display: flex; align-items: center; gap: 6px; padding: 1px 0; }
   .tagtree .tanc { color: var(--ink2); font-size: 12px; cursor: pointer; }
   .tagtree .tanc:hover { color: var(--accent); }
+  .tagtree .tmini { display: inline-block; margin-left: 5px; padding: 0 4px; border-radius: 4px;
+                    font-size: 9px; line-height: 15px; font-weight: 600; }
   .tagtree .tbranch { color: var(--ink3); font-size: 11px; font-family: ui-monospace, monospace; }
+
+  /* 概念详情：上级/下级按真实标签类型分行，不再把产业、产品、题材统称为子标签 */
+  .typed-hierarchy { display: grid; gap: 7px; margin-top: 11px; }
+  .hier-row { display: flex; align-items: flex-start; gap: 9px; }
+  .hier-row .type-badge { flex: 0 0 88px; margin-top: 4px; white-space: nowrap; }
+  .hier-tags { flex: 1; min-width: 0; }
+  .type-badge.group { color: var(--ink2); background: var(--surface2); border: 1px dashed var(--ink3); }
+  .type-badge.other { color: var(--ink3); background: var(--surface2); }
 
   /* 手动分类弹层 */
   .clsbtn { border: 1px solid var(--line); background: var(--surface); color: var(--ink3);
@@ -442,6 +479,7 @@
     .heat-guide .guide-copy { min-width: 100%; }
     .focus-picker { flex: 1; min-width: 0; }
     .focus-picker input { flex: 1; width: auto; }
+    .metric-guide, .tags-metric-guide { grid-template-columns: 1fr; }
     .layer-overview { grid-template-columns: 1fr; }
     .cross-grid { grid-template-columns: 1fr; }
     .cross-col + .cross-col { border-left: 0; border-top: 1px solid var(--line); }
@@ -618,6 +656,17 @@ const heatChildren = name => {
 const TYPE_LABEL = { sector: '产业', product: '细分', theme: '题材', catalyst: '催化',
                      attribute: '属性', event: '事件', unknown: '未审核' };
 const typeLabelOf = nm => virtualOf(nm) ? '分组' : (TYPE_LABEL[typeOf(nm)] || typeOf(nm));
+const TAG_TYPE_VIEW = {
+  sector:   { label: '产业', badge: 'sector', chip: 'c-sector', row: 'tl-sector' },
+  product:  { label: '细分产品', badge: 'product', chip: 'c-product', row: 'tl-product' },
+  theme:    { label: '交易题材', badge: 'theme', chip: 'c-theme', row: 'tl-theme' },
+  catalyst: { label: '催化', badge: 'catalyst', chip: 'c-cat', row: 'tl-cat' },
+  attribute:{ label: '属性', badge: 'other', chip: 'c-attr', row: 'tl-attr' },
+  event:    { label: '事件', badge: 'other', chip: 'c-evt', row: 'tl-evt' },
+  unknown:  { label: '未审核', badge: 'other', chip: 'c-evt', row: 'tl-evt' },
+  group:    { label: '结构分组', badge: 'group', chip: 'c-evt', row: 'tl-mixed' },
+};
+const tagTypeViewOf = nm => TAG_TYPE_VIEW[virtualOf(nm) ? 'group' : typeOf(nm)] || TAG_TYPE_VIEW.unknown;
 
 /* ---------- 路由 ---------- */
 function go(hash) { location.hash = hash; }
@@ -784,6 +833,46 @@ function bindChips() {
 function weekday(d) {
   return '周' + '日一二三四五六'[new Date(d + 'T00:00:00').getDay()];
 }
+function eventNewsHtml(code, d, key, colspan) {
+  const news = (D.news || {})[code + '|' + d] || [];
+  const brief = (D.briefs || {})[code + '|' + d] || '';
+  if (!news.length && !brief)
+    return { cell: '<span class="muted small">—</span>', row: '' };
+  return {
+    cell: `<button class="newsbtn" data-news-key="${esc(key)}">📰 ${news.length || '✨'}</button>`,
+    row: `<tr class="newsrow" data-for="${esc(key)}" style="display:none"><td colspan="${colspan}">
+      ${brief ? `<div class="brief">${esc(brief)}</div>` : ''}
+      ${news.map(n => `<div class="newsitem">·
+        <a href="${esc(n[1])}" target="_blank" rel="noopener">${esc(n[0])}</a>
+        <span class="nmeta">${esc(n[2] || '')} ${esc(n[3] || '')}</span></div>`).join('')}
+      </td></tr>`,
+  };
+}
+function bindNewsRows() {
+  document.querySelectorAll('.newsbtn[data-news-key]').forEach(el =>
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      const row = document.querySelector(`tr.newsrow[data-for="${el.dataset.newsKey}"]`);
+      if (row) row.style.display = row.style.display === 'none' ? '' : 'none';
+    }));
+}
+function typedHierarchyHtml(names, direction) {
+  if (!names.length) return '';
+  const groups = new Map();
+  for (const nm of names) {
+    const key = virtualOf(nm) ? 'group' : typeOf(nm);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(nm);
+  }
+  const order = ['group', 'sector', 'product', 'theme', 'catalyst', 'attribute', 'event', 'unknown'];
+  return order.filter(k => groups.has(k)).map(k => {
+    const view = TAG_TYPE_VIEW[k] || TAG_TYPE_VIEW.unknown;
+    return `<div class="hier-row"><span class="type-badge ${view.badge}">${direction}${view.label}</span>
+      <div class="hier-tags">${groups.get(k).map(nm =>
+        `<span class="concept-chip ${view.chip}" data-nm="${esc(nm)}" style="padding:2px 9px">${esc(nm)}</span>`
+      ).join('')}</div></div>`;
+  }).join('');
+}
 
 /* ---------- 视图2：概念详情 ---------- */
 let conceptRange = 60;
@@ -800,26 +889,40 @@ function renderConcept(cid) {
     const maxLb = Math.max(...evs.map(x => x.ev[1] || 1));
     const lastX = evs[evs.length - 1];
     return { code, cnt, maxLb, last: lastX.d,
-             lastFt: lastX.ev[7], lastLt: lastX.ev[3], lastAmt: lastX.ev[5] };
+             lastFt: lastX.ev[7], lastLt: lastX.ev[3], lastOpen: lastX.ev[4],
+             lastAmt: lastX.ev[5], lastMcap: lastX.ev[6], lastReason: lastX.ev[8] };
   }).sort((a, b) => b.cnt - a.cnt || (a.last < b.last ? 1 : -1));
 
   const parents = taxParentsOf(cname);
   const kids = (TAX[cname] || []).filter(ch => taxCids(ch).size);
-  const relChip = nm => `<span class="concept-chip" data-nm="${esc(nm)}" style="padding:2px 9px">${esc(nm)}</span>`;
+  const currentView = tagTypeViewOf(cname);
+  const hierarchyHtml = typedHierarchyHtml(parents, '上级') + typedHierarchyHtml(kids, '下级');
+  const stockTableRows = stockRows.map(r => {
+    const newsKey = `concept-${r.code}-${r.last}`;
+    const news = eventNewsHtml(r.code, r.last, newsKey, 11);
+    return `<tr data-code="${r.code}"><td>${esc(D.stocks[r.code] || '')}<span class="muted small">（${boardOf(r.code)}）</span>
+        <span class="code muted small">${r.code}</span></td>
+      <td class="num">${r.cnt}</td>
+      <td>${r.maxLb >= 2 ? `<span class="lb ${r.maxLb >= 3 ? 'lb3' : 'lb2'}">${r.maxLb}板</span>` : '首板'}</td>
+      <td class="num">${r.last}</td><td>${esc(r.lastLt || '—')}</td>
+      <td class="num">${r.lastOpen ?? 0}次</td><td class="num">${fmtWan(r.lastAmt)}</td>
+      <td class="num">${r.lastFt || '—'}</td>
+      <td class="num">${r.lastMcap != null ? r.lastMcap + '亿' : '—'}</td>
+      <td class="reason">${esc(r.lastReason || '—')}</td><td>${news.cell}</td></tr>${news.row}`;
+  }).join('');
   $('#app').innerHTML = `
   <div class="detail-h">
     <h2>${esc(cname)} ${hot >= 3 ? '<span class="hot small">🔥 近5日 ' + hot + ' 家涨停</span>' : ''}
+      <span class="type-badge ${currentView.badge}" style="vertical-align:3px">${currentView.label}${
+        FIX[cname] ? ' · 本地' : ''}</span>
       <button class="clsbtn${FIX[cname] ? ' done' : ''}" data-cls="${esc(cname)}" style="vertical-align:3px"
-        title="手动分类">✎ ${TYPE_LABEL[typeOf(cname)]}${FIX[cname] ? '(本地)' : ''}</button></h2>
+        title="修改标签类型">✎</button></h2>
     <div class="muted small">
       ${aliases.length ? '别名：' + aliases.map(esc).join('、') + ' · ' : ''}
       累计涨停 <b>${total}</b> 次 · 活跃 <b>${days}</b> 天 ·
       ${activeDates[0]} ~ ${activeDates[activeDates.length - 1]}
     </div>
-    ${parents.length || kids.length ? `<div class="hierarchy">
-      ${parents.length ? '上级：' + parents.map(relChip).join('') : ''}
-      ${kids.length ? '<span style="margin-left:10px">子标签：' + kids.map(relChip).join('') + '</span>' : ''}
-    </div>` : ''}
+    ${hierarchyHtml ? `<div class="hierarchy typed-hierarchy">${hierarchyHtml}</div>` : ''}
   </div>
   <div class="chart-card">
     <div class="ch-h"><b>活跃度时间线</b><span class="muted small">当日涨停家数，点击柱子跳当日复盘</span>
@@ -829,20 +932,16 @@ function renderConcept(cid) {
       </div></div>
     <div id="tl"></div>
   </div>
+  <div class="muted small" style="margin:0 2px 6px">成分股统计；类型、炸板、封单、首封时间、流通市值、涨停原因和消息均取最近一次涨停记录</div>
   <div class="tablewrap"><table>
-    <thead><tr><th>股票</th><th>涨停次数</th><th>最高连板</th><th>最近涨停</th><th>首封时间</th><th>类型</th><th>封单</th></tr></thead>
-    <tbody>${stockRows.map(r => `
-      <tr data-code="${r.code}"><td>${esc(D.stocks[r.code] || '')}<span class="muted small">（${boardOf(r.code)}）</span>
-        <span class="code muted small">${r.code}</span></td>
-      <td class="num">${r.cnt}</td>
-      <td>${r.maxLb >= 2 ? `<span class="lb ${r.maxLb >= 3 ? 'lb3' : 'lb2'}">${r.maxLb}板</span>` : '首板'}</td>
-      <td class="num">${r.last}</td><td class="num">${r.lastFt || '—'}</td>
-      <td>${esc(r.lastLt || '—')}</td><td class="num">${fmtWan(r.lastAmt)}</td></tr>`).join('')}
-    </tbody></table></div>`;
+    <thead><tr><th>股票</th><th>涨停次数</th><th>最高连板</th><th>最近涨停</th><th>类型</th>
+      <th>炸板</th><th>封单</th><th>首封时间</th><th>流通市值</th><th>涨停原因</th><th>消息</th></tr></thead>
+    <tbody>${stockTableRows}</tbody></table></div>`;
 
   drawTimeline(cid);
   $('#r60').onclick = () => { conceptRange = 60; renderConcept(cid); };
   $('#rall').onclick = () => { conceptRange = 0; renderConcept(cid); };
+  bindNewsRows();
   bindChips();
 }
 
@@ -900,21 +999,24 @@ function typedTagRows(hist, opts = {}) {
   const ent = [...ccount].sort((a, b) => b[1] - a[1])
     .map(([cid, n]) => ({ cid, n, nm: D.concepts[cid][0], t: typeOf(D.concepts[cid][0]) }));
   const pick = ts => ent.filter(e => ts.includes(e.t));
-  const chip = (e, hot, cls) => {
+  const chip = (e, hot, cls, showType) => {
     const h = hot ? hotOf(e.cid) : 0;
+    const view = TAG_TYPE_VIEW[e.t] || TAG_TYPE_VIEW.unknown;
+    cls = cls || view.chip;
     return `<span class="concept-chip${cls ? ' ' + cls : ''}" data-cid="${e.cid}">${esc(e.nm)}
-      <span class="x">×${e.n}${h >= 3 ? ' 🔥近5日' + h + '家' : ''}</span></span>`;
+      <span class="x">${showType ? view.label + ' · ' : ''}×${e.n}${
+        h >= 3 ? ' 🔥近5日' + h + '家' : ''}</span></span>`;
   };
   const line = (label, lcls, list, hot, cap, ccls) => list.length
     ? `<div class="trow"><span class="tlabel ${lcls}">${label}</span><div class="tbody">${
         list.slice(0, cap || 99).map(e => chip(e, hot, ccls)).join('')}</div></div>` : '';
 
-  // 主线题材：个股页按 taxonomy 树状展示（共享祖先合并），其余场景保持扁平 chips
-  const themes = pick(['sector', 'product', 'theme']);
-  let themeHtml;
-  if (opts.tree && themes.length) {
+  // 产业/产品/题材：个股页保留 taxonomy 路径，但每个节点显示真实类型；其他场景分三行。
+  const semantic = pick(['sector', 'product', 'theme']);
+  let semanticHtml;
+  if (opts.tree && semantic.length) {
     const root = new Map();                    // name -> {kids: Map, entry}
-    for (const e of themes.slice(0, opts.maxTheme || 99)) {
+    for (const e of semantic.slice(0, opts.maxTheme || 99)) {
       const path = [...taxPathOf(e.nm), e.nm];
       let level = root;
       path.forEach((seg, i) => {
@@ -926,20 +1028,24 @@ function typedTagRows(hist, opts = {}) {
     }
     const renderNode = (name, node, depth) => {
       const branch = depth ? '<span class="tbranch">└</span>' : '';
+      const view = tagTypeViewOf(name);
       const body = node.entry
-        ? chip(node.entry, true)
-        : `<span class="tanc" data-nm="${esc(name)}">${esc(name)}</span>`;
+        ? chip(node.entry, true, '', true)
+        : `<span class="tanc" data-nm="${esc(name)}">${esc(name)}
+             <span class="tmini ${view.row}">${view.label}</span></span>`;
       return `<div class="tnode" style="padding-left:${depth * 18}px">${branch}${body}</div>`
         + [...node.kids].map(([k, v]) => renderNode(k, v, depth + 1)).join('');
     };
-    themeHtml = `<div class="trow"><span class="tlabel tl-theme">主线题材</span>
+    semanticHtml = `<div class="trow"><span class="tlabel tl-mixed">标签路径</span>
       <div class="tbody"><div class="tagtree" style="margin-top:0">${
         [...root].map(([k, v]) => renderNode(k, v, 0)).join('')}</div></div></div>`;
   } else {
-    themeHtml = line('主线题材', 'tl-theme', themes, true, opts.maxTheme);
+    semanticHtml = line('产业', 'tl-sector', pick(['sector']), true, opts.maxTheme)
+                 + line('细分产品', 'tl-product', pick(['product']), true, opts.maxTheme)
+                 + line('交易题材', 'tl-theme', pick(['theme']), true, opts.maxTheme);
   }
 
-  const html = themeHtml
+  const html = semanticHtml
              + line('催化', 'tl-cat', pick(['catalyst']), false, 5, 'c-cat')
              + line('属性', 'tl-attr', pick(['attribute']), false, 5, 'c-attr')
              + line('事件·未审核', 'tl-evt', pick(['event', 'unknown']), false, 4, 'c-evt');
@@ -956,25 +1062,14 @@ function renderStock(code) {
     return;
   }
 
-  const newsOf = dd => (D.news || {})[code + '|' + dd] || [];
-  const briefOf = dd => (D.briefs || {})[code + '|' + dd] || '';
   const rowsHtml = [...hist].reverse().map(({ d, ev }) => {
-    const nl = newsOf(d), bf = briefOf(d);
-    const newsCell = (nl.length || bf)
-      ? `<button class="newsbtn" data-nd="${d}">📰 ${nl.length || '✨'}</button>`
-      : '<span class="muted small">—</span>';
-    const newsRow = (nl.length || bf) ? `<tr class="newsrow" data-for="${d}" style="display:none">
-        <td colspan="9">${bf ? `<div class="brief">${esc(bf)}</div>` : ''}
-        ${nl.map(n => `<div class="newsitem">·
-          <a href="${esc(n[1])}" target="_blank" rel="noopener">${esc(n[0])}</a>
-          <span class="nmeta">${esc(n[2] || '')} ${esc(n[3] || '')}</span></div>`).join('')}
-        </td></tr>` : '';
+    const news = eventNewsHtml(code, d, `stock-${code}-${d}`, 9);
     return `<tr data-date="${d}"${isTouch(ev) ? ' class="touchrow"' : ''}>
         <td class="num">${d}</td><td>${lbBadge(ev)}</td><td>${esc(ev[3] || '—')}</td>
         <td class="num">${ev[4] ?? 0}次</td><td class="num">${fmtWan(ev[5])}</td>
         <td class="num">${ev[7] || '—'}</td><td class="num">${ev[6] != null ? ev[6] + '亿' : '—'}</td>
         <td class="reason">${esc(ev[8] || (isTouch(ev) ? '触及涨停未封住' : '—'))}</td>
-        <td>${newsCell}</td></tr>` + newsRow;
+        <td>${news.cell}</td></tr>` + news.row;
   }).join('');
 
   const zts = hist.filter(x => !isTouch(x.ev));
@@ -991,12 +1086,7 @@ function renderStock(code) {
     <thead><tr><th>日期</th><th>连板</th><th>类型</th><th>炸板</th><th>封单</th><th>首封时间</th><th>流通市值</th><th>涨停原因</th><th>消息</th></tr></thead>
     <tbody>${rowsHtml}</tbody></table></div>`;
 
-  document.querySelectorAll('.newsbtn').forEach(el =>
-    el.addEventListener('click', e => {
-      e.stopPropagation();
-      const r = document.querySelector(`tr.newsrow[data-for="${el.dataset.nd}"]`);
-      r.style.display = r.style.display === 'none' ? '' : 'none';
-    }));
+  bindNewsRows();
   document.querySelectorAll('tr[data-date]').forEach(el =>
     el.addEventListener('click', () => go('#/date/' + el.dataset.date)));
   bindChips();
@@ -1010,13 +1100,13 @@ const heatExpanded = new Set();
 const heatLayerAll = new Set();
 const HEAT_LAYER = {
   sector:  { label: '产业', title: '产业热力', cls: 'sector', rgb: '46,107,230',
-             hint: '稳定大产业，统计其全部下级标签覆盖的去重涨停家数' },
+             hint: '格子=当天标签及全部下级标签覆盖的去重涨停家数；近5日=最近5个交易日格子之和' },
   product: { label: '细分', title: '细分产品热力', cls: 'product', rgb: '0,143,168',
-             hint: '具体产品、技术或业务环节，观察热度真正落在哪里' },
+             hint: '格子=当天标签及全部下级标签覆盖的去重涨停家数；近5日=最近5个交易日格子之和' },
   theme:   { label: '题材', title: '交易题材热力', cls: 'theme', rgb: '119,85,204',
-             hint: '资金围绕同一叙事形成的共振，随市场形成与退潮' },
+             hint: '格子=当天题材范围内去重涨停家数；近5日=最近5个交易日格子之和' },
   catalyst:{ label: '催化', title: '催化热力', cls: 'catalyst', rgb: '0,182,161',
-             hint: '业绩、涨价、订单、政策等驱动力，独立于三层标签展示' },
+             hint: '格子=当天同一催化标签下的去重涨停家数；近5日=最近5个交易日格子之和' },
 };
 const _taxAncestorsCache = {};
 const _heatDayCodesCache = {};
@@ -1067,9 +1157,11 @@ function heatRelationRows(focus, targetType, dates, limit) {
   const fa = taxAncestorsAll(focus);
   return formalHeatNodes(targetType).map(nm => {
     const score = heatOverlap(focus, nm, dates);
-    const structural = nm === focus || fa.has(nm) || taxAncestorsAll(nm).has(focus);
-    return { nm, score, structural, ratio: focusTotal ? score / focusTotal : 0 };
-  }).filter(r => r.score || r.structural)
+    const kind = nm === focus ? 'self' : fa.has(nm) ? 'ancestor'
+      : taxAncestorsAll(nm).has(focus) ? 'descendant' : 'cooccur';
+    return { nm, score, kind, structural: kind !== 'cooccur',
+             total: focusTotal, ratio: focusTotal ? score / focusTotal : 0 };
+  }).filter(r => r.score || r.kind !== 'cooccur')
     .sort((a, b) => (b.nm === focus) - (a.nm === focus) ||
       b.score - a.score || b.structural - a.structural ||
       a.nm.localeCompare(b.nm, 'zh-CN')).slice(0, limit);
@@ -1124,6 +1216,17 @@ function layerOverviewHtml(type, title, desc, nodes) {
       <strong>${r.sum5}</strong></button>`).join('') :
       '<div class="cross-empty">暂无有效标签</div>'}</section>`;
 }
+function relationMetricText(r) {
+  const pct = Math.round(r.ratio * 100);
+  if (r.kind === 'self') return `观察对象本身 · ${r.score}股次`;
+  if (r.kind === 'ancestor')
+    return r.score ? `归属覆盖 ${r.score}/${r.total}股次 · ${pct}%`
+      : `taxonomy上级归属 · 窗口内0/${r.total}股次`;
+  if (r.kind === 'descendant')
+    return r.score ? `下级覆盖 ${r.score}/${r.total}股次 · ${pct}%`
+      : `taxonomy下级关系 · 窗口内0/${r.total}股次`;
+  return `同股共现 ${r.score}股次 · 占观察对象 ${pct}%`;
+}
 function crossColumnHtml(type, title, note, rows) {
   return `<section class="cross-col ${HEAT_LAYER[type].cls}">
     <div class="cross-col-h">${title}<span>${note}</span></div>
@@ -1131,9 +1234,8 @@ function crossColumnHtml(type, title, note, rows) {
       data-focus="${esc(r.nm)}"><div class="cross-node-top">
       <span class="cn-name">${esc(r.nm)}</span><strong>${r.score || '—'}</strong></div>
       <div class="cross-meter"><i style="width:${r.score ? Math.max(3, r.ratio * 100).toFixed(0) : 0}%"></i></div>
-      <div class="cross-node-meta">${r.score ? `共振 ${r.score} 股次 · 覆盖观察对象 ${Math.round(r.ratio * 100)}%`
-        : 'taxonomy 层级关联 · 近窗口暂无共同个股'}</div></button>`).join('') :
-      '<div class="cross-empty">这个窗口暂无可确认的交叉关系</div>'}</section>`;
+      <div class="cross-node-meta">${relationMetricText(r)}</div></button>`).join('') :
+      '<div class="cross-empty">这个窗口暂无归属覆盖或同股共现</div>'}</section>`;
 }
 function layerHeatRowHtml(r, dates, vmax, type) {
   const def = HEAT_LAYER[type];
@@ -1146,7 +1248,7 @@ function layerHeatRowHtml(r, dates, vmax, type) {
   const action = type === 'catalyst' ? `data-detail="${esc(r.nm)}"` : `data-focus="${esc(r.nm)}"`;
   return `<tr><td class="rowlab"><span class="row-type ${def.cls}"></span>
     <span class="lname lvl1" ${action}>${esc(r.nm)}</span>
-    <span class="rsum">近5日${r.sum5}</span></td>${cells}</tr>`;
+    <span class="rsum">近5日${r.sum5}股次</span></td>${cells}</tr>`;
 }
 function renderHeat() {
   if (!taxRoots.length) { $('#app').innerHTML = '<div class="empty">未配置 taxonomy.json</div>'; return; }
@@ -1215,7 +1317,7 @@ function renderHeat() {
     </div></div>
   <div class="heat-guide">
     <div class="guide-copy"><b>产业 × 细分产品 × 题材交叉透视</b>
-      <span class="muted small">选择观察对象，自动寻找同日、同股发生的上下游归属和题材共振</span></div>
+      <span class="muted small">选择观察对象，自动区分 taxonomy 层级覆盖与同日同股标签共现</span></div>
     <div class="focus-picker"><input id="heat-focus-input" list="heat-focus-list"
       value="${esc(heatFocus)}" placeholder="输入产业、产品或题材" aria-label="搜索观察标签">
       <datalist id="heat-focus-list">${focusOptions}</datalist><button id="heat-focus-go">查看</button></div>
@@ -1224,28 +1326,36 @@ function renderHeat() {
       <button id="hc5" class="${heatCrossRange === 5 ? 'on' : ''}">近5日</button>
       <button id="hc20" class="${heatCrossRange === 20 ? 'on' : ''}">近20日</button>
     </div></div>
+  <div class="metric-guide" aria-label="指标计算口径">
+    <div class="metric-item"><b>热力值（格子）</b>当天标签范围内的去重涨停家数；同股同日只算 1 家。</div>
+    <div class="metric-item"><b>股次 / 近5日</b>逐日去重家数相加；同一股票跨日涨停会重复计次。</div>
+    <div class="metric-item"><b>归属 / 下级覆盖</b>交叉股次 ÷ 观察对象股次；关系来自 taxonomy 层级。</div>
+    <div class="metric-item"><b>同股共现（原“共振”）</b>两个非包含标签在同一交易日命中同一股票；只表示关联，不表示因果。</div>
+    <div class="metric-item"><b>启动</b>近3日均≥3家，且 <code>(近3日均+0.25)/(前15日均+0.25)≥2.2</code>。</div>
+    <div class="metric-item"><b>日期窗口</b>右上 30/60/全部控制热力表与轮动；交叉透视单独使用 1/5/20 日。</div>
+  </div>
   <div class="layer-overview">
-    ${layerOverviewHtml('sector', '产业', '长期赛道', sectorNodes)}
-    ${layerOverviewHtml('product', '细分产品', '业务落点', productNodes)}
-    ${layerOverviewHtml('theme', '交易题材', '资金叙事', themeNodes)}
+    ${layerOverviewHtml('sector', '产业', '长期赛道 · 近5日股次', sectorNodes)}
+    ${layerOverviewHtml('product', '细分产品', '业务落点 · 近5日股次', productNodes)}
+    ${layerOverviewHtml('theme', '交易题材', '资金叙事 · 近5日股次', themeNodes)}
   </div>
   <section class="cross-card">
     <div class="cross-head"><span class="type-badge ${HEAT_LAYER[typeOf(heatFocus)]?.cls || 'theme'}">${
       TYPE_LABEL[typeOf(heatFocus)] || '标签'}</span>
       <h3>观察对象：<span class="focus-name">${esc(heatFocus)}</span></h3>
       ${nameToCid[heatFocus] != null ? `<button class="navbtn heat-detail" data-detail="${esc(heatFocus)}">查看标签详情</button>` : ''}
-      <span class="cross-summary">近${heatCrossRange}日 ${focusTotal} 股次${
-        latestHit ? ` · 最近活跃 ${latestHit}` : ' · 暂无涨停记录'} · 交叉值仅表示关联，不代表因果</span></div>
+      <span class="cross-summary">观察股次 ${focusTotal}（近${heatCrossRange}日逐日去重后相加）${
+        latestHit ? ` · 最近活跃 ${latestHit}` : ' · 暂无涨停记录'}</span></div>
     <div class="cross-grid">
-      ${crossColumnHtml('sector', '① 产业归属', '股票在哪条赛道', relations.sector)}
-      ${crossColumnHtml('product', '② 细分产品', '热度落在哪个环节', relations.product)}
-      ${crossColumnHtml('theme', '③ 题材共振', '资金在交易什么叙事', relations.theme)}
+      ${crossColumnHtml('sector', '① 产业归属', '层级归属或同股共现', relations.sector)}
+      ${crossColumnHtml('product', '② 细分产品', '下级覆盖或同股共现', relations.product)}
+      ${crossColumnHtml('theme', '③ 交易题材', '同日同股的叙事标签', relations.theme)}
     </div>
     <div class="driver-strip"><span class="driver-title">本次催化</span>${
       relations.catalyst.length ? relations.catalyst.map(r =>
-        `<button class="driver-chip" data-detail="${esc(r.nm)}">${esc(r.nm)} · ${r.score}股次</button>`).join('')
+        `<button class="driver-chip" data-detail="${esc(r.nm)}">${esc(r.nm)} · 同股共现${r.score}股次</button>`).join('')
         : '<span class="muted">窗口内没有与观察对象同时出现的已审核催化标签</span>'}</div>
-    <div class="cross-stocks"><div class="cross-stocks-h"><b>共振股票</b>
+    <div class="cross-stocks"><div class="cross-stocks-h"><b>窗口内股票</b>
       <span class="muted small">近${heatCrossRange}日命中观察对象的 ${focusStocks.length} 只股票；标签来自当日涨停原因</span></div>
       ${focusStocks.length ? `<div class="cross-stock-grid">${focusStocks.slice(0, 16).map(s => {
         const tags = [...s.products, ...s.themes].slice(0, 4);
@@ -1253,7 +1363,7 @@ function renderHeat() {
           <b>${esc(D.stocks[s.code] || s.code)}</b><span>${s.code}</span>
           <span class="stock-date">${s.latest.slice(5)}</span></div>
           <div class="stock-tags">${esc(tags.length ? tags.join(' · ') : s.reason || '暂无细分标签')}</div></div>`;
-      }).join('')}</div>` : '<div class="cross-empty" style="padding:8px 0">当前窗口暂无共振股票</div>'}
+      }).join('')}</div>` : '<div class="cross-empty" style="padding:8px 0">当前窗口暂无命中观察对象的股票</div>'}
     </div></section>`;
 
   // 产业轮动只比较大产业，不再把产品和交易题材放在同一排名里。
@@ -1291,7 +1401,7 @@ function renderHeat() {
       if (i % stepR === 0) rg += `<text x="${RX(i).toFixed(1)}" y="${RH - 3}">${dd.slice(5)}</text>`;
     });
     html += `<div class="chart-card" style="margin-top:14px"><div class="ch-h"><b>产业轮动</b>
-      <span class="muted small">仅比较Top8大产业的滚动5日热度 · 线上翘=相对升温 · 交叉点=产业排名切换</span></div>
+      <span class="muted small">每天按最近5个交易日股次和排序Top8大产业 · #1=当日滚动5日股次最高 · 交叉=名次互换</span></div>
       <svg viewBox="0 0 ${W} ${RH}" width="100%" style="display:block">${rg}</svg></div>`;
   }
 
@@ -1300,7 +1410,7 @@ function renderHeat() {
   html += heatTableHtml('theme', themeNodes, 14);
   html += heatTableHtml('catalyst', catalystNodes, 10);
 
-  // 未审核新热点：不进正式榜，但按共振度排序绝不隐身（新题材爆发的第一现场）
+  // 未审核新热点：不进正式榜，但按单日去重涨停家数排序（新题材爆发的第一现场）
   const inTreeCids = new Set();
   const allTaxNodes = new Set([...Object.keys(TAX), ...Object.values(TAX).flat()]);
   for (const nm of allTaxNodes) {
@@ -1330,12 +1440,12 @@ function renderHeat() {
   if (burst.length || orphan.length) {
     html += `<div class="card" style="margin-top:14px"><div class="card-h">
       <span class="cname muted">未审核爆发预警</span>
-      <span class="hist">单日共振≥3家的未入树标签 · <span style="cursor:pointer;color:var(--accent)" id="h-gov">完整待审队列在治理台 →</span></span></div>
+      <span class="hist">单日同标签涨停≥3家的未入树标签 · <span style="cursor:pointer;color:var(--accent)" id="h-gov">完整待审队列在治理台 →</span></span></div>
       <div>${burst.length ? burst.slice(0, 16).map(o =>
         `<span class="concept-chip" data-cid="${o.cid}" style="border-width:2px;font-weight:600">${esc(o.nm)}
-         <span class="x">🔥共振${o.mx}家(${o.mxd.slice(5)})${o.s5 ? ' · 近5日' + o.s5 : ''}</span></span><button
+         <span class="x">🔥单日${o.mx}家(${o.mxd.slice(5)})${o.s5 ? ' · 近5日' + o.s5 + '股次' : ''}</span></span><button
            class="clsbtn${FIX[o.nm] ? ' done' : ''}" data-cls="${esc(o.nm)}" title="手动分类">${FIX[o.nm] ? '✎已标' : '✎'}</button>`).join('')
-        : '<span class="muted small">近期无未审核标签出现≥3家共振</span>'}</div></div>`;
+        : '<span class="muted small">近期无未审核标签单日达到3家涨停</span>'}</div></div>`;
   }
 
   $('#app').innerHTML = html;
@@ -1842,7 +1952,7 @@ function renderTags(sub) {
   $('#app').innerHTML = `
   <div class="datebar"><h2 style="margin:0">标签中心</h2>
     <div class="subtabs" style="margin:0 0 0 12px">
-      <button data-t="tree" class="${TAGS.tab === 'tree' ? 'on' : ''}">题材全景</button>
+      <button data-t="tree" class="${TAGS.tab === 'tree' ? 'on' : ''}">标签全景</button>
       <button data-t="filter" class="${TAGS.tab === 'filter' ? 'on' : ''}">全局筛选</button>
       <button data-t="gov" class="${TAGS.tab === 'gov' ? 'on' : ''}">治理台</button>
     </div></div>
@@ -1877,9 +1987,12 @@ function renderTagsTree() {
   const childSet2 = new Set(Object.values(TAX).flat());
   const roots = Object.keys(TAX).filter(p => !childSet2.has(p));
   const groupRoots = [
-    ['题材', roots.filter(isTheme).sort((a, b) => sum5(b) - sum5(a))],
+    ['产业', roots.filter(n => typeOf(n) === 'sector').sort((a, b) => sum5(b) - sum5(a))],
+    ['细分产品', roots.filter(n => typeOf(n) === 'product').sort((a, b) => sum5(b) - sum5(a))],
+    ['交易题材', roots.filter(n => typeOf(n) === 'theme').sort((a, b) => sum5(b) - sum5(a))],
     ['催化', roots.filter(isCatalyst).sort((a, b) => sum5(b) - sum5(a))],
-    ['属性', roots.filter(n => !isTheme(n) && !isCatalyst(n)).sort((a, b) => sum5(b) - sum5(a))],
+    ['属性 / 事件', roots.filter(n => !isTheme(n) && !isCatalyst(n))
+      .sort((a, b) => sum5(b) - sum5(a))],
   ];
   const maxSum = Math.max(4, ...roots.map(sum5));
 
@@ -1889,15 +2002,19 @@ function renderTagsTree() {
     const s = sum5(nm);
     if (TAGS.onlyActive && !s && !kids.length && depth > 0) return '';
     const [lc, lcTxt] = lifecycleOf(nm);
-    const dotc = { theme: 'var(--accent)', cat: 'var(--teal)' }[
-      isTheme(nm) ? 'theme' : isCatalyst(nm) ? 'cat' : 'x'] || 'var(--gold)';
+    const view = tagTypeViewOf(nm);
+    const kind = virtualOf(nm) ? 'group' : typeOf(nm);
+    const dotc = { sector: 'var(--accent)', product: 'var(--product)', theme: 'var(--theme)',
+      catalyst: 'var(--teal)', attribute: 'var(--gold)', event: 'var(--ink3)',
+      group: 'var(--ink3)' }[kind] || 'var(--ink3)';
     const bw = Math.max(2, Math.round(46 * Math.sqrt(s / maxSum)));
     let h = `<div class="pnode${TAGS.sel === nm ? ' sel' : ''}" data-pn="${esc(nm)}"
       style="padding-left:${8 + depth * 16}px">
       <span class="exp" data-pexp="${esc(nm)}">${kids.length ? (open ? '▾' : '▸') : ''}</span>
       <span class="dot" style="background:${dotc}"></span>
       <span class="pn${depth === 0 ? '' : ''}" ${depth === 0 ? 'style="font-weight:700"' : ''}>${esc(nm)}</span>
-      ${s ? `<span class="lc lc-${lc}">${lcTxt}</span><span class="hb" style="width:${bw}px"></span><span class="hn">${s}</span>` : '<span class="lc lc-idle">休眠</span>'}
+      <span class="node-kind ${view.badge}">${esc(view.label.replace('产品', ''))}</span>
+      ${s ? `<span class="lc lc-${lc}">${lcTxt}</span><span class="hb" style="width:${bw}px;background:${dotc}"></span><span class="hn">${s}</span>` : '<span class="lc lc-idle">休眠</span>'}
     </div>`;
     if (open) for (const ch of kids.sort((a, b) => sum5(b) - sum5(a))) h += nodeHtml(ch, depth + 1);
     return h;
@@ -1919,6 +2036,12 @@ function renderTagsTree() {
     <button class="navbtn" id="t-clpall">全部收起</button>
     <label class="small muted"><input type="checkbox" id="t-act" ${TAGS.onlyActive ? 'checked' : ''}> 只看有热度</label>
     <button class="navbtn" id="t-newgrp">➕ 新建分组</button>
+  </div>
+  <div class="metric-guide tags-metric-guide" aria-label="标签全景指标口径">
+    <div class="metric-item"><b>节点热度</b>所选窗口内逐日去重涨停家数相加（股次）；父节点包含全部下级标签。</div>
+    <div class="metric-item"><b>生命周期</b>启动=近3日均≥3且平滑后≥前15日2.2倍；高潮=近3日均≥4且≥30日峰值80%；退潮=峰值≥3且近3日&lt;峰值35%。</div>
+    <div class="metric-item"><b>窗口股票 / 梯队</b>股票数按窗口去重；梯队取源数据在窗口内的最高板数，不是今日截面。</div>
+    <div class="metric-item"><b>次日连板率</b>最后两个交易日中，昨日枝内封板且今日仍在枝内封板的股票数 ÷ 昨日枝内封板数；触及未封不算。</div>
   </div>
   <div class="tree2col">
     <div class="panor">${treeHtml}</div>
@@ -1949,7 +2072,6 @@ function renderTagsTree() {
 /* --- 节点面板：梯队表 + 分枝股票 --- */
 function renderNodePanel(nm, winDates) {
   const cids = taxCids(nm);
-  const winSet = new Set(winDates);
   // 窗口内该枝的股票聚合
   const agg = new Map();     // code -> {maxLb, n, last, lastEv, touch}
   for (const d of winDates) for (const ev of D.events[d]) {
@@ -1960,22 +2082,28 @@ function renderNodePanel(nm, winDates) {
   }
   const stocks = [...agg].map(([code, a]) => ({ code, ...a }))
     .sort((a, b) => b.maxLb - a.maxLb || b.n - a.n);
-  // 晋级率：窗口最后两个交易日
+  // 次日连板率：窗口最后两个交易日均在该枝封板的股票 / 前一日该枝封板股票
   const dN = winDates[winDates.length - 1], dP = winDates[winDates.length - 2];
   let promo = '';
   if (dP) {
     const inBranchZt = d => new Set((D.events[d] || [])
       .filter(ev => !isTouch(ev) && ev[9].some(c => cids.has(c))).map(ev => ev[0]));
     const p = inBranchZt(dP), n = inBranchZt(dN);
-    const kept = [...p].filter(c => n.has(c)).length;
-    if (p.size) promo = `晋级率 <b>${Math.round(kept / p.size * 100)}%</b>（${dP.slice(5)} ${p.size}只 → 今再板 ${kept}只）`;
+    const keptCodes = [...p].filter(c => n.has(c));
+    if (p.size) {
+      const keptNames = keptCodes.map(c => D.stocks[c] || c).join('、') || '无';
+      promo = `<b>次日连板率 ${Math.round(keptCodes.length / p.size * 100)}%</b>
+        （${dP.slice(5)}枝内封板 ${p.size}只 → ${dN.slice(5)}仍在枝内封板 ${keptCodes.length}只）
+        <span title="继续封板：${esc(keptNames)}">= 两日枝内封板股票交集 ÷ 前一日枝内封板股票</span>`;
+    }
   }
   const [lc, lcTxt] = lifecycleOf(nm);
   const tier = (label, list, cls) => list.length ? `
     <div class="trow"><span class="tlabel ${cls}">${label}</span><div class="tbody">${
-      list.map(s => `<span class="chip${isTouch(s.lastEv) ? ' touch' : ''}" data-code="${s.code}">
+      list.map(s => `<span class="chip${isTouch(s.lastEv) ? ' touch' : ''}" data-code="${s.code}"
+        title="窗口内最高${s.maxLb || 0}板；最近命中 ${s.last}${s.lastEv?.[2] ? '；源标签 ' + esc(s.lastEv[2]) : ''}">
         ${lbBadge(s.lastEv)} ${esc(D.stocks[s.code] || s.code)}
-        <span class="code">${s.n > 1 ? '×' + s.n : ''}</span></span>`).join('')}</div></div>` : '';
+        <span class="code">${s.last.slice(5)}${s.n > 1 ? ' · ×' + s.n : ''}</span></span>`).join('')}</div></div>` : '';
   const t1 = stocks.filter(s => s.maxLb >= 3), t2 = stocks.filter(s => s.maxLb === 2),
         t3 = stocks.filter(s => s.n && s.maxLb <= 1), t4 = stocks.filter(s => !s.n);
   // 分枝分布
@@ -1993,15 +2121,16 @@ function renderNodePanel(nm, winDates) {
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
       <b style="font-size:16px">${esc(nm)}</b>
       <span class="lc lc-${lc}">${lcTxt}</span>
-      <span class="muted small">${typeLabelOf(nm)} · 窗口内 ${stocks.filter(s => s.n).length} 只涨停${stocks.filter(s => !s.n).length ? ' + ' + stocks.filter(s => !s.n).length + ' 只触及' : ''}</span>
+      <span class="muted small">${typeLabelOf(nm)} · 窗口去重 ${stocks.filter(s => s.n).length} 只封板股${stocks.filter(s => !s.n).length ? ' + ' + stocks.filter(s => !s.n).length + ' 只仅触及' : ''}</span>
       <button class="clsbtn${FIX[nm] ? ' done' : ''}" data-cls="${esc(nm)}">✎ 编辑</button>
       <button class="clsbtn" id="np-attach">➕ 挂子标签</button>
       ${cid0 != null && byConcept[cid0] ? `<button class="clsbtn" data-cid-go="${cid0}">概念页 →</button>` : ''}
     </div>
     ${promo ? `<div class="muted small" style="margin-top:4px">${promo}</div>` : ''}
+    <div class="muted small" style="margin-top:4px">下方为所选窗口内的历史最高梯队；连板徽章取行情源字段，不代表本站逐日记录一定完整连续。</div>
     <div style="margin-top:8px">
-      ${tier('空间板 ≥3板', t1, 'tl-theme') + tier('中军 2板', t2, 'tl-cat') +
-        tier('首板/跟风', t3, 'tl-attr') + tier('触及未封', t4, 'tl-evt')}
+      ${tier('窗口最高 ≥3板', t1, 'tl-theme') + tier('窗口最高 2板', t2, 'tl-cat') +
+        tier('窗口内仅首板', t3, 'tl-attr') + tier('仅触及未封', t4, 'tl-evt')}
       ${!stocks.length ? '<div class="muted small">窗口内无涨停记录</div>' : ''}
     </div>
     ${branchRows.length ? `<div style="margin-top:10px"><span class="muted small">分枝热度：</span>${
