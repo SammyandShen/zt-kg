@@ -4942,6 +4942,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "电解液溶剂龙头": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "研究能力": {
   "type": "attribute",
   "status": "candidate"
@@ -4951,6 +4955,10 @@
   "status": "candidate"
  },
  "算力国家队": {
+  "type": "attribute",
+  "status": "candidate"
+ },
+ "绝缘子龙头": {
   "type": "attribute",
   "status": "candidate"
  },
@@ -5014,6 +5022,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "陶瓷纤维龙头": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "韩国客户": {
   "type": "attribute",
   "status": "candidate"
@@ -5049,6 +5061,10 @@
  "Q1业绩增长": {
   "type": "catalyst",
   "status": "retired"
+ },
+ "UCO涨价": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "一季度净利增": {
   "type": "catalyst",
@@ -5099,6 +5115,10 @@
   "status": "candidate"
  },
  "中报增长": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "中报大幅减亏": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -5222,7 +5242,15 @@
   "type": "catalyst",
   "status": "retired"
  },
+ "印尼扩产": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "原料药CEP证书": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "原料药获批": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -5247,6 +5275,10 @@
   "status": "candidate"
  },
  "国内营收增长": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "国家电网预中标": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -5279,6 +5311,10 @@
   "status": "candidate"
  },
  "大股东再质押": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "大额订单": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -5389,6 +5425,10 @@
  "电网中标": {
   "type": "catalyst",
   "status": "retired"
+ },
+ "电解液添加剂VC涨价": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "盐酸哌甲酯放量": {
   "type": "catalyst",
@@ -5523,6 +5563,10 @@
   "status": "candidate"
  },
  "饲料增长": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "黄金涨价": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -5698,6 +5742,10 @@
   "type": "event",
   "status": "retired"
  },
+ "参股投资半导体": {
+  "type": "event",
+  "status": "candidate"
+ },
  "参股月之暗面": {
   "type": "event",
   "status": "retired"
@@ -5709,6 +5757,10 @@
  "参股蓝箭航天": {
   "type": "event",
   "status": "retired"
+ },
+ "可转债上市": {
+  "type": "event",
+  "status": "candidate"
  },
  "合肥二期产能爬坡": {
   "type": "event",
@@ -5761,6 +5813,10 @@
  "定增算力": {
   "type": "event",
   "status": "retired"
+ },
+ "实控人拟变更": {
+  "type": "event",
+  "status": "candidate"
  },
  "实验猴涨价": {
   "type": "event",
@@ -5822,6 +5878,14 @@
   "type": "event",
   "status": "retired"
  },
+ "拟收购顺义科技": {
+  "type": "event",
+  "status": "candidate"
+ },
+ "控股权变更": {
+  "type": "event",
+  "status": "candidate"
+ },
  "摘帽复牌": {
   "type": "event",
   "status": "retired"
@@ -5833,6 +5897,10 @@
  "收购半导体": {
   "type": "event",
   "status": "retired"
+ },
+ "收购硅碳负极": {
+  "type": "event",
+  "status": "candidate"
  },
  "数智物流项目": {
   "type": "event",
@@ -6394,6 +6462,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "TDI": {
+  "type": "product",
+  "status": "candidate"
+ },
  "TGV产品": {
   "type": "product",
   "status": "retired"
@@ -6415,6 +6487,10 @@
   "status": "candidate"
  },
  "上海出租车": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "上游资源": {
   "type": "product",
   "status": "candidate"
  },
@@ -6466,6 +6542,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "人参全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
  "人造板装备": {
   "type": "product",
   "status": "candidate"
@@ -6482,6 +6562,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "体育产业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "余热锅炉": {
   "type": "product",
   "status": "candidate"
@@ -6491,6 +6575,30 @@
   "status": "candidate"
  },
  "保健品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "健身器材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "储能项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "充电桩": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光伏电站": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光储一体化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光储充": {
   "type": "product",
   "status": "candidate"
  },
@@ -6578,11 +6686,23 @@
   "type": "product",
   "status": "candidate"
  },
+ "兵装重组": {
+  "type": "product",
+  "status": "candidate"
+ },
  "再生涤纶": {
   "type": "product",
   "status": "candidate"
  },
  "再生铅": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "军事仿真": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "军工复合材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -6599,6 +6719,10 @@
   "status": "candidate"
  },
  "凹印油墨": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "分布式光伏": {
   "type": "product",
   "status": "candidate"
  },
@@ -6631,6 +6755,14 @@
   "status": "candidate"
  },
  "化工供应链": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "医疗器械出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "医疗器械注册": {
   "type": "product",
   "status": "candidate"
  },
@@ -6678,6 +6810,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "半年报增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "卫星通信芯片": {
   "type": "product",
   "status": "candidate"
@@ -6722,6 +6858,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "可燃冰": {
+  "type": "product",
+  "status": "candidate"
+ },
  "可降解塑料": {
   "type": "product",
   "status": "candidate"
@@ -6731,6 +6871,10 @@
   "status": "candidate"
  },
  "合成润滑油": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "同业竞争承诺": {
   "type": "product",
   "status": "candidate"
  },
@@ -6762,7 +6906,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "固废绿电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "固态变压器": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "国家科技奖": {
   "type": "product",
   "status": "candidate"
  },
@@ -6775,6 +6927,10 @@
   "status": "candidate"
  },
  "地下管网": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "地面兵装": {
   "type": "product",
   "status": "candidate"
  },
@@ -6867,6 +7023,10 @@
   "status": "candidate"
  },
  "定制家居": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "实控人股份拍卖": {
   "type": "product",
   "status": "candidate"
  },
@@ -7014,6 +7174,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "干式变压器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "干法电极设备": {
   "type": "product",
   "status": "candidate"
@@ -7054,7 +7218,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "异丙醇胺": {
+  "type": "product",
+  "status": "candidate"
+ },
  "引线框架": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "弹药装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "彩票印刷": {
   "type": "product",
   "status": "candidate"
  },
@@ -7094,6 +7270,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "房地产去化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "房地产开发": {
   "type": "product",
   "status": "candidate"
@@ -7130,6 +7310,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数字化家装": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数字展示": {
   "type": "product",
   "status": "candidate"
@@ -7163,6 +7347,10 @@
   "status": "candidate"
  },
  "数智文旅": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新型电网": {
   "type": "product",
   "status": "candidate"
  },
@@ -7298,6 +7486,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智慧用能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能会议": {
   "type": "product",
   "status": "candidate"
@@ -7315,6 +7507,10 @@
   "status": "candidate"
  },
  "智能床": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能控制": {
   "type": "product",
   "status": "candidate"
  },
@@ -7354,6 +7550,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能输配电设备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能音箱": {
   "type": "product",
   "status": "candidate"
@@ -7386,6 +7586,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "机器人线束": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人腱绳": {
   "type": "product",
   "status": "candidate"
@@ -7398,11 +7602,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "架空导线": {
+  "type": "product",
+  "status": "candidate"
+ },
  "染助一体化": {
   "type": "product",
   "status": "candidate"
  },
  "柴油动力单元": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "柴油发动机": {
   "type": "product",
   "status": "candidate"
  },
@@ -7415,6 +7627,10 @@
   "status": "candidate"
  },
  "止咳宝片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "母婴用品": {
   "type": "product",
   "status": "candidate"
  },
@@ -7522,6 +7738,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "泵及泵系统": {
+  "type": "product",
+  "status": "candidate"
+ },
  "泵及液力传动": {
   "type": "product",
   "status": "candidate"
@@ -7550,6 +7770,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外出口": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外炼化": {
   "type": "product",
   "status": "candidate"
@@ -7571,6 +7795,10 @@
   "status": "candidate"
  },
  "消费电子包装": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "涡轮增压器": {
   "type": "product",
   "status": "candidate"
  },
@@ -7690,6 +7918,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "煤矿智能装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "照明工程": {
   "type": "product",
   "status": "candidate"
@@ -7726,6 +7958,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "特种PC": {
+  "type": "product",
+  "status": "candidate"
+ },
  "特种尼龙": {
   "type": "product",
   "status": "candidate"
@@ -7735,6 +7971,10 @@
   "status": "candidate"
  },
  "特种水产饲料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "特种电缆": {
   "type": "product",
   "status": "candidate"
  },
@@ -7778,6 +8018,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "环氧丙烷技改": {
+  "type": "product",
+  "status": "candidate"
+ },
  "玻璃基板TGV": {
   "type": "product",
   "status": "retired"
@@ -7807,6 +8051,10 @@
   "status": "candidate"
  },
  "电力智能运维": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电力设备出海": {
   "type": "product",
   "status": "candidate"
  },
@@ -7874,6 +8122,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电机控制芯片": {
   "type": "product",
   "status": "candidate"
@@ -7930,6 +8182,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电解液": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电解铜箔": {
   "type": "product",
   "status": "candidate"
@@ -7970,7 +8226,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "石英晶体元器件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "石英砂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "矿冶装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -7999,6 +8263,14 @@
   "status": "candidate"
  },
  "硬脆材料加工": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "碳酸锂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "碳酸锂投产": {
   "type": "product",
   "status": "candidate"
  },
@@ -8038,6 +8310,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "移动储能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "稀散金属": {
   "type": "product",
   "status": "candidate"
@@ -8054,11 +8330,23 @@
   "type": "product",
   "status": "candidate"
  },
+ "空调箔": {
+  "type": "product",
+  "status": "candidate"
+ },
  "空调风叶": {
   "type": "product",
   "status": "candidate"
  },
  "竹基新材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "算力上游": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "算力中心集成": {
   "type": "product",
   "status": "candidate"
  },
@@ -8122,6 +8410,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "纯碱": {
+  "type": "product",
+  "status": "candidate"
+ },
  "纳米材料": {
   "type": "product",
   "status": "candidate"
@@ -8162,11 +8454,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "绿电直连": {
+  "type": "product",
+  "status": "candidate"
+ },
  "绿色地产": {
   "type": "product",
   "status": "candidate"
  },
  "绿色炭黑": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "绿色甲醇": {
   "type": "product",
   "status": "candidate"
  },
@@ -8222,6 +8522,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "股份过户": {
+  "type": "product",
+  "status": "candidate"
+ },
  "胎圈钢丝": {
   "type": "product",
   "status": "candidate"
@@ -8242,6 +8546,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "自行车": {
+  "type": "product",
+  "status": "candidate"
+ },
  "臭氧": {
   "type": "product",
   "status": "candidate"
@@ -8255,6 +8563,14 @@
   "status": "candidate"
  },
  "航空货运": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "航空铝材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "航空零部件": {
   "type": "product",
   "status": "candidate"
  },
@@ -8279,6 +8595,10 @@
   "status": "retired"
  },
  "芯片电感": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "苯嘧草唑": {
   "type": "product",
   "status": "candidate"
  },
@@ -8342,7 +8662,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "资产注入": {
+  "type": "product",
+  "status": "candidate"
+ },
  "超声无损检测": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "超导": {
   "type": "product",
   "status": "candidate"
  },
@@ -8357,6 +8685,14 @@
  "超薄柔性玻璃UTG": {
   "type": "product",
   "status": "retired"
+ },
+ "超高压海缆": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "跨境物流": {
+  "type": "product",
+  "status": "candidate"
  },
  "车载LNG供气系统": {
   "type": "product",
@@ -8406,7 +8742,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "输配电全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
  "连锁医疗网络": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "逆变器": {
   "type": "product",
   "status": "candidate"
  },
@@ -8447,6 +8791,10 @@
   "status": "candidate"
  },
  "醋酸": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "量价齐升": {
   "type": "product",
   "status": "candidate"
  },
@@ -8506,6 +8854,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "钼矿整合": {
+  "type": "product",
+  "status": "candidate"
+ },
  "钼资源": {
   "type": "product",
   "status": "candidate"
@@ -8554,6 +8906,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "铌": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铌酸锂": {
   "type": "product",
   "status": "candidate"
@@ -8583,6 +8939,10 @@
   "status": "candidate"
  },
  "铝合金压铸": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "铝合金车轮": {
   "type": "product",
   "status": "candidate"
  },
@@ -8622,7 +8982,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "锂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "锂电工具": {
+  "type": "product",
+  "status": "candidate"
+ },
  "锂电材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "锂电池材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -8655,6 +9027,10 @@
   "status": "candidate"
  },
  "锂电负极材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "锂矿采选": {
   "type": "product",
   "status": "candidate"
  },
@@ -8770,6 +9146,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "风光储氢": {
+  "type": "product",
+  "status": "candidate"
+ },
  "风电装备": {
   "type": "product",
   "status": "retired"
@@ -8831,6 +9211,10 @@
   "status": "candidate"
  },
  "高端装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高纯氟化氢": {
   "type": "product",
   "status": "candidate"
  },
