@@ -12,6 +12,8 @@
     --line: #dfe3ea; --accent: #2e6be6; --accent-ink: #ffffff;
     --accent-soft: #e9f0ff; --accent-line: #c9d9ff;
     --teal: #00b6a1; --teal-soft: #e0f7f3; --teal-line: #b3e8df;
+    --product: #008fa8; --product-soft: #e3f6f8;
+    --theme: #7755cc; --theme-soft: #f0ebff;
     --up: #e03e2d; --up-soft: #fdecea; --up-line: #f5c6bf;
     --gold: #8a6d1c; --gold-soft: #f6efd9;
     --shadow: 0 1px 3px rgba(30,50,90,.08);
@@ -23,6 +25,8 @@
       --line: #303747; --accent: #5b8cff; --accent-ink: #fff;
       --accent-soft: #1d2a47; --accent-line: #31456f;
       --teal: #2bc4b2; --teal-soft: #143430; --teal-line: #1f4f48;
+      --product: #48b9ca; --product-soft: #16343a;
+      --theme: #a58be8; --theme-soft: #29233d;
       --up: #f0544a; --up-soft: #3a221f; --up-line: #5c332d;
       --gold: #d4b355; --gold-soft: #322b18;
       --shadow: 0 1px 3px rgba(0,0,0,.35);
@@ -140,16 +144,98 @@
              background: var(--ink); color: var(--bg); padding: 5px 10px; border-radius: 8px;
              font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
 
-  /* 板块热力 */
-  .startups { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-              gap: 10px; margin-bottom: 16px; }
-  .su-card { background: var(--surface); border: 1px solid var(--accent-line); border-radius: 12px;
-             padding: 10px 12px; box-shadow: var(--shadow); cursor: pointer; }
-  .su-card:hover { border-color: var(--accent); }
-  .su-card .nm { font-weight: 700; display: flex; align-items: center; gap: 6px; }
-  .su-card .tagnew { font-size: 10px; background: var(--teal); color: #fff;
-                     border-radius: 5px; padding: 0 5px; }
-  .su-card .meta { font-size: 11px; color: var(--ink2); margin: 2px 0 4px; }
+  /* 板块热力：产业 / 细分产品 / 题材三层分开展示，再按同日同股做交叉透视 */
+  .heat-guide { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+                padding: 12px 14px; margin-bottom: 12px; background: var(--surface);
+                border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+  .heat-guide .guide-copy { flex: 1; min-width: 260px; }
+  .heat-guide .guide-copy b { display: block; font-size: 15px; }
+  .heat-guide select { min-width: 190px; max-width: 280px; padding: 6px 28px 6px 9px;
+                       border: 1px solid var(--line); border-radius: 8px;
+                       background: var(--surface); color: var(--ink); font-size: 13px; }
+  .heat-guide select:focus { outline: none; border-color: var(--accent); }
+  .layer-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 10px; margin-bottom: 14px; }
+  .layer-card { --layer:#2e6be6; --layer-soft:#e9f0ff; background: var(--surface);
+                border: 1px solid var(--line); border-top: 3px solid var(--layer);
+                border-radius: 12px; padding: 10px 12px; box-shadow: var(--shadow);
+                min-width: 0; }
+  .layer-card.product { --layer:var(--product); --layer-soft:var(--product-soft); }
+  .layer-card.theme { --layer:var(--theme); --layer-soft:var(--theme-soft); }
+  .layer-card .layer-head { display: flex; align-items: baseline; gap: 7px; margin-bottom: 7px; }
+  .layer-card .layer-head b { color: var(--layer); font-size: 14px; }
+  .layer-card .layer-head span { color: var(--ink3); font-size: 10px; }
+  .layer-hot { display: grid; grid-template-columns: minmax(0, 1fr) 64px 28px;
+               align-items: center; gap: 6px; width: 100%; border: 0; border-radius: 7px;
+               padding: 4px 5px; background: transparent; color: var(--ink);
+               text-align: left; cursor: pointer; font: inherit; }
+  .layer-hot:hover, .layer-hot.on { background: var(--layer-soft); }
+  .layer-hot .hot-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .layer-hot .hot-bar { height: 5px; background: var(--surface2); border-radius: 5px; overflow: hidden; }
+  .layer-hot .hot-bar i { display: block; height: 100%; border-radius: inherit; background: var(--layer); }
+  .layer-hot strong { color: var(--layer); font-size: 11px; text-align: right;
+                      font-variant-numeric: tabular-nums; }
+  .start-mark { margin-left: 4px; padding: 0 4px; border-radius: 4px;
+                background: var(--teal-soft); color: var(--teal); font-size: 9px; }
+
+  .cross-card { margin-bottom: 14px; padding: 0; overflow: hidden; background: var(--surface);
+                border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+  .cross-head { display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+                padding: 11px 14px; border-bottom: 1px solid var(--line); }
+  .cross-head h3 { margin: 0; font-size: 15px; }
+  .cross-head .focus-name { color: var(--accent); }
+  .cross-head .cross-summary { margin-left: auto; color: var(--ink2); font-size: 11px; }
+  .type-badge { display: inline-flex; align-items: center; justify-content: center;
+                min-width: 38px; padding: 1px 6px; border-radius: 5px;
+                font-size: 10px; font-weight: 700; }
+  .type-badge.sector { color: var(--accent); background: var(--accent-soft); }
+  .type-badge.product { color: var(--product); background: var(--product-soft); }
+  .type-badge.theme { color: var(--theme); background: var(--theme-soft); }
+  .type-badge.catalyst { color: var(--teal); background: var(--teal-soft); }
+  .cross-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cross-col { --layer:#2e6be6; --layer-soft:#e9f0ff; padding: 12px 14px 13px; min-width: 0; }
+  .cross-col + .cross-col { border-left: 1px solid var(--line); }
+  .cross-col.product { --layer:var(--product); --layer-soft:var(--product-soft); }
+  .cross-col.theme { --layer:var(--theme); --layer-soft:var(--theme-soft); }
+  .cross-col-h { display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px;
+                 color: var(--layer); font-size: 12px; font-weight: 700; }
+  .cross-col-h span { margin-left: auto; color: var(--ink3); font-size: 10px; font-weight: 400; }
+  .cross-node { display: block; width: 100%; margin: 4px 0; padding: 6px 7px;
+                border: 1px solid transparent; border-radius: 8px; background: transparent;
+                color: var(--ink); text-align: left; cursor: pointer; }
+  .cross-node:hover, .cross-node.on { border-color: var(--layer); background: var(--layer-soft); }
+  .cross-node-top { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .cross-node-top .cn-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cross-node-top strong { margin-left: auto; color: var(--layer); font-size: 11px;
+                           font-variant-numeric: tabular-nums; }
+  .cross-meter { height: 3px; margin: 4px 0 2px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+  .cross-meter i { display: block; height: 100%; background: var(--layer); border-radius: inherit; }
+  .cross-node-meta { color: var(--ink3); font-size: 9px; }
+  .cross-empty { padding: 18px 0; color: var(--ink3); font-size: 11px; text-align: center; }
+  .driver-strip { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;
+                  padding: 9px 14px; border-top: 1px solid var(--line);
+                  background: var(--surface2); font-size: 11px; }
+  .driver-strip .driver-title { color: var(--teal); font-weight: 700; padding-top: 3px; }
+  .driver-chip { padding: 2px 8px; border: 1px solid var(--teal-line); border-radius: 999px;
+                 background: var(--teal-soft); color: var(--teal); cursor: pointer; }
+  .driver-chip:hover { background: var(--teal); color: #fff; }
+  .cross-stocks { padding: 10px 14px 12px; border-top: 1px solid var(--line); }
+  .cross-stocks-h { display: flex; align-items: baseline; gap: 8px; margin-bottom: 7px; }
+  .cross-stocks-h b { font-size: 12px; }
+  .cross-stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+  .cross-stock { padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px;
+                 background: var(--surface); cursor: pointer; min-width: 0; }
+  .cross-stock:hover { border-color: var(--accent); }
+  .cross-stock .stock-main { display: flex; align-items: baseline; gap: 5px; font-size: 12px; }
+  .cross-stock .stock-main b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cross-stock .stock-main span { color: var(--ink3); font-size: 10px; }
+  .cross-stock .stock-date { margin-left: auto; }
+  .cross-stock .stock-tags { margin-top: 2px; color: var(--ink2); font-size: 10px;
+                             overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .layer-heat-head { display: flex; align-items: baseline; gap: 8px; padding: 10px 14px 6px; }
+  .layer-heat-head .type-badge { margin-right: 1px; }
+  .layer-heat-head .layer-count { margin-left: auto; color: var(--ink3); font-size: 10px; }
   .heatwrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line);
               border-radius: 12px; box-shadow: var(--shadow); }
   .heatmap { border-collapse: collapse; table-layout: fixed; }
@@ -168,12 +254,19 @@
   .heatmap td.cell { width: 26px; height: 24px; text-align: center; font-size: 10px;
                      font-variant-numeric: tabular-nums; cursor: pointer;
                      border: 1px solid var(--bg); border-radius: 4px; }
-  .exp { display: inline-block; width: 14px; cursor: pointer; color: var(--ink3);
-         user-select: none; font-size: 10px; }
-  .exp:hover { color: var(--accent); }
+  .exp { display: inline-block; width: 14px; color: var(--ink3); user-select: none; font-size: 10px; }
   .rowlab .lvl1 { font-weight: 700; } .rowlab .lname { cursor: pointer; }
   .rowlab .lname:hover { color: var(--accent); }
   .rowlab .rsum { font-size: 10px; color: var(--ink3); margin-left: 5px; }
+  .rowlab .row-type { display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+                      margin: 0 7px 1px 1px; background: var(--accent); }
+  .rowlab .row-type.product { background: var(--product); }
+  .rowlab .row-type.theme { background: var(--theme); }
+  .rowlab .row-type.catalyst { background: var(--teal); }
+  .heat-more { display: block; margin: 8px auto 1px; padding: 4px 14px; border: 1px solid var(--line);
+               border-radius: 7px; background: var(--surface); color: var(--ink2);
+               cursor: pointer; font-size: 11px; }
+  .heat-more:hover { border-color: var(--accent); color: var(--accent); }
   .hierarchy { margin-top: 6px; font-size: 12px; color: var(--ink2); }
 
   /* 关联新闻 */
@@ -339,8 +432,14 @@
     .heatmap thead th:not(.rowlab) { width: 24px; }
     .heatmap td.cell { height: 26px; }
     th, td { padding: 6px 8px; }
-    .startups { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
-    .su-card { min-width: 0; }
+    .heat-guide { align-items: stretch; }
+    .heat-guide .guide-copy { min-width: 100%; }
+    .heat-guide select { flex: 1; min-width: 0; max-width: none; }
+    .layer-overview { grid-template-columns: 1fr; }
+    .cross-grid { grid-template-columns: 1fr; }
+    .cross-col + .cross-col { border-left: 0; border-top: 1px solid var(--line); }
+    .cross-head .cross-summary { margin-left: 0; width: 100%; }
+    .cross-stock-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
     .trow { gap: 6px; }
     .tlabel { flex-basis: 58px; font-size: 10px; }
   }
@@ -898,83 +997,261 @@ function renderStock(code) {
 
 /* ---------- 视图5：板块热力 ---------- */
 let heatRange = 30;
+let heatCrossRange = 5;
+let heatFocus = '';
 const heatExpanded = new Set();
+const heatLayerAll = new Set();
+const HEAT_LAYER = {
+  sector:  { label: '产业', title: '产业热力', cls: 'sector', rgb: '46,107,230',
+             hint: '稳定大产业，统计其全部下级标签覆盖的去重涨停家数' },
+  product: { label: '细分', title: '细分产品热力', cls: 'product', rgb: '0,143,168',
+             hint: '具体产品、技术或业务环节，观察热度真正落在哪里' },
+  theme:   { label: '题材', title: '交易题材热力', cls: 'theme', rgb: '119,85,204',
+             hint: '资金围绕同一叙事形成的共振，随市场形成与退潮' },
+  catalyst:{ label: '催化', title: '催化热力', cls: 'catalyst', rgb: '0,182,161',
+             hint: '业绩、涨价、订单、政策等驱动力，独立于三层标签展示' },
+};
+const _taxAncestorsCache = {};
+const _heatDayCodesCache = {};
+function taxAncestorsAll(name, stack) {
+  if (_taxAncestorsCache[name]) return _taxAncestorsCache[name];
+  stack = stack || new Set();
+  if (stack.has(name)) return new Set();
+  stack.add(name);
+  const out = new Set();
+  for (const p of taxParentsOf(name)) {
+    out.add(p);
+    for (const a of taxAncestorsAll(p, stack)) out.add(a);
+  }
+  stack.delete(name);
+  return _taxAncestorsCache[name] = out;
+}
+function formalHeatNodes(type) {
+  const nodes = new Set([...Object.keys(TAX), ...Object.values(TAX).flat()]);
+  return [...nodes].filter(n => statusOf(n) === 'active' && typeOf(n) === type &&
+    !virtualOf(n) && heatTaxCids(n).size);
+}
+function primarySectorNodes() {
+  return formalHeatNodes('sector').filter(n =>
+    ![...taxAncestorsAll(n)].some(a => typeOf(a) === 'sector' && !virtualOf(a)));
+}
+function heatDayCodes(name, d) {
+  const key = name + '\n' + d;
+  if (_heatDayCodesCache[key]) return _heatDayCodesCache[key];
+  const out = new Set();
+  for (const cid of heatTaxCids(name)) {
+    const concept = byConcept[cid];
+    if (!concept) continue;
+    for (const ev of (concept.days.get(d) || [])) out.add(ev[0]);
+  }
+  return _heatDayCodesCache[key] = out;
+}
+function heatOverlap(a, b, dates) {
+  let score = 0;
+  for (const d of dates) {
+    const ac = heatDayCodes(a, d), bc = heatDayCodes(b, d);
+    const [small, large] = ac.size <= bc.size ? [ac, bc] : [bc, ac];
+    for (const code of small) if (large.has(code)) score++;
+  }
+  return score;
+}
+function heatRelationRows(focus, targetType, dates, limit) {
+  const focusTotal = dates.reduce((n, d) => n + heatDayCodes(focus, d).size, 0);
+  const fa = taxAncestorsAll(focus);
+  return formalHeatNodes(targetType).map(nm => {
+    const score = heatOverlap(focus, nm, dates);
+    const structural = nm === focus || fa.has(nm) || taxAncestorsAll(nm).has(focus);
+    return { nm, score, structural, ratio: focusTotal ? score / focusTotal : 0 };
+  }).filter(r => r.score || r.structural)
+    .sort((a, b) => (b.nm === focus) - (a.nm === focus) ||
+      b.score - a.score || b.structural - a.structural ||
+      a.nm.localeCompare(b.nm, 'zh-CN')).slice(0, limit);
+}
+function heatFocusEvents(focus, dates) {
+  const out = new Map();
+  for (const cid of heatTaxCids(focus)) {
+    const concept = byConcept[cid];
+    if (!concept) continue;
+    for (const d of dates) for (const ev of (concept.days.get(d) || []))
+      out.set(d + '|' + ev[0], { d, ev });
+  }
+  return [...out.values()];
+}
+function heatFocusStocks(focus, dates) {
+  const stocks = new Map();
+  for (const { d, ev } of heatFocusEvents(focus, dates)) {
+    const code = ev[0];
+    const x = stocks.get(code) || { code, latest: '', hits: 0, products: new Set(),
+      themes: new Set(), reason: '' };
+    x.hits++;
+    if (d >= x.latest) { x.latest = d; x.reason = ev[8] || ''; }
+    for (const cid of ev[9] || []) {
+      const nm = D.concepts[cid]?.[0];
+      if (!nm || statusOf(nm) !== 'active') continue;
+      if (typeOf(nm) === 'product') x.products.add(nm);
+      if (typeOf(nm) === 'theme' && nm !== focus) x.themes.add(nm);
+    }
+    stocks.set(code, x);
+  }
+  return [...stocks.values()].sort((a, b) =>
+    b.latest.localeCompare(a.latest) || b.hits - a.hits ||
+    (D.stocks[a.code] || '').localeCompare(D.stocks[b.code] || '', 'zh-CN'));
+}
+function layerOverviewHtml(type, title, desc, nodes) {
+  const def = HEAT_LAYER[type];
+  const rows = [...nodes].sort((a, b) =>
+    heatTaxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
+    heatTaxSeries(a).slice(-5).reduce((x, y) => x + y, 0)).slice(0, 6)
+    .map(nm => {
+      const sum5 = heatTaxSeries(nm).slice(-5).reduce((a, b) => a + b, 0);
+      const start = startupOf(heatTaxSeries(nm));
+      return { nm, sum5, start: start && start.recent >= 3 && start.ratio >= 2.2 };
+    });
+  const vmax = Math.max(1, ...rows.map(r => r.sum5));
+  return `<section class="layer-card ${def.cls}">
+    <div class="layer-head"><b>${title}</b><span>${desc}</span></div>
+    ${rows.length ? rows.map(r => `<button class="layer-hot${heatFocus === r.nm ? ' on' : ''}"
+      data-focus="${esc(r.nm)}"><span class="hot-name">${esc(r.nm)}${
+        r.start ? '<span class="start-mark">启动</span>' : ''}</span>
+      <span class="hot-bar"><i style="width:${Math.max(3, r.sum5 / vmax * 100).toFixed(0)}%"></i></span>
+      <strong>${r.sum5}</strong></button>`).join('') :
+      '<div class="cross-empty">暂无有效标签</div>'}</section>`;
+}
+function crossColumnHtml(type, title, note, rows, focusTotal) {
+  return `<section class="cross-col ${HEAT_LAYER[type].cls}">
+    <div class="cross-col-h">${title}<span>${note}</span></div>
+    ${rows.length ? rows.map(r => `<button class="cross-node${r.nm === heatFocus ? ' on' : ''}"
+      data-focus="${esc(r.nm)}"><div class="cross-node-top">
+      <span class="cn-name">${esc(r.nm)}</span><strong>${r.score || '—'}</strong></div>
+      <div class="cross-meter"><i style="width:${r.score ? Math.max(3, r.ratio * 100).toFixed(0) : 0}%"></i></div>
+      <div class="cross-node-meta">${r.score ? `共振 ${r.score} 股次 · 覆盖观察对象 ${Math.round(r.ratio * 100)}%`
+        : 'taxonomy 层级关联 · 近窗口暂无共同个股'}</div></button>`).join('') :
+      '<div class="cross-empty">这个窗口暂无可确认的交叉关系</div>'}</section>`;
+}
+function layerHeatRowHtml(r, dates, vmax, type) {
+  const def = HEAT_LAYER[type];
+  const cells = r.series.map((v, i) => {
+    const a = v ? Math.min(1, Math.sqrt(v / vmax)) : 0;
+    const fg = a > 0.55 ? '#fff' : 'var(--ink2)';
+    return `<td class="cell" data-d="${dates[i]}" data-nm="${esc(r.nm)}" data-v="${v}"
+      style="background:rgba(${def.rgb},${a.toFixed(2)});color:${fg}">${v || ''}</td>`;
+  }).join('');
+  const action = type === 'catalyst' ? `data-detail="${esc(r.nm)}"` : `data-focus="${esc(r.nm)}"`;
+  return `<tr><td class="rowlab"><span class="row-type ${def.cls}"></span>
+    <span class="lname lvl1" ${action}>${esc(r.nm)}</span>
+    <span class="rsum">近5日${r.sum5}</span></td>${cells}</tr>`;
+}
 function renderHeat() {
   if (!taxRoots.length) { $('#app').innerHTML = '<div class="empty">未配置 taxonomy.json</div>'; return; }
-  const sortBy5 = arr => arr.sort((a, b) =>
+  const sortBy5 = arr => [...arr].sort((a, b) =>
     heatTaxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
     heatTaxSeries(a).slice(-5).reduce((x, y) => x + y, 0));
-  const themeRoots = sortBy5(taxRoots.filter(isActiveTheme));
-  const catRoots = sortBy5(taxRoots.filter(isActiveCatalyst));
+  const allSectorNodes = sortBy5(formalHeatNodes('sector'));
+  const sectorNodes = sortBy5(primarySectorNodes());
+  const productNodes = sortBy5(formalHeatNodes('product'));
+  const themeNodes = sortBy5(formalHeatNodes('theme'));
+  const catalystNodes = sortBy5(formalHeatNodes('catalyst'));
+  const focusNodes = [...allSectorNodes, ...productNodes, ...themeNodes];
+  if (!heatFocus || !focusNodes.includes(heatFocus))
+    heatFocus = themeNodes[0] || productNodes[0] || sectorNodes[0] || '';
 
-  // 题材启动榜：仅已审核的 sector/product/theme 树节点参与判定
-  const themeNodes = new Set();
-  const collect = n => {
-    if (themeNodes.has(n)) return;
-    if (isActiveTheme(n)) themeNodes.add(n);
-    heatChildren(n).forEach(collect);
-  };
-  themeRoots.forEach(collect);
-  const startups = [];
-  for (const nm of themeNodes) {
-    const s = startupOf(heatTaxSeries(nm));
-    if (s && s.recent >= 3 && s.ratio >= 2.2)
-      startups.push({ nm, ...s, isNew: s.base < 0.8 });
-  }
-  startups.sort((a, b) => b.ratio - a.ratio || b.recent - a.recent);
-
-  // 热力图共用的日期窗口（最新日期在最左）
+  // 三层热力图共用同一日期轴（最新日期在最左），交叉透视另用近1/5/20日窗口。
   const win = heatRange ? D.dates.slice(-heatRange) : D.dates.slice();
   const off = D.dates.length - win.length;
   const dates = [...win].reverse();
   const step = Math.ceil(dates.length / 15);
-
-  const heatTableHtml = (title, hint, roots, rgb) => {
-    const rows = [];
-    const childrenSorted = nm => sortBy5(heatChildren(nm));
-    const addRow = (nm, lvl) => {
-      rows.push({ nm, lvl, series: heatTaxSeries(nm).slice(off).reverse(),
-                  sum5: heatTaxSeries(nm).slice(-5).reduce((a, b) => a + b, 0) });
-      if (heatExpanded.has(nm))
-        for (const ch of childrenSorted(nm)) addRow(ch, lvl + 1);
-    };
-    for (const r of roots) addRow(r, 1);
+  const crossDates = D.dates.slice(-heatCrossRange);
+  const focusTotal = crossDates.reduce((n, d) => n + heatDayCodes(heatFocus, d).size, 0);
+  const latestHit = [...crossDates].reverse().find(d => heatDayCodes(heatFocus, d).size);
+  const relations = {
+    sector: heatRelationRows(heatFocus, 'sector', crossDates, 6),
+    product: heatRelationRows(heatFocus, 'product', crossDates, 7),
+    theme: heatRelationRows(heatFocus, 'theme', crossDates, 7),
+    catalyst: heatRelationRows(heatFocus, 'catalyst', crossDates, 8),
+  };
+  const focusStocks = heatFocusStocks(heatFocus, crossDates);
+  const heatTableHtml = (type, nodes, limit) => {
+    const def = HEAT_LAYER[type];
+    const shown = heatLayerAll.has(type) ? nodes.slice(0, 80) : nodes.slice(0, limit);
+    const rows = shown.map(nm => ({
+      nm, series: heatTaxSeries(nm).slice(off).reverse(),
+      sum5: heatTaxSeries(nm).slice(-5).reduce((a, b) => a + b, 0),
+    }));
     if (!rows.length) return '';
-    const vmax = Math.max(4, ...rows.filter(r => r.lvl === 1).flatMap(r => r.series));
+    const vmax = Math.max(4, ...rows.flatMap(r => r.series));
     return `
     <div class="chart-card" style="padding:0;overflow:hidden;margin-top:14px">
-      <div class="ch-h" style="padding:10px 14px 6px"><b>${title}</b>
-        <span class="muted small">${hint}</span></div>
+      <div class="layer-heat-head"><span class="type-badge ${def.cls}">${def.label}</span>
+        <b>${def.title}</b><span class="muted small">${def.hint}</span>
+        <span class="layer-count">显示 ${rows.length} / ${nodes.length}</span></div>
       <div class="heatwrap"><table class="heatmap">
         <thead><tr><th class="rowlab"></th>${dates.map((d, i) =>
           `<th${i % step === 0 ? ' class="dlab"' : ''}>${i % step === 0 ? d.slice(5) : ''}</th>`).join('')}</tr></thead>
-        <tbody>${rows.map(r => heatRowHtml(r, dates, vmax, rgb)).join('')}</tbody>
-      </table></div></div>`;
+        <tbody>${rows.map(r => layerHeatRowHtml(r, dates, vmax, type)).join('')}</tbody>
+      </table></div>${nodes.length > limit ? `<button class="heat-more" data-layer-more="${type}">${
+        heatLayerAll.has(type) ? '收起' : `展开更多（最多80项）`}</button>` : ''}</div>`;
   };
 
+  const focusOptions = [
+    ['sector', '产业', allSectorNodes],
+    ['product', '细分产品', productNodes],
+    ['theme', '交易题材', themeNodes],
+  ].map(([, label, nodes]) => `<optgroup label="${label}">${[...nodes]
+    .sort((a, b) => a.localeCompare(b, 'zh-CN')).map(nm =>
+      `<option value="${esc(nm)}"${nm === heatFocus ? ' selected' : ''}>${esc(nm)}</option>`).join('')
+    }</optgroup>`).join('');
   let html = `
   <div class="datebar"><h2 style="margin:0">板块热力</h2>
-    <span class="muted small">热度 = 板块内每日去重涨停家数（含子标签）· ▸ 展开 · 点格子看当日个股</span>
+    <span class="muted small">产业看赛道、细分看业务落点、题材看资金叙事 · 点格子看当日个股</span>
     <div class="seg" style="margin-left:auto">
       <button id="h30" class="${heatRange === 30 ? 'on' : ''}">近30日</button>
       <button id="h60" class="${heatRange === 60 ? 'on' : ''}">近60日</button>
       <button id="hall" class="${heatRange === 0 ? 'on' : ''}">全部</button>
-    </div></div>`;
+    </div></div>
+  <div class="heat-guide">
+    <div class="guide-copy"><b>产业 × 细分产品 × 题材交叉透视</b>
+      <span class="muted small">选择观察对象，自动寻找同日、同股发生的上下游归属和题材共振</span></div>
+    <select id="heat-focus-select" aria-label="选择观察标签">${focusOptions}</select>
+    <div class="seg" style="margin-left:0">
+      <button id="hc1" class="${heatCrossRange === 1 ? 'on' : ''}">当日</button>
+      <button id="hc5" class="${heatCrossRange === 5 ? 'on' : ''}">近5日</button>
+      <button id="hc20" class="${heatCrossRange === 20 ? 'on' : ''}">近20日</button>
+    </div></div>
+  <div class="layer-overview">
+    ${layerOverviewHtml('sector', '产业', '长期赛道', sectorNodes)}
+    ${layerOverviewHtml('product', '细分产品', '业务落点', productNodes)}
+    ${layerOverviewHtml('theme', '交易题材', '资金叙事', themeNodes)}
+  </div>
+  <section class="cross-card">
+    <div class="cross-head"><span class="type-badge ${HEAT_LAYER[typeOf(heatFocus)]?.cls || 'theme'}">${
+      TYPE_LABEL[typeOf(heatFocus)] || '标签'}</span>
+      <h3>观察对象：<span class="focus-name">${esc(heatFocus)}</span></h3>
+      ${nameToCid[heatFocus] != null ? `<button class="navbtn heat-detail" data-detail="${esc(heatFocus)}">查看标签详情</button>` : ''}
+      <span class="cross-summary">近${heatCrossRange}日 ${focusTotal} 股次${
+        latestHit ? ` · 最近活跃 ${latestHit}` : ' · 暂无涨停记录'} · 交叉值仅表示关联，不代表因果</span></div>
+    <div class="cross-grid">
+      ${crossColumnHtml('sector', '① 产业归属', '股票在哪条赛道', relations.sector, focusTotal)}
+      ${crossColumnHtml('product', '② 细分产品', '热度落在哪个环节', relations.product, focusTotal)}
+      ${crossColumnHtml('theme', '③ 题材共振', '资金在交易什么叙事', relations.theme, focusTotal)}
+    </div>
+    <div class="driver-strip"><span class="driver-title">本次催化</span>${
+      relations.catalyst.length ? relations.catalyst.map(r =>
+        `<button class="driver-chip" data-detail="${esc(r.nm)}">${esc(r.nm)} · ${r.score}股次</button>`).join('')
+        : '<span class="muted">窗口内没有与观察对象同时出现的已审核催化标签</span>'}</div>
+    <div class="cross-stocks"><div class="cross-stocks-h"><b>共振股票</b>
+      <span class="muted small">近${heatCrossRange}日命中观察对象的 ${focusStocks.length} 只股票；标签来自当日涨停原因</span></div>
+      ${focusStocks.length ? `<div class="cross-stock-grid">${focusStocks.slice(0, 16).map(s => {
+        const tags = [...s.products, ...s.themes].slice(0, 4);
+        return `<div class="cross-stock" data-stock="${s.code}"><div class="stock-main">
+          <b>${esc(D.stocks[s.code] || s.code)}</b><span>${s.code}</span>
+          <span class="stock-date">${s.latest.slice(5)}</span></div>
+          <div class="stock-tags">${esc(tags.length ? tags.join(' · ') : s.reason || '暂无细分标签')}</div></div>`;
+      }).join('')}</div>` : '<div class="cross-empty" style="padding:8px 0">当前窗口暂无共振股票</div>'}
+    </div></section>`;
 
-  if (startups.length) {
-    html += `<div class="startups">${startups.slice(0, 8).map(s => `
-      <div class="su-card" data-nm="${esc(s.nm)}">
-        <div class="nm">${esc(s.nm)} ${s.isNew ? '<span class="tagnew">新启动</span>' : '<span class="tagnew" style="background:var(--gold)">加速</span>'}</div>
-        <div class="meta">近3日均 ${s.recent.toFixed(1)} 家 / 前15日均 ${s.base.toFixed(1)} 家 · ${s.ratio.toFixed(1)}×</div>
-        ${spark(heatTaxSeries(s.nm).slice(-15))}
-      </div>`).join('')}</div>`;
-  } else {
-    html += `<div class="muted small" style="margin-bottom:12px">近3日无明显启动的题材（阈值：日均≥3家且≥2.2×基线）</div>`;
-  }
-
-  // 题材轮动：top8 根题材的滚动5日热度排名（bump chart）
-  const topRoots = themeRoots.slice(0, 8);
-  if (topRoots.length >= 3 && win.length >= 8) {
+  // 产业轮动只比较大产业，不再把产品和交易题材放在同一排名里。
+  const topSectors = sectorNodes.slice(0, 8);
+  if (topSectors.length >= 3 && win.length >= 8) {
     const roll = nm => {
       const s = heatTaxSeries(nm);
       return win.map((_, i) => {
@@ -984,16 +1261,16 @@ function renderHeat() {
         return t;
       });
     };
-    const series = topRoots.map(nm => ({ nm, v: roll(nm) }));
+    const series = topSectors.map(nm => ({ nm, v: roll(nm) }));
     const ranks = series.map(() => []);
     for (let i = 0; i < win.length; i++) {
       series.map((s, si) => [s.v[i], si]).sort((a, b) => b[0] - a[0])
         .forEach(([, si], pos) => ranks[si][i] = pos);
     }
     const RC = ['#2e6be6', '#00b6a1', '#e0762d', '#8b5cf6', '#d23f77', '#4f9c1f', '#b8860b', '#607d8b'];
-    const W = 1000, RH = 34 + topRoots.length * 22, padL = 8, padR = 130, rpT = 14, rpB = 18;
+    const W = 1000, RH = 34 + topSectors.length * 22, padL = 8, padR = 130, rpT = 14, rpB = 18;
     const RX = i => padL + i * (W - padL - padR) / Math.max(1, win.length - 1);
-    const RY = r => rpT + r * (RH - rpT - rpB) / Math.max(1, topRoots.length - 1);
+    const RY = r => rpT + r * (RH - rpT - rpB) / Math.max(1, topSectors.length - 1);
     let rg = '';
     series.forEach((s, si) => {
       rg += `<polyline points="${ranks[si].map((r, i) => `${RX(i).toFixed(1)},${RY(r).toFixed(1)}`).join(' ')}"
@@ -1006,13 +1283,15 @@ function renderHeat() {
     win.forEach((dd, i) => {
       if (i % stepR === 0) rg += `<text x="${RX(i).toFixed(1)}" y="${RH - 3}">${dd.slice(5)}</text>`;
     });
-    html += `<div class="chart-card" style="margin-top:14px"><div class="ch-h"><b>题材轮动</b>
-      <span class="muted small">滚动5日热度排名（Top8 根题材）· 线上翘=资金流入 · 交叉点=轮动发生</span></div>
+    html += `<div class="chart-card" style="margin-top:14px"><div class="ch-h"><b>产业轮动</b>
+      <span class="muted small">仅比较Top8大产业的滚动5日热度 · 线上翘=相对升温 · 交叉点=产业排名切换</span></div>
       <svg viewBox="0 0 ${W} ${RH}" width="100%" style="display:block">${rg}</svg></div>`;
   }
 
-  html += heatTableHtml('题材热力', '仅已审核的产业/细分/题材标签', themeRoots, '46,107,230');
-  html += heatTableHtml('催化热力', '业绩/分红/重组等事件型催化，单独统计不与题材混排', catRoots, '0,166,150');
+  html += heatTableHtml('sector', sectorNodes, 14);
+  html += heatTableHtml('product', productNodes, 14);
+  html += heatTableHtml('theme', themeNodes, 14);
+  html += heatTableHtml('catalyst', catalystNodes, 10);
 
   // 未审核新热点：不进正式榜，但按共振度排序绝不隐身（新题材爆发的第一现场）
   const inTreeCids = new Set();
@@ -1057,17 +1336,22 @@ function renderHeat() {
   $('#h30').onclick = () => { heatRange = 30; renderHeat(); };
   $('#h60').onclick = () => { heatRange = 60; renderHeat(); };
   $('#hall').onclick = () => { heatRange = 0; renderHeat(); };
-  document.querySelectorAll('.su-card').forEach(el =>
-    el.addEventListener('click', () => gotoTaxNode(el.dataset.nm)));
-  document.querySelectorAll('.exp').forEach(el =>
-    el.addEventListener('click', e => {
-      e.stopPropagation();
-      const nm = el.dataset.exp;
-      heatExpanded.has(nm) ? heatExpanded.delete(nm) : heatExpanded.add(nm);
+  $('#hc1').onclick = () => { heatCrossRange = 1; renderHeat(); };
+  $('#hc5').onclick = () => { heatCrossRange = 5; renderHeat(); };
+  $('#hc20').onclick = () => { heatCrossRange = 20; renderHeat(); };
+  $('#heat-focus-select').addEventListener('change', e => { heatFocus = e.target.value; renderHeat(); });
+  document.querySelectorAll('[data-focus]').forEach(el =>
+    el.addEventListener('click', () => { heatFocus = el.dataset.focus; renderHeat(); }));
+  document.querySelectorAll('[data-detail]').forEach(el =>
+    el.addEventListener('click', () => gotoTaxNode(el.dataset.detail)));
+  document.querySelectorAll('[data-stock]').forEach(el =>
+    el.addEventListener('click', () => go('#/stock/' + el.dataset.stock)));
+  document.querySelectorAll('[data-layer-more]').forEach(el =>
+    el.addEventListener('click', () => {
+      const t = el.dataset.layerMore;
+      heatLayerAll.has(t) ? heatLayerAll.delete(t) : heatLayerAll.add(t);
       renderHeat();
     }));
-  document.querySelectorAll('.lname').forEach(el =>
-    el.addEventListener('click', () => gotoTaxNode(el.dataset.nm)));
   document.querySelectorAll('.heatmap .cell[data-d]').forEach(el => {
     el.addEventListener('click', () => {
       if (+el.dataset.v > 0)
@@ -1078,20 +1362,6 @@ function renderHeat() {
     el.addEventListener('mouseleave', hideTip);
   });
   bindChips();
-}
-function heatRowHtml(r, dates, vmax, rgb) {
-  rgb = rgb || '46,107,230';
-  const hasKids = heatChildren(r.nm).length > 0;
-  const cells = r.series.map((v, i) => {
-    const a = v ? Math.min(1, Math.sqrt(v / vmax)) : 0;
-    const fg = a > 0.55 ? '#fff' : 'var(--ink2)';
-    return `<td class="cell" data-d="${dates[i]}" data-nm="${esc(r.nm)}" data-v="${v}"
-      style="background:rgba(${rgb},${a.toFixed(2)});color:${fg}">${v || ''}</td>`;
-  }).join('');
-  return `<tr><td class="rowlab" style="padding-left:${6 + (r.lvl - 1) * 16}px">
-    <span class="exp" data-exp="${esc(r.nm)}">${hasKids ? (heatExpanded.has(r.nm) ? '▾' : '▸') : ''}</span>
-    <span class="lname ${r.lvl === 1 ? 'lvl1' : ''}" data-nm="${esc(r.nm)}">${esc(r.nm)}</span>
-    <span class="rsum">近5日${r.sum5}</span></td>${cells}</tr>`;
 }
 function gotoTaxNode(nm) {
   const cid = nameToCid[nm];
@@ -1923,7 +2193,7 @@ function openClassify(nm) {
   const allNodes = [...new Set([...Object.keys(TAX), ...Object.values(TAX).flat()])].sort();
   $('#modal').innerHTML = `
     <h3>✎ 分类标签：${esc(nm)}</h3>
-    <div class="mrow"><div class="mlabel">类型（sector/product/theme→题材热力，catalyst→催化热力，其余不进热度）</div>
+    <div class="mrow"><div class="mlabel">类型（sector/product/theme→三层交叉热力，catalyst→催化热力，其余不进热度）</div>
       <div class="opts" id="m-type">${ALLT.map(t =>
         `<span class="opt${t === type ? ' on' : ''}" data-v="${t}">${TYPE_LABEL[t]}</span>`).join('')}</div></div>
     <div class="mrow"><div class="mlabel">状态</div>

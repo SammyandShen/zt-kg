@@ -5,9 +5,11 @@
     <key>Label</key>
     <string>com.user.zt-kg-daily</string>
 
+    <!-- 必须用 homebrew bash：系统 /bin/bash 在 launchd 环境下被 macOS TCC
+         拒绝访问 ~/Documents（Operation not permitted 静默失败） -->
     <key>ProgramArguments</key>
     <array>
-        <string>/bin/bash</string>
+        <string>/opt/homebrew/bin/bash</string>
         <string>__PROJECT_DIR__/run-daily.sh</string>
     </array>
 
