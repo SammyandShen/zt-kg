@@ -245,6 +245,45 @@
   .concept-chip.c-attr.sel { background: var(--gold); color: #fff; border-color: var(--gold); }
   .concept-chip.c-evt.sel { background: var(--ink3); color: var(--bg); border-color: var(--ink3); border-style: solid; }
   .concept-chip.sel .x, .concept-chip.c-cat.sel .x, .concept-chip.c-attr.sel .x { color: #fff; opacity: .8; }
+  /* 标签中心 */
+  .subtabs { display: inline-flex; border: 1px solid var(--line); border-radius: 10px;
+             overflow: hidden; margin-bottom: 14px; }
+  .subtabs button { border: none; background: var(--surface); color: var(--ink2);
+                    padding: 7px 18px; font-size: 13px; cursor: pointer; }
+  .subtabs button.on { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+  .tree2col { display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); gap: 14px; }
+  @media (max-width: 900px) { .tree2col { grid-template-columns: 1fr; } }
+  .panor { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+           padding: 8px 6px; box-shadow: var(--shadow); max-height: 76vh; overflow: auto; }
+  .pnode { display: flex; align-items: center; gap: 5px; padding: 2px 6px; border-radius: 7px;
+           cursor: pointer; font-size: 13px; white-space: nowrap; }
+  .pnode:hover { background: var(--surface2); }
+  .pnode.sel { background: var(--accent-soft); }
+  .pnode .dot { width: 7px; height: 7px; border-radius: 2px; flex: none; margin: 0; }
+  .pnode .pn { overflow: hidden; text-overflow: ellipsis; }
+  .pnode .hb { flex: none; height: 8px; border-radius: 2px; background: var(--accent); opacity: .75; }
+  .pnode .hn { font-size: 10px; color: var(--ink3); flex: none; }
+  .lc { font-size: 9px; border-radius: 4px; padding: 0 4px; flex: none; line-height: 15px; }
+  .lc-start { background: var(--teal); color: #fff; }
+  .lc-hot { background: var(--up); color: #fff; }
+  .lc-ebb { background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold); }
+  .lc-live { background: var(--accent-soft); color: var(--accent); }
+  .lc-idle { background: var(--surface2); color: var(--ink3); }
+  .npanel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+            padding: 12px 14px; box-shadow: var(--shadow); }
+  .echelon td { vertical-align: top; }
+  .govrow { display: flex; align-items: center; gap: 8px; padding: 6px 8px;
+            border-bottom: 1px solid var(--line); font-size: 13px; flex-wrap: wrap; }
+  .govrow:last-child { border-bottom: none; }
+  .govrow .gname { font-weight: 600; cursor: pointer; }
+  .govrow .gname:hover { color: var(--accent); }
+  .govrow .gmeta { color: var(--ink3); font-size: 11px; }
+  .sugg { font-size: 11px; border-radius: 5px; padding: 1px 6px;
+          background: var(--teal-soft); color: var(--teal); border: 1px solid var(--teal-line); }
+  .govrow input[type=checkbox] { accent-color: var(--accent); }
+  .batchbar { position: sticky; bottom: 0; background: var(--surface); border-top: 1px solid var(--line);
+              padding: 8px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
   .fltbar { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
             padding: 10px 14px 12px; margin-bottom: 14px; box-shadow: var(--shadow); }
   .fltrow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 8px 0; }
@@ -313,7 +352,7 @@
   <nav>
     <button id="nav-review">每日复盘</button>
     <button id="nav-heat">板块热力</button>
-    <button id="nav-filter">全局筛选</button>
+    <button id="nav-filter">标签中心</button>
     <button id="nav-trend">情绪趋势</button>
     <button id="nav-batch">批量归类</button>
   </nav>
@@ -440,7 +479,7 @@ window.addEventListener('hashchange', render);
 $('#brand').onclick = () => go('#/date/' + D.dates[D.dates.length - 1]);
 $('#nav-review').onclick = $('#brand').onclick;
 $('#nav-heat').onclick = () => go('#/heat');
-$('#nav-filter').onclick = () => go('#/filter');
+$('#nav-filter').onclick = () => go('#/tags/' + (TAGS.tab || 'tree'));
 $('#nav-trend').onclick = () => go('#/trend');
 $('#nav-batch').onclick = () => go('#/batch');
 
@@ -449,11 +488,12 @@ function render() {
   const [, view, arg] = h.match(/^#\/(\w+)\/?(.*)$/) || [];
   $('#nav-review').classList.toggle('on', view === 'date');
   $('#nav-heat').classList.toggle('on', view === 'heat');
-  $('#nav-filter').classList.toggle('on', view === 'filter');
+  $('#nav-filter').classList.toggle('on', view === 'filter' || view === 'tags');
   $('#nav-trend').classList.toggle('on', view === 'trend');
   $('#nav-batch').classList.toggle('on', view === 'batch');
   hideTip();
-  if (view === 'filter') return renderFilter();
+  if (view === 'filter') return renderTags('filter');
+  if (view === 'tags') return renderTags(arg || 'tree');
   if (view === 'date') return renderDate(decodeURIComponent(arg));
   if (view === 'concept') return renderConcept(+arg);
   if (view === 'stock') return renderStock(decodeURIComponent(arg));
@@ -510,6 +550,26 @@ function renderDate(d) {
     ${touches.length ? `<div class="stat"><div class="v" style="color:var(--ink2)">${touches.length}</div><div class="k">触及未封</div></div>` : ''}
   </div>`;
 
+  // 标签库日报（仅最新交易日）：新面孔 / 未入树 / 待审积压
+  if (d === D.dates[D.dates.length - 1] && evs.length) {
+    const firstZtDay = code => (byStock[code].find(x => !isTouch(x.ev)) || {}).d;
+    const faces = evs.filter(e => firstZtDay(e[0]) === d);
+    const childSet2 = new Set(Object.values(TAX).flat());
+    const inTreeCids = new Set();
+    for (const r of Object.keys(TAX).filter(p => !childSet2.has(p)))
+      for (const c of taxCids(r)) inTreeCids.add(c);
+    const uncov = evs.filter(e => !e[9].some(c => inTreeCids.has(c)));
+    const backlog = Object.entries(META).filter(([, v]) => v[1] === 'candidate').length;
+    html += `<div class="card" style="padding:8px 14px">
+      <span class="tlabel tl-theme" style="padding:3px 10px">标签库日报</span>
+      <span class="small muted" style="margin:0 6px">树内覆盖 <b>${Math.round((1 - uncov.length / evs.length) * 100)}%</b>
+        · 未入树 <b>${uncov.length}</b> 只 · 待审积压 <b>${backlog}</b> ·</span>
+      <span class="small" style="cursor:pointer;color:var(--accent)" id="rp-gov">去治理台 →</span>
+      ${faces.length ? `<div style="margin-top:6px"><span class="small muted">🆕 新面孔（库内首次涨停）：</span>
+        ${faces.map(ev => chipHtml(ev, d)).join('')}</div>` : ''}
+    </div>`;
+  }
+
   if (catas.length) {
     html += `<div class="card" style="padding:8px 14px"><span class="tlabel tl-cat" style="padding:3px 10px">今日催化</span>
       ${catas.map(g => `<span class="concept-chip c-cat" data-cid="${g.cid}" style="padding:2px 10px">
@@ -544,6 +604,7 @@ function renderDate(d) {
   if (!all.length) html += `<div class="empty">当日无涨停数据</div>`;
   $('#app').innerHTML = html;
 
+  $('#rp-gov')?.addEventListener('click', () => go('#/tags/gov'));
   $('#prev')?.addEventListener('click', () => go('#/date/' + D.dates[i - 1]));
   $('#next')?.addEventListener('click', () => go('#/date/' + D.dates[i + 1]));
   $('#dpick').addEventListener('change', e => {
@@ -871,6 +932,45 @@ function renderHeat() {
     html += `<div class="muted small" style="margin-bottom:12px">近3日无明显启动的题材（阈值：日均≥3家且≥2.2×基线）</div>`;
   }
 
+  // 题材轮动：top8 根题材的滚动5日热度排名（bump chart）
+  const topRoots = themeRoots.slice(0, 8);
+  if (topRoots.length >= 3 && win.length >= 8) {
+    const roll = nm => {
+      const s = taxSeries(nm);
+      return win.map((_, i) => {
+        const gi = off + i;
+        let t = 0;
+        for (let k = Math.max(0, gi - 4); k <= gi; k++) t += s[k] ?? 0;
+        return t;
+      });
+    };
+    const series = topRoots.map(nm => ({ nm, v: roll(nm) }));
+    const ranks = series.map(() => []);
+    for (let i = 0; i < win.length; i++) {
+      series.map((s, si) => [s.v[i], si]).sort((a, b) => b[0] - a[0])
+        .forEach(([, si], pos) => ranks[si][i] = pos);
+    }
+    const RC = ['#2e6be6', '#00b6a1', '#e0762d', '#8b5cf6', '#d23f77', '#4f9c1f', '#b8860b', '#607d8b'];
+    const W = 1000, RH = 34 + topRoots.length * 22, padL = 8, padR = 130, rpT = 14, rpB = 18;
+    const RX = i => padL + i * (W - padL - padR) / Math.max(1, win.length - 1);
+    const RY = r => rpT + r * (RH - rpT - rpB) / Math.max(1, topRoots.length - 1);
+    let rg = '';
+    series.forEach((s, si) => {
+      rg += `<polyline points="${ranks[si].map((r, i) => `${RX(i).toFixed(1)},${RY(r).toFixed(1)}`).join(' ')}"
+        fill="none" stroke="${RC[si % 8]}" stroke-width="2.5" stroke-linejoin="round" opacity=".85"></polyline>`;
+      const lr = ranks[si][win.length - 1];
+      rg += `<text x="${W - padR + 8}" y="${(RY(lr) + 3.5).toFixed(1)}"
+        style="fill:${RC[si % 8]};font-size:11px">#${lr + 1} ${esc(s.nm)}</text>`;
+    });
+    const stepR = Math.ceil(win.length / 8);
+    win.forEach((dd, i) => {
+      if (i % stepR === 0) rg += `<text x="${RX(i).toFixed(1)}" y="${RH - 3}">${dd.slice(5)}</text>`;
+    });
+    html += `<div class="chart-card" style="margin-top:14px"><div class="ch-h"><b>题材轮动</b>
+      <span class="muted small">滚动5日热度排名（Top8 根题材）· 线上翘=资金流入 · 交叉点=轮动发生</span></div>
+      <svg viewBox="0 0 ${W} ${RH}" width="100%" style="display:block">${rg}</svg></div>`;
+  }
+
   html += heatTableHtml('题材热力', '仅已审核的产业/题材标签', themeRoots, '46,107,230');
   html += heatTableHtml('催化热力', '业绩/分红/重组等事件型催化，单独统计不与题材混排', catRoots, '0,166,150');
 
@@ -894,17 +994,20 @@ function renderHeat() {
     orphan.push({ cid: +cid, nm, total, s5, mx, mxd, stocks: c.stocks.size });
   }
   orphan.sort((a, b) => b.mx - a.mx || b.s5 - a.s5 || b.total - a.total);
-  if (orphan.length) {
+  const burst = orphan.filter(o => o.mx >= 3);      // 只留爆发预警，完整队列在治理台
+  if (burst.length || orphan.length) {
     html += `<div class="card" style="margin-top:14px"><div class="card-h">
-      <span class="cname muted">未审核新热点</span>
-      <span class="hist">按单日共振排序 · 确认类型后加入 tag_meta/taxonomy 再跑 build_site.py</span></div>
-      <div>${orphan.slice(0, 24).map(o =>
-        `<span class="concept-chip" data-cid="${o.cid}" ${o.mx >= 3 ? 'style="border-width:2px;font-weight:600"' : ''}>${esc(o.nm)}
-         <span class="x">${o.mx >= 3 ? '🔥共振' + o.mx + '家(' + o.mxd.slice(5) + ')' : o.stocks + '股×' + o.total}${o.s5 ? ' · 近5日' + o.s5 : ''}</span></span><button
-           class="clsbtn${FIX[o.nm] ? ' done' : ''}" data-cls="${esc(o.nm)}" title="手动分类">${FIX[o.nm] ? '✎已标' : '✎'}</button>`).join('')}</div></div>`;
+      <span class="cname muted">未审核爆发预警</span>
+      <span class="hist">单日共振≥3家的未入树标签 · <span style="cursor:pointer;color:var(--accent)" id="h-gov">完整待审队列在治理台 →</span></span></div>
+      <div>${burst.length ? burst.slice(0, 16).map(o =>
+        `<span class="concept-chip" data-cid="${o.cid}" style="border-width:2px;font-weight:600">${esc(o.nm)}
+         <span class="x">🔥共振${o.mx}家(${o.mxd.slice(5)})${o.s5 ? ' · 近5日' + o.s5 : ''}</span></span><button
+           class="clsbtn${FIX[o.nm] ? ' done' : ''}" data-cls="${esc(o.nm)}" title="手动分类">${FIX[o.nm] ? '✎已标' : '✎'}</button>`).join('')
+        : '<span class="muted small">近期无未审核标签出现≥3家共振</span>'}</div></div>`;
   }
 
   $('#app').innerHTML = html;
+  $('#h-gov')?.addEventListener('click', () => go('#/tags/gov'));
   $('#h30').onclick = () => { heatRange = 30; renderHeat(); };
   $('#h60').onclick = () => { heatRange = 60; renderHeat(); };
   $('#hall').onclick = () => { heatRange = 0; renderHeat(); };
@@ -1329,8 +1432,8 @@ function renderFilter() {
   const nSel = Object.values(FLT.sel).reduce((a, s) => a + s.size, 0);
   const shown = rows.slice(0, 150);
 
-  $('#app').innerHTML = `
-  <div class="datebar"><h2 style="margin:0">全局筛选</h2>
+  ($('#tagsub') || $('#app')).innerHTML = `
+  <div class="datebar">
     <span class="muted small">行内多选=或，跨行=且 · 题材自动含子标签</span></div>
   <div class="fltbar">
     <div class="fltrow">
@@ -1396,6 +1499,319 @@ function renderFilter() {
     el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
   document.querySelectorAll('td .concept-chip[data-cid]').forEach(el =>
     el.addEventListener('click', e => { e.stopPropagation(); go('#/concept/' + el.dataset.cid); }));
+}
+
+/* ---------- 视图9：标签中心（筛选/全景树/治理台） ---------- */
+const TAGS = { tab: 'tree', sel: null, expanded: new Set(), onlyActive: true, days: 10,
+               govSel: new Set(), govQ: '' };
+
+function renderTags(sub) {
+  TAGS.tab = ['filter', 'tree', 'gov'].includes(sub) ? sub : 'tree';
+  $('#app').innerHTML = `
+  <div class="datebar"><h2 style="margin:0">标签中心</h2>
+    <div class="subtabs" style="margin:0 0 0 12px">
+      <button data-t="tree" class="${TAGS.tab === 'tree' ? 'on' : ''}">题材全景</button>
+      <button data-t="filter" class="${TAGS.tab === 'filter' ? 'on' : ''}">全局筛选</button>
+      <button data-t="gov" class="${TAGS.tab === 'gov' ? 'on' : ''}">治理台</button>
+    </div></div>
+  <div id="tagsub"></div>`;
+  document.querySelectorAll('.subtabs [data-t]').forEach(el =>
+    el.addEventListener('click', () => go('#/tags/' + el.dataset.t)));
+  if (TAGS.tab === 'filter') return renderFilter();
+  if (TAGS.tab === 'gov') return renderTagsGov();
+  renderTagsTree();
+}
+
+/* --- 生命周期：休眠/活跃/启动/高潮/退潮 --- */
+function lifecycleOf(nm) {
+  const s = taxSeries(nm);
+  const win = s.slice(-30);
+  const sum = win.reduce((a, b) => a + b, 0);
+  if (!sum) return ['idle', '休眠'];
+  const r3 = s.slice(-3).reduce((a, b) => a + b, 0) / 3;
+  const peak3 = Math.max(...win.map((_, i) => win.slice(Math.max(0, i - 2), i + 1)
+    .reduce((a, b) => a + b, 0) / 3));
+  const st = startupOf(s);
+  if (st && st.recent >= 3 && st.ratio >= 2.2) return ['start', '启动'];
+  if (r3 >= 4 && r3 >= peak3 * 0.8) return ['hot', '高潮'];
+  if (peak3 >= 3 && r3 < peak3 * 0.35) return ['ebb', '退潮'];
+  return ['live', '活跃'];
+}
+
+/* --- 全景树 --- */
+function renderTagsTree() {
+  const winDates = TAGS.days ? D.dates.slice(-TAGS.days) : D.dates;
+  const sum5 = nm => taxSeries(nm).slice(-TAGS.days || undefined).reduce((a, b) => a + b, 0);
+  const childSet2 = new Set(Object.values(TAX).flat());
+  const roots = Object.keys(TAX).filter(p => !childSet2.has(p));
+  const groupRoots = [
+    ['题材', roots.filter(isTheme).sort((a, b) => sum5(b) - sum5(a))],
+    ['催化', roots.filter(isCatalyst).sort((a, b) => sum5(b) - sum5(a))],
+    ['属性', roots.filter(n => !isTheme(n) && !isCatalyst(n)).sort((a, b) => sum5(b) - sum5(a))],
+  ];
+  const maxSum = Math.max(4, ...roots.map(sum5));
+
+  const nodeHtml = (nm, depth) => {
+    const kids = (TAX[nm] || []).filter(ch => !TAGS.onlyActive || sum5(ch) > 0 || TAX[ch]);
+    const open = TAGS.expanded.has(nm);
+    const s = sum5(nm);
+    if (TAGS.onlyActive && !s && !kids.length && depth > 0) return '';
+    const [lc, lcTxt] = lifecycleOf(nm);
+    const dotc = { theme: 'var(--accent)', cat: 'var(--teal)' }[
+      isTheme(nm) ? 'theme' : isCatalyst(nm) ? 'cat' : 'x'] || 'var(--gold)';
+    const bw = Math.max(2, Math.round(46 * Math.sqrt(s / maxSum)));
+    let h = `<div class="pnode${TAGS.sel === nm ? ' sel' : ''}" data-pn="${esc(nm)}"
+      style="padding-left:${8 + depth * 16}px">
+      <span class="exp" data-pexp="${esc(nm)}">${kids.length ? (open ? '▾' : '▸') : ''}</span>
+      <span class="dot" style="background:${dotc}"></span>
+      <span class="pn${depth === 0 ? '' : ''}" ${depth === 0 ? 'style="font-weight:700"' : ''}>${esc(nm)}</span>
+      ${s ? `<span class="lc lc-${lc}">${lcTxt}</span><span class="hb" style="width:${bw}px"></span><span class="hn">${s}</span>` : '<span class="lc lc-idle">休眠</span>'}
+    </div>`;
+    if (open) for (const ch of kids.sort((a, b) => sum5(b) - sum5(a))) h += nodeHtml(ch, depth + 1);
+    return h;
+  };
+
+  let treeHtml = '';
+  for (const [glabel, list] of groupRoots) {
+    if (!list.length) continue;
+    treeHtml += `<div class="muted small" style="padding:8px 8px 2px;font-weight:700">${glabel}</div>`
+      + list.map(r => nodeHtml(r, 0)).join('');
+  }
+
+  $('#tagsub').innerHTML = `
+  <div class="fltrow" style="margin-bottom:10px">
+    <span class="flabel">时间窗</span>
+    <div class="seg">${[[5, '近5日'], [10, '近10日'], [30, '近30日'], [0, '全部']].map(([v, l]) =>
+      `<button data-td="${v}" class="${TAGS.days === v ? 'on' : ''}">${l}</button>`).join('')}</div>
+    <button class="navbtn" id="t-expall">全部展开</button>
+    <button class="navbtn" id="t-clpall">全部收起</button>
+    <label class="small muted"><input type="checkbox" id="t-act" ${TAGS.onlyActive ? 'checked' : ''}> 只看有热度</label>
+    <button class="navbtn" id="t-newgrp">➕ 新建分组</button>
+  </div>
+  <div class="tree2col">
+    <div class="panor">${treeHtml}</div>
+    <div class="npanel" id="npanel">${TAGS.sel ? '' : '<div class="empty">← 点击左侧节点查看该枝全景与梯队</div>'}</div>
+  </div>`;
+
+  document.querySelectorAll('[data-td]').forEach(el =>
+    el.addEventListener('click', () => { TAGS.days = +el.dataset.td; renderTagsTree(); }));
+  $('#t-expall').onclick = () => {
+    for (const p in TAX) TAGS.expanded.add(p);
+    renderTagsTree();
+  };
+  $('#t-clpall').onclick = () => { TAGS.expanded.clear(); renderTagsTree(); };
+  $('#t-act').onchange = e => { TAGS.onlyActive = e.target.checked; renderTagsTree(); };
+  $('#t-newgrp').onclick = openNewGroup;
+  document.querySelectorAll('[data-pexp]').forEach(el =>
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      const nm = el.dataset.pexp;
+      TAGS.expanded.has(nm) ? TAGS.expanded.delete(nm) : TAGS.expanded.add(nm);
+      renderTagsTree();
+    }));
+  document.querySelectorAll('[data-pn]').forEach(el =>
+    el.addEventListener('click', () => { TAGS.sel = el.dataset.pn; renderTagsTree(); }));
+  if (TAGS.sel) renderNodePanel(TAGS.sel, winDates);
+}
+
+/* --- 节点面板：梯队表 + 分枝股票 --- */
+function renderNodePanel(nm, winDates) {
+  const cids = taxCids(nm);
+  const winSet = new Set(winDates);
+  // 窗口内该枝的股票聚合
+  const agg = new Map();     // code -> {maxLb, n, last, lastEv, touch}
+  for (const d of winDates) for (const ev of D.events[d]) {
+    if (!ev[9].some(c => cids.has(c))) continue;
+    const a = agg.get(ev[0]) ?? agg.set(ev[0], { maxLb: 0, n: 0, tc: 0, last: '', lastEv: ev }).get(ev[0]);
+    if (isTouch(ev)) a.tc++; else { a.n++; a.maxLb = Math.max(a.maxLb, ev[1] || 1); }
+    if (d >= a.last) { a.last = d; a.lastEv = ev; }
+  }
+  const stocks = [...agg].map(([code, a]) => ({ code, ...a }))
+    .sort((a, b) => b.maxLb - a.maxLb || b.n - a.n);
+  // 晋级率：窗口最后两个交易日
+  const dN = winDates[winDates.length - 1], dP = winDates[winDates.length - 2];
+  let promo = '';
+  if (dP) {
+    const inBranchZt = d => new Set((D.events[d] || [])
+      .filter(ev => !isTouch(ev) && ev[9].some(c => cids.has(c))).map(ev => ev[0]));
+    const p = inBranchZt(dP), n = inBranchZt(dN);
+    const kept = [...p].filter(c => n.has(c)).length;
+    if (p.size) promo = `晋级率 <b>${Math.round(kept / p.size * 100)}%</b>（${dP.slice(5)} ${p.size}只 → 今再板 ${kept}只）`;
+  }
+  const [lc, lcTxt] = lifecycleOf(nm);
+  const tier = (label, list, cls) => list.length ? `
+    <div class="trow"><span class="tlabel ${cls}">${label}</span><div class="tbody">${
+      list.map(s => `<span class="chip${isTouch(s.lastEv) ? ' touch' : ''}" data-code="${s.code}">
+        ${lbBadge(s.lastEv)} ${esc(D.stocks[s.code] || s.code)}
+        <span class="code">${s.n > 1 ? '×' + s.n : ''}</span></span>`).join('')}</div></div>` : '';
+  const t1 = stocks.filter(s => s.maxLb >= 3), t2 = stocks.filter(s => s.maxLb === 2),
+        t3 = stocks.filter(s => s.n && s.maxLb <= 1), t4 = stocks.filter(s => !s.n);
+  // 分枝分布
+  const kids = (TAX[nm] || []).filter(ch => taxCids(ch).size);
+  const branchRows = kids.map(ch => {
+    const chCids = taxCids(ch);
+    const codes = new Set();
+    for (const d of winDates) for (const ev of D.events[d])
+      if (!isTouch(ev) && ev[9].some(c => chCids.has(c))) codes.add(ev[0]);
+    return { ch, n: codes.size };
+  }).filter(b => b.n).sort((a, b) => b.n - a.n);
+
+  const cid0 = nameToCid[nm];
+  $('#npanel').innerHTML = `
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <b style="font-size:16px">${esc(nm)}</b>
+      <span class="lc lc-${lc}">${lcTxt}</span>
+      <span class="muted small">${TYPE_LABEL[typeOf(nm)]} · 窗口内 ${stocks.filter(s => s.n).length} 只涨停${stocks.filter(s => !s.n).length ? ' + ' + stocks.filter(s => !s.n).length + ' 只触及' : ''}</span>
+      <button class="clsbtn${FIX[nm] ? ' done' : ''}" data-cls="${esc(nm)}">✎ 编辑</button>
+      <button class="clsbtn" id="np-attach">➕ 挂子标签</button>
+      ${cid0 != null && byConcept[cid0] ? `<button class="clsbtn" data-cid-go="${cid0}">概念页 →</button>` : ''}
+    </div>
+    ${promo ? `<div class="muted small" style="margin-top:4px">${promo}</div>` : ''}
+    <div style="margin-top:8px">
+      ${tier('空间板 ≥3板', t1, 'tl-theme') + tier('中军 2板', t2, 'tl-cat') +
+        tier('首板/跟风', t3, 'tl-attr') + tier('触及未封', t4, 'tl-evt')}
+      ${!stocks.length ? '<div class="muted small">窗口内无涨停记录</div>' : ''}
+    </div>
+    ${branchRows.length ? `<div style="margin-top:10px"><span class="muted small">分枝热度：</span>${
+      branchRows.map(b => `<span class="concept-chip" data-pn2="${esc(b.ch)}">${esc(b.ch)}<span class="x">${b.n}只</span></span>`).join('')}</div>` : ''}`;
+
+  document.querySelectorAll('#npanel [data-code]').forEach(el =>
+    el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
+  document.querySelectorAll('#npanel [data-pn2]').forEach(el =>
+    el.addEventListener('click', () => {
+      TAGS.sel = el.dataset.pn2; TAGS.expanded.add(nm); renderTagsTree();
+    }));
+  document.querySelectorAll('#npanel .clsbtn[data-cls]').forEach(el =>
+    el.addEventListener('click', () => openClassify(el.dataset.cls)));
+  document.querySelector('#npanel [data-cid-go]')?.addEventListener('click',
+    e => go('#/concept/' + e.target.dataset.cidGo));
+  $('#np-attach').onclick = () => openAttach(nm);
+}
+
+/* --- 治理台 --- */
+function renderTagsGov() {
+  const win = D.dates.slice(-10);
+  // 覆盖率（最新交易日）
+  const dN = D.dates[D.dates.length - 1];
+  const inTreeCids = new Set();
+  const childSet2 = new Set(Object.values(TAX).flat());
+  for (const r of Object.keys(TAX).filter(p => !childSet2.has(p)))
+    for (const c of taxCids(r)) inTreeCids.add(c);
+  const todayZt = (D.events[dN] || []).filter(ev => !isTouch(ev));
+  const uncov = todayZt.filter(ev => !ev[9].some(c => inTreeCids.has(c)));
+  const backlog = Object.entries(META).filter(([, v]) => v[1] === 'candidate').length;
+
+  // 待审核队列：candidate 且窗口内活跃，按窗口家数排序
+  const queue = [];
+  for (const cid in D.concepts) {
+    const nmc = D.concepts[cid][0];
+    const mv = META[nmc];
+    if (!mv || mv[1] !== 'candidate') continue;
+    if (FIX[nmc]) continue;                       // 本地已标注的不再进队列
+    const codes = new Set();
+    for (const d of win) for (const ev of (byConcept[cid]?.days.get(d) || [])) codes.add(ev[0]);
+    if (!codes.size) continue;
+    if (TAGS.govQ && !nmc.includes(TAGS.govQ)) continue;
+    const tops = [...(byConcept[cid]?.stocks || new Map())].sort((a, b) => b[1] - a[1]).slice(0, 3);
+    queue.push({ cid: +cid, nm: nmc, n: codes.size, total: D.concepts[cid][1],
+                 tops: tops.map(([c]) => D.stocks[c] || c), sugg: (D.llm_sugg || {})[nmc] });
+  }
+  queue.sort((a, b) => b.n - a.n || b.total - a.total);
+
+  // 疑似重复（互为子串）
+  const activeNames = Object.keys(META).filter(n => nameToCid[n] != null && byConcept[nameToCid[n]]);
+  const dup = [];
+  const hotNames = activeNames.filter(n => hotOf(nameToCid[n]) >= 1);
+  for (const a of hotNames) for (const b of activeNames) {
+    if (a !== b && b.includes(a) && a.length >= 2 && !(D.aliases[b] != null))
+      dup.push(a + ' ⊂ ' + b);
+    if (dup.length >= 15) break;
+  }
+
+  // 共现观测：窗口内题材/催化标签对
+  const pairCnt = new Map(), prevCnt = new Map();
+  const countPairs = (dates, map) => {
+    for (const d of dates) for (const ev of (D.events[d] || [])) {
+      if (isTouch(ev)) continue;
+      const ns = ev[9].map(c => D.concepts[c][0]).filter(n => isTheme(n) || isCatalyst(n));
+      for (let i = 0; i < ns.length; i++) for (let j = i + 1; j < ns.length; j++) {
+        const k = [ns[i], ns[j]].sort().join('×');
+        map.set(k, (map.get(k) || 0) + 1);
+      }
+    }
+  };
+  countPairs(win, pairCnt);
+  countPairs(D.dates.slice(-20, -10), prevCnt);
+  const pairs = [...pairCnt].sort((a, b) => b[1] - a[1]).slice(0, 20)
+    .map(([k, n]) => ({ k, n, up: n > (prevCnt.get(k) || 0) * 1.5 }));
+
+  $('#tagsub').innerHTML = `
+  <div class="stats">
+    <div class="stat"><div class="v">${todayZt.length ? Math.round((1 - uncov.length / todayZt.length) * 100) + '%' : '—'}</div>
+      <div class="k">${dN.slice(5)} 树内覆盖率</div></div>
+    <div class="stat"><div class="v">${uncov.length}</div><div class="k">今日未入树涨停</div></div>
+    <div class="stat"><div class="v">${backlog}</div><div class="k">待审核积压</div></div>
+    <div class="stat"><div class="v">${queue.length}</div><div class="k">近10日活跃待审</div></div>
+  </div>
+  ${uncov.length ? `<div class="card"><div class="card-h"><span class="cname muted">今日未入树涨停</span>
+    <span class="hist">标签都还没进 taxonomy 的股票，优先处理</span></div>
+    <div class="chips">${uncov.map(ev => chipHtml(ev, dN)).join('')}</div></div>` : ''}
+  <div class="card"><div class="card-h"><span class="cname">待审核队列（近10日活跃）</span>
+    <input id="g-q" placeholder="搜标签" value="${esc(TAGS.govQ)}" style="margin-left:auto;padding:4px 10px;
+      border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:12px;width:140px"></div>
+    <div>${queue.slice(0, 60).map(q => `
+      <div class="govrow">
+        <input type="checkbox" data-gck="${esc(q.nm)}" ${TAGS.govSel.has(q.nm) ? 'checked' : ''}>
+        <span class="gname" data-cid="${q.cid}">${esc(q.nm)}</span>
+        <span class="gmeta">近10日${q.n}只 · 累计${q.total}次 · ${q.tops.map(esc).join('/')}</span>
+        ${q.sugg ? `<span class="sugg">LLM: ${TYPE_LABEL[q.sugg[0]] || q.sugg[0]} ${Math.round(q.sugg[1] * 100)}%${q.sugg[2] ? ' → ' + esc(q.sugg[2]) : ''}</span>
+          ${q.sugg[1] >= 0.4 && q.sugg[0] !== 'unknown' ? `<button class="clsbtn" data-adopt="${esc(q.nm)}">采纳</button>` : ''}` : ''}
+        <button class="clsbtn" data-cls="${esc(q.nm)}">✎</button>
+      </div>`).join('') || '<div class="muted small" style="padding:8px">近10日无活跃待审标签 🎉</div>'}</div>
+    ${queue.length > 60 ? `<div class="muted small" style="padding:6px 8px">共 ${queue.length} 条，显示前60（搜索缩小范围）</div>` : ''}
+    <div class="batchbar" id="batchbar" style="display:${TAGS.govSel.size ? 'flex' : 'none'}">
+      <span class="small muted">已选 ${TAGS.govSel.size} 条，批量设为：</span>
+      ${['theme', 'catalyst', 'attribute', 'event'].map(t =>
+        `<button class="navbtn" data-bset="${t}">${TYPE_LABEL[t]}</button>`).join('')}
+      <button class="navbtn" data-bset="__clear">取消选择</button>
+    </div>
+  </div>
+  ${dup.length ? `<div class="card"><div class="card-h"><span class="cname muted">疑似重复标签</span>
+    <span class="hist">左边包含于右边，确认同义就加 aliases.json 后 rebuild</span></div>
+    <div class="muted small">${dup.map(esc).join('　·　')}</div></div>` : ''}
+  <div class="card"><div class="card-h"><span class="cname muted">共现观测（近10日）</span>
+    <span class="hist">同一只票同时带两个标签 · ↑=较前10日明显上升，新叙事信号</span></div>
+    <div>${pairs.map(p => `<span class="concept-chip" style="cursor:default">${esc(p.k)}
+      <span class="x">${p.n}${p.up ? ' <b style="color:var(--up)">↑</b>' : ''}</span></span>`).join('') || '<span class="muted small">无</span>'}</div></div>`;
+
+  $('#g-q').addEventListener('input', e => { TAGS.govQ = e.target.value.trim(); renderTagsGov();
+    const qi = $('#g-q'); qi.focus(); qi.setSelectionRange(qi.value.length, qi.value.length); });
+  document.querySelectorAll('[data-gck]').forEach(el =>
+    el.addEventListener('change', () => {
+      el.checked ? TAGS.govSel.add(el.dataset.gck) : TAGS.govSel.delete(el.dataset.gck);
+      $('#batchbar').style.display = TAGS.govSel.size ? 'flex' : 'none';
+    }));
+  document.querySelectorAll('[data-adopt]').forEach(el =>
+    el.addEventListener('click', () => {
+      const nm = el.dataset.adopt, s = (D.llm_sugg || {})[nm];
+      if (!s) return;
+      FIX[nm] = { type: s[0], status: 'active' };
+      if (s[2]) FIX[nm].parent = s[2];
+      saveFix(); location.reload();
+    }));
+  document.querySelectorAll('[data-bset]').forEach(el =>
+    el.addEventListener('click', () => {
+      const t = el.dataset.bset;
+      if (t === '__clear') { TAGS.govSel.clear(); renderTagsGov(); return; }
+      for (const nm of TAGS.govSel) FIX[nm] = { type: t, status: 'active' };
+      TAGS.govSel.clear(); saveFix(); location.reload();
+    }));
+  document.querySelectorAll('.govrow .gname[data-cid]').forEach(el =>
+    el.addEventListener('click', () => go('#/concept/' + el.dataset.cid)));
+  document.querySelectorAll('#tagsub .clsbtn[data-cls]').forEach(el =>
+    el.addEventListener('click', () => openClassify(el.dataset.cls)));
+  document.querySelectorAll('#tagsub .chip[data-code]').forEach(el =>
+    el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
 }
 
 /* ---------- 全局搜索 ---------- */
@@ -1493,6 +1909,68 @@ function openClassify(nm) {
   $('#m-del')?.addEventListener('click', () => {
     delete FIX[nm]; saveFix(); location.reload();
   });
+}
+
+function openAttach(parentNm) {
+  // 把已有概念挂到 parentNm 下（不在树内的概念都可选）
+  const inTree = new Set([...Object.keys(TAX), ...Object.values(TAX).flat()]);
+  const cands = Object.values(D.concepts).map(c => c[0])
+    .filter(n => !inTree.has(n)).sort();
+  const defType = isCatalyst(parentNm) ? 'catalyst' : 'theme';
+  $('#modal').innerHTML = `
+    <h3>➕ 挂子标签到「${esc(parentNm)}」</h3>
+    <div class="mrow"><div class="mlabel">选择一个未入树的标签（可输入过滤）</div>
+      <input type="text" id="m-child" list="orphnodes" placeholder="输入标签名">
+      <datalist id="orphnodes">${cands.map(n => `<option value="${esc(n)}">`).join('')}</datalist></div>
+    <div class="muted small">类型将设为 ${TYPE_LABEL[defType]}·已审核（可稍后 ✎ 调整）；本地立即生效。</div>
+    <div class="mbtns">
+      <button class="navbtn" id="m-cancel">取消</button>
+      <button class="btn-primary" style="margin-top:0" id="m-save">挂靠</button>
+    </div>`;
+  showModal();
+  $('#m-cancel').onclick = closeModal;
+  $('#m-save').onclick = () => {
+    const child = $('#m-child').value.trim();
+    if (!child || child === parentNm) return;
+    FIX[child] = { type: (FIX[child] || {}).type || defType, status: 'active', parent: parentNm };
+    saveFix(); location.reload();
+  };
+}
+
+function openNewGroup() {
+  // 新建虚拟分组节点（无涨停记录也可，作树的中间层/新一级板块）
+  const allNodes = [...new Set([...Object.keys(TAX), ...Object.values(TAX).flat()])].sort();
+  $('#modal').innerHTML = `
+    <h3>➕ 新建分组节点</h3>
+    <div class="mrow"><div class="mlabel">分组名（如"固态电池产业链"）</div>
+      <input type="text" id="m-gname" placeholder="名称"></div>
+    <div class="mrow"><div class="mlabel">频道</div>
+      <div class="opts" id="m-type">
+        <span class="opt on" data-v="sector">题材频道</span>
+        <span class="opt" data-v="catalyst">催化频道</span></div></div>
+    <div class="mrow"><div class="mlabel">父节点（留空=一级板块）</div>
+      <input type="text" id="m-parent" list="taxnodes2" placeholder="可空">
+      <datalist id="taxnodes2">${allNodes.map(n => `<option value="${esc(n)}">`).join('')}</datalist></div>
+    <div class="muted small">建好后在全景树上用「➕挂子标签」往里装内容。</div>
+    <div class="mbtns">
+      <button class="navbtn" id="m-cancel">取消</button>
+      <button class="btn-primary" style="margin-top:0" id="m-save">创建</button>
+    </div>`;
+  showModal();
+  document.querySelectorAll('#m-type .opt').forEach(el =>
+    el.addEventListener('click', () => {
+      el.parentElement.querySelectorAll('.opt').forEach(o => o.classList.remove('on'));
+      el.classList.add('on');
+    }));
+  $('#m-cancel').onclick = closeModal;
+  $('#m-save').onclick = () => {
+    const nm = $('#m-gname').value.trim();
+    if (!nm) return;
+    FIX[nm] = { type: $('#m-type .opt.on').dataset.v, status: 'active' };
+    const p = $('#m-parent').value.trim();
+    if (p && p !== nm) FIX[nm].parent = p;
+    saveFix(); location.reload();
+  };
 }
 
 function exportPatch() {
