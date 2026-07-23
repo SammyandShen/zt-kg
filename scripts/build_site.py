@@ -149,6 +149,17 @@ def main() -> int:
             briefs[f"{code}|{d}"] = brief
 
     known_names = {v[0] for v in concepts.values()}
+    tag_meta = load_tag_meta()
+    taxonomy = load_taxonomy(known_names)
+    # 频道一致性护栏：题材树里不该挂催化子节点，反之亦然
+    bucket = lambda n: {"sector": "题材", "theme": "题材", "catalyst": "催化"}.get(
+        (tag_meta.get(n) or ["?"])[0])
+    bad = [(p, c) for p, kids in taxonomy.items() for c in kids
+           if bucket(p) and bucket(c) and bucket(p) != bucket(c)]
+    if bad:
+        print("⚠️ taxonomy 频道错位（题材/催化混挂，请修正）：" +
+              "、".join(f"{p}→{c}" for p, c in bad[:10]))
+
     data = {
         "generated_at": common.now_iso(),
         "dates": dates,
@@ -157,8 +168,8 @@ def main() -> int:
         "aliases": aliases,
         "stocks": stocks,
         "events": events,
-        "taxonomy": load_taxonomy(known_names),
-        "tag_meta": load_tag_meta(),
+        "taxonomy": taxonomy,
+        "tag_meta": tag_meta,
         "news": news,
         "briefs": briefs,
     }
