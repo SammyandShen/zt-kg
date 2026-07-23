@@ -150,13 +150,19 @@
                 border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
   .heat-guide .guide-copy { flex: 1; min-width: 260px; }
   .heat-guide .guide-copy b { display: block; font-size: 15px; }
-  .heat-guide select { min-width: 190px; max-width: 280px; padding: 6px 28px 6px 9px;
-                       border: 1px solid var(--line); border-radius: 8px;
-                       background: var(--surface); color: var(--ink); font-size: 13px; }
-  .heat-guide select:focus { outline: none; border-color: var(--accent); }
+  .focus-picker { display: flex; min-width: 240px; }
+  .focus-picker input { width: 190px; min-width: 0; padding: 6px 9px;
+                        border: 1px solid var(--line); border-right: 0;
+                        border-radius: 8px 0 0 8px; background: var(--surface);
+                        color: var(--ink); font-size: 13px; }
+  .focus-picker input:focus { outline: none; border-color: var(--accent); }
+  .focus-picker button { padding: 5px 11px; border: 1px solid var(--accent);
+                         border-radius: 0 8px 8px 0; background: var(--accent-soft);
+                         color: var(--accent); cursor: pointer; font-size: 12px; }
+  .focus-picker button:hover { background: var(--accent); color: #fff; }
   .layer-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
                     gap: 10px; margin-bottom: 14px; }
-  .layer-card { --layer:#2e6be6; --layer-soft:#e9f0ff; background: var(--surface);
+  .layer-card { --layer:var(--accent); --layer-soft:var(--accent-soft); background: var(--surface);
                 border: 1px solid var(--line); border-top: 3px solid var(--layer);
                 border-radius: 12px; padding: 10px 12px; box-shadow: var(--shadow);
                 min-width: 0; }
@@ -193,7 +199,7 @@
   .type-badge.theme { color: var(--theme); background: var(--theme-soft); }
   .type-badge.catalyst { color: var(--teal); background: var(--teal-soft); }
   .cross-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .cross-col { --layer:#2e6be6; --layer-soft:#e9f0ff; padding: 12px 14px 13px; min-width: 0; }
+  .cross-col { --layer:var(--accent); --layer-soft:var(--accent-soft); padding: 12px 14px 13px; min-width: 0; }
   .cross-col + .cross-col { border-left: 1px solid var(--line); }
   .cross-col.product { --layer:var(--product); --layer-soft:var(--product-soft); }
   .cross-col.theme { --layer:var(--theme); --layer-soft:var(--theme-soft); }
@@ -434,7 +440,8 @@
     th, td { padding: 6px 8px; }
     .heat-guide { align-items: stretch; }
     .heat-guide .guide-copy { min-width: 100%; }
-    .heat-guide select { flex: 1; min-width: 0; max-width: none; }
+    .focus-picker { flex: 1; min-width: 0; }
+    .focus-picker input { flex: 1; width: auto; }
     .layer-overview { grid-template-columns: 1fr; }
     .cross-grid { grid-template-columns: 1fr; }
     .cross-col + .cross-col { border-left: 0; border-top: 1px solid var(--line); }
@@ -1117,7 +1124,7 @@ function layerOverviewHtml(type, title, desc, nodes) {
       <strong>${r.sum5}</strong></button>`).join('') :
       '<div class="cross-empty">暂无有效标签</div>'}</section>`;
 }
-function crossColumnHtml(type, title, note, rows, focusTotal) {
+function crossColumnHtml(type, title, note, rows) {
   return `<section class="cross-col ${HEAT_LAYER[type].cls}">
     <div class="cross-col-h">${title}<span>${note}</span></div>
     ${rows.length ? rows.map(r => `<button class="cross-node${r.nm === heatFocus ? ' on' : ''}"
@@ -1196,10 +1203,8 @@ function renderHeat() {
     ['sector', '产业', allSectorNodes],
     ['product', '细分产品', productNodes],
     ['theme', '交易题材', themeNodes],
-  ].map(([, label, nodes]) => `<optgroup label="${label}">${[...nodes]
-    .sort((a, b) => a.localeCompare(b, 'zh-CN')).map(nm =>
-      `<option value="${esc(nm)}"${nm === heatFocus ? ' selected' : ''}>${esc(nm)}</option>`).join('')
-    }</optgroup>`).join('');
+  ].map(([, label, nodes]) => [...nodes].sort((a, b) => a.localeCompare(b, 'zh-CN'))
+    .map(nm => `<option value="${esc(nm)}" label="${label}"></option>`).join('')).join('');
   let html = `
   <div class="datebar"><h2 style="margin:0">板块热力</h2>
     <span class="muted small">产业看赛道、细分看业务落点、题材看资金叙事 · 点格子看当日个股</span>
@@ -1211,7 +1216,9 @@ function renderHeat() {
   <div class="heat-guide">
     <div class="guide-copy"><b>产业 × 细分产品 × 题材交叉透视</b>
       <span class="muted small">选择观察对象，自动寻找同日、同股发生的上下游归属和题材共振</span></div>
-    <select id="heat-focus-select" aria-label="选择观察标签">${focusOptions}</select>
+    <div class="focus-picker"><input id="heat-focus-input" list="heat-focus-list"
+      value="${esc(heatFocus)}" placeholder="输入产业、产品或题材" aria-label="搜索观察标签">
+      <datalist id="heat-focus-list">${focusOptions}</datalist><button id="heat-focus-go">查看</button></div>
     <div class="seg" style="margin-left:0">
       <button id="hc1" class="${heatCrossRange === 1 ? 'on' : ''}">当日</button>
       <button id="hc5" class="${heatCrossRange === 5 ? 'on' : ''}">近5日</button>
@@ -1230,9 +1237,9 @@ function renderHeat() {
       <span class="cross-summary">近${heatCrossRange}日 ${focusTotal} 股次${
         latestHit ? ` · 最近活跃 ${latestHit}` : ' · 暂无涨停记录'} · 交叉值仅表示关联，不代表因果</span></div>
     <div class="cross-grid">
-      ${crossColumnHtml('sector', '① 产业归属', '股票在哪条赛道', relations.sector, focusTotal)}
-      ${crossColumnHtml('product', '② 细分产品', '热度落在哪个环节', relations.product, focusTotal)}
-      ${crossColumnHtml('theme', '③ 题材共振', '资金在交易什么叙事', relations.theme, focusTotal)}
+      ${crossColumnHtml('sector', '① 产业归属', '股票在哪条赛道', relations.sector)}
+      ${crossColumnHtml('product', '② 细分产品', '热度落在哪个环节', relations.product)}
+      ${crossColumnHtml('theme', '③ 题材共振', '资金在交易什么叙事', relations.theme)}
     </div>
     <div class="driver-strip"><span class="driver-title">本次催化</span>${
       relations.catalyst.length ? relations.catalyst.map(r =>
@@ -1339,7 +1346,16 @@ function renderHeat() {
   $('#hc1').onclick = () => { heatCrossRange = 1; renderHeat(); };
   $('#hc5').onclick = () => { heatCrossRange = 5; renderHeat(); };
   $('#hc20').onclick = () => { heatCrossRange = 20; renderHeat(); };
-  $('#heat-focus-select').addEventListener('change', e => { heatFocus = e.target.value; renderHeat(); });
+  const applyFocusInput = () => {
+    const v = $('#heat-focus-input').value.trim();
+    if (!focusNodes.includes(v)) { $('#heat-focus-input').value = heatFocus; return; }
+    heatFocus = v; renderHeat();
+  };
+  $('#heat-focus-go').onclick = applyFocusInput;
+  $('#heat-focus-input').addEventListener('change', applyFocusInput);
+  $('#heat-focus-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); applyFocusInput(); }
+  });
   document.querySelectorAll('[data-focus]').forEach(el =>
     el.addEventListener('click', () => { heatFocus = el.dataset.focus; renderHeat(); }));
   document.querySelectorAll('[data-detail]').forEach(el =>
