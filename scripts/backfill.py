@@ -56,20 +56,24 @@ def main() -> int:
 
     conn = common.open_db()
     alias_map = common.load_aliases()
-    done = {r[0] for r in conn.execute(
-        "SELECT trade_date FROM fetch_log WHERE source='ths' AND status IN ('ok','empty')")}
+    done = {(r[0], r[1]) for r in conn.execute(
+        "SELECT trade_date, source FROM fetch_log "
+        "WHERE source IN ('ths','ths:touch') AND status IN ('ok','empty')")}
 
+    # 每个目标 = (日期, 池)：涨停池 source='ths'，炸板池 source='ths:touch'
     targets = []
     d = date.today()
     for _ in range(args.span):
-        if d.weekday() < 5 and d.isoformat() not in done:
-            targets.append(d)
+        if d.weekday() < 5:
+            for pool, src in (("zt", "ths"), ("touch", "ths:touch")):
+                if (d.isoformat(), src) not in done:
+                    targets.append((d, pool, src))
         d -= timedelta(days=1)
-    print(f"待抓取 {len(targets)} 天（已完成 {len(done)} 天，跳过）")
+    print(f"待抓取 {len(targets)} 个(日期,池)（已完成 {len(done)} 个，跳过）")
 
     n_ok = n_empty = n_err = 0
     hit_boundary = None
-    for i, day in enumerate(targets):
+    for i, (day, pool, src) in enumerate(targets):
         ds_api = day.strftime("%Y%m%d")
         ds_iso = day.isoformat()
         rows = stats = None
@@ -78,7 +82,7 @@ def main() -> int:
             if backoff:
                 time.sleep(backoff)
             try:
-                rows, stats = common.fetch_pool(ds_api)
+                rows, stats = common.fetch_pool(ds_api, pool=pool)
                 err = None
                 break
             except common.DateOutOfRangeError:
@@ -87,22 +91,23 @@ def main() -> int:
             except Exception as e:
                 err = e
         if hit_boundary:
-            common.log_fetch(conn, ds_iso, "out_of_range")
+            common.log_fetch(conn, ds_iso, "out_of_range", source=src)
             print(f"⛔ {ds_iso} 越过滚动窗口边界，终止回补")
             break
         if err is not None:
-            common.log_fetch(conn, ds_iso, "error", error_msg=str(err)[:500])
-            print(f"❌ {ds_iso}: {err}")
+            common.log_fetch(conn, ds_iso, "error", error_msg=str(err)[:500], source=src)
+            print(f"❌ {ds_iso}[{pool}]: {err}")
             n_err += 1
         elif not rows:
-            common.log_fetch(conn, ds_iso, "empty", record_count=0)
+            common.log_fetch(conn, ds_iso, "empty", record_count=0, source=src)
             n_empty += 1
         else:
-            common.upsert_events(conn, ds_iso, rows, alias_map)
-            common.upsert_day_stats(conn, ds_iso, stats)
-            common.log_fetch(conn, ds_iso, "ok", record_count=len(rows))
+            common.upsert_events(conn, ds_iso, rows, alias_map, pool=pool)
+            if pool == "zt":
+                common.upsert_day_stats(conn, ds_iso, stats)
+            common.log_fetch(conn, ds_iso, "ok", record_count=len(rows), source=src)
             n_ok += 1
-            print(f"✅ {ds_iso}: {len(rows)} 条  [{i + 1}/{len(targets)}]")
+            print(f"✅ {ds_iso}[{pool}]: {len(rows)} 条  [{i + 1}/{len(targets)}]")
         common.polite_sleep()
 
     # 收尾摘要
@@ -110,11 +115,13 @@ def main() -> int:
     print(f"ok={n_ok}  empty(节假日)={n_empty}  error={n_err}"
           + (f"  边界={hit_boundary}" if hit_boundary else ""))
     total, days = conn.execute(
-        "SELECT COUNT(*), COUNT(DISTINCT trade_date) FROM limit_up_events").fetchone()
+        "SELECT COUNT(*), COUNT(DISTINCT trade_date) FROM limit_up_events WHERE pool='zt'").fetchone()
+    n_touch = conn.execute(
+        "SELECT COUNT(*) FROM limit_up_events WHERE pool='touch'").fetchone()[0]
     lo, hi = conn.execute(
         "SELECT MIN(trade_date), MAX(trade_date) FROM limit_up_events").fetchone()
-    print(f"库内事件 {total} 条，覆盖 {days} 个交易日（{lo} ~ {hi}），日均 {total / days:.1f} 只"
-          if days else "库内无数据")
+    print(f"库内涨停 {total} 条 + 炸板 {n_touch} 条，覆盖 {days} 个交易日（{lo} ~ {hi}），"
+          f"日均涨停 {total / days:.1f} 只" if days else "库内无数据")
     print("\nTop20 概念：")
     for name, cnt in conn.execute(
             "SELECT c.name, COUNT(*) n FROM event_concepts ec JOIN concepts c ON c.id=ec.concept_id "

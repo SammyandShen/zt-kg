@@ -5,20 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>涨停概念图谱</title>
 <style>
+  /* 字节跳动风格蓝绿主题：--accent 蓝=品牌/交互，--teal 青绿=辅助，--up 红=涨停语义（A股红涨） */
   :root {
-    --bg: #f7f5f2; --surface: #ffffff; --surface2: #f1efeb;
-    --ink: #21201d; --ink2: #6f6a63; --ink3: #a09a91;
-    --line: #e5e1da; --accent: #c0392b; --accent-ink: #ffffff;
-    --accent-soft: #faeae7; --accent-line: #eecfc9;
+    --bg: #f5f7fa; --surface: #ffffff; --surface2: #eef1f6;
+    --ink: #1f2329; --ink2: #646a73; --ink3: #9aa0a8;
+    --line: #dfe3ea; --accent: #2e6be6; --accent-ink: #ffffff;
+    --accent-soft: #e9f0ff; --accent-line: #c9d9ff;
+    --teal: #00b6a1; --teal-soft: #e0f7f3; --teal-line: #b3e8df;
+    --up: #e03e2d; --up-soft: #fdecea; --up-line: #f5c6bf;
     --gold: #8a6d1c; --gold-soft: #f6efd9;
-    --shadow: 0 1px 3px rgba(60,50,40,.08);
+    --shadow: 0 1px 3px rgba(30,50,90,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #17181b; --surface: #1f2126; --surface2: #26282e;
-      --ink: #e8e5e0; --ink2: #a29c93; --ink3: #6e6961;
-      --line: #33353b; --accent: #e05545; --accent-ink: #fff;
-      --accent-soft: #34211e; --accent-line: #55302b;
+      --bg: #141821; --surface: #1c212b; --surface2: #232936;
+      --ink: #e6e9ee; --ink2: #9aa3b2; --ink3: #67707f;
+      --line: #303747; --accent: #5b8cff; --accent-ink: #fff;
+      --accent-soft: #1d2a47; --accent-line: #31456f;
+      --teal: #2bc4b2; --teal-soft: #143430; --teal-line: #1f4f48;
+      --up: #f0544a; --up-soft: #3a221f; --up-line: #5c332d;
       --gold: #d4b355; --gold-soft: #322b18;
       --shadow: 0 1px 3px rgba(0,0,0,.35);
     }
@@ -31,10 +36,11 @@
   header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 14px;
            padding: 10px 20px; background: var(--surface); border-bottom: 1px solid var(--line); }
   .brand { font-size: 16px; font-weight: 700; white-space: nowrap; cursor: pointer; }
-  .brand b { color: var(--accent); }
+  .brand b { background: linear-gradient(90deg, var(--accent), var(--teal));
+             -webkit-background-clip: text; background-clip: text; color: transparent; }
   nav { display: flex; gap: 4px; }
   nav button { border: none; background: none; color: var(--ink2); font-size: 13px;
-               padding: 5px 10px; border-radius: 6px; cursor: pointer; }
+               padding: 5px 10px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
   nav button:hover { background: var(--surface2); color: var(--ink); }
   nav button.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
   .searchbox { position: relative; margin-left: auto; }
@@ -83,11 +89,13 @@
           cursor: pointer; font-size: 13px; }
   .chip:hover { border-color: var(--accent); }
   .chip.yizi { border-style: dashed; border-color: var(--gold); }
+  .chip.touch { border-style: dashed; opacity: .78; }
   .chip .code { font-size: 11px; color: var(--ink3); font-variant-numeric: tabular-nums; }
   .lb { font-size: 11px; font-weight: 700; border-radius: 5px; padding: 0 5px; line-height: 17px; }
   .lb1 { background: var(--surface2); color: var(--ink3); border: 1px solid var(--line); }
-  .lb2 { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-line); }
-  .lb3 { background: var(--accent); color: var(--accent-ink); }
+  .lb2 { background: var(--up-soft); color: var(--up); border: 1px solid var(--up-line); }
+  .lb3 { background: var(--up); color: #fff; }
+  .lbt { background: var(--surface2); color: var(--ink2); border: 1px dashed var(--ink3); }
   .board { font-size: 10px; color: var(--ink3); }
 
   /* 表格 */
@@ -139,7 +147,7 @@
              padding: 10px 12px; box-shadow: var(--shadow); cursor: pointer; }
   .su-card:hover { border-color: var(--accent); }
   .su-card .nm { font-weight: 700; display: flex; align-items: center; gap: 6px; }
-  .su-card .tagnew { font-size: 10px; background: var(--accent); color: var(--accent-ink);
+  .su-card .tagnew { font-size: 10px; background: var(--teal); color: #fff;
                      border-radius: 5px; padding: 0 5px; }
   .su-card .meta { font-size: 11px; color: var(--ink2); margin: 2px 0 4px; }
   .heatwrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line);
@@ -196,7 +204,7 @@
   .dot { display: inline-block; width: 8px; height: 8px; border-radius: 2px;
          margin-right: 4px; vertical-align: baseline; }
   svg .hovcol { fill: transparent; cursor: pointer; }
-  svg .hovcol:hover { fill: rgba(198,58,44,.07); }
+  svg .hovcol:hover { fill: rgba(46,107,230,.08); }
   @media (max-width: 640px) { .trend-grid { grid-template-columns: 1fr; } }
 
   /* 批量归类 */
@@ -204,12 +212,47 @@
              border-radius: 10px; background: var(--surface); color: var(--ink);
              font: 13px/1.5 ui-monospace, Menlo, monospace; resize: vertical; }
   textarea:focus { outline: none; border-color: var(--accent); }
-  .btn-primary { background: var(--accent); color: var(--accent-ink); border: none; border-radius: 8px;
+  .btn-primary { background: linear-gradient(90deg, var(--accent), var(--teal)); color: #fff;
+                 border: none; border-radius: 8px;
                  padding: 8px 20px; font-size: 14px; cursor: pointer; margin-top: 8px; }
   .btn-primary:hover { filter: brightness(1.08); }
-  .hot { color: var(--accent); font-weight: 600; }
+  .hot { color: var(--up); font-weight: 600; }
   .empty { text-align: center; color: var(--ink3); padding: 40px 0; }
   .reason { color: var(--ink2); font-size: 12px; white-space: normal; }
+  tr.touchrow td { opacity: .72; }
+  tr.touchrow td:first-child { border-left: 3px dashed var(--ink3); }
+
+  /* 题材树（个股页） */
+  .tagtree { margin-top: 4px; }
+  .tagtree .tnode { display: flex; align-items: center; gap: 6px; padding: 1px 0; }
+  .tagtree .tanc { color: var(--ink2); font-size: 12px; cursor: pointer; }
+  .tagtree .tanc:hover { color: var(--accent); }
+  .tagtree .tbranch { color: var(--ink3); font-size: 11px; font-family: ui-monospace, monospace; }
+
+  /* 手动分类弹层 */
+  .clsbtn { border: 1px solid var(--line); background: var(--surface); color: var(--ink3);
+            border-radius: 6px; padding: 0 6px; font-size: 11px; cursor: pointer; line-height: 18px; }
+  .clsbtn:hover { border-color: var(--accent); color: var(--accent); }
+  .clsbtn.done { border-color: var(--teal-line); background: var(--teal-soft); color: var(--teal); }
+  #modal-mask { position: fixed; inset: 0; z-index: 90; background: rgba(15,20,30,.45); display: none; }
+  #modal { position: fixed; z-index: 91; left: 50%; top: 14%; transform: translateX(-50%);
+           width: min(420px, calc(100vw - 24px)); background: var(--surface); color: var(--ink);
+           border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px;
+           box-shadow: 0 12px 40px rgba(0,0,0,.28); display: none; }
+  #modal h3 { margin: 0 0 10px; font-size: 15px; }
+  #modal .opts { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; }
+  #modal .opt { border: 1px solid var(--line); border-radius: 8px; padding: 4px 12px;
+                cursor: pointer; font-size: 13px; background: var(--surface); color: var(--ink2); }
+  #modal .opt.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  #modal input[type=text] { width: 100%; padding: 6px 10px; border: 1px solid var(--line);
+                            border-radius: 8px; background: var(--bg); color: var(--ink); font-size: 13px; }
+  #modal .mrow { margin-bottom: 8px; } #modal .mlabel { font-size: 12px; color: var(--ink2); }
+  #modal .mbtns { display: flex; gap: 8px; margin-top: 12px; justify-content: flex-end; }
+  #pendbar { position: fixed; z-index: 60; right: 16px; bottom: 16px; display: none;
+             background: linear-gradient(90deg, var(--accent), var(--teal)); color: #fff;
+             border: none; border-radius: 999px; padding: 9px 18px; font-size: 13px;
+             cursor: pointer; box-shadow: 0 6px 20px rgba(20,60,160,.35); }
+  #modal textarea { min-height: 150px; font-size: 12px; }
   @media (max-width: 640px) {
     header { flex-wrap: wrap; position: static; padding: 8px 12px; gap: 8px; }
     .brand { font-size: 15px; }
@@ -248,11 +291,17 @@
 </header>
 <main id="app"></main>
 <div id="tooltip"></div>
+<div id="modal-mask"></div>
+<div id="modal"></div>
+<button id="pendbar"></button>
 
 <script src="data.js"></script>
 <script>
 'use strict';
 const D = ZTKG_DATA;
+// 手动分类暂存（localStorage）：{标签名: {type, status, parent}}，导出补丁落盘前先在本地生效
+const FIX = JSON.parse(localStorage.getItem('ztkg_tagfix') || '{}');
+const saveFix = () => { localStorage.setItem('ztkg_tagfix', JSON.stringify(FIX)); updatePendbar(); };
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g,
   c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -286,7 +335,9 @@ const boardOf = code =>
   (code.startsWith('60') || code.startsWith('00')) ? '主板' :
   /^(8|4|92)/.test(code) ? '北交所' : '其他';
 const fmtWan = w => w == null ? '—' : w >= 10000 ? (w / 10000).toFixed(1) + '亿' : w + '万';
+const isTouch = ev => ev[10] === 1;          // 触及涨停但收盘未封住（炸板池）
 const lbBadge = ev => {
+  if (isTouch(ev)) return '<span class="lb lbt">⚡触及</span>';
   const lb = ev[1] || 1, txt = ev[2] || (lb > 1 ? lb + '板' : '首板');
   const cls = lb >= 3 ? 'lb3' : lb === 2 ? 'lb2' : 'lb1';
   return `<span class="lb ${cls}">${esc(txt)}</span>`;
@@ -294,6 +345,15 @@ const lbBadge = ev => {
 
 /* ---------- 标签层级（taxonomy） ---------- */
 const TAX = D.taxonomy || {};
+for (const nm in FIX) {                       // 本地暂存的父子关系先生效
+  const f = FIX[nm];
+  if (f.parent) {
+    if (!(TAX[f.parent] || []).includes(nm)) (TAX[f.parent] ??= []).push(nm);
+  } else if (['sector', 'theme', 'catalyst'].includes(f.type)
+             && !(nm in TAX) && !Object.values(TAX).flat().includes(nm)) {
+    TAX[nm] = [];                             // 无父的热度型标签：自成一级板块
+  }
+}
 const taxChildSet = new Set(Object.values(TAX).flat());
 const taxRoots = Object.keys(TAX).filter(p => !taxChildSet.has(p));
 const taxParentsOf = name => Object.keys(TAX).filter(p => TAX[p].includes(name));
@@ -332,6 +392,8 @@ function startupOf(series) {             // 近3日 vs 前15日基线
 
 /* ---------- 标签类型（tag_meta：六类分型，频道由类型决定） ---------- */
 const META = D.tag_meta || {};                       // name -> [type, status]
+for (const nm in FIX)                                // 本地暂存的类型/状态先生效
+  if (FIX[nm].type) META[nm] = [FIX[nm].type, FIX[nm].status || 'active'];
 const typeOf = nm => (META[nm] || ['unknown'])[0];
 const isTheme = nm => { const t = typeOf(nm); return t === 'sector' || t === 'theme'; };
 const isCatalyst = nm => typeOf(nm) === 'catalyst';
@@ -371,7 +433,9 @@ function render() {
 /* ---------- 视图1：每日复盘 ---------- */
 function renderDate(d) {
   if (!D.dates.includes(d)) d = D.dates[D.dates.length - 1];
-  const evs = D.events[d] || [];
+  const all = D.events[d] || [];
+  const evs = all.filter(e => !isTouch(e));      // 收盘封住
+  const touches = all.filter(isTouch);           // 触及未封（炸板池）
   const i = D.dates.indexOf(d);
   const st = D.day_stats[d];
   const maxLb = Math.max(1, ...evs.map(e => e[1] || 1));
@@ -406,6 +470,7 @@ function renderDate(d) {
     <div class="stat"><div class="v">${st[3] ?? '—'}</div><div class="k">炸板家数</div></div>` : ''}
     <div class="stat"><div class="v">${maxLb}</div><div class="k">最高连板</div></div>
     <div class="stat"><div class="v">${yizi}</div><div class="k">一字板</div></div>
+    ${touches.length ? `<div class="stat"><div class="v" style="color:var(--ink2)">${touches.length}</div><div class="k">触及未封</div></div>` : ''}
   </div>`;
 
   if (catas.length) {
@@ -432,7 +497,14 @@ function renderDate(d) {
       <span class="hist">仅催化/属性/事件驱动或独立题材，悬浮看原因</span></div>
       <div class="chips">${rest.map(ev => chipHtml(ev, d)).join('')}</div></div>`;
   }
-  if (!evs.length) html += `<div class="empty">当日无涨停数据</div>`;
+  if (touches.length) {
+    const tl = [...touches].sort((a, b) => (b[4] || 0) - (a[4] || 0));
+    html += `<div class="card" style="border-style:dashed"><div class="card-h">
+      <span class="cname muted">⚡ 触及涨停未封住</span><span class="cnt" style="color:var(--ink2)">${tl.length} 只</span>
+      <span class="hist">盘中摸板收盘炸板，不计入涨停与热度 · 按炸板次数排序</span></div>
+      <div class="chips">${tl.map(ev => chipHtml(ev, d)).join('')}</div></div>`;
+  }
+  if (!all.length) html += `<div class="empty">当日无涨停数据</div>`;
   $('#app').innerHTML = html;
 
   $('#prev')?.addEventListener('click', () => go('#/date/' + D.dates[i - 1]));
@@ -449,8 +521,9 @@ function renderDate(d) {
 function chipHtml(ev, d) {
   const yizi = (ev[3] || '').includes('一字');
   const brief = d ? (D.briefs || {})[ev[0] + '|' + d] : null;
-  const tip = (brief ? '✨' + brief + '\n' : '') + (ev[8] || '');
-  return `<span class="chip${yizi ? ' yizi' : ''}" data-code="${ev[0]}" title="${esc(tip)}">
+  const tip = (brief ? '✨' + brief + '\n' : '') +
+    (ev[8] || (isTouch(ev) ? `触及涨停未封住 · 炸板${ev[4] ?? 0}次 · 首触${ev[7] || '—'}` : ''));
+  return `<span class="chip${yizi ? ' yizi' : ''}${isTouch(ev) ? ' touch' : ''}" data-code="${ev[0]}" title="${esc(tip)}">
     ${lbBadge(ev)} ${esc(D.stocks[ev[0]] || ev[0])}
     <span class="code">${ev[0]}</span><span class="board">${boardOf(ev[0])}</span></span>`;
 }
@@ -459,8 +532,10 @@ function bindChips() {
     el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
   document.querySelectorAll('[data-cid]').forEach(el =>
     el.addEventListener('click', () => go('#/concept/' + el.dataset.cid)));
-  document.querySelectorAll('.concept-chip[data-nm]').forEach(el =>
+  document.querySelectorAll('.concept-chip[data-nm], .tanc[data-nm]').forEach(el =>
     el.addEventListener('click', () => gotoTaxNode(el.dataset.nm)));
+  document.querySelectorAll('.clsbtn[data-cls]').forEach(el =>
+    el.addEventListener('click', e => { e.stopPropagation(); openClassify(el.dataset.cls); }));
 }
 function weekday(d) {
   return '周' + '日一二三四五六'[new Date(d + 'T00:00:00').getDay()];
@@ -479,8 +554,9 @@ function renderConcept(cid) {
   const stockRows = [...c.stocks].map(([code, cnt]) => {
     const evs = byStock[code].filter(x => x.ev[9].includes(cid));
     const maxLb = Math.max(...evs.map(x => x.ev[1] || 1));
-    const last = evs[evs.length - 1].d;
-    return { code, cnt, maxLb, last };
+    const lastX = evs[evs.length - 1];
+    return { code, cnt, maxLb, last: lastX.d,
+             lastFt: lastX.ev[7], lastLt: lastX.ev[3], lastAmt: lastX.ev[5] };
   }).sort((a, b) => b.cnt - a.cnt || (a.last < b.last ? 1 : -1));
 
   const parents = taxParentsOf(cname);
@@ -488,7 +564,9 @@ function renderConcept(cid) {
   const relChip = nm => `<span class="concept-chip" data-nm="${esc(nm)}" style="padding:2px 9px">${esc(nm)}</span>`;
   $('#app').innerHTML = `
   <div class="detail-h">
-    <h2>${esc(cname)} ${hot >= 3 ? '<span class="hot small">🔥 近5日 ' + hot + ' 家涨停</span>' : ''}</h2>
+    <h2>${esc(cname)} ${hot >= 3 ? '<span class="hot small">🔥 近5日 ' + hot + ' 家涨停</span>' : ''}
+      <button class="clsbtn${FIX[cname] ? ' done' : ''}" data-cls="${esc(cname)}" style="vertical-align:3px"
+        title="手动分类">✎ ${TYPE_LABEL[typeOf(cname)]}${FIX[cname] ? '(本地)' : ''}</button></h2>
     <div class="muted small">
       ${aliases.length ? '别名：' + aliases.map(esc).join('、') + ' · ' : ''}
       累计涨停 <b>${total}</b> 次 · 活跃 <b>${days}</b> 天 ·
@@ -508,12 +586,14 @@ function renderConcept(cid) {
     <div id="tl"></div>
   </div>
   <div class="tablewrap"><table>
-    <thead><tr><th>股票</th><th>板块</th><th>涨停次数</th><th>最高连板</th><th>最近涨停</th></tr></thead>
+    <thead><tr><th>股票</th><th>涨停次数</th><th>最高连板</th><th>最近涨停</th><th>首封时间</th><th>类型</th><th>封单</th></tr></thead>
     <tbody>${stockRows.map(r => `
-      <tr data-code="${r.code}"><td>${esc(D.stocks[r.code] || '')} <span class="code muted small">${r.code}</span></td>
-      <td>${boardOf(r.code)}</td><td class="num">${r.cnt}</td>
+      <tr data-code="${r.code}"><td>${esc(D.stocks[r.code] || '')}<span class="muted small">（${boardOf(r.code)}）</span>
+        <span class="code muted small">${r.code}</span></td>
+      <td class="num">${r.cnt}</td>
       <td>${r.maxLb >= 2 ? `<span class="lb ${r.maxLb >= 3 ? 'lb3' : 'lb2'}">${r.maxLb}板</span>` : '首板'}</td>
-      <td class="num">${r.last}</td></tr>`).join('')}
+      <td class="num">${r.last}</td><td class="num">${r.lastFt || '—'}</td>
+      <td>${esc(r.lastLt || '—')}</td><td class="num">${fmtWan(r.lastAmt)}</td></tr>`).join('')}
     </tbody></table></div>`;
 
   drawTimeline(cid);
@@ -556,6 +636,19 @@ function drawTimeline(cid) {
 }
 
 /* ---------- 标签按类型分区展示（个股页/批量归类共用） ---------- */
+function taxPathOf(nm) {          // 沿首个父链爬到根：返回 [root, ..., 直接父]（不含自身）
+  const path = [];
+  let cur = nm;
+  const seen = new Set([nm]);
+  while (path.length < 5) {
+    const ps = taxParentsOf(cur).filter(p => !seen.has(p));
+    if (!ps.length) break;
+    cur = ps[0];
+    seen.add(cur);
+    path.unshift(cur);
+  }
+  return path;
+}
 function typedTagRows(hist, opts = {}) {
   const ccount = new Map();
   for (const { ev } of hist) for (const cid of ev[9])
@@ -571,7 +664,37 @@ function typedTagRows(hist, opts = {}) {
   const line = (label, list, hot, cap) => list.length
     ? `<div style="margin-top:4px"><span class="muted small" style="margin-right:6px">${label}</span>${
         list.slice(0, cap || 99).map(e => chip(e, hot)).join('')}</div>` : '';
-  const html = line('主线题材', pick(['sector', 'theme']), true, opts.maxTheme)
+
+  // 主线题材：个股页按 taxonomy 树状展示（共享祖先合并），其余场景保持扁平 chips
+  const themes = pick(['sector', 'theme']);
+  let themeHtml;
+  if (opts.tree && themes.length) {
+    const root = new Map();                    // name -> {kids: Map, entry}
+    for (const e of themes.slice(0, opts.maxTheme || 99)) {
+      const path = [...taxPathOf(e.nm), e.nm];
+      let level = root;
+      path.forEach((seg, i) => {
+        if (!level.has(seg)) level.set(seg, { kids: new Map(), entry: null });
+        const node = level.get(seg);
+        if (i === path.length - 1 && !node.entry) node.entry = e;
+        level = node.kids;
+      });
+    }
+    const renderNode = (name, node, depth) => {
+      const branch = depth ? '<span class="tbranch">└</span>' : '';
+      const body = node.entry
+        ? chip(node.entry, true)
+        : `<span class="tanc" data-nm="${esc(name)}">${esc(name)}</span>`;
+      return `<div class="tnode" style="padding-left:${depth * 18}px">${branch}${body}</div>`
+        + [...node.kids].map(([k, v]) => renderNode(k, v, depth + 1)).join('');
+    };
+    themeHtml = `<div style="margin-top:4px"><span class="muted small">主线题材</span>
+      <div class="tagtree">${[...root].map(([k, v]) => renderNode(k, v, 0)).join('')}</div></div>`;
+  } else {
+    themeHtml = line('主线题材', themes, true, opts.maxTheme);
+  }
+
+  const html = themeHtml
              + line('催化', pick(['catalyst']), false, 5)
              + line('属性', pick(['attribute']), false, 5)
              + line('事件/未审核', pick(['event', 'unknown']), false, 4);
@@ -596,26 +719,31 @@ function renderStock(code) {
       ? `<button class="newsbtn" data-nd="${d}">📰 ${nl.length || '✨'}</button>`
       : '<span class="muted small">—</span>';
     const newsRow = (nl.length || bf) ? `<tr class="newsrow" data-for="${d}" style="display:none">
-        <td colspan="8">${bf ? `<div class="brief">${esc(bf)}</div>` : ''}
+        <td colspan="9">${bf ? `<div class="brief">${esc(bf)}</div>` : ''}
         ${nl.map(n => `<div class="newsitem">·
           <a href="${esc(n[1])}" target="_blank" rel="noopener">${esc(n[0])}</a>
           <span class="nmeta">${esc(n[2] || '')} ${esc(n[3] || '')}</span></div>`).join('')}
         </td></tr>` : '';
-    return `<tr data-date="${d}">
+    return `<tr data-date="${d}"${isTouch(ev) ? ' class="touchrow"' : ''}>
         <td class="num">${d}</td><td>${lbBadge(ev)}</td><td>${esc(ev[3] || '—')}</td>
         <td class="num">${ev[4] ?? 0}次</td><td class="num">${fmtWan(ev[5])}</td>
-        <td class="num">${ev[7] || '—'}</td><td class="reason">${esc(ev[8] || '—')}</td>
+        <td class="num">${ev[7] || '—'}</td><td class="num">${ev[6] != null ? ev[6] + '亿' : '—'}</td>
+        <td class="reason">${esc(ev[8] || (isTouch(ev) ? '触及涨停未封住' : '—'))}</td>
         <td>${newsCell}</td></tr>` + newsRow;
   }).join('');
 
+  const zts = hist.filter(x => !isTouch(x.ev));
+  const nTouch = hist.length - zts.length;
+  const lastZt = zts.length ? zts[zts.length - 1].d : null;
   $('#app').innerHTML = `
   <div class="detail-h">
     <h2>${esc(name)} <span class="muted" style="font-size:14px">${code} · ${boardOf(code)}</span></h2>
-    <div class="muted small">近1年涨停 <b>${hist.length}</b> 次 · 最近 ${hist[hist.length - 1].d}</div>
-    <div style="margin-top:6px">${typedTagRows(hist)}</div>
+    <div class="muted small">近1年涨停 <b>${zts.length}</b> 次${
+      nTouch ? ` · 触及未封 <b>${nTouch}</b> 次` : ''}${lastZt ? ` · 最近涨停 ${lastZt}` : ''}</div>
+    <div style="margin-top:6px">${typedTagRows(hist, { tree: true })}</div>
   </div>
   <div class="tablewrap"><table>
-    <thead><tr><th>日期</th><th>连板</th><th>类型</th><th>炸板</th><th>封单</th><th>首封</th><th>涨停原因</th><th>消息</th></tr></thead>
+    <thead><tr><th>日期</th><th>连板</th><th>类型</th><th>炸板</th><th>封单</th><th>首封时间</th><th>流通市值</th><th>涨停原因</th><th>消息</th></tr></thead>
     <tbody>${rowsHtml}</tbody></table></div>`;
 
   document.querySelectorAll('.newsbtn').forEach(el =>
@@ -662,7 +790,7 @@ function renderHeat() {
   const dates = [...win].reverse();
   const step = Math.ceil(dates.length / 15);
 
-  const heatTableHtml = (title, hint, roots) => {
+  const heatTableHtml = (title, hint, roots, rgb) => {
     const rows = [];
     const childrenSorted = nm => sortBy5((TAX[nm] || []).filter(ch => taxCids(ch).size));
     const addRow = (nm, lvl) => {
@@ -681,7 +809,7 @@ function renderHeat() {
       <div class="heatwrap"><table class="heatmap">
         <thead><tr><th class="rowlab"></th>${dates.map((d, i) =>
           `<th${i % step === 0 ? ' class="dlab"' : ''}>${i % step === 0 ? d.slice(5) : ''}</th>`).join('')}</tr></thead>
-        <tbody>${rows.map(r => heatRowHtml(r, dates, vmax)).join('')}</tbody>
+        <tbody>${rows.map(r => heatRowHtml(r, dates, vmax, rgb)).join('')}</tbody>
       </table></div></div>`;
   };
 
@@ -705,8 +833,8 @@ function renderHeat() {
     html += `<div class="muted small" style="margin-bottom:12px">近3日无明显启动的题材（阈值：日均≥3家且≥2.2×基线）</div>`;
   }
 
-  html += heatTableHtml('题材热力', '仅已审核的产业/题材标签', themeRoots);
-  html += heatTableHtml('催化热力', '业绩/分红/重组等事件型催化，单独统计不与题材混排', catRoots);
+  html += heatTableHtml('题材热力', '仅已审核的产业/题材标签', themeRoots, '46,107,230');
+  html += heatTableHtml('催化热力', '业绩/分红/重组等事件型催化，单独统计不与题材混排', catRoots, '0,166,150');
 
   // 未审核新热点：不进正式榜，但按共振度排序绝不隐身（新题材爆发的第一现场）
   const inTreeCids = new Set(taxRoots.flatMap(r => [...taxCids(r)]));
@@ -714,6 +842,9 @@ function renderHeat() {
   for (const cid in D.concepts) {
     if (inTreeCids.has(+cid)) continue;
     const [nm, total] = D.concepts[cid];
+    const mt = META[nm];
+    // 已人工审核定型且不进热度的（属性/事件），不再算"未审核"
+    if (mt && mt[1] === 'active' && (mt[0] === 'attribute' || mt[0] === 'event')) continue;
     const c = byConcept[cid];
     let mx = 0, mxd = '';
     for (const [dd, evs] of c.days) {
@@ -731,7 +862,8 @@ function renderHeat() {
       <span class="hist">按单日共振排序 · 确认类型后加入 tag_meta/taxonomy 再跑 build_site.py</span></div>
       <div>${orphan.slice(0, 24).map(o =>
         `<span class="concept-chip" data-cid="${o.cid}" ${o.mx >= 3 ? 'style="border-width:2px;font-weight:600"' : ''}>${esc(o.nm)}
-         <span class="x">${o.mx >= 3 ? '🔥共振' + o.mx + '家(' + o.mxd.slice(5) + ')' : o.stocks + '股×' + o.total}${o.s5 ? ' · 近5日' + o.s5 : ''}</span></span>`).join('')}</div></div>`;
+         <span class="x">${o.mx >= 3 ? '🔥共振' + o.mx + '家(' + o.mxd.slice(5) + ')' : o.stocks + '股×' + o.total}${o.s5 ? ' · 近5日' + o.s5 : ''}</span></span><button
+           class="clsbtn${FIX[o.nm] ? ' done' : ''}" data-cls="${esc(o.nm)}" title="手动分类">${FIX[o.nm] ? '✎已标' : '✎'}</button>`).join('')}</div></div>`;
   }
 
   $('#app').innerHTML = html;
@@ -760,13 +892,14 @@ function renderHeat() {
   });
   bindChips();
 }
-function heatRowHtml(r, dates, vmax) {
+function heatRowHtml(r, dates, vmax, rgb) {
+  rgb = rgb || '46,107,230';
   const hasKids = (TAX[r.nm] || []).some(ch => taxCids(ch).size);
   const cells = r.series.map((v, i) => {
     const a = v ? Math.min(1, Math.sqrt(v / vmax)) : 0;
     const fg = a > 0.55 ? '#fff' : 'var(--ink2)';
     return `<td class="cell" data-d="${dates[i]}" data-nm="${esc(r.nm)}" data-v="${v}"
-      style="background:rgba(198,58,44,${a.toFixed(2)});color:${fg}">${v || ''}</td>`;
+      style="background:rgba(${rgb},${a.toFixed(2)});color:${fg}">${v || ''}</td>`;
   }).join('');
   return `<tr><td class="rowlab" style="padding-left:${6 + (r.lvl - 1) * 16}px">
     <span class="exp" data-exp="${esc(r.nm)}">${hasKids ? (heatExpanded.has(r.nm) ? '▾' : '▸') : ''}</span>
@@ -785,7 +918,7 @@ function spark(vals) {
     style="width:100%;max-width:${W}px;display:block">` + vals.map((v, i) =>
     v ? `<rect x="${(i * bw + 1).toFixed(1)}" y="${(H - v / max * (H - 4)).toFixed(1)}"
       width="${(bw - 2).toFixed(1)}" height="${(v / max * (H - 4)).toFixed(1)}" rx="1.5"
-      fill="rgba(198,58,44,.75)"/>` : '').join('') + '</svg>';
+      fill="rgba(46,107,230,.75)"/>` : '').join('') + '</svg>';
 }
 
 /* ---------- 视图7：情绪趋势 ---------- */
@@ -793,7 +926,7 @@ let trendRange = 30;
 function trendStats(dates) {
   return dates.map(d => {
     const st = D.day_stats[d] || [];
-    const evs = D.events[d] || [];
+    const evs = (D.events[d] || []).filter(e => !isTouch(e));
     return {
       d,
       num: evs.length,
@@ -869,7 +1002,7 @@ function renderTrend() {
   const dates = trendRange ? D.dates.slice(-trendRange) : D.dates;
   const S = trendStats(dates);
   const last = S[S.length - 1] || {}, prev = S[S.length - 2] || {};
-  const RED = 'rgba(198,58,44,.85)', GRAY = 'rgba(128,122,112,.75)';
+  const C1 = 'rgba(46,107,230,.85)', C2 = 'rgba(0,166,150,.8)';
   const cards = [
     { key: 'num', title: '涨停家数', type: 'bar',
       extra: { key: 'touch', name: '盘中触板', type: 'line' },
@@ -891,19 +1024,19 @@ function renderTrend() {
   <div class="trend-grid">`;
   for (const c of cards) {
     const fmt = c.fmt || (v => v);
-    const series = [{ name: c.title, vals: S.map(r => r[c.key]), type: c.type, color: RED }];
+    const series = [{ name: c.title, vals: S.map(r => r[c.key]), type: c.type, color: C1 }];
     if (c.extra)
       series.push({ name: c.extra.name, vals: S.map(r => r[c.extra.key]),
-                    type: c.extra.type, color: GRAY });
+                    type: c.extra.type, color: C2 });
     const lv = last[c.key], pv = prev[c.key];
     const delta = (lv != null && pv != null)
-      ? (lv > pv ? `<span class="delta" style="color:var(--accent)">▲${fmt(lv - pv)}</span>`
+      ? (lv > pv ? `<span class="delta" style="color:var(--up)">▲${fmt(lv - pv)}</span>`
         : lv < pv ? `<span class="delta muted">▼${fmt(pv - lv)}</span>`
         : '<span class="delta muted">—</span>') : '';
     html += `<div class="tcard">
       <div class="th"><b>${c.title}</b>
-        ${c.extra ? `<span class="small muted"><span class="dot" style="background:${RED}"></span>${c.title}
-          <span class="dot" style="background:${GRAY};margin-left:8px"></span>${c.extra.name}</span>` : ''}
+        ${c.extra ? `<span class="small muted"><span class="dot" style="background:${C1}"></span>${c.title}
+          <span class="dot" style="background:${C2};margin-left:8px"></span>${c.extra.name}</span>` : ''}
         <span class="small" style="color:var(--ink3)">${c.note}</span>
         <span class="lv">${lv == null ? '—' : fmt(lv)} ${delta}</span></div>
       ${svgChart(S.map(r => r.d), series, fmt)}</div>`;
@@ -1063,11 +1196,13 @@ function runBatch() {
         <span class="hist">近1年无涨停记录</span></div></div>`;
       continue;
     }
+    const nZt = hist.filter(x => !isTouch(x.ev)).length;
+    const nTc = hist.length - nZt;
     html += `<div class="card">
       <div class="card-h">
         <span class="cname" data-code="${code}">${esc(D.stocks[code])}</span>
         <span class="code muted small">${code} · ${boardOf(code)}</span>
-        <span class="hist">涨停 ${hist.length} 次 · 最近 ${hist[hist.length - 1].d}</span>
+        <span class="hist">涨停 ${nZt} 次${nTc ? ' · 触及 ' + nTc + ' 次' : ''} · 最近 ${hist[hist.length - 1].d}</span>
       </div>${typedTagRows(hist, { maxTheme: 6 })}</div>`;
   }
   $('#bres').innerHTML = html;
@@ -1119,6 +1254,100 @@ qInput.addEventListener('keydown', e => {
   e.preventDefault();
 });
 qInput.addEventListener('blur', () => setTimeout(() => qDrop.style.display = 'none', 150));
+
+/* ---------- 手动分类（本地暂存 → 导出补丁落盘） ---------- */
+const ALLT = ['sector', 'theme', 'catalyst', 'attribute', 'event', 'unknown'];
+const STATUS_LABEL = { active: '已审核', candidate: '待审核', retired: '退役' };
+function showModal() { $('#modal').style.display = 'block'; $('#modal-mask').style.display = 'block'; }
+function closeModal() { $('#modal').style.display = 'none'; $('#modal-mask').style.display = 'none'; }
+$('#modal-mask').onclick = closeModal;
+
+function openClassify(nm) {
+  const cur = FIX[nm] || {};
+  const curMeta = META[nm] || [];
+  const type = cur.type || curMeta[0] || 'theme';
+  const status = cur.status || curMeta[1] || 'active';
+  const parent = cur.parent || taxParentsOf(nm)[0] || '';
+  const allNodes = [...new Set([...Object.keys(TAX), ...Object.values(TAX).flat()])].sort();
+  $('#modal').innerHTML = `
+    <h3>✎ 分类标签：${esc(nm)}</h3>
+    <div class="mrow"><div class="mlabel">类型（sector/theme→题材热力，catalyst→催化热力，其余不进热度）</div>
+      <div class="opts" id="m-type">${ALLT.map(t =>
+        `<span class="opt${t === type ? ' on' : ''}" data-v="${t}">${TYPE_LABEL[t]}</span>`).join('')}</div></div>
+    <div class="mrow"><div class="mlabel">状态</div>
+      <div class="opts" id="m-status">${Object.keys(STATUS_LABEL).map(s =>
+        `<span class="opt${s === status ? ' on' : ''}" data-v="${s}">${STATUS_LABEL[s]}</span>`).join('')}</div></div>
+    <div class="mrow"><div class="mlabel">父节点（留空=自成一级板块；填已有标签名可多级挂靠）</div>
+      <input type="text" id="m-parent" list="taxnodes" value="${esc(parent)}" placeholder="如：半导体">
+      <datalist id="taxnodes">${allNodes.map(n => `<option value="${esc(n)}">`).join('')}</datalist></div>
+    <div class="muted small">保存后本浏览器立即生效；正式落盘请点右下角「导出补丁」。</div>
+    <div class="mbtns">
+      ${FIX[nm] ? '<button class="navbtn" id="m-del">移除标注</button>' : ''}
+      <button class="navbtn" id="m-cancel">取消</button>
+      <button class="btn-primary" style="margin-top:0" id="m-save">保存</button>
+    </div>`;
+  showModal();
+  document.querySelectorAll('#m-type .opt, #m-status .opt').forEach(el =>
+    el.addEventListener('click', () => {
+      el.parentElement.querySelectorAll('.opt').forEach(o => o.classList.remove('on'));
+      el.classList.add('on');
+    }));
+  $('#m-cancel').onclick = closeModal;
+  $('#m-save').onclick = () => {
+    const t = $('#m-type .opt.on').dataset.v, s = $('#m-status .opt.on').dataset.v;
+    const p = $('#m-parent').value.trim();
+    FIX[nm] = { type: t, status: s };
+    if (p && p !== nm) FIX[nm].parent = p;
+    saveFix();
+    location.reload();          // 重新推导 taxonomy/热度缓存，最省事且够快
+  };
+  $('#m-del')?.addEventListener('click', () => {
+    delete FIX[nm]; saveFix(); location.reload();
+  });
+}
+
+function exportPatch() {
+  const meta = {}, tax = {};
+  for (const nm of Object.keys(FIX).sort()) {
+    const f = FIX[nm];
+    if (f.type) meta[nm] = { type: f.type, status: f.status || 'active' };
+    if (f.parent) (tax[f.parent] ??= []).push(nm);
+  }
+  return JSON.stringify({ 'tag_meta合并': meta, 'taxonomy追加': tax }, null, 1);
+}
+function openExport() {
+  const n = Object.keys(FIX).length;
+  $('#modal').innerHTML = `
+    <h3>本地标注补丁（${n} 条）</h3>
+    <div class="muted small" style="margin-bottom:6px">
+      复制 JSON 发给 Claude 或手工合并进 data/tag_meta.json、data/taxonomy.json，
+      跑 build_site.py 落盘后回来点「清空」。</div>
+    <textarea id="m-patch" readonly>${esc(exportPatch())}</textarea>
+    <div class="mbtns">
+      <button class="navbtn" id="m-clear">清空本地标注</button>
+      <button class="navbtn" id="m-cancel">关闭</button>
+      <button class="btn-primary" style="margin-top:0" id="m-copy">复制</button>
+    </div>`;
+  showModal();
+  $('#m-cancel').onclick = closeModal;
+  $('#m-copy').onclick = () => {
+    navigator.clipboard?.writeText($('#m-patch').value);
+    $('#m-copy').textContent = '已复制 ✓';
+  };
+  $('#m-clear').onclick = () => {
+    if (confirm('清空全部本地标注？（应在补丁落盘后执行）')) {
+      localStorage.removeItem('ztkg_tagfix'); location.reload();
+    }
+  };
+}
+function updatePendbar() {
+  const n = Object.keys(FIX).length;
+  const bar = $('#pendbar');
+  bar.style.display = n ? 'block' : 'none';
+  bar.textContent = `✎ 本地标注 ${n} 条 · 导出补丁`;
+}
+$('#pendbar').onclick = openExport;
+updatePendbar();
 
 /* ---------- tooltip ---------- */
 const tip = $('#tooltip');

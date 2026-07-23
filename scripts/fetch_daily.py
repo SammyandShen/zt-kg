@@ -42,6 +42,17 @@ def main() -> int:
     common.upsert_day_stats(conn, ds_iso, stats)
     common.log_fetch(conn, ds_iso, "ok", record_count=len(rows))
     print(f"✅ {ds_iso}: {len(rows)} 只涨停入库")
+
+    # 炸板池（触及涨停未封住）：失败不影响主流程退出码
+    try:
+        common.polite_sleep()
+        touch_rows, _ = common.fetch_pool(ds_api, pool="touch")
+        common.upsert_events(conn, ds_iso, touch_rows, pool="touch")
+        common.log_fetch(conn, ds_iso, "ok", record_count=len(touch_rows), source="ths:touch")
+        print(f"✅ {ds_iso}: {len(touch_rows)} 只炸板(触及未封)入库")
+    except Exception as e:
+        common.log_fetch(conn, ds_iso, "error", error_msg=str(e)[:500], source="ths:touch")
+        print(f"⚠️ {ds_iso} 炸板池抓取失败（不影响涨停池）: {e}", file=sys.stderr)
     return 0
 
 

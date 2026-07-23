@@ -45,13 +45,14 @@ def cmd_stock(conn, code: str) -> int:
         WHERE e.code=? GROUP BY c.id ORDER BY n DESC""", (code,)):
         print(f"  {name} ×{cnt}")
 
-    print("\n涨停记录：")
+    print("\n涨停/触及记录：")
     for row in conn.execute("""
-        SELECT trade_date, high_days, limit_up_type, open_num, order_amount, reason_type
+        SELECT trade_date, high_days, limit_up_type, open_num, order_amount, reason_type, pool
         FROM limit_up_events WHERE code=? ORDER BY trade_date DESC""", (code,)):
-        d, hd, lt, opens, amt, reason = row
+        d, hd, lt, opens, amt, reason, pool = row
         amt_s = f"封单{amt / 1e8:.2f}亿" if amt else ""
-        print(f"  {d}  {hd or '—':<6} {lt or ''} 炸板{opens or 0}次 {amt_s} | {reason or '(无原因)'}")
+        mark = "⚡触及未封" if pool == "touch" else ""
+        print(f"  {d}  {hd or '—':<6} {lt or ''} {mark} 炸板{opens or 0}次 {amt_s} | {reason or '(无原因)'}")
     return 0
 
 
@@ -97,12 +98,13 @@ def cmd_date(conn, d: str) -> int:
         d = f"{d[:4]}-{d[4:6]}-{d[6:]}"
     stats = conn.execute("SELECT num, history_num, rate, open_num FROM day_stats "
                          "WHERE trade_date=?", (d,)).fetchone()
-    n_events = conn.execute("SELECT COUNT(*) FROM limit_up_events WHERE trade_date=?",
-                            (d,)).fetchone()[0]
+    n_events, n_touch = conn.execute(
+        "SELECT SUM(pool='zt'), SUM(pool='touch') FROM limit_up_events WHERE trade_date=?",
+        (d,)).fetchone()
     if not n_events:
         print(f"{d} 无涨停数据（非交易日或未抓取）")
         return 1
-    head = f"\n===== {d} 涨停复盘：{n_events} 只"
+    head = f"\n===== {d} 涨停复盘：{n_events} 只" + (f"（另触及未封{n_touch}只）" if n_touch else "")
     if stats:
         num, hist, rate, opens = stats
         head += f" · 触板{hist} · 封板率{rate * 100:.0f}% · 炸板{opens}家" if rate else ""
@@ -137,7 +139,7 @@ def cmd_codes(conn, codes_str: str) -> int:
             print(f"\n{code}: 无涨停记录")
             continue
         n_zt, last = conn.execute(
-            "SELECT COUNT(*), MAX(trade_date) FROM limit_up_events WHERE code=?",
+            "SELECT COUNT(*), MAX(trade_date) FROM limit_up_events WHERE code=? AND pool='zt'",
             (code,)).fetchone()
         print(f"\n{row[0]}({code}) [{common.board_of(code)}] 历史涨停{n_zt}次，最近{last}")
         for cname, cid, n in conn.execute("""

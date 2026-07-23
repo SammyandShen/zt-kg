@@ -21,7 +21,9 @@ DB_PATH = REPO_ROOT / "data" / "ztkg.db"
 ALIASES_PATH = REPO_ROOT / "data" / "aliases.json"
 EXPANSIONS_PATH = REPO_ROOT / "data" / "tag_expansions.json"
 
-API = "https://data.10jqka.com.cn/dataapi/limit_up/limit_up_pool"
+API_BASE = "https://data.10jqka.com.cn/dataapi/limit_up/"
+POOL_ENDPOINTS = {"zt": "limit_up_pool",      # 收盘封住
+                  "touch": "open_limit_pool"}  # 触及涨停但收盘未封（炸板池）
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"),
@@ -38,14 +40,16 @@ class DateOutOfRangeError(Exception):
 
 # ---------------------------------------------------------------- 抓取
 
-def fetch_pool(date_yyyymmdd: str) -> tuple[list[dict], dict | None]:
-    """抓取某日涨停池全部记录 + 当日市场级统计。
+def fetch_pool(date_yyyymmdd: str, pool: str = "zt") -> tuple[list[dict], dict | None]:
+    """抓取某日涨停池（pool='zt'）或炸板池（pool='touch'）全部记录 + 当日市场级统计。
 
     返回 (rows, stats)。rows 为空列表 = 当日无数据（非交易日）。
     stats 取自响应 limit_up_count.today：{num, history_num, rate, open_num}
     （num=收盘封住家数，history_num=盘中触板家数，rate=封板率，open_num=炸板家数）。
+    炸板池记录 reason_type/high_days/limit_up_type 为 null，change_tag='LIMIT_FAILED'。
     抛 DateOutOfRangeError = 超出滚动窗口；其他异常原样抛给调用方。
     """
+    api = API_BASE + POOL_ENDPOINTS[pool]
     rows: list[dict] = []
     stats: dict | None = None
     page = 1
@@ -55,7 +59,7 @@ def fetch_pool(date_yyyymmdd: str) -> tuple[list[dict], dict | None]:
             "filter": "HS,GEM2STAR", "order_field": "330324", "order_type": "0",
             "date": date_yyyymmdd,
         }
-        req = urllib.request.Request(API + "?" + urllib.parse.urlencode(params), headers=HEADERS)
+        req = urllib.request.Request(api + "?" + urllib.parse.urlencode(params), headers=HEADERS)
         payload = json.loads(urllib.request.urlopen(req, timeout=TIMEOUT_SEC).read())
         status = payload.get("status_code")
         if status != 0:
@@ -112,6 +116,7 @@ CREATE TABLE IF NOT EXISTS limit_up_events (
     change_tag        TEXT,
     market_type       TEXT,
     source            TEXT NOT NULL DEFAULT 'ths',
+    pool              TEXT NOT NULL DEFAULT 'zt',  -- zt=收盘封住 / touch=触及未封(炸板)
     fetched_at        TEXT NOT NULL,
     UNIQUE (trade_date, code, source)
 );
@@ -196,6 +201,11 @@ def open_db() -> sqlite3.Connection:
     conn = sqlite3.connect(DB_PATH)
     conn.execute("PRAGMA foreign_keys=ON")  # SQLite 默认每连接关闭，必须显式开
     conn.executescript(DDL)
+    # 迁移：老库补 pool 列（CREATE IF NOT EXISTS 不会改已有表）
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(limit_up_events)")}
+    if "pool" not in cols:
+        conn.execute("ALTER TABLE limit_up_events ADD COLUMN pool TEXT NOT NULL DEFAULT 'zt'")
+        conn.commit()
     return conn
 
 
@@ -304,7 +314,8 @@ def now_iso() -> str:
 
 def upsert_events(conn: sqlite3.Connection, trade_date: str, rows: list[dict],
                   alias_map: dict[str, str] | None = None, source: str = "ths",
-                  expansions: dict[str, list[str]] | None = None) -> int:
+                  expansions: dict[str, list[str]] | None = None,
+                  pool: str = "zt") -> int:
     """单事务幂等入库：events upsert + stocks upsert + 重建该事件概念关系。
     trade_date 格式 'YYYY-MM-DD'。返回入库条数。"""
     if alias_map is None:
@@ -335,7 +346,7 @@ def upsert_events(conn: sqlite3.Connection, trade_date: str, rows: list[dict],
                 is_new=_to_int(r.get("is_new")),
                 is_again_limit=_to_int(r.get("is_again_limit")),
                 change_tag=r.get("change_tag"), market_type=r.get("market_type"),
-                source=source, fetched_at=fetched_at,
+                source=source, pool=pool, fetched_at=fetched_at,
             )
             cols = ",".join(vals)
             placeholders = ",".join("?" for _ in vals)

@@ -116,16 +116,20 @@ def main() -> int:
     events: dict[str, list] = {d: [] for d in dates}
     for row in conn.execute("""
         SELECT e.id, e.trade_date, e.code, e.lb_count, e.high_days, e.limit_up_type,
-               e.open_num, e.order_amount, e.currency_value, e.first_time, e.reason_type
+               e.open_num, e.order_amount, e.currency_value, e.first_time, e.reason_type,
+               e.pool
         FROM limit_up_events e JOIN chosen ch ON ch.id=e.id
-        ORDER BY e.trade_date, e.lb_count DESC, e.first_time"""):
-        (eid, d, code, lb, hd, lt, opens, amt, mcap, ft, reason) = row
-        events[d].append([
+        ORDER BY e.trade_date, e.pool DESC, e.lb_count DESC, e.first_time"""):
+        (eid, d, code, lb, hd, lt, opens, amt, mcap, ft, reason, pool) = row
+        ev = [
             code, lb, hd, lt, opens,
             round(amt / 1e4) if amt else None,        # 封单(万)
             round(mcap / 1e8, 1) if mcap else None,   # 流通市值(亿)
             hhmm(ft), reason, ec_map.get(eid, []),
-        ])
+        ]
+        if pool == "touch":
+            ev.append(1)  # 索引10：触及涨停未封住（炸板池），缺省=封住
+        events[d].append(ev)
 
     # 新闻：只导出最近60个交易日（控制 data.js 体积），键 "code|date"
     news: dict[str, list] = {}
@@ -159,7 +163,7 @@ def main() -> int:
         "briefs": briefs,
     }
     js = ("// 由 scripts/build_site.py 生成，禁止手改\n"
-          "// event 字段: [code, 连板数, high_days, 涨停类型, 炸板次数, 封单万, 流通市值亿, 首封HH:MM, 原始原因, [概念id]]\n"
+          "// event 字段: [code, 连板数, high_days, 涨停类型, 炸板次数, 封单万, 流通市值亿, 首封HH:MM, 原始原因, [概念id], touch?]  最后一位=1表示触及涨停未封住\n"
           "const ZTKG_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n")
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(js, encoding="utf-8")

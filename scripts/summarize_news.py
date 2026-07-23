@@ -69,7 +69,7 @@ def summarize_date(conn, claude_bin: str, d: str, force: bool) -> tuple[int, int
     rows = conn.execute(
         "SELECT e.code, e.name, e.reason_type FROM limit_up_events e "
         "LEFT JOIN briefs b ON b.code=e.code AND b.trade_date=e.trade_date "
-        "WHERE e.trade_date=?"
+        "WHERE e.trade_date=? AND e.pool='zt'"
         + ("" if force else " AND (b.code IS NULL "
                             "  OR b.created_at < datetime(e.trade_date, '+2 day'))")
         + " ORDER BY e.code", (d,)).fetchall()

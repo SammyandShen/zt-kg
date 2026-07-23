@@ -109,7 +109,7 @@ def main() -> int:
         for code, name in conn.execute(
                 "SELECT DISTINCT e.code, e.name FROM limit_up_events e "
                 "LEFT JOIN news_log l ON l.code=e.code AND l.trade_date=e.trade_date "
-                "WHERE e.trade_date=? AND (l.code IS NULL "
+                "WHERE e.trade_date=? AND e.pool='zt' AND (l.code IS NULL "
                 "  OR l.fetched_at < datetime(e.trade_date, '+2 day')) "
                 "ORDER BY e.code", (d,)):
             todo.append((d, code, name))
