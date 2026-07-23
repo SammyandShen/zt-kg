@@ -881,14 +881,40 @@ function renderConcept(cid) {
   if (!meta || !c) { $('#app').innerHTML = '<div class="empty">概念不存在</div>'; return; }
   const [cname, total, days] = meta;
   const aliases = Object.keys(D.aliases).filter(a => D.aliases[a] === cid);
-  const activeDates = [...c.days.keys()].sort();
-  const hot = hotOf(cid);
+  // 热力页点击进入详情后保持同一统计范围：正式热力节点按“自身+全部下级”聚合；
+  // 非热力标签或未入树标签仍只统计标签本身。
+  const heatScope = heatTaxCids(cname);
+  const scopeCids = heatScope.size ? heatScope : new Set([+cid]);
+  const isBranchScope = scopeCids.size > 1;
+  const scopeDays = new Map();
+  const scopeStockCounts = new Map();
+  for (const d of D.dates) {
+    const dayStocks = new Map();
+    for (const scopedCid of scopeCids) {
+      const scoped = byConcept[scopedCid];
+      if (!scoped) continue;
+      for (const ev of (scoped.days.get(d) || []))
+        if (!isTouch(ev)) dayStocks.set(ev[0], ev);
+    }
+    if (!dayStocks.size) continue;
+    const evs = [...dayStocks.values()];
+    scopeDays.set(d, evs);
+    for (const ev of evs)
+      scopeStockCounts.set(ev[0], (scopeStockCounts.get(ev[0]) || 0) + 1);
+  }
+  const activeDates = [...scopeDays.keys()];
+  const scopeTotal = [...scopeDays.values()].reduce((n, evs) => n + evs.length, 0);
+  const hot = recent5.reduce((n, d) => n + (scopeDays.get(d) || []).length, 0);
 
-  const stockRows = [...c.stocks].map(([code, cnt]) => {
-    const evs = byStock[code].filter(x => x.ev[9].includes(cid));
-    const maxLb = Math.max(...evs.map(x => x.ev[1] || 1));
-    const lastX = evs[evs.length - 1];
-    return { code, cnt, maxLb, last: lastX.d,
+  const stockRows = [...scopeStockCounts].map(([code, cnt]) => {
+    const matched = byStock[code].filter(x => !isTouch(x.ev) &&
+      x.ev[9].some(scopedCid => scopeCids.has(scopedCid)));
+    const maxLb = Math.max(...matched.map(x => x.ev[1] || 1));
+    const lastMatched = matched[matched.length - 1];
+    // 成分关系/次数按当前板块范围统计；“最近涨停”及行情字段取股票全市场最新封板记录。
+    // 否则同一股票次日换了更细标签时，板块表会错误停留在前一日。
+    const lastX = [...byStock[code]].reverse().find(x => !isTouch(x.ev)) || lastMatched;
+    return { code, cnt, maxLb, last: lastX.d, lastMatched: lastMatched.d,
              lastFt: lastX.ev[7], lastLt: lastX.ev[3], lastOpen: lastX.ev[4],
              lastAmt: lastX.ev[5], lastMcap: lastX.ev[6], lastReason: lastX.ev[8] };
   }).sort((a, b) => b.cnt - a.cnt || (a.last < b.last ? 1 : -1));
@@ -904,7 +930,9 @@ function renderConcept(cid) {
         <span class="code muted small">${r.code}</span></td>
       <td class="num">${r.cnt}</td>
       <td>${r.maxLb >= 2 ? `<span class="lb ${r.maxLb >= 3 ? 'lb3' : 'lb2'}">${r.maxLb}板</span>` : '首板'}</td>
-      <td class="num">${r.last}</td><td>${esc(r.lastLt || '—')}</td>
+      <td class="num">${r.last}${r.last !== r.lastMatched
+        ? `<span class="muted small" style="display:block">板块命中 ${r.lastMatched.slice(5)}</span>` : ''}</td>
+      <td>${esc(r.lastLt || '—')}</td>
       <td class="num">${r.lastOpen ?? 0}次</td><td class="num">${fmtWan(r.lastAmt)}</td>
       <td class="num">${r.lastFt || '—'}</td>
       <td class="num">${r.lastMcap != null ? r.lastMcap + '亿' : '—'}</td>
@@ -912,43 +940,47 @@ function renderConcept(cid) {
   }).join('');
   $('#app').innerHTML = `
   <div class="detail-h">
-    <h2>${esc(cname)} ${hot >= 3 ? '<span class="hot small">🔥 近5日 ' + hot + ' 家涨停</span>' : ''}
+    <h2>${esc(cname)} ${hot >= 3 ? '<span class="hot small">🔥 近5日 ' + hot + ' 股次</span>' : ''}
       <span class="type-badge ${currentView.badge}" style="vertical-align:3px">${currentView.label}${
         FIX[cname] ? ' · 本地' : ''}</span>
       <button class="clsbtn${FIX[cname] ? ' done' : ''}" data-cls="${esc(cname)}" style="vertical-align:3px"
         title="修改标签类型">✎</button></h2>
     <div class="muted small">
       ${aliases.length ? '别名：' + aliases.map(esc).join('、') + ' · ' : ''}
-      累计涨停 <b>${total}</b> 次 · 活跃 <b>${days}</b> 天 ·
+      ${isBranchScope ? '板块口径（自身+全部下级）：' : ''}
+      累计涨停 <b>${scopeTotal}</b> 股次 · 活跃 <b>${activeDates.length}</b> 天 ·
       ${activeDates[0]} ~ ${activeDates[activeDates.length - 1]}
+      ${isBranchScope ? ` · 标签本身 <b>${total}</b> 股次 / <b>${days}</b> 天` : ''}
     </div>
     ${hierarchyHtml ? `<div class="hierarchy typed-hierarchy">${hierarchyHtml}</div>` : ''}
   </div>
   <div class="chart-card">
-    <div class="ch-h"><b>活跃度时间线</b><span class="muted small">当日涨停家数，点击柱子跳当日复盘</span>
+    <div class="ch-h"><b>活跃度时间线</b><span class="muted small">${
+      isBranchScope ? '自身及全部下级标签' : '当前标签'}的当日去重涨停家数，点击柱子跳当日复盘</span>
       <div class="seg">
         <button id="r60" class="${conceptRange === 60 ? 'on' : ''}">近60日</button>
         <button id="rall" class="${conceptRange === 0 ? 'on' : ''}">全期</button>
       </div></div>
     <div id="tl"></div>
   </div>
-  <div class="muted small" style="margin:0 2px 6px">成分股统计；类型、炸板、封单、首封时间、流通市值、涨停原因和消息均取最近一次涨停记录</div>
+  <div class="muted small" style="margin:0 2px 6px">成分股、板块命中次数和最高连板按${
+    isBranchScope ? '当前节点及全部下级标签' : '当前标签'}统计；股票最近涨停及其类型、炸板、封单、首封时间、流通市值、原因和消息取该股票全市场最新封板记录</div>
   <div class="tablewrap"><table>
-    <thead><tr><th>股票</th><th>涨停次数</th><th>最高连板</th><th>最近涨停</th><th>类型</th>
+    <thead><tr><th>股票</th><th>板块命中次数</th><th>板块内最高连板</th><th>股票最近涨停</th><th>类型</th>
       <th>炸板</th><th>封单</th><th>首封时间</th><th>流通市值</th><th>涨停原因</th><th>消息</th></tr></thead>
     <tbody>${stockTableRows}</tbody></table></div>`;
 
-  drawTimeline(cid);
+  drawTimeline(cid, scopeDays);
   $('#r60').onclick = () => { conceptRange = 60; renderConcept(cid); };
   $('#rall').onclick = () => { conceptRange = 0; renderConcept(cid); };
   bindNewsRows();
   bindChips();
 }
 
-function drawTimeline(cid) {
+function drawTimeline(cid, scopedDays) {
   const c = byConcept[cid];
   const dates = conceptRange ? D.dates.slice(-conceptRange) : D.dates;
-  const vals = dates.map(d => (c.days.get(d) || []).length);
+  const vals = dates.map(d => (scopedDays?.get(d) || c.days.get(d) || []).length);
   const max = Math.max(1, ...vals);
   const W = 1000, H = 150, padL = 26, padB = 20, padT = 8;
   const bw = (W - padL - 4) / dates.length;
