@@ -90,6 +90,10 @@ open docs/index.html                           # 打开交互网页
 - status：active(已审核，进热度) / candidate(待审核，只在"未审核新热点"区按共振展示) / retired
 - 新标签达标后 `python3 scripts/gen_tag_meta.py` 增量出草稿（不覆盖已审条目），
   `python3 scripts/query.py review-tags` 看待审清单，人工改 type/status 后跑 build_site.py
+- `gen_tag_meta.py --all`：全库长尾一并登记（模式命中给建议类型、无命中=unknown，
+  一律 candidate）——已跑过一次实现六类全覆盖（2420条），日常增量跑不带 --all 即可
+- 网页「全局筛选」(#/filter)：按 题材(自动含子树)/催化/属性/事件·未审核 四行多选
+  （行内=或、跨行=且）+ 时间窗/连板/仅涨停或含触及/交易所 组合筛股，结果点行进个股页
 - **网页手动分类入口**：热力页"未审核新热点"每个标签带 ✎、概念详情页标题带 ✎，
   弹层选类型/状态/父节点存 localStorage 本地立即生效；右下角"导出补丁"生成 JSON
   （tag_meta合并 + taxonomy追加），发给 Claude 或手工合并落盘后跑 build_site.py，再清空本地标注

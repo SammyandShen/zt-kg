@@ -13,9 +13,12 @@ catalyst→催化热度，其余不进热度。
   默认 theme；OVERRIDES 拥有最终解释权
 - 非树内但满足审核门槛（单日共振≥3股 或 累计≥3股且≥2日）→ status=candidate，
   类型为关键词推断的建议值
+- --all：全库所有概念都登记（长尾也处理）——模式命中给建议类型，
+  无命中归 unknown；status 一律 candidate
 - 已存在条目一律不动（人工审核结果优先），只新增
 """
 
+import argparse
 import json
 import re
 import sys
@@ -35,7 +38,7 @@ CATALYST_PAT = re.compile(
 EVENT_PAT = re.compile(
     r"收购|入主|参股|持股|投建|投资|转型|变更|转让|上市|解锁|澄清|终止|成立|"
     r"合作|中签|借壳|剥离|出售")
-ATTRIBUTE_PAT = re.compile(r"国资$|^央企$|^国企$|次新|^ST|龙头$|^客户|^供应")
+ATTRIBUTE_PAT = re.compile(r"国资|央企|国企|次新|ST|龙头$|^客户|^供应|系$|背景$|概念股$")
 
 OVERRIDES = {
     "国企改革": "theme",        # 市场题材，非属性（评审纠错点）
@@ -60,19 +63,25 @@ def subtree(tax: dict, root: str) -> set:
     return out
 
 
-def infer_type(name: str) -> str:
+def infer_type(name: str, default: str = "theme") -> str:
+    """事件动词优先于属性（"江西国资拟入主"是事件不是属性），再催化、再属性。"""
     if name in OVERRIDES:
         return OVERRIDES[name]
-    if ATTRIBUTE_PAT.search(name):
-        return "attribute"
-    if CATALYST_PAT.search(name):
-        return "catalyst"
     if EVENT_PAT.search(name):
         return "event"
-    return "theme"
+    if CATALYST_PAT.search(name):
+        return "catalyst"
+    if ATTRIBUTE_PAT.search(name):
+        return "attribute"
+    return default
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--all", action="store_true",
+                    help="全库所有概念都登记（长尾无模式命中的归 unknown/candidate）")
+    args = ap.parse_args()
+
     tax = json.loads(TAXONOMY_PATH.read_text(encoding="utf-8"))
     tax.pop("$note", None)
     children = {c for v in tax.values() for c in v}
@@ -126,6 +135,16 @@ def main() -> int:
         meta[name] = {"type": infer_type(name), "status": "candidate"}
         added["cand"] += 1
 
+    # 3) --all：剩余全部长尾概念（模式命中给类型，无命中=unknown）
+    added["all"] = 0
+    if args.all:
+        for (name,) in conn.execute("SELECT name FROM concepts ORDER BY name"):
+            if name in meta:
+                continue
+            meta[name] = {"type": infer_type(name, default="unknown"),
+                          "status": "candidate"}
+            added["all"] += 1
+
     out = {"$note": note}
     for k in sorted(meta, key=lambda x: (meta[x]["status"] != "active", meta[x]["type"], x)):
         out[k] = meta[k]
@@ -135,7 +154,8 @@ def main() -> int:
     stats: dict = {}
     for v in meta.values():
         stats[(v["status"], v["type"])] = stats.get((v["status"], v["type"]), 0) + 1
-    print(f"tag_meta.json: 共 {len(meta)} 条（本次新增 树内{added['tree']} / 候选{added['cand']}）")
+    print(f"tag_meta.json: 共 {len(meta)} 条（本次新增 树内{added['tree']} / 候选{added['cand']}"
+          f" / 长尾{added.get('all', 0)}）")
     for (st_, t), n in sorted(stats.items()):
         print(f"  {st_:<10} {t:<10} {n}")
     return 0

@@ -239,6 +239,20 @@
                         border-style: dashed; border-color: var(--ink3); }
   .concept-chip.c-evt:hover { background: var(--ink3); color: var(--bg); }
 
+  /* 全局筛选：选中态 = 实心填充 */
+  .concept-chip.sel { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .concept-chip.c-cat.sel { background: var(--teal); color: #fff; border-color: var(--teal); }
+  .concept-chip.c-attr.sel { background: var(--gold); color: #fff; border-color: var(--gold); }
+  .concept-chip.c-evt.sel { background: var(--ink3); color: var(--bg); border-color: var(--ink3); border-style: solid; }
+  .concept-chip.sel .x, .concept-chip.c-cat.sel .x, .concept-chip.c-attr.sel .x { color: #fff; opacity: .8; }
+  .fltbar { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+            padding: 10px 14px 12px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .fltrow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 8px 0; }
+  .fltrow .flabel { font-size: 12px; color: var(--ink2); }
+  #f-q { padding: 5px 10px; border: 1px solid var(--line); border-radius: 8px;
+         background: var(--bg); color: var(--ink); font-size: 13px; width: 170px; }
+  #f-q:focus { outline: none; border-color: var(--accent); }
+
   /* 题材树（个股页） */
   .tagtree { margin-top: 4px; }
   .tagtree .tnode { display: flex; align-items: center; gap: 6px; padding: 1px 0; }
@@ -299,6 +313,7 @@
   <nav>
     <button id="nav-review">每日复盘</button>
     <button id="nav-heat">板块热力</button>
+    <button id="nav-filter">全局筛选</button>
     <button id="nav-trend">情绪趋势</button>
     <button id="nav-batch">批量归类</button>
   </nav>
@@ -425,6 +440,7 @@ window.addEventListener('hashchange', render);
 $('#brand').onclick = () => go('#/date/' + D.dates[D.dates.length - 1]);
 $('#nav-review').onclick = $('#brand').onclick;
 $('#nav-heat').onclick = () => go('#/heat');
+$('#nav-filter').onclick = () => go('#/filter');
 $('#nav-trend').onclick = () => go('#/trend');
 $('#nav-batch').onclick = () => go('#/batch');
 
@@ -433,9 +449,11 @@ function render() {
   const [, view, arg] = h.match(/^#\/(\w+)\/?(.*)$/) || [];
   $('#nav-review').classList.toggle('on', view === 'date');
   $('#nav-heat').classList.toggle('on', view === 'heat');
+  $('#nav-filter').classList.toggle('on', view === 'filter');
   $('#nav-trend').classList.toggle('on', view === 'trend');
   $('#nav-batch').classList.toggle('on', view === 'batch');
   hideTip();
+  if (view === 'filter') return renderFilter();
   if (view === 'date') return renderDate(decodeURIComponent(arg));
   if (view === 'concept') return renderConcept(+arg);
   if (view === 'stock') return renderStock(decodeURIComponent(arg));
@@ -1227,6 +1245,157 @@ function runBatch() {
   }
   $('#bres').innerHTML = html;
   bindChips();
+}
+
+/* ---------- 视图8：全局筛选 ---------- */
+const FLT = { days: 10, touch: false, lb: 0, boards: new Set(),
+              sel: { theme: new Set(), cat: new Set(), attr: new Set(), evt: new Set() },
+              more: new Set(), q: '', qFocus: false };
+const BUCKET_OF = t => (t === 'sector' || t === 'theme') ? 'theme'
+  : t === 'catalyst' ? 'cat' : t === 'attribute' ? 'attr' : 'evt';
+
+function renderFilter() {
+  const win = FLT.days ? D.dates.slice(-FLT.days) : D.dates;
+
+  // 窗口内每概念去重家数 → 四个类型行的可选标签
+  const cidStocks = new Map();
+  for (const d of win) for (const ev of D.events[d])
+    for (const cid of ev[9]) (cidStocks.get(cid) ?? cidStocks.set(cid, new Set()).get(cid)).add(ev[0]);
+  const buckets = { theme: [], cat: [], attr: [], evt: [] };
+  for (const [cid, s] of cidStocks) {
+    const nm = D.concepts[cid][0];
+    buckets[BUCKET_OF(typeOf(nm))].push({ nm, n: s.size });
+  }
+  for (const k in buckets) {
+    buckets[k].sort((a, b) => b.n - a.n || (a.nm < b.nm ? -1 : 1));
+    for (const nm of FLT.sel[k])                       // 已选但窗口内没出现的，保留可退选
+      if (!buckets[k].some(t => t.nm === nm)) buckets[k].push({ nm, n: 0 });
+  }
+
+  // 条件 → cid 集合（题材树节点自动含全部后代）
+  const selCids = key => {
+    const out = new Set();
+    for (const nm of FLT.sel[key]) {
+      if (key === 'theme') for (const c of taxCids(nm)) out.add(c);
+      const cid = nameToCid[nm];
+      if (cid != null) out.add(cid);
+    }
+    return out;
+  };
+  const conds = ['theme', 'cat', 'attr', 'evt'].map(selCids).filter(s => s.size);
+
+  // 逐股聚合（窗口内）
+  const agg = new Map();
+  for (const d of win) for (const ev of D.events[d]) {
+    const touch = isTouch(ev);
+    if (touch && !FLT.touch) continue;
+    const a = agg.get(ev[0]) ?? agg.set(ev[0], { zt: 0, tc: 0, maxLb: 0, last: '', lastEv: null, cids: new Set() }).get(ev[0]);
+    if (touch) a.tc++; else { a.zt++; a.maxLb = Math.max(a.maxLb, ev[1] || 1); }
+    if (d >= a.last) { a.last = d; a.lastEv = ev; }
+    for (const cid of ev[9]) a.cids.add(cid);
+  }
+  let rows = [...agg].map(([code, a]) => ({ code, ...a }));
+  if (!FLT.touch) rows = rows.filter(r => r.zt > 0);
+  if (FLT.boards.size) rows = rows.filter(r => FLT.boards.has(boardOf(r.code)));
+  if (FLT.lb) rows = rows.filter(r => r.maxLb >= FLT.lb);
+  for (const cs of conds)
+    rows = rows.filter(r => { for (const c of cs) if (r.cids.has(c)) return true; return false; });
+  rows.sort((a, b) => b.zt - a.zt || b.maxLb - a.maxLb || (a.last < b.last ? 1 : -1));
+
+  // 命中标签展示：有条件显示命中的，无条件显示前3个题材
+  const allSel = new Set(conds.flatMap(s => [...s]));
+  const hitTags = r => {
+    const ids = allSel.size ? [...r.cids].filter(c => allSel.has(c)) : [...r.cids].slice(0, 6);
+    const named = ids.map(c => ({ c, nm: D.concepts[c][0] }));
+    const show = allSel.size ? named : named.filter(x => isTheme(x.nm)).slice(0, 3);
+    return show.map(x => `<span class="concept-chip" data-cid="${x.c}" style="padding:1px 8px;font-size:12px">${esc(x.nm)}</span>`).join('') || '—';
+  };
+
+  const seg = (opts, cur, idp) => `<div class="seg">${opts.map(([v, lbl], i) =>
+    `<button id="${idp}${i}" data-v="${v}" class="${String(cur) === String(v) ? 'on' : ''}">${lbl}</button>`).join('')}</div>`;
+  const tagRow = (key, label, lcls, ccls) => {
+    const list = buckets[key].filter(t => !FLT.q || t.nm.includes(FLT.q) || FLT.sel[key].has(t.nm));
+    const cap = FLT.more.has(key) ? 999 : 18;
+    const shown = list.slice(0, cap);
+    const moreBtn = list.length > cap
+      ? `<span class="clsbtn" data-more="${key}">更多+${list.length - cap}</span>`
+      : (FLT.more.has(key) && list.length > 18 ? `<span class="clsbtn" data-more="${key}">收起</span>` : '');
+    return `<div class="trow"><span class="tlabel ${lcls}">${label}</span><div class="tbody">
+      ${shown.map(t => `<span class="concept-chip ${ccls}${FLT.sel[key].has(t.nm) ? ' sel' : ''}"
+        data-f="${key}" data-nm="${esc(t.nm)}">${esc(t.nm)}<span class="x">${t.n || ''}</span></span>`).join('')}
+      ${moreBtn}</div></div>`;
+  };
+  const BOARDS = ['主板', '创业板', '科创板', '北交所'];
+  const nSel = Object.values(FLT.sel).reduce((a, s) => a + s.size, 0);
+  const shown = rows.slice(0, 150);
+
+  $('#app').innerHTML = `
+  <div class="datebar"><h2 style="margin:0">全局筛选</h2>
+    <span class="muted small">行内多选=或，跨行=且 · 题材自动含子标签</span></div>
+  <div class="fltbar">
+    <div class="fltrow">
+      <span class="flabel">时间窗</span>${seg([[5, '近5日'], [10, '近10日'], [30, '近30日'], [0, '全部']], FLT.days, 'fd')}
+      <span class="flabel">连板</span>${seg([[0, '不限'], [2, '≥2板'], [3, '≥3板']], FLT.lb, 'fl')}
+      <span class="flabel">范围</span>${seg([[0, '仅涨停'], [1, '含触及']], FLT.touch ? 1 : 0, 'ft')}
+      ${BOARDS.map(b => `<span class="concept-chip${FLT.boards.has(b) ? ' sel' : ''}" data-b="${b}" style="padding:2px 10px">${b}</span>`).join('')}
+      <input id="f-q" placeholder="搜标签名过滤下方行" value="${esc(FLT.q)}">
+      ${nSel ? '<button class="navbtn" id="f-clear">清空条件</button>' : ''}
+    </div>
+    ${tagRow('theme', '题材', 'tl-theme', '')}
+    ${tagRow('cat', '催化', 'tl-cat', 'c-cat')}
+    ${tagRow('attr', '属性', 'tl-attr', 'c-attr')}
+    ${tagRow('evt', '事件·未审核', 'tl-evt', 'c-evt')}
+  </div>
+  <div class="muted small" style="margin:0 2px 8px">命中 <b>${rows.length}</b> 只${rows.length > 150 ? '（仅显示前150）' : ''}</div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>股票</th><th>涨停</th>${FLT.touch ? '<th>触及</th>' : ''}<th>最高连板</th><th>最近</th><th>首封时间</th><th>命中标签</th></tr></thead>
+    <tbody>${shown.map(r => `
+      <tr data-code="${r.code}">
+        <td>${esc(D.stocks[r.code] || '')}<span class="muted small">（${boardOf(r.code)}）</span>
+          <span class="code muted small">${r.code}</span></td>
+        <td class="num">${r.zt}</td>${FLT.touch ? `<td class="num">${r.tc || ''}</td>` : ''}
+        <td>${r.maxLb >= 2 ? `<span class="lb ${r.maxLb >= 3 ? 'lb3' : 'lb2'}">${r.maxLb}板</span>` : (r.zt ? '首板' : '<span class="lb lbt">⚡触及</span>')}</td>
+        <td class="num">${r.last}</td><td class="num">${r.lastEv?.[7] || '—'}</td>
+        <td>${hitTags(r)}</td></tr>`).join('')}
+    </tbody></table></div>
+  ${!rows.length ? '<div class="empty">无命中，放宽条件试试</div>' : ''}`;
+
+  // 绑定
+  const rerender = () => renderFilter();
+  [['fd', v => FLT.days = +v], ['fl', v => FLT.lb = +v], ['ft', v => FLT.touch = !!+v]]
+    .forEach(([idp, set]) => document.querySelectorAll(`[id^="${idp}"]`).forEach(el =>
+      el.addEventListener('click', () => { set(el.dataset.v); rerender(); })));
+  document.querySelectorAll('[data-b]').forEach(el =>
+    el.addEventListener('click', () => {
+      const b = el.dataset.b;
+      FLT.boards.has(b) ? FLT.boards.delete(b) : FLT.boards.add(b);
+      rerender();
+    }));
+  document.querySelectorAll('[data-f]').forEach(el =>
+    el.addEventListener('click', () => {
+      const s = FLT.sel[el.dataset.f], nm = el.dataset.nm;
+      s.has(nm) ? s.delete(nm) : s.add(nm);
+      rerender();
+    }));
+  document.querySelectorAll('[data-more]').forEach(el =>
+    el.addEventListener('click', () => {
+      const k = el.dataset.more;
+      FLT.more.has(k) ? FLT.more.delete(k) : FLT.more.add(k);
+      rerender();
+    }));
+  $('#f-q').addEventListener('input', e => { FLT.q = e.target.value.trim(); FLT.qFocus = true; rerender(); });
+  $('#f-clear')?.addEventListener('click', () => {
+    for (const k in FLT.sel) FLT.sel[k].clear();
+    FLT.boards.clear(); FLT.q = ''; rerender();
+  });
+  if (FLT.qFocus) {
+    const qi = $('#f-q'); qi.focus(); qi.setSelectionRange(qi.value.length, qi.value.length);
+    FLT.qFocus = false;
+  }
+  document.querySelectorAll('tbody tr[data-code]').forEach(el =>
+    el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
+  document.querySelectorAll('td .concept-chip[data-cid]').forEach(el =>
+    el.addEventListener('click', e => { e.stopPropagation(); go('#/concept/' + el.dataset.cid); }));
 }
 
 /* ---------- 全局搜索 ---------- */
