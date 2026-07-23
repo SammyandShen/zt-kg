@@ -92,6 +92,10 @@ open docs/index.html                           # 打开交互网页
   `python3 scripts/query.py review-tags` 看待审清单，人工改 type/status 后跑 build_site.py
 - `gen_tag_meta.py --all`：全库长尾一并登记（模式命中给建议类型、无命中=unknown，
   一律 candidate）——已跑过一次实现六类全覆盖（2420条），日常增量跑不带 --all 即可
+- `classify_tags.py`：claude CLI(sonnet) 复核分型，范围=candidate+active
+  （OVERRIDES 受保护；active 改判门槛 conf≥0.8 并列明细）。台账
+  data/llm_review.json 断点续传；父节点建议存 llm_parent_suggestions.json
+  不自动改树。已全量跑过一次（2405条判定）；新标签积累后重跑即可只判增量
 - 网页「全局筛选」(#/filter)：按 题材(自动含子树)/催化/属性/事件·未审核 四行多选
   （行内=或、跨行=且）+ 时间窗/连板/仅涨停或含触及/交易所 组合筛股，结果点行进个股页
 - **网页手动分类入口**：热力页"未审核新热点"每个标签带 ✎、概念详情页标题带 ✎，

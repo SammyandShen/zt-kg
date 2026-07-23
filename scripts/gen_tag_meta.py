@@ -48,6 +48,7 @@ OVERRIDES = {
     "海外业务": "attribute", "出口": "theme",
     "海南自贸区": "theme", "3D打印": "theme",
     "券商看好": "event", "券商推荐": "event",
+    "H股上市": "catalyst",  # 涨停语境=公告拟发H股，非公司属性（LLM复核曾误判attribute）
     "产品涨价": "catalyst", "超跌反弹": "catalyst",
 }
 
