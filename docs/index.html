@@ -472,6 +472,14 @@
   .episode-copy { margin-top: 4px; color: var(--ink2); font-size: 10px; }
   .legacy-note { margin-top: 9px; padding: 6px 8px; border: 1px dashed var(--line);
                  border-radius: 8px; color: var(--ink3); font-size: 10px; }
+  .legacy-details { margin-top: 12px; padding: 9px 12px; background: var(--surface);
+                    border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+  .legacy-details summary { cursor: pointer; color: var(--ink2); font-size: 12px;
+                            font-weight: 600; list-style-position: outside; }
+  .legacy-details summary span { margin-left: 6px; color: var(--ink3); font-size: 10px;
+                                 font-weight: 400; }
+  .legacy-details[open] summary { margin-bottom: 4px; }
+  .legacy-details .legacy-note { margin-top: 6px; }
   @media (max-width: 640px) {
     .fact-grid { grid-template-columns: 1fr; }
   }
@@ -1338,19 +1346,27 @@ function renderStock(code) {
   const zts = hist.filter(x => !isTouch(x.ev));
   const nTouch = hist.length - zts.length;
   const lastZt = zts.length ? zts[zts.length - 1].d : null;
+  const legacyTagCount = new Set(hist.flatMap(({ ev }) => ev[9] || [])).size;
+  const legacyDetails = legacyTagCount ? `
+    <details class="legacy-details">
+      <summary>历史原因标签（供应商原始线索）
+        <span>${legacyTagCount}个标签，默认不参与公司业务与本次涨停题材展示</span>
+      </summary>
+      <div class="legacy-note">这里仅保留历次同花顺涨停原因经归一化后的审计记录。
+        “×N”表示该标签在本股历史涨停原因中出现N次；不代表公司主营，也不代表某次涨停已经核实。</div>
+      <div style="margin-top:6px">${typedTagRows(hist)}</div>
+    </details>` : '';
   $('#app').innerHTML = `
   <div class="detail-h">
     <h2>${esc(name)} <span class="muted" style="font-size:14px">${code} · ${boardOf(code)}</span></h2>
     <div class="muted small">近1年涨停 <b>${zts.length}</b> 次${
       nTouch ? ` · 触及未封 <b>${nTouch}</b> 次` : ''}${lastZt ? ` · 最近涨停 ${lastZt}` : ''}</div>
     ${businessFactsHtml(code)}
-    <div class="legacy-note"><b>历史原因标签（供应商线索）</b>：以下标签来自历次涨停原因，
-      只用于候选归类，不代表公司主营，也不代表每一次都已核实。</div>
-    <div style="margin-top:6px">${typedTagRows(hist, { tree: true })}</div>
   </div>
   <div class="tablewrap"><table>
     <thead><tr><th>日期</th><th>连板</th><th>类型</th><th>炸板</th><th>封单</th><th>首封时间</th><th>流通市值</th><th>本次涨停题材</th><th>同花顺原始原因</th><th>消息</th></tr></thead>
-    <tbody>${rowsHtml}</tbody></table></div>`;
+    <tbody>${rowsHtml}</tbody></table></div>
+  ${legacyDetails}`;
 
   bindNewsRows();
   $('#app').querySelectorAll('.evidence-links a').forEach(a =>
