@@ -583,7 +583,9 @@ const nameToCid = {};
 for (const cid in D.concepts) nameToCid[D.concepts[cid][0]] = +cid;
 for (const a in D.aliases) nameToCid[a] ??= D.aliases[a];
 const BUSINESS_FACTS = D.business_facts || {};
+const BUSINESS_FACT_CANDIDATES = D.business_fact_candidates || {};
 const EVENT_THEMES = D.event_themes || {};
+const EVENT_CONTEXT_EVIDENCE = D.event_context_evidence || {};
 const THEME_EPISODES = D.theme_episodes || {};
 const THEME_BUSINESS_CANDIDATES = D.theme_business_candidates || {};
 const SEMANTIC_EVIDENCE = D.semantic_evidence || {};
@@ -753,17 +755,28 @@ const SEM_STATUS_LABEL = {
   verified: '已核实', candidate: '待核实', provisional: '暂定轮次',
   closed: '已结束', rejected: '已否定',
 };
-function evidenceLinksHtml(ids) {
+const REVIEW_VERDICT_LABEL = {
+  supporting: '旁证较强', weak: '旁证较弱', insufficient: '证据不足',
+};
+const reviewStageLabel = review => review ? (review[0] >= 2 ? 'T+2' : `T+${review[0]}`) : '';
+const reviewLabel = review => review
+  ? `${reviewStageLabel(review)} ${REVIEW_VERDICT_LABEL[review[1]] || review[1]}`
+  : '';
+function evidenceLinksHtml(ids, prefix = '证据') {
   const links = (ids || []).map(id => {
     const e = SEMANTIC_EVIDENCE[id];
     if (!e) return '';
-    const label = e[1] || e[0] || '证据';
+    const rawTitle = e[2] || '';
+    const shortTitle = rawTitle.length > 16 ? rawTitle.slice(0, 16) + '…' : rawTitle;
+    const label = e[0] === 'announcement'
+      ? `${(e[4] || '').slice(5, 10)} ${shortTitle || '官方公告'}`
+      : (e[1] || e[0] || '证据');
     const title = `${e[2] || label}｜${e[6] || ''}`;
     return e[3]
       ? `<a href="${esc(e[3])}" target="_blank" rel="noopener" title="${esc(title)}">${esc(label)} ↗</a>`
       : `<span title="${esc(title)}">${esc(label)}</span>`;
   }).filter(Boolean);
-  return links.length ? `<div class="evidence-links">证据：${links.join('')}</div>` : '';
+  return links.length ? `<div class="evidence-links">${esc(prefix)}：${links.join('')}</div>` : '';
 }
 function businessFactsHtml(code) {
   const facts = BUSINESS_FACTS[code] || [];
@@ -788,16 +801,30 @@ function businessFactsHtml(code) {
 const eventThemesOf = (code, d) => EVENT_THEMES[`${code}|${d}`] || [];
 function eventThemeHtml(code, d) {
   const links = eventThemesOf(code, d);
-  if (!links.length) return '<span class="muted small">未归因</span>';
+  const contextIds = EVENT_CONTEXT_EVIDENCE[`${code}|${d}`] || [];
+  if (!links.length) return `<span class="muted small">未归因</span>${
+    evidenceLinksHtml(contextIds, '事件公告（尚未绑定具体题材）')}`;
   const pills = links.slice(0, 4).map(l => {
-    const [cid, role, , , status, confidence, rationale] = l;
+    const [cid, role, , , status, confidence, rationale, , , , review] = l;
     const name = D.concepts[cid]?.[0] || '未知题材';
+    const reviewText = reviewLabel(review);
+    const title = [
+      rationale || '',
+      `候选置信度${Math.round(confidence * 100)}%`,
+      review ? `${reviewText}（自动旁证，不等于人工核实）` : '',
+      review?.[11] || '',
+    ].filter(Boolean).join('｜');
     return `<span class="theme-pill ${status === 'verified' ? '' : 'candidate'}"
-      title="${esc((rationale || '') + `｜置信度${Math.round(confidence * 100)}%`)}">
-      ${esc(name)}<span class="role">${esc(THEME_ROLE_LABEL[role] || role)}·${esc(SEM_STATUS_LABEL[status] || status)}</span></span>`;
+      title="${esc(title)}">
+      ${esc(name)}<span class="role">${esc(THEME_ROLE_LABEL[role] || role)}·${esc(
+        SEM_STATUS_LABEL[status] || status)}${reviewText ? `·${esc(reviewText)}` : ''}</span></span>`;
   }).join('');
   const evidenceIds = [...new Set(links.flatMap(l => l[9] || []))];
-  return `<div class="theme-attribution">${pills}</div>${evidenceLinksHtml(evidenceIds)}`;
+  const evidenceSet = new Set(evidenceIds);
+  const unboundContextIds = contextIds.filter(id => !evidenceSet.has(id));
+  return `<div class="theme-attribution">${pills}</div>${
+    evidenceLinksHtml(evidenceIds, '题材证据')}${
+    evidenceLinksHtml(unboundContextIds, '事件公告（尚未绑定具体题材）')}`;
 }
 function episodePanelHtml(cid) {
   const episodes = Object.entries(THEME_EPISODES)
@@ -2421,6 +2448,9 @@ function renderTagsGov() {
   const uncov = todayZt.filter(ev => !ev[9].some(c => inTreeCids.has(c)));
   const backlog = Object.entries(META).filter(([, v]) => v[1] === 'candidate').length;
   const businessCovered = todayZt.filter(ev => (BUSINESS_FACTS[ev[0]] || []).length).length;
+  const businessCandidateRows = Object.entries(BUSINESS_FACT_CANDIDATES)
+    .flatMap(([code, rows]) => rows.map(row => ({ code, row })))
+    .sort((a, b) => b.row[1] - a.row[1] || b.row[6] - a.row[6]);
   const attributionQueue = [];
   let verifiedAttributions = 0;
   for (const d of [...win].reverse()) for (const ev of (D.events[d] || [])) {
@@ -2430,6 +2460,7 @@ function renderTagsGov() {
       else attributionQueue.push({
         d, code: ev[0], cid: link[0], confidence: link[5],
         rationale: link[6], source: link[8], evidenceIds: link[9] || [],
+        review: link[10] || null,
       });
     }
   }
@@ -2493,20 +2524,46 @@ function renderTagsGov() {
     <span class="hist">公司业务事实与“某次涨停为什么涨”分开治理；候选不能自动升级为已核实</span></div>
     <div class="small muted" style="padding:0 8px 8px">
       ${dN.slice(5)} 涨停股业务事实覆盖 <b>${businessCovered}/${todayZt.length}</b>
+      · 官方年报业务候选 <b>${businessCandidateRows.length}</b>
       · 近10日单次题材待核实 <b>${attributionQueue.length}</b>
       · 已核实关系 <b>${verifiedAttributions}</b>
       · 题材业务映射 <b>${Object.values(THEME_BUSINESS_CANDIDATES).reduce((n, rows) => n + rows.length, 0)}</b> 条候选公司关系
     </div>
+    ${businessCandidateRows.length ? `<div class="semantic-title" style="padding:2px 8px 0">
+      <b>官方年报业务候选</b><span>只进入人工复核队列；确认后才可合并到 business_facts.json</span></div>
+      <div>${businessCandidateRows.slice(0, 30).map(({ code, row }) => {
+        const [candidateId, year, tag, , relation, maturity, confidence, summary,
+          evidenceId, extractor] = row;
+        return `<div class="govrow" data-code="${code}" style="cursor:pointer">
+          <span class="verify-state candidate">候选#${candidateId}</span>
+          <span class="gname">${esc(tag)}</span>
+          <span class="gmeta">${year}年报 · ${esc(D.stocks[code] || code)}(${code})
+            · ${esc(RELATION_LABEL[relation] || relation)}/${esc(MATURITY_LABEL[maturity] || maturity)}
+            · ${Math.round(confidence * 100)}% · ${esc(extractor)}</span>
+          <span class="sugg" title="${esc(summary || '')}">查看公司与官方证据</span>
+          ${evidenceLinksHtml([evidenceId])}
+        </div>`;
+      }).join('')}</div>` : ''}
+    <div class="semantic-title" style="padding:8px 8px 0">
+      <b>单次涨停题材候选</b><span>按日期和置信度排列；自动旁证不会把候选升级为“已核实”</span></div>
+    <div class="small muted" style="padding:2px 8px 6px">
+      T+0：同日题材涨停广度＋题材级证据＋客观业务映射；T+1：再看下一交易日题材广度和同股延续；
+      T+2：再看第二个交易日的题材延续。旁证较强仍须人工确认。
+    </div>
     <div>${attributionQueue.slice(0, 40).map(q => {
       const theme = D.concepts[q.cid]?.[0] || '未知题材';
+      const reviewText = reviewLabel(q.review);
+      const reviewRationale = q.review?.[11] || '';
       return `<div class="govrow" data-code="${q.code}" style="cursor:pointer">
         <span class="verify-state candidate">待核实</span>
         <span class="gname">${esc(theme)}</span>
         <span class="gmeta">${q.d.slice(5)} · ${esc(D.stocks[q.code] || q.code)}(${q.code})
           · 置信度${Math.round(q.confidence * 100)}% · ${
-            q.source === 'derived' ? '供应商原因候选' : '人工候选'}</span>
-        <span class="sugg" title="${esc(q.rationale || '')}">${
-          q.evidenceIds.length ? `已有${q.evidenceIds.length}条题材证据` : '尚无题材级证据'}</span>
+            q.source === 'derived' ? '供应商原因候选' : '人工候选'}${
+            reviewText ? ` · ${esc(reviewText)} ${Math.round(q.review[2] * 100)}分` : ''}</span>
+        <span class="sugg" title="${esc([q.rationale, reviewRationale].filter(Boolean).join('｜'))}">${
+          q.evidenceIds.length ? `已有${q.evidenceIds.length}条题材证据` : '尚无题材级证据'}${
+          reviewText ? ` · ${esc(reviewText)}` : ''}</span>
       </div>`;
     }).join('') || '<div class="muted small" style="padding:8px">近10日没有待核实的单次题材关系</div>'}</div>
     ${attributionQueue.length > 40 ? `<div class="muted small" style="padding:6px 8px">
@@ -2571,6 +2628,8 @@ function renderTagsGov() {
     el.addEventListener('click', () => openClassify(el.dataset.cls)));
   document.querySelectorAll('#tagsub [data-code]').forEach(el =>
     el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
+  document.querySelectorAll('#tagsub .evidence-links a').forEach(el =>
+    el.addEventListener('click', e => e.stopPropagation()));
 }
 
 /* ---------- 全局搜索 ---------- */

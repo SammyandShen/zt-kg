@@ -342,6 +342,100 @@ def cmd_similar(conn) -> int:
     return 0
 
 
+def cmd_review_business(conn) -> int:
+    rows = conn.execute("""
+        SELECT b.id,b.code,s.name,b.report_year,b.tag_name,b.fact_type,
+               b.relation_type,b.maturity,b.confidence,b.summary,b.extractor,
+               e.claim,e.url
+        FROM business_fact_candidates b
+        JOIN stocks s ON s.code=b.code
+        JOIN evidence_items e ON e.evidence_key=b.evidence_key
+        WHERE b.status='candidate'
+        ORDER BY b.report_year DESC,b.confidence DESC,b.code,b.tag_name
+    """).fetchall()
+    if not rows:
+        print("无待复核公司业务候选")
+        return 0
+    print("公司业务事实候选（确认前不会进入正式 business_facts.json）：")
+    for (candidate_id, code, name, year, tag, fact_type, relation, maturity,
+         confidence, summary, extractor, claim, url) in rows:
+        print(
+            f"\n#{candidate_id} {name}({code}) {year}年｜{tag}｜{fact_type}｜"
+            f"{relation}/{maturity}｜{confidence:.0%}｜{extractor}"
+        )
+        print(f"  摘要：{summary}")
+        print(f"  原文：{claim}")
+        print(f"  来源：{url}")
+    print(f"\n共 {len(rows)} 条。复核通过后合并到 data/business_facts.json，"
+          "再运行 rebuild_semantic_layer.py；不要直接把候选状态改成正式主营。")
+    return 0
+
+
+def cmd_review_attributions(conn, days: int) -> int:
+    dates = [
+        row[0] for row in conn.execute(
+            "SELECT DISTINCT trade_date FROM limit_up_events "
+            "WHERE pool='zt' ORDER BY trade_date DESC LIMIT ?",
+            (max(1, days),),
+        )
+    ]
+    if not dates:
+        print("无待复核涨停题材")
+        return 0
+    placeholders = ",".join("?" for _ in dates)
+    rows = conn.execute(f"""
+        SELECT e.trade_date,e.code,e.name,c.name,l.confidence,
+               r.stage,r.verdict,r.score,r.evidence_count,
+               r.same_day_breadth,r.next_day_breadth,r.retained_count,
+               r.retained_rate,r.t2_breadth,r.business_relation,r.rationale
+        FROM event_theme_links l
+        JOIN limit_up_events e ON e.id=l.event_id
+        JOIN concepts c ON c.id=l.concept_id
+        LEFT JOIN attribution_reviews r
+          ON r.event_id=l.event_id AND r.concept_id=l.concept_id
+         AND NOT EXISTS (
+           SELECT 1 FROM attribution_reviews newer
+           WHERE newer.event_id=r.event_id AND newer.concept_id=r.concept_id
+             AND newer.stage>r.stage
+         )
+        WHERE e.trade_date IN ({placeholders}) AND l.status='candidate'
+        ORDER BY e.trade_date DESC,
+          CASE r.verdict WHEN 'supporting' THEN 0 WHEN 'weak' THEN 1 ELSE 2 END,
+          r.score DESC,l.confidence DESC,e.code
+    """, dates).fetchall()
+    labels = {
+        "supporting": "旁证较强",
+        "weak": "旁证较弱",
+        "insufficient": "证据不足",
+    }
+    print(
+        "单次涨停题材候选复核：T+0看同日广度/题材证据/业务映射；"
+        "T+1增加次日广度与同股延续；T+2再看第二个交易日延续。"
+    )
+    print("自动旁证只用于排序，不能把候选自动升级为已核实。")
+    for row in rows:
+        (trade_date, code, stock_name, theme, confidence, stage, verdict, score,
+         evidence_count, same_day, next_day, retained, retained_rate, t2,
+         relation, rationale) = row
+        review = (
+            f"T+{stage} {labels.get(verdict, verdict)} {score:.0%}"
+            if stage is not None else "尚未复核"
+        )
+        print(
+            f"\n{trade_date} {stock_name}({code})｜{theme}｜候选{confidence:.0%}"
+            f"｜{review}"
+        )
+        if stage is not None:
+            print(
+                f"  同日{same_day}股；题材证据{evidence_count}条；"
+                f"T+1 {next_day}股/同股延续{retained}股({retained_rate:.0%})；"
+                f"T+2 {t2}股；业务关系{relation or '未映射'}"
+            )
+            print(f"  说明：{rationale}")
+    print(f"\n共 {len(rows)} 条候选。")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -354,6 +448,9 @@ def main() -> int:
     sub.add_parser("similar")
     sub.add_parser("tree")
     sub.add_parser("review-tags")
+    sub.add_parser("review-business")
+    p = sub.add_parser("review-attributions")
+    p.add_argument("--days", type=int, default=5)
     args = ap.parse_args()
 
     conn = common.open_db()
@@ -371,6 +468,10 @@ def main() -> int:
         return cmd_tree(conn)
     if args.cmd == "review-tags":
         return cmd_review_tags(conn)
+    if args.cmd == "review-business":
+        return cmd_review_business(conn)
+    if args.cmd == "review-attributions":
+        return cmd_review_attributions(conn, args.days)
     return 1
 
 

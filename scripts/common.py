@@ -305,6 +305,68 @@ CREATE TABLE IF NOT EXISTS theme_business_mappings (
     PRIMARY KEY (concept_id, business_tag_name)
 );
 
+CREATE TABLE IF NOT EXISTS company_reports (
+    code          TEXT NOT NULL REFERENCES stocks(code),
+    report_year   INTEGER NOT NULL,
+    title         TEXT NOT NULL,
+    url           TEXT NOT NULL,
+    published_at  TEXT,
+    announcement_id TEXT,
+    sha256        TEXT,
+    pdf_path      TEXT,
+    text_path     TEXT,
+    status        TEXT NOT NULL DEFAULT 'fetched', -- fetched/extracted/error
+    error_message TEXT,
+    created_at    TEXT NOT NULL,
+    updated_at    TEXT NOT NULL,
+    PRIMARY KEY (code, report_year)
+);
+
+CREATE TABLE IF NOT EXISTS business_fact_candidates (
+    id             INTEGER PRIMARY KEY,
+    code           TEXT NOT NULL REFERENCES stocks(code),
+    report_year    INTEGER NOT NULL,
+    tag_name       TEXT NOT NULL,
+    fact_type      TEXT NOT NULL,
+    relation_type  TEXT NOT NULL,
+    maturity       TEXT NOT NULL,
+    status         TEXT NOT NULL DEFAULT 'candidate', -- candidate/accepted/rejected
+    confidence     REAL NOT NULL DEFAULT 0,
+    summary        TEXT,
+    evidence_key   TEXT NOT NULL REFERENCES evidence_items(evidence_key),
+    extractor      TEXT NOT NULL,
+    created_at     TEXT NOT NULL,
+    updated_at     TEXT NOT NULL,
+    UNIQUE (code, report_year, tag_name, relation_type)
+);
+CREATE INDEX IF NOT EXISTS idx_business_candidate_status
+    ON business_fact_candidates(status, code, report_year);
+
+CREATE TABLE IF NOT EXISTS attribution_reviews (
+    event_id          INTEGER NOT NULL,
+    concept_id        INTEGER NOT NULL,
+    stage             INTEGER NOT NULL, -- 0=T0, 1=T+1, 2=T+2/成熟
+    as_of_date        TEXT NOT NULL,
+    verdict           TEXT NOT NULL, -- supporting/weak/insufficient
+    score             REAL NOT NULL,
+    evidence_count    INTEGER NOT NULL DEFAULT 0,
+    same_day_breadth  INTEGER NOT NULL DEFAULT 0,
+    next_day_breadth  INTEGER NOT NULL DEFAULT 0,
+    retained_count    INTEGER NOT NULL DEFAULT 0,
+    retained_rate     REAL NOT NULL DEFAULT 0,
+    t2_breadth        INTEGER NOT NULL DEFAULT 0,
+    business_relation TEXT,
+    rationale         TEXT,
+    source            TEXT NOT NULL DEFAULT 'deterministic-v1',
+    mature            INTEGER NOT NULL DEFAULT 0,
+    reviewed_at       TEXT NOT NULL,
+    PRIMARY KEY (event_id, concept_id, stage),
+    FOREIGN KEY (event_id, concept_id)
+      REFERENCES event_theme_links(event_id, concept_id) ON DELETE CASCADE
+);
+CREATE INDEX IF NOT EXISTS idx_attribution_review_stage
+    ON attribution_reviews(stage, verdict, as_of_date);
+
 CREATE TABLE IF NOT EXISTS theme_episode_evidence (
     episode_id   INTEGER NOT NULL REFERENCES theme_episodes(id) ON DELETE CASCADE,
     evidence_id  INTEGER NOT NULL REFERENCES evidence_items(id) ON DELETE CASCADE,

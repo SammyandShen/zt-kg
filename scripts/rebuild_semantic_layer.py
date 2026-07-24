@@ -358,24 +358,33 @@ def derive_candidate_theme_links(conn, events: list[tuple],
         ).fetchone()
         if brief and name in brief[0]:
             confidence = min(0.55, confidence + 0.05)
-        matched_news: list[int] = []
-        for news_id, title, snippet in conn.execute(
-            "SELECT id,title,snippet FROM news WHERE code=? AND trade_date=?",
-            (code, d),
+        matched_evidence: list[int] = []
+        for evidence_id, evidence_type, title, claim, subject_status in conn.execute(
+            """
+            SELECT ee.evidence_id,e.evidence_type,e.title,e.claim,e.subject_status
+            FROM event_evidence ee
+            JOIN evidence_items e ON e.id=ee.evidence_id
+            WHERE ee.event_id=? AND e.evidence_type IN ('news','announcement')
+            """,
+            (eid,),
         ):
-            haystack = f"{title or ''}\n{snippet or ''}"
-            # 只有新闻同时点名题材，且标题或正文点名股票时，才可作为这条
-            # “某次涨停×某题材”的旁证。它仍只提高候选置信度，不自动核实。
-            direct_stock = stock_name in haystack or code in haystack
+            haystack = f"{title or ''}\n{claim or ''}"
+            # 新闻需要同时点名题材与股票；官方公告已由证券代码精确查询，只需标题/
+            # 原文明确点名题材。两者仍只作为旁证，不自动核实。
+            direct_stock = (
+                subject_status == "direct"
+                and (
+                    evidence_type == "announcement"
+                    or stock_name in haystack
+                    or code in haystack
+                )
+            )
             if name in haystack and direct_stock:
-                evidence = conn.execute(
-                    "SELECT id FROM evidence_items WHERE evidence_key=?",
-                    (f"news:{news_id}",),
-                ).fetchone()
-                if evidence:
-                    matched_news.append(evidence[0])
-        if matched_news:
-            confidence = min(0.7, confidence + min(0.15, 0.08 * len(matched_news)))
+                matched_evidence.append(evidence_id)
+        if matched_evidence:
+            confidence = min(
+                0.7, confidence + min(0.15, 0.08 * len(matched_evidence))
+            )
         conn.execute(
             """
             INSERT OR IGNORE INTO event_theme_links(
@@ -391,7 +400,7 @@ def derive_candidate_theme_links(conn, events: list[tuple],
         )
         conn.executemany(
             "INSERT OR IGNORE INTO event_theme_evidence VALUES(?,?,?)",
-            [(eid, cid, evidence_id) for evidence_id in matched_news],
+            [(eid, cid, evidence_id) for evidence_id in matched_evidence],
         )
     return len(eligible)
 

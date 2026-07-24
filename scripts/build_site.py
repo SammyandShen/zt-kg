@@ -247,7 +247,25 @@ def main() -> int:
             summary, valid_from, valid_to, evidence_ids,
         ])
 
+    business_fact_candidates: dict[str, list] = {}
+    for row in conn.execute("""
+        SELECT b.id,b.code,b.report_year,b.tag_name,b.fact_type,b.relation_type,
+               b.maturity,b.confidence,b.summary,e.id,b.extractor
+        FROM business_fact_candidates b
+        JOIN evidence_items e ON e.evidence_key=b.evidence_key
+        WHERE b.status='candidate'
+        ORDER BY b.report_year DESC,b.confidence DESC,b.code,b.tag_name
+    """):
+        (candidate_id, code, report_year, tag, fact_type, relation, maturity,
+         confidence, summary, evidence_id, extractor) = row
+        used_evidence_ids.add(evidence_id)
+        business_fact_candidates.setdefault(code, []).append([
+            candidate_id, report_year, tag, fact_type, relation, maturity,
+            round(confidence, 2), summary, evidence_id, extractor,
+        ])
+
     event_themes: dict[str, list] = {}
+    event_context_evidence: dict[str, list[int]] = {}
     if dates:
         cutoff = dates[-min(60, len(dates))]
         for row in conn.execute("""
@@ -266,10 +284,37 @@ def main() -> int:
                 "SELECT evidence_id FROM event_theme_evidence "
                 "WHERE event_id=? AND concept_id=?", (eid, cid))]
             used_evidence_ids.update(evidence_ids)
+            review = conn.execute("""
+                SELECT stage,verdict,score,mature,evidence_count,
+                       same_day_breadth,next_day_breadth,retained_count,
+                       retained_rate,t2_breadth,business_relation,rationale,
+                       as_of_date
+                FROM attribution_reviews
+                WHERE event_id=? AND concept_id=?
+                ORDER BY stage DESC
+                LIMIT 1
+            """, (eid, cid)).fetchone()
+            review_data = None if not review else [
+                review[0], review[1], round(review[2], 2), review[3],
+                review[4], review[5], review[6], review[7],
+                round(review[8], 2), review[9], review[10], review[11],
+                review[12],
+            ]
             event_themes.setdefault(f"{code}|{d}", []).append([
                 cid, role, relation, market_role, status, round(confidence, 2),
-                rationale, episode_id, source, evidence_ids,
+                rationale, episode_id, source, evidence_ids, review_data,
             ])
+        for code, d, evidence_id in conn.execute("""
+            SELECT e.code,e.trade_date,ee.evidence_id
+            FROM event_evidence ee
+            JOIN limit_up_events e ON e.id=ee.event_id
+            JOIN chosen ch ON ch.id=e.id
+            JOIN evidence_items i ON i.id=ee.evidence_id
+            WHERE e.trade_date>=? AND i.evidence_type='announcement'
+            ORDER BY e.trade_date,e.code,i.published_at DESC,i.reliability DESC
+        """, (cutoff,)):
+            event_context_evidence.setdefault(f"{code}|{d}", []).append(evidence_id)
+            used_evidence_ids.add(evidence_id)
 
     theme_episodes: dict[int, list] = {}
     for row in conn.execute("""
@@ -353,7 +398,9 @@ def main() -> int:
         "news": news,
         "briefs": briefs,
         "business_facts": business_facts,
+        "business_fact_candidates": business_fact_candidates,
         "event_themes": event_themes,
+        "event_context_evidence": event_context_evidence,
         "theme_episodes": theme_episodes,
         "theme_business_candidates": theme_business_candidates,
         "semantic_evidence": semantic_evidence,

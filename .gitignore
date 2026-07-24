@@ -1,6 +1,7 @@
 data/ztkg.db
 data/ztkg.db-wal
 data/ztkg.db-shm
+data/report_cache/
 logs/
 __pycache__/
 *.pyc

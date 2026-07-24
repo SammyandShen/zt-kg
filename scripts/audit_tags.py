@@ -237,6 +237,25 @@ def main() -> int:
     if derived_verified:
         errors.append(f"自动原因标签被错误升级为 verified：{derived_verified} 条")
 
+    invalid_reviews = conn.execute("""
+        SELECT e.code||':'||e.trade_date||':'||c.name
+        FROM attribution_reviews r
+        JOIN event_theme_links l
+          ON l.event_id=r.event_id AND l.concept_id=r.concept_id
+        JOIN limit_up_events e ON e.id=r.event_id
+        JOIN concepts c ON c.id=r.concept_id
+        WHERE r.stage NOT IN (0,1,2)
+           OR r.verdict NOT IN ('supporting','weak','insufficient')
+           OR r.score<0 OR r.score>1
+           OR r.retained_rate<0 OR r.retained_rate>1
+           OR r.mature!=(r.stage=2)
+           OR r.source!='deterministic-v1'
+           OR l.status!='candidate'
+    """).fetchall()
+    if invalid_reviews:
+        errors.append("T+归因复核记录违反旁证边界：" +
+                      "、".join(row[0] for row in invalid_reviews[:20]))
+
     acquisition_as_core = conn.execute("""
         SELECT code||':'||tag_name FROM stock_business_facts
         WHERE relation_type='planned_acquisition'
@@ -307,10 +326,12 @@ def main() -> int:
           (SELECT COUNT(*) FROM event_theme_links WHERE status='verified'),
           (SELECT COUNT(*) FROM theme_episodes),
           (SELECT COUNT(*) FROM theme_business_mappings WHERE status!='rejected'),
-          (SELECT COUNT(*) FROM evidence_items)
+          (SELECT COUNT(*) FROM evidence_items),
+          (SELECT COUNT(*) FROM business_fact_candidates WHERE status='candidate'),
+          (SELECT COUNT(*) FROM attribution_reviews)
     """).fetchone()
     print("语义层：业务事实 {}；单次题材关系 {}（已核实 {}）；题材轮次 {}；"
-          "题材业务映射 {}；证据 {}".format(
+          "题材业务映射 {}；证据 {}；年报业务候选 {}；T+复核 {}".format(
         *semantic_counts))
     if warnings:
         print("\n警告：")
