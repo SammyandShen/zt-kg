@@ -1,0 +1,101 @@
+{
+  "$note": "人工核实的公司业务事实。这里只写公司客观属性，不写某次涨停题材；每条记录必须带证据、关系类型、成熟度和有效期。由 rebuild_semantic_layer.py 导入，原始行情库不受影响。",
+  "facts": [
+    {
+      "code": "002173",
+      "tag_name": "医疗服务",
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.99,
+      "summary": "2024年医疗服务业务收入占营业收入99.52%，属于公司的核心主营。",
+      "valid_from": "2024-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo:002173:2024-report:medical-service",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "创新医疗管理股份有限公司2024年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2025-04-12/1223068858.PDF",
+          "published_at": "2025-04-12",
+          "subject_status": "direct",
+          "claim": "2024年医疗服务业务收入812,140,358.12元，占营业收入99.52%。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "002173",
+      "tag_name": "脑机接口",
+      "fact_type": "growth",
+      "relation_type": "holding",
+      "maturity": "holding",
+      "status": "verified",
+      "confidence": 0.95,
+      "summary": "公司将博灵脑机列为联营企业；博灵脑机脑机接口B端产品处于临床试验、C端产品进入批量生产阶段，但不属于创新医疗核心主营。",
+      "valid_from": "2024-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo:002173:2024-report:brain-computer",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "创新医疗管理股份有限公司2024年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2025-04-12/1223068858.PDF",
+          "published_at": "2025-04-12",
+          "subject_status": "direct",
+          "claim": "年报披露博灵脑机为联营企业，并披露其脑机接口B端、C端产品进展。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "600962",
+      "tag_name": "浓缩果汁",
+      "fact_type": "product",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.99,
+      "summary": "公司主要业务为浓缩果蔬汁（浆）的生产和销售，主导产品为浓缩苹果汁。",
+      "valid_from": "2024-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo:600962:2024-report:juice",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "国投中鲁果汁股份有限公司2024年年度报告摘要",
+          "url": "https://static.cninfo.com.cn/finalpage/2025-03-29/1222946522.PDF",
+          "published_at": "2025-03-29",
+          "subject_status": "direct",
+          "claim": "报告期内主要业务未发生变化，主要为浓缩果蔬汁（浆）的生产和销售，主导产品为浓缩苹果汁。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "600962",
+      "tag_name": "半导体工程服务",
+      "fact_type": "growth",
+      "relation_type": "planned_acquisition",
+      "maturity": "proposed",
+      "status": "verified",
+      "confidence": 0.98,
+      "summary": "公司拟发行股份购买中国电子工程设计院100%股份；标的公司服务半导体、新型显示等电子信息产业客户。交易完成前不能视为国投中鲁现有主营。",
+      "valid_from": "2026-02-26",
+      "evidence": [
+        {
+          "evidence_key": "sse:600962:20260226:acquisition",
+          "evidence_type": "announcement",
+          "source_name": "上海证券交易所",
+          "title": "国投中鲁发行股份购买资产并募集配套资金暨关联交易报告书",
+          "url": "https://static.sse.com.cn/stock/disclosure/announcement/c/202602/600962_20260226_96Z5.pdf",
+          "published_at": "2026-02-26",
+          "subject_status": "direct",
+          "claim": "国投中鲁拟购买中国电子工程设计院100%股份；标的公司电子信息产业客户集中于半导体、新型显示及上下游领域。",
+          "reliability": 0.99
+        }
+      ]
+    }
+  ]
+}

@@ -192,6 +192,125 @@ CREATE TABLE IF NOT EXISTS briefs (
     PRIMARY KEY (code, trade_date)
 );
 
+-- ---------------------------------------------------------------- 语义证据层
+-- 原始 reason_type/event_concepts 只是供应商给出的候选线索；以下表保存可追溯的
+-- 公司业务事实、单次涨停题材归因和题材轮次。自动生成记录一律为 candidate /
+-- provisional，只有人工或后续核验流程才能改成 verified。
+CREATE TABLE IF NOT EXISTS evidence_items (
+    id             INTEGER PRIMARY KEY,
+    evidence_key   TEXT NOT NULL UNIQUE,
+    evidence_type  TEXT NOT NULL,     -- ths_reason/news/announcement/report/regulator/llm_summary
+    source_name    TEXT,
+    title          TEXT,
+    url            TEXT,
+    published_at   TEXT,
+    subject_code   TEXT,
+    subject_name   TEXT,
+    subject_status TEXT NOT NULL DEFAULT 'unknown', -- direct/market/third_party/unknown/mismatch
+    claim          TEXT NOT NULL,
+    reliability    REAL NOT NULL DEFAULT 0,
+    created_at     TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_evidence_subject
+    ON evidence_items(subject_code, published_at);
+
+CREATE TABLE IF NOT EXISTS stock_business_facts (
+    id             INTEGER PRIMARY KEY,
+    code           TEXT NOT NULL REFERENCES stocks(code),
+    tag_name       TEXT NOT NULL,
+    fact_type      TEXT NOT NULL,     -- sector/subindustry/product/service/growth/attribute
+    relation_type  TEXT NOT NULL,     -- core/secondary/research/holding/supply_chain/planned_acquisition
+    maturity       TEXT NOT NULL,     -- core_revenue/commercialized/early_revenue/research/holding/proposed
+    status         TEXT NOT NULL DEFAULT 'candidate', -- candidate/verified/rejected/expired
+    confidence     REAL NOT NULL DEFAULT 0,
+    summary        TEXT,
+    valid_from     TEXT,
+    valid_to       TEXT,
+    source         TEXT NOT NULL DEFAULT 'manual',
+    created_at     TEXT NOT NULL,
+    updated_at     TEXT NOT NULL,
+    UNIQUE (code, tag_name, relation_type, valid_from)
+);
+CREATE INDEX IF NOT EXISTS idx_business_code
+    ON stock_business_facts(code, status);
+
+CREATE TABLE IF NOT EXISTS business_fact_evidence (
+    fact_id      INTEGER NOT NULL REFERENCES stock_business_facts(id) ON DELETE CASCADE,
+    evidence_id  INTEGER NOT NULL REFERENCES evidence_items(id) ON DELETE CASCADE,
+    PRIMARY KEY (fact_id, evidence_id)
+);
+
+CREATE TABLE IF NOT EXISTS theme_episodes (
+    id               INTEGER PRIMARY KEY,
+    concept_id       INTEGER NOT NULL REFERENCES concepts(id) ON DELETE CASCADE,
+    start_date       TEXT NOT NULL,
+    end_date         TEXT,
+    phase            TEXT NOT NULL DEFAULT 'candidate', -- candidate/startup/fermentation/climax/divergence/recession
+    status           TEXT NOT NULL DEFAULT 'provisional', -- provisional/verified/closed/rejected
+    catalyst_summary TEXT,
+    confidence       REAL NOT NULL DEFAULT 0,
+    source           TEXT NOT NULL DEFAULT 'derived',
+    created_at       TEXT NOT NULL,
+    updated_at       TEXT NOT NULL,
+    UNIQUE (concept_id, start_date)
+);
+CREATE INDEX IF NOT EXISTS idx_episode_concept
+    ON theme_episodes(concept_id, start_date);
+
+CREATE TABLE IF NOT EXISTS event_theme_links (
+    event_id       INTEGER NOT NULL REFERENCES limit_up_events(id) ON DELETE CASCADE,
+    concept_id     INTEGER NOT NULL REFERENCES concepts(id) ON DELETE CASCADE,
+    episode_id     INTEGER REFERENCES theme_episodes(id) ON DELETE SET NULL,
+    theme_role     TEXT NOT NULL DEFAULT 'candidate', -- primary/secondary/candidate
+    relation_type  TEXT NOT NULL DEFAULT 'unverified',
+    market_role    TEXT,             -- leader/pioneer/core/follower/latecomer/independent
+    status         TEXT NOT NULL DEFAULT 'candidate', -- candidate/verified/rejected
+    confidence     REAL NOT NULL DEFAULT 0,
+    rationale      TEXT,
+    source         TEXT NOT NULL DEFAULT 'derived',
+    created_at     TEXT NOT NULL,
+    updated_at     TEXT NOT NULL,
+    PRIMARY KEY (event_id, concept_id)
+);
+CREATE INDEX IF NOT EXISTS idx_event_theme_episode
+    ON event_theme_links(episode_id, event_id);
+
+CREATE TABLE IF NOT EXISTS event_evidence (
+    event_id         INTEGER NOT NULL REFERENCES limit_up_events(id) ON DELETE CASCADE,
+    evidence_id      INTEGER NOT NULL REFERENCES evidence_items(id) ON DELETE CASCADE,
+    relevance_status TEXT NOT NULL DEFAULT 'unknown', -- supporting/context/unknown/rejected
+    note             TEXT,
+    PRIMARY KEY (event_id, evidence_id)
+);
+
+CREATE TABLE IF NOT EXISTS event_theme_evidence (
+    event_id     INTEGER NOT NULL,
+    concept_id   INTEGER NOT NULL,
+    evidence_id  INTEGER NOT NULL REFERENCES evidence_items(id) ON DELETE CASCADE,
+    PRIMARY KEY (event_id, concept_id, evidence_id),
+    FOREIGN KEY (event_id, concept_id)
+      REFERENCES event_theme_links(event_id, concept_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS theme_business_mappings (
+    concept_id        INTEGER NOT NULL REFERENCES concepts(id) ON DELETE CASCADE,
+    business_tag_name TEXT NOT NULL,
+    mapping_type      TEXT NOT NULL DEFAULT 'exact', -- exact/semantic/supply_chain
+    status            TEXT NOT NULL DEFAULT 'candidate', -- candidate/verified/rejected
+    confidence        REAL NOT NULL DEFAULT 0,
+    rationale         TEXT,
+    source            TEXT NOT NULL DEFAULT 'manual',
+    created_at        TEXT NOT NULL,
+    updated_at        TEXT NOT NULL,
+    PRIMARY KEY (concept_id, business_tag_name)
+);
+
+CREATE TABLE IF NOT EXISTS theme_episode_evidence (
+    episode_id   INTEGER NOT NULL REFERENCES theme_episodes(id) ON DELETE CASCADE,
+    evidence_id  INTEGER NOT NULL REFERENCES evidence_items(id) ON DELETE CASCADE,
+    PRIMARY KEY (episode_id, evidence_id)
+);
+
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT);
 """
 

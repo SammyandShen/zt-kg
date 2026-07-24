@@ -224,6 +224,116 @@ def main() -> int:
                 "SELECT code, trade_date, brief FROM briefs WHERE trade_date>=?", (cutoff,)):
             briefs[f"{code}|{d}"] = brief
 
+    # 语义层：公司客观业务事实、单次涨停题材、题材轮次和可追溯证据。
+    # 自动题材关系保持 candidate/provisional；网页必须显式展示状态，不能把它
+    # 当作已核实主营或已确认涨停原因。
+    business_facts: dict[str, list] = {}
+    used_evidence_ids: set[int] = set()
+    for row in conn.execute("""
+        SELECT id,code,tag_name,fact_type,relation_type,maturity,status,confidence,
+               summary,valid_from,valid_to
+        FROM stock_business_facts
+        WHERE status!='rejected'
+        ORDER BY code,(relation_type='core') DESC,confidence DESC,tag_name
+    """):
+        (fact_id, code, tag, fact_type, relation, maturity, status, confidence,
+         summary, valid_from, valid_to) = row
+        evidence_ids = [r[0] for r in conn.execute(
+            "SELECT evidence_id FROM business_fact_evidence WHERE fact_id=?",
+            (fact_id,))]
+        used_evidence_ids.update(evidence_ids)
+        business_facts.setdefault(code, []).append([
+            tag, fact_type, relation, maturity, status, round(confidence, 2),
+            summary, valid_from, valid_to, evidence_ids,
+        ])
+
+    event_themes: dict[str, list] = {}
+    if dates:
+        cutoff = dates[-min(60, len(dates))]
+        for row in conn.execute("""
+            SELECT e.id,e.code,e.trade_date,l.concept_id,l.theme_role,l.relation_type,
+                   l.market_role,l.status,l.confidence,l.rationale,l.episode_id,l.source
+            FROM event_theme_links l
+            JOIN limit_up_events e ON e.id=l.event_id
+            JOIN chosen ch ON ch.id=e.id
+            WHERE e.trade_date>=? AND l.status!='rejected'
+            ORDER BY e.trade_date,e.code,
+                     (l.theme_role='primary') DESC,l.confidence DESC
+        """, (cutoff,)):
+            (eid, code, d, cid, role, relation, market_role, status, confidence,
+             rationale, episode_id, source) = row
+            evidence_ids = [r[0] for r in conn.execute(
+                "SELECT evidence_id FROM event_theme_evidence "
+                "WHERE event_id=? AND concept_id=?", (eid, cid))]
+            used_evidence_ids.update(evidence_ids)
+            event_themes.setdefault(f"{code}|{d}", []).append([
+                cid, role, relation, market_role, status, round(confidence, 2),
+                rationale, episode_id, source, evidence_ids,
+            ])
+
+    theme_episodes: dict[int, list] = {}
+    for row in conn.execute("""
+        SELECT ep.id,ep.concept_id,ep.start_date,ep.end_date,ep.phase,ep.status,
+               ep.catalyst_summary,ep.confidence,
+               COUNT(DISTINCT e.code)
+        FROM theme_episodes ep
+        LEFT JOIN event_theme_links l ON l.episode_id=ep.id AND l.status!='rejected'
+        LEFT JOIN limit_up_events e ON e.id=l.event_id
+        GROUP BY ep.id
+        ORDER BY ep.start_date
+    """):
+        (episode_id, cid, start, end, phase, status, catalyst, confidence,
+         stock_count) = row
+        evidence_ids = [r[0] for r in conn.execute(
+            "SELECT evidence_id FROM theme_episode_evidence WHERE episode_id=?",
+            (episode_id,))]
+        used_evidence_ids.update(evidence_ids)
+        theme_episodes[episode_id] = [
+            cid, start, end, phase, status, catalyst, round(confidence, 2),
+            stock_count, evidence_ids,
+        ]
+
+    # 题材反查业务候选池：来自显式题材→业务标签映射，再连接有证据的公司事实。
+    # 这里只是可研究的公司全集，不能自动算作本轮题材成分股。
+    theme_business_candidates: dict[int, list] = {}
+    for row in conn.execute("""
+        SELECT m.concept_id,f.id,f.code,f.tag_name,f.relation_type,f.maturity,
+               f.status,f.confidence,f.summary,m.mapping_type,m.status,
+               m.confidence,m.rationale
+        FROM theme_business_mappings m
+        JOIN stock_business_facts f ON f.tag_name=m.business_tag_name
+        WHERE m.status!='rejected' AND f.status NOT IN ('rejected','expired')
+        ORDER BY m.concept_id,(f.relation_type='core') DESC,
+                 f.confidence DESC,f.code
+    """):
+        (cid, fact_id, code, business_tag, relation, maturity, fact_status,
+         fact_confidence, summary, mapping_type, mapping_status,
+         mapping_confidence, rationale) = row
+        evidence_ids = [r[0] for r in conn.execute(
+            "SELECT evidence_id FROM business_fact_evidence WHERE fact_id=?",
+            (fact_id,))]
+        used_evidence_ids.update(evidence_ids)
+        theme_business_candidates.setdefault(cid, []).append([
+            code, business_tag, relation, maturity, fact_status,
+            round(fact_confidence, 2), summary, mapping_type, mapping_status,
+            round(mapping_confidence, 2), rationale, evidence_ids,
+        ])
+
+    semantic_evidence: dict[int, list] = {}
+    if used_evidence_ids:
+        placeholders = ",".join("?" for _ in used_evidence_ids)
+        for row in conn.execute(f"""
+            SELECT id,evidence_type,source_name,title,url,published_at,
+                   subject_status,claim,reliability
+            FROM evidence_items WHERE id IN ({placeholders})
+        """, sorted(used_evidence_ids)):
+            (evidence_id, kind, source, title, url, published, subject_status,
+             claim, reliability) = row
+            semantic_evidence[evidence_id] = [
+                kind, source, title, url, published, subject_status, claim,
+                round(reliability, 2),
+            ]
+
     known_names = {v[0] for v in concepts.values()}
     tag_meta = load_tag_meta()
     taxonomy = load_taxonomy(known_names)
@@ -242,6 +352,11 @@ def main() -> int:
         "llm_sugg": load_llm_sugg(tag_meta),
         "news": news,
         "briefs": briefs,
+        "business_facts": business_facts,
+        "event_themes": event_themes,
+        "theme_episodes": theme_episodes,
+        "theme_business_candidates": theme_business_candidates,
+        "semantic_evidence": semantic_evidence,
     }
     js = ("// 由 scripts/build_site.py 生成，禁止手改\n"
           "// event 字段: [code, 连板数, high_days, 涨停类型, 炸板次数, 封单万, 流通市值亿, 首封HH:MM, 原始原因, [概念id], touch?]  最后一位=1表示触及涨停未封住\n"

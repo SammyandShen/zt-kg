@@ -1,0 +1,21 @@
+{
+  "$note": "交易题材到公司客观业务标签的映射。它只用于生成业务候选池，不自动证明某只股票属于本轮题材；候选公司仍按核心主营、参股、拟收购等关系分层展示。",
+  "mappings": [
+    {
+      "theme": "脑机接口",
+      "business_tag_name": "脑机接口",
+      "mapping_type": "exact",
+      "status": "verified",
+      "confidence": 1.0,
+      "rationale": "题材与客观业务标签同名；公司是否属于核心主营仍由各自业务事实的 relation_type 和 maturity 决定。"
+    },
+    {
+      "theme": "跨界半导体",
+      "business_tag_name": "半导体工程服务",
+      "mapping_type": "semantic",
+      "status": "verified",
+      "confidence": 0.9,
+      "rationale": "跨界半导体题材可映射到通过拟收购取得的半导体工程服务业务敞口，但不能据此改写为现有半导体主营。"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ rebuild_tags.py — aliases.json / tag_expansions.json 变更后，从原始 rea
 """
 
 import argparse
+import subprocess
 import sys
 from collections import Counter
 
@@ -107,7 +108,11 @@ def main() -> int:
         orphans = conn.execute(
             "SELECT id, name FROM concepts WHERE id NOT IN "
             "(SELECT DISTINCT concept_id FROM event_concepts) AND id NOT IN "
-            "(SELECT DISTINCT concept_id FROM concept_aliases)").fetchall()
+            "(SELECT DISTINCT concept_id FROM concept_aliases) AND id NOT IN "
+            "(SELECT DISTINCT concept_id FROM event_theme_links WHERE source='manual') "
+            "AND id NOT IN "
+            "(SELECT DISTINCT concept_id FROM theme_business_mappings "
+            " WHERE status!='rejected')").fetchall()
         for oid, _ in orphans:
             conn.execute("DELETE FROM concepts WHERE id=?", (oid,))
 
@@ -116,6 +121,14 @@ def main() -> int:
     print(f"重建完成：{n_events} 个事件，概念数 {len(before)} → {len(after)}，"
           f"清理孤儿概念 {len(orphans)} 个")
     print_diff(before, after, exp_hits, expansions)
+    # event_theme_links/theme_episodes 依赖 concept_id；原因标签重建后必须同步重建
+    # 语义候选层。人工业务事实和人工归因由版本化 JSON 恢复，不会丢失。
+    semantic_script = common.REPO_ROOT / "scripts" / "rebuild_semantic_layer.py"
+    result = subprocess.run([sys.executable, str(semantic_script)])
+    if result.returncode:
+        print("❌ 原因标签已重建，但语义层重建失败；请修复后重跑 "
+              "scripts/rebuild_semantic_layer.py", file=sys.stderr)
+        return result.returncode
     return 0
 
 

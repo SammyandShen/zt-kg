@@ -1,0 +1,64 @@
+{
+  "$note": "人工复核的单次涨停题材归因。公司业务事实请写 business_facts.json；本文件只描述某只股票某个交易日被市场按什么题材交易。",
+  "attributions": [
+    {
+      "code": "002173",
+      "trade_date": "2026-07-23",
+      "theme": "脑机接口",
+      "theme_role": "primary",
+      "relation_type": "holding",
+      "market_role": "pioneer",
+      "status": "verified",
+      "confidence": 0.9,
+      "rationale": "当日脑机接口板块走强并出现多股响应；创新医疗具备博灵脑机联营关系，但脑机接口不是其核心主营。",
+      "evidence": [
+        {
+          "evidence_key": "eastmoney:20260723:bci-market",
+          "evidence_type": "news",
+          "source_name": "东方财富",
+          "title": "脑机接口概念走强，创新医疗涨停",
+          "url": "https://finance.eastmoney.com/a/202607233818764349.html",
+          "published_at": "2026-07-23",
+          "subject_status": "market",
+          "claim": "市场报道将创新医疗涨停与当日脑机接口概念走强及多股跟随联系起来。",
+          "reliability": 0.75
+        },
+        {
+          "evidence_key": "cninfo:002173:2024-report:brain-computer",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "创新医疗管理股份有限公司2024年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2025-04-12/1223068858.PDF",
+          "published_at": "2025-04-12",
+          "subject_status": "direct",
+          "claim": "年报披露博灵脑机为联营企业，并披露其脑机接口产品进展。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "600962",
+      "trade_date": "2026-07-23",
+      "theme": "跨界半导体",
+      "theme_role": "primary",
+      "relation_type": "planned_acquisition",
+      "market_role": "independent",
+      "status": "candidate",
+      "confidence": 0.75,
+      "rationale": "当日原因与重组进展、半导体预期一致，按“跨界半导体”交易；客观关联来自拟收购的电子院，交易完成前不能视为现有半导体主营。",
+      "evidence": [
+        {
+          "evidence_key": "sse:600962:20260226:acquisition",
+          "evidence_type": "announcement",
+          "source_name": "上海证券交易所",
+          "title": "国投中鲁发行股份购买资产并募集配套资金暨关联交易报告书",
+          "url": "https://static.sse.com.cn/stock/disclosure/announcement/c/202602/600962_20260226_96Z5.pdf",
+          "published_at": "2026-02-26",
+          "subject_status": "direct",
+          "claim": "国投中鲁拟购买中国电子工程设计院100%股份，标的客户集中于半导体、新型显示等领域。",
+          "reliability": 0.99
+        }
+      ]
+    }
+  ]
+}

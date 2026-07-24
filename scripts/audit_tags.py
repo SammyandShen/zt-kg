@@ -203,11 +203,115 @@ def main() -> int:
     if override_drift:
         errors.append("OVERRIDES 与 tag_meta 漂移：" + "、".join(override_drift[:20]))
 
+    # 语义层门禁：供应商原因自动生成的记录不能升级为已核实；已核实业务事实和
+    # 人工涨停归因必须有可追溯证据；拟收购不能伪装成核心主营。
+    missing_business_evidence = conn.execute("""
+        SELECT f.code||':'||f.tag_name
+        FROM stock_business_facts f
+        LEFT JOIN business_fact_evidence be ON be.fact_id=f.id
+        WHERE f.status='verified'
+        GROUP BY f.id HAVING COUNT(be.evidence_id)=0
+    """).fetchall()
+    if missing_business_evidence:
+        errors.append("已核实业务事实缺少证据：" +
+                      "、".join(row[0] for row in missing_business_evidence[:20]))
+
+    missing_attribution_evidence = conn.execute("""
+        SELECT e.code||':'||e.trade_date||':'||c.name
+        FROM event_theme_links l
+        JOIN limit_up_events e ON e.id=l.event_id
+        JOIN concepts c ON c.id=l.concept_id
+        LEFT JOIN event_theme_evidence ete
+          ON ete.event_id=l.event_id AND ete.concept_id=l.concept_id
+        WHERE l.source='manual' AND l.status='verified'
+        GROUP BY l.event_id,l.concept_id HAVING COUNT(ete.evidence_id)=0
+    """).fetchall()
+    if missing_attribution_evidence:
+        errors.append("已核实单次涨停归因缺少支持证据：" +
+                      "、".join(row[0] for row in missing_attribution_evidence[:20]))
+
+    derived_verified = conn.execute(
+        "SELECT COUNT(*) FROM event_theme_links "
+        "WHERE source='derived' AND status='verified'"
+    ).fetchone()[0]
+    if derived_verified:
+        errors.append(f"自动原因标签被错误升级为 verified：{derived_verified} 条")
+
+    acquisition_as_core = conn.execute("""
+        SELECT code||':'||tag_name FROM stock_business_facts
+        WHERE relation_type='planned_acquisition'
+          AND maturity IN ('core_revenue','commercialized')
+    """).fetchall()
+    if acquisition_as_core:
+        errors.append("拟收购被错误标成现有主营/商业化：" +
+                      "、".join(row[0] for row in acquisition_as_core[:20]))
+
+    invalid_theme_mappings = conn.execute("""
+        SELECT c.name||'→'||m.business_tag_name
+        FROM theme_business_mappings m
+        JOIN concepts c ON c.id=m.concept_id
+        LEFT JOIN stock_business_facts f
+          ON f.tag_name=m.business_tag_name
+         AND f.status NOT IN ('rejected','expired')
+        WHERE m.status!='rejected'
+        GROUP BY m.concept_id,m.business_tag_name
+        HAVING COUNT(f.id)=0
+    """).fetchall()
+    if invalid_theme_mappings:
+        errors.append("题材业务映射找不到有效业务事实：" +
+                      "、".join(row[0] for row in invalid_theme_mappings[:20]))
+
+    meta_type_by_name = {
+        name: value.get("type") for name, value in meta.items()
+    }
+    mapping_theme_names = [
+        row[0] for row in conn.execute("""
+            SELECT DISTINCT c.name FROM theme_business_mappings m
+            JOIN concepts c ON c.id=m.concept_id
+            WHERE m.status!='rejected'
+        """)
+    ]
+    bad_mapping_theme_types = sorted(
+        name for name in mapping_theme_names
+        if meta_type_by_name.get(name) != "theme"
+    )
+    if bad_mapping_theme_types:
+        errors.append("题材业务映射左侧不是 theme：" +
+                      "、".join(bad_mapping_theme_types[:20]))
+
+    event_theme_names = [
+        row[0] for row in conn.execute("""
+            SELECT DISTINCT c.name FROM event_theme_links l
+            JOIN concepts c ON c.id=l.concept_id
+            WHERE l.status!='rejected'
+        """)
+    ]
+    bad_event_theme_types = sorted(
+        name for name in event_theme_names
+        if meta.get(name, {}).get("type") != "theme"
+        or meta.get(name, {}).get("status") != "active"
+    )
+    if bad_event_theme_types:
+        errors.append("单次涨停题材关系引用了非 active/theme 标签：" +
+                      "、".join(bad_event_theme_types[:20]))
+
     reviewed = Counter((value["status"], value["type"]) for value in meta.values())
     print(f"数据库概念 {len(concepts)}；tag_meta {len(meta)}；taxonomy 节点 {len(nodes)}")
     print(f"  virtual    {sum(bool(value.get('virtual')) for value in meta.values())}")
     for (status, tag_type), count in sorted(reviewed.items()):
         print(f"  {status:<10} {tag_type:<10} {count}")
+    semantic_counts = conn.execute("""
+        SELECT
+          (SELECT COUNT(*) FROM stock_business_facts),
+          (SELECT COUNT(*) FROM event_theme_links),
+          (SELECT COUNT(*) FROM event_theme_links WHERE status='verified'),
+          (SELECT COUNT(*) FROM theme_episodes),
+          (SELECT COUNT(*) FROM theme_business_mappings WHERE status!='rejected'),
+          (SELECT COUNT(*) FROM evidence_items)
+    """).fetchone()
+    print("语义层：业务事实 {}；单次题材关系 {}（已核实 {}）；题材轮次 {}；"
+          "题材业务映射 {}；证据 {}".format(
+        *semantic_counts))
     if warnings:
         print("\n警告：")
         for warning in warnings:
