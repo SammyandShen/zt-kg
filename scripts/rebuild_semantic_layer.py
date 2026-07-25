@@ -29,6 +29,7 @@ BUSINESS_FACTS_PATH = common.REPO_ROOT / "data" / "business_facts.json"
 ATTRIBUTIONS_PATH = common.REPO_ROOT / "data" / "event_attributions.json"
 THEME_BUSINESS_PATH = common.REPO_ROOT / "data" / "theme_business_mappings.json"
 CONFIG_PATH = common.REPO_ROOT / "data" / "semantic_config.json"
+OVERRIDES_PATH = common.REPO_ROOT / "data" / "facts_overrides.json"
 SOURCE_PRIORITY = {"ths": 0, "wencai": 1, "kpl": 2}
 
 DEFAULT_CONFIG = {
@@ -887,6 +888,78 @@ def apply_clarification_kills(conn) -> int:
     return killed
 
 
+def load_overrides() -> dict:
+    if not OVERRIDES_PATH.exists():
+        return {"link_verdicts": [], "episode_verdicts": [], "leaders": []}
+    raw = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
+    return {
+        "link_verdicts": raw.get("link_verdicts", []),
+        "episode_verdicts": raw.get("episode_verdicts", []),
+        "leaders": raw.get("leaders", []),
+    }
+
+
+def apply_link_verdicts(conn, overrides: dict) -> int:
+    """判决重放（轮次归组前）：人工 verified/rejected 覆盖派生候选状态。"""
+    now = common.now_iso()
+    n = 0
+    for v in overrides["link_verdicts"]:
+        verdict = v.get("verdict")
+        if verdict not in ("verified", "rejected"):
+            raise ValueError(f"link_verdicts 非法 verdict：{v}")
+        event = find_preferred_event(conn, v["code"], v["trade_date"])
+        cid_row = conn.execute(
+            "SELECT id FROM concepts WHERE name=?", (v["theme"],)).fetchone()
+        if not event or not cid_row:
+            print(f"⚠️ link_verdicts 找不到目标（跳过）：{v.get('code')} "
+                  f"{v.get('trade_date')} {v.get('theme')}")
+            continue
+        cur = conn.execute(
+            "UPDATE event_theme_links SET status=?, "
+            "theme_role=CASE WHEN ?='verified' THEN ? ELSE theme_role END, "
+            "rationale=?, updated_at=? WHERE event_id=? AND concept_id=?",
+            (verdict, verdict, v.get("role", "primary"),
+             f"人工判决：{v.get('note') or verdict}（{v.get('decided_at', '')[:10]}）",
+             now, event[0], cid_row[0]))
+        n += cur.rowcount
+    return n
+
+
+def apply_episode_overrides(conn, overrides: dict) -> tuple[int, int]:
+    """判决重放（轮次归组后）：轮次成立/否定 + 龙头认定。"""
+    now = common.now_iso()
+    n_ep = n_leader = 0
+    def find_episode(theme: str, start: str):
+        return conn.execute(
+            "SELECT ep.id FROM theme_episodes ep JOIN concepts c ON c.id=ep.concept_id "
+            "WHERE c.name=? AND ep.start_date=?", (theme, start)).fetchone()
+    for v in overrides["episode_verdicts"]:
+        verdict = v.get("verdict")
+        if verdict not in ("verified", "rejected"):
+            raise ValueError(f"episode_verdicts 非法 verdict：{v}")
+        row = find_episode(v["theme"], v["start_date"])
+        if not row:
+            print(f"⚠️ episode_verdicts 找不到轮次（跳过）：{v.get('theme')} {v.get('start_date')}")
+            continue
+        conn.execute(
+            "UPDATE theme_episodes SET status=?, "
+            "catalyst_summary=COALESCE(?,catalyst_summary), updated_at=? WHERE id=?",
+            (verdict, v.get("catalyst"), now, row[0]))
+        n_ep += 1
+    for v in overrides["leaders"]:
+        row = find_episode(v["theme"], v["start_date"])
+        if not row:
+            print(f"⚠️ leaders 找不到轮次（跳过）：{v.get('theme')} {v.get('start_date')}")
+            continue
+        cur = conn.execute(
+            "UPDATE event_theme_links SET market_role='leader', updated_at=? "
+            "WHERE episode_id=? AND event_id IN "
+            "(SELECT id FROM limit_up_events WHERE code=?)",
+            (now, row[0], v["code"]))
+        n_leader += cur.rowcount and 1
+    return n_ep, n_leader
+
+
 def expire_stale_candidates(conn, events: list[tuple], cfg: dict) -> int:
     """退场：候选归因 N 个交易日内未进任何轮次、且无 supporting 旁证 → expired。"""
     all_dates = sorted({row[1] for row in events})
@@ -966,7 +1039,10 @@ def main() -> int:
         n_manual = import_manual_attributions(conn, stock_names)
         n_corp = derive_corporate_events(conn)
         n_killed = apply_clarification_kills(conn)   # 澄清击杀先于轮次归组
+        overrides = load_overrides()
+        n_verdicts = apply_link_verdicts(conn, overrides)  # 人工判决先于归组
         n_episodes, overlap_warnings = derive_episodes(conn, events, cfg)
+        n_ep_verdicts, n_leaders = apply_episode_overrides(conn, overrides)
         n_expired = expire_stale_candidates(conn, events, cfg)
         counts = audit(conn)
         if args.dry_run:
@@ -982,6 +1058,7 @@ def main() -> int:
             f"同日≥{cfg['episode']['min_same_day']}家/首封极差≤"
             f"{cfg['episode']['first_seal_span_min']}min），"
             f"候选过期 {n_expired}，公司事件 {n_corp}（澄清击杀 {n_killed}），"
+            f"人工判决重放 链{n_verdicts}/轮{n_ep_verdicts}/龙头{n_leaders}，"
             f"导入事件证据 {n_evidence}"
         )
         for w in overlap_warnings[:10]:

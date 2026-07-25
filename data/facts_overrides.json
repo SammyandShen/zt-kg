@@ -1,0 +1,6 @@
+{
+  "$note": "人工判决台账（P1.5 核实漏斗）。治理台『导出判决』生成的补丁合并到这里；rebuild_semantic_layer.py 每次重建后重放，人工劳动不因候选域重算而丢失。verdict: verified/rejected。",
+  "link_verdicts": [],
+  "episode_verdicts": [],
+  "leaders": []
+}

@@ -612,6 +612,12 @@ const D = ZTKG_DATA;
 // 手动分类暂存（localStorage）：{标签名: {type, status, parent}}，导出补丁落盘前先在本地生效
 const FIX = JSON.parse(localStorage.getItem('ztkg_tagfix') || '{}');
 const saveFix = () => { localStorage.setItem('ztkg_tagfix', JSON.stringify(FIX)); updatePendbar(); };
+/* 人工判决暂存（P1.5 核实漏斗）：links/episodes/leaders 三类，导出为 facts_overrides 补丁 */
+const FACTFIX = JSON.parse(localStorage.getItem('ztkg_factfix')
+  || '{"links":{},"episodes":{},"leaders":{}}');
+const factFixCount = () => Object.keys(FACTFIX.links).length
+  + Object.keys(FACTFIX.episodes).length + Object.keys(FACTFIX.leaders).length;
+const saveFactFix = () => localStorage.setItem('ztkg_factfix', JSON.stringify(FACTFIX));
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g,
   c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -2819,6 +2825,47 @@ function renderTagsGov() {
     b.d.localeCompare(a.d) || b.confidence - a.confidence ||
     (D.stocks[a.code] || '').localeCompare(D.stocks[b.code] || '', 'zh-CN'));
 
+  // ===== 核实漏斗三队列（P1.5）：只有这三类进人工队列，其余候选保持 provisional =====
+  const openEps = Object.entries(THEME_EPISODES)
+    .filter(([, ep]) => ep[4] === 'provisional');
+  const openEpIds = new Set(openEps.map(([id]) => +id));
+  // Q1 活跃轮次归因（近2交易日）
+  const q1 = [];
+  for (const d of D.dates.slice(-2)) for (const ev of (D.events[d] || [])) {
+    if (isTouch(ev)) continue;
+    for (const l of eventThemesOf(ev[0], d))
+      if (l[4] === 'candidate' && l[7] && openEpIds.has(+l[7]))
+        q1.push({ d, code: ev[0], cid: l[0], conf: l[5], basis: l[11], ep: +l[7] });
+  }
+  q1.sort((a, b) => b.d.localeCompare(a.d) || (b.basis ? 1 : 0) - (a.basis ? 1 : 0)
+    || b.conf - a.conf);
+  // Q2 新轮次提案（近3交易日启动的开放轮次）
+  const d3 = D.dates[D.dates.length - 3] || D.dates[0];
+  const q2 = openEps.filter(([, ep]) => ep[1] >= d3)
+    .map(([id, ep]) => ({ id: +id, cid: +ep[0], start: ep[1], phase: ep[3],
+      cnt: ep[7], conf: ep[6] }));
+  // Q3 龙头认定（每个开放轮次当前最高板成员，尚无 leader 标记）
+  const epMembers = {};
+  for (const d of win) for (const ev of (D.events[d] || [])) {
+    if (isTouch(ev)) continue;
+    for (const l of eventThemesOf(ev[0], d)) if (l[7] && openEpIds.has(+l[7])) {
+      const m = (epMembers[+l[7]] ??= new Map());
+      m.set(ev[0], Math.max(m.get(ev[0]) || 0, ev[1] || 1));
+      if (l[3] === 'leader') m.leaderDone = true;
+    }
+  }
+  const q3 = openEps.map(([id, ep]) => {
+    const m = epMembers[+id];
+    if (!m || m.leaderDone) return null;
+    const top = [...m.entries()].sort((a, b) => b[1] - a[1])[0];
+    return top ? { id: +id, cid: +ep[0], start: ep[1], code: top[0], lb: top[1] } : null;
+  }).filter(Boolean).sort((a, b) => b.lb - a.lb);
+  const themeOf = cid => D.concepts[cid]?.[0] || `cid${cid}`;
+  const lkKey = q => `${q.code}|${q.d}|${themeOf(q.cid)}`;
+  const epKey = q => `${themeOf(q.cid)}|${q.start}`;
+  const vbtn = (act, key, cur, label) =>
+    `<button class="clsbtn${cur === act ? ' done' : ''}" data-fv="${act}" data-fk="${esc(key)}">${label}</button>`;
+
   // 待审核队列：candidate 且窗口内活跃，按窗口家数排序
   const queue = [];
   for (const cid in D.concepts) {
@@ -2907,30 +2954,51 @@ function renderTagsGov() {
           ${evidenceLinksHtml([evidenceId])}
         </div>`;
       }).join('')}</div>` : ''}
-    <div class="semantic-title" style="padding:8px 8px 0">
-      <b>单次涨停题材候选</b><span>按日期和置信度排列；自动旁证不会把候选升级为“已核实”</span></div>
-    <div class="small muted" style="padding:2px 8px 6px">
-      T+0：同日题材涨停广度＋题材级证据＋客观业务映射；T+1：再看下一交易日题材广度和同股延续；
-      T+2：再看第二个交易日的题材延续。旁证较强仍须人工确认。
-    </div>
-    <div>${attributionQueue.slice(0, 40).map(q => {
-      const theme = D.concepts[q.cid]?.[0] || '未知题材';
-      const reviewText = reviewLabel(q.review);
-      const reviewRationale = q.review?.[11] || '';
-      return `<div class="govrow" data-code="${q.code}" style="cursor:pointer">
-        <span class="verify-state candidate">待核实</span>
-        <span class="gname">${esc(theme)}</span>
+  </div>
+  <div class="card"><div class="card-h"><span class="cname">核实队列（只开三个口）</span>
+    <span class="hist">其余 ${attributionQueue.length} 条候选保持灰显，永不进队列、不追求清零</span>
+    <button class="navbtn" id="fact-export" style="margin-left:auto">导出判决${
+      factFixCount() ? `（${factFixCount()}）` : ''}</button></div>
+    <div class="semantic-title" style="padding:4px 8px 0">
+      <b>① 活跃轮次主炒归因</b><span>近2交易日 · 属于开放轮次的候选归因 · 凭据优先</span></div>
+    <div>${q1.slice(0, 30).map(q => {
+      const cur = FACTFIX.links[lkKey(q)];
+      return `<div class="govrow">
+        <span class="verify-state ${cur === 'verified' ? 'verified' : 'candidate'}">${
+          cur ? (cur === 'verified' ? '已判核实' : '已判否定') : '待判'}</span>
+        <span class="gname" data-code="${q.code}" style="cursor:pointer">${esc(themeOf(q.cid))}</span>
         <span class="gmeta">${q.d.slice(5)} · ${esc(D.stocks[q.code] || q.code)}(${q.code})
-          · 置信度${Math.round(q.confidence * 100)}% · ${
-            q.source === 'derived' ? '供应商原因候选' : '人工候选'}${
-            reviewText ? ` · ${esc(reviewText)} ${Math.round(q.review[2] * 100)}分` : ''}</span>
-        <span class="sugg" title="${esc([q.rationale, reviewRationale].filter(Boolean).join('｜'))}">${
-          q.evidenceIds.length ? `已有${q.evidenceIds.length}条题材证据` : '尚无题材级证据'}${
-          reviewText ? ` · ${esc(reviewText)}` : ''}</span>
+          · ${q.basis ? (q.basis[0] === 'fact' ? '⚭业务边:' + esc(String(q.basis[1])) : '⚭公告') : '无凭据'}
+          · 置信${Math.round(q.conf * 100)}% · 轮#${q.ep}</span>
+        ${vbtn('verified', lkKey(q), cur, '✓核实')}${vbtn('rejected', lkKey(q), cur, '✗否定')}
       </div>`;
-    }).join('') || '<div class="muted small" style="padding:8px">近10日没有待核实的单次题材关系</div>'}</div>
-    ${attributionQueue.length > 40 ? `<div class="muted small" style="padding:6px 8px">
-      共 ${attributionQueue.length} 条，按日期和置信度显示前40；完整记录保存在 event_theme_links。</div>` : ''}
+    }).join('') || '<div class="muted small" style="padding:6px 8px">近2日无开放轮次候选归因</div>'}</div>
+    <div class="semantic-title" style="padding:8px 8px 0">
+      <b>② 新轮次提案</b><span>近3交易日启动的自动轮次 · 确认共同催化后成轮</span></div>
+    <div>${q2.slice(0, 10).map(q => {
+      const cur = FACTFIX.episodes[epKey(q)]?.verdict;
+      return `<div class="govrow">
+        <span class="verify-state ${cur === 'verified' ? 'verified' : 'candidate'}">${
+          cur ? (cur === 'verified' ? '已判成轮' : '已判否轮') : '待判'}</span>
+        <span class="gname" data-cid="${q.cid}">${esc(themeOf(q.cid))}</span>
+        <span class="gmeta">启动${q.start.slice(5)} · ${esc(PHASE_LABEL[q.phase] || q.phase)}
+          · ${q.cnt}只成分 · 轮#${q.id}</span>
+        ${vbtn('ep_ok', epKey(q), cur === 'verified' ? 'ep_ok' : cur === 'rejected' ? 'ep_no' : '', '✓成轮')}${
+          vbtn('ep_no', epKey(q), cur === 'rejected' ? 'ep_no' : cur === 'verified' ? 'ep_ok' : '', '✗否轮')}
+      </div>`;
+    }).join('') || '<div class="muted small" style="padding:6px 8px">近3日无新启动轮次</div>'}</div>
+    <div class="semantic-title" style="padding:8px 8px 0">
+      <b>③ 龙头认定</b><span>开放轮次当前最高板成员 · 认定后写入 market_role</span></div>
+    <div>${q3.slice(0, 10).map(q => {
+      const done = FACTFIX.leaders[epKey(q)];
+      return `<div class="govrow">
+        <span class="verify-state ${done ? 'verified' : 'candidate'}">${done ? '已认定' : '待判'}</span>
+        <span class="gname" data-code="${q.code}" style="cursor:pointer">${esc(themeOf(q.cid))}</span>
+        <span class="gmeta">${esc(D.stocks[q.code] || q.code)}(${q.code}) · 窗口最高${q.lb}板 · 轮#${q.id}</span>
+        <button class="clsbtn${done === q.code ? ' done' : ''}" data-fv="leader"
+          data-fk="${esc(epKey(q))}" data-fc="${q.code}">⭐定龙头</button>
+      </div>`;
+    }).join('') || '<div class="muted small" style="padding:6px 8px">开放轮次均已有龙头标记</div>'}</div>
   </div>
   ${uncov.length ? `<div class="card"><div class="card-h"><span class="cname muted">今日未入树涨停</span>
     <span class="hist">标签都还没进 taxonomy 的股票，优先处理</span></div>
@@ -2993,6 +3061,75 @@ function renderTagsGov() {
     el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
   document.querySelectorAll('#tagsub .evidence-links a').forEach(el =>
     el.addEventListener('click', e => e.stopPropagation()));
+  // 核实漏斗三队列的判决按钮（暂存 localStorage，导出判决落盘 facts_overrides.json）
+  document.querySelectorAll('#tagsub [data-fv]').forEach(el =>
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      const act = el.dataset.fv, key = el.dataset.fk;
+      if (act === 'verified' || act === 'rejected') {
+        FACTFIX.links[key] === act ? delete FACTFIX.links[key] : FACTFIX.links[key] = act;
+      } else if (act === 'ep_ok') {
+        if (FACTFIX.episodes[key]?.verdict === 'verified') delete FACTFIX.episodes[key];
+        else {
+          const cat = prompt('本轮共同催化描述（可留空）',
+            FACTFIX.episodes[key]?.catalyst || '');
+          if (cat === null) return;
+          FACTFIX.episodes[key] = { verdict: 'verified', catalyst: cat || '' };
+        }
+      } else if (act === 'ep_no') {
+        FACTFIX.episodes[key]?.verdict === 'rejected' ? delete FACTFIX.episodes[key]
+          : FACTFIX.episodes[key] = { verdict: 'rejected' };
+      } else if (act === 'leader') {
+        FACTFIX.leaders[key] === el.dataset.fc ? delete FACTFIX.leaders[key]
+          : FACTFIX.leaders[key] = el.dataset.fc;
+      }
+      saveFactFix(); renderTagsGov();
+    }));
+  $('#fact-export')?.addEventListener('click', openFactExport);
+}
+
+function exportFactPatch() {
+  const day = new Date().toISOString().slice(0, 10);
+  const patch = { link_verdicts: [], episode_verdicts: [], leaders: [] };
+  for (const [k, v] of Object.entries(FACTFIX.links)) {
+    const [code, trade_date, theme] = k.split('|');
+    patch.link_verdicts.push({ code, trade_date, theme, verdict: v, decided_at: day });
+  }
+  for (const [k, v] of Object.entries(FACTFIX.episodes)) {
+    const [theme, start_date] = k.split('|');
+    const row = { theme, start_date, verdict: v.verdict };
+    if (v.catalyst) row.catalyst = v.catalyst;
+    patch.episode_verdicts.push(row);
+  }
+  for (const [k, code] of Object.entries(FACTFIX.leaders)) {
+    const [theme, start_date] = k.split('|');
+    patch.leaders.push({ theme, start_date, code });
+  }
+  return JSON.stringify(patch, null, 1);
+}
+function openFactExport() {
+  $('#modal').innerHTML = `
+    <h3>人工判决补丁（${factFixCount()} 条）</h3>
+    <div class="muted small" style="margin-bottom:6px">
+      复制 JSON 发给 Claude 合并进 data/facts_overrides.json 并跑
+      rebuild_semantic_layer.py；重建后判决自动重放，落盘后回来点「清空」。</div>
+    <textarea id="m-patch" readonly>${esc(exportFactPatch())}</textarea>
+    <div class="mbtns">
+      <button class="navbtn" id="m-fclear">清空本地判决</button>
+      <button class="navbtn" id="m-cancel">关闭</button>
+      <button class="btn-primary" style="margin-top:0" id="m-copy">复制</button>
+    </div>`;
+  showModal();
+  $('#m-cancel').onclick = closeModal;
+  $('#m-copy').onclick = () => {
+    navigator.clipboard?.writeText($('#m-patch').value);
+    $('#m-copy').textContent = '已复制 ✓';
+  };
+  $('#m-fclear').onclick = () => {
+    if (confirm('清空全部本地判决？（应在补丁落盘后执行）')) {
+      localStorage.removeItem('ztkg_factfix'); location.reload();
+    }
+  };
 }
 
 /* ---------- 全局搜索 ---------- */
