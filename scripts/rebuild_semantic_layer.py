@@ -813,6 +813,80 @@ def concept_name(conn, cid: int) -> str:
     return row[0] if row else f"cid{cid}"
 
 
+import re
+
+EVENT_TYPE_PATTERNS = [
+    ("clarification", re.compile(r"澄清|不存在应披露|说明公告|异动公告|风险提示")),
+    ("ma_intent", re.compile(r"收购|并购|重组|购买资产|吸收合并")),
+    ("contract_win", re.compile(r"中标|中选|签订.*合同|框架协议")),
+    ("earnings", re.compile(r"业绩|预增|预告|扭亏|分红|利润分配")),
+    ("approval", re.compile(r"获批|批复|注册|许可|通过.*审核|受理")),
+    ("invest", re.compile(r"投建|投资|扩产|设立|增资")),
+    ("listing", re.compile(r"上市|发行|挂牌|定增|募集")),
+]
+
+
+def derive_corporate_events(conn) -> int:
+    """公告 → 公司事件记录（可整体重建）。event 从此不再是标签词典成员。"""
+    conn.execute("DELETE FROM corporate_events")
+    now = common.now_iso()
+    n = 0
+    for evidence_id, code, title, published in conn.execute(
+            "SELECT id,subject_code,title,COALESCE(published_at,'') "
+            "FROM evidence_items WHERE evidence_type='announcement' "
+            "AND subject_code IS NOT NULL"):
+        text = title or ""
+        etype = next((t for t, pat in EVENT_TYPE_PATTERNS if pat.search(text)),
+                     "other")
+        conn.execute(
+            "INSERT OR IGNORE INTO corporate_events("
+            "code,event_date,event_type,title,evidence_id,created_at) "
+            "VALUES(?,?,?,?,?,?)",
+            (code, published[:10], etype, title, evidence_id, now))
+        n += 1
+    return n
+
+
+def apply_clarification_kills(conn) -> int:
+    """澄清击杀通道：澄清公告标题/原文点名题材 → 对应候选归因直接 rejected。
+
+    保守规则：只杀"澄清公告明确出现题材名"的候选；泛泛的异动/风险提示不杀。
+    窗口：涨停日前1个交易日 ～ 后3个自然日内发布的澄清。
+    """
+    now = common.now_iso()
+    killed = 0
+    for ce_id, code, ce_date, evidence_id in conn.execute(
+            "SELECT id,code,event_date,evidence_id FROM corporate_events "
+            "WHERE event_type='clarification'"):
+        row = conn.execute(
+            "SELECT COALESCE(title,''),COALESCE(claim,'') FROM evidence_items "
+            "WHERE id=?", (evidence_id,)).fetchone()
+        if not row:
+            continue
+        text = row[0] + "\n" + row[1]
+        if "澄清" not in text and "不存在" not in text:
+            continue                       # 仅异动/风险提示，不构成否认
+        for eid, cid, theme in conn.execute(
+                """
+                SELECT l.event_id,l.concept_id,c.name
+                FROM event_theme_links l
+                JOIN limit_up_events e ON e.id=l.event_id
+                JOIN concepts c ON c.id=l.concept_id
+                WHERE e.code=? AND l.source='derived'
+                  AND l.status IN ('candidate','expired')
+                  AND date(e.trade_date) >= date(?, '-4 day')
+                  AND date(e.trade_date) <= date(?, '+1 day')
+                """, (code, ce_date, ce_date)):
+            if theme and theme in text:
+                conn.execute(
+                    "UPDATE event_theme_links SET status='rejected', "
+                    "rationale=?, updated_at=? WHERE event_id=? AND concept_id=?",
+                    (f"澄清公告点名否认（corporate_event#{ce_id}）",
+                     now, eid, cid))
+                killed += 1
+    return killed
+
+
 def expire_stale_candidates(conn, events: list[tuple], cfg: dict) -> int:
     """退场：候选归因 N 个交易日内未进任何轮次、且无 supporting 旁证 → expired。"""
     all_dates = sorted({row[1] for row in events})
@@ -890,6 +964,8 @@ def main() -> int:
         n_evidence = import_event_evidence(conn, events)
         n_candidates = derive_candidate_theme_links(conn, events, tag_meta)
         n_manual = import_manual_attributions(conn, stock_names)
+        n_corp = derive_corporate_events(conn)
+        n_killed = apply_clarification_kills(conn)   # 澄清击杀先于轮次归组
         n_episodes, overlap_warnings = derive_episodes(conn, events, cfg)
         n_expired = expire_stale_candidates(conn, events, cfg)
         counts = audit(conn)
@@ -905,7 +981,8 @@ def main() -> int:
             f"题材轮次 {n_episodes}（阈值 ≥{cfg['episode']['min_codes']}只/"
             f"同日≥{cfg['episode']['min_same_day']}家/首封极差≤"
             f"{cfg['episode']['first_seal_span_min']}min），"
-            f"候选过期 {n_expired}，导入事件证据 {n_evidence}"
+            f"候选过期 {n_expired}，公司事件 {n_corp}（澄清击杀 {n_killed}），"
+            f"导入事件证据 {n_evidence}"
         )
         for w in overlap_warnings[:10]:
             print(f"⚠️ {w}")

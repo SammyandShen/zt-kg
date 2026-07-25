@@ -397,6 +397,21 @@ CREATE TABLE IF NOT EXISTS theme_episode_evidence (
     PRIMARY KEY (episode_id, evidence_id)
 );
 
+-- 公司事件：从官方公告派生的一次性事件记录（event 不再是标签词典成员）。
+-- 可整体重建；clarification 类型驱动候选归因的澄清击杀通道。
+CREATE TABLE IF NOT EXISTS corporate_events (
+    id           INTEGER PRIMARY KEY,
+    code         TEXT NOT NULL,
+    event_date   TEXT NOT NULL,
+    event_type   TEXT NOT NULL,    -- ma_intent/contract_win/earnings/approval/invest/listing/clarification/other
+    title        TEXT,
+    evidence_id  INTEGER REFERENCES evidence_items(id) ON DELETE CASCADE,
+    created_at   TEXT NOT NULL,
+    UNIQUE (code, event_date, evidence_id)
+);
+CREATE INDEX IF NOT EXISTS idx_corporate_events_code
+    ON corporate_events(code, event_date);
+
 -- T0 归因快照：候选归因首次生成时的原样记录，重建/复核永不覆盖或删除。
 -- 回测"按当晚归因跟随"只能用这里的点值，不能用被 T+2 修正过的最终版。
 CREATE TABLE IF NOT EXISTS attribution_snapshots (

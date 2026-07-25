@@ -6109,23 +6109,23 @@
  },
  "润滑油龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "液压龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "深圳国企": {
   "type": "attribute",
-  "status": "candidate"
- },
- "深圳国企改革": {
-  "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "清香龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "渠道下沉": {
   "type": "attribute",
@@ -6133,75 +6133,93 @@
  },
  "温州国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "港机龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "湖南零售龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "湖南龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "湘潭国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "滤波器龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "潍坊国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "火腿龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "炭素龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "炼油龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "炼焦煤龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "烟草背景": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "烧碱龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "热处理龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "焊接钢管龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "煤炭龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "煤焦龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "熔断器龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "燃气特许经营": {
   "type": "attribute",
@@ -6209,19 +6227,23 @@
  },
  "燃油系统龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "燕麦龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "物业龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "物流供应链优化": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "特斯拉": {
   "type": "attribute",
@@ -6229,7 +6251,8 @@
  },
  "特斯拉供应链": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "特斯拉概念": {
   "type": "attribute",
@@ -6237,59 +6260,73 @@
  },
  "特种纸龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "特钢龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "环氧丙烷龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "玻纤龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "珠海国资委": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "瓶盖龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "瓷砖卫浴龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "瓷绝缘子龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "甘肃国企": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "甜味剂龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "生物质长丝龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "甲乙酮龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "甲硝唑龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电力龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电商直销": {
   "type": "attribute",
@@ -6297,63 +6334,78 @@
  },
  "电子特气龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电接触龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电源线龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电热毯龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电磁线龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电解液溶剂龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电解液龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "男装龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "男裤龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "男鞋龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "白卡纸龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "盐业龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "盾构机龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "石墨电极龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "矿用车龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "研究能力": {
   "type": "attribute",
@@ -6361,11 +6413,13 @@
  },
  "硅铁龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "硝酸龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "碧峰峡": {
   "type": "attribute",
@@ -6373,39 +6427,48 @@
  },
  "碳酸钡龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "碳酸钾龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "磷复肥龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "福州国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "福建国企": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "福建龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "离合器龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "种业龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "种子龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "算力国家队": {
   "type": "attribute",
@@ -6413,79 +6476,98 @@
  },
  "管桩龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "管网龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "粉末冶金行业龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "紧固件龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "纯碱龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "纺织助剂龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "绍兴国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "绝缘子龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "维生素供应商": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "绵阳国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "综合性医用高值耗材供应商": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "绿电龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "缝制电控龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "羽绒龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "耐火材料龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "聚氨酯龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "肉制品龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "胰岛素龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "自免龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "自有品牌": {
   "type": "attribute",
@@ -6493,15 +6575,18 @@
  },
  "航天系": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "节水龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "芯片供应商": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "芯片供货宇树": {
   "type": "attribute",
@@ -6509,7 +6594,8 @@
  },
  "苗药龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "英伟达": {
   "type": "attribute",
@@ -6529,11 +6615,13 @@
  },
  "草酸龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "藏药龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "虚拟IDM": {
   "type": "attribute",
@@ -6541,7 +6629,8 @@
  },
  "血透龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "行业龙头": {
   "type": "attribute",
@@ -6549,47 +6638,58 @@
  },
  "表面活性剂龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "西藏国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "覆铜板龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "负极龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "贵州龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "超导龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "超材料龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "蹦床龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "车灯龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "车规龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "轴承龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "轻资产运营": {
   "type": "attribute",
@@ -6597,15 +6697,18 @@
  },
  "辽宁国企": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "速冻龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "道岔龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "遮阳龙头": {
   "type": "attribute",
@@ -6613,107 +6716,133 @@
  },
  "郑州国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "郴州国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "酶制剂龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "醋酸龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "重庆国资": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "金针菇龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钛材龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钛精矿龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钠电储能龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钢丝龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钢琴龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钨钼龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钼业龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钽电容龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钽铌龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铁矿龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铅铜龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铌龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铜加工龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铜基龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铜铌龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铟龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "铯铷龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "银锡龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "锂盐龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "锂矿龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "锗龙头": {
   "type": "attribute",
@@ -6721,19 +6850,23 @@
  },
  "锡膏龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "锡龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "锯切行业龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "锯切龙头": {
   "type": "attribute",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "锰酸锂龙头": {
   "type": "attribute",
@@ -38699,6 +38832,11 @@
  "液冷超充": {
   "type": "theme",
   "status": "candidate"
+ },
+ "深圳国企改革": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "清洁能源": {
   "type": "theme",
