@@ -7019,10 +7019,6 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
- "鸿海“提前供货”英伟达全光CPO机柜": {
-  "type": "attribute",
-  "status": "candidate"
- },
  "麻醉龙头": {
   "type": "attribute",
   "status": "candidate",
@@ -8724,7 +8720,8 @@
  },
  "定点大单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "实控人筹划重组": {
   "type": "catalyst",
@@ -8732,7 +8729,8 @@
  },
  "客户订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "客户验证加速": {
   "type": "catalyst",
@@ -8741,31 +8739,38 @@
  },
  "小批量订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "小金属涨价": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "尾矿扩产": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "尿素涨价": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "屠宰扩产": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "山玻转债提前赎回": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "已摘帽": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "市值管理": {
   "type": "catalyst",
@@ -8773,39 +8778,48 @@
  },
  "帕利哌酮获批": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年度分红": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年报净利扭亏": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年报分红": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年报扭亏": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年报扭亏为盈": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年报预增": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年报预计减亏": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "年报预计扭亏": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "并购贷款": {
   "type": "catalyst",
@@ -8825,15 +8839,18 @@
  },
  "归还募资": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "心脑血管扭亏": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "快递涨价": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "成本下降": {
   "type": "catalyst",
@@ -8849,7 +8866,8 @@
  },
  "扩产640吨": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "扭亏": {
   "type": "catalyst",
@@ -8865,27 +8883,33 @@
  },
  "扭亏预增": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "扭亏预期": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "批量订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "技改扩产": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "拜耳大单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "拟分红": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "拟募资": {
   "type": "catalyst",
@@ -8897,7 +8921,8 @@
  },
  "挖掘机涨价": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "提前终止减持": {
   "type": "catalyst",
@@ -8905,7 +8930,8 @@
  },
  "提前赎回转债": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "提锂量产": {
   "type": "catalyst",
@@ -8913,27 +8939,33 @@
  },
  "摘帽扭亏": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "摩洛哥扩产": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "摩洛哥订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "敌草快涨价": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新产品获批": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新产能": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新兴业务爆发": {
   "type": "catalyst",
@@ -8941,19 +8973,23 @@
  },
  "新加坡订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新品获批": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新增订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新疆扩产": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新签大单": {
   "type": "catalyst",
@@ -8961,7 +8997,8 @@
  },
  "新能源汽车扩产": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新能源盈利": {
   "type": "catalyst",
@@ -8973,15 +9010,18 @@
  },
  "新药获批": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "无人机大单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "昨日复牌": {
   "type": "catalyst",
@@ -8997,7 +9037,8 @@
  },
  "期权激励": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "木绒锂矿获批": {
   "type": "catalyst",
@@ -9009,19 +9050,23 @@
  },
  "机器人中标": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "机器人大单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "机器人订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "机器狗订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "机构密集调研": {
   "type": "catalyst",
@@ -9029,11 +9074,13 @@
  },
  "权益分派实施": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "染料涨价": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "柬埔寨产能": {
   "type": "catalyst",
@@ -9041,19 +9088,23 @@
  },
  "柬埔寨扩产": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "核电中标": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "欧洲大单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "欧洲订单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "此前复牌": {
   "type": "catalyst",
@@ -9065,11 +9116,13 @@
  },
  "母公司及子公司集采中标": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "比亚迪大单": {
   "type": "catalyst",
-  "status": "candidate"
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "氟制冷剂涨价": {
   "type": "catalyst",
@@ -12829,6 +12882,11 @@
  "高速光模块发布": {
   "type": "event",
   "status": "candidate"
+ },
+ "鸿海“提前供货”英伟达全光CPO机柜": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "鸿蒙合作": {
   "type": "event",

@@ -19,6 +19,10 @@ python3 scripts/gen_tag_meta.py --all
 python3 scripts/rebuild_semantic_layer.py
 # 候选题材按后续交易日推进T0/T+1/T+2复核；只给旁证建议，不自动升级verified。
 python3 scripts/review_theme_attributions.py --days 5
+# LLM判决三队列（用户授权代行人工判决；保守规则=拿不准一律leave；失败不阻断）
+python3 scripts/judge_attributions.py || echo "⚠️ judge_attributions 失败，跳过"
+# 重放当日新判决（facts_overrides）到语义层
+python3 scripts/rebuild_semantic_layer.py
 python3 scripts/audit_tags.py
 python3 scripts/build_site.py
 # 公网发布（存在 .deploy-enabled 开关文件才执行；见 deploy.sh 头部说明）
