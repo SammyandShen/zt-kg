@@ -230,9 +230,12 @@ def main() -> int:
         errors.append("已核实单次涨停归因缺少支持证据：" +
                       "、".join(row[0] for row in missing_attribution_evidence[:20]))
 
+    # facts_overrides 判决重放会给 derived 链打 verified，rationale 固定带
+    # "人工判决"前缀（含用户授权的 LLM 代行判决）；没有该标记的升级才是违规。
     derived_verified = conn.execute(
         "SELECT COUNT(*) FROM event_theme_links "
-        "WHERE source='derived' AND status='verified'"
+        "WHERE source='derived' AND status='verified' "
+        "AND COALESCE(rationale,'') NOT LIKE '人工判决%'"
     ).fetchone()[0]
     if derived_verified:
         errors.append(f"自动原因标签被错误升级为 verified：{derived_verified} 条")
