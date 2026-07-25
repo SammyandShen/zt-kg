@@ -228,23 +228,38 @@ def main() -> int:
     # 自动题材关系保持 candidate/provisional；网页必须显式展示状态，不能把它
     # 当作已核实主营或已确认涨停原因。
     business_facts: dict[str, list] = {}
+    business_concepts: dict[int, list] = {}
+    business_taxonomy: dict[int, list[int]] = {}
     used_evidence_ids: set[int] = set()
+    for concept_id, name, concept_type, status in conn.execute("""
+        SELECT id,name,concept_type,status
+        FROM business_concepts
+        WHERE status!='retired'
+        ORDER BY concept_type,name
+    """):
+        business_concepts[concept_id] = [name, concept_type, status]
+    for parent_id, child_id in conn.execute("""
+        SELECT parent_id,child_id
+        FROM business_concept_edges
+        ORDER BY parent_id,child_id
+    """):
+        business_taxonomy.setdefault(parent_id, []).append(child_id)
     for row in conn.execute("""
         SELECT id,code,tag_name,fact_type,relation_type,maturity,status,confidence,
-               summary,valid_from,valid_to
+               summary,valid_from,valid_to,business_concept_id
         FROM stock_business_facts
         WHERE status!='rejected'
         ORDER BY code,(relation_type='core') DESC,confidence DESC,tag_name
     """):
         (fact_id, code, tag, fact_type, relation, maturity, status, confidence,
-         summary, valid_from, valid_to) = row
+         summary, valid_from, valid_to, business_concept_id) = row
         evidence_ids = [r[0] for r in conn.execute(
             "SELECT evidence_id FROM business_fact_evidence WHERE fact_id=?",
             (fact_id,))]
         used_evidence_ids.update(evidence_ids)
         business_facts.setdefault(code, []).append([
             tag, fact_type, relation, maturity, status, round(confidence, 2),
-            summary, valid_from, valid_to, evidence_ids,
+            summary, valid_from, valid_to, evidence_ids, business_concept_id,
         ])
 
     business_fact_candidates: dict[str, list] = {}
@@ -398,6 +413,10 @@ def main() -> int:
         "news": news,
         "briefs": briefs,
         "business_facts": business_facts,
+        "business_graph": {
+            "concepts": business_concepts,
+            "taxonomy": business_taxonomy,
+        },
         "business_fact_candidates": business_fact_candidates,
         "event_themes": event_themes,
         "event_context_evidence": event_context_evidence,

@@ -150,6 +150,14 @@ def heuristic_candidates(text: str) -> list[dict]:
             "product", "core", "core_revenue", 0.7,
         ),
         (
+            re.compile(r"公司的主营业务为(.{2,40}?)[，。；]"),
+            "product", "core", "core_revenue", 0.7,
+        ),
+        (
+            re.compile(r"公司主营(.{2,35}?)的采选和销售(?:，|。|；|截至)"),
+            "product", "core", "core_revenue", 0.7,
+        ),
+        (
             re.compile(
                 r"公司主要业务未发生变化，经营范围主要是(.{2,80}?)[，。；]"
             ),
@@ -159,15 +167,64 @@ def heuristic_candidates(text: str) -> list[dict]:
             re.compile(r"(?:公司)?主导产品为(.{2,35}?)[，。；]"),
             "product", "core", "commercialized", 0.68,
         ),
+        (
+            re.compile(r"公司(?:的)?主要产品为(.{2,35}?)[，。；]"),
+            "product", "core", "commercialized", 0.68,
+        ),
+        (
+            re.compile(
+                r"公司(?:是)?专业从事(.{2,35}?)(?:的)?"
+                r"(?:研发、生产及销售|研发、生产和销售|研发、生产、销售)"
+            ),
+            "product", "core", "core_revenue", 0.72,
+        ),
+        (
+            re.compile(r"公司主营\s*(.{2,15}?)\s*业务为"),
+            "service", "core", "core_revenue", 0.7,
+        ),
+        (
+            re.compile(r"公司(数据中心)业务涵盖"),
+            "service", "core", "core_revenue", 0.7,
+        ),
+        (
+            re.compile(r"公司(医药研发与制造)业务涵盖"),
+            "service", "core", "core_revenue", 0.7,
+        ),
+        (
+            re.compile(r"公司深耕“(.{2,40}?)”三大核心业务"),
+            "service", "core", "core_revenue", 0.72,
+        ),
+        (
+            re.compile(
+                r"公司是一家以.{2,40}?为核心技术.{0,100}?"
+                r"致力成为领先的(.{2,30}?)解决方案提供商"
+            ),
+            "service", "core", "core_revenue", 0.68,
+        ),
+        (
+            re.compile(r"公司确立了双主业的发展模式：(.{2,20}?)经营性主业"),
+            "service", "core", "core_revenue", 0.68,
+        ),
     ]
     found: dict[tuple[str, str], dict] = {}
     for pattern, fact_type, relation, maturity, confidence in rules:
         for match in pattern.finditer(compact):
             raw_tag = match.group(1)
             tag = re.sub(
-                r"(的)?(?:生产和销售|生产、销售|生产销售|研发和销售)$", "", raw_tag
+                r"(的)?(?:生产和销售|生产、销售|生产销售|研发和销售|"
+                r"研发、生产及销售|研发、生产和销售|研发、生产、销售|"
+                r"采选和销售)$", "", raw_tag
             )
             tag = tag.replace("（浆）", "").replace("(浆)", "").strip("，。、；：")
+            if (
+                tag in {"业务", "主营", "产品", "服务"}
+                or any(bad in tag for bad in (
+                    "业务数据", "统计口径", "毛利率", "盈利能力",
+                    "相关的业务", "履约义务", "同业竞争", "主营业务均",
+                    "业务为", "主营",
+                ))
+            ):
+                continue
             if not 2 <= len(tag) <= 30:
                 continue
             candidate_fact_type = "service" if "服务" in tag else fact_type

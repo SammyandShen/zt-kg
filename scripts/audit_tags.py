@@ -265,6 +265,62 @@ def main() -> int:
         errors.append("拟收购被错误标成现有主营/商业化：" +
                       "、".join(row[0] for row in acquisition_as_core[:20]))
 
+    missing_business_nodes = conn.execute("""
+        SELECT code||':'||tag_name
+        FROM stock_business_facts
+        WHERE status NOT IN ('rejected','expired')
+          AND business_concept_id IS NULL
+    """).fetchall()
+    if missing_business_nodes:
+        errors.append("有效业务事实未进入独立业务图谱：" +
+                      "、".join(row[0] for row in missing_business_nodes[:20]))
+
+    mismatched_business_nodes = conn.execute("""
+        SELECT f.code||':'||f.tag_name||'→'||
+               COALESCE(b.name,'缺失')||'/'||COALESCE(b.concept_type,'缺失')
+        FROM stock_business_facts f
+        LEFT JOIN business_concepts b ON b.id=f.business_concept_id
+        WHERE f.status NOT IN ('rejected','expired')
+          AND (b.id IS NULL OR b.name!=f.tag_name OR b.concept_type!='product')
+    """).fetchall()
+    if mismatched_business_nodes:
+        errors.append("业务事实末级节点必须是同名 product：" +
+                      "、".join(row[0] for row in mismatched_business_nodes[:20]))
+
+    operating_exposure = conn.execute("""
+        SELECT code||':'||tag_name
+        FROM stock_business_facts
+        WHERE relation_type NOT IN ('core','secondary')
+          AND maturity IN ('core_revenue','commercialized','early_revenue')
+          AND status NOT IN ('rejected','expired')
+    """).fetchall()
+    if operating_exposure:
+        errors.append("参股/研发/供应链/拟收购敞口被错误标成在营业务：" +
+                      "、".join(row[0] for row in operating_exposure[:20]))
+
+    business_graph = {}
+    for parent_id, child_id in conn.execute(
+        "SELECT parent_id,child_id FROM business_concept_edges"
+    ):
+        business_graph.setdefault(parent_id, []).append(child_id)
+    visiting: set[int] = set()
+    visited: set[int] = set()
+
+    def visit_business(node: int) -> bool:
+        if node in visiting:
+            return True
+        if node in visited:
+            return False
+        visiting.add(node)
+        if any(visit_business(child) for child in business_graph.get(node, [])):
+            return True
+        visiting.remove(node)
+        visited.add(node)
+        return False
+
+    if any(visit_business(node) for node in list(business_graph)):
+        errors.append("独立业务图谱存在环")
+
     invalid_theme_mappings = conn.execute("""
         SELECT c.name||'→'||m.business_tag_name
         FROM theme_business_mappings m
@@ -328,10 +384,13 @@ def main() -> int:
           (SELECT COUNT(*) FROM theme_business_mappings WHERE status!='rejected'),
           (SELECT COUNT(*) FROM evidence_items),
           (SELECT COUNT(*) FROM business_fact_candidates WHERE status='candidate'),
-          (SELECT COUNT(*) FROM attribution_reviews)
+          (SELECT COUNT(*) FROM attribution_reviews),
+          (SELECT COUNT(*) FROM business_concepts),
+          (SELECT COUNT(*) FROM business_concept_edges)
     """).fetchone()
     print("语义层：业务事实 {}；单次题材关系 {}（已核实 {}）；题材轮次 {}；"
-          "题材业务映射 {}；证据 {}；年报业务候选 {}；T+复核 {}".format(
+          "题材业务映射 {}；证据 {}；年报业务候选 {}；T+复核 {}；"
+          "业务节点 {}；业务层级边 {}".format(
         *semantic_counts))
     if warnings:
         print("\n警告：")

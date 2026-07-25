@@ -591,6 +591,9 @@ const nameToCid = {};
 for (const cid in D.concepts) nameToCid[D.concepts[cid][0]] = +cid;
 for (const a in D.aliases) nameToCid[a] ??= D.aliases[a];
 const BUSINESS_FACTS = D.business_facts || {};
+const BUSINESS_GRAPH = D.business_graph || {};
+const BUSINESS_CONCEPTS = BUSINESS_GRAPH.concepts || {};
+const BUSINESS_TAX = BUSINESS_GRAPH.taxonomy || {};
 const BUSINESS_FACT_CANDIDATES = D.business_fact_candidates || {};
 const EVENT_THEMES = D.event_themes || {};
 const EVENT_CONTEXT_EVIDENCE = D.event_context_evidence || {};
@@ -609,6 +612,52 @@ const boardOf = code =>
   /^(8|4|92)/.test(code) ? '北交所' : '其他';
 const fmtWan = w => w == null ? '—' : w >= 10000 ? (w / 10000).toFixed(1) + '亿' : w + '万';
 const isTouch = ev => ev[10] === 1;          // 触及涨停但收盘未封住（炸板池）
+const businessKey = id => `biz:${id}`;
+const isBusinessKey = key => String(key || '').startsWith('biz:');
+const businessIdOf = key => isBusinessKey(key) ? +String(key).slice(4) : null;
+const businessNameOf = key => BUSINESS_CONCEPTS[businessIdOf(key)]?.[0] || key;
+const businessTypeOf = key => BUSINESS_CONCEPTS[businessIdOf(key)]?.[1] || 'unknown';
+const businessParents = {};
+for (const parentId in BUSINESS_TAX) for (const childId of BUSINESS_TAX[parentId])
+  (businessParents[childId] ??= []).push(+parentId);
+const _businessDescCache = {};
+function businessDescendants(id, stack) {
+  if (_businessDescCache[id]) return _businessDescCache[id];
+  stack = stack || new Set();
+  if (stack.has(id)) return new Set();
+  stack.add(id);
+  const out = new Set([+id]);
+  for (const childId of BUSINESS_TAX[id] || [])
+    for (const x of businessDescendants(+childId, stack)) out.add(x);
+  stack.delete(id);
+  return _businessDescCache[id] = out;
+}
+const _businessAncestorCache = {};
+function businessAncestors(id, stack) {
+  if (_businessAncestorCache[id]) return _businessAncestorCache[id];
+  stack = stack || new Set();
+  if (stack.has(id)) return new Set();
+  stack.add(id);
+  const out = new Set();
+  for (const parentId of businessParents[id] || []) {
+    out.add(+parentId);
+    for (const x of businessAncestors(+parentId, stack)) out.add(x);
+  }
+  stack.delete(id);
+  return _businessAncestorCache[id] = out;
+}
+function businessFactValid(f, d) {
+  return f[4] === 'verified' && (!f[7] || f[7] <= d) && (!f[8] || f[8] >= d);
+}
+function businessFactIsOperating(f) {
+  return ['core', 'secondary'].includes(f[2]) &&
+    ['core_revenue', 'commercialized', 'early_revenue'].includes(f[3]);
+}
+function businessFactsOn(code, d, operatingOnly) {
+  return (BUSINESS_FACTS[code] || []).filter(f =>
+    f[10] != null && businessFactValid(f, d) &&
+    (!operatingOnly || businessFactIsOperating(f)));
+}
 const lbBadge = ev => {
   if (isTouch(ev)) return '<span class="lb lbt">⚡触及</span>';
   const lb = ev[1] || 1, txt = ev[2] || (lb > 1 ? lb + '板' : '首板');
@@ -715,13 +764,7 @@ function heatTaxCids(name, stack) {       // 正式热力：仅 active 且与根
 const _heatSeriesCache = {};
 function heatTaxSeries(name) {
   if (_heatSeriesCache[name]) return _heatSeriesCache[name];
-  const cids = heatTaxCids(name);
-  return _heatSeriesCache[name] = D.dates.map(d => {
-    const codes = new Set();
-    for (const cid of cids)
-      for (const ev of semanticEventsForCid(cid, d)) codes.add(ev[0]);
-    return codes.size;
-  });
+  return _heatSeriesCache[name] = D.dates.map(d => heatDayCodes(name, d).size);
 }
 const heatChildren = name => {
   const bucket = heatBucketOf(name), rootType = typeOf(name);
@@ -731,6 +774,9 @@ const heatChildren = name => {
 };
 const TYPE_LABEL = { sector: '产业', product: '细分', theme: '题材', catalyst: '催化',
                      attribute: '属性', event: '事件', unknown: '未审核' };
+const heatNameOf = key => isBusinessKey(key) ? businessNameOf(key) : key;
+const heatTypeOf = key => isBusinessKey(key) ? businessTypeOf(key) : typeOf(key);
+const heatSearchLabel = key => `${TYPE_LABEL[heatTypeOf(key)] || '标签'}｜${heatNameOf(key)}`;
 const typeLabelOf = nm => virtualOf(nm) ? '分组' : (TYPE_LABEL[typeOf(nm)] || typeOf(nm));
 const TAG_TYPE_VIEW = {
   sector:   { label: '产业', badge: 'sector', chip: 'c-sector', row: 'tl-sector' },
@@ -792,10 +838,12 @@ function businessFactsHtml(code) {
     <b>公司客观业务</b><span>暂无经过证据核实的业务事实，历史原因标签不能替代主营业务</span>
   </div></div>`;
   const cards = facts.map(f => {
-    const [tag, factType, relation, maturity, status, confidence, summary, validFrom, , evidenceIds] = f;
+    const [tag, factType, relation, maturity, status, confidence, summary, validFrom, ,
+      evidenceIds, businessConceptId] = f;
     const cls = relation === 'core' ? 'core' : 'exposure';
     return `<div class="fact-card ${cls}"><div class="fact-top">
-      <b>${esc(tag)}</b><span class="fact-relation">${esc(RELATION_LABEL[relation] || relation)}</span>
+      <b${businessConceptId != null ? ` data-business="${businessConceptId}" style="cursor:pointer"` : ''}>${esc(tag)}</b>
+      <span class="fact-relation">${esc(RELATION_LABEL[relation] || relation)}</span>
       <span class="verify-state ${status}">${esc(SEM_STATUS_LABEL[status] || status)}</span></div>
       <div class="fact-summary">${esc(summary || '')}${
         validFrom ? ` <span class="muted">· 自${esc(validFrom)}</span>` : ''} · 置信度${Math.round(confidence * 100)}%
@@ -903,6 +951,7 @@ function render() {
   if (view === 'tags') return renderTags(arg || 'tree');
   if (view === 'date') return renderDate(decodeURIComponent(arg));
   if (view === 'concept') return renderConcept(+arg);
+  if (view === 'business') return renderBusinessConcept(+arg);
   if (view === 'stock') return renderStock(decodeURIComponent(arg));
   if (view === 'batch') return renderBatch();
   if (view === 'heat') return renderHeat();
@@ -935,16 +984,6 @@ function renderDate(d) {
   const cards = [...themeGroups].filter(([, g]) => g.list.length >= 2)
     .sort((a, b) => b[1].list.length - a[1].list.length);
 
-  // 催化仍来自已审核 catalyst 标签；下一阶段再增加独立的 event_catalyst_links。
-  const legacyGroups = new Map();
-  for (const ev of evs) for (const cid of ev[9]) {
-    if (!legacyGroups.has(cid)) legacyGroups.set(cid, []);
-    legacyGroups.get(cid).push(ev);
-  }
-  const catas = [...legacyGroups].map(([cid, l]) => ({
-    cid, nm: D.concepts[cid][0], l,
-  })).filter(g => g.l.length >= 2 && isCatalyst(g.nm))
-    .sort((a, b) => b.l.length - a.l.length);
   const carded = new Set(cards.flatMap(([, g]) => g.list.map(e => e[0])));
   const rest = evs.filter(e => !carded.has(e[0]));
 
@@ -992,12 +1031,6 @@ function renderDate(d) {
     </div>`;
   }
 
-  if (catas.length) {
-    html += `<div class="card" style="padding:8px 14px"><span class="tlabel tl-cat" style="padding:3px 10px">今日催化</span>
-      ${catas.map(g => `<span class="concept-chip c-cat" data-cid="${g.cid}" style="padding:2px 10px">
-        ${esc(g.nm)} <span class="x">${g.l.length}只</span></span>`).join('')}</div>`;
-  }
-
   for (const [cid, group] of cards) {
     const list = group.list;
     const [cname, total, days] = D.concepts[cid] || ['未知题材', 0, 0];
@@ -1017,7 +1050,7 @@ function renderDate(d) {
   if (rest.length) {
     html += `<div class="card"><div class="card-h">
       <span class="cname muted">其他 / 未入题材卡片</span><span class="cnt">${rest.length} 只</span>
-      <span class="hist">仅催化/属性/事件驱动或独立题材，悬浮看原因</span></div>
+      <span class="hist">未形成至少2股的结构化题材，或仍待归因；悬浮可看供应商原始原因</span></div>
       <div class="chips">${rest.map(ev => chipHtml(ev, d)).join('')}</div></div>`;
   }
   if (touches.length) {
@@ -1054,6 +1087,8 @@ function chipHtml(ev, d) {
 function bindChips() {
   document.querySelectorAll('[data-code]').forEach(el =>
     el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
+  document.querySelectorAll('[data-business]').forEach(el =>
+    el.addEventListener('click', () => go('#/business/' + el.dataset.business)));
   document.querySelectorAll('[data-cid]').forEach(el =>
     el.addEventListener('click', () => go('#/concept/' + el.dataset.cid)));
   document.querySelectorAll('.concept-chip[data-nm], .tanc[data-nm]').forEach(el =>
@@ -1376,6 +1411,65 @@ function renderStock(code) {
   bindChips();
 }
 
+/* ---------- 公司客观业务图谱节点 ---------- */
+function renderBusinessConcept(id) {
+  const node = BUSINESS_CONCEPTS[id];
+  if (!node) {
+    $('#app').innerHTML = '<div class="empty">业务概念不存在</div>';
+    return;
+  }
+  const ids = businessDescendants(id);
+  const parents = [...businessAncestors(id)].map(x => BUSINESS_CONCEPTS[x]?.[0]).filter(Boolean);
+  const rows = [];
+  for (const code in BUSINESS_FACTS) for (const f of BUSINESS_FACTS[code]) {
+    if (f[10] != null && ids.has(+f[10]) && f[4] !== 'rejected')
+      rows.push({ code, f });
+  }
+  rows.sort((a, b) =>
+    businessFactIsOperating(b.f) - businessFactIsOperating(a.f) ||
+    b.f[5] - a.f[5] ||
+    (D.stocks[a.code] || '').localeCompare(D.stocks[b.code] || '', 'zh-CN'));
+  const card = ({ code, f }) => {
+    const [tag, , relation, maturity, status, confidence, summary, validFrom, validTo,
+      evidenceIds] = f;
+    return `<div class="fact-card ${businessFactIsOperating(f) ? 'core' : 'exposure'}"
+      data-code="${code}" style="cursor:pointer"><div class="fact-top">
+      <b>${esc(D.stocks[code] || code)} <span class="muted small">${code}</span></b>
+      <span class="fact-relation">${esc(RELATION_LABEL[relation] || relation)}</span>
+      <span class="verify-state ${status}">${esc(SEM_STATUS_LABEL[status] || status)}</span></div>
+      <div class="fact-summary"><b>${esc(tag)}</b> · ${esc(summary || '')}
+        ${validFrom ? ` · 自${esc(validFrom)}` : ''}${validTo ? ` 至${esc(validTo)}` : ''}
+        · ${esc(MATURITY_LABEL[maturity] || maturity)} · 置信度${Math.round(confidence * 100)}%</div>
+      ${evidenceLinksHtml(evidenceIds)}</div>`;
+  };
+  const operating = rows.filter(x => businessFactIsOperating(x.f));
+  const exposure = rows.filter(x => !businessFactIsOperating(x.f));
+  $('#app').innerHTML = `
+    <div class="detail-h"><h2>${esc(node[0])}
+      <span class="type-badge ${node[1]}">${TYPE_LABEL[node[1]] || node[1]}</span></h2>
+      <div class="muted small">${parents.length ? `上级：${esc(parents.join(' › '))} · ` : ''}
+        公司池来自已核实业务事实及其下级节点；不是历史涨停原因标签。</div>
+      <div class="metric-guide" style="margin-top:12px">
+        <div class="metric-item"><b>在营业务 ${operating.length} 条</b>relation 为 core/secondary，
+          且成熟度为核心收入、已商业化或早期收入；可进入产业/产品热力。</div>
+        <div class="metric-item"><b>业务敞口 ${exposure.length} 条</b>参股、研发、供应链或拟收购；
+          可用于题材候选池，但不冒充当前主营。</div>
+        <div class="metric-item"><b>覆盖边界</b>当前只展示已完成证据核实的公司；未覆盖公司不会用供应商原因标签猜测补齐。</div>
+      </div>
+    </div>
+    <div class="semantic-section"><div class="semantic-title"><b>核心/现有业务公司</b>
+      <span>可用于客观业务筛选</span></div>
+      <div class="fact-grid">${operating.map(card).join('') ||
+        '<div class="muted small">暂无已核实在营业务公司</div>'}</div></div>
+    <div class="semantic-section"><div class="semantic-title"><b>参股/研发/供应链/拟收购敞口</b>
+      <span>只表示关联强度，不等于主营</span></div>
+      <div class="fact-grid">${exposure.map(card).join('') ||
+        '<div class="muted small">暂无已核实业务敞口</div>'}</div></div>`;
+  bindChips();
+  $('#app').querySelectorAll('.evidence-links a').forEach(a =>
+    a.addEventListener('click', e => e.stopPropagation()));
+}
+
 /* ---------- 视图5：板块热力 ---------- */
 let heatRange = 30;
 let heatCrossRange = 5;
@@ -1384,13 +1478,13 @@ const heatExpanded = new Set();
 const heatLayerAll = new Set();
 const HEAT_LAYER = {
   sector:  { label: '产业', title: '产业热力', cls: 'sector', rgb: '46,107,230',
-             hint: '格子=当天已审核产业标签及同类型下级覆盖的去重涨停家数' },
+             hint: '格子=当天有已核实在营业务事实的去重涨停家数' },
   product: { label: '细分', title: '细分产品热力', cls: 'product', rgb: '0,143,168',
-             hint: '格子=当天已审核产品标签及同类型下级覆盖的去重涨停家数' },
+             hint: '格子=当天有已核实在营产品/服务事实的去重涨停家数' },
   theme:   { label: '题材', title: '交易题材热力', cls: 'theme', rgb: '119,85,204',
              hint: '格子=当天单次涨停题材候选/核实关系覆盖的去重涨停家数' },
   catalyst:{ label: '催化', title: '催化热力', cls: 'catalyst', rgb: '0,182,161',
-             hint: '格子=当天同一催化标签下的去重涨停家数；近5日=最近5个交易日格子之和' },
+             hint: '尚未建立独立的事件—催化结构关系，不展示历史原因标签替代值' },
 };
 const _taxAncestorsCache = {};
 const _heatDayCodesCache = {};
@@ -1407,23 +1501,45 @@ function taxAncestorsAll(name, stack) {
   stack.delete(name);
   return _taxAncestorsCache[name] = out;
 }
-function formalHeatNodes(type) {
+function formalMarketNodes(type) {
   const nodes = new Set([...Object.keys(TAX), ...Object.values(TAX).flat()]);
   return [...nodes].filter(n => statusOf(n) === 'active' && typeOf(n) === type &&
     !virtualOf(n) && heatTaxCids(n).size);
 }
+function formalHeatNodes(type) {
+  if (type === 'sector' || type === 'product')
+    return Object.keys(BUSINESS_CONCEPTS).map(Number)
+      .filter(id => BUSINESS_CONCEPTS[id]?.[1] === type &&
+        BUSINESS_CONCEPTS[id]?.[2] === 'active')
+      .map(businessKey)
+      .filter(key => D.dates.some(d => heatDayCodes(key, d).size));
+  if (type === 'theme') return formalMarketNodes('theme');
+  return []; // 催化在独立 event-catalyst 关系落地前不进入正式热力
+}
 function primarySectorNodes() {
   return formalHeatNodes('sector').filter(n =>
-    ![...taxAncestorsAll(n)].some(a => typeOf(a) === 'sector' && !virtualOf(a)));
+    ![...heatAncestorsAll(n)].some(a => heatTypeOf(a) === 'sector'));
 }
 function heatDayCodes(name, d) {
   const key = name + '\n' + d;
   if (_heatDayCodesCache[key]) return _heatDayCodesCache[key];
   const out = new Set();
-  for (const cid of heatTaxCids(name)) {
-    for (const ev of semanticEventsForCid(cid, d)) out.add(ev[0]);
+  if (isBusinessKey(name)) {
+    const ids = businessDescendants(businessIdOf(name));
+    for (const ev of D.events[d] || []) {
+      if (isTouch(ev)) continue;
+      if (businessFactsOn(ev[0], d, true).some(f => ids.has(+f[10])))
+        out.add(ev[0]);
+    }
+  } else {
+    for (const cid of heatTaxCids(name))
+      for (const ev of semanticEventsForCid(cid, d)) out.add(ev[0]);
   }
   return _heatDayCodesCache[key] = out;
+}
+function heatAncestorsAll(name) {
+  if (!isBusinessKey(name)) return taxAncestorsAll(name);
+  return new Set([...businessAncestors(businessIdOf(name))].map(businessKey));
 }
 function heatOverlap(a, b, dates) {
   let score = 0;
@@ -1436,11 +1552,11 @@ function heatOverlap(a, b, dates) {
 }
 function heatRelationRows(focus, targetType, dates, limit) {
   const focusTotal = dates.reduce((n, d) => n + heatDayCodes(focus, d).size, 0);
-  const fa = taxAncestorsAll(focus);
+  const fa = heatAncestorsAll(focus);
   return formalHeatNodes(targetType).map(nm => {
     const score = heatOverlap(focus, nm, dates);
     const kind = nm === focus ? 'self' : fa.has(nm) ? 'ancestor'
-      : taxAncestorsAll(nm).has(focus) ? 'descendant' : 'cooccur';
+      : heatAncestorsAll(nm).has(focus) ? 'descendant' : 'cooccur';
     return { nm, score, kind, structural: kind !== 'cooccur',
              total: focusTotal, ratio: focusTotal ? score / focusTotal : 0 };
   }).filter(r => r.score || r.kind !== 'cooccur')
@@ -1450,9 +1566,11 @@ function heatRelationRows(focus, targetType, dates, limit) {
 }
 function heatFocusEvents(focus, dates) {
   const out = new Map();
-  for (const cid of heatTaxCids(focus)) {
-    for (const d of dates) for (const ev of semanticEventsForCid(cid, d))
-      out.set(d + '|' + ev[0], { d, ev });
+  for (const d of dates) {
+    const codes = heatDayCodes(focus, d);
+    for (const ev of D.events[d] || [])
+      if (!isTouch(ev) && codes.has(ev[0]))
+        out.set(d + '|' + ev[0], { d, ev });
   }
   return [...out.values()];
 }
@@ -1464,11 +1582,8 @@ function heatFocusStocks(focus, dates) {
       themes: new Set(), reason: '' };
     x.hits++;
     if (d >= x.latest) { x.latest = d; x.reason = ev[8] || ''; }
-    for (const cid of ev[9] || []) {
-      const nm = D.concepts[cid]?.[0];
-      if (!nm || statusOf(nm) !== 'active') continue;
-      if (typeOf(nm) === 'product') x.products.add(nm);
-    }
+    for (const f of businessFactsOn(code, d, false))
+      x.products.add(`${f[0]}（${RELATION_LABEL[f[2]] || f[2]}）`);
     for (const link of eventThemesOf(code, d)) {
       const nm = D.concepts[link[0]]?.[0];
       if (nm && nm !== focus) x.themes.add(nm);
@@ -1493,7 +1608,7 @@ function layerOverviewHtml(type, title, desc, nodes) {
   return `<section class="layer-card ${def.cls}">
     <div class="layer-head"><b>${title}</b><span>${desc}</span></div>
     ${rows.length ? rows.map(r => `<button class="layer-hot${heatFocus === r.nm ? ' on' : ''}"
-      data-focus="${esc(r.nm)}"><span class="hot-name">${esc(r.nm)}${
+      data-focus="${esc(r.nm)}"><span class="hot-name">${esc(heatNameOf(r.nm))}${
         r.start ? '<span class="start-mark">启动信号</span>' : ''}</span>
       <span class="hot-bar"><i style="width:${Math.max(3, r.sum5 / vmax * 100).toFixed(0)}%"></i></span>
       <strong>${r.sum5}</strong></button>`).join('') :
@@ -1515,7 +1630,7 @@ function crossColumnHtml(type, title, note, rows) {
     <div class="cross-col-h">${title}<span>${note}</span></div>
     ${rows.length ? rows.map(r => `<button class="cross-node${r.nm === heatFocus ? ' on' : ''}"
       data-focus="${esc(r.nm)}"><div class="cross-node-top">
-      <span class="cn-name">${esc(r.nm)}</span><strong>${r.score || '—'}</strong></div>
+      <span class="cn-name">${esc(heatNameOf(r.nm))}</span><strong>${r.score || '—'}</strong></div>
       <div class="cross-meter"><i style="width:${r.score ? Math.max(3, r.ratio * 100).toFixed(0) : 0}%"></i></div>
       <div class="cross-node-meta">${relationMetricText(r)}</div></button>`).join('') :
       '<div class="cross-empty">这个窗口暂无归属覆盖或同股共现</div>'}</section>`;
@@ -1525,16 +1640,16 @@ function layerHeatRowHtml(r, dates, vmax, type) {
   const cells = r.series.map((v, i) => {
     const a = v ? Math.min(1, Math.sqrt(v / vmax)) : 0;
     const fg = a > 0.55 ? '#fff' : 'var(--ink2)';
-    return `<td class="cell" data-d="${dates[i]}" data-nm="${esc(r.nm)}" data-v="${v}"
+    return `<td class="cell" data-d="${dates[i]}" data-nm="${esc(r.nm)}"
+      data-label="${esc(heatNameOf(r.nm))}" data-v="${v}"
       style="background:rgba(${def.rgb},${a.toFixed(2)});color:${fg}">${v || ''}</td>`;
   }).join('');
   const action = type === 'catalyst' ? `data-detail="${esc(r.nm)}"` : `data-focus="${esc(r.nm)}"`;
   return `<tr><td class="rowlab"><span class="row-type ${def.cls}"></span>
-    <span class="lname lvl1" ${action}>${esc(r.nm)}</span>
+    <span class="lname lvl1" ${action}>${esc(heatNameOf(r.nm))}</span>
     <span class="rsum">近5日${r.sum5}股次</span></td>${cells}</tr>`;
 }
 function renderHeat() {
-  if (!taxRoots.length) { $('#app').innerHTML = '<div class="empty">未配置 taxonomy.json</div>'; return; }
   const sortBy5 = arr => [...arr].sort((a, b) =>
     heatTaxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
     heatTaxSeries(a).slice(-5).reduce((x, y) => x + y, 0));
@@ -1544,6 +1659,10 @@ function renderHeat() {
   const themeNodes = sortBy5(formalHeatNodes('theme'));
   const catalystNodes = sortBy5(formalHeatNodes('catalyst'));
   const focusNodes = [...allSectorNodes, ...productNodes, ...themeNodes];
+  if (!focusNodes.length) {
+    $('#app').innerHTML = '<div class="empty">客观业务图谱和单次题材归因尚无可展示数据</div>';
+    return;
+  }
   if (!heatFocus || !focusNodes.includes(heatFocus))
     heatFocus = themeNodes[0] || productNodes[0] || sectorNodes[0] || '';
 
@@ -1562,6 +1681,12 @@ function renderHeat() {
     catalyst: heatRelationRows(heatFocus, 'catalyst', crossDates, 8),
   };
   const focusStocks = heatFocusStocks(heatFocus, crossDates);
+  const coverageDates = D.dates.slice(-5);
+  const recentZtStocks = new Set();
+  for (const d of coverageDates) for (const ev of D.events[d] || [])
+    if (!isTouch(ev)) recentZtStocks.add(ev[0]);
+  const operatingCoveredStocks = [...recentZtStocks].filter(code =>
+    coverageDates.some(d => businessFactsOn(code, d, true).length));
   const heatTableHtml = (type, nodes, limit) => {
     const def = HEAT_LAYER[type];
     const shown = heatLayerAll.has(type) ? nodes.slice(0, 80) : nodes.slice(0, limit);
@@ -1588,8 +1713,9 @@ function renderHeat() {
     ['sector', '产业', allSectorNodes],
     ['product', '细分产品', productNodes],
     ['theme', '交易题材', themeNodes],
-  ].map(([, label, nodes]) => [...nodes].sort((a, b) => a.localeCompare(b, 'zh-CN'))
-    .map(nm => `<option value="${esc(nm)}" label="${label}"></option>`).join('')).join('');
+  ].map(([, label, nodes]) => [...nodes].sort((a, b) =>
+    heatNameOf(a).localeCompare(heatNameOf(b), 'zh-CN'))
+    .map(nm => `<option value="${esc(heatSearchLabel(nm))}" label="${label}"></option>`).join('')).join('');
   let html = `
   <div class="datebar"><h2 style="margin:0">板块热力</h2>
     <span class="muted small">产业看赛道、细分看业务落点、题材看单次涨停叙事 · 三层独立统计</span>
@@ -1600,9 +1726,11 @@ function renderHeat() {
     </div></div>
   <div class="heat-guide">
     <div class="guide-copy"><b>产业 × 细分产品 × 题材交叉透视</b>
-      <span class="muted small">产业/产品来自已审核原因标签；交易题材来自单次涨停归因，候选关系不等于已核实</span></div>
+      <span class="muted small">产业/产品只来自有证据的公司在营业务；交易题材来自每次涨停归因。历史供应商原因不再进入正式热力</span>
+      <span class="muted small">近5日涨停股在营业务覆盖 ${operatingCoveredStocks.length}/${recentZtStocks.size}；
+        未覆盖股票不会被历史标签猜测补齐，因此产业/产品榜当前会明显偏少</span></div>
     <div class="focus-picker"><input id="heat-focus-input" list="heat-focus-list"
-      value="${esc(heatFocus)}" placeholder="输入产业、产品或题材" aria-label="搜索观察标签">
+      value="${esc(heatSearchLabel(heatFocus))}" placeholder="输入产业、产品或题材" aria-label="搜索观察标签">
       <datalist id="heat-focus-list">${focusOptions}</datalist><button id="heat-focus-go">查看</button></div>
     <div class="seg" style="margin-left:0">
       <button id="hc1" class="${heatCrossRange === 1 ? 'on' : ''}">当日</button>
@@ -1610,23 +1738,27 @@ function renderHeat() {
       <button id="hc20" class="${heatCrossRange === 20 ? 'on' : ''}">近20日</button>
     </div></div>
   <div class="metric-guide" aria-label="指标计算口径">
-    <div class="metric-item"><b>热力值（格子）</b>当天标签范围内的去重涨停家数；同股同日只算 1 家。</div>
+    <div class="metric-item"><b>产业/产品热力</b>当天涨停股中，具备该项已核实在营业务事实的去重家数；拟收购、参股、研究不计入。</div>
+    <div class="metric-item"><b>题材热力</b>当天单次涨停归因命中该题材的去重家数；候选与已核实状态在个股页分别展示。</div>
     <div class="metric-item"><b>股次 / 近5日</b>逐日去重家数相加；同一股票跨日涨停会重复计次。</div>
-    <div class="metric-item"><b>归属 / 下级覆盖</b>交叉股次 ÷ 观察对象股次；关系来自 taxonomy 层级。</div>
+    <div class="metric-item"><b>归属 / 下级覆盖</b>交叉股次 ÷ 观察对象股次；产业/产品关系来自独立业务图谱，题材关系来自题材层级。</div>
     <div class="metric-item"><b>同股共现（原“共振”）</b>两个非包含标签在同一交易日命中同一股票；只表示关联，不表示因果。</div>
     <div class="metric-item"><b>启动信号</b>近3日均≥3家，且 <code>(近3日均+0.25)/(前15日均+0.25)≥2.2</code>；只表示量能加速，仍需核实共同催化。</div>
     <div class="metric-item"><b>日期窗口</b>右上 30/60/全部控制热力表与轮动；交叉透视单独使用 1/5/20 日。</div>
   </div>
   <div class="layer-overview">
-    ${layerOverviewHtml('sector', '产业', '长期赛道 · 近5日股次', sectorNodes)}
-    ${layerOverviewHtml('product', '细分产品', '业务落点 · 近5日股次', productNodes)}
+    ${layerOverviewHtml('sector', '产业', '已核实在营业务 · 近5日股次', sectorNodes)}
+    ${layerOverviewHtml('product', '细分产品', '已核实产品/服务 · 近5日股次', productNodes)}
     ${layerOverviewHtml('theme', '交易题材', '单次归因 · 近5日股次', themeNodes)}
   </div>
   <section class="cross-card">
-    <div class="cross-head"><span class="type-badge ${HEAT_LAYER[typeOf(heatFocus)]?.cls || 'theme'}">${
-      TYPE_LABEL[typeOf(heatFocus)] || '标签'}</span>
-      <h3>观察对象：<span class="focus-name">${esc(heatFocus)}</span></h3>
-      ${nameToCid[heatFocus] != null ? `<button class="navbtn heat-detail" data-detail="${esc(heatFocus)}">查看标签详情</button>` : ''}
+    <div class="cross-head"><span class="type-badge ${HEAT_LAYER[heatTypeOf(heatFocus)]?.cls || 'theme'}">${
+      TYPE_LABEL[heatTypeOf(heatFocus)] || '标签'}</span>
+      <h3>观察对象：<span class="focus-name">${esc(heatNameOf(heatFocus))}</span></h3>
+      ${isBusinessKey(heatFocus)
+        ? `<button class="navbtn heat-business-detail" data-business="${businessIdOf(heatFocus)}">查看业务公司池</button>`
+        : nameToCid[heatFocus] != null
+          ? `<button class="navbtn heat-detail" data-detail="${esc(heatFocus)}">查看题材详情</button>` : ''}
       <span class="cross-summary">观察股次 ${focusTotal}（近${heatCrossRange}日逐日去重后相加）${
         latestHit ? ` · 最近活跃 ${latestHit}` : ' · 暂无涨停记录'}</span></div>
     <div class="cross-grid">
@@ -1636,10 +1768,10 @@ function renderHeat() {
     </div>
     <div class="driver-strip"><span class="driver-title">本次催化</span>${
       relations.catalyst.length ? relations.catalyst.map(r =>
-        `<button class="driver-chip" data-detail="${esc(r.nm)}">${esc(r.nm)} · 同股共现${r.score}股次</button>`).join('')
-        : '<span class="muted">窗口内没有与观察对象同时出现的已审核催化标签</span>'}</div>
+        `<button class="driver-chip" data-detail="${esc(r.nm)}">${esc(heatNameOf(r.nm))} · 同股共现${r.score}股次</button>`).join('')
+        : '<span class="muted">催化尚未建立独立事件关系；历史原因标签不再冒充正式催化</span>'}</div>
     <div class="cross-stocks"><div class="cross-stocks-h"><b>窗口内股票</b>
-      <span class="muted small">近${heatCrossRange}日命中观察对象的 ${focusStocks.length} 只股票；产业/产品来自原因标签，题材来自单次涨停归因</span></div>
+      <span class="muted small">近${heatCrossRange}日命中观察对象的 ${focusStocks.length} 只股票；业务来自证据事实，题材来自单次涨停归因</span></div>
       ${focusStocks.length ? `<div class="cross-stock-grid">${focusStocks.slice(0, 16).map(s => {
         const tags = [...s.products, ...s.themes].slice(0, 4);
         return `<div class="cross-stock" data-stock="${s.code}"><div class="stock-main">
@@ -1677,7 +1809,7 @@ function renderHeat() {
         fill="none" stroke="${RC[si % 8]}" stroke-width="2.5" stroke-linejoin="round" opacity=".85"></polyline>`;
       const lr = ranks[si][win.length - 1];
       rg += `<text x="${W - padR + 8}" y="${(RY(lr) + 3.5).toFixed(1)}"
-        style="fill:${RC[si % 8]};font-size:11px">#${lr + 1} ${esc(s.nm)}</text>`;
+        style="fill:${RC[si % 8]};font-size:11px">#${lr + 1} ${esc(heatNameOf(s.nm))}</text>`;
     });
     const stepR = Math.ceil(win.length / 8);
     win.forEach((dd, i) => {
@@ -1741,8 +1873,13 @@ function renderHeat() {
   $('#hc20').onclick = () => { heatCrossRange = 20; renderHeat(); };
   const applyFocusInput = () => {
     const v = $('#heat-focus-input').value.trim();
-    if (!focusNodes.includes(v)) { $('#heat-focus-input').value = heatFocus; return; }
-    heatFocus = v; renderHeat();
+    const matched = focusNodes.find(nm => heatSearchLabel(nm) === v) ||
+      focusNodes.find(nm => heatNameOf(nm) === v);
+    if (!matched) {
+      $('#heat-focus-input').value = heatSearchLabel(heatFocus);
+      return;
+    }
+    heatFocus = matched; renderHeat();
   };
   $('#heat-focus-go').onclick = applyFocusInput;
   $('#heat-focus-input').addEventListener('change', applyFocusInput);
@@ -1753,6 +1890,8 @@ function renderHeat() {
     el.addEventListener('click', () => { heatFocus = el.dataset.focus; renderHeat(); }));
   document.querySelectorAll('[data-detail]').forEach(el =>
     el.addEventListener('click', () => gotoTaxNode(el.dataset.detail)));
+  document.querySelectorAll('[data-business]').forEach(el =>
+    el.addEventListener('click', () => go('#/business/' + el.dataset.business)));
   document.querySelectorAll('[data-stock]').forEach(el =>
     el.addEventListener('click', () => go('#/stock/' + el.dataset.stock)));
   document.querySelectorAll('[data-layer-more]').forEach(el =>
@@ -1763,11 +1902,11 @@ function renderHeat() {
     }));
   document.querySelectorAll('.heatmap .cell[data-d]').forEach(el => {
     el.addEventListener('click', () => {
-      if (+el.dataset.v > 0)
+      if (+el.dataset.v > 0 && !isBusinessKey(el.dataset.nm))
         go('#/tagday/' + encodeURIComponent(el.dataset.nm) + '/' + el.dataset.d);
     });
     el.addEventListener('mousemove', e =>
-      showTip(e, `${el.dataset.nm} · ${el.dataset.d} · ${el.dataset.v} 家涨停`));
+      showTip(e, `${el.dataset.label || el.dataset.nm} · ${el.dataset.d} · ${el.dataset.v} 家涨停`));
     el.addEventListener('mouseleave', hideTip);
   });
   bindChips();
@@ -2029,6 +2168,24 @@ function drawTagTimeline(nm, di) {
 
 /* ---------- 视图4：批量归类 ---------- */
 let batchText = '';
+function batchThreeLayerHtml(code, hist) {
+  const zts = hist.filter(x => !isTouch(x.ev));
+  const attributed = [...zts].reverse().filter(({ d }) => eventThemesOf(code, d).length)
+    .slice(0, 4);
+  const eventsHtml = attributed.length ? attributed.map(({ d }) =>
+    `<div class="trow"><span class="tlabel tl-theme">${d}</span>
+      <div class="tbody">${eventThemeHtml(code, d)}</div></div>`).join('')
+    : '<div class="muted small" style="margin-top:8px">近1年涨停尚无结构化题材归因</div>';
+  const legacyCount = new Set(hist.flatMap(({ ev }) => ev[9] || [])).size;
+  return `${businessFactsHtml(code)}
+    <div class="semantic-section"><div class="semantic-title">
+      <b>每次涨停归因</b><span>按交易日记录市场当时炒作什么；候选不等于人工核实</span>
+    </div>${eventsHtml}</div>
+    ${legacyCount ? `<details class="legacy-details"><summary>历史原因标签（审计线索）
+      <span>${legacyCount}个，默认不参与业务筛选与正式题材统计</span></summary>
+      <div class="legacy-note">仅保留供应商原始原因经归一化后的历史频次，不能回答公司长期做什么，也不能直接证明某次涨停题材。</div>
+      <div style="margin-top:6px">${typedTagRows(hist, { maxTheme: 6 })}</div></details>` : ''}`;
+}
 function renderBatch() {
   $('#app').innerHTML = `
   <h2>批量归类 <span class="muted small">粘贴任意文本（股票代码/名称混排均可），快速判断属于什么板块、板块热不热</span></h2>
@@ -2069,7 +2226,7 @@ function runBatch() {
         <span class="cname" data-code="${code}">${esc(D.stocks[code])}</span>
         <span class="code muted small">${code} · ${boardOf(code)}</span>
         <span class="hist">涨停 ${nZt} 次${nTc ? ' · 触及 ' + nTc + ' 次' : ''} · 最近 ${hist[hist.length - 1].d}</span>
-      </div>${typedTagRows(hist, { maxTheme: 6 })}</div>`;
+      </div>${batchThreeLayerHtml(code, hist)}</div>`;
   }
   $('#bres').innerHTML = html;
   bindChips();
@@ -2235,8 +2392,8 @@ function renderTags(sub) {
   $('#app').innerHTML = `
   <div class="datebar"><h2 style="margin:0">标签中心</h2>
     <div class="subtabs" style="margin:0 0 0 12px">
-      <button data-t="tree" class="${TAGS.tab === 'tree' ? 'on' : ''}">标签全景</button>
-      <button data-t="filter" class="${TAGS.tab === 'filter' ? 'on' : ''}">全局筛选</button>
+      <button data-t="tree" class="${TAGS.tab === 'tree' ? 'on' : ''}">历史标签治理</button>
+      <button data-t="filter" class="${TAGS.tab === 'filter' ? 'on' : ''}">历史原因筛选</button>
       <button data-t="gov" class="${TAGS.tab === 'gov' ? 'on' : ''}">治理台</button>
     </div></div>
   <div id="tagsub"></div>`;
@@ -2268,7 +2425,7 @@ function renderTagsTree() {
   const winDates = TAGS.days ? D.dates.slice(-TAGS.days) : D.dates;
   const viewSeries = nm => heatBucketOf(nm) ? heatTaxSeries(nm) : taxSeries(nm);
   const sum5 = nm => viewSeries(nm).slice(-TAGS.days || undefined).reduce((a, b) => a + b, 0);
-  const typedRoots = type => formalHeatNodes(type).filter(n =>
+  const typedRoots = type => formalMarketNodes(type).filter(n =>
     !taxParentsOf(n).some(p => typeOf(p) === type && statusOf(p) === 'active'));
   const allNodes = [...new Set([...Object.keys(TAX), ...Object.values(TAX).flat()])];
   const otherRoots = allNodes.filter(n => !heatBucketOf(n) &&
@@ -2463,7 +2620,12 @@ function renderTagsGov() {
   const todayZt = (D.events[dN] || []).filter(ev => !isTouch(ev));
   const uncov = todayZt.filter(ev => !ev[9].some(c => inTreeCids.has(c)));
   const backlog = Object.entries(META).filter(([, v]) => v[1] === 'candidate').length;
-  const businessCovered = todayZt.filter(ev => (BUSINESS_FACTS[ev[0]] || []).length).length;
+  const businessAnyCovered = todayZt.filter(ev =>
+    businessFactsOn(ev[0], dN, false).length).length;
+  const businessOperatingCovered = todayZt.filter(ev =>
+    businessFactsOn(ev[0], dN, true).length).length;
+  const businessUncovered = todayZt.filter(ev =>
+    !businessFactsOn(ev[0], dN, false).length);
   const businessCandidateRows = Object.entries(BUSINESS_FACT_CANDIDATES)
     .flatMap(([code, rows]) => rows.map(row => ({ code, row })))
     .sort((a, b) => b.row[1] - a.row[1] || b.row[6] - a.row[6]);
@@ -2535,16 +2697,28 @@ function renderTagsGov() {
     <div class="stat"><div class="v">${uncov.length}</div><div class="k">今日未入树涨停</div></div>
     <div class="stat"><div class="v">${backlog}</div><div class="k">待审核积压</div></div>
     <div class="stat"><div class="v">${queue.length}</div><div class="k">近10日活跃待审</div></div>
+    <div class="stat"><div class="v">${todayZt.length ? Math.round(businessAnyCovered / todayZt.length * 100) + '%' : '—'}</div>
+      <div class="k">${dN.slice(5)} 客观业务覆盖</div></div>
   </div>
   <div class="card"><div class="card-h"><span class="cname">语义层待办</span>
     <span class="hist">公司业务事实与“某次涨停为什么涨”分开治理；候选不能自动升级为已核实</span></div>
     <div class="small muted" style="padding:0 8px 8px">
-      ${dN.slice(5)} 涨停股业务事实覆盖 <b>${businessCovered}/${todayZt.length}</b>
+      ${dN.slice(5)} 涨停股客观业务覆盖 <b>${businessAnyCovered}/${todayZt.length}</b>
+      · 可计入产业/产品热力的在营业务 <b>${businessOperatingCovered}/${todayZt.length}</b>
       · 官方年报业务候选 <b>${businessCandidateRows.length}</b>
       · 近10日单次题材待核实 <b>${attributionQueue.length}</b>
       · 已核实关系 <b>${verifiedAttributions}</b>
       · 题材业务映射 <b>${Object.values(THEME_BUSINESS_CANDIDATES).reduce((n, rows) => n + rows.length, 0)}</b> 条候选公司关系
     </div>
+    ${businessUncovered.length ? `<div class="semantic-title" style="padding:2px 8px 0">
+      <b>客观业务缺口（今日优先）</b><span>先抓年报并人工复核；禁止拿历史涨停原因直接填主营</span></div>
+      <div>${businessUncovered.slice(0, 30).map(ev =>
+        `<div class="govrow" data-code="${ev[0]}" style="cursor:pointer">
+          <span class="verify-state candidate">缺业务事实</span>
+          <span class="gname">${esc(D.stocks[ev[0]] || ev[0])}</span>
+          <span class="gmeta">${ev[0]} · ${lbBadge(ev)} · 同花顺原始原因仅作取证线索</span>
+          <span class="sugg">${esc(ev[8] || '无原始原因')}</span>
+        </div>`).join('')}</div>` : ''}
     ${businessCandidateRows.length ? `<div class="semantic-title" style="padding:2px 8px 0">
       <b>官方年报业务候选</b><span>只进入人工复核队列；确认后才可合并到 business_facts.json</span></div>
       <div>${businessCandidateRows.slice(0, 30).map(({ code, row }) => {

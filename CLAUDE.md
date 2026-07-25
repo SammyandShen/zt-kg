@@ -43,13 +43,18 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
   提示词要求自然语句禁止"+"串标签。claude 不在 launchd PATH 时脚本自动找
   ~/.local/bin 等位置。改提示词后用 --force 重写。
 - **四段语义闭环**：
-  1. `stock_business_facts` 回答公司客观做什么；
+  1. `business_concepts` + `business_concept_edges` 是独立的公司业务图谱，
+     `stock_business_facts` 回答公司客观做什么；
   2. `event_theme_links` 回答某次涨停按什么题材交易；
   3. `theme_episodes` 回答该题材这一轮从何时启动、当前处于什么阶段。
   4. `theme_business_mappings` 把交易题材映射回业务标签，生成可研究公司池。
   `evidence_items` 及关联表保存证据。由供应商原因自动生成的题材关系必须保持
   `candidate`，自动轮次必须保持 `provisional/closed`；只有人工或后续核验流程才能
   升级为 `verified`。拟收购必须标 `planned_acquisition/proposed`，不得冒充现有主营。
+  公司业务概念与交易题材 `concepts` **禁止共用 id 或靠名称隐式连接**；同名“脑机接口”
+  可以同时存在于业务命名空间和题材命名空间。产业/细分产品热力只统计
+  `core|secondary` 且已商业化的 verified 业务事实；参股、研发、供应链和拟收购只进入
+  题材反查候选池，不进入公司在营产业热力。
   库内新闻只有在同时点名股票与具体题材时，才绑定到对应的
   `event_theme_links` 作为题材级旁证并提高候选置信度；仍不得自动升级为 verified。
 - **官方主营候选**：`fetch_company_reports.py` 从巨潮资讯抓取最新完整年报，
@@ -79,7 +84,7 @@ python3 scripts/fetch_news.py --days 5         # 涨停关联新闻（东财搜�
 python3 scripts/fetch_event_announcements.py --days 2 # 涨停日前后2天巨潮官方公告
 python3 scripts/fetch_company_reports.py --days 5 # 为近期涨停股抓取巨潮最新完整年报
 python3 scripts/extract_business_candidates.py    # 从年报生成待人工复核的主营候选
-python3 scripts/query.py review-business          # 查看主营候选、原文和官方来源
+python3 scripts/query.py review-business          # 查看主营候选、官方来源与近10日业务缺口队列
 python3 scripts/rebuild_tags.py --dry-run      # 预演 aliases/expansions 变更影响（不写库）
 python3 scripts/rebuild_tags.py                # aliases/expansions 改后重建派生表
 python3 scripts/rebuild_semantic_layer.py --dry-run # 预演公司业务/涨停题材/题材轮次

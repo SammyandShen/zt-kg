@@ -214,9 +214,31 @@ CREATE TABLE IF NOT EXISTS evidence_items (
 CREATE INDEX IF NOT EXISTS idx_evidence_subject
     ON evidence_items(subject_code, published_at);
 
+-- 公司客观业务使用独立命名空间，不能与交易题材 concepts 共用 id。
+-- 例如“脑机接口”既可以是公司的业务敞口，也可以是某轮交易题材；同名不等于同一实体。
+CREATE TABLE IF NOT EXISTS business_concepts (
+    id           INTEGER PRIMARY KEY,
+    name         TEXT NOT NULL,
+    concept_type TEXT NOT NULL,     -- sector/product
+    status       TEXT NOT NULL DEFAULT 'active', -- active/retired
+    source       TEXT NOT NULL DEFAULT 'manual',
+    created_at   TEXT NOT NULL,
+    updated_at   TEXT NOT NULL,
+    UNIQUE (name, concept_type)
+);
+
+CREATE TABLE IF NOT EXISTS business_concept_edges (
+    parent_id  INTEGER NOT NULL REFERENCES business_concepts(id) ON DELETE CASCADE,
+    child_id   INTEGER NOT NULL REFERENCES business_concepts(id) ON DELETE CASCADE,
+    source     TEXT NOT NULL DEFAULT 'manual',
+    created_at TEXT NOT NULL,
+    PRIMARY KEY (parent_id, child_id)
+);
+
 CREATE TABLE IF NOT EXISTS stock_business_facts (
     id             INTEGER PRIMARY KEY,
     code           TEXT NOT NULL REFERENCES stocks(code),
+    business_concept_id INTEGER REFERENCES business_concepts(id),
     tag_name       TEXT NOT NULL,
     fact_type      TEXT NOT NULL,     -- sector/subindustry/product/service/growth/attribute
     relation_type  TEXT NOT NULL,     -- core/secondary/research/holding/supply_chain/planned_acquisition
@@ -386,6 +408,13 @@ def open_db() -> sqlite3.Connection:
     cols = {r[1] for r in conn.execute("PRAGMA table_info(limit_up_events)")}
     if "pool" not in cols:
         conn.execute("ALTER TABLE limit_up_events ADD COLUMN pool TEXT NOT NULL DEFAULT 'zt'")
+        conn.commit()
+    fact_cols = {r[1] for r in conn.execute("PRAGMA table_info(stock_business_facts)")}
+    if "business_concept_id" not in fact_cols:
+        conn.execute(
+            "ALTER TABLE stock_business_facts "
+            "ADD COLUMN business_concept_id INTEGER REFERENCES business_concepts(id)"
+        )
         conn.commit()
     return conn
 

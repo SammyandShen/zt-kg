@@ -1,9 +1,13 @@
 {
-  "$note": "人工核实的公司业务事实。这里只写公司客观属性，不写某次涨停题材；每条记录必须带证据、关系类型、成熟度和有效期。由 rebuild_semantic_layer.py 导入，原始行情库不受影响。",
+  "$note": "人工核实的公司业务事实。这里只写公司客观属性，不写某次涨停题材；每条记录必须带独立业务图谱路径 business_path、证据、关系类型、成熟度和有效期。由 rebuild_semantic_layer.py 导入，原始行情库不受影响。",
   "facts": [
     {
       "code": "002173",
       "tag_name": "医疗服务",
+      "business_path": [
+        {"name": "医药医疗", "type": "sector"},
+        {"name": "医疗服务", "type": "product"}
+      ],
       "fact_type": "service",
       "relation_type": "core",
       "maturity": "core_revenue",
@@ -28,6 +32,10 @@
     {
       "code": "002173",
       "tag_name": "脑机接口",
+      "business_path": [
+        {"name": "医药医疗", "type": "sector"},
+        {"name": "脑机接口", "type": "product"}
+      ],
       "fact_type": "growth",
       "relation_type": "holding",
       "maturity": "holding",
@@ -52,6 +60,11 @@
     {
       "code": "600962",
       "tag_name": "浓缩果汁",
+      "business_path": [
+        {"name": "大消费", "type": "sector"},
+        {"name": "食品饮料", "type": "product"},
+        {"name": "浓缩果汁", "type": "product"}
+      ],
       "fact_type": "product",
       "relation_type": "core",
       "maturity": "core_revenue",
@@ -76,6 +89,10 @@
     {
       "code": "600962",
       "tag_name": "半导体工程服务",
+      "business_path": [
+        {"name": "电子信息工程服务", "type": "sector"},
+        {"name": "半导体工程服务", "type": "product"}
+      ],
       "fact_type": "growth",
       "relation_type": "planned_acquisition",
       "maturity": "proposed",
@@ -93,6 +110,286 @@
           "published_at": "2026-02-26",
           "subject_status": "direct",
           "claim": "国投中鲁拟购买中国电子工程设计院100%股份；标的公司电子信息产业客户集中于半导体、新型显示及上下游领域。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "000603",
+      "tag_name": "有色金属矿采选",
+      "business_path": [
+        {"name": "有色金属", "type": "sector"},
+        {"name": "有色金属矿采选", "type": "product"}
+      ],
+      "fact_type": "product",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.95,
+      "summary": "公司主营贵金属、有色金属矿的采选和销售，属于现有核心业务。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:000603:2025:贵金属-有色金属矿",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "盛达金属资源股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225242915.PDF",
+          "published_at": "2026-04-29",
+          "subject_status": "direct",
+          "claim": "公司主营贵金属、有色金属矿的采选和销售。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "000815",
+      "tag_name": "数据中心服务",
+      "business_path": [
+        {"name": "数字基础设施", "type": "sector"},
+        {"name": "数据中心服务", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.96,
+      "summary": "公司数据中心业务提供机架出租、网络接入及机架运行维护等服务。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:000815:2025:数据中心",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "中冶美利云产业投资股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225160605.PDF",
+          "published_at": "2026-04-24",
+          "subject_status": "direct",
+          "claim": "公司数据中心业务涵盖机架出租、网络接入及机架运行维护等服务。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "001258",
+      "tag_name": "新能源发电与储能运营",
+      "business_path": [
+        {"name": "新能源", "type": "sector"},
+        {"name": "新能源发电与储能运营", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.96,
+      "summary": "公司主营风力发电、光伏发电及储能项目的投资、开发、建设和运营。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:001258:2025:风力发电-光伏发电及储能项目的投资-开发-建设和运营",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "新疆立新能源股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225150997.PDF",
+          "published_at": "2026-04-23",
+          "subject_status": "direct",
+          "claim": "公司的主营业务为风力发电、光伏发电及储能项目的投资、开发、建设和运营。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "001388",
+      "tag_name": "工业智慧物联网解决方案",
+      "business_path": [
+        {"name": "工业数字化", "type": "sector"},
+        {"name": "工业智慧物联网解决方案", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.94,
+      "summary": "公司面向电力、通信等行业提供数字化、智能化的工业智慧物联网解决方案。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:001388:2025:工业智慧物联网-AIoT-",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "山东信通电子股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225167759.PDF",
+          "published_at": "2026-04-24",
+          "subject_status": "direct",
+          "claim": "公司主要面向电力、通信等行业提供数字化、智能化解决方案，致力成为工业智慧物联网（AIoT）解决方案提供商。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "002197",
+      "tag_name": "数据中心服务",
+      "business_path": [
+        {"name": "数字基础设施", "type": "sector"},
+        {"name": "数据中心服务", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.96,
+      "summary": "公司主营IDC业务，为客户提供数据中心服务器托管及相关服务。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:002197:2025:IDC",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "深圳市证通电子股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225180677.PDF",
+          "published_at": "2026-04-25",
+          "subject_status": "direct",
+          "claim": "公司主营IDC业务为数据中心服务器托管服务，致力于为客户提供数据中心服务。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "002432",
+      "tag_name": "医疗健康产品与服务",
+      "business_path": [
+        {"name": "医药医疗", "type": "sector"},
+        {"name": "医疗健康产品与服务", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.94,
+      "summary": "公司医疗健康经营性主业包括IVD、家用医疗健康电子产品和互联网医疗服务。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:002432:2025:医疗健康",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "天津九安医疗电子股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225246455.PDF",
+          "published_at": "2026-04-29",
+          "subject_status": "direct",
+          "claim": "公司确立医疗健康经营性主业，业务涉及IVD及家用医疗健康电子产品和互联网医疗。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "003001",
+      "tag_name": "岩土工程服务",
+      "business_path": [
+        {"name": "工程建设服务", "type": "sector"},
+        {"name": "岩土工程服务", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.97,
+      "summary": "公司主营岩土工程服务，业务包括设计咨询、施工和材料销售。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:003001:2025:岩土工程服务",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "北京中岩大地科技股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-21/1225133591.PDF",
+          "published_at": "2026-04-21",
+          "subject_status": "direct",
+          "claim": "公司的主营业务为岩土工程服务，业务范围包含设计咨询、施工和材料销售。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "600664",
+      "tag_name": "医药研发与制造",
+      "business_path": [
+        {"name": "医药医疗", "type": "sector"},
+        {"name": "医药研发与制造", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.96,
+      "summary": "公司医药研发与制造业务覆盖化学药、中药、生物药及大健康产品等领域。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:600664:2025:医药研发与制造",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "哈药集团股份有限公司2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225144814.PDF",
+          "published_at": "2026-04-23",
+          "subject_status": "direct",
+          "claim": "公司医药研发与制造业务涵盖化学药、中药、生物药、大健康产品、医美产品等领域。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "603580",
+      "tag_name": "轻型输送带",
+      "business_path": [
+        {"name": "工业设备零部件", "type": "sector"},
+        {"name": "轻型输送带", "type": "product"}
+      ],
+      "fact_type": "product",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.97,
+      "summary": "公司专业从事轻型输送带的研发、生产及销售。",
+      "valid_from": "2024-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:603580:2024:轻型输送带",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "艾艾精工2024年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223392574.PDF",
+          "published_at": "2025-04-29",
+          "subject_status": "direct",
+          "claim": "公司是专业从事轻型输送带的研发、生产及销售。",
+          "reliability": 0.99
+        }
+      ]
+    },
+    {
+      "code": "603619",
+      "tag_name": "油气综合服务",
+      "business_path": [
+        {"name": "油气产业", "type": "sector"},
+        {"name": "油气综合服务", "type": "product"}
+      ],
+      "fact_type": "service",
+      "relation_type": "core",
+      "maturity": "core_revenue",
+      "status": "verified",
+      "confidence": 0.96,
+      "summary": "公司以油气勘探开发、钻完井工程和石油装备制造三大业务提供一体化油气开发服务。",
+      "valid_from": "2025-01-01",
+      "evidence": [
+        {
+          "evidence_key": "cninfo_report:603619:2025:勘探开发-钻完井工程-高端装备制造",
+          "evidence_type": "report",
+          "source_name": "巨潮资讯",
+          "title": "中曼石油2025年年度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-15/1225103636.PDF",
+          "published_at": "2026-04-15",
+          "subject_status": "direct",
+          "claim": "公司深耕勘探开发、钻完井工程、高端装备制造三大核心业务，为客户提供一体化油气开发服务。",
           "reliability": 0.99
         }
       ]

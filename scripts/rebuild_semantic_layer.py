@@ -103,11 +103,64 @@ def upsert_evidence(conn, raw: dict, code: str | None = None,
     ).fetchone()[0]
 
 
+def upsert_business_path(conn, raw: dict, tag: str, now: str) -> int:
+    """导入公司业务层级，并返回事实指向的末级业务概念 id。"""
+    path = raw.get("business_path")
+    if not isinstance(path, list) or not path:
+        raise ValueError(f"business_facts {tag} 缺少 business_path")
+    nodes: list[int] = []
+    for i, node in enumerate(path):
+        if not isinstance(node, dict):
+            raise ValueError(f"business_facts {tag}.business_path[{i}] 必须是对象")
+        name = str(node.get("name") or "").strip()
+        concept_type = str(node.get("type") or "").strip()
+        if not name or concept_type not in {"sector", "product"}:
+            raise ValueError(
+                f"business_facts {tag}.business_path[{i}] 需要 name，"
+                "type 只能是 sector/product"
+            )
+        if i == 0 and concept_type != "sector":
+            raise ValueError(f"business_facts {tag}.business_path 必须从 sector 开始")
+        conn.execute(
+            """
+            INSERT INTO business_concepts(
+              name,concept_type,status,source,created_at,updated_at
+            ) VALUES(?,?,?,?,?,?)
+            ON CONFLICT(name,concept_type) DO UPDATE SET
+              status='active',source='manual',updated_at=excluded.updated_at
+            """,
+            (name, concept_type, "active", "manual", now, now),
+        )
+        concept_id = conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? AND concept_type=?",
+            (name, concept_type),
+        ).fetchone()[0]
+        nodes.append(concept_id)
+    if str(path[-1].get("name") or "").strip() != tag:
+        raise ValueError(
+            f"business_facts {tag}.business_path 末级必须与 tag_name 相同"
+        )
+    for parent_id, child_id in zip(nodes, nodes[1:]):
+        if parent_id == child_id:
+            raise ValueError(f"business_facts {tag}.business_path 出现自环")
+        conn.execute(
+            """
+            INSERT INTO business_concept_edges(
+              parent_id,child_id,source,created_at
+            ) VALUES(?,?,?,?)
+            ON CONFLICT(parent_id,child_id) DO UPDATE SET source='manual'
+            """,
+            (parent_id, child_id, "manual", now),
+        )
+    return nodes[-1]
+
+
 def import_business_facts(conn, stock_names: dict[str, str]) -> int:
     rows = load_json_list(BUSINESS_FACTS_PATH, "facts")
     seen_keys: set[tuple[str, str, str, str]] = set()
     now = common.now_iso()
     imported = 0
+    conn.execute("DELETE FROM business_concept_edges WHERE source='manual'")
     for raw in rows:
         code = str(raw.get("code") or "").strip()
         tag = str(raw.get("tag_name") or "").strip()
@@ -121,13 +174,15 @@ def import_business_facts(conn, stock_names: dict[str, str]) -> int:
         if key in seen_keys:
             raise ValueError(f"business_facts 重复：{key}")
         seen_keys.add(key)
+        business_concept_id = upsert_business_path(conn, raw, tag, now)
         conn.execute(
             """
             INSERT INTO stock_business_facts(
-              code,tag_name,fact_type,relation_type,maturity,status,confidence,
+              code,business_concept_id,tag_name,fact_type,relation_type,maturity,status,confidence,
               summary,valid_from,valid_to,source,created_at,updated_at
-            ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             ON CONFLICT(code,tag_name,relation_type,valid_from) DO UPDATE SET
+              business_concept_id=excluded.business_concept_id,
               fact_type=excluded.fact_type,
               maturity=excluded.maturity,
               status=excluded.status,
@@ -138,7 +193,7 @@ def import_business_facts(conn, stock_names: dict[str, str]) -> int:
               updated_at=excluded.updated_at
             """,
             (
-                code, tag, raw.get("fact_type", "product"), relation,
+                code, business_concept_id, tag, raw.get("fact_type", "product"), relation,
                 raw.get("maturity", "unknown"), raw.get("status", "candidate"),
                 float(raw.get("confidence", 0)), raw.get("summary"), valid_from,
                 raw.get("valid_to"), "manual", now, now,
@@ -168,6 +223,32 @@ def import_business_facts(conn, stock_names: dict[str, str]) -> int:
     for fact_id, code, tag, relation, valid_from in manual_rows:
         if (code, tag, relation, valid_from) not in seen_keys:
             conn.execute("DELETE FROM stock_business_facts WHERE id=?", (fact_id,))
+    # 候选所用的同一条年报证据已经进入人工事实时，标记为 accepted，
+    # 避免治理台重复要求复核；其他同义或更细候选仍保持 candidate。
+    conn.execute("""
+        UPDATE business_fact_candidates
+        SET status='accepted',updated_at=?
+        WHERE status='candidate'
+          AND evidence_key IN (
+            SELECT DISTINCT e.evidence_key
+            FROM business_fact_evidence be
+            JOIN evidence_items e ON e.id=be.evidence_id
+            JOIN stock_business_facts f ON f.id=be.fact_id
+            WHERE f.source='manual' AND f.status='verified'
+          )
+    """, (now,))
+    conn.execute(
+        """
+        DELETE FROM business_concepts
+        WHERE source='manual'
+          AND id NOT IN (
+            SELECT business_concept_id FROM stock_business_facts
+            WHERE business_concept_id IS NOT NULL
+          )
+          AND id NOT IN (SELECT parent_id FROM business_concept_edges)
+          AND id NOT IN (SELECT child_id FROM business_concept_edges)
+        """
+    )
     return imported
 
 

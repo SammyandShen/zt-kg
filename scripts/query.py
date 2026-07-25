@@ -200,9 +200,6 @@ def cmd_codes(conn, codes_str: str) -> int:
     if not codes:
         print("未提取到6位股票代码")
         return 1
-    recent5 = [r[0] for r in conn.execute(
-        "SELECT DISTINCT trade_date FROM limit_up_events ORDER BY trade_date DESC LIMIT 5")]
-    ph5 = ",".join("?" * len(recent5))
     for code in codes:
         row = conn.execute("SELECT name FROM stocks WHERE code=?", (code,)).fetchone()
         if not row:
@@ -212,16 +209,53 @@ def cmd_codes(conn, codes_str: str) -> int:
             "SELECT COUNT(*), MAX(trade_date) FROM limit_up_events WHERE code=? AND pool='zt'",
             (code,)).fetchone()
         print(f"\n{row[0]}({code}) [{common.board_of(code)}] 历史涨停{n_zt}次，最近{last}")
-        for cname, cid, n in conn.execute("""
-            SELECT c.name, c.id, COUNT(*) n FROM limit_up_events e
-            JOIN event_concepts ec ON ec.event_id=e.id JOIN concepts c ON c.id=ec.concept_id
-            WHERE e.code=? GROUP BY c.id ORDER BY n DESC LIMIT 8""", (code,)):
-            hot = conn.execute(
-                f"SELECT COUNT(*) FROM event_concepts ec "
-                f"JOIN limit_up_events e ON e.id=ec.event_id "
-                f"WHERE ec.concept_id=? AND e.trade_date IN ({ph5})",
-                [cid] + recent5).fetchone()[0]
-            print(f"  {cname} ×{n}" + (f"  🔥近5日{hot}家涨停" if hot >= 3 else ""))
+        print("  公司客观业务：")
+        facts = conn.execute("""
+            SELECT bc.name,bc.concept_type,f.relation_type,f.maturity,
+                   f.status,f.confidence
+            FROM stock_business_facts f
+            LEFT JOIN business_concepts bc ON bc.id=f.business_concept_id
+            WHERE f.code=? AND f.status NOT IN ('rejected','expired')
+            ORDER BY (f.relation_type='core') DESC,f.confidence DESC
+        """, (code,)).fetchall()
+        if facts:
+            for tag, concept_type, relation, maturity, status, confidence in facts:
+                print(
+                    f"    {tag}｜{concept_type or '未入业务图谱'}｜{relation}｜"
+                    f"{maturity}｜{status} {confidence:.0%}"
+                )
+        else:
+            print("    暂无已核实业务事实")
+
+        print("  最近涨停题材：")
+        theme_rows = conn.execute("""
+            SELECT e.trade_date,c.name,l.theme_role,l.status,l.confidence
+            FROM event_theme_links l
+            JOIN limit_up_events e ON e.id=l.event_id
+            JOIN concepts c ON c.id=l.concept_id
+            WHERE e.code=? AND e.pool='zt' AND l.status!='rejected'
+            ORDER BY e.trade_date DESC,(l.theme_role='primary') DESC,l.confidence DESC
+            LIMIT 12
+        """, (code,)).fetchall()
+        if theme_rows:
+            for d, theme, role, status, confidence in theme_rows:
+                print(f"    {d} {theme}｜{role}｜{status} {confidence:.0%}")
+        else:
+            print("    暂无结构化题材归因")
+
+        legacy = conn.execute("""
+            SELECT c.name,COUNT(*) n
+            FROM limit_up_events e
+            JOIN event_concepts ec ON ec.event_id=e.id
+            JOIN concepts c ON c.id=ec.concept_id
+            WHERE e.code=?
+            GROUP BY c.id
+            ORDER BY n DESC,c.name
+            LIMIT 8
+        """, (code,)).fetchall()
+        print("  历史原因标签（审计线索，不等于业务/已核实题材）：")
+        print("    " + ("、".join(f"{name}×{count}" for name, count in legacy)
+                        if legacy else "无"))
     return 0
 
 
@@ -353,21 +387,59 @@ def cmd_review_business(conn) -> int:
         WHERE b.status='candidate'
         ORDER BY b.report_year DESC,b.confidence DESC,b.code,b.tag_name
     """).fetchall()
-    if not rows:
+    if rows:
+        print("公司业务事实候选（确认前不会进入正式 business_facts.json）：")
+        for (candidate_id, code, name, year, tag, fact_type, relation, maturity,
+             confidence, summary, extractor, claim, url) in rows:
+            print(
+                f"\n#{candidate_id} {name}({code}) {year}年｜{tag}｜{fact_type}｜"
+                f"{relation}/{maturity}｜{confidence:.0%}｜{extractor}"
+            )
+            print(f"  摘要：{summary}")
+            print(f"  原文：{claim}")
+            print(f"  来源：{url}")
+        print(f"\n共 {len(rows)} 条。复核通过后合并到 data/business_facts.json，"
+              "再运行 rebuild_semantic_layer.py；不要直接把候选状态改成正式主营。")
+    else:
         print("无待复核公司业务候选")
-        return 0
-    print("公司业务事实候选（确认前不会进入正式 business_facts.json）：")
-    for (candidate_id, code, name, year, tag, fact_type, relation, maturity,
-         confidence, summary, extractor, claim, url) in rows:
+
+    recent_dates = [row[0] for row in conn.execute("""
+        SELECT DISTINCT trade_date
+        FROM limit_up_events
+        WHERE pool='zt'
+        ORDER BY trade_date DESC
+        LIMIT 10
+    """)]
+    gaps = []
+    if recent_dates:
+        placeholders = ",".join("?" for _ in recent_dates)
+        gaps = conn.execute(f"""
+            SELECT e.code,MAX(e.name),COUNT(DISTINCT e.trade_date) active_days,
+                   MAX(e.trade_date) latest
+            FROM limit_up_events e
+            LEFT JOIN stock_business_facts f
+              ON f.code=e.code AND f.status='verified'
+            WHERE e.pool='zt' AND e.trade_date IN ({placeholders})
+            GROUP BY e.code
+            HAVING COUNT(f.id)=0
+            ORDER BY active_days DESC,latest DESC,e.code
+            LIMIT 50
+        """, recent_dates).fetchall()
+    print("\n近10个交易日客观业务缺口（优先抓年报，历史原因只能作为检索线索）：")
+    if not gaps:
+        print("  无")
+    for code, name, active_days, latest in gaps:
+        reason = conn.execute("""
+            SELECT reason_type
+            FROM limit_up_events
+            WHERE code=? AND trade_date=? AND pool='zt'
+            ORDER BY CASE source WHEN 'ths' THEN 0 WHEN 'wencai' THEN 1 ELSE 2 END
+            LIMIT 1
+        """, (code, latest)).fetchone()
         print(
-            f"\n#{candidate_id} {name}({code}) {year}年｜{tag}｜{fact_type}｜"
-            f"{relation}/{maturity}｜{confidence:.0%}｜{extractor}"
+            f"  {name}({code})｜10日内涨停{active_days}天｜最近{latest}｜"
+            f"取证线索：{reason[0] if reason and reason[0] else '无'}"
         )
-        print(f"  摘要：{summary}")
-        print(f"  原文：{claim}")
-        print(f"  来源：{url}")
-    print(f"\n共 {len(rows)} 条。复核通过后合并到 data/business_facts.json，"
-          "再运行 rebuild_semantic_layer.py；不要直接把候选状态改成正式主营。")
     return 0
 
 
