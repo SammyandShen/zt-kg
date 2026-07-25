@@ -286,10 +286,12 @@ CREATE TABLE IF NOT EXISTS event_theme_links (
     theme_role     TEXT NOT NULL DEFAULT 'candidate', -- primary/secondary/candidate
     relation_type  TEXT NOT NULL DEFAULT 'unverified',
     market_role    TEXT,             -- leader/pioneer/core/follower/latecomer/independent
-    status         TEXT NOT NULL DEFAULT 'candidate', -- candidate/verified/rejected
+    status         TEXT NOT NULL DEFAULT 'candidate', -- candidate/verified/rejected/expired
     confidence     REAL NOT NULL DEFAULT 0,
     rationale      TEXT,
     source         TEXT NOT NULL DEFAULT 'derived',
+    basis_kind     TEXT,             -- link_basis 凭据类型：business_fact/announcement/NULL(仅盘面联想)
+    basis_id       INTEGER,          -- 指向 stock_business_facts.id 或 evidence_items.id
     created_at     TEXT NOT NULL,
     updated_at     TEXT NOT NULL,
     PRIMARY KEY (event_id, concept_id)
@@ -425,6 +427,11 @@ def open_db() -> sqlite3.Connection:
             "ALTER TABLE stock_business_facts "
             "ADD COLUMN business_concept_id INTEGER REFERENCES business_concepts(id)"
         )
+        conn.commit()
+    link_cols = {r[1] for r in conn.execute("PRAGMA table_info(event_theme_links)")}
+    if "basis_kind" not in link_cols:
+        conn.execute("ALTER TABLE event_theme_links ADD COLUMN basis_kind TEXT")
+        conn.execute("ALTER TABLE event_theme_links ADD COLUMN basis_id INTEGER")
         conn.commit()
     return conn
 

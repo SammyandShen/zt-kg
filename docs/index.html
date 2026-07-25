@@ -905,11 +905,14 @@ function eventThemeHtml(code, d) {
   if (!links.length) return `<span class="muted small">未归因</span>${
     evidenceLinksHtml(contextIds, '事件公告（尚未绑定具体题材）')}`;
   const pills = links.slice(0, 4).map(l => {
-    const [cid, role, , , status, confidence, rationale, , , , review] = l;
+    const [cid, role, , , status, confidence, rationale, , , , review, basis] = l;
     const name = D.concepts[cid]?.[0] || '未知题材';
     const reviewText = reviewLabel(review);
+    const basisText = !basis ? '仅盘面联想（无业务边/公司事件凭据）'
+      : basis[0] === 'fact' ? `凭据=业务边：${basis[1]}`
+      : `凭据=官方公告（${(SEMANTIC_EVIDENCE[basis[1]]?.[2] || '公告').slice(0, 20)}）`;
     const title = [
-      rationale || '',
+      rationale || '', basisText,
       `候选置信度${Math.round(confidence * 100)}%`,
       review ? `${reviewText}（自动旁证，不等于人工核实）` : '',
       review?.[11] || '',
@@ -917,7 +920,10 @@ function eventThemeHtml(code, d) {
     return `<span class="theme-pill ${status === 'verified' ? '' : 'candidate'}"
       title="${esc(title)}">
       ${esc(name)}<span class="role">${esc(THEME_ROLE_LABEL[role] || role)}·${esc(
-        SEM_STATUS_LABEL[status] || status)}${reviewText ? `·${esc(reviewText)}` : ''}</span></span>`;
+        SEM_STATUS_LABEL[status] || status)}${
+        basis ? (basis[0] === 'fact' ? '·⚭业务边' : '·⚭公告')
+              : status === 'verified' ? '' : '·无凭据'}${
+        reviewText ? `·${esc(reviewText)}` : ''}</span></span>`;
   }).join('');
   const evidenceIds = [...new Set(links.flatMap(l => l[9] || []))];
   const evidenceSet = new Set(evidenceIds);

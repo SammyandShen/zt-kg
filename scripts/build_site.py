@@ -283,9 +283,12 @@ def main() -> int:
     event_context_evidence: dict[str, list[int]] = {}
     if dates:
         cutoff = dates[-min(60, len(dates))]
+        fact_labels = {fid: f"{tag}·{rel}" for fid, tag, rel in conn.execute(
+            "SELECT id,tag_name,relation_type FROM stock_business_facts")}
         for row in conn.execute("""
             SELECT e.id,e.code,e.trade_date,l.concept_id,l.theme_role,l.relation_type,
-                   l.market_role,l.status,l.confidence,l.rationale,l.episode_id,l.source
+                   l.market_role,l.status,l.confidence,l.rationale,l.episode_id,l.source,
+                   l.basis_kind,l.basis_id
             FROM event_theme_links l
             JOIN limit_up_events e ON e.id=l.event_id
             JOIN chosen ch ON ch.id=e.id
@@ -294,7 +297,14 @@ def main() -> int:
                      (l.theme_role='primary') DESC,l.confidence DESC
         """, (cutoff,)):
             (eid, code, d, cid, role, relation, market_role, status, confidence,
-             rationale, episode_id, source) = row
+             rationale, episode_id, source, basis_kind, basis_id) = row
+            # 凭据解析为人类可读标签；business_fact→业务边，announcement→公告id
+            if basis_kind == "business_fact":
+                basis = ["fact", fact_labels.get(basis_id, "业务边")]
+            elif basis_kind == "announcement":
+                basis = ["ann", basis_id]
+            else:
+                basis = None
             evidence_ids = [r[0] for r in conn.execute(
                 "SELECT evidence_id FROM event_theme_evidence "
                 "WHERE event_id=? AND concept_id=?", (eid, cid))]
@@ -317,7 +327,7 @@ def main() -> int:
             ]
             event_themes.setdefault(f"{code}|{d}", []).append([
                 cid, role, relation, market_role, status, round(confidence, 2),
-                rationale, episode_id, source, evidence_ids, review_data,
+                rationale, episode_id, source, evidence_ids, review_data, basis,
             ])
         for code, d, evidence_id in conn.execute("""
             SELECT e.code,e.trade_date,ee.evidence_id

@@ -447,6 +447,32 @@ def derive_candidate_theme_links(conn, events: list[tuple],
     for eid, cid, _name in eligible:
         breadth[(event_info[eid][1], cid)] += 1
 
+    # link_basis 凭据预载：题材→业务标签映射 + 各股有效业务事实。
+    # 凭据回答"这家公司凭什么和这个题材有关"；无凭据的归因只能算盘面联想。
+    theme_biz_tags: dict[int, set[str]] = defaultdict(set)
+    for cid, biz_tag in conn.execute(
+            "SELECT concept_id,business_tag_name FROM theme_business_mappings "
+            "WHERE status!='rejected'"):
+        theme_biz_tags[cid].add(biz_tag)
+    facts_by_code: dict[str, list[tuple]] = defaultdict(list)
+    for fid, code, tag, status, vfrom, vto in conn.execute(
+            "SELECT id,code,tag_name,status,valid_from,valid_to "
+            "FROM stock_business_facts WHERE status NOT IN ('rejected','expired')"):
+        facts_by_code[code].append((fid, tag, status, vfrom or "", vto or ""))
+
+    def find_basis(code: str, cid: int, theme: str, d: str,
+                   announcement_ids: list[int]):
+        """业务边优先（verified 优先），其次官方公告；都没有 → None。"""
+        want = theme_biz_tags.get(cid, set()) | {theme}
+        hits = [f for f in facts_by_code.get(code, ())
+                if f[1] in want and f[3] <= d and (not f[4] or f[4] >= d)]
+        if hits:
+            best = min(hits, key=lambda f: (f[2] != "verified",))
+            return "business_fact", best[0]
+        if announcement_ids:
+            return "announcement", announcement_ids[0]
+        return None, None
+
     now = common.now_iso()
     for eid, cid, name in eligible:
         d, code, stock_name = (
@@ -460,6 +486,7 @@ def derive_candidate_theme_links(conn, events: list[tuple],
         if brief and name in brief[0]:
             confidence = min(0.55, confidence + 0.05)
         matched_evidence: list[int] = []
+        matched_announcements: list[int] = []
         for evidence_id, evidence_type, title, claim, subject_status in conn.execute(
             """
             SELECT ee.evidence_id,e.evidence_type,e.title,e.claim,e.subject_status
@@ -482,21 +509,32 @@ def derive_candidate_theme_links(conn, events: list[tuple],
             )
             if name in haystack and direct_stock:
                 matched_evidence.append(evidence_id)
+                if evidence_type == "announcement":
+                    matched_announcements.append(evidence_id)
         if matched_evidence:
             confidence = min(
                 0.7, confidence + min(0.15, 0.08 * len(matched_evidence))
             )
+        # link_basis：无业务边/公司事件凭据的归因只能算盘面联想，置信度封顶。
+        basis_kind, basis_id = find_basis(code, cid, name, d, matched_announcements)
+        if basis_kind == "business_fact":
+            confidence = min(0.7, confidence + 0.05)
+            rationale = "凭据=公司业务边；共同催化仍待核实。"
+        elif basis_kind == "announcement":
+            rationale = "凭据=官方公告点名题材；共同催化仍待核实。"
+        else:
+            confidence = min(confidence, 0.45)
+            rationale = "仅盘面联想：无业务边/公司事件凭据，置信度封顶0.45。"
         conn.execute(
             """
             INSERT OR IGNORE INTO event_theme_links(
               event_id,concept_id,theme_role,relation_type,status,confidence,
-              rationale,source,created_at,updated_at
-            ) VALUES(?,?,?,?,?,?,?,?,?,?)
+              rationale,source,basis_kind,basis_id,created_at,updated_at
+            ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)
             """,
             (
                 eid, cid, "candidate", "unverified", "candidate", confidence,
-                "原始涨停原因包含已审核交易题材；尚未核实共同催化和公司关联。",
-                "derived", now, now,
+                rationale, "derived", basis_kind, basis_id, now, now,
             ),
         )
         # T0 快照只在首次出现时写入（INSERT OR IGNORE），重建不覆盖——
@@ -506,6 +544,7 @@ def derive_candidate_theme_links(conn, events: list[tuple],
             (eid, cid, json.dumps({
                 "theme_role": "candidate", "status": "candidate",
                 "confidence": round(confidence, 3), "source": "derived",
+                "basis": basis_kind,
             }, ensure_ascii=False), now),
         )
         conn.executemany(
