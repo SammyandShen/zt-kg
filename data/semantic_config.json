@@ -1,0 +1,18 @@
+{
+  "$note": "语义层阈值配置（P1.4）。改后跑 rebuild_semantic_layer.py 生效。所有阈值为初拍值，跑一个月后按实盘观感校准；每次校准把旧值和理由追加到 calibration_log。",
+  "episode": {
+    "min_codes": 3,
+    "min_codes_note": "整轮去重股票数下限；不足则不立轮（单股公告驱动归个股事件）",
+    "min_same_day": 3,
+    "min_same_day_note": "触发日同日候选关系股涨停家数下限",
+    "first_seal_span_min": 90,
+    "first_seal_span_note": "触发日首封时间极差（分钟）；超过视为松散共振，不立轮；缺首封时间的事件不参与判定",
+    "gap_days": 5,
+    "gap_days_note": "连续无响应交易日数：超过即断轮；轮末距最新交易日在此窗口内保持开放(divergence)，超过关轮(recession/closed)",
+    "overlap_warn": 0.5,
+    "overlap_warn_note": "同期开放轮次成员重叠比例告警阈值（只告警提示人工并轮，不自动合并）"
+  },
+  "candidate_expire_days": 10,
+  "candidate_expire_note": "候选归因产生后 N 个交易日内未进入任何轮次、且无 supporting 旁证 → expired",
+  "calibration_log": []
+}

@@ -395,6 +395,16 @@ CREATE TABLE IF NOT EXISTS theme_episode_evidence (
     PRIMARY KEY (episode_id, evidence_id)
 );
 
+-- T0 归因快照：候选归因首次生成时的原样记录，重建/复核永不覆盖或删除。
+-- 回测"按当晚归因跟随"只能用这里的点值，不能用被 T+2 修正过的最终版。
+CREATE TABLE IF NOT EXISTS attribution_snapshots (
+    event_id    INTEGER NOT NULL,
+    concept_id  INTEGER NOT NULL,
+    snapshot    TEXT NOT NULL,      -- JSON: {theme_role,status,confidence,rationale,source}
+    created_at  TEXT NOT NULL,
+    PRIMARY KEY (event_id, concept_id)
+);
+
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT);
 """
 

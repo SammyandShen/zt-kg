@@ -28,7 +28,27 @@ TAG_META_PATH = common.REPO_ROOT / "data" / "tag_meta.json"
 BUSINESS_FACTS_PATH = common.REPO_ROOT / "data" / "business_facts.json"
 ATTRIBUTIONS_PATH = common.REPO_ROOT / "data" / "event_attributions.json"
 THEME_BUSINESS_PATH = common.REPO_ROOT / "data" / "theme_business_mappings.json"
+CONFIG_PATH = common.REPO_ROOT / "data" / "semantic_config.json"
 SOURCE_PRIORITY = {"ths": 0, "wencai": 1, "kpl": 2}
+
+DEFAULT_CONFIG = {
+    "episode": {"min_codes": 3, "min_same_day": 3, "first_seal_span_min": 90,
+                "gap_days": 5, "overlap_warn": 0.5},
+    "candidate_expire_days": 10,
+}
+
+
+def load_config() -> dict:
+    if not CONFIG_PATH.exists():
+        return DEFAULT_CONFIG
+    raw = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+    cfg = {"episode": {**DEFAULT_CONFIG["episode"]},
+           "candidate_expire_days": raw.get(
+               "candidate_expire_days", DEFAULT_CONFIG["candidate_expire_days"])}
+    for key, value in (raw.get("episode") or {}).items():
+        if not key.endswith("_note"):
+            cfg["episode"][key] = value
+    return cfg
 
 
 def load_json_list(path: Path, key: str) -> list[dict]:
@@ -53,11 +73,11 @@ def preferred_events(conn) -> list[tuple]:
     """与 build_site.py 相同的来源优先级，每个(日,股)只取一条封板记录。"""
     best: dict[tuple[str, str], tuple[int, tuple]] = {}
     rows = conn.execute(
-        "SELECT id, trade_date, code, name, reason_type, source "
+        "SELECT id, trade_date, code, name, reason_type, source, first_time "
         "FROM limit_up_events WHERE pool='zt' ORDER BY trade_date, code"
     ).fetchall()
     for row in rows:
-        eid, d, code, _name, _reason, source = row
+        eid, d, code, _name, _reason, source, _ft = row
         rank = SOURCE_PRIORITY.get(source, 99)
         key = (d, code)
         if key not in best or rank < best[key][0]:
@@ -255,7 +275,7 @@ def import_business_facts(conn, stock_names: dict[str, str]) -> int:
 def import_event_evidence(conn, events: list[tuple]) -> int:
     """导入原始原因、已抓新闻和LLM摘要，但都不自动证明某个题材。"""
     n = 0
-    for eid, d, code, name, reason, _source in events:
+    for eid, d, code, name, reason, _source, _ft in events:
         if reason:
             evidence_id = upsert_evidence(
                 conn,
@@ -479,6 +499,15 @@ def derive_candidate_theme_links(conn, events: list[tuple],
                 "derived", now, now,
             ),
         )
+        # T0 快照只在首次出现时写入（INSERT OR IGNORE），重建不覆盖——
+        # 回测"按当晚归因跟随"必须用这里的点值。
+        conn.execute(
+            "INSERT OR IGNORE INTO attribution_snapshots VALUES(?,?,?,?)",
+            (eid, cid, json.dumps({
+                "theme_role": "candidate", "status": "candidate",
+                "confidence": round(confidence, 3), "source": "derived",
+            }, ensure_ascii=False), now),
+        )
         conn.executemany(
             "INSERT OR IGNORE INTO event_theme_evidence VALUES(?,?,?)",
             [(eid, cid, evidence_id) for evidence_id in matched_evidence],
@@ -574,13 +603,14 @@ def import_manual_attributions(conn, stock_names: dict[str, str]) -> int:
     return n
 
 
-def split_activity_groups(rows: list[tuple], date_index: dict[str, int]) -> list[list[tuple]]:
+def split_activity_groups(rows: list[tuple], date_index: dict[str, int],
+                          gap_days: int) -> list[list[tuple]]:
     groups: list[list[tuple]] = []
     current: list[tuple] = []
     last_index: int | None = None
     for row in sorted(rows, key=lambda item: (item[1], item[2])):
         idx = date_index[row[1]]
-        if current and last_index is not None and idx - last_index > 2:
+        if current and last_index is not None and idx - last_index > gap_days:
             groups.append(current)
             current = []
         current.append(row)
@@ -590,13 +620,47 @@ def split_activity_groups(rows: list[tuple], date_index: dict[str, int]) -> list
     return groups
 
 
-def derive_episodes(conn, events: list[tuple]) -> int:
+def hhmm_minutes(ts) -> int | None:
+    """first_time 时间戳 → 当日分钟数（本地时区按数据源约定）。"""
+    if not ts:
+        return None
+    try:
+        from datetime import datetime, timezone, timedelta
+        t = datetime.fromtimestamp(int(ts), tz=timezone(timedelta(hours=8)))
+        return t.hour * 60 + t.minute
+    except (ValueError, OSError, OverflowError):
+        return None
+
+
+def trigger_day_of(group: list[tuple], event_info: dict, cfg_ep: dict) -> str | None:
+    """立轮触发日：首个同日家数≥min_same_day 且首封极差≤span 的交易日。
+
+    缺首封时间的事件不参与极差判定；当日有效时间样本<2 时只按家数判定。
+    """
+    daily_events: dict[str, list[int]] = defaultdict(list)
+    for row in group:
+        daily_events[row[1]].append(row[0])
+    for d in sorted(daily_events):
+        eids = daily_events[d]
+        if len({event_info[e][2] for e in eids}) < cfg_ep["min_same_day"]:
+            continue
+        minutes = [m for m in (hhmm_minutes(event_info[e][6]) for e in eids)
+                   if m is not None]
+        if len(minutes) >= 2 and max(minutes) - min(minutes) > cfg_ep["first_seal_span_min"]:
+            continue
+        return d
+    return None
+
+
+def derive_episodes(conn, events: list[tuple], cfg: dict) -> tuple[int, list[str]]:
+    cfg_ep = cfg["episode"]
     event_info = {row[0]: row for row in events}
     all_dates = sorted({row[1] for row in events})
     if not all_dates:
-        return 0
+        return 0, []
     date_index = {d: i for i, d in enumerate(all_dates)}
     latest_date = all_dates[-1]
+    latest_idx = date_index[latest_date]
     links_by_concept: dict[int, list[tuple]] = defaultdict(list)
     for eid, cid, status, source in conn.execute(
         "SELECT event_id,concept_id,status,source FROM event_theme_links "
@@ -609,23 +673,34 @@ def derive_episodes(conn, events: list[tuple]) -> int:
 
     now = common.now_iso()
     n = 0
+    open_members: dict[int, set[str]] = {}      # 开放轮次成员，用于重叠告警
+    open_names: dict[int, str] = {}
+    warnings: list[str] = []
     for cid, rows in links_by_concept.items():
-        for group in split_activity_groups(rows, date_index):
+        for group in split_activity_groups(rows, date_index, cfg_ep["gap_days"]):
             codes = {row[2] for row in group}
             daily = Counter(row[1] for row in group)
-            if len(codes) < 2 or max(daily.values()) < 2:
+            # 硬阈值立轮：整轮股票数 + 触发日（同日家数&首封极差）双门槛；
+            # 不达标不立轮——单股/两股的公告驱动属于个股事件，不强行造题材。
+            if len(codes) < cfg_ep["min_codes"]:
+                continue
+            trigger = trigger_day_of(group, event_info, cfg_ep)
+            if trigger is None:
                 continue
             start, end = min(daily), max(daily)
             current = daily[end]
             peak = max(daily.values())
             active_dates = sorted(daily)
-            if end != latest_date:
-                phase, status = "recession", "closed"
+            idle = latest_idx - date_index[end]   # 距最新交易日的静默天数
+            if idle > cfg_ep["gap_days"]:
+                phase, status = "recession", "closed"          # 退场：超窗关轮
+            elif idle > 0:
+                phase, status = "divergence", "provisional"    # 休整中，未关轮
             elif len(active_dates) <= 2:
                 phase, status = "startup", "provisional"
             elif current >= 4 and current == peak:
                 phase, status = "climax", "provisional"
-            elif len(active_dates) >= 2 and current > daily[active_dates[-2]]:
+            elif current > daily[active_dates[-2]]:
                 phase, status = "fermentation", "provisional"
             elif current < peak:
                 phase, status = "divergence", "provisional"
@@ -678,8 +753,48 @@ def derive_episodes(conn, events: list[tuple]) -> int:
                 "INSERT OR IGNORE INTO theme_episode_evidence VALUES(?,?)",
                 [(episode_id, evidence_id) for (evidence_id,) in evidence_ids],
             )
+            # 同期开放轮次成员重叠告警：只提示人工并轮，不自动合并。
+            if status == "provisional":
+                for other_id, members in open_members.items():
+                    denom = min(len(codes), len(members))
+                    if denom and len(codes & members) / denom >= cfg_ep["overlap_warn"]:
+                        warnings.append(
+                            f"轮次重叠 ≥{int(cfg_ep['overlap_warn'] * 100)}%："
+                            f"{concept_name(conn, cid)}#{episode_id} ×"
+                            f" {open_names[other_id]}#{other_id}"
+                            f"（交集{len(codes & members)}只）")
+                open_members[episode_id] = codes
+                open_names[episode_id] = concept_name(conn, cid)
             n += 1
-    return n
+    return n, warnings
+
+
+def concept_name(conn, cid: int) -> str:
+    row = conn.execute("SELECT name FROM concepts WHERE id=?", (cid,)).fetchone()
+    return row[0] if row else f"cid{cid}"
+
+
+def expire_stale_candidates(conn, events: list[tuple], cfg: dict) -> int:
+    """退场：候选归因 N 个交易日内未进任何轮次、且无 supporting 旁证 → expired。"""
+    all_dates = sorted({row[1] for row in events})
+    days = cfg["candidate_expire_days"]
+    if len(all_dates) <= days:
+        return 0
+    cutoff = all_dates[-days - 1]
+    cur = conn.execute(
+        """
+        UPDATE event_theme_links SET status='expired', updated_at=?
+        WHERE source='derived' AND status='candidate' AND episode_id IS NULL
+          AND event_id IN (SELECT id FROM limit_up_events WHERE trade_date<=?)
+          AND NOT EXISTS (
+            SELECT 1 FROM attribution_reviews r
+            WHERE r.event_id=event_theme_links.event_id
+              AND r.concept_id=event_theme_links.concept_id
+              AND r.verdict='supporting')
+        """,
+        (common.now_iso(), cutoff),
+    )
+    return cur.rowcount
 
 
 def audit(conn) -> dict[str, int]:
@@ -705,6 +820,12 @@ def audit(conn) -> dict[str, int]:
         "evidence": conn.execute(
             "SELECT COUNT(*) FROM evidence_items"
         ).fetchone()[0],
+        "expired_links": conn.execute(
+            "SELECT COUNT(*) FROM event_theme_links WHERE status='expired'"
+        ).fetchone()[0],
+        "t0_snapshots": conn.execute(
+            "SELECT COUNT(*) FROM attribution_snapshots"
+        ).fetchone()[0],
     }
 
 
@@ -715,12 +836,14 @@ def main() -> int:
 
     conn = common.open_db()
     tag_meta = load_tag_meta()
+    cfg = load_config()
     stock_names = dict(conn.execute("SELECT code,name FROM stocks"))
     events = preferred_events(conn)
 
     conn.execute("BEGIN")
     try:
         # 只删除可重建的自动派生记录；人工业务事实和人工归因保留并由 JSON 同步。
+        # attribution_snapshots 是 T0 点值台账，永不删除。
         conn.execute("DELETE FROM event_theme_links WHERE source='derived'")
         conn.execute("DELETE FROM theme_episodes WHERE source='derived'")
         n_facts = import_business_facts(conn, stock_names)
@@ -728,7 +851,8 @@ def main() -> int:
         n_evidence = import_event_evidence(conn, events)
         n_candidates = derive_candidate_theme_links(conn, events, tag_meta)
         n_manual = import_manual_attributions(conn, stock_names)
-        n_episodes = derive_episodes(conn, events)
+        n_episodes, overlap_warnings = derive_episodes(conn, events, cfg)
+        n_expired = expire_stale_candidates(conn, events, cfg)
         counts = audit(conn)
         if args.dry_run:
             conn.rollback()
@@ -739,8 +863,13 @@ def main() -> int:
         print(
             f"✅ 语义层{mode}：人工业务事实 {n_facts}，自动题材候选 {n_candidates}，"
             f"人工涨停归因 {n_manual}，题材业务映射 {n_mappings}，"
-            f"题材轮次 {n_episodes}，导入事件证据 {n_evidence}"
+            f"题材轮次 {n_episodes}（阈值 ≥{cfg['episode']['min_codes']}只/"
+            f"同日≥{cfg['episode']['min_same_day']}家/首封极差≤"
+            f"{cfg['episode']['first_seal_span_min']}min），"
+            f"候选过期 {n_expired}，导入事件证据 {n_evidence}"
         )
+        for w in overlap_warnings[:10]:
+            print(f"⚠️ {w}")
         print(
             "   当前汇总：" + "；".join(f"{key}={value}" for key, value in counts.items())
         )
