@@ -273,6 +273,67 @@ def import_business_facts(conn, stock_names: dict[str, str]) -> int:
     return imported
 
 
+def promote_business_candidates(conn) -> int:
+    """年报业务候选自动晋升（零人工干预原则，2026-07-25 用户定）。
+
+    年报是公司主营的权威来源：conf≥0.7 且 relation 为 core/secondary 的候选
+    自动晋升为 verified 业务事实（source='auto_report' 留痕，与人工 manual 区分；
+    bad case 由用户反馈后在 business_facts.json 覆盖或 rejected）。
+    业务概念按名字匹配既有节点，没有则建独立 product 节点（挂树交给后续治理）。
+    """
+    now = common.now_iso()
+    n = 0
+    for (cand_id, code, year, tag, fact_type, relation, maturity, confidence,
+         summary, evidence_key) in conn.execute(
+            "SELECT id,code,report_year,tag_name,fact_type,relation_type,"
+            "maturity,confidence,summary,evidence_key FROM business_fact_candidates "
+            "WHERE status='candidate' AND confidence>=0.7 "
+            "AND relation_type IN ('core','secondary')").fetchall():
+        concept = conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? "
+            "ORDER BY concept_type='product' DESC LIMIT 1", (tag,)).fetchone()
+        if concept:
+            concept_id = concept[0]
+        else:
+            conn.execute(
+                "INSERT INTO business_concepts(name,concept_type,status,source,"
+                "created_at,updated_at) VALUES(?,?,?,?,?,?)",
+                (tag, "product", "active", "auto_report", now, now))
+            concept_id = conn.execute(
+                "SELECT id FROM business_concepts WHERE name=? AND concept_type='product'",
+                (tag,)).fetchone()[0]
+        conn.execute(
+            """
+            INSERT INTO stock_business_facts(
+              code,business_concept_id,tag_name,fact_type,relation_type,maturity,
+              status,confidence,summary,valid_from,valid_to,source,created_at,updated_at
+            ) VALUES(?,?,?,?,?,?,?,?,?,?,NULL,?,?,?)
+            ON CONFLICT(code,tag_name,relation_type,valid_from) DO UPDATE SET
+              business_concept_id=excluded.business_concept_id,
+              maturity=excluded.maturity,
+              confidence=excluded.confidence,
+              summary=excluded.summary,
+              updated_at=excluded.updated_at
+            """,
+            (code, concept_id, tag, fact_type, relation, maturity, "verified",
+             confidence, f"[{year}年报自动晋升] {summary or ''}"[:300], "",
+             "auto_report", now, now))
+        fact_id = conn.execute(
+            "SELECT id FROM stock_business_facts WHERE code=? AND tag_name=? "
+            "AND relation_type=? AND valid_from=''",
+            (code, tag, relation)).fetchone()[0]
+        ev = conn.execute("SELECT id FROM evidence_items WHERE evidence_key=?",
+                          (evidence_key,)).fetchone()
+        if ev:
+            conn.execute("INSERT OR IGNORE INTO business_fact_evidence VALUES(?,?)",
+                         (fact_id, ev[0]))
+        conn.execute(
+            "UPDATE business_fact_candidates SET status='accepted',updated_at=? "
+            "WHERE id=?", (now, cand_id))
+        n += 1
+    return n
+
+
 def import_event_evidence(conn, events: list[tuple]) -> int:
     """导入原始原因、已抓新闻和LLM摘要，但都不自动证明某个题材。"""
     n = 0
@@ -1033,6 +1094,7 @@ def main() -> int:
         conn.execute("DELETE FROM event_theme_links WHERE source='derived'")
         conn.execute("DELETE FROM theme_episodes WHERE source='derived'")
         n_facts = import_business_facts(conn, stock_names)
+        n_promoted = promote_business_candidates(conn)
         n_mappings = import_theme_business_mappings(conn, tag_meta)
         n_evidence = import_event_evidence(conn, events)
         n_candidates = derive_candidate_theme_links(conn, events, tag_meta)
@@ -1052,7 +1114,8 @@ def main() -> int:
             conn.commit()
             mode = "已写入"
         print(
-            f"✅ 语义层{mode}：人工业务事实 {n_facts}，自动题材候选 {n_candidates}，"
+            f"✅ 语义层{mode}：人工业务事实 {n_facts}（年报自动晋升 {n_promoted}），"
+            f"自动题材候选 {n_candidates}，"
             f"人工涨停归因 {n_manual}，题材业务映射 {n_mappings}，"
             f"题材轮次 {n_episodes}（阈值 ≥{cfg['episode']['min_codes']}只/"
             f"同日≥{cfg['episode']['min_same_day']}家/首封极差≤"

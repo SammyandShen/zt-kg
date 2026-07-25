@@ -5,6 +5,13 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
 
 **所有输出为行情数据整理，不是投资建议。**
 
+**零人工干预原则（2026-07-25 用户定，系统宪法）**：所有队列由自动工序收敛，
+默认不存在"等人工"状态——归因/轮次判决走 judge_attributions（sonnet保守判决+
+机械规则），标签分型走 classify_tags+auto_adopt_tags，年报主营走候选自动晋升。
+人工只有一个入口：**用户发现 bad case 主动反馈**，修法=OVERRIDES/facts_overrides/
+业务JSON 覆盖 + 必要时调紧自动规则。任何新功能不得设计"需人工确认才能推进"的环节；
+自动判决必须 decided_by/source 留痕、保守（拿不准 leave 而不是硬判）、可被覆盖。
+
 ## 数据真源与职责边界
 
 | 文件 | 谁写 | 说明 |
@@ -59,10 +66,13 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
   题材反查候选池，不进入公司在营产业热力。
   库内新闻只有在同时点名股票与具体题材时，才绑定到对应的
   `event_theme_links` 作为题材级旁证并提高候选置信度；仍不得自动升级为 verified。
-- **官方主营候选**：`fetch_company_reports.py` 从巨潮资讯抓取最新完整年报，
-  PDF/文本只缓存在 `data/report_cache/`（不提交仓库）；`extract_business_candidates.py`
-  只抽取年报明确表述，写入 `business_fact_candidates` 待人工复核，不直接成为正式主营。
-  Claude CLI 未登录或不可用时自动退回确定性规则抽取，宁可少抽、不从涨停原因猜主营。
+- **官方主营候选（自动晋升）**：`fetch_company_reports.py` 从巨潮资讯抓取最新完整
+  年报，PDF/文本只缓存在 `data/report_cache/`（不提交仓库）；`extract_business_candidates.py`
+  只抽取年报明确表述写入 `business_fact_candidates`；rebuild_semantic_layer 内
+  conf≥0.7 且 relation=core/secondary 的候选**自动晋升 verified**（source='auto_report'
+  留痕，业务概念按名匹配或建独立 product 节点）——年报是主营的权威来源。低置信/
+  参股类候选保持 candidate。Claude CLI 不可用时退回确定性规则抽取，
+  宁可少抽、不从涨停原因猜主营。bad case 用 business_facts.json 人工条目覆盖。
 - **P1 语义层加固**（2026-07-25）：
   - **link_basis 强制凭据**：派生归因必须引用业务边(basis_kind='business_fact')或
     官方公告('announcement')；无凭据=仅盘面联想，置信度封顶0.45，个股页标"无凭据"

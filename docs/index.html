@@ -2955,8 +2955,9 @@ function renderTagsGov() {
         </div>`;
       }).join('')}</div>` : ''}
   </div>
-  <div class="card"><div class="card-h"><span class="cname">核实队列（只开三个口）</span>
-    <span class="hist">其余 ${attributionQueue.length} 条候选保持灰显，永不进队列、不追求清零</span>
+  <div class="card"><div class="card-h"><span class="cname">核实队列（自动判决代行）</span>
+    <span class="hist">judge_attributions 每日自动判；此处按钮仅用于覆盖 bad case ·
+      其余 ${attributionQueue.length} 条候选灰显等过期</span>
     <button class="navbtn" id="fact-export" style="margin-left:auto">导出判决${
       factFixCount() ? `（${factFixCount()}）` : ''}</button></div>
     <div class="semantic-title" style="padding:4px 8px 0">

@@ -19462,5 +19462,1265 @@
   "p": "",
   "c": 0.6,
   "model": "claude-sonnet-5"
+ },
+ "氟制冷剂涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "氢氟酸涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "氦气扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "氨纶扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "氨纶涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "氯化法扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "水电高股息": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "江西产能": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "沙特中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "沙特订单": {
+  "t": "catalyst",
+  "p": "外贸订单",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "油气涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "注册证密集获批": {
+  "t": "catalyst",
+  "p": "医疗器械注册证",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "注销回购": {
+  "t": "catalyst",
+  "p": "回购注销",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "泰国产能释放": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "泰国大单": {
+  "t": "catalyst",
+  "p": "海外大单",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "泰国工厂产能扩张": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "泰国扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "海外中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "海外光伏订单": {
+  "t": "catalyst",
+  "p": "外贸订单",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "海外油气大单": {
+  "t": "catalyst",
+  "p": "海外大单",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "海外订单饱满": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "海洋订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "海缆扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "涨价周期": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "涨价潮": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "涨价预期": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "液冷产能扩张": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.95,
+  "model": "claude-sonnet-5"
+ },
+ "液冷订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "液压管路扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "游戏业绩爆发": {
+  "t": "catalyst",
+  "p": "业绩大增",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "湖北扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "溴素涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "澳毛涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "激励": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "激励落地": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "激励计划": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "火电预增": {
+  "t": "catalyst",
+  "p": "业绩预增",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "烟标扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "烧碱扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "烧碱涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "焦煤涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "煤炭产能扩张": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "煤炭涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "燃气轮机订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "特斯拉Optimus订单传闻": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "环卫中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "环氧丙烷涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "环氧树脂涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "现金分红": {
+  "t": "catalyst",
+  "p": "分红",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "玻纤涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "玻纤纱扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "珠海产能释放": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "珠海扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "瓦楞纸涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "甲醇涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "电子布涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "电解液涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "电解液添加剂VC涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "电解铝中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "电解铝扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "电解铝涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "电解锰涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "病理AI获批": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "白银涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "百菌清涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "盐酸哌甲酯获批": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "石墨涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "砂石扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "硅片扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "硅片订单饱满": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "硫铁矿涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "硬质合金涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "碘化物扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "碳纤维涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "碳酸锂涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "碳酸锶涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "磁材扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "磷化工涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "磷化铟涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "磷矿扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "福建订单": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "稀土精矿涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "算力订单": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "紫杉醇美国获批": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "维生素涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "美阿沙坦获批": {
+  "t": "event",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "老挝扩产": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "聚醚扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "股东增持举牌": {
+  "t": "catalyst",
+  "p": "股东增持",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "股东未减持": {
+  "t": "catalyst",
+  "p": "承诺不减持",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "股权激励归属": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "股权激励解禁": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "股票期权激励": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "股票激励": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "膜材扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "航运涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "苏盐井神定增": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "苹果订单": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "药品获批": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "荷兰9.49亿订单": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "获批临床": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "董事长增持": {
+  "t": "catalyst",
+  "p": "高管增持",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "蛋氨酸涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "被动减持处置": {
+  "t": "catalyst",
+  "p": "减持完成",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "西藏产能": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "覆铜板扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "覆铜板涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "订单": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "订单充沛": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "订单回暖": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "订单恢复": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "订单放量": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "订单旺盛": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "订单景气": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "订单满产": {
+  "t": "catalyst",
+  "p": "产能满产",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "订单爆满": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "订单落地": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "订单需求饱满": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "订单饱和": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "订单饱满": {
+  "t": "catalyst",
+  "p": "订单充足",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "负极产能": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "越南产能": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "越南扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "轨交中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "转债": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "转债回售": {
+  "t": "catalyst",
+  "p": "可转债回售落地",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "转债完成赎回": {
+  "t": "catalyst",
+  "p": "转债赎回落地",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "转债提前赎回": {
+  "t": "catalyst",
+  "p": "转债赎回落地",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "转债有望提前赎回": {
+  "t": "catalyst",
+  "p": "转债赎回落地",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "转债赎回": {
+  "t": "catalyst",
+  "p": "转债赎回落地",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "转债预计触发赎回": {
+  "t": "catalyst",
+  "p": "转债赎回落地",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "达格列净获批": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "近期中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "造纸涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "鄂州扩产": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "重组复牌": {
+  "t": "catalyst",
+  "p": "复牌",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "重组获批": {
+  "t": "catalyst",
+  "p": "并购重组获批",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "量产订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "金矿扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "金针菇涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "钛白粉涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "钠电扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "钨锑涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "钴铜涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "钼涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "钾肥涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "铁矿扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "铁精粉扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "铜箔扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "锂电池订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "锂电订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "锂盐产能": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "锂盐产能扩张": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "锂盐产能释放": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "锂盐大单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "锂盐扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "锶盐涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "镍粉大单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "阿里云涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "限制性股票激励": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "限售股解禁": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "限售解禁": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "项目中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "顺酐扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "预增": {
+  "t": "catalyst",
+  "p": "业绩预增",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "预计扭亏": {
+  "t": "catalyst",
+  "p": "业绩扭亏",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "风机订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "首套氢能海外订单": {
+  "t": "catalyst",
+  "p": "海外订单",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "首次回购": {
+  "t": "catalyst",
+  "p": "回购",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "马来西亚产能": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "马来西亚扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "高倍率电池扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "高分红规划": {
+  "t": "catalyst",
+  "p": "高分红",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "高压储能订单": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "高性能玻纤纱扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "黄金涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "黄金预增": {
+  "t": "catalyst",
+  "p": "业绩预增",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "10亿投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "2D NAND收购": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "30亿泊位投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "AH上市": {
+  "t": "catalyst",
+  "p": "H股上市",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AH两地上市": {
+  "t": "catalyst",
+  "p": "H股上市",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "AI合作": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "AI芯片投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "AMD合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "BEBT-908上市": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "CGM上市": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "DVB-NIP混合广播商业化合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "GPU合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "GPU投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "GPU芯片合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "GSK合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "IDC转型": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "Lumentum合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "MASH药物合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "MiniMax上市": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "MiniMax合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "N公司合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "OpenAI合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "PCB钻针澄清": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "Peak收购": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "Rokid合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "Rokid合作(AI眼镜)": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "S股上市": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "VR投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "adidas合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "“轻重并举”转型": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "七彩虹入主": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "万林数链上市": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "三季报投资收益增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
  }
 }
