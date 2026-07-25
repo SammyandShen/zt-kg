@@ -169,6 +169,50 @@
   .metric-item code { color: var(--accent); font: inherit; }
   .tags-metric-guide { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   @media (max-width: 900px) { .tags-metric-guide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  /* P0：口径ⓘ / 状态条 / 主线卡 / 变化面 */
+  .info-i { display: inline-flex; align-items: center; justify-content: center;
+    width: 13px; height: 13px; border: 1px solid var(--line); border-radius: 50%;
+    font-size: 9px; color: var(--ink3); cursor: help; margin-left: 4px;
+    vertical-align: 1px; font-style: normal; user-select: none; flex: none; }
+  .info-i:hover { border-color: var(--accent); color: var(--accent); }
+  .statusbar { display: flex; flex-wrap: wrap; border: 1px solid var(--line);
+    border-radius: 10px; background: var(--surface); margin-top: 10px; overflow: hidden; }
+  .statusbar .st { flex: 1 1 100px; min-width: 96px; padding: 7px 12px 6px;
+    border-right: 1px solid var(--line); }
+  .statusbar .st:last-child { border-right: none; }
+  .statusbar .v { font-size: 17px; font-weight: 700; line-height: 1.2; }
+  .statusbar .k { font-size: 10.5px; color: var(--ink3); white-space: nowrap; }
+  .delta-up { color: var(--up); font-size: 11px; font-weight: 700; margin-left: 3px; }
+  .delta-down { color: var(--teal); font-size: 11px; font-weight: 700; margin-left: 3px; }
+  .ml-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px; margin-top: 12px; }
+  .ml-card { border: 1.5px solid var(--line); border-radius: 12px; padding: 11px 13px 9px;
+    background: var(--card); cursor: pointer; transition: border-color .12s; }
+  .ml-card:hover { border-color: var(--accent); }
+  .ml-name { font-size: 16.5px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
+  .ml-row { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap;
+    margin-top: 5px; font-size: 12px; color: var(--ink2); }
+  .ml-num { font-size: 21px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .ml-lead { font-size: 12px; color: var(--ink2); margin-top: 4px; }
+  .ml-spark { margin-top: 6px; }
+  .chg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px; margin-top: 12px; }
+  .chg-col { border: 1px solid var(--line); border-radius: 10px; background: var(--card);
+    padding: 8px 11px 6px; }
+  .chg-col h4 { margin: 0 0 5px; font-size: 12.5px; display: flex; align-items: center; gap: 4px; }
+  .chg-row { display: flex; align-items: center; gap: 6px; padding: 3px 4px;
+    font-size: 12.5px; cursor: pointer; border-radius: 6px; }
+  .chg-row:hover { background: var(--surface); }
+  .chg-row .cv { margin-left: auto; font-weight: 700; font-size: 11.5px; white-space: nowrap; }
+  .cover-chip { font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 700;
+    background: rgba(224,118,45,.13); color: #b45f16; margin-left: 6px; white-space: nowrap; }
+  .dim-col { opacity: .55; }
+  .sec-h { display: flex; align-items: center; gap: 8px; margin: 16px 0 0; }
+  .sec-h b { font-size: 14px; }
+  @media (max-width: 760px) {
+    .ml-grid, .chg-grid { grid-template-columns: 1fr; }
+    .statusbar .st { flex: 1 1 33%; min-width: 84px; border-bottom: 1px solid var(--line); }
+  }
   .layer-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
                     gap: 10px; margin-bottom: 14px; }
   .layer-card { --layer:var(--accent); --layer-soft:var(--accent-soft); background: var(--surface);
@@ -180,7 +224,7 @@
   .layer-card .layer-head { display: flex; align-items: baseline; gap: 7px; margin-bottom: 7px; }
   .layer-card .layer-head b { color: var(--layer); font-size: 14px; }
   .layer-card .layer-head span { color: var(--ink3); font-size: 10px; }
-  .layer-hot { display: grid; grid-template-columns: minmax(0, 1fr) 64px 28px;
+  .layer-hot { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(30px, auto);
                align-items: center; gap: 6px; width: 100%; border: 0; border-radius: 7px;
                padding: 4px 5px; background: transparent; color: var(--ink);
                text-align: left; cursor: pointer; font: inherit; }
@@ -995,20 +1039,13 @@ function renderDate(d) {
     <span class="muted small">${weekday(d)}</span>
   </div>
   <div class="stats">
-    <div class="stat"><div class="v">${evs.length}</div><div class="k">涨停家数</div></div>
-    ${st ? `<div class="stat"><div class="v">${st[1] ?? '—'}</div><div class="k">盘中触板</div></div>
-    <div class="stat"><div class="v">${st[2] != null ? Math.round(st[2] * 100) + '%' : '—'}</div><div class="k">封板率</div></div>
-    <div class="stat"><div class="v">${st[3] ?? '—'}</div><div class="k">炸板家数</div></div>` : ''}
-    <div class="stat"><div class="v">${maxLb}</div><div class="k">最高连板</div></div>
-    <div class="stat"><div class="v">${yizi}</div><div class="k">一字板</div></div>
-    ${touches.length ? `<div class="stat"><div class="v" style="color:var(--ink2)">${touches.length}</div><div class="k">触及未封</div></div>` : ''}
-  </div>
-  <div class="metric-guide" aria-label="每日复盘指标口径">
-    <div class="metric-item"><b>涨停家数</b>收盘仍封住涨停的去重股票数；不含触及后打开的股票。</div>
-    <div class="metric-item"><b>盘中触板 / 封板率</b>盘中触板取行情源当日统计；封板率=收盘涨停家数÷盘中触板家数。</div>
-    <div class="metric-item"><b>炸板家数 / 触及未封</b>炸板家数取行情源汇总；触及未封是本站实际抓到的炸板池记录，两者来源口径可能不同。</div>
-    <div class="metric-item"><b>最高连板</b>仅取当前交易日涨停股的连板数最大值，不是所选窗口内历史最高值。</div>
-    <div class="metric-item"><b>一字板</b>当前交易日涨停类型包含“一字”的股票数。</div>
+    <div class="stat"><div class="v">${evs.length}</div><div class="k">涨停家数${iInfo('zt_count')}</div></div>
+    ${st ? `<div class="stat"><div class="v">${st[1] ?? '—'}</div><div class="k">盘中触板${iInfo('touch_cnt')}</div></div>
+    <div class="stat"><div class="v">${st[2] != null ? Math.round(st[2] * 100) + '%' : '—'}</div><div class="k">封板率${iInfo('touch_cnt')}</div></div>
+    <div class="stat"><div class="v">${st[3] ?? '—'}</div><div class="k">炸板家数${iInfo('open_cnt')}</div></div>` : ''}
+    <div class="stat"><div class="v">${maxLb}</div><div class="k">最高连板${iInfo('max_lb')}</div></div>
+    <div class="stat"><div class="v">${yizi}</div><div class="k">一字板${iInfo('yizi')}</div></div>
+    ${touches.length ? `<div class="stat"><div class="v" style="color:var(--ink2)">${touches.length}</div><div class="k">触及未封${iInfo('open_cnt')}</div></div>` : ''}
   </div>`;
 
   // 标签库日报（仅最新交易日）：新面孔 / 未入树 / 待审积压
@@ -1486,6 +1523,47 @@ const HEAT_LAYER = {
   catalyst:{ label: '催化', title: '催化热力', cls: 'catalyst', rgb: '0,182,161',
              hint: '尚未建立独立的事件—催化结构关系，不展示历史原因标签替代值' },
 };
+
+/* ---------- 口径注册表：全站指标唯一定义，ⓘ 悬停可见 ---------- */
+const METRIC_DEFS = {
+  zt_count:  ['涨停家数', '收盘仍封住涨停的去重股票数；不含触及后打开的股票。'],
+  touch_cnt: ['盘中触板 / 封板率', '盘中触板取行情源当日统计；封板率=收盘涨停家数÷盘中触板家数。'],
+  open_cnt:  ['炸板家数 / 触及未封', '炸板家数取行情源汇总；触及未封是本站实际抓到的炸板池记录，两者来源口径可能不同。'],
+  max_lb:    ['最高连板', '仅取当前交易日涨停股的连板数最大值，不是窗口内历史最高。'],
+  yizi:      ['一字板', '当前交易日涨停类型包含"一字"的股票数。'],
+  attr_cover:['归因覆盖', '最新交易日涨停股中，已有单次题材归因（候选或核实）的比例。'],
+  biz_cover: ['业务覆盖', '近5日涨停股中，已有核实在营业务事实的比例；未覆盖股票不会被历史标签猜测补齐，产业/产品榜因此偏少。'],
+  heat_biz:  ['产业/产品热力', '当天涨停股中，具备该项已核实在营业务事实的去重家数；拟收购、参股、研发不计入。'],
+  heat_theme:['题材热力', '当天单次涨停归因命中该题材的去重家数；候选与已核实状态在个股页分别展示。'],
+  gushi:     ['股次', '逐日去重家数相加；同一股票跨日涨停会重复计次。与"家数"（单日去重）口径不同。'],
+  cover_ratio:['归属/下级覆盖', '交叉股次÷观察对象股次；产业/产品关系来自独立业务图谱，题材关系来自题材层级。'],
+  cooccur:   ['同股共现', '两个非包含标签在同一交易日命中同一股票；只表示关联，不表示因果。'],
+  startup:   ['启动信号', '近3日均≥3家，且(近3日均+0.25)/(前15日均+0.25)≥2.2；只表示量能加速，仍需核实共同催化。'],
+  momentum:  ['动量', '(近3日日均+0.25)/(前5日日均+0.25)。>1.6 视为加速，<0.55 视为退潮；只反映量能变化。'],
+  renewal:   ['续板率', '昨日该题材涨停股中，今日再度涨停的比例；触及未封不计。反映题材内部的持续性/分歧度。'],
+  fresh:     ['新启动', '近3日出现涨停、且此前15个交易日几乎无记录的题材；新叙事的第一现场，需核实共同催化。'],
+  ebbing:    ['退潮中', '前5日日均≥1.5家但动量≤0.55 的题材；量能明显萎缩。'],
+  mainline:  ['今日主线', '按最新交易日题材归因去重家数排序的前3个交易题材；点击卡片查看交叉透视。'],
+  node_heat: ['节点热度', '所选窗口内逐日去重涨停家数相加（股次）；父节点只汇总同类型下级。'],
+  lifecycle: ['生命周期', '启动=近3日均≥3且≥前15日2.2倍；高潮=近3日均≥4且≥30日峰值80%；退潮=峰值≥3且近3日<峰值35%；其余有量=活跃、无量=休眠。'],
+  tier:      ['当前梯队', '只看最新交易日仍在本层封板的当前连板数；历史命中但今日未封板的股票单列。'],
+  renewal_next:['次日连板率', '最后两个交易日中，昨日枝内封板且今日仍在枝内封板的股票数÷昨日枝内封板数；触及未封不算。'],
+  window:    ['日期窗口', '右上 30/60/全部控制热力表与轮动；交叉透视单独使用 1/5/20 日窗口。'],
+};
+const iInfo = key => `<i class="info-i" data-info="${key}">i</i>`;
+document.addEventListener('mouseover', e => {
+  const el = e.target.closest?.('.info-i');
+  if (!el) return;
+  const m = METRIC_DEFS[el.dataset.info];
+  if (m) showTip(e, `${m[0]}：${m[1]}`);
+});
+document.addEventListener('mouseout', e => { if (e.target.closest?.('.info-i')) hideTip(); });
+
+const avgArr = a => a.reduce((x, y) => x + y, 0) / Math.max(1, a.length);
+function momentumOf(s) {                  // 近3日 vs 前5日（口径见 METRIC_DEFS.momentum）
+  const r3 = avgArr(s.slice(-3)), p5 = avgArr(s.slice(-8, -3));
+  return { r3, p5, ratio: (r3 + .25) / (p5 + .25) };
+}
 const _taxAncestorsCache = {};
 const _heatDayCodesCache = {};
 function taxAncestorsAll(name, stack) {
@@ -1594,24 +1672,33 @@ function heatFocusStocks(focus, dates) {
     b.latest.localeCompare(a.latest) || b.hits - a.hits ||
     (D.stocks[a.code] || '').localeCompare(D.stocks[b.code] || '', 'zh-CN'));
 }
-function layerOverviewHtml(type, title, desc, nodes) {
+function layerOverviewHtml(type, title, desc, nodes, opts) {
+  opts = opts || {};
   const def = HEAT_LAYER[type];
   const rows = [...nodes].sort((a, b) =>
     heatTaxSeries(b).slice(-5).reduce((x, y) => x + y, 0) -
     heatTaxSeries(a).slice(-5).reduce((x, y) => x + y, 0)).slice(0, 6)
     .map(nm => {
-      const sum5 = heatTaxSeries(nm).slice(-5).reduce((a, b) => a + b, 0);
-      const start = startupOf(heatTaxSeries(nm));
-      return { nm, sum5, start: start && start.recent >= 3 && start.ratio >= 2.2 };
+      const s = heatTaxSeries(nm);
+      const sum5 = s.slice(-5).reduce((a, b) => a + b, 0);
+      const prev5 = s.slice(-10, -5).reduce((a, b) => a + b, 0);
+      const start = startupOf(s);
+      const [lc, lcTxt] = lifecycleOfSeries(s);
+      return { nm, sum5, prev5, lc, lcTxt,
+               start: start && start.recent >= 3 && start.ratio >= 2.2 };
     });
   const vmax = Math.max(1, ...rows.map(r => r.sum5));
-  return `<section class="layer-card ${def.cls}">
-    <div class="layer-head"><b>${title}</b><span>${desc}</span></div>
+  const dArr = r => r.sum5 > r.prev5 ? `<span class="delta-up">↑${r.sum5 - r.prev5}</span>`
+    : r.sum5 < r.prev5 ? `<span class="delta-down">↓${r.prev5 - r.sum5}</span>` : '';
+  return `<section class="layer-card ${def.cls}${opts.dim ? ' dim-col' : ''}">
+    <div class="layer-head"><b>${title}</b>${opts.chip || ''}<span>${desc}${
+      opts.info ? iInfo(opts.info) : ''}</span></div>
     ${rows.length ? rows.map(r => `<button class="layer-hot${heatFocus === r.nm ? ' on' : ''}"
       data-focus="${esc(r.nm)}"><span class="hot-name">${esc(heatNameOf(r.nm))}${
-        r.start ? '<span class="start-mark">启动信号</span>' : ''}</span>
+        r.start ? '<span class="start-mark">启动信号</span>' :
+        r.lc !== 'live' && r.lc !== 'idle' ? `<span class="lc lc-${r.lc}">${r.lcTxt}</span>` : ''}</span>
       <span class="hot-bar"><i style="width:${Math.max(3, r.sum5 / vmax * 100).toFixed(0)}%"></i></span>
-      <strong>${r.sum5}</strong></button>`).join('') :
+      <strong style="white-space:nowrap">${r.sum5}${dArr(r)}</strong></button>`).join('') :
       '<div class="cross-empty">暂无有效标签</div>'}</section>`;
 }
 function relationMetricText(r) {
@@ -1627,7 +1714,7 @@ function relationMetricText(r) {
 }
 function crossColumnHtml(type, title, note, rows) {
   return `<section class="cross-col ${HEAT_LAYER[type].cls}">
-    <div class="cross-col-h">${title}<span>${note}</span></div>
+    <div class="cross-col-h">${title}<span>${note}${iInfo(type === 'theme' ? 'cooccur' : 'cover_ratio')}</span></div>
     ${rows.length ? rows.map(r => `<button class="cross-node${r.nm === heatFocus ? ' on' : ''}"
       data-focus="${esc(r.nm)}"><div class="cross-node-top">
       <span class="cn-name">${esc(heatNameOf(r.nm))}</span><strong>${r.score || '—'}</strong></div>
@@ -1716,45 +1803,126 @@ function renderHeat() {
   ].map(([, label, nodes]) => [...nodes].sort((a, b) =>
     heatNameOf(a).localeCompare(heatNameOf(b), 'zh-CN'))
     .map(nm => `<option value="${esc(heatSearchLabel(nm))}" label="${label}"></option>`).join('')).join('');
+  // ① 市场状态条（最新交易日 vs 前一交易日）
+  const dLast = D.dates[D.dates.length - 1], dPrev = D.dates[D.dates.length - 2];
+  const ztOf = dd => (D.events[dd] || []).filter(e => !isTouch(e));
+  const ztL = ztOf(dLast), ztP = dPrev ? ztOf(dPrev) : [];
+  const stL = D.day_stats[dLast] || [];
+  const maxLbL = ztL.length ? Math.max(...ztL.map(e => e[1] || 1)) : 0;
+  const attrCov = ztL.length ? Math.round(ztL.filter(e =>
+    eventThemesOf(e[0], dLast).length).length / ztL.length * 100) : 0;
+  const bizCov = recentZtStocks.size
+    ? Math.round(operatingCoveredStocks.length / recentZtStocks.size * 100) : 0;
+  const dArrow = (a, b) => b == null || a === b ? '' :
+    a > b ? `<span class="delta-up">↑${a - b}</span>` : `<span class="delta-down">↓${b - a}</span>`;
+
+  // ② 今日主线（最新日题材归因家数 Top3）
+  const todaySet = nm => heatDayCodes(nm, dLast);
+  const renewalOf = nm => {
+    if (!dPrev) return null;
+    const y = heatDayCodes(nm, dPrev);
+    if (!y.size) return null;
+    let k = 0;
+    for (const c of y) if (todaySet(nm).has(c)) k++;
+    return Math.round(k / y.size * 100);
+  };
+  const epPhaseOf = nm => {
+    const cid = nameToCid[nm];
+    if (cid == null) return '';
+    const eps = Object.values(THEME_EPISODES).filter(ep => +ep[0] === +cid)
+      .sort((a, b) => String(b[1]).localeCompare(String(a[1])));
+    return eps.length && !eps[0][2] ? (PHASE_LABEL[eps[0][3]] || '') : '';
+  };
+  const mainline = themeNodes.map(nm => ({
+    nm, today: todaySet(nm).size, mom: momentumOf(heatTaxSeries(nm)).ratio,
+  })).filter(x => x.today >= 2)
+    .sort((a, b) => b.today - a.today || b.mom - a.mom).slice(0, 3);
+  const mlCard = x => {
+    const [lc, lcTxt] = lifecycleOfSeries(heatTaxSeries(x.nm));
+    const prevN = dPrev ? heatDayCodes(x.nm, dPrev).size : null;
+    const rn = renewalOf(x.nm);
+    const lead = ztL.filter(e => todaySet(x.nm).has(e[0]))
+      .sort((a, b) => (b[1] || 1) - (a[1] || 1))[0];
+    const ph = epPhaseOf(x.nm);
+    return `<div class="ml-card" data-focus="${esc(x.nm)}">
+      <div class="ml-name">${esc(x.nm)}<span class="lc lc-${lc}">${lcTxt}</span>${
+        ph ? `<span class="type-badge theme">${esc(ph)}轮</span>` : ''}</div>
+      <div class="ml-row"><span class="ml-num">${x.today}家</span>${dArrow(x.today, prevN)}
+        ${rn != null ? `<span>续板率${iInfo('renewal')} <b>${rn}%</b></span>` : ''}</div>
+      <div class="ml-lead">${lead ? `领涨 ${esc(D.stocks[lead[0]] || lead[0])} ${
+        esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '&nbsp;'}</div>
+      <div class="ml-spark">${spark(heatTaxSeries(x.nm).slice(-10))}</div></div>`;
+  };
+
+  // ③ 变化面：加速 / 新启动 / 退潮（只看交易题材，产业/产品覆盖率不足时无意义）
+  const themeStats = themeNodes.map(nm => {
+    const s = heatTaxSeries(nm);
+    return { nm, ...momentumOf(s), today: todaySet(nm).size,
+      pre15: s.slice(-18, -3).reduce((a, b) => a + b, 0),
+      r3sum: s.slice(-3).reduce((a, b) => a + b, 0) };
+  });
+  const accel = themeStats.filter(x => x.r3 >= 1 && x.ratio >= 1.6 && x.pre15 > 1)
+    .sort((a, b) => b.ratio - a.ratio).slice(0, 6);
+  const freshRows = themeStats.filter(x => x.r3sum >= 2 && x.pre15 <= 1)
+    .sort((a, b) => b.r3sum - a.r3sum).slice(0, 6);
+  const ebbRows = themeStats.filter(x => x.p5 >= 1.5 && x.ratio <= 0.55)
+    .sort((a, b) => a.ratio - b.ratio).slice(0, 6);
+  const chgCol = (title, key, list, fmt, color) => `<div class="chg-col">
+    <h4 style="color:${color}">${title}${iInfo(key)}</h4>
+    ${list.length ? list.map(x => `<div class="chg-row" data-focus="${esc(x.nm)}">
+      <b>${esc(x.nm)}</b><span class="cv">${fmt(x)}</span></div>`).join('')
+      : '<div class="muted small" style="padding:2px 4px">暂无</div>'}</div>`;
+
   let html = `
   <div class="datebar"><h2 style="margin:0">板块热力</h2>
-    <span class="muted small">产业看赛道、细分看业务落点、题材看单次涨停叙事 · 三层独立统计</span>
+    <span class="muted small">${dLast} · 状态条→主线→变化→结构，定义看各处 ⓘ</span>
     <div class="seg" style="margin-left:auto">
       <button id="h30" class="${heatRange === 30 ? 'on' : ''}">近30日</button>
       <button id="h60" class="${heatRange === 60 ? 'on' : ''}">近60日</button>
       <button id="hall" class="${heatRange === 0 ? 'on' : ''}">全部</button>
     </div></div>
-  <div class="heat-guide">
-    <div class="guide-copy"><b>产业 × 细分产品 × 题材交叉透视</b>
-      <span class="muted small">产业/产品只来自有证据的公司在营业务；交易题材来自每次涨停归因。历史供应商原因不再进入正式热力</span>
-      <span class="muted small">近5日涨停股在营业务覆盖 ${operatingCoveredStocks.length}/${recentZtStocks.size}；
-        未覆盖股票不会被历史标签猜测补齐，因此产业/产品榜当前会明显偏少</span></div>
-    <div class="focus-picker"><input id="heat-focus-input" list="heat-focus-list"
-      value="${esc(heatSearchLabel(heatFocus))}" placeholder="输入产业、产品或题材" aria-label="搜索观察标签">
-      <datalist id="heat-focus-list">${focusOptions}</datalist><button id="heat-focus-go">查看</button></div>
-    <div class="seg" style="margin-left:0">
-      <button id="hc1" class="${heatCrossRange === 1 ? 'on' : ''}">当日</button>
-      <button id="hc5" class="${heatCrossRange === 5 ? 'on' : ''}">近5日</button>
-      <button id="hc20" class="${heatCrossRange === 20 ? 'on' : ''}">近20日</button>
-    </div></div>
-  <div class="metric-guide" aria-label="指标计算口径">
-    <div class="metric-item"><b>产业/产品热力</b>当天涨停股中，具备该项已核实在营业务事实的去重家数；拟收购、参股、研究不计入。</div>
-    <div class="metric-item"><b>题材热力</b>当天单次涨停归因命中该题材的去重家数；候选与已核实状态在个股页分别展示。</div>
-    <div class="metric-item"><b>股次 / 近5日</b>逐日去重家数相加；同一股票跨日涨停会重复计次。</div>
-    <div class="metric-item"><b>归属 / 下级覆盖</b>交叉股次 ÷ 观察对象股次；产业/产品关系来自独立业务图谱，题材关系来自题材层级。</div>
-    <div class="metric-item"><b>同股共现（原“共振”）</b>两个非包含标签在同一交易日命中同一股票；只表示关联，不表示因果。</div>
-    <div class="metric-item"><b>启动信号</b>近3日均≥3家，且 <code>(近3日均+0.25)/(前15日均+0.25)≥2.2</code>；只表示量能加速，仍需核实共同催化。</div>
-    <div class="metric-item"><b>日期窗口</b>右上 30/60/全部控制热力表与轮动；交叉透视单独使用 1/5/20 日。</div>
+  <div class="statusbar">
+    <div class="st"><div class="v">${ztL.length}${dArrow(ztL.length, ztP.length || null)}</div>
+      <div class="k">涨停家数${iInfo('zt_count')}</div></div>
+    <div class="st"><div class="v">${stL[2] != null ? Math.round(stL[2] * 100) + '%' : '—'}</div>
+      <div class="k">封板率${iInfo('touch_cnt')}</div></div>
+    <div class="st"><div class="v">${maxLbL || '—'}</div><div class="k">最高连板${iInfo('max_lb')}</div></div>
+    <div class="st"><div class="v">${attrCov}%</div><div class="k">归因覆盖${iInfo('attr_cover')}</div></div>
+    <div class="st"><div class="v"${bizCov < 30 ? ' style="color:#b45f16"' : ''}>${bizCov}%</div>
+      <div class="k">业务覆盖${iInfo('biz_cover')}</div></div>
   </div>
+  <div class="sec-h"><b>今日主线</b>${iInfo('mainline')}
+    <span class="muted small">最新交易日题材归因 · 点卡片看交叉透视</span></div>
+  ${mainline.length ? `<div class="ml-grid">${mainline.map(mlCard).join('')}</div>`
+    : '<div class="cross-empty" style="margin-top:8px">最新交易日暂无 ≥2 家的题材归因</div>'}
+  <div class="chg-grid">
+    ${chgCol('🔥 加速中', 'momentum', accel, x => '×' + x.ratio.toFixed(1), 'var(--up)')}
+    ${chgCol('🌱 新启动', 'fresh', freshRows, x => '近3日' + x.r3sum + '股次', 'var(--teal)')}
+    ${chgCol('🌊 退潮中', 'ebbing', ebbRows, x => '×' + x.ratio.toFixed(1), 'var(--ink3)')}
+  </div>
+  <div class="sec-h"><b>结构面</b>
+    <span class="muted small">近5日股次${iInfo('gushi')} · 产业/产品只统计已核实在营业务${iInfo('heat_biz')} · 题材来自单次归因${iInfo('heat_theme')}</span></div>
   <div class="layer-overview">
-    ${layerOverviewHtml('sector', '产业', '已核实在营业务 · 近5日股次', sectorNodes)}
-    ${layerOverviewHtml('product', '细分产品', '已核实产品/服务 · 近5日股次', productNodes)}
-    ${layerOverviewHtml('theme', '交易题材', '单次归因 · 近5日股次', themeNodes)}
+    ${layerOverviewHtml('sector', '产业', '已核实在营业务', sectorNodes,
+      { chip: `<span class="cover-chip">业务覆盖 ${bizCov}%${bizCov < 30 ? ' ⚠' : ''}</span>`,
+        dim: bizCov < 30, info: 'heat_biz' })}
+    ${layerOverviewHtml('product', '细分产品', '已核实产品/服务', productNodes,
+      { chip: `<span class="cover-chip">业务覆盖 ${bizCov}%${bizCov < 30 ? ' ⚠' : ''}</span>`,
+        dim: bizCov < 30, info: 'heat_biz' })}
+    ${layerOverviewHtml('theme', '交易题材', '单次归因', themeNodes, { info: 'heat_theme' })}
   </div>
   <section class="cross-card">
     <div class="cross-head"><span class="type-badge ${HEAT_LAYER[heatTypeOf(heatFocus)]?.cls || 'theme'}">${
       TYPE_LABEL[heatTypeOf(heatFocus)] || '标签'}</span>
-      <h3>观察对象：<span class="focus-name">${esc(heatNameOf(heatFocus))}</span></h3>
+      <h3>交叉透视：<span class="focus-name">${esc(heatNameOf(heatFocus))}</span></h3>
+      <div class="focus-picker"><input id="heat-focus-input" list="heat-focus-list"
+        value="${esc(heatSearchLabel(heatFocus))}" placeholder="输入产业、产品或题材" aria-label="搜索观察标签">
+        <datalist id="heat-focus-list">${focusOptions}</datalist><button id="heat-focus-go">查看</button></div>
+      <div class="seg" style="margin-left:0">
+        <button id="hc1" class="${heatCrossRange === 1 ? 'on' : ''}">当日</button>
+        <button id="hc5" class="${heatCrossRange === 5 ? 'on' : ''}">近5日</button>
+        <button id="hc20" class="${heatCrossRange === 20 ? 'on' : ''}">近20日</button>
+      </div>
       ${isBusinessKey(heatFocus)
         ? `<button class="navbtn heat-business-detail" data-business="${businessIdOf(heatFocus)}">查看业务公司池</button>`
         : nameToCid[heatFocus] != null
@@ -2406,7 +2574,10 @@ function renderTags(sub) {
 
 /* --- 生命周期：休眠/活跃/启动/高潮/退潮 --- */
 function lifecycleOf(nm) {
-  const s = heatBucketOf(nm) ? heatTaxSeries(nm) : taxSeries(nm);
+  const s = (heatBucketOf(nm) || isBusinessKey(nm)) ? heatTaxSeries(nm) : taxSeries(nm);
+  return lifecycleOfSeries(s);
+}
+function lifecycleOfSeries(s) {
   const win = s.slice(-30);
   const sum = win.reduce((a, b) => a + b, 0);
   if (!sum) return ['idle', '休眠'];
@@ -2483,12 +2654,8 @@ function renderTagsTree() {
     <button class="navbtn" id="t-clpall">全部收起</button>
     <label class="small muted"><input type="checkbox" id="t-act" ${TAGS.onlyActive ? 'checked' : ''}> 只看有热度</label>
     <button class="navbtn" id="t-newgrp">➕ 新建分组</button>
-  </div>
-  <div class="metric-guide tags-metric-guide" aria-label="标签全景指标口径">
-    <div class="metric-item"><b>节点热度</b>所选窗口内逐日去重涨停家数相加（股次）；父节点只汇总同类型下级，不再把产业、产品、题材混算。</div>
-    <div class="metric-item"><b>生命周期</b>启动=近3日均≥3且平滑后≥前15日2.2倍；高潮=近3日均≥4且≥30日峰值80%；退潮=峰值≥3且近3日&lt;峰值35%。</div>
-    <div class="metric-item"><b>窗口股票 / 当前梯队</b>股票数按窗口去重；梯队只看最新交易日仍在本层封板的当前连板数，历史命中但今日未封板单列。</div>
-    <div class="metric-item"><b>次日连板率</b>最后两个交易日中，昨日枝内封板且今日仍在枝内封板的股票数 ÷ 昨日枝内封板数；触及未封不算。</div>
+    <span class="muted small" style="margin-left:auto">口径：节点热度${iInfo('node_heat')}
+      生命周期${iInfo('lifecycle')} 当前梯队${iInfo('tier')} 次日连板率${iInfo('renewal_next')}</span>
   </div>
   <div class="tree2col">
     <div class="panor">${treeHtml}</div>
