@@ -81,9 +81,10 @@ def main() -> int:
         if nm in OVERRIDES or m.get("status") != "candidate":
             continue
         led = ledger.get(nm) or {}
-        if float(led.get("c", 0)) >= 0.8 and led.get("t") not in (None, "unknown") \
+        if float(led.get("c", 0)) >= 0.8 \
+                and led.get("t") not in (None, "unknown", "event") \
                 and m.get("type") == led.get("t"):
-            m["status"] = "active"
+            m["status"] = "active"     # event 永不转正（出词典，见 CLAUDE.md）
             n_active += 1
 
     # 2) 父建议四道闸挂树

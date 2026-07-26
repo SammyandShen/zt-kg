@@ -151,8 +151,16 @@ open docs/index.html                           # 打开交互网页
 
 ## 标签七类分型模型（tag_meta.json）
 
+- **词典三文件为最终形态**（2026-07-26 定）：tag_meta.json(分型) + taxonomy.json
+  (层级) + aliases.json(同义词) 各司其职；曾计划合并为单一 tags.json，评估后取消
+  ——频道一致性门禁/映射文件/唯一性校验已覆盖合并的实际收益，重写全部读写层
+  的回归风险大于收益。**event 类型已出词典**：event 是记录不是词汇，公告类事件
+  走 corporate_events 表，原始原因永存 reason_type；存量 event 标签已由
+  migrate_event_tags.py 整体 retire，gen_tag_meta 新判 event 的照常登记但
+  auto_adopt 不会转正
 - 类型：sector(稳定大产业)/product(稳定细分行业、产品、技术或业务线)/
-  theme(交易题材)/catalyst(催化)/attribute(属性)/event(一次性事件)/unknown
+  theme(交易题材)/catalyst(催化)/attribute(属性)/event(一次性事件→仅过渡分型，
+  终态一律 retired)/unknown
 - 频道由类型直接决定：sector|product|theme→题材热力+启动榜；
   catalyst→催化热力；其余不进热度。`virtual=true` 表示只做聚合导航的虚拟分组
 - 边界：产业回答“长期做什么”，题材回答“市场当前交易什么”；产品/材料/零部件
