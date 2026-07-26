@@ -1,21 +1,285 @@
 {
-  "$note": "交易题材到公司客观业务标签的映射。它只用于生成业务候选池，不自动证明某只股票属于本轮题材；候选公司仍按核心主营、参股、拟收购等关系分层展示。",
-  "mappings": [
-    {
-      "theme": "脑机接口",
-      "business_tag_name": "脑机接口",
-      "mapping_type": "exact",
-      "status": "verified",
-      "confidence": 1.0,
-      "rationale": "题材与客观业务标签同名；公司是否属于核心主营仍由各自业务事实的 relation_type 和 maturity 决定。"
-    },
-    {
-      "theme": "跨界半导体",
-      "business_tag_name": "半导体工程服务",
-      "mapping_type": "semantic",
-      "status": "verified",
-      "confidence": 0.9,
-      "rationale": "跨界半导体题材可映射到通过拟收购取得的半导体工程服务业务敞口，但不能据此改写为现有半导体主营。"
-    }
-  ]
+ "$note": "交易题材到公司客观业务标签的映射。它只用于生成业务候选池，不自动证明某只股票属于本轮题材；候选公司仍按核心主营、参股、拟收购等关系分层展示。",
+ "mappings": [
+  {
+   "theme": "脑机接口",
+   "business_tag_name": "脑机接口",
+   "mapping_type": "exact",
+   "status": "verified",
+   "confidence": 1.0,
+   "rationale": "题材与客观业务标签同名；公司是否属于核心主营仍由各自业务事实的 relation_type 和 maturity 决定。"
+  },
+  {
+   "theme": "跨界半导体",
+   "business_tag_name": "半导体工程服务",
+   "mapping_type": "semantic",
+   "status": "verified",
+   "confidence": 0.9,
+   "rationale": "跨界半导体题材可映射到通过拟收购取得的半导体工程服务业务敞口，但不能据此改写为现有半导体主营。"
+  },
+  {
+   "theme": "互动影游",
+   "business_tag_name": "互动影游",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-07-26] 业务即题材本身"
+  },
+  {
+   "theme": "短剧",
+   "business_tag_name": "短剧制作",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-26] 短剧制作是短剧题材的直接承载业务"
+  },
+  {
+   "theme": "短剧/漫剧",
+   "business_tag_name": "短剧制作",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-26] 短剧制作直接对应该题材"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "先进封装技术",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-26] 业务名即题材名"
+  },
+  {
+   "theme": "存储芯片",
+   "business_tag_name": "存储芯片封装测试",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-26] 封测是存储芯片产业链直接环节"
+  },
+  {
+   "theme": "卫星互联网",
+   "business_tag_name": "卫星通信芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-26] 通信芯片是卫星互联网终端/星上核心器件"
+  },
+  {
+   "theme": "卫星制造",
+   "business_tag_name": "卫星通信芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] 通信芯片是卫星制造的关键上游器件"
+  },
+  {
+   "theme": "卫星制造",
+   "business_tag_name": "星载雷达芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-26] 星载雷达芯片是卫星有效载荷核心器件"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "机载通信芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-26] 机载通信芯片是大飞机航电系统直接部件"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "机载防撞系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-26] 防撞系统是大飞机航电标配子系统"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "客舱广播内话系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-26] 客舱系统是大飞机机载设备直接组成"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "大飞机航电配套",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-26] 业务本身即大飞机航电配套"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "空管系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] 空管系统是大飞机运行配套上游设备"
+  },
+  {
+   "theme": "卫星制造",
+   "business_tag_name": "相控阵T/R芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] T/R芯片是卫星相控阵天线核心器件"
+  },
+  {
+   "theme": "第三代半导体",
+   "business_tag_name": "氮化镓芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-26] 氮化镓芯片是第三代半导体的代表产品"
+  },
+  {
+   "theme": "第三代半导体",
+   "business_tag_name": "砷化镓芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-26] 砷化镓芯片属于第三代半导体材料体系"
+  },
+  {
+   "theme": "AI芯片",
+   "business_tag_name": "智能图像芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-26] 图像芯片属于AI芯片细分品类"
+  },
+  {
+   "theme": "边缘AI",
+   "business_tag_name": "AI边缘计算视觉分析",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-26] 业务即边缘AI视觉分析本身"
+  },
+  {
+   "theme": "AI机器视觉",
+   "business_tag_name": "AI边缘计算视觉分析",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-26] 边缘视觉分析属于机器视觉应用"
+  },
+  {
+   "theme": "AI视觉",
+   "business_tag_name": "AI边缘计算视觉分析",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-26] 边缘视觉分析属于AI视觉应用"
+  },
+  {
+   "theme": "算力服务",
+   "business_tag_name": "智算算力服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-26] 业务名即算力服务本身"
+  },
+  {
+   "theme": "AI智算",
+   "business_tag_name": "智算算力服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-26] 智算算力服务直接对应AI智算题材"
+  },
+  {
+   "theme": "算力",
+   "business_tag_name": "智算算力服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-26] 智算算力服务是算力题材的直接业务载体"
+  },
+  {
+   "theme": "东数西算",
+   "business_tag_name": "数据中心服务",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] 数据中心服务是东数西算工程的直接落地业务"
+  },
+  {
+   "theme": "工业互联网",
+   "business_tag_name": "工业智慧物联网解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-26] 工业物联网解决方案是工业互联网的直接业务形态"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能电表",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] 智能电表是智能电网终端计量的直接组成"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "抗阿尔茨海默病创新药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-26] 业务本身属于创新药范畴"
+  },
+  {
+   "theme": "盐湖提锂",
+   "business_tag_name": "碳酸锂",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-26] 碳酸锂是盐湖提锂的直接产出品"
+  },
+  {
+   "theme": "盐湖提锂",
+   "business_tag_name": "氢氧化锂",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-26] 氢氧化锂是盐湖提锂的直接产出品"
+  },
+  {
+   "theme": "绿色电力",
+   "business_tag_name": "新能源发电与储能运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-26] 新能源发电运营即绿色电力业务本身"
+  },
+  {
+   "theme": "绿色电力",
+   "business_tag_name": "光伏发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] 光伏发电是绿色电力的直接业务形态"
+  },
+  {
+   "theme": "储能出海",
+   "business_tag_name": "储能系统",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] 储能系统是储能出海题材出口的直接产品"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车电子制造",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-26] 汽车电子是汽车产业链的直接零部件环节"
+  }
+ ]
 }

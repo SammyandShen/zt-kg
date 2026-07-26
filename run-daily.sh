@@ -20,6 +20,8 @@ python3 scripts/gen_tag_meta.py --all
 # 标签自动分型链（零人工干预）：sonnet增量复核(台账跳过已判)→高置信转正+父建议四道闸挂树
 python3 scripts/classify_tags.py || echo "⚠️ classify_tags 失败，跳过"
 python3 scripts/auto_adopt_tags.py || echo "⚠️ auto_adopt_tags 失败，跳过"
+# 题材→业务映射增量生成（新业务标签/新题材出现才调LLM，台账防重）
+python3 scripts/gen_theme_mappings.py || echo "⚠️ gen_theme_mappings 失败，跳过"
 # 原因标签只生成“候选题材关系”；人工业务事实/归因来自版本化 JSON，
 # 自动轮次保持 provisional，避免把供应商原因直接写成正式主营或题材。
 python3 scripts/rebuild_semantic_layer.py
