@@ -508,17 +508,44 @@ def load_expansions(alias_map: dict[str, str] | None = None) -> dict[str, list[s
     return exp
 
 
+_drop_tags_cache: set | None = None
+
+
+def load_drop_tags(refresh: bool = False) -> set:
+    """概念空间丢弃集：type=event 且 retired 的标签（event 是记录不是词汇）。
+
+    这些标签不再生成概念关系；原始写法永存 limit_up_events.reason_type。
+    """
+    global _drop_tags_cache
+    if _drop_tags_cache is not None and not refresh:
+        return _drop_tags_cache
+    path = REPO_ROOT / "data" / "tag_meta.json"
+    drops: set = set()
+    if path.exists():
+        meta = json.loads(path.read_text(encoding="utf-8"))
+        meta.pop("$note", None)
+        drops = {nm for nm, m in meta.items()
+                 if m.get("type") == "event" and m.get("status") == "retired"}
+    _drop_tags_cache = drops
+    return drops
+
+
 def normalize_tags(reason_type: str | None, alias_map: dict[str, str],
-                   expansions: dict[str, list[str]]) -> list[tuple[str, str]]:
-    """归一化总管线：拆分 → 一对多展开 → 别名归一。
+                   expansions: dict[str, list[str]],
+                   drops: set | None = None) -> list[tuple[str, str]]:
+    """归一化总管线：拆分 → 一对多展开 → 别名归一 → 丢弃已退休event。
 
     返回 [(规范名, 原始标签)]，规范名去重保序；raw_tag 记录展开/归一前的原始写法。
     """
+    if drops is None:
+        drops = load_drop_tags()
     out: list[tuple[str, str]] = []
     seen: set[str] = set()
     for tag in split_tags(reason_type):
         for t in expansions.get(tag, [tag]):
             canon = alias_map.get(t, t)
+            if canon in drops or t in drops:
+                continue
             if canon not in seen:
                 seen.add(canon)
                 out.append((canon, tag))

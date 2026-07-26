@@ -108,6 +108,24 @@
    "note": "新闻明确点名'光伏设备板块上涨'驱动涨停，非商业航天",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-07-25"
+  },
+  {
+   "code": "000417",
+   "trade_date": "2026-07-24",
+   "theme": "存储芯片",
+   "verdict": "rejected",
+   "note": "公司回应称通过基金间接投资长鑫科技比例较低，主业仍为百货零售，属蹭概念",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-26"
+  },
+  {
+   "code": "601700",
+   "trade_date": "2026-07-23",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "公告及新闻证据均指向特高压中标合同，未见国企改革相关举措，主导叙事是中标而非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-26"
   }
  ],
  "episode_verdicts": [],
