@@ -209,6 +209,10 @@
   .dim-col { opacity: .55; }
   .sec-h { display: flex; align-items: center; gap: 8px; margin: 16px 0 0; }
   .sec-h b { font-size: 14px; white-space: nowrap; }
+  .pill-jump { cursor: pointer; font-weight: inherit; }
+  .pill-jump:hover { text-decoration: underline; }
+  .episode-card.ep-hi { border: 1.5px solid var(--accent);
+    box-shadow: 0 0 0 3px rgba(46,107,230,.12); }
   @media (max-width: 760px) {
     .ml-grid, .chg-grid { grid-template-columns: 1fr; }
     .statusbar .st { flex: 1 1 33%; min-width: 84px; border-bottom: 1px solid var(--line); }
@@ -925,7 +929,8 @@ function eventThemeHtml(code, d) {
     ].filter(Boolean).join('｜');
     return `<span class="theme-pill ${status === 'verified' ? '' : 'candidate'}"
       title="${esc(title)}">
-      ${esc(name)}<span class="role">${esc(THEME_ROLE_LABEL[role] || role)}·${esc(
+      <b class="pill-jump" data-cid="${cid}" data-ep="${l[7] ?? 'none'}"
+        title="查看该轮题材">${esc(name)}</b><span class="role">${esc(THEME_ROLE_LABEL[role] || role)}·${esc(
         SEM_STATUS_LABEL[status] || status)}${
         basis ? (basis[0] === 'fact' ? '·⚭业务边' : '·⚭公告')
               : status === 'verified' ? '' : '·无凭据'}${
@@ -938,18 +943,29 @@ function eventThemeHtml(code, d) {
     evidenceLinksHtml(evidenceIds, '题材证据')}${
     evidenceLinksHtml(unboundContextIds, '事件公告（尚未绑定具体题材）')}`;
 }
-function episodePanelHtml(cid) {
+function episodePanelHtml(cid, epSel) {
   const episodes = Object.entries(THEME_EPISODES)
     .filter(([, ep]) => +ep[0] === +cid)
     .sort((a, b) => String(b[1][1]).localeCompare(String(a[1][1])));
-  if (!episodes.length) return '';
-  const [episodeId, ep] = episodes[0];
+  // 个股独立事件：归因不属于任何轮次时明确说明，不装作有一轮
+  const noneBanner = epSel === 'none' ? `<div class="episode-card"><div class="episode-head">
+    <b>本轮题材</b><span class="muted small">该次涨停为个股独立事件，未形成题材轮次${
+      episodes.length ? '；下方为该题材最近一轮供参考' : ''}</span></div></div>` : '';
+  if (!episodes.length) return noneBanner;
+  // 锚定归因所属的那一轮（历史语义）；找不到则回落最新轮
+  const selHit = epSel && epSel !== 'none'
+    ? episodes.find(([id]) => id === String(epSel)) : null;
+  const [episodeId, ep] = selHit || episodes[0];
+  const isHistory = selHit && selHit !== episodes[0];
   const [, start, end, phase, status, catalyst, confidence, stockCount, evidenceIds] = ep;
-  return `<div class="episode-card"><div class="episode-head">
+  return `${noneBanner}<div class="episode-card${selHit ? ' ep-hi' : ''}"><div class="episode-head">
     <b>本轮题材</b><span class="verify-state ${status}">${esc(SEM_STATUS_LABEL[status] || status)}</span>
-    <span class="type-badge theme">${esc(PHASE_LABEL[phase] || phase)}</span>
+    <span class="type-badge theme">${esc(PHASE_LABEL[phase] || phase)}</span>${
+      isHistory ? '<span class="type-badge" style="background:var(--surface2)">历史轮次</span>' : ''}
     <span class="range">${esc(start)} ～ ${esc(end || '进行中')} · ${stockCount}只候选成分股
-      · 置信度${Math.round(confidence * 100)}% · 轮次#${esc(episodeId)}</span></div>
+      · 置信度${Math.round(confidence * 100)}% · 轮次#${esc(episodeId)}</span>${
+      isHistory ? `<span class="pill-jump" data-cid="${cid}" data-ep="${episodes[0][0]}"
+        style="color:var(--accent);cursor:pointer;margin-left:auto">查看当前轮 →</span>` : ''}</div>
     <div class="episode-copy">${esc(catalyst || '共同催化待核实')}</div>
     ${evidenceLinksHtml(evidenceIds)}</div>`;
 }
@@ -1006,7 +1022,14 @@ function render() {
   if (view === 'filter') return renderTags('filter');
   if (view === 'tags') return renderTags(arg || 'tree');
   if (view === 'date') return renderDate(decodeURIComponent(arg));
-  if (view === 'concept') return renderConcept(+arg);
+  if (view === 'concept') {
+    const [cidStr, qs] = arg.split('?');
+    const out = renderConcept(+cidStr, qs || '');
+    if (qs && qs.includes('ep='))
+      setTimeout(() => document.querySelector('.episode-card')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 60);
+    return out;
+  }
   if (view === 'business') return renderBusinessConcept(+arg);
   if (view === 'stock') return renderStock(decodeURIComponent(arg));
   if (view === 'batch') return renderBatch();
@@ -1191,7 +1214,8 @@ function typedHierarchyHtml(names, direction) {
 
 /* ---------- 视图2：概念详情 ---------- */
 let conceptRange = 60;
-function renderConcept(cid) {
+function renderConcept(cid, qs) {
+  const epSel = new URLSearchParams(qs || '').get('ep');
   const meta = D.concepts[cid], c = byConcept[cid];
   if (!meta || (!c && !eventThemeByCid[cid])) {
     $('#app').innerHTML = '<div class="empty">概念不存在</div>'; return;
@@ -1272,7 +1296,7 @@ function renderConcept(cid) {
     </div>
     ${hierarchyHtml ? `<div class="hierarchy typed-hierarchy">${hierarchyHtml}</div>` : ''}
   </div>
-  ${episodePanelHtml(cid)}
+  ${episodePanelHtml(cid, epSel)}
   ${themeBusinessPoolHtml(cid)}
   <div class="chart-card">
     <div class="ch-h"><b>活跃度时间线</b><span class="muted small">${
@@ -1570,6 +1594,13 @@ document.addEventListener('mouseover', e => {
   if (m) showTip(e, `${m[0]}：${m[1]}`);
 });
 document.addEventListener('mouseout', e => { if (e.target.closest?.('.info-i')) hideTip(); });
+// 题材 pill 点名字 → 该归因所属轮次（点状态区不跳转，凭据看 tooltip）
+document.addEventListener('click', e => {
+  const el = e.target.closest?.('.pill-jump');
+  if (!el) return;
+  e.stopPropagation();
+  go('#/concept/' + el.dataset.cid + '?ep=' + el.dataset.ep);
+});
 
 const avgArr = a => a.reduce((x, y) => x + y, 0) / Math.max(1, a.length);
 function momentumOf(s) {                  // 近3日 vs 前5日（口径见 METRIC_DEFS.momentum）
