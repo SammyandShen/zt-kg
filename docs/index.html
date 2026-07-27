@@ -213,6 +213,13 @@
   .pill-jump:hover { text-decoration: underline; }
   .episode-card.ep-hi { border: 1.5px solid var(--accent);
     box-shadow: 0 0 0 3px rgba(46,107,230,.12); }
+  .tier-row { padding: 6px 8px 2px; }
+  .tier-h { display: flex; align-items: baseline; gap: 8px; margin-bottom: 3px; }
+  .tier-h b { font-size: 12.5px; }
+  .tier-h.core b { color: var(--accent); }
+  .tier-h.exposure b { color: var(--teal); }
+  .tier-h.weak b { color: var(--ink3); }
+  .watch-chip { border-style: dashed; opacity: .75; }
   @media (max-width: 760px) {
     .ml-grid, .chg-grid { grid-template-columns: 1fr; }
     .statusbar .st { flex: 1 1 33%; min-width: 84px; border-bottom: 1px solid var(--line); }
@@ -943,6 +950,15 @@ function eventThemeHtml(code, d) {
     evidenceLinksHtml(evidenceIds, '题材证据')}${
     evidenceLinksHtml(unboundContextIds, '事件公告（尚未绑定具体题材）')}`;
 }
+function selectedEpisodeId(cid, epSel) {
+  const eps = Object.entries(THEME_EPISODES)
+    .filter(([, ep]) => +ep[0] === +cid)
+    .sort((a, b) => String(b[1][1]).localeCompare(String(a[1][1])));
+  if (!eps.length) return null;
+  if (epSel && epSel !== 'none' && eps.some(([id]) => id === String(epSel)))
+    return +epSel;
+  return +eps[0][0];
+}
 function episodePanelHtml(cid, epSel) {
   const episodes = Object.entries(THEME_EPISODES)
     .filter(([, ep]) => +ep[0] === +cid)
@@ -969,6 +985,78 @@ function episodePanelHtml(cid, epSel) {
     <div class="episode-copy">${esc(catalyst || '共同催化待核实')}</div>
     ${evidenceLinksHtml(evidenceIds)}</div>`;
 }
+/* ---------- 轮次分层名单：回答"这一轮谁在跟随"，按关系成色六层分级 ---------- */
+const TIER_DEFS = [
+  ['① 核心业务股', '相关业务是主营或重要收入', 'core'],
+  ['② 直接成长业务股', '已有产品/订单或在研，收入尚小', 'core'],
+  ['③ 上下游映射股', '真实供货与产业链关系', 'exposure'],
+  ['④ 参股布局股', '通过股权投资获得题材暴露', 'exposure'],
+  ['⑤ 拟收购转型股', '交易完成前没有当前业务', 'exposure'],
+  ['⑥ 纯市场联想股', '缺乏可靠业务证据，仅盘面联想', 'weak'],
+];
+function tierOf(relation, maturity) {
+  if (relation === 'core' || relation === 'secondary')
+    return ['core_revenue', 'commercialized'].includes(maturity) ? 0 : 1;
+  if (relation === 'research') return 1;
+  if (relation === 'supply_chain') return 2;
+  if (relation === 'holding') return 3;
+  if (relation === 'planned_acquisition') return 4;
+  return 5;
+}
+function episodeMembers(epId) {          // 本轮 trading 池：code -> 最近一次封板
+  const out = new Map();
+  for (const key in EVENT_THEMES) {
+    for (const l of EVENT_THEMES[key]) {
+      if (+l[7] !== +epId || l[4] === 'rejected') continue;
+      const cut = key.lastIndexOf('|'), code = key.slice(0, cut), d = key.slice(cut + 1);
+      const hit = (byStock[code] || []).find(x => x.d === d && !isTouch(x.ev));
+      if (!hit) continue;
+      const cur = out.get(code);
+      if (!cur || d > cur.d) out.set(code, { d, lb: hit.ev[1] || 1, basis: l[11] });
+    }
+  }
+  return out;
+}
+function episodeTierListHtml(cid, epId) {
+  const relRows = new Map();             // code -> {relation, maturity, note}
+  for (const r of THEME_BUSINESS_CANDIDATES[cid] || []) {
+    if (!relRows.has(r[0]))
+      relRows.set(r[0], { relation: r[2], maturity: r[3],
+        note: `${r[1]}·${RELATION_LABEL[r[2]] || r[2]}·${MATURITY_LABEL[r[3]] || r[3]}${r[6] ? '｜' + r[6] : ''}` });
+  }
+  const trading = epId != null ? episodeMembers(epId) : new Map();
+  const tiers = TIER_DEFS.map(() => []);
+  for (const [code, m] of trading) {
+    let rel = relRows.get(code);
+    if (!rel && m.basis && m.basis[0] === 'fact') {
+      const [tag, relation] = String(m.basis[1]).split('·');
+      rel = { relation, maturity: '', note: `${tag}·${RELATION_LABEL[relation] || relation}（凭据）` };
+    }
+    tiers[rel ? tierOf(rel.relation, rel.maturity) : 5].push({
+      code, trading: true, lb: m.lb, d: m.d, note: rel?.note || '无业务边/公司事件凭据' });
+  }
+  for (const [code, rel] of relRows) {
+    if (trading.has(code)) continue;     // watch 池：有业务未异动
+    tiers[tierOf(rel.relation, rel.maturity)].push({
+      code, trading: false, note: rel.note });
+  }
+  if (!tiers.some(t => t.length)) return '';
+  const chip = s => `<span class="concept-chip${s.trading ? '' : ' watch-chip'}" data-code="${s.code}"
+    title="${esc(s.note)}" style="cursor:pointer">${esc(D.stocks[s.code] || s.code)}
+    <span class="x">${s.trading ? `${s.lb > 1 ? s.lb + '板' : '首板'}·${s.d.slice(5)}` : '未异动'}</span></span>`;
+  const rows = TIER_DEFS.map(([label, hint, cls], i) => {
+    const list = tiers[i];
+    if (!list.length) return '';
+    list.sort((a, b) => (b.trading - a.trading) || (b.lb || 0) - (a.lb || 0));
+    return `<div class="tier-row"><div class="tier-h ${cls}"><b>${label}</b>
+      <span class="muted small">${hint} · ${list.length}只</span></div>
+      <div class="chips">${list.map(chip).join('')}</div></div>`;
+  }).join('');
+  return `<div class="semantic-section"><div class="semantic-title">
+    <b>本轮跟随分层${iInfo('tiers')}</b><span>实心=本轮已涨停(trading)，虚线=有业务未异动(watch)；
+    分层看关系成色，⑥层没有业务证据，追high前先想想</span></div>${rows}</div>`;
+}
+
 function themeBusinessPoolHtml(cid) {
   const rows = THEME_BUSINESS_CANDIDATES[cid] || [];
   if (!rows.length) return '';
@@ -1297,7 +1385,7 @@ function renderConcept(cid, qs) {
     ${hierarchyHtml ? `<div class="hierarchy typed-hierarchy">${hierarchyHtml}</div>` : ''}
   </div>
   ${episodePanelHtml(cid, epSel)}
-  ${themeBusinessPoolHtml(cid)}
+  ${episodeTierListHtml(cid, selectedEpisodeId(cid, epSel))}
   <div class="chart-card">
     <div class="ch-h"><b>活跃度时间线</b><span class="muted small">${
       isBranchScope ? '自身及全部下级标签' : '当前标签'}的当日去重涨停家数，点击柱子跳当日复盘</span>
@@ -1579,7 +1667,8 @@ const METRIC_DEFS = {
   renewal:   ['续板率', '昨日该题材涨停股中，今日再度涨停的比例；触及未封不计。反映题材内部的持续性/分歧度。'],
   fresh:     ['新启动', '近3日出现涨停、且此前15个交易日几乎无记录的题材；新叙事的第一现场，需核实共同催化。'],
   ebbing:    ['退潮中', '前5日日均≥1.5家但动量≤0.55 的题材；量能明显萎缩。'],
-  mainline:  ['今日主线', '按最新交易日题材归因去重家数排序的前3个交易题材；点击卡片查看交叉透视。'],
+  mainline:  ['今日主线', '按最新交易日题材归因去重家数排序的前3个交易题材；点击卡片直达该轮的分层跟随名单。'],
+  tiers:     ['本轮跟随分层', '①核心业务=主营/重要收入 ②直接成长=有产品订单收入尚小(含在研) ③上下游=真实供货关系 ④参股布局 ⑤拟收购转型=交易未完成 ⑥纯市场联想=无业务证据。实心=本轮已涨停，虚线=有业务但未异动(watch)。'],
   node_heat: ['节点热度', '所选窗口内逐日去重涨停家数相加（股次）；父节点只汇总同类型下级。'],
   lifecycle: ['生命周期', '启动=近3日均≥3且≥前15日2.2倍；高潮=近3日均≥4且≥30日峰值80%；退潮=峰值≥3且近3日<峰值35%；其余有量=活跃、无量=休眠。'],
   tier:      ['当前梯队', '只看最新交易日仍在本层封板的当前连板数；历史命中但今日未封板的股票单列。'],
@@ -1869,12 +1958,14 @@ function renderHeat() {
     for (const c of y) if (todaySet(nm).has(c)) k++;
     return Math.round(k / y.size * 100);
   };
-  const epPhaseOf = nm => {
+  const epInfoOf = nm => {
     const cid = nameToCid[nm];
-    if (cid == null) return '';
-    const eps = Object.values(THEME_EPISODES).filter(ep => +ep[0] === +cid)
-      .sort((a, b) => String(b[1]).localeCompare(String(a[1])));
-    return eps.length && !eps[0][2] ? (PHASE_LABEL[eps[0][3]] || '') : '';
+    if (cid == null) return { cid: null, ph: '', id: null };
+    const eps = Object.entries(THEME_EPISODES).filter(([, ep]) => +ep[0] === +cid)
+      .sort((a, b) => String(b[1][1]).localeCompare(String(a[1][1])));
+    if (!eps.length) return { cid, ph: '', id: null };
+    const [id, ep] = eps[0];
+    return { cid, ph: !ep[2] ? (PHASE_LABEL[ep[3]] || '') : '', id: +id };
   };
   const mainline = themeNodes.map(nm => ({
     nm, today: todaySet(nm).size, mom: momentumOf(heatTaxSeries(nm)).ratio,
@@ -1886,8 +1977,10 @@ function renderHeat() {
     const rn = renewalOf(x.nm);
     const lead = ztL.filter(e => todaySet(x.nm).has(e[0]))
       .sort((a, b) => (b[1] || 1) - (a[1] || 1))[0];
-    const ph = epPhaseOf(x.nm);
-    return `<div class="ml-card" data-focus="${esc(x.nm)}">
+    const { cid, ph, id } = epInfoOf(x.nm);
+    return `<div class="ml-card"${cid != null
+        ? ` data-mljump="#/concept/${cid}${id != null ? '?ep=' + id : ''}"`
+        : ` data-focus="${esc(x.nm)}"`}>
       <div class="ml-name">${esc(x.nm)}<span class="lc lc-${lc}">${lcTxt}</span>${
         ph ? `<span class="type-badge theme">${esc(ph)}轮</span>` : ''}</div>
       <div class="ml-row"><span class="ml-num">${x.today}家</span>${dArrow(x.today, prevN)}
@@ -1935,7 +2028,7 @@ function renderHeat() {
       <div class="k">业务覆盖${iInfo('biz_cover')}</div></div>
   </div>
   <div class="sec-h"><b>今日主线</b>${iInfo('mainline')}
-    <span class="muted small">最新交易日题材归因 · 点卡片看交叉透视</span></div>
+    <span class="muted small">最新交易日题材归因 · 点卡片看这一轮的分层跟随名单</span></div>
   ${mainline.length ? `<div class="ml-grid">${mainline.map(mlCard).join('')}</div>`
     : '<div class="cross-empty" style="margin-top:8px">最新交易日暂无 ≥2 家的题材归因</div>'}
   <div class="chg-grid">
@@ -2097,6 +2190,8 @@ function renderHeat() {
   $('#heat-focus-input').addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); applyFocusInput(); }
   });
+  document.querySelectorAll('[data-mljump]').forEach(el =>
+    el.addEventListener('click', () => go(el.dataset.mljump)));
   document.querySelectorAll('[data-focus]').forEach(el =>
     el.addEventListener('click', () => { heatFocus = el.dataset.focus; renderHeat(); }));
   document.querySelectorAll('[data-detail]').forEach(el =>
