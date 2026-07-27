@@ -7915,6 +7915,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "供货高意": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "供销总社": {
   "type": "attribute",
   "status": "candidate",
@@ -7978,6 +7982,10 @@
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "分接开关龙头": {
+  "type": "attribute",
+  "status": "candidate"
  },
  "制剂一体化": {
   "type": "attribute",
@@ -8335,6 +8343,10 @@
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "气缸套龙头": {
+  "type": "attribute",
+  "status": "candidate"
  },
  "汽车Tier1": {
   "type": "attribute",
@@ -10632,6 +10644,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "总经理增持完成": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "成本下降": {
   "type": "catalyst",
@@ -13774,6 +13790,10 @@
   "type": "event",
   "status": "retired"
  },
+ "投资半导体及机器人": {
+  "type": "event",
+  "status": "candidate"
+ },
  "投资基金（人工智能）": {
   "type": "event",
   "status": "retired"
@@ -14053,6 +14073,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "拟收购亘元新材": {
+  "type": "event",
+  "status": "candidate"
  },
  "拟收购亚洲食品": {
   "type": "event",
@@ -17368,10 +17392,18 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI电极箔": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI眼镜电池": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "AI睡眠": {
+  "type": "product",
+  "status": "candidate"
  },
  "AI知识库": {
   "type": "product",
@@ -17917,6 +17949,10 @@
   "status": "candidate"
  },
  "DR钻戒": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "DTP药房": {
   "type": "product",
   "status": "candidate"
  },
@@ -18708,6 +18744,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "PCB电子油墨": {
+  "type": "product",
+  "status": "candidate"
+ },
  "PCB签单增长": {
   "type": "product",
   "status": "candidate"
@@ -19125,6 +19165,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "TOD": {
+  "type": "product",
+  "status": "candidate"
+ },
  "TOD轨道物业": {
   "type": "product",
   "status": "candidate"
@@ -19155,6 +19199,10 @@
   "status": "candidate"
  },
  "UCO": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "UDM智能制造": {
   "type": "product",
   "status": "candidate"
  },
@@ -19748,6 +19796,10 @@
   "status": "candidate"
  },
  "主营优势": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "举牌": {
   "type": "product",
   "status": "candidate"
  },
@@ -20421,6 +20473,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "健康消费": {
+  "type": "product",
+  "status": "candidate"
+ },
  "健康零食": {
   "type": "product",
   "status": "candidate"
@@ -20652,6 +20708,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光伏发电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光伏坩埚": {
   "type": "product",
   "status": "candidate"
@@ -20678,6 +20738,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "光伏放量": {
+  "type": "product",
+  "status": "candidate"
  },
  "光伏材料": {
   "type": "product",
@@ -21808,6 +21872,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "冷酸灵": {
+  "type": "product",
+  "status": "candidate"
+ },
  "冷链物流": {
   "type": "product",
   "status": "candidate",
@@ -22650,6 +22718,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "半导体材料平台": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体核心零部件": {
   "type": "product",
   "status": "candidate"
@@ -22737,6 +22809,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "半年报扣非增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半年报披露": {
   "type": "product",
   "status": "candidate"
@@ -22757,11 +22833,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "华为认证": {
+  "type": "product",
+  "status": "candidate"
+ },
  "华为韬定律": {
   "type": "product",
   "status": "candidate"
  },
  "华为项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "华为鲸鸿动能": {
   "type": "product",
   "status": "candidate"
  },
@@ -22820,6 +22904,10 @@
   "status": "candidate"
  },
  "卫星数据云服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "卫星数据应用": {
   "type": "product",
   "status": "candidate"
  },
@@ -22993,6 +23081,10 @@
   "status": "candidate"
  },
  "去地产化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "参投卓润新材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -24391,6 +24483,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "女鞋": {
+  "type": "product",
+  "status": "candidate"
+ },
  "女鞋多品牌": {
   "type": "product",
   "status": "candidate"
@@ -24814,6 +24910,10 @@
   "status": "candidate"
  },
  "密码芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "富茂酒店": {
   "type": "product",
   "status": "candidate"
  },
@@ -26189,6 +26289,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "拟布局PCB": {
+  "type": "product",
+  "status": "candidate"
+ },
  "拟并购RFID": {
   "type": "product",
   "status": "candidate"
@@ -26214,6 +26318,10 @@
   "status": "candidate"
  },
  "拟购PEEK": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "拟购光电子资产": {
   "type": "product",
   "status": "candidate"
  },
@@ -26948,6 +27056,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新股": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源”": {
   "type": "product",
   "status": "candidate"
@@ -27463,6 +27575,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "无线键鼠": {
+  "type": "product",
+  "status": "candidate"
+ },
  "无缝服装": {
   "type": "product",
   "status": "candidate",
@@ -27784,6 +27900,10 @@
   "status": "candidate"
  },
  "智慧楼宇": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧水利": {
   "type": "product",
   "status": "candidate"
  },
@@ -29606,6 +29726,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车座椅总成": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车拆解": {
   "type": "product",
   "status": "candidate"
@@ -30053,6 +30177,10 @@
   "status": "candidate"
  },
  "洗护品牌": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "洗护用品": {
   "type": "product",
   "status": "candidate"
  },
@@ -31069,6 +31197,10 @@
   "status": "candidate"
  },
  "热泵出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "热熔胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -32706,6 +32838,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电竞外设": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电竞房": {
   "type": "product",
   "status": "candidate"
@@ -34133,6 +34269,10 @@
   "status": "candidate"
  },
  "精酿啤酒": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "精麻药品": {
   "type": "product",
   "status": "candidate"
  },
@@ -36285,6 +36425,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "跨界滚珠丝杠": {
+  "type": "product",
+  "status": "candidate"
+ },
  "跨界磷化铟衬底": {
   "type": "product",
   "status": "candidate"
@@ -36677,6 +36821,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "连锁酒店": {
+  "type": "product",
+  "status": "candidate"
  },
  "追觅关联": {
   "type": "product",
@@ -37578,6 +37726,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "铅酸蓄电池": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铅锌": {
   "type": "product",
   "status": "candidate"
@@ -38188,6 +38340,10 @@
   "status": "candidate"
  },
  "锆系新材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "锆钛矿选矿": {
   "type": "product",
   "status": "candidate"
  },
@@ -39121,6 +39277,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "饮料包装": {
+  "type": "product",
+  "status": "candidate"
+ },
  "饮料增长": {
   "type": "product",
   "status": "candidate"
@@ -39524,6 +39684,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高血压疫苗": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高血压矩阵": {
   "type": "product",
   "status": "candidate"
@@ -39801,6 +39965,10 @@
   "status": "candidate"
  },
  "黑龙江自贸区": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鼻腔护理": {
   "type": "product",
   "status": "candidate"
  },
@@ -41782,6 +41950,10 @@
   "status": "candidate"
  },
  "能繁母猪去化": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "脑机接口概念": {
   "type": "theme",
   "status": "candidate"
  },
