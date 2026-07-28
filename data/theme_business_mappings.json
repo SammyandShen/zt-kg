@@ -280,6 +280,46 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-07-26] 汽车电子是汽车产业链的直接零部件环节"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "精密数控机床",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-28] 精密数控机床本身就是工业母机题材交易对象"
+  },
+  {
+   "theme": "海上风电",
+   "business_tag_name": "海上风电安装船",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-28] 安装船是海上风电场建设的直接专用设备"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "源网荷储一体化",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-28] 源网荷储一体化是智能电网题材的核心业务形态"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "氢能装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-28] 氢能装备即氢能题材的直接交易对象"
+  },
+  {
+   "theme": "脑机接口概念",
+   "business_tag_name": "脑机接口",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.98,
+   "rationale": "[llm 2026-07-28] 业务标签直接就是脑机接口本身，与题材完全同一"
   }
  ]
 }

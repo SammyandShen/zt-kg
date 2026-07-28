@@ -126,6 +126,141 @@
    "note": "公告及新闻证据均指向特高压中标合同，未见国企改革相关举措，主导叙事是中标而非国企改革",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-07-26"
+  },
+  {
+   "code": "002173",
+   "trade_date": "2026-07-28",
+   "theme": "脑机接口",
+   "verdict": "verified",
+   "note": "控股子公司博灵脑机主营相关(business_fact)，多家媒体连续专题报道4天3板由脑机接口驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "300663",
+   "trade_date": "2026-07-28",
+   "theme": "脑机接口",
+   "verdict": "rejected",
+   "note": "证据均指向软件服务板块/金融科技ETF成分股拉升，未见脑机接口叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "002195",
+   "trade_date": "2026-07-28",
+   "theme": "脑机接口",
+   "verdict": "rejected",
+   "note": "证据明确为数字营销概念反弹带动涨停，与脑机接口无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "603716",
+   "trade_date": "2026-07-28",
+   "theme": "脑机接口",
+   "verdict": "verified",
+   "note": "两家独立媒体专题'脑机接口板块持续走高'直接点名该股涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "000948",
+   "trade_date": "2026-07-28",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条证据均为控股股东解除质押消息，主导叙事是股权质押解除而非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "002642",
+   "trade_date": "2026-07-28",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "两家媒体标题直接点名'AI应用端逆势走强 荣联科技直线涨停'",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "605068",
+   "trade_date": "2026-07-28",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "公司公开澄清'不涉及热点概念'，构成明确反证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "002195",
+   "trade_date": "2026-07-28",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "证据显示当日主导叙事为数字营销概念，非人形机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "002642",
+   "trade_date": "2026-07-28",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "证据明确将涨停归因于'AI应用端逆势走强'，非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "000428",
+   "trade_date": "2026-07-28",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "三条证据均归因旅游酒店板块拉升，与国企改革无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "605068",
+   "trade_date": "2026-07-28",
+   "theme": "电子皮肤",
+   "verdict": "rejected",
+   "note": "公司公开澄清'不涉及热点概念'，构成明确反证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "002173",
+   "trade_date": "2026-07-27",
+   "theme": "脑机接口",
+   "verdict": "verified",
+   "note": "业务事实关联(博灵脑机)，多家媒体连续追踪其脑机接口叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "002925",
+   "trade_date": "2026-07-27",
+   "theme": "脑机接口",
+   "verdict": "verified",
+   "note": "两篇独立涨跌停股分析明确将其列入'脑机接口概念活跃'名单",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "300753",
+   "trade_date": "2026-07-27",
+   "theme": "脑机接口",
+   "verdict": "verified",
+   "note": "两篇报道直接称其为'脑机接口概念股爱朋医疗'，20cm两连板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
+  },
+  {
+   "code": "603716",
+   "trade_date": "2026-07-27",
+   "theme": "脑机接口",
+   "verdict": "verified",
+   "note": "同603716同名证据，媒体专题点名脑机接口板块带动该股涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-28"
   }
  ],
  "episode_verdicts": [],
@@ -265,6 +400,14 @@
    "note": "规则认定：当前7板最高（三木集团）",
    "decided_by": "rule",
    "decided_at": "2026-07-25"
+  },
+  {
+   "theme": "光刻胶",
+   "start_date": "2026-07-28",
+   "code": "001358",
+   "note": "规则认定：当前2板最高（兴欣新材）",
+   "decided_by": "rule",
+   "decided_at": "2026-07-28"
   }
  ]
 }
