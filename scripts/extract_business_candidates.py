@@ -2,8 +2,8 @@
 """
 extract_business_candidates.py — 从官方年报文本生成公司业务事实候选。
 
-模型输出只写 business_fact_candidates(status=candidate)，不会直接进入
-business_facts.json 或线上正式业务事实。人工复核后再合并。
+模型输出只写 business_fact_candidates(status=candidate)；conf≥0.7 的核心/重要
+关系由次日 rebuild_semantic_layer 自动晋升，其余留作观察证据（零人工干预）。
 
 用法：
   python3 scripts/extract_business_candidates.py --codes 002173,600962
@@ -20,11 +20,12 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 import common
 
-MODEL = "claude-sonnet-4-5-20250929"
+MODEL = "claude-sonnet-5"
 TIMEOUT_SEC = 600
 SECTION_KEYWORDS = (
     "公司主要业务", "主要业务", "主营业务", "营业收入构成", "分行业",
@@ -48,6 +49,20 @@ MATURITY_ALIASES = {
     "secondary": "commercialized", "early": "early_revenue",
     "rnd": "research", "r&d": "research", "developing": "research",
     "planned": "proposed", "pending": "proposed",
+}
+RELATION_ALIASES = {
+    "non_core": "secondary", "noncore": "secondary", "minor": "secondary",
+    "main": "core", "primary": "core",
+    "investment": "holding", "equity": "holding", "participation": "holding",
+    "acquisition": "planned_acquisition",
+    "supplier": "supply_chain", "customer": "supply_chain",
+    "upstream": "supply_chain", "downstream": "supply_chain",
+}
+FACT_TYPE_ALIASES = {
+    "industry": "sector", "business": "product", "segment": "subindustry",
+    "tech": "technology", "material": "product", "equipment": "product",
+    # LLM 偶发把关系维度写进 fact_type：归到最通用的 product
+    "supply_chain": "product", "core": "product",
 }
 
 PROMPT = """你是上市公司业务事实审校员。请只根据下面的年度报告原文，提取公司客观业务事实。
@@ -126,8 +141,10 @@ def validate_candidate(raw: dict) -> dict:
     confidence = float(raw.get("confidence", 0))
     if not tag or not summary or not claim:
         raise ValueError("候选缺少 tag_name/summary/claim")
+    fact_type = FACT_TYPE_ALIASES.get(fact_type, fact_type)
     if fact_type not in VALID_FACT_TYPES:
         raise ValueError(f"{tag}: 非法 fact_type={fact_type}")
+    relation = RELATION_ALIASES.get(relation, relation)
     if relation not in VALID_RELATIONS:
         raise ValueError(f"{tag}: 非法 relation_type={relation}")
     maturity = MATURITY_ALIASES.get(maturity, maturity)
@@ -355,7 +372,13 @@ def extract_with_claude(conn, claude_bin: str, report: tuple, force: bool) -> in
     if result.returncode:
         detail = (result.stderr or result.stdout or "").strip()[:500]
         raise RuntimeError(detail or f"claude退出码{result.returncode}")
-    candidates = [validate_candidate(row) for row in parse_json_array(result.stdout)]
+    # 单条候选越界只丢该条：拒掉整只=白烧一次完整LLM调用
+    candidates = []
+    for row in parse_json_array(result.stdout):
+        try:
+            candidates.append(validate_candidate(row))
+        except (ValueError, TypeError) as exc:
+            print(f"  ⤷ 跳过越界候选：{exc}")
     return store_candidates(conn, report, candidates, MODEL, force)
 
 
@@ -394,21 +417,39 @@ def main() -> int:
                 raise
     use_claude = claude_bin is not None and args.extractor != "heuristic"
     errors = 0
+    consecutive_fail = 0
     for index, report in enumerate(reports, 1):
         try:
             if use_claude:
-                try:
-                    count = extract_with_claude(
-                        conn, claude_bin, report, args.force
-                    )
-                    extractor = "Claude"
-                except RuntimeError as exc:
-                    if args.extractor == "claude":
-                        raise
-                    use_claude = False
-                    print(f"⚠️ Claude不可用，后续改用确定性规则：{exc}")
-                    count = extract_with_heuristic(conn, report, args.force)
-                    extractor = "规则"
+                # 瞬时错误按只重试；只有连续多只都失败才判定 Claude 当前不可用。
+                # 失败股票留在待抽队列（不写规则空行占位），明日自动重试。
+                count = None
+                last_exc: Exception | None = None
+                for attempt in range(3):
+                    try:
+                        count = extract_with_claude(
+                            conn, claude_bin, report, args.force
+                        )
+                        extractor = "Claude"
+                        consecutive_fail = 0
+                        break
+                    except RuntimeError as exc:
+                        last_exc = exc
+                        if attempt < 2:
+                            time.sleep(20 * (attempt + 1))
+                if count is None:
+                    errors += 1
+                    consecutive_fail += 1
+                    print(f"❌ [{index}/{len(reports)}] {report[0]}: "
+                          f"Claude 3次重试均失败（留待明日）：{last_exc}",
+                          file=sys.stderr)
+                    if consecutive_fail >= 3:
+                        if args.extractor == "claude":
+                            raise RuntimeError(f"连续{consecutive_fail}只失败：{last_exc}")
+                        print("⚠️ 连续3只失败，判定Claude当前不可用，"
+                              "终止本批（剩余留在队列明日重试）")
+                        break
+                    continue
             else:
                 count = extract_with_heuristic(conn, report, args.force)
                 extractor = "规则"
