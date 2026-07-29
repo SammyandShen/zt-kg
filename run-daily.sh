@@ -37,5 +37,5 @@ fi
 # —— 发布线以下为慢速富化工序：只许失败/超时，不许挡住每日更新 ——
 # 年报业务链：抓年报→抽业务候选（每日限量60只消化积压）；候选次日 rebuild 自动晋升
 python3 scripts/fetch_company_reports.py --days 2 || echo "⚠️ fetch_company_reports 失败，跳过"
-python3 scripts/extract_business_candidates.py --limit 60 || echo "⚠️ extract_business_candidates 失败，跳过"
+python3 scripts/extract_business_candidates.py --limit 60 || echo "⚠️ extract_business_candidates 存在部分失败项（成功候选已入库，明日自动重试失败项）"
 echo "===== done ====="
