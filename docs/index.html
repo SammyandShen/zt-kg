@@ -1184,7 +1184,7 @@ function renderDate(d) {
     html += `<div class="card" style="padding:8px 14px">
       <span class="tlabel tl-theme" style="padding:3px 10px">标签库日报</span>
       <span class="small muted" style="margin:0 6px">树内覆盖 <b>${Math.round((1 - uncov.length / evs.length) * 100)}%</b>
-        · 未入树 <b>${uncov.length}</b> 只 · 待审积压 <b>${backlog}</b> ·</span>
+        · 未入树 <b>${uncov.length}</b> 只 · 长尾候选 <b>${backlog}</b> ·</span>
       <span class="small" style="cursor:pointer;color:var(--accent)" id="rp-gov">去治理台 →</span>
       ${faces.length ? `<div style="margin-top:6px"><span class="small muted">🆕 新面孔（库内首次涨停）：</span>
         ${faces.map(ev => chipHtml(ev, d)).join('')}</div>` : ''}
@@ -3041,13 +3041,13 @@ function renderTagsGov() {
     <div class="stat"><div class="v">${todayZt.length ? Math.round((1 - uncov.length / todayZt.length) * 100) + '%' : '—'}</div>
       <div class="k">${dN.slice(5)} 树内覆盖率</div></div>
     <div class="stat"><div class="v">${uncov.length}</div><div class="k">今日未入树涨停</div></div>
-    <div class="stat"><div class="v">${backlog}</div><div class="k">待审核积压</div></div>
-    <div class="stat"><div class="v">${queue.length}</div><div class="k">近10日活跃待审</div></div>
+    <div class="stat"><div class="v">${backlog}</div><div class="k">长尾候选（低置信不进热力）</div></div>
+    <div class="stat"><div class="v">${queue.length}</div><div class="k">近10日活跃长尾</div></div>
     <div class="stat"><div class="v">${todayZt.length ? Math.round(businessAnyCovered / todayZt.length * 100) + '%' : '—'}</div>
       <div class="k">${dN.slice(5)} 客观业务覆盖</div></div>
   </div>
-  <div class="card"><div class="card-h"><span class="cname">语义层待办</span>
-    <span class="hist">公司业务事实与“某次涨停为什么涨”分开治理；候选不能自动升级为已核实</span></div>
+  <div class="card"><div class="card-h"><span class="cname">语义层进度（自动收敛）</span>
+    <span class="hist">公司业务事实与“某次涨停为什么涨”分开治理；各队列由每日管线自动消化，此处只看进度、报 bad case</span></div>
     <div class="small muted" style="padding:0 8px 8px">
       ${dN.slice(5)} 涨停股客观业务覆盖 <b>${businessAnyCovered}/${todayZt.length}</b>
       · 可计入产业/产品热力的在营业务 <b>${businessOperatingCovered}/${todayZt.length}</b>
@@ -3057,7 +3057,7 @@ function renderTagsGov() {
       · 题材业务映射 <b>${Object.values(THEME_BUSINESS_CANDIDATES).reduce((n, rows) => n + rows.length, 0)}</b> 条候选公司关系
     </div>
     ${businessUncovered.length ? `<div class="semantic-title" style="padding:2px 8px 0">
-      <b>客观业务缺口（今日优先）</b><span>先抓年报并人工复核；禁止拿历史涨停原因直接填主营</span></div>
+      <b>客观业务缺口（自动补齐中）</b><span>年报链每日自动抓取+抽取（限量60只消化积压）；禁止拿历史涨停原因直接填主营</span></div>
       <div>${businessUncovered.slice(0, 30).map(ev =>
         `<div class="govrow" data-code="${ev[0]}" style="cursor:pointer">
           <span class="verify-state candidate">缺业务事实</span>
@@ -3066,7 +3066,7 @@ function renderTagsGov() {
           <span class="sugg">${esc(ev[8] || '无原始原因')}</span>
         </div>`).join('')}</div>` : ''}
     ${businessCandidateRows.length ? `<div class="semantic-title" style="padding:2px 8px 0">
-      <b>官方年报业务候选</b><span>只进入人工复核队列；确认后才可合并到 business_facts.json</span></div>
+      <b>官方年报业务候选</b><span>conf≥0.7 的核心/重要关系次日 rebuild 自动晋升；其余留作六层名单观察证据</span></div>
       <div>${businessCandidateRows.slice(0, 30).map(({ code, row }) => {
         const [candidateId, year, tag, , relation, maturity, confidence, summary,
           evidenceId, extractor] = row;
@@ -3128,9 +3128,9 @@ function renderTagsGov() {
     }).join('') || '<div class="muted small" style="padding:6px 8px">开放轮次均已有龙头标记</div>'}</div>
   </div>
   ${uncov.length ? `<div class="card"><div class="card-h"><span class="cname muted">今日未入树涨停</span>
-    <span class="hist">标签都还没进 taxonomy 的股票，优先处理</span></div>
+    <span class="hist">标签尚未进 taxonomy 的股票；分型链每日自动判型挂树，此处仅为观察窗</span></div>
     <div class="chips">${uncov.map(ev => chipHtml(ev, dN)).join('')}</div></div>` : ''}
-  <div class="card"><div class="card-h"><span class="cname">待审核队列（近10日活跃）</span>
+  <div class="card"><div class="card-h"><span class="cname">长尾观察队列（近10日活跃 · 自动消化，勾选仅用于报 bad case）</span>
     <input id="g-q" placeholder="搜标签" value="${esc(TAGS.govQ)}" style="margin-left:auto;padding:4px 10px;
       border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:12px;width:140px"></div>
     <div>${queue.slice(0, 60).map(q => `
