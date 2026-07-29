@@ -273,11 +273,18 @@ def select_reports(conn, args) -> list[tuple]:
             WHERE b.code=r.code AND b.report_year=r.report_year
           )
         """)
+    # 近5交易日涨停过的股票优先出队：每日限量下先补当下正在异动的公司
     sql = f"""
         SELECT r.code,s.name,r.report_year,r.title,r.url,r.published_at,r.text_path
         FROM company_reports r JOIN stocks s ON s.code=r.code
         WHERE {' AND '.join(where)}
-        ORDER BY r.report_year DESC,r.code
+        ORDER BY (r.code IN (
+            SELECT DISTINCT code FROM limit_up_events
+            WHERE trade_date >= (
+              SELECT MIN(d) FROM (SELECT DISTINCT trade_date AS d
+                FROM limit_up_events ORDER BY trade_date DESC LIMIT 5)
+            )
+        )) DESC, r.report_year DESC, r.code
     """
     if args.limit:
         sql += " LIMIT ?"
