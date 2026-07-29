@@ -41,6 +41,14 @@ VALID_MATURITY = {
     "core_revenue", "commercialized", "early_revenue", "research",
     "holding", "proposed", "unknown",
 }
+# LLM 常见的同义/越界写法归一到枚举，避免整条候选被拒（拒绝=白烧一次调用）
+MATURITY_ALIASES = {
+    "commercial": "commercialized", "operational": "commercialized",
+    "mature": "core_revenue", "core": "core_revenue",
+    "secondary": "commercialized", "early": "early_revenue",
+    "rnd": "research", "r&d": "research", "developing": "research",
+    "planned": "proposed", "pending": "proposed",
+}
 
 PROMPT = """你是上市公司业务事实审校员。请只根据下面的年度报告原文，提取公司客观业务事实。
 
@@ -122,8 +130,9 @@ def validate_candidate(raw: dict) -> dict:
         raise ValueError(f"{tag}: 非法 fact_type={fact_type}")
     if relation not in VALID_RELATIONS:
         raise ValueError(f"{tag}: 非法 relation_type={relation}")
+    maturity = MATURITY_ALIASES.get(maturity, maturity)
     if maturity not in VALID_MATURITY:
-        raise ValueError(f"{tag}: 非法 maturity={maturity}")
+        maturity = "unknown"        # 归一失败降级 unknown，不整条拒绝
     if relation == "planned_acquisition" and maturity != "proposed":
         raise ValueError(f"{tag}: 拟收购必须是 proposed")
     return {

@@ -261,6 +261,42 @@
    "note": "同603716同名证据，媒体专题点名脑机接口板块带动该股涨停",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-07-28"
+  },
+  {
+   "code": "000892",
+   "trade_date": "2026-07-29",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条独立新闻均明确归因为影视院线板块整体走强，未提及AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-29"
+  },
+  {
+   "code": "002882",
+   "trade_date": "2026-07-29",
+   "theme": "固态电池",
+   "verdict": "verified",
+   "note": "三条独立新闻均点名金龙羽随固态电池概念异动直线涨停，当日叙事明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-29"
+  },
+  {
+   "code": "002112",
+   "trade_date": "2026-07-29",
+   "theme": "AI算力",
+   "verdict": "rejected",
+   "note": "两条独立新闻均明确归因为电网设备板块震荡回升，非AI算力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-29"
+  },
+  {
+   "code": "000779",
+   "trade_date": "2026-07-28",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "公司公告明确澄清不涉及东数西算及算力服务相关业务，属公司澄清反证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-29"
   }
  ],
  "episode_verdicts": [],

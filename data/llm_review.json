@@ -58360,5 +58360,209 @@
   "p": "脑机接口",
   "c": 0.85,
   "model": "claude-sonnet-5"
+ },
+ "供应链优化": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "就业培训龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "衡阳国资": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "预调鸡尾酒龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "中标PCB大单": {
+  "t": "catalyst",
+  "p": "PCB",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "转债下修预期": {
+  "t": "catalyst",
+  "p": "转股价下修",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "防护手套涨价": {
+  "t": "catalyst",
+  "p": "医疗手套",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "矿山投资开发": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "AI券商": {
+  "t": "theme",
+  "p": "证券",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI电力出海": {
+  "t": "theme",
+  "p": "电网设备出海",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "Wi-Fi MCU芯片": {
+  "t": "product",
+  "p": "MCU",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "《超自然行动组》": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "享界新品": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "全课云AI": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "印尼椰子加工": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "商品溯源": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "存量旧改": {
+  "t": "theme",
+  "p": "城市更新",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "家校互动": {
+  "t": "product",
+  "p": "教育",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "宽厚板": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "整家一体化": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "板式家具机械": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "椰基饮料": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "民爆一体化": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "水替饮品": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "水电发电量高增": {
+  "t": "catalyst",
+  "p": "绿色电力",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "汽车用钢": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "海外品牌总代": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "纸纹防伪": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "药食同源": {
+  "t": "theme",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "西藏唯一券商": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "证券经纪": {
+  "t": "product",
+  "p": "证券",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "轻资产": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "雄安新区": {
+  "t": "theme",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高分子发泡材料": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
  }
 }

@@ -12,9 +12,6 @@ python3 scripts/fetch_news.py --days 2 || echo "⚠️ fetch_news 失败，跳�
 python3 scripts/fetch_event_announcements.py --days 2 || echo "⚠️ fetch_event_announcements 失败，跳过"
 # LLM一句话归因（claude CLI 走订阅；幂等，--days 2 顺带补昨日）
 python3 scripts/summarize_news.py --days 2 || echo "⚠️ summarize_news 失败，跳过"
-# 年报业务链（零人工干预）：抓年报→抽业务候选→(rebuild内自动晋升 conf≥0.7 主营)
-python3 scripts/fetch_company_reports.py --days 2 || echo "⚠️ fetch_company_reports 失败，跳过"
-python3 scripts/extract_business_candidates.py || echo "⚠️ extract_business_candidates 失败，跳过"
 # 新出现的长尾标签先登记为 candidate，再过质量门禁；不合格时停止导出/发布。
 python3 scripts/gen_tag_meta.py --all
 # 标签自动分型链（零人工干预）：sonnet增量复核(台账跳过已判)→高置信转正+父建议四道闸挂树
@@ -37,4 +34,8 @@ python3 scripts/build_site.py
 if [ -f "$PROJECT_DIR/.deploy-enabled" ]; then
     bash "$PROJECT_DIR/deploy.sh" || echo "⚠️ 部署失败，本地数据不受影响"
 fi
+# —— 发布线以下为慢速富化工序：只许失败/超时，不许挡住每日更新 ——
+# 年报业务链：抓年报→抽业务候选（每日限量60只消化积压）；候选次日 rebuild 自动晋升
+python3 scripts/fetch_company_reports.py --days 2 || echo "⚠️ fetch_company_reports 失败，跳过"
+python3 scripts/extract_business_candidates.py --limit 60 || echo "⚠️ extract_business_candidates 失败，跳过"
 echo "===== done ====="

@@ -320,6 +320,30 @@
    "status": "candidate",
    "confidence": 0.98,
    "rationale": "[llm 2026-07-28] 业务标签直接就是脑机接口本身，与题材完全同一"
+  },
+  {
+   "theme": "绿色电力",
+   "business_tag_name": "风能、太阳能投资、开发、运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-29] 风光新能源投资开发运营是绿色电力的直接业务主体"
+  },
+  {
+   "theme": "绿色电力",
+   "business_tag_name": "风能和太阳能投资、开发、运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-29] 风光新能源投资开发运营是绿色电力的直接业务主体"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车及汽车动力总成的研发、制造、销售及金融服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-29] 整车及动力总成研发制造销售即汽车产业链主体业务"
   }
  ]
 }
