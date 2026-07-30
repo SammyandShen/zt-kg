@@ -58564,5 +58564,197 @@
   "p": "新材料",
   "c": 0.65,
   "model": "claude-sonnet-5"
+ },
+ "风机龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "中标领先": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "控股股东不减持": {
+  "t": "catalyst",
+  "p": "承诺不减持",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "华润双鹤拟入主": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "明略科技入主": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "AI智能厨电": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "信创ERP": {
+  "t": "product",
+  "p": "信创",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "光伏垂直一体化": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "再生铜": {
+  "t": "product",
+  "p": "铜",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "原奶周期": {
+  "t": "theme",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "原药制剂一体化": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "尊界新品": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "微电网": {
+  "t": "product",
+  "p": "智能电网",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "撤销退市风险警示": {
+  "t": "catalyst",
+  "p": "摘帽",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "新签项目增长": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "旅游餐饮": {
+  "t": "sector",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "无人矿卡": {
+  "t": "product",
+  "p": "矿山机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "智能配电设备": {
+  "t": "product",
+  "p": "电网设备",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "汽车冲焊件": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "液冷板": {
+  "t": "product",
+  "p": "液冷",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "燃机余热锅炉": {
+  "t": "product",
+  "p": "燃气轮机",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "电力出海": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "电池检测": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "罐头易开盖": {
+  "t": "product",
+  "p": "包装材料",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "计量校准": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "超薄硅片": {
+  "t": "product",
+  "p": "光伏硅片",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "跨界存储": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "配电网": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "铝价下行": {
+  "t": "theme",
+  "p": "铝全产业链",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "集成厨电": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "宁德时代产业链": {
+  "t": "theme",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "赛力斯产业链": {
+  "t": "theme",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
  }
 }

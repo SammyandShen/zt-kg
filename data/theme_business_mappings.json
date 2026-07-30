@@ -344,6 +344,1070 @@
    "status": "candidate",
    "confidence": 0.8,
    "rationale": "[llm 2026-07-29] 整车及动力总成研发制造销售即汽车产业链主体业务"
+  },
+  {
+   "theme": "CPO光引擎",
+   "business_tag_name": "光引擎",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 光引擎是CPO光引擎交易的直接标的"
+  },
+  {
+   "theme": "CPO光学器件",
+   "business_tag_name": "光通信器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 光通信器件即CPO光学器件的业务实体"
+  },
+  {
+   "theme": "CPO硅透镜",
+   "business_tag_name": "光学元件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 光学元件是硅透镜的上游制造环节"
+  },
+  {
+   "theme": "CPO硅透镜",
+   "business_tag_name": "光学组件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 光学组件涵盖透镜类精密光学件生产"
+  },
+  {
+   "theme": "CPO交换机",
+   "business_tag_name": "网络设备(交换机/路由器/WLAN)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 网络设备业务直接生产交换机硬件"
+  },
+  {
+   "theme": "CPO/NPO",
+   "business_tag_name": "光电器件系列产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 光电器件是CPO/NPO封装的核心元件"
+  },
+  {
+   "theme": "算力交换机",
+   "business_tag_name": "网络设备(交换机/路由器/WLAN)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 网络设备业务即算力交换机的生产实体"
+  },
+  {
+   "theme": "800G光模块",
+   "business_tag_name": "光模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 光模块业务直接对应800G光模块产品"
+  },
+  {
+   "theme": "1.6T光模块",
+   "business_tag_name": "光模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 光模块业务直接生产1.6T规格产品"
+  },
+  {
+   "theme": "3.2T硅光NPO",
+   "business_tag_name": "光电器件系列产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 光电器件是硅光NPO封装的上游元件"
+  },
+  {
+   "theme": "800G光模块",
+   "business_tag_name": "光电器件系列产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 光电器件是光模块的核心内部元件"
+  },
+  {
+   "theme": "800G光模块",
+   "business_tag_name": "有源光缆AOC",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] AOC是光模块技术的下游应用形态"
+  },
+  {
+   "theme": "AI光通信",
+   "business_tag_name": "光通信器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 光通信器件即AI光通信硬件基础"
+  },
+  {
+   "theme": "AI光通信",
+   "business_tag_name": "光连接器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 光连接器是光通信链路的上游器件"
+  },
+  {
+   "theme": "6G通信",
+   "business_tag_name": "6G通信",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名对应"
+  },
+  {
+   "theme": "液冷服务器",
+   "business_tag_name": "液冷服务器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "AI服务器液冷",
+   "business_tag_name": "液冷服务器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 液冷服务器业务即AI服务器液冷方案主体"
+  },
+  {
+   "theme": "数据中心液冷",
+   "business_tag_name": "数据中心液冷压缩机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 液冷压缩机是数据中心液冷的核心设备"
+  },
+  {
+   "theme": "AIDC液冷",
+   "business_tag_name": "数据中心液冷压缩机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 液冷压缩机直接对应AIDC液冷设备需求"
+  },
+  {
+   "theme": "AI数据中心液冷",
+   "business_tag_name": "数据中心液冷压缩机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 同为数据中心液冷压缩机主体业务"
+  },
+  {
+   "theme": "液冷储能",
+   "business_tag_name": "储能热管理",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 储能热管理业务涵盖液冷储能温控方案"
+  },
+  {
+   "theme": "英伟达液冷",
+   "business_tag_name": "液冷服务器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 液冷服务器业务承接英伟达平台液冷需求"
+  },
+  {
+   "theme": "AI服务器",
+   "business_tag_name": "服务器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 服务器业务直接对应AI服务器产品"
+  },
+  {
+   "theme": "AI服务器",
+   "business_tag_name": "自有品牌服务器产品(神州鲲泰)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 自有品牌服务器即AI服务器细分产品线"
+  },
+  {
+   "theme": "AI服务器电源",
+   "business_tag_name": "服务器电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 服务器电源即AI服务器电源核心部件业务"
+  },
+  {
+   "theme": "AIDC电源",
+   "business_tag_name": "数据中心电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 数据中心电源业务直接支撑AIDC电源需求"
+  },
+  {
+   "theme": "算力电源",
+   "business_tag_name": "数据中心电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 数据中心电源即算力电源的核心业务实体"
+  },
+  {
+   "theme": "AIDC直流配电",
+   "business_tag_name": "电力操作电源系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 电力操作电源系统是直流配电的上游技术基础"
+  },
+  {
+   "theme": "AI数据中心燃气轮机",
+   "business_tag_name": "数据中心燃气轮机发电设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "算力租赁",
+   "business_tag_name": "算力租赁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "算力服务",
+   "business_tag_name": "算力服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "算力租赁",
+   "business_tag_name": "智算服务(算力设备销售/运维/算力租赁)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 该业务明确包含算力租赁服务"
+  },
+  {
+   "theme": "算力服务器",
+   "business_tag_name": "算力设备集成销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 算力设备集成销售即算力服务器硬件供给"
+  },
+  {
+   "theme": "算力硬件",
+   "business_tag_name": "算力基础设施综合服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 算力基础设施综合服务对应算力硬件供给"
+  },
+  {
+   "theme": "存储芯片",
+   "business_tag_name": "存储主控芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 存储主控芯片属于存储芯片核心细分"
+  },
+  {
+   "theme": "AI芯片",
+   "business_tag_name": "芯片设计",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 芯片设计是AI芯片研发的直接上游环节"
+  },
+  {
+   "theme": "算力PCB",
+   "business_tag_name": "PCB专用设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] PCB专用设备是算力PCB制造的上游装备"
+  },
+  {
+   "theme": "AI PCB",
+   "business_tag_name": "PCB电子油墨",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] PCB电子油墨是PCB制造的直接上游材料"
+  },
+  {
+   "theme": "AI PCB",
+   "business_tag_name": "覆铜板",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 覆铜板是PCB的核心上游基材"
+  },
+  {
+   "theme": "算力PCB",
+   "business_tag_name": "挠性覆铜板",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 挠性覆铜板是高端PCB的上游材料"
+  },
+  {
+   "theme": "AI PCB",
+   "business_tag_name": "印制线路板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 印制线路板即PCB本身产品"
+  },
+  {
+   "theme": "光刻胶",
+   "business_tag_name": "光刻胶及配套试剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名对应"
+  },
+  {
+   "theme": "超级电容",
+   "business_tag_name": "超级电容器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 超级电容器即超级电容题材直接标的"
+  },
+  {
+   "theme": "培育钻石",
+   "business_tag_name": "培育钻石",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "培育钻石",
+   "business_tag_name": "人造金刚石",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 人造金刚石工艺是培育钻石的直接上游技术"
+  },
+  {
+   "theme": "金刚石散热",
+   "business_tag_name": "金刚石材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 金刚石材料是金刚石散热片的核心上游"
+  },
+  {
+   "theme": "金刚石散热",
+   "business_tag_name": "功能性金刚石",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 功能性金刚石涵盖散热应用金刚石材料"
+  },
+  {
+   "theme": "复合铜箔",
+   "business_tag_name": "铜箔",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 铜箔业务涵盖复合铜箔细分产品"
+  },
+  {
+   "theme": "盐湖提锂",
+   "business_tag_name": "锂盐(碳酸锂/氢氧化锂)",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 锂盐是盐湖提锂的直接下游产出物"
+  },
+  {
+   "theme": "盐湖提锂",
+   "business_tag_name": "电池级碳酸锂",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 电池级碳酸锂是盐湖提锂的核心下游产品"
+  },
+  {
+   "theme": "高温超导",
+   "business_tag_name": "射频超导腔",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 射频超导腔是高温超导应用的直接产品"
+  },
+  {
+   "theme": "eVTOL",
+   "business_tag_name": "eVTOL运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名对应"
+  },
+  {
+   "theme": "eVTOL",
+   "business_tag_name": "eVTOL模拟器",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 模拟器是eVTOL配套的下游培训应用"
+  },
+  {
+   "theme": "飞行汽车",
+   "business_tag_name": "eVTOL运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 飞行汽车形态即eVTOL运营的业务对象"
+  },
+  {
+   "theme": "AI短剧",
+   "business_tag_name": "AIGC内容制作",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] AIGC内容制作是AI短剧生成的直接上游技术"
+  },
+  {
+   "theme": "AI数字人",
+   "business_tag_name": "AIGC内容制作",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] AIGC内容制作技术支撑AI数字人生成"
+  },
+  {
+   "theme": "短剧/漫剧",
+   "business_tag_name": "动漫IP内容",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 动漫IP内容是漫剧改编的直接上游素材"
+  },
+  {
+   "theme": "互动影游",
+   "business_tag_name": "移动游戏",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 移动游戏是互动影游的主要下游呈现形态"
+  },
+  {
+   "theme": "互动影游",
+   "business_tag_name": "网络游戏的研发和运营",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 网络游戏研发运营涵盖互动影游产品形态"
+  },
+  {
+   "theme": "AI制药",
+   "business_tag_name": "生命科学数字化解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 生命科学数字化解决方案即AI制药业务实体"
+  },
+  {
+   "theme": "AI医疗",
+   "business_tag_name": "医疗数据服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 医疗数据服务是AI医疗的直接数据基础业务"
+  },
+  {
+   "theme": "AI医疗",
+   "business_tag_name": "AI健康管理服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] AI健康管理服务即AI医疗应用的直接产品"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "创新药研发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名对应"
+  },
+  {
+   "theme": "数字人民币",
+   "business_tag_name": "数字人民币应用",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "金融科技",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "大模型",
+   "business_tag_name": "人工智能大模型",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 人工智能大模型即大模型题材直接标的"
+  },
+  {
+   "theme": "AI大模型",
+   "business_tag_name": "AI大模型应用",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "AI大模型",
+   "business_tag_name": "三医大模型",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 三医大模型是AI大模型在医疗垂类的直接落地"
+  },
+  {
+   "theme": "AI应用",
+   "business_tag_name": "AI应用平台",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 业务标签与题材同名对应"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "信创云",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 信创云是信创题材直接细分产品"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "信创国产化产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "信创安全",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 信创安全属于信创体系核心细分"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "信创整机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 信创整机是信创产业链硬件核心产品"
+  },
+  {
+   "theme": "车路云一体化",
+   "business_tag_name": "车路协同解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 车路协同解决方案即车路云一体化核心业务"
+  },
+  {
+   "theme": "智慧交通",
+   "business_tag_name": "智慧交通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "车路云一体化",
+   "business_tag_name": "智能路侧",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 智能路侧设备是车路云一体化的上游基础设施"
+  },
+  {
+   "theme": "车联网",
+   "business_tag_name": "车联网运营服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "华为产业链",
+   "business_tag_name": "享界（华为联合品牌）",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 享界是华为产业链在整车端的下游落地品牌"
+  },
+  {
+   "theme": "生态水利",
+   "business_tag_name": "水利水电工程",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 水利水电工程是生态水利建设的直接承载业务"
+  },
+  {
+   "theme": "AI眼镜",
+   "business_tag_name": "XR穿戴设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] XR穿戴设备涵盖AI眼镜这一细分品类"
+  },
+  {
+   "theme": "AI手机",
+   "business_tag_name": "智能手机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 智能手机是AI手机题材的直接承载产品"
+  },
+  {
+   "theme": "AIoT平台",
+   "business_tag_name": "AIRIOT物联网平台",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "AI智能家居",
+   "business_tag_name": "智能家居",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同义"
+  },
+  {
+   "theme": "AI智能家居",
+   "business_tag_name": "AIoT产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] AIoT产品是智能家居的上游硬件平台"
+  },
+  {
+   "theme": "可控核聚变",
+   "business_tag_name": "核聚变关键部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 核聚变关键部件即可控核聚变题材直接标的"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "民机零部件制造与国际转包",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 民机零部件制造是大飞机的直接上游供应"
+  },
+  {
+   "theme": "成飞概念",
+   "business_tag_name": "军用飞机整机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 军用飞机整机即成飞概念核心业务对象"
+  },
+  {
+   "theme": "航天应用",
+   "business_tag_name": "航天精密制造与测控服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 航天精密制造与测控是航天应用的直接承载业务"
+  },
+  {
+   "theme": "航天应用",
+   "business_tag_name": "航天搜救通信",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 航天搜救通信属于航天应用的直接细分场景"
+  },
+  {
+   "theme": "卫星互联网",
+   "business_tag_name": "商业卫星数据服务",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 商业卫星数据服务是卫星互联网的下游应用"
+  },
+  {
+   "theme": "卫星导航",
+   "business_tag_name": "导航设备",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 导航设备是卫星导航技术的直接下游产品"
+  },
+  {
+   "theme": "商业航天",
+   "business_tag_name": "航天精密制造与测控服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 航天精密制造与测控是商业航天的上游支撑业务"
+  },
+  {
+   "theme": "无人机",
+   "business_tag_name": "无人机通信",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 无人机通信是无人机题材的直接细分业务"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "具身智能核心零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 具身智能核心零部件是人形机器人的直接构成部件"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "具身智能核心零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "减速机及配件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 减速机是人形机器人关节的核心上游部件"
+  },
+  {
+   "theme": "XT减速器",
+   "business_tag_name": "减速机及配件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 减速机及配件业务直接对应XT减速器产品"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能配用电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 智能配用电业务即智能电网核心细分"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能计量及电能信息管理",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 智能计量是智能电网信息化的上游支撑环节"
+  },
+  {
+   "theme": "电网设备出海",
+   "business_tag_name": "输配电及控制设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 输配电及控制设备即电网设备出海核心产品"
+  },
+  {
+   "theme": "虚拟电厂",
+   "business_tag_name": "虚拟电厂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "虚拟电厂",
+   "business_tag_name": "综合能源及虚拟电厂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签直接包含虚拟电厂业务"
+  },
+  {
+   "theme": "绿色电力",
+   "business_tag_name": "电力交易服务（售电/绿电/绿证/碳资产交易）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 绿电交易业务直接承载绿色电力题材"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "绿色氢能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "氢燃料电池商用车",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 氢燃料电池商用车是氢能的直接下游应用"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "氢燃料电池核心零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 燃料电池核心零部件是氢能应用的上游构成"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "PEM电解水制氢",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] PEM电解水制氢是氢能生产的直接上游技术"
+  },
+  {
+   "theme": "储能出海",
+   "business_tag_name": "储能电站",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 储能电站建设运营是储能出海的核心上游业务"
+  },
+  {
+   "theme": "海上风电",
+   "business_tag_name": "风电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 风电业务涵盖海上风电这一细分领域"
+  },
+  {
+   "theme": "海上风电",
+   "business_tag_name": "风电场运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 风电场运营直接承载海上风电项目"
+  },
+  {
+   "theme": "海上风电",
+   "business_tag_name": "风电叶片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 风电叶片是风电机组的核心上游部件"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "工业母机及零部件制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "城市更新",
+   "business_tag_name": "城市更新",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材完全同名"
+  },
+  {
+   "theme": "城市更新",
+   "business_tag_name": "城中村改造服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 城中村改造是城市更新的核心细分业务"
+  },
+  {
+   "theme": "家居商贸",
+   "business_tag_name": "家居商品零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 家居商品零售即家居商贸核心业务"
+  },
+  {
+   "theme": "创投",
+   "business_tag_name": "私募股权投资管理",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 私募股权投资管理是创投业务的直接实体形式"
+  },
+  {
+   "theme": "创投",
+   "business_tag_name": "科技产业投资",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 科技产业投资是创投在科技领域的直接业务"
+  },
+  {
+   "theme": "东数西算",
+   "business_tag_name": "数据中心建设",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 数据中心建设是东数西算工程的直接承载业务"
+  },
+  {
+   "theme": "东数西算",
+   "business_tag_name": "IDC数据中心",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] IDC数据中心即东数西算落地的核心实体"
+  },
+  {
+   "theme": "AI智算",
+   "business_tag_name": "算力基础设施综合服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 算力基础设施综合服务直接对应AI智算供给"
+  },
+  {
+   "theme": "一带一路",
+   "business_tag_name": "国际工程承包",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-07-30] 国际工程承包是一带一路项目的核心承载业务"
+  },
+  {
+   "theme": "AI机器视觉",
+   "business_tag_name": "机器视觉/智能感知光学",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "AI视觉",
+   "business_tag_name": "机器视觉/智能感知光学",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "AI光学",
+   "business_tag_name": "光学元件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 光学元件是AI光学系统的上游构成材料"
+  },
+  {
+   "theme": "AI光学",
+   "business_tag_name": "光学系统方案与检测设计工具",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-07-30] 光学系统方案设计即AI光学核心业务"
+  },
+  {
+   "theme": "3D打印",
+   "business_tag_name": "增材制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-07-30] 增材制造即3D打印的行业标准术语，业务同一"
+  },
+  {
+   "theme": "3D视觉",
+   "business_tag_name": "机器视觉/智能感知光学",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-07-30] 机器视觉光学技术是3D视觉的直接上游基础"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "半导体封装测试",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 半导体封装测试业务直接承载先进封装工艺"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻食品/餐饮供应链服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-07-30] 速冻食品供应链业务直接承载预制菜生产"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "冷冻调理菜肴类产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-07-30] 冷冻调理菜肴即预制菜的具体产品形态"
+  },
+  {
+   "theme": "银发经济",
+   "business_tag_name": "养老服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 养老服务是银发经济的核心直接业务"
+  },
+  {
+   "theme": "跨境电商",
+   "business_tag_name": "跨境出口电商",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "跨境电商",
+   "business_tag_name": "跨境进口电商",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
   }
  ]
 }

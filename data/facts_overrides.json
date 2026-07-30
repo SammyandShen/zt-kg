@@ -297,6 +297,87 @@
    "note": "公司公告明确澄清不涉及东数西算及算力服务相关业务，属公司澄清反证",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-07-29"
+  },
+  {
+   "code": "001309",
+   "trade_date": "2026-07-30",
+   "theme": "存储芯片",
+   "verdict": "verified",
+   "note": "业务属实(存储主控/模组)+两家独立媒体直接点名存储芯片带动德明利涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "000566",
+   "trade_date": "2026-07-30",
+   "theme": "创新药",
+   "verdict": "verified",
+   "note": "两家独立媒体直接点名创新药概念带动海南海药涨停/直线涨停，叙事一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "002882",
+   "trade_date": "2026-07-30",
+   "theme": "固态电池",
+   "verdict": "verified",
+   "note": "三家独立媒体（上证报/东财Choice/财联社）均直接点名固态电池概念带动金龙羽涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "600712",
+   "trade_date": "2026-07-30",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "两条证据明确点名零售/免税概念驱动南宁百货涨停，主导叙事非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "600162",
+   "trade_date": "2026-07-30",
+   "theme": "算力",
+   "verdict": "rejected",
+   "note": "证据明确点名房地产概念驱动香江控股涨停，主导叙事非算力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "002846",
+   "trade_date": "2026-07-30",
+   "theme": "固态电池",
+   "verdict": "rejected",
+   "note": "三条证据均围绕罐头易开盖投资公告，主导叙事是自身传统业务公告而非固态电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "000566",
+   "trade_date": "2026-07-30",
+   "theme": "脑机接口",
+   "verdict": "rejected",
+   "note": "同日同股证据均指向创新药概念为主导叙事，脑机接口无支撑证据",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "002580",
+   "trade_date": "2026-07-29",
+   "theme": "固态电池",
+   "verdict": "rejected",
+   "note": "证据显示公司自述液冷储能业务为在推进落地的实际叙事，固态电池无支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
+  },
+  {
+   "code": "002597",
+   "trade_date": "2026-07-29",
+   "theme": "固态电池",
+   "verdict": "rejected",
+   "note": "证据均指向代糖/甜味剂(公司实际主业)概念驱动，固态电池无支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-30"
   }
  ],
  "episode_verdicts": [],
