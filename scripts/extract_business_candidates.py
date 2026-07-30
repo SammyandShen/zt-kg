@@ -393,6 +393,15 @@ def extract_with_heuristic(conn, report: tuple, force: bool) -> int:
     return store_candidates(conn, report, rows, "heuristic-v1", force)
 
 
+def another_instance_running() -> bool:
+    r = subprocess.run(
+        ["pgrep", "-f", "extract_business_candidates.py"], capture_output=True,
+        text=True,
+    )
+    pids = [p for p in r.stdout.split() if p.strip() and int(p) != os.getpid()]
+    return bool(pids)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--codes")
@@ -403,6 +412,9 @@ def main() -> int:
         help="auto会在Claude未登录/不可用时回退到确定性规则",
     )
     args = parser.parse_args()
+    if another_instance_running():
+        print("ℹ️ 已有另一个抽取实例在运行，本次跳过（避免重复烧调用/写库竞争）")
+        return 0
     conn = common.open_db()
     reports = select_reports(conn, args)
     if not reports:
