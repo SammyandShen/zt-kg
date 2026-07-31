@@ -58756,5 +58756,185 @@
   "p": "",
   "c": 0.55,
   "model": "claude-sonnet-5"
+ },
+ "企业软件龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "电驱龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "印度地铁订单": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "扣非扭亏": {
+  "t": "catalyst",
+  "p": "扭亏为盈",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "控股股东增持完成": {
+  "t": "catalyst",
+  "p": "股东增持",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "火山引擎合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AI Drive 2.0": {
+  "t": "product",
+  "p": "AI应用",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AI产业基金": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AI智能硬件": {
+  "t": "product",
+  "p": "AI应用",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "AI音乐": {
+  "t": "theme",
+  "p": "AI应用",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "IP资产": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "PCB刀具": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "光模块设备": {
+  "t": "product",
+  "p": "光模块",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "六张网": {
+  "t": "product",
+  "p": "智慧水务",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "出海广告": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "协同办公": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "双龙头格局": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "商办运营": {
+  "t": "product",
+  "p": "城市更新",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "宇树科技IPO": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "少儿出版": {
+  "t": "product",
+  "p": "出版",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "拟跨界半导体": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "拟跨界覆铜板": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "智能体": {
+  "t": "theme",
+  "p": "AGI智能体",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "智能巡检机器狗": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "永续债融资": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "自动衡器": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "薄膜材料": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "设立合资公司": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "金融信创": {
+  "t": "theme",
+  "p": "信创",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "饮料瓶盖": {
+  "t": "product",
+  "p": "包装材料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
  }
 }

@@ -7927,6 +7927,11 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "企业软件龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "低负债": {
   "type": "attribute",
   "status": "candidate",
@@ -8494,6 +8499,11 @@
  "电商直销": {
   "type": "attribute",
   "status": "candidate"
+ },
+ "电驱龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "短期超跌": {
   "type": "attribute",
@@ -10753,6 +10763,11 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "扣非扭亏": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "扩产": {
   "type": "catalyst",
   "status": "retired"
@@ -10848,6 +10863,11 @@
   "llm": "claude-sonnet-5"
  },
  "控股股东不减持": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "控股股东增持完成": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -11994,6 +12014,11 @@
   "type": "event",
   "status": "retired"
  },
+ "AI产业基金": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "AI合作": {
   "type": "event",
   "status": "retired"
@@ -12883,6 +12908,11 @@
   "type": "event",
   "status": "retired"
  },
+ "印度地铁订单": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "危废并购": {
   "type": "event",
   "status": "retired",
@@ -13544,6 +13574,11 @@
  "宇树合作": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "宇树科技IPO": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "宇树科技间接持股": {
@@ -14716,9 +14751,19 @@
   "type": "event",
   "status": "retired"
  },
+ "拟跨界半导体": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "拟跨界收购": {
   "type": "event",
   "status": "retired"
+ },
+ "拟跨界覆铜板": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "拟转让林地资产": {
   "type": "event",
@@ -15682,6 +15727,11 @@
   "type": "event",
   "status": "retired"
  },
+ "火山引擎合作": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "火电转型": {
   "type": "event",
   "status": "retired"
@@ -16381,6 +16431,11 @@
  "设立AI公司": {
   "type": "event",
   "status": "retired"
+ },
+ "设立合资公司": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "设立子公司": {
   "type": "event",
@@ -17104,6 +17159,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI Drive 2.0": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI MCU": {
   "type": "product",
   "status": "candidate"
@@ -17484,6 +17543,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI智能硬件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "AI智能超市": {
   "type": "product",
   "status": "candidate"
@@ -17778,6 +17842,10 @@
   "status": "candidate"
  },
  "AI需求": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI音乐": {
   "type": "product",
   "status": "candidate"
  },
@@ -18465,6 +18533,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "IP资产": {
+  "type": "product",
+  "status": "candidate"
+ },
  "IP运营": {
   "type": "product",
   "status": "candidate",
@@ -18888,6 +18960,11 @@
  "PCB光学": {
   "type": "product",
   "status": "candidate"
+ },
+ "PCB刀具": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "PCB化学品": {
   "type": "product",
@@ -21248,6 +21325,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "光模块设备": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "光模块透镜固定用胶": {
   "type": "product",
   "status": "candidate"
@@ -21641,6 +21723,11 @@
  "公路施工": {
   "type": "product",
   "status": "candidate"
+ },
+ "六张网": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "兰地洛尔": {
   "type": "product",
@@ -23059,6 +23146,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "协同办公": {
+  "type": "product",
+  "status": "candidate"
+ },
  "协议续签": {
   "type": "product",
   "status": "candidate"
@@ -23328,6 +23419,10 @@
   "status": "candidate"
  },
  "双胞胎协同": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "双龙头格局": {
   "type": "product",
   "status": "candidate"
  },
@@ -23677,6 +23772,10 @@
  "商业零售": {
   "type": "product",
   "status": "retired"
+ },
+ "商办运营": {
+  "type": "product",
+  "status": "candidate"
  },
  "商务信息用纸": {
   "type": "product",
@@ -25271,6 +25370,11 @@
  "小鹏汽车": {
   "type": "product",
   "status": "candidate"
+ },
+ "少儿出版": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "少儿图书": {
   "type": "product",
@@ -28291,6 +28395,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能体": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能体一体机": {
   "type": "product",
   "status": "candidate"
@@ -28361,6 +28469,10 @@
   "status": "candidate"
  },
  "智能巡检": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能巡检机器狗": {
   "type": "product",
   "status": "candidate"
  },
@@ -29899,6 +30011,10 @@
   "status": "candidate"
  },
  "永磁铁氧体": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "永续债融资": {
   "type": "product",
   "status": "candidate"
  },
@@ -35527,6 +35643,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "自动衡器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "自持电站": {
   "type": "product",
   "status": "candidate"
@@ -36085,6 +36205,10 @@
   "llm": "claude-sonnet-5"
  },
  "蓝宝石": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "薄膜材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -39655,6 +39779,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "饮料瓶盖": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "饰品": {
   "type": "product",
   "status": "candidate"
@@ -41172,6 +41301,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "出海广告": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "创投概念": {
   "type": "theme",
   "status": "candidate",
@@ -42463,6 +42597,11 @@
  "金属3D打印": {
   "type": "theme",
   "status": "candidate"
+ },
+ "金融信创": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "钠离子电池概念": {
   "type": "theme",

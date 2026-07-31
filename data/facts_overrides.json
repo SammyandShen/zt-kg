@@ -378,6 +378,87 @@
    "note": "证据均指向代糖/甜味剂(公司实际主业)概念驱动，固态电池无支撑",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-07-30"
+  },
+  {
+   "code": "300058",
+   "trade_date": "2026-07-31",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "东方财富Choice数据明确点名：'AI应用方向持续走高 中文在线、蓝色光标20cm涨停'，叙事具体且一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "301171",
+   "trade_date": "2026-07-31",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "界面新闻两次（收盘/午间）明确点名'多模态AI概念活跃...易点天下'涨停，叙事具体一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "688095",
+   "trade_date": "2026-07-31",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "东方财富Choice、财联社均明确点名'AI应用端持续走高 福昕软件...涨停'",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "000892",
+   "trade_date": "2026-07-31",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条独立新闻均明确点名为'影视院线概念异动拉升，欢瑞世纪直线涨停'，当日主导叙事是影视院线而非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "603106",
+   "trade_date": "2026-07-31",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条新闻均明确点名'金融科技概念拉升/异动拉升，恒银科技直线涨停'，主导叙事是金融科技而非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "002015",
+   "trade_date": "2026-07-31",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "证据明确点名'电力板块拉升 协鑫能科涨停'，主导叙事是电力板块而非算力租赁",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "603629",
+   "trade_date": "2026-07-31",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "东方财富Choice、财联社均明确点名'算力租赁概念表现活跃 利通电子一字涨停'",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "000815",
+   "trade_date": "2026-07-31",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "东方财富Choice、财联社均明确点名'算力租赁概念涨势扩大 美利云等十余股涨停'",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
+  },
+  {
+   "code": "002354",
+   "trade_date": "2026-07-31",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "证据明确点名'AI应用概念活跃 天娱数科涨停'，主导叙事是AI应用而非算力租赁",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-07-31"
   }
  ],
  "episode_verdicts": [],
