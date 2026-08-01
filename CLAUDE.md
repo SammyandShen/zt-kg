@@ -26,6 +26,7 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
 | `data/theme_business_mappings.json` | 人工核实 | 交易题材→客观业务标签映射，用于反查公司候选池，不自动生成涨停归因 |
 | `data/semantic_config.json` | 人工校准 | 语义层阈值（立轮/断轮/首封极差/候选过期/重叠告警）；改后跑 rebuild_semantic_layer.py；校准记录追加 calibration_log |
 | `data/facts_overrides.json` | 治理台导出+人工确认 | 人工判决台账（归因核实/轮次成立/龙头认定）；rebuild 每次重放，判决不因候选域重算丢失 |
+| `data/similar_dismissed.json` | Claude 判决留痕 | 疑似重复观测口的"已判不并"名单（精确对子+整族正则，如区域国企 `^..国企$`）；判过的不再上榜只露新面孔，verdict_log 记录并/不并理由；bad case 删条目即重新出现 |
 | `docs/data.js` | 脚本 `build_site.py` | **禁止手改** |
 | `docs/index.html` | 人工维护 | 单页应用（file:// 直接打开即可用） |
 
