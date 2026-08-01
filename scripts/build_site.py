@@ -25,6 +25,7 @@ OUT_PATH = common.REPO_ROOT / "docs" / "data.js"
 TAXONOMY_PATH = common.REPO_ROOT / "data" / "taxonomy.json"
 TAG_META_PATH = common.REPO_ROOT / "data" / "tag_meta.json"
 LLM_REVIEW_PATH = common.REPO_ROOT / "data" / "llm_review.json"
+SIMILAR_DISMISSED_PATH = common.REPO_ROOT / "data" / "similar_dismissed.json"
 CST = timezone(timedelta(hours=8))
 
 
@@ -47,6 +48,14 @@ def load_llm_sugg(tag_meta: dict) -> dict:
     return {k: [v.get("t", "unknown"), v.get("c", 0), v.get("p", "")]
             for k, v in led.items()
             if (tag_meta.get(k) or ["", ""])[1] == "candidate"}
+
+
+def load_similar_dismissed() -> dict:
+    """疑似重复观测口的已判不并名单：{pairs:[...], patterns:[[a, b正则],...]}。"""
+    if not SIMILAR_DISMISSED_PATH.exists():
+        return {"pairs": [], "patterns": []}
+    d = json.loads(SIMILAR_DISMISSED_PATH.read_text(encoding="utf-8"))
+    return {"pairs": d.get("pairs", []), "patterns": d.get("patterns", [])}
 
 
 def load_taxonomy(known_names: set[str]) -> dict:
@@ -420,6 +429,7 @@ def main() -> int:
         "taxonomy": taxonomy,
         "tag_meta": tag_meta,
         "llm_sugg": load_llm_sugg(tag_meta),
+        "similar_dismissed": load_similar_dismissed(),
         "news": news,
         "briefs": briefs,
         "business_facts": business_facts,

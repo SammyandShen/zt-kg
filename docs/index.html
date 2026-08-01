@@ -3009,12 +3009,18 @@ function renderTagsGov() {
   }
   queue.sort((a, b) => b.n - a.n || b.total - a.total);
 
-  // 疑似重复（互为子串）
+  // 疑似重复（互为子串）——已判不并的（similar_dismissed）不再上榜，只露新面孔
+  const sd = D.similar_dismissed || { pairs: [], patterns: [] };
+  const sdPairs = new Set(sd.pairs || []);
+  const sdPatterns = (sd.patterns || []).map(([a, re]) => [a, new RegExp(re)]);
+  const dismissed = (a, b) => sdPairs.has(a + '⊂' + b)
+    || sdPatterns.some(([pa, pre]) => pa === a && pre.test(b));
   const activeNames = Object.keys(META).filter(n => nameToCid[n] != null && byConcept[nameToCid[n]]);
   const dup = [];
   const hotNames = activeNames.filter(n => hotOf(nameToCid[n]) >= 1);
   for (const a of hotNames) for (const b of activeNames) {
-    if (a !== b && b.includes(a) && a.length >= 2 && !(D.aliases[b] != null))
+    if (a !== b && b.includes(a) && a.length >= 2 && !(D.aliases[b] != null)
+        && !dismissed(a, b))
       dup.push(a + ' ⊂ ' + b);
     if (dup.length >= 15) break;
   }
