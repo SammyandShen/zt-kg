@@ -433,8 +433,21 @@ def main() -> int:
     for index, report in enumerate(reports, 1):
         try:
             if use_claude:
+                # 年报文本抽取失败（扫描版PDF等）会导致每天白烧一次调用：
+                # 近空文本直接标 no_text 永久出队，等 bad case 或更好来源
+                text_path = common.REPO_ROOT / report[6]
+                if len(text_path.read_text(encoding="utf-8",
+                                           errors="ignore").strip()) < 1000:
+                    conn.execute(
+                        "UPDATE company_reports SET status='no_text' "
+                        "WHERE code=? AND report_year=?", (report[0], report[2]))
+                    conn.commit()
+                    print(f"⏭️ [{index}/{len(reports)}] {report[0]}: "
+                          "年报文本为空/近空（扫描版？），标记 no_text 出队")
+                    continue
                 # 瞬时错误按只重试；只有连续多只都失败才判定 Claude 当前不可用。
                 # 失败股票留在待抽队列（不写规则空行占位），明日自动重试。
+                # ValueError=模型输出JSON格式错，输出是随机的，重问通常就好
                 count = None
                 last_exc: Exception | None = None
                 for attempt in range(3):
@@ -445,7 +458,7 @@ def main() -> int:
                         extractor = "Claude"
                         consecutive_fail = 0
                         break
-                    except RuntimeError as exc:
+                    except (RuntimeError, ValueError) as exc:
                         last_exc = exc
                         if attempt < 2:
                             time.sleep(20 * (attempt + 1))
