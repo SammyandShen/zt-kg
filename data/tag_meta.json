@@ -469,7 +469,7 @@
  },
  "北京国资背景": {
   "type": "attribute",
-  "status": "active",
+  "status": "retired",
   "llm": "claude-sonnet-5"
  },
  "北美产能": {
@@ -633,12 +633,12 @@
  },
  "国企属性": {
   "type": "attribute",
-  "status": "active",
+  "status": "retired",
   "llm": "claude-sonnet-5"
  },
  "国企背景": {
   "type": "attribute",
-  "status": "active",
+  "status": "retired",
   "llm": "claude-sonnet-5"
  },
  "国家电投实控": {
@@ -791,7 +791,7 @@
  },
  "央国企": {
   "type": "attribute",
-  "status": "active",
+  "status": "retired",
   "llm": "claude-sonnet-5"
  },
  "央媒": {
@@ -30036,7 +30036,7 @@
  },
  "江西专精特新": {
   "type": "product",
-  "status": "candidate"
+  "status": "retired"
  },
  "江西二期": {
   "type": "product",
