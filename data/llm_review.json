@@ -58936,5 +58936,191 @@
   "p": "包装材料",
   "c": 0.6,
   "model": "claude-sonnet-5"
+ },
+ "涂布材料龙头": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "业绩补偿进展": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "资产收购推进": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "高溢价转让": {
+  "t": "catalyst",
+  "p": "股权转让",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI磁性元器件": {
+  "t": "product",
+  "p": "电子元件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "PCB层压机": {
+  "t": "product",
+  "p": "PCB层压设备",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "二元醇项目": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "光伏电池组件": {
+  "t": "product",
+  "p": "光伏",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "光学聚酯薄膜": {
+  "t": "product",
+  "p": "膜材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "冻干食品": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "减供稳价": {
+  "t": "catalyst",
+  "p": "产能调控",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "家用水泵出口": {
+  "t": "product",
+  "p": "出海",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "平陆运河": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "数字园区": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "新能源车用钢": {
+  "t": "product",
+  "p": "特钢",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "核电工程": {
+  "t": "product",
+  "p": "核电建造",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "植物蛋白饮料": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "池底清洁器": {
+  "t": "product",
+  "p": "智慧清洁机器人",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "汽车检具": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "油井加热电缆": {
+  "t": "product",
+  "p": "油气装备",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "浓缩果蔬汁": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "海外组件放量": {
+  "t": "catalyst",
+  "p": "出海订单",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "用电负荷新高": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电池上游": {
+  "t": "product",
+  "p": "锂电池",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "视觉芯片": {
+  "t": "product",
+  "p": "机器视觉",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "跨界芯片": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "轨交业务": {
+  "t": "product",
+  "p": "轨道交通",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "通信射频": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "间接持有长江存储股权": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "飞机地面保障设备": {
+  "t": "product",
+  "p": "航空装备",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "高纯晶硅": {
+  "t": "product",
+  "p": "光伏",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
  }
 }

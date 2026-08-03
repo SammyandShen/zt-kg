@@ -467,11 +467,6 @@
   "type": "attribute",
   "status": "active"
  },
- "北京国资背景": {
-  "type": "attribute",
-  "status": "retired",
-  "llm": "claude-sonnet-5"
- },
  "北美产能": {
   "type": "attribute",
   "status": "active"
@@ -631,16 +626,6 @@
   "type": "attribute",
   "status": "active"
  },
- "国企属性": {
-  "type": "attribute",
-  "status": "retired",
-  "llm": "claude-sonnet-5"
- },
- "国企背景": {
-  "type": "attribute",
-  "status": "retired",
-  "llm": "claude-sonnet-5"
- },
  "国家电投实控": {
   "type": "attribute",
   "status": "active",
@@ -757,28 +742,14 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
- "央企国资": {
-  "type": "attribute",
-  "status": "retired"
- },
  "央企客户": {
   "type": "attribute",
   "status": "active",
   "llm": "claude-sonnet-5"
  },
- "央企属性": {
-  "type": "attribute",
-  "status": "retired",
-  "llm": "claude-sonnet-5"
- },
  "央企控股": {
   "type": "attribute",
   "status": "active"
- },
- "央企背景": {
-  "type": "attribute",
-  "status": "retired",
-  "llm": "claude-sonnet-5"
  },
  "央企配套": {
   "type": "attribute",
@@ -788,11 +759,6 @@
  "央企金融": {
   "type": "attribute",
   "status": "active"
- },
- "央国企": {
-  "type": "attribute",
-  "status": "retired",
-  "llm": "claude-sonnet-5"
  },
  "央媒": {
   "type": "attribute",
@@ -8044,6 +8010,11 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "北京国资背景": {
+  "type": "attribute",
+  "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
  "北京诚通": {
   "type": "attribute",
   "status": "candidate"
@@ -8165,6 +8136,16 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "国企属性": {
+  "type": "attribute",
+  "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "国企背景": {
+  "type": "attribute",
+  "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
  "国家电网": {
   "type": "attribute",
   "status": "candidate",
@@ -8241,14 +8222,33 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "央企国资": {
+  "type": "attribute",
+  "status": "retired"
+ },
+ "央企属性": {
+  "type": "attribute",
+  "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
  "央企油服": {
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "央企背景": {
+  "type": "attribute",
+  "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
  "央企黄金": {
   "type": "attribute",
   "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "央国企": {
+  "type": "attribute",
+  "status": "retired",
   "llm": "claude-sonnet-5"
  },
  "央国企数字化": {
@@ -8457,6 +8457,10 @@
   "status": "candidate"
  },
  "海外高溢价": {
+  "type": "attribute",
+  "status": "candidate"
+ },
+ "涂布材料龙头": {
   "type": "attribute",
   "status": "candidate"
  },
@@ -8737,6 +8741,11 @@
   "llm": "claude-sonnet-5"
  },
  "间接投资长鑫存储": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "间接持有长江存储股权": {
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -11547,6 +11556,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "资产收购推进": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "资产收购筹划": {
   "type": "catalyst",
   "status": "candidate",
@@ -12342,6 +12356,11 @@
   "type": "event",
   "status": "retired"
  },
+ "业绩补偿进展": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "东北证券出售": {
   "type": "event",
   "status": "retired"
@@ -12510,6 +12529,11 @@
  "买入评级": {
   "type": "event",
   "status": "retired"
+ },
+ "二元醇项目": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "亚马逊合作": {
   "type": "event",
@@ -16902,6 +16926,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "高溢价转让": {
+  "type": "event",
+  "status": "candidate"
+ },
  "高端化转型": {
   "type": "event",
   "status": "retired"
@@ -17666,6 +17694,11 @@
  "AI知识库": {
   "type": "product",
   "status": "candidate"
+ },
+ "AI磁性元器件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "AI穿戴": {
   "type": "product",
@@ -18982,6 +19015,11 @@
  "PCB客户": {
   "type": "product",
   "status": "candidate"
+ },
+ "PCB层压机": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "PCB并购完成": {
   "type": "product",
@@ -21043,6 +21081,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "光伏电池组件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "光伏电站": {
   "type": "product",
   "status": "candidate",
@@ -21266,6 +21309,10 @@
   "status": "candidate"
  },
  "光学级PMMA": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光学聚酯薄膜": {
   "type": "product",
   "status": "candidate"
  },
@@ -22188,6 +22235,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "冻干食品": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "净水": {
   "type": "product",
   "status": "candidate"
@@ -22198,6 +22250,10 @@
   "llm": "claude-sonnet-5"
  },
  "净水设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "减供稳价": {
   "type": "product",
   "status": "candidate"
  },
@@ -25183,6 +25239,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "家用水泵出口": {
+  "type": "product",
+  "status": "candidate"
+ },
  "家用电器": {
   "type": "product",
   "status": "candidate"
@@ -25755,6 +25815,10 @@
   "status": "candidate"
  },
  "平潭开发": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "平陆运河": {
   "type": "product",
   "status": "candidate"
  },
@@ -26907,6 +26971,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数字园区": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数字安全": {
   "type": "product",
   "status": "candidate"
@@ -27659,6 +27727,11 @@
   "status": "candidate"
  },
  "新能源车热管理": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "新能源车用钢": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -29264,6 +29337,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "核电工程": {
+  "type": "product",
+  "status": "candidate"
+ },
  "核电废水": {
   "type": "product",
   "status": "candidate",
@@ -29409,6 +29486,11 @@
  "植物蛋白": {
   "type": "product",
   "status": "candidate"
+ },
+ "植物蛋白饮料": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "椰基饮料": {
   "type": "product",
@@ -30054,6 +30136,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "池底清洁器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车MCU": {
   "type": "product",
   "status": "candidate",
@@ -30154,6 +30240,11 @@
  "汽车板材": {
   "type": "product",
   "status": "candidate"
+ },
+ "汽车检具": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "汽车模具": {
   "type": "product",
@@ -30291,6 +30382,10 @@
   "status": "candidate"
  },
  "河图AI": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "油井加热电缆": {
   "type": "product",
   "status": "candidate"
  },
@@ -30668,6 +30763,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "浓缩果蔬汁": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "浓缩苹果汁": {
   "type": "product",
   "status": "candidate"
@@ -30829,6 +30929,10 @@
   "status": "candidate"
  },
  "海外突破": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海外组件放量": {
   "type": "product",
   "status": "candidate"
  },
@@ -32696,6 +32800,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "用电负荷新高": {
+  "type": "product",
+  "status": "candidate"
+ },
  "用电采集": {
   "type": "product",
   "status": "candidate",
@@ -33124,6 +33232,10 @@
   "status": "candidate"
  },
  "电池": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电池上游": {
   "type": "product",
   "status": "candidate"
  },
@@ -36355,6 +36467,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "视觉芯片": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "视频会议": {
   "type": "product",
   "status": "candidate",
@@ -36892,6 +37009,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "跨界芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
  "路桥基建": {
   "type": "product",
   "status": "candidate",
@@ -37048,6 +37169,11 @@
  "车载高压电源": {
   "type": "product",
   "status": "candidate"
+ },
+ "轨交业务": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "轨交减振降噪": {
   "type": "product",
@@ -37330,6 +37456,10 @@
   "status": "candidate"
  },
  "通信与指控装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "通信射频": {
   "type": "product",
   "status": "candidate"
  },
@@ -39708,6 +39838,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "飞机地面保障设备": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "飞机租赁": {
   "type": "product",
   "status": "candidate"
@@ -40162,6 +40297,11 @@
   "llm": "claude-sonnet-5"
  },
  "高纯PFA": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "高纯晶硅": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"

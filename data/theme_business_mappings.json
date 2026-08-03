@@ -1408,6 +1408,654 @@
    "status": "candidate",
    "confidence": 0.85,
    "rationale": "[llm 2026-07-30] 业务标签与题材高度同义"
+  },
+  {
+   "theme": "AIDC液冷",
+   "business_tag_name": "液冷冷板产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 液冷冷板是数据中心液冷方案核心部件"
+  },
+  {
+   "theme": "AIDC液冷",
+   "business_tag_name": "液冷管路产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 液冷管路是数据中心液冷系统直接组成部分"
+  },
+  {
+   "theme": "AIDC电源",
+   "business_tag_name": "AI数据中心电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-03] 业务即AI数据中心电源产品"
+  },
+  {
+   "theme": "AI服务器电源",
+   "business_tag_name": "AI数据中心电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] AI服务器所需电源直接对应"
+  },
+  {
+   "theme": "东数西算",
+   "business_tag_name": "AIDC算力基础设施服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 算力基础设施服务是东数西算工程直接承载"
+  },
+  {
+   "theme": "东数西算",
+   "business_tag_name": "IDC及智算中心服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 智算中心服务是东数西算核心业务"
+  },
+  {
+   "theme": "AI智算",
+   "business_tag_name": "AIDC算力基础设施服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 算力基础设施直接支撑AI智算"
+  },
+  {
+   "theme": "AI智算",
+   "business_tag_name": "IDC及智算中心服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 智算中心服务即AI智算业务"
+  },
+  {
+   "theme": "AI智算",
+   "business_tag_name": "算力中心运维及智算云服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 智算云服务直接对应AI智算"
+  },
+  {
+   "theme": "算力",
+   "business_tag_name": "AIDC算力基础设施服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 算力基础设施服务即算力题材直接承载"
+  },
+  {
+   "theme": "算力",
+   "business_tag_name": "IDC及智算中心服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 智算中心服务属于算力供给"
+  },
+  {
+   "theme": "算力服务",
+   "business_tag_name": "云服务(云资源转售及MSP)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 云资源转售/MSP即算力服务业态"
+  },
+  {
+   "theme": "算力服务",
+   "business_tag_name": "算力中心运维及智算云服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 业务名称直接对应算力服务"
+  },
+  {
+   "theme": "算力服务",
+   "business_tag_name": "算力技服维保",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 算力技服维保是算力服务的具体形态"
+  },
+  {
+   "theme": "算力硬件",
+   "business_tag_name": "算力设备经销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 算力设备经销直接对应算力硬件流通"
+  },
+  {
+   "theme": "AI服务器",
+   "business_tag_name": "AI算力服务器与GPU显卡",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 业务本身即AI服务器与GPU"
+  },
+  {
+   "theme": "AI算力",
+   "business_tag_name": "AI算力服务器与GPU显卡",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] AI服务器与GPU显卡是AI算力核心载体"
+  },
+  {
+   "theme": "AI营销",
+   "business_tag_name": "AI营销服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-03] 业务名称直接对应"
+  },
+  {
+   "theme": "AI应用",
+   "business_tag_name": "数字网络及AI应用服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] AI应用服务直接对应AI应用题材"
+  },
+  {
+   "theme": "存储芯片",
+   "business_tag_name": "半导体存储器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 半导体存储器即存储芯片"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "人形机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-03] 业务标签与题材同名"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "人形机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 人形机器人是具身智能主要载体"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "机器人核心部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 核心部件是人形机器人直接上游"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "机器人核心部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 核心部件是具身智能硬件直接上游"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "机器人组件及系统应用",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 组件及系统应用直接服务人形机器人整机"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "机器人组件及系统应用",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 业务直接对应具身智能系统集成"
+  },
+  {
+   "theme": "XT减速器",
+   "business_tag_name": "精密减速器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 精密减速器是XT减速器题材直接对应品类"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "精密减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 减速器是人形机器人关节核心上游件"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "精密减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 减速器是具身智能本体关节核心上游件"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "数控机床",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-03] 业务标签与题材同一指向"
+  },
+  {
+   "theme": "复合铜箔",
+   "business_tag_name": "复合集流体（复合铝箔/复合铜箔）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 复合铜箔即业务标签本身"
+  },
+  {
+   "theme": "卫星",
+   "business_tag_name": "卫星通信运营服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 卫星通信运营是卫星题材直接业务承载"
+  },
+  {
+   "theme": "卫星互联网",
+   "business_tag_name": "卫星通信运营服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 卫星通信运营服务即卫星互联网直接业务"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能柱上开关",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 智能柱上开关是智能电网设备直接组成"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能环网柜",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 智能环网柜是智能电网设备直接组成"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能配电设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 智能配电设备是智能电网直接组成"
+  },
+  {
+   "theme": "虚拟电厂",
+   "business_tag_name": "虚拟电厂运营平台服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-03] 业务标签即虚拟电厂运营本身"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "碱性电解水制氢设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 电解水制氢设备是氢能制取直接环节"
+  },
+  {
+   "theme": "AI智能家居",
+   "business_tag_name": "智能家居传感器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 智能家居传感器直接服务AI智能家居"
+  },
+  {
+   "theme": "液冷服务器",
+   "business_tag_name": "液冷冷板产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 液冷冷板是液冷服务器核心部件"
+  },
+  {
+   "theme": "液冷服务器",
+   "business_tag_name": "液冷管路产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 液冷管路是液冷服务器核心部件"
+  },
+  {
+   "theme": "AI服务器液冷",
+   "business_tag_name": "液冷冷板产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 冷板是AI服务器液冷核心部件"
+  },
+  {
+   "theme": "液冷散热",
+   "business_tag_name": "液冷冷板产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 冷板是液冷散热核心部件"
+  },
+  {
+   "theme": "液冷散热",
+   "business_tag_name": "液冷管路产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 管路是液冷散热核心部件"
+  },
+  {
+   "theme": "算力温控",
+   "business_tag_name": "液冷冷板产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-03] 液冷冷板是算力温控直接解决方案"
+  },
+  {
+   "theme": "液冷储能",
+   "business_tag_name": "电池液冷板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 电池液冷板是液冷储能系统核心部件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "乘用车整车制造与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 整车制造与销售即汽车产业链主体业务"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "商用车整车制造与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 整车制造与销售即汽车产业链主体业务"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "客车整车制造与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 整车制造与销售即汽车产业链主体业务"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "一体化压铸车身结构件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 车身结构件是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车冲焊件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 冲焊件是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车底盘零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 底盘零部件是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车电子配套件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 电子配套件是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车转向系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 转向系统是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车铝合金精密铸件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 铝合金精密铸件是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "车身电子电器控制系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 车身电控系统是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "铝合金制动系统铸件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 制动系统铸件是整车制造直接上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "新能源汽车驱动电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 驱动电机是新能源车核心上游件"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "汽车出口（整车海外销售）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 整车海外销售是汽车产业链下游出口环节"
+  },
+  {
+   "theme": "华为产业链",
+   "business_tag_name": "尊界高端新能源乘用车（与华为合作）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 业务标签明确注明与华为合作"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "尊界高端新能源乘用车（与华为合作）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 该业务即整车制造销售"
+  },
+  {
+   "theme": "家居商贸",
+   "business_tag_name": "家居卖场运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 家居卖场运营即家居商贸主体业务"
+  },
+  {
+   "theme": "生态水利",
+   "business_tag_name": "水利工程",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-03] 水利工程直接对应生态水利建设"
+  },
+  {
+   "theme": "生态水利",
+   "business_tag_name": "水生态保护与修复",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 水生态保护与修复直接对应生态水利"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻米面制品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 速冻米面制品属预制菜范畴"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻菜肴制品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 速冻菜肴制品即典型预制菜产品"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻食品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 速冻食品属预制菜范畴"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻鱼肉制品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-03] 速冻鱼肉制品属预制菜范畴"
+  },
+  {
+   "theme": "短剧",
+   "business_tag_name": "短剧",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-03] 业务标签与题材同名"
+  },
+  {
+   "theme": "短剧/漫剧",
+   "business_tag_name": "短剧",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-03] 短剧业务直接对应该题材"
+  },
+  {
+   "theme": "短剧",
+   "business_tag_name": "短剧制作发行",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-03] 制作发行即短剧题材核心业务"
+  },
+  {
+   "theme": "短剧/漫剧",
+   "business_tag_name": "短剧制作发行",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 制作发行即短剧题材核心业务"
+  },
+  {
+   "theme": "AI短剧",
+   "business_tag_name": "短剧和AI短剧平台业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-03] 业务标签明确含AI短剧"
+  },
+  {
+   "theme": "短剧",
+   "business_tag_name": "短剧和AI短剧平台业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 业务标签明确含短剧平台"
+  },
+  {
+   "theme": "短剧/漫剧",
+   "business_tag_name": "短剧和AI短剧平台业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-03] 业务标签明确含短剧平台"
+  },
+  {
+   "theme": "出海",
+   "business_tag_name": "出海广告投放",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 业务标签名称直接对应出海"
+  },
+  {
+   "theme": "出海",
+   "business_tag_name": "出海数字营销服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-03] 业务标签名称直接对应出海"
+  },
+  {
+   "theme": "出海",
+   "business_tag_name": "印刷机出口贸易",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 出口贸易即出海业务直接体现"
+  },
+  {
+   "theme": "出海",
+   "business_tag_name": "少儿文化产品出口",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 产品出口即出海业务直接体现"
+  },
+  {
+   "theme": "出海",
+   "business_tag_name": "海外社交网络业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 海外业务运营即出海直接体现"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "飞机部件装配",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-03] 飞机部件装配是大飞机制造直接上游环节"
   }
  ]
 }

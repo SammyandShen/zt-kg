@@ -468,6 +468,132 @@
    "note": "新闻标题点名'算力租赁概念表现活跃 宏景科技20cm涨停'，直接归因该股当日涨停系此题材驱动（题材同源算力出租类，措辞与reason略有差异）",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-01"
+  },
+  {
+   "code": "002896",
+   "trade_date": "2026-08-03",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "两条独立新闻点名+特斯拉Optimus产能上调直接催化，与精密减速器主营契合",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002803",
+   "trade_date": "2026-08-03",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "两家媒体点名'AI应用端走强 吉宏股份涨停'，另有阿里云AI合作具体业务报道佐证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "603106",
+   "trade_date": "2026-08-03",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻明确将涨停归因于'互联网金融板块短线拉升'，非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002361",
+   "trade_date": "2026-08-03",
+   "theme": "商业航天",
+   "verdict": "verified",
+   "note": "两条独立新闻均直接点名'商业航天概念拉升 神剑股份涨停'",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002366",
+   "trade_date": "2026-08-03",
+   "theme": "可控核聚变",
+   "verdict": "verified",
+   "note": "两条独立新闻直接点名'可控核聚变概念...融发核电涨停'",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "603011",
+   "trade_date": "2026-08-03",
+   "theme": "可控核聚变",
+   "verdict": "rejected",
+   "note": "证据明确归因为'工程机械出口强劲'带动，非可控核聚变",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "003001",
+   "trade_date": "2026-08-03",
+   "theme": "可控核聚变",
+   "verdict": "rejected",
+   "note": "证据明确归因为'土壤修复概念'带动，非可控核聚变",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "600540",
+   "trade_date": "2026-08-03",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "证据明确归因为'农业种植/种植业板块'带动，非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002366",
+   "trade_date": "2026-08-03",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "证据全部指向核电/可控核聚变叙事，未见国企改革相关点名（该股当日主线已判为可控核聚变）",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "601700",
+   "trade_date": "2026-08-03",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "证据明确归因为'电网设备板块+中报预增'，非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002354",
+   "trade_date": "2026-08-03",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "新闻明确归因为'AI短剧市场规模扩容'带动2连板，未见算力租赁点名",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "001331",
+   "trade_date": "2026-08-03",
+   "theme": "具身智能",
+   "verdict": "rejected",
+   "note": "证据明确归因为'燃气板块/公用事业价值重估'，公司主业LNG运贸与具身智能无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002131",
+   "trade_date": "2026-08-03",
+   "theme": "AI营销",
+   "verdict": "verified",
+   "note": "新闻点名Seedance2.5 AI模型发布为传媒ETF持仓股利欧股份涨停催化，契合AI营销叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002354",
+   "trade_date": "2026-08-03",
+   "theme": "AI营销",
+   "verdict": "verified",
+   "note": "新闻点名AI短剧市场规模扩容为天娱数科2连板催化，与AI营销/AI内容叙事一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
   }
  ],
  "episode_verdicts": [
@@ -479,6 +605,15 @@
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-01",
    "catalyst": "短剧行业'三期叠加'历史性拐点叙事（中文在线CEO公开表态）叠加多模态AI内容生成技术活跃，共同催化AI短剧概念股集体涨停（昆仑万维、中文在线均被新闻标题点名）"
+  },
+  {
+   "theme": "液冷服务器",
+   "start_date": "2026-07-31",
+   "verdict": "verified",
+   "note": "3只不同个股同向响应，至少1家有明确业务证据支撑共同催化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03",
+   "catalyst": "AI算力建设扩产带动液冷散热组件需求增长——金富科技液冷产品(铜管/波纹管/液冷板/分集水器)产能订单同环比攀升为业务证据支撑，罗曼股份、豪尔赛跟随炒作"
   }
  ],
  "leaders": [
@@ -625,6 +760,30 @@
    "note": "规则认定：当前2板最高（兴欣新材）",
    "decided_by": "rule",
    "decided_at": "2026-07-28"
+  },
+  {
+   "theme": "液冷服务器",
+   "start_date": "2026-07-31",
+   "code": "002963",
+   "note": "规则认定：当前2板最高（豪尔赛）",
+   "decided_by": "rule",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "theme": "可控核聚变",
+   "start_date": "2026-07-09",
+   "code": "003001",
+   "note": "规则认定：当前5板最高（中岩大地）",
+   "decided_by": "rule",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "theme": "AI营销",
+   "start_date": "2026-07-31",
+   "code": "002354",
+   "note": "规则认定：当前2板最高（天娱数科）",
+   "decided_by": "rule",
+   "decided_at": "2026-08-03"
   }
  ]
 }
