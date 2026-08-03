@@ -149,6 +149,9 @@ def review_link(conn, row: tuple, dates: list[str],
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--days", type=int, default=5)
+    parser.add_argument("--include-closed", action="store_true",
+                        help="连已 expired/verified/rejected 的链接一并复核"
+                             "（历史回填用；日常只扫 candidate）")
     parser.add_argument("--date")
     args = parser.parse_args()
     conn = common.open_db()
@@ -171,12 +174,16 @@ def main() -> int:
         print("不存在的交易日：" + "、".join(unknown), file=sys.stderr)
         return 1
     placeholders = ",".join("?" for _ in targets)
+    # 复核打分是确定性派生（输入=盘面广度/延续/证据，全在库里），删了可重算。
+    # 2026-08-03 级联删除事故后用 --include-closed --days 300 做过一次全史回填。
+    status_filter = ("l.status!='manual-none'" if args.include_closed
+                     else "l.status='candidate'")
     rows = conn.execute(f"""
         SELECT l.event_id,l.concept_id,e.code,e.trade_date,l.confidence
         FROM event_theme_links l
         JOIN limit_up_events e ON e.id=l.event_id
         WHERE e.trade_date IN ({placeholders})
-          AND e.pool='zt' AND l.status='candidate'
+          AND e.pool='zt' AND {status_filter}
         ORDER BY e.trade_date,e.code,l.confidence DESC
     """, targets).fetchall()
     for row in rows:
