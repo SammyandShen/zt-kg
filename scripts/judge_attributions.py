@@ -39,8 +39,11 @@ PROMPT_HEAD = """你是A股涨停归因审核员。对下面的候选归因和�
   不能只有同花顺原因标签）②当日该股确实以此叙事为主导。
 - 归因 verdict=rejected 仅当有明确反证：公司澄清、明显蹭概念、或证据显示当日
   主导叙事是另一个题材。
-- 轮次 verdict=verified 需能写出具体共同催化（什么事件、哪天、什么来源级别）；
-  写不出就 leave。verdict=rejected 仅当成分股之间明显没有共同叙事（纯标签巧合）。
+- 轮次 verdict=verified：每个轮次带 auto_catalyst（系统自动推导的共同催化假设）。
+  你的任务是核对该假设与成员原因/证据是否一致——一致则 verified 并在 catalyst
+  输出确认或修订后的催化（事件+时间+来源级别）；假设与成员明显对不上、又归纳
+  不出替代催化 → leave。verdict=rejected 仅当成分股之间明显没有共同叙事
+  （纯标签巧合、各炒各的）。
 - 证据不足、拿不准 → 一律 verdict=leave（不写理由也可）。宁可 leave 不可错判。
 
 只输出一个 JSON 对象，不要任何其他文字：
@@ -140,6 +143,9 @@ def build_episode_queue(conn, dates: list[str], judged: set) -> list[dict]:
     for ep_id, cid, theme, start, _end, phase in open_episodes(conn):
         if start < d3 or (theme, start) in judged:
             continue
+        auto_catalyst = (conn.execute(
+            "SELECT catalyst_summary FROM theme_episodes WHERE id=?",
+            (ep_id,)).fetchone() or [""])[0] or ""
         members = conn.execute("""
             SELECT e.code, e.name, e.trade_date, e.lb_count, e.reason_type
             FROM event_theme_links l JOIN limit_up_events e ON e.id=l.event_id
@@ -150,6 +156,7 @@ def build_episode_queue(conn, dates: list[str], judged: set) -> list[dict]:
             ev_titles += evidence_snippets(conn, code, d, 2)
         queue.append({
             "theme": theme, "start_date": start, "phase": phase,
+            "auto_catalyst": auto_catalyst[:120],
             "members": [f"{n}({c}){lb or 1}板 原因:{(r or '')[:40]}"
                         for c, n, d, lb, r in members[:8]],
             "evidence": ev_titles[:8],

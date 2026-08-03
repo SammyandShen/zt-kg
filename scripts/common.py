@@ -448,6 +448,14 @@ def open_db() -> sqlite3.Connection:
         conn.execute("ALTER TABLE event_theme_links ADD COLUMN basis_kind TEXT")
         conn.execute("ALTER TABLE event_theme_links ADD COLUMN basis_id INTEGER")
         conn.commit()
+    # 营收占比（年报披露的分部构成，0-100；未披露为 NULL）——区分主营与重要收入
+    if "revenue_share" not in fact_cols:
+        conn.execute("ALTER TABLE stock_business_facts ADD COLUMN revenue_share REAL")
+        conn.commit()
+    cand_cols = {r[1] for r in conn.execute("PRAGMA table_info(business_fact_candidates)")}
+    if "revenue_share" not in cand_cols:
+        conn.execute("ALTER TABLE business_fact_candidates ADD COLUMN revenue_share REAL")
+        conn.commit()
     return conn
 
 

@@ -194,6 +194,8 @@
     margin-top: 5px; font-size: 12px; color: var(--ink2); }
   .ml-num { font-size: 21px; font-weight: 800; color: var(--accent); line-height: 1; }
   .ml-lead { font-size: 12px; color: var(--ink2); margin-top: 4px; }
+  .ml-rel { font-size: 11px; color: var(--ink3); margin-top: 4px; }
+  .ml-rel .pill-jump { color: var(--accent); }
   .ml-spark { margin-top: 6px; }
   .chg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px; margin-top: 12px; }
@@ -908,7 +910,8 @@ function businessFactsHtml(code) {
       <span class="verify-state ${status}">${esc(SEM_STATUS_LABEL[status] || status)}</span></div>
       <div class="fact-summary">${esc(summary || '')}${
         validFrom ? ` <span class="muted">· 自${esc(validFrom)}</span>` : ''} · 置信度${Math.round(confidence * 100)}%
-        ${maturity ? ` · ${esc(MATURITY_LABEL[maturity] || maturity)}` : ''}</div>
+        ${maturity ? ` · ${esc(MATURITY_LABEL[maturity] || maturity)}` : ''}${
+        f[11] != null ? ` · <b>占营收${f[11]}%</b>` : ''}</div>
       ${evidenceLinksHtml(evidenceIds)}</div>`;
   }).join('');
   return `<div class="semantic-section"><div class="semantic-title">
@@ -919,8 +922,19 @@ const eventThemesOf = (code, d) => EVENT_THEMES[`${code}|${d}`] || [];
 function eventThemeHtml(code, d) {
   const links = eventThemesOf(code, d);
   const contextIds = EVENT_CONTEXT_EVIDENCE[`${code}|${d}`] || [];
-  if (!links.length) return `<span class="muted small">未归因</span>${
-    evidenceLinksHtml(contextIds, '事件公告（尚未绑定具体题材）')}`;
+  if (!links.length) {
+    // 区分"本来就不是炒题材"和"真的还没归因"：看原因里有无题材/产业型标签
+    const ev = (D.events[d] || []).find(e => e[0] === code);
+    const hasThemeTag = !!ev && (ev[9] || []).some(cid => {
+      const t = (META[D.concepts[cid]?.[0]] || [])[0];
+      return t === 'theme' || t === 'sector' || t === 'product';
+    });
+    return `<span class="muted small" title="${hasThemeTag
+      ? '原因含题材类标签，归因尚未生成或已过期'
+      : '原因均为业绩/回购/属性等，非题材炒作，无题材可归'}">${
+      hasThemeTag ? '待归因' : '非题材驱动'}</span>${
+      evidenceLinksHtml(contextIds, '事件公告（尚未绑定具体题材）')}`;
+  }
   const pills = links.slice(0, 4).map(l => {
     const [cid, role, , , status, confidence, rationale, , , , review, basis] = l;
     const name = D.concepts[cid]?.[0] || '未知题材';
@@ -1099,7 +1113,8 @@ $('#nav-trend').onclick = () => go('#/trend');
 $('#nav-batch').onclick = () => go('#/batch');
 
 function render() {
-  const h = location.hash || '#/date/' + D.dates[D.dates.length - 1];
+  // 默认落热力页：核心问题是"这一轮在炒什么、谁在跟随"；按日复盘走顶栏
+  const h = location.hash || '#/heat';
   const [, view, arg] = h.match(/^#\/(\w+)\/?(.*)$/) || [];
   $('#nav-review').classList.toggle('on', view === 'date');
   $('#nav-heat').classList.toggle('on', view === 'heat');
@@ -1600,7 +1615,8 @@ function renderBusinessConcept(id) {
       <span class="verify-state ${status}">${esc(SEM_STATUS_LABEL[status] || status)}</span></div>
       <div class="fact-summary"><b>${esc(tag)}</b> · ${esc(summary || '')}
         ${validFrom ? ` · 自${esc(validFrom)}` : ''}${validTo ? ` 至${esc(validTo)}` : ''}
-        · ${esc(MATURITY_LABEL[maturity] || maturity)} · 置信度${Math.round(confidence * 100)}%</div>
+        · ${esc(MATURITY_LABEL[maturity] || maturity)} · 置信度${Math.round(confidence * 100)}%${
+        f[11] != null ? ` · <b>占营收${f[11]}%</b>` : ''}</div>
       ${evidenceLinksHtml(evidenceIds)}</div>`;
   };
   const operating = rows.filter(x => businessFactIsOperating(x.f));
@@ -1967,17 +1983,35 @@ function renderHeat() {
     const [id, ep] = eps[0];
     return { cid, ph: !ep[2] ? (PHASE_LABEL[ep[3]] || '') : '', id: +id };
   };
-  const mainline = themeNodes.map(nm => ({
+  // 展示层聚合：轮次成员重叠≥50%的题材并成一张主卡（数据层不合并，只解决视角分裂）
+  const mlCand = themeNodes.map(nm => ({
     nm, today: todaySet(nm).size, mom: momentumOf(heatTaxSeries(nm)).ratio,
   })).filter(x => x.today >= 2)
-    .sort((a, b) => b.today - a.today || b.mom - a.mom).slice(0, 3);
-  const mlCard = x => {
+    .sort((a, b) => b.today - a.today || b.mom - a.mom).slice(0, 8)
+    .map(x => ({ ...x, ...epInfoOf(x.nm) }));
+  const epSetOf = x => x._m || (x._m =
+    x.id != null ? new Set(episodeMembers(x.id).keys()) : new Set());
+  const epOverlap = (a, b) => {
+    const A = epSetOf(a), B = epSetOf(b);
+    if (!A.size || !B.size) return 0;
+    let k = 0;
+    for (const c of A) if (B.has(c)) k++;
+    return k / Math.min(A.size, B.size);
+  };
+  const mlGroups = [];
+  for (const x of mlCand) {
+    const g = mlGroups.find(g => g.some(y => epOverlap(x, y) >= 0.5));
+    if (g) g.push(x); else mlGroups.push([x]);
+  }
+  const mainline = mlGroups.slice(0, 3);
+  const mlCard = group => {
+    const x = group[0], related = group.slice(1);
     const [lc, lcTxt] = lifecycleOfSeries(heatTaxSeries(x.nm));
     const prevN = dPrev ? heatDayCodes(x.nm, dPrev).size : null;
     const rn = renewalOf(x.nm);
     const lead = ztL.filter(e => todaySet(x.nm).has(e[0]))
       .sort((a, b) => (b[1] || 1) - (a[1] || 1))[0];
-    const { cid, ph, id } = epInfoOf(x.nm);
+    const { cid, ph, id } = x;
     return `<div class="ml-card"${cid != null
         ? ` data-mljump="#/concept/${cid}${id != null ? '?ep=' + id : ''}"`
         : ` data-focus="${esc(x.nm)}"`}>
@@ -1987,6 +2021,9 @@ function renderHeat() {
         ${rn != null ? `<span>续板率${iInfo('renewal')} <b>${rn}%</b></span>` : ''}</div>
       <div class="ml-lead">${lead ? `领涨 ${esc(D.stocks[lead[0]] || lead[0])} ${
         esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '&nbsp;'}</div>
+      ${related.length ? `<div class="ml-rel">同轮关联 ${related.map(r =>
+        `<b class="pill-jump" data-cid="${r.cid}" data-ep="${r.id ?? ''}">${esc(r.nm)}</b>`)
+        .join(' · ')}</div>` : ''}
       <div class="ml-spark">${spark(heatTaxSeries(x.nm).slice(-10))}</div></div>`;
   };
 
@@ -2191,7 +2228,10 @@ function renderHeat() {
     if (e.key === 'Enter') { e.preventDefault(); applyFocusInput(); }
   });
   document.querySelectorAll('[data-mljump]').forEach(el =>
-    el.addEventListener('click', () => go(el.dataset.mljump)));
+    el.addEventListener('click', ev => {
+      if (ev.target.closest?.('.pill-jump')) return;   // 同轮关联 pill 自行跳转
+      go(el.dataset.mljump);
+    }));
   document.querySelectorAll('[data-focus]').forEach(el =>
     el.addEventListener('click', () => { heatFocus = el.dataset.focus; renderHeat(); }));
   document.querySelectorAll('[data-detail]').forEach(el =>

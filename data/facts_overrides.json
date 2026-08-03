@@ -459,9 +459,28 @@
    "note": "证据明确点名'AI应用概念活跃 天娱数科涨停'，主导叙事是AI应用而非算力租赁",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-07-31"
+  },
+  {
+   "code": "301396",
+   "trade_date": "2026-07-31",
+   "theme": "算力服务",
+   "verdict": "verified",
+   "note": "新闻标题点名'算力租赁概念表现活跃 宏景科技20cm涨停'，直接归因该股当日涨停系此题材驱动（题材同源算力出租类，措辞与reason略有差异）",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-01"
   }
  ],
- "episode_verdicts": [],
+ "episode_verdicts": [
+  {
+   "theme": "AI短剧",
+   "start_date": "2026-07-31",
+   "verdict": "verified",
+   "note": "掌阅科技证据（募资现金管理、投入周期）未直接支持该催化，权重弱于另两只成员",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-01",
+   "catalyst": "短剧行业'三期叠加'历史性拐点叙事（中文在线CEO公开表态）叠加多模态AI内容生成技术活跃，共同催化AI短剧概念股集体涨停（昆仑万维、中文在线均被新闻标题点名）"
+  }
+ ],
  "leaders": [
   {
    "theme": "脑机接口",

@@ -395,6 +395,28 @@ def main() -> int:
           "题材业务映射 {}；证据 {}；年报业务候选 {}；T+复核 {}；"
           "业务节点 {}；业务层级边 {}".format(
         *semantic_counts))
+
+    # basis 凭据率观察哨（2026-08-01 设）：业务图谱扩容后，映射表增厚应带动
+    # 凭据率自然爬升；宽限一周后仍 <20% 说明 theme→业务桥断了，需要修。
+    basis_row = conn.execute("""
+        SELECT COUNT(DISTINCT l.event_id),
+               COUNT(DISTINCT CASE WHEN l.basis_kind IS NOT NULL
+                                   THEN l.event_id END)
+        FROM event_theme_links l JOIN limit_up_events e ON e.id=l.event_id
+        WHERE l.status IN ('candidate','verified')
+          AND e.trade_date >= (SELECT MIN(d) FROM (
+            SELECT DISTINCT trade_date AS d FROM limit_up_events
+            ORDER BY trade_date DESC LIMIT 3))
+    """).fetchone()
+    if basis_row and basis_row[0]:
+        rate = basis_row[1] * 100 // basis_row[0]
+        print(f"凭据率观察哨：近3交易日归因带凭据 {basis_row[1]}/{basis_row[0]}"
+              f"（{rate}%）")
+        import datetime
+        if rate < 20 and datetime.date.today() >= datetime.date(2026, 8, 8):
+            warnings.append(
+                f"凭据率宽限期已过仍仅 {rate}%：theme→业务映射桥疑似断了，"
+                "检查 gen_theme_mappings 是否覆盖年报新业务标签")
     if warnings:
         print("\n警告：")
         for warning in warnings:

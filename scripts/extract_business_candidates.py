@@ -76,9 +76,10 @@ PROMPT = """你是上市公司业务事实审校员。请只根据下面的年�
 - tag_name 使用简洁稳定的行业/产品/服务名，不带“龙头、概念、涨价、受益”等叙事
 - summary 说明业务边界；claim 必须是原文中能直接支持该事实的短句或数据，最多120字
 - 信息不足宁可少报。confidence范围0~1
+- revenue_share：年报营收构成中该业务的占比（0-100数字）；未明确披露就填 null，禁止估算
 - 只输出 JSON 数组，不要Markdown：
 [{{"tag_name":"","fact_type":"product","relation_type":"core",
-  "maturity":"core_revenue","confidence":0.9,"summary":"","claim":""}}]
+  "maturity":"core_revenue","confidence":0.9,"revenue_share":null,"summary":"","claim":""}}]
 
 股票：{code} {name}
 报告：{title}
@@ -152,12 +153,18 @@ def validate_candidate(raw: dict) -> dict:
         maturity = "unknown"        # 归一失败降级 unknown，不整条拒绝
     if relation == "planned_acquisition" and maturity != "proposed":
         raise ValueError(f"{tag}: 拟收购必须是 proposed")
+    share = raw.get("revenue_share")
+    try:
+        share = None if share is None else max(0.0, min(100.0, float(share)))
+    except (TypeError, ValueError):
+        share = None
     return {
         "tag_name": tag[:60],
         "fact_type": fact_type,
         "relation_type": relation,
         "maturity": maturity,
         "confidence": max(0, min(1, confidence)),
+        "revenue_share": share,
         "summary": summary[:500],
         "claim": claim[:500],
     }
@@ -342,18 +349,23 @@ def store_candidates(conn, report: tuple, candidates: list[dict],
             """
             INSERT INTO business_fact_candidates(
               code,report_year,tag_name,fact_type,relation_type,maturity,status,
-              confidence,summary,evidence_key,extractor,created_at,updated_at
-            ) VALUES(?,?,?,?,?,?,'candidate',?,?,?,?,?,?)
+              confidence,revenue_share,summary,evidence_key,extractor,
+              created_at,updated_at
+            ) VALUES(?,?,?,?,?,?,'candidate',?,?,?,?,?,?,?)
             ON CONFLICT(code,report_year,tag_name,relation_type) DO UPDATE SET
               fact_type=excluded.fact_type,maturity=excluded.maturity,
-              confidence=excluded.confidence,summary=excluded.summary,
+              confidence=excluded.confidence,
+              revenue_share=COALESCE(excluded.revenue_share,
+                                     business_fact_candidates.revenue_share),
+              summary=excluded.summary,
               evidence_key=excluded.evidence_key,extractor=excluded.extractor,
               updated_at=excluded.updated_at
             """,
             (
                 code, year, row["tag_name"], row["fact_type"],
                 row["relation_type"], row["maturity"], row["confidence"],
-                row["summary"], evidence_key, extractor, now, now,
+                row.get("revenue_share"), row["summary"], evidence_key,
+                extractor, now, now,
             ),
         )
     conn.commit()

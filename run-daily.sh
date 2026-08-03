@@ -38,4 +38,6 @@ fi
 # 年报业务链：抓年报→抽业务候选（每日限量60只消化积压）；候选次日 rebuild 自动晋升
 python3 scripts/fetch_company_reports.py --days 2 || echo "⚠️ fetch_company_reports 失败，跳过"
 python3 scripts/extract_business_candidates.py --limit 60 || echo "⚠️ extract_business_candidates 存在部分失败项（成功候选已入库，明日自动重试失败项）"
+# 互动易供应链链：公司回复→supply_chain候选(conf 0.55)→次日 rebuild 以 candidate 入事实域（③层专用）
+python3 scripts/fetch_interactive_qa.py --days 2 --limit 40 || echo "⚠️ fetch_interactive_qa 存在失败项（明日自动重试）"
 echo "===== done ====="

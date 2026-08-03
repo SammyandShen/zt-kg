@@ -255,13 +255,13 @@ def main() -> int:
         business_taxonomy.setdefault(parent_id, []).append(child_id)
     for row in conn.execute("""
         SELECT id,code,tag_name,fact_type,relation_type,maturity,status,confidence,
-               summary,valid_from,valid_to,business_concept_id
+               summary,valid_from,valid_to,business_concept_id,revenue_share
         FROM stock_business_facts
         WHERE status!='rejected'
         ORDER BY code,(relation_type='core') DESC,confidence DESC,tag_name
     """):
         (fact_id, code, tag, fact_type, relation, maturity, status, confidence,
-         summary, valid_from, valid_to, business_concept_id) = row
+         summary, valid_from, valid_to, business_concept_id, revenue_share) = row
         evidence_ids = [r[0] for r in conn.execute(
             "SELECT evidence_id FROM business_fact_evidence WHERE fact_id=?",
             (fact_id,))]
@@ -269,6 +269,7 @@ def main() -> int:
         business_facts.setdefault(code, []).append([
             tag, fact_type, relation, maturity, status, round(confidence, 2),
             summary, valid_from, valid_to, evidence_ids, business_concept_id,
+            revenue_share if revenue_share is None else round(revenue_share, 1),
         ])
 
     business_fact_candidates: dict[str, list] = {}

@@ -284,9 +284,10 @@ def promote_business_candidates(conn) -> int:
     now = common.now_iso()
     n = 0
     for (cand_id, code, year, tag, fact_type, relation, maturity, confidence,
-         summary, evidence_key) in conn.execute(
+         revenue_share, summary, evidence_key) in conn.execute(
             "SELECT id,code,report_year,tag_name,fact_type,relation_type,"
-            "maturity,confidence,summary,evidence_key FROM business_fact_candidates "
+            "maturity,confidence,revenue_share,summary,evidence_key "
+            "FROM business_fact_candidates "
             "WHERE status='candidate' AND confidence>=0.7 "
             "AND relation_type IN ('core','secondary')").fetchall():
         concept = conn.execute(
@@ -306,22 +307,64 @@ def promote_business_candidates(conn) -> int:
             """
             INSERT INTO stock_business_facts(
               code,business_concept_id,tag_name,fact_type,relation_type,maturity,
-              status,confidence,summary,valid_from,valid_to,source,created_at,updated_at
-            ) VALUES(?,?,?,?,?,?,?,?,?,?,NULL,?,?,?)
+              status,confidence,revenue_share,summary,valid_from,valid_to,source,
+              created_at,updated_at
+            ) VALUES(?,?,?,?,?,?,?,?,?,?,?,NULL,?,?,?)
             ON CONFLICT(code,tag_name,relation_type,valid_from) DO UPDATE SET
               business_concept_id=excluded.business_concept_id,
               maturity=excluded.maturity,
               confidence=excluded.confidence,
+              revenue_share=COALESCE(excluded.revenue_share,
+                                     stock_business_facts.revenue_share),
               summary=excluded.summary,
               updated_at=excluded.updated_at
             """,
             (code, concept_id, tag, fact_type, relation, maturity, "verified",
-             confidence, f"[{year}年报自动晋升] {summary or ''}"[:300], "",
+             confidence, revenue_share,
+             f"[{year}年报自动晋升] {summary or ''}"[:300], "",
              "auto_report", now, now))
         fact_id = conn.execute(
             "SELECT id FROM stock_business_facts WHERE code=? AND tag_name=? "
             "AND relation_type=? AND valid_from=''",
             (code, tag, relation)).fetchone()[0]
+        ev = conn.execute("SELECT id FROM evidence_items WHERE evidence_key=?",
+                          (evidence_key,)).fetchone()
+        if ev:
+            conn.execute("INSERT OR IGNORE INTO business_fact_evidence VALUES(?,?)",
+                         (fact_id, ev[0]))
+        conn.execute(
+            "UPDATE business_fact_candidates SET status='accepted',updated_at=? "
+            "WHERE id=?", (now, cand_id))
+        n += 1
+
+    # 互动易供应链候选：以 status='candidate' 落入事实域——只进③层观察名单
+    # 与题材候选池（导出过滤只排 rejected/expired），不进产业热力、不冒充主营。
+    for (cand_id, code, tag, confidence, summary, evidence_key) in conn.execute(
+            "SELECT id,code,tag_name,confidence,summary,evidence_key "
+            "FROM business_fact_candidates "
+            "WHERE status='candidate' AND relation_type='supply_chain' "
+            "AND extractor LIKE 'irm%'").fetchall():
+        concept = conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? LIMIT 1",
+            (tag,)).fetchone()
+        conn.execute(
+            """
+            INSERT INTO stock_business_facts(
+              code,business_concept_id,tag_name,fact_type,relation_type,maturity,
+              status,confidence,summary,valid_from,valid_to,source,
+              created_at,updated_at
+            ) VALUES(?,?,?,'product','supply_chain','unknown','candidate',?,?,'',
+                     NULL,'auto_qa',?,?)
+            ON CONFLICT(code,tag_name,relation_type,valid_from) DO UPDATE SET
+              confidence=MAX(excluded.confidence, stock_business_facts.confidence),
+              updated_at=excluded.updated_at
+            """,
+            (code, concept[0] if concept else None, tag, confidence,
+             summary or "", now, now))
+        fact_id = conn.execute(
+            "SELECT id FROM stock_business_facts WHERE code=? AND tag_name=? "
+            "AND relation_type='supply_chain' AND valid_from=''",
+            (code, tag)).fetchone()[0]
         ev = conn.execute("SELECT id FROM evidence_items WHERE evidence_key=?",
                           (evidence_key,)).fetchone()
         if ev:

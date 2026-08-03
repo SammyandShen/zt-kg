@@ -89,6 +89,21 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
   旁证评分。T+0 看同日题材广度、题材级证据和客观业务映射；T+1 看下一交易日题材广度
   与同股延续；T+2 再看第二个交易日延续。结果写 `attribution_reviews`，只用于人工排序和
   解释，任何分数都不得自动把 `event_theme_links` 升级为 verified。
+- **互动易供应链链（③层专用数据源，2026-08-03）**：`fetch_interactive_qa.py` 抓深市
+  互动易公司回复（attachedContent 非空=已回复，qaStatus 字段含义不稳定不作依据），
+  只认词典内 active 的 product/theme/sector 标签 + 方向性供应句式（谁向谁供什么，
+  纯共现不算，含否定整句丢弃），产出 relation=supply_chain conf=0.55 候选；
+  rebuild 以 **status='candidate'** 落入事实域（source='auto_qa'）——只进六层名单
+  ③层与题材候选池，永不 verified、不进产业热力。沪市 e互动 是另一接口未接。
+- **revenue_share 营收占比**（2026-08-03）：年报抽取新增可选字段（仅取年报明确
+  披露的分部占比，禁止估算），候选→晋升→导出（fact 数组末位 idx11）→个股页
+  "占营收X%" 全链贯通；存量事实为 NULL，随后续年报周期增量补齐。
+- **凭据率观察哨**（audit_tags 内，2026-08-01 设）：近3交易日归因带凭据率随
+  theme→业务映射自动增厚应爬升；2026-08-08 后仍 <20% 则 audit 打警告
+  （不阻断发布），提示检查 gen_theme_mappings 桥。
+- **轮次判决喂 auto_catalyst**（2026-08-03）：judge 的新轮次队列携带系统自动推导
+  的催化摘要，模型任务=核对假设与成员证据一致性（确认/修订→verified；对不上
+  →leave；纯标签巧合→rejected），不再要求凭空归纳催化——修复此前判决零产出。
 - **官方事件公告**：`fetch_event_announcements.py` 从巨潮资讯抓取涨停日前后2天内，
   标题命中收购/中标/合同/业绩/批复/投产等催化词的公告，作为 event 级上下文证据。
   只有公告标题或原文明确点名具体题材时才可绑定到 `event_theme_evidence`；官方来源只证明
