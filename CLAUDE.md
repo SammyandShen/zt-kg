@@ -201,7 +201,10 @@ open docs/index.html                           # 打开交互网页
   - **治理台**：**核实队列只开三个口**（①活跃轮次主炒归因-近2日 ②新轮次提案-近3日
     ③龙头认定；判决暂存 localStorage → 导出判决 → 合并 facts_overrides.json →
     rebuild 重放；其余候选保持灰显永不进队列、不追求清零）+ 覆盖率与未入树股票、
-    标签待审队列（LLM建议一键采纳/批量设类型）、疑似重复、共现观测
+    标签待审队列（LLM建议一键采纳/批量设类型）、共现观测。**疑似重复观测口已
+    退役（2026-08-03）**：子串启发式产出几乎全是层级词/时间变体，真同义仅8对已
+    全部并入 aliases；同义发现改走 query.py similar（Claude 维护时跑）+ bad case，
+    判决审计记录在 data/similar_dismissed.json
   - **三队列判决由 Claude 代行**（2026-07-25 用户授权，用户不做人工判决）：
     `judge_attributions.py` 每日在 run-daily 内自动跑——①②走 sonnet 保守判决
     （verified需可解释关联+当日叙事主导；rejected需明确反证；拿不准一律leave等

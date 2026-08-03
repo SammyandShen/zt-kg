@@ -759,7 +759,7 @@
  },
  "央企国资": {
   "type": "attribute",
-  "status": "active"
+  "status": "retired"
  },
  "央企客户": {
   "type": "attribute",
@@ -768,7 +768,7 @@
  },
  "央企属性": {
   "type": "attribute",
-  "status": "active",
+  "status": "retired",
   "llm": "claude-sonnet-5"
  },
  "央企控股": {
@@ -777,7 +777,7 @@
  },
  "央企背景": {
   "type": "attribute",
-  "status": "active",
+  "status": "retired",
   "llm": "claude-sonnet-5"
  },
  "央企配套": {
