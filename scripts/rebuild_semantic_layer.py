@@ -345,7 +345,7 @@ def promote_business_candidates(conn) -> int:
             "SELECT id,code,tag_name,confidence,summary,evidence_key "
             "FROM business_fact_candidates "
             "WHERE status='candidate' AND relation_type='supply_chain' "
-            "AND extractor LIKE 'irm%'").fetchall():
+            "AND (extractor LIKE 'irm%' OR extractor LIKE 'sse%')").fetchall():
         concept = conn.execute(
             "SELECT id FROM business_concepts WHERE name=? "
             "ORDER BY concept_type='product' DESC LIMIT 1", (tag,)).fetchone()

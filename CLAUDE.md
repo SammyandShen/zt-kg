@@ -115,12 +115,17 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
   `gen_business_tree.py` 每日在发布线以下分批（60/批）把孤立 product 喂 sonnet
   归入产业父节点（优先复用产业池，拿不准留 null），台账 business_tree.json 防重；
   rebuild 重放成 source='auto_tree' 边，产业父节点缺失自动建 sector 节点。
-- **互动易供应链链（③层专用数据源，2026-08-03）**：`fetch_interactive_qa.py` 抓深市
-  互动易公司回复（attachedContent 非空=已回复，qaStatus 字段含义不稳定不作依据），
-  只认词典内 active 的 product/theme/sector 标签 + 方向性供应句式（谁向谁供什么，
-  纯共现不算，含否定整句丢弃），产出 relation=supply_chain conf=0.55 候选；
-  rebuild 以 **status='candidate'** 落入事实域（source='auto_qa'）——只进六层名单
-  ③层与题材候选池，永不 verified、不进产业热力。沪市 e互动 是另一接口未接。
+- **互动平台供应链链（③层专用数据源，2026-08-03；双市场）**：`fetch_interactive_qa.py`
+  抓公司回复——深市走互动易 irm.cninfo.com.cn（JSON，attachedContent 非空=已回复，
+  qaStatus 字段含义不稳定不作依据）；沪市走上证e互动 sns.sseinfo.com（POST
+  ajax/getCompany.do data=代码 换公司uid → GET ajax/userfeeds.do type=11 拉已回复
+  问答，HTML 片段解析：每 item 末个 m_feed_txt=公司回复、末个中文日期=回复日期）。
+  近2日涨停股两市场**交错取满 limit**（按 code 排序会让深市挤掉沪市）。两市场共用
+  抽取保险丝：只认词典内 active 的 product/theme/sector 标签 + 方向性供应句式
+  （谁向谁供什么，纯共现不算，含否定整句丢弃），产出 relation=supply_chain
+  conf=0.55 候选（extractor irm-rule-v1 / sse-rule-v1）；rebuild 以
+  **status='candidate'** 落入事实域（source='auto_qa'）——只进六层名单③层与
+  题材候选池，永不 verified、不进产业热力。规则极保守，产出以周为单位慢慢攒。
 - **revenue_share 营收占比**（2026-08-03）：年报抽取新增可选字段（仅取年报明确
   披露的分部占比，禁止估算），候选→晋升→导出（fact 数组末位 idx11）→个股页
   "占营收X%" 全链贯通；存量事实为 NULL，随后续年报周期增量补齐。
