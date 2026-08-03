@@ -27,6 +27,7 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
 | `data/semantic_config.json` | 人工校准 | 语义层阈值（立轮/断轮/首封极差/候选过期/重叠告警）；改后跑 rebuild_semantic_layer.py；校准记录追加 calibration_log |
 | `data/facts_overrides.json` | 治理台导出+人工确认 | 人工判决台账（归因核实/轮次成立/龙头认定）；rebuild 每次重放，判决不因候选域重算丢失 |
 | `data/similar_dismissed.json` | Claude 判决留痕 | 疑似重复观测口的"已判不并"名单（精确对子+整族正则，如区域国企 `^..国企$`）；判过的不再上榜只露新面孔，verdict_log 记录并/不并理由；bad case 删条目即重新出现 |
+| `data/business_tree.json` | gen_business_tree.py（LLM判决留痕） | 孤立 product 业务节点→产业父节点台账；rebuild 以 source='auto_tree' 重放为层级边（manual business_path 优先不覆盖）；parent=null=拿不准留孤儿（--force 重问）；bad case 改 parent 或删条目重问 |
 | `docs/data.js` | 脚本 `build_site.py` | **禁止手改** |
 | `docs/index.html` | 人工维护 | 单页应用（file:// 直接打开即可用） |
 
@@ -89,6 +90,31 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
   旁证评分。T+0 看同日题材广度、题材级证据和客观业务映射；T+1 看下一交易日题材广度
   与同股延续；T+2 再看第二个交易日延续。结果写 `attribution_reviews`，只用于人工排序和
   解释，任何分数都不得自动把 `event_theme_links` 升级为 verified。
+  **复核表故意无外键**（2026-08-03 事故修复）：原 ON DELETE CASCADE 外键在 rebuild
+  删重建 derived 链接时把复核连带删光（每日216条写入→只剩3条）；自然键
+  (event_id,concept_id) 跨重建稳定，真孤儿由 rebuild 尾部显式清理。judge 队列
+  引用 T+复核结果，此修复后判决才真正看得到旁证。
+- **轮次断浪规则（2026-08-03 重构，semantic_config 可调）**：断轮时钟只认活跃日
+  （当日≥sustain_min_members=2 只），且续命日广度须≥ceil(本浪峰值×wave_decay_ratio=0.25)
+  ——单股散点和相对峰值的涓流尾巴都不续命，断浪后峰值清零，新浪仍要过立轮双门槛。
+  修复前任意1只涨停刷新5日时钟，人形机器人/固态电池/国企改革被粘成378天巨轮。
+  跨度外零散涨停不归组（走候选过期通道）。起点贴数据窗口开端的轮次导出带
+  截断标记（episode 数组 idx9），页面显示"起点早于数据窗口"。
+- **龙头当前口径（2026-08-03 重构）**：龙头不再是一次性判决——rebuild 内
+  `derive_current_leaders` 每日全量重算：开放轮次取最新交易日在场的最高连板
+  （首板不认、平局取首封最早、最新日全首板则本轮暂无龙头）；closed 轮次取整轮
+  最高板（历史龙头语义）。judge 的③龙头队列已移除；facts_overrides.leaders 仅
+  保留人工/LLM bad case 覆盖通道（覆盖优先于自动重算）。修复前用整轮历史最高板
+  且判过永久跳过，16个龙头里10个早已离场。
+- **verified 归因强制证据（2026-08-03）**：apply_link_verdicts 应用 verified 判决时
+  把该事件的新闻/公告证据绑为题材级旁证（supporting 优先，至多3条）；一条都绑
+  不上的 verified 不落地（保持 candidate 走过期通道）。audit 门禁对**全部** verified
+  归因查证据（原来只查 source='manual'）。
+- **业务节点自动挂树（2026-08-03）**：年报晋升建的独立 product 节点曾 99% 孤立
+  （2392/2416 无父子边，"哪些公司做同一产品/属哪个产业"答不上）。
+  `gen_business_tree.py` 每日在发布线以下分批（60/批）把孤立 product 喂 sonnet
+  归入产业父节点（优先复用产业池，拿不准留 null），台账 business_tree.json 防重；
+  rebuild 重放成 source='auto_tree' 边，产业父节点缺失自动建 sector 节点。
 - **互动易供应链链（③层专用数据源，2026-08-03）**：`fetch_interactive_qa.py` 抓深市
   互动易公司回复（attachedContent 非空=已回复，qaStatus 字段含义不稳定不作依据），
   只认词典内 active 的 product/theme/sector 标签 + 方向性供应句式（谁向谁供什么，
@@ -205,11 +231,13 @@ open docs/index.html                           # 打开交互网页
     退役（2026-08-03）**：子串启发式产出几乎全是层级词/时间变体，真同义仅8对已
     全部并入 aliases；同义发现改走 query.py similar（Claude 维护时跑）+ bad case，
     判决审计记录在 data/similar_dismissed.json
-  - **三队列判决由 Claude 代行**（2026-07-25 用户授权，用户不做人工判决）：
-    `judge_attributions.py` 每日在 run-daily 内自动跑——①②走 sonnet 保守判决
-    （verified需可解释关联+当日叙事主导；rejected需明确反证；拿不准一律leave等
-    过期），③龙头走机械规则（当前最高板、平局取首封最早、首板不认）。判决写
-    facts_overrides.json 带 decided_by=llm-sonnet/rule 留痕，已判键幂等跳过
+  - **判决队列由 Claude 代行**（2026-07-25 用户授权，用户不做人工判决）：
+    `judge_attributions.py` 每日在 run-daily 内自动跑——①归因②新轮次走 sonnet
+    保守判决（verified需可解释关联+当日叙事主导；rejected需明确反证；拿不准一律
+    leave等过期），判决写 facts_overrides.json 带 decided_by=llm-sonnet 留痕，
+    已判键幂等跳过。③龙头已出判决队列（2026-08-03）：由 rebuild 每日按当前口径
+    自动重算（见"龙头当前口径"），治理台③卡仅剩最新日无2板以上的轮次，
+    ⭐按钮是 bad case 人工覆盖通道
 - **轮次分层名单**（概念页轮次卡下方，核心视图）：本轮跟随股按关系成色六层——
   ①核心业务(主营/重要收入) ②直接成长(有产品收入小/在研) ③上下游映射(supply_chain)
   ④参股布局(holding) ⑤拟收购转型(planned_acquisition) ⑥纯市场联想(无业务证据)；

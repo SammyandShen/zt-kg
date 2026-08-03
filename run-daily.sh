@@ -40,4 +40,6 @@ python3 scripts/fetch_company_reports.py --days 2 || echo "⚠️ fetch_company_
 python3 scripts/extract_business_candidates.py --limit 60 || echo "⚠️ extract_business_candidates 存在部分失败项（成功候选已入库，明日自动重试失败项）"
 # 互动易供应链链：公司回复→supply_chain候选(conf 0.55)→次日 rebuild 以 candidate 入事实域（③层专用）
 python3 scripts/fetch_interactive_qa.py --days 2 --limit 40 || echo "⚠️ fetch_interactive_qa 存在失败项（明日自动重试）"
+# 业务节点挂树：孤立 product 节点分批归产业父节点（台账防重；次日 rebuild 重放成边）
+python3 scripts/gen_business_tree.py --limit 200 || echo "⚠️ gen_business_tree 存在失败批次（明日自动重试）"
 echo "===== done ====="

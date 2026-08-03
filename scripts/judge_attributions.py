@@ -164,27 +164,10 @@ def build_episode_queue(conn, dates: list[str], judged: set) -> list[dict]:
     return queue[:10]
 
 
-def rule_leaders(conn, dates: list[str], judged: set) -> list[dict]:
-    """③龙头认定：机械规则——开放轮次内当前最高板，平局取首封最早。"""
-    out = []
-    for ep_id, cid, theme, start, _end, _phase in open_episodes(conn):
-        if (theme, start) in judged:
-            continue
-        has_leader = conn.execute(
-            "SELECT 1 FROM event_theme_links WHERE episode_id=? "
-            "AND market_role='leader' LIMIT 1", (ep_id,)).fetchone()
-        if has_leader:
-            continue
-        row = conn.execute("""
-            SELECT e.code, e.name, MAX(e.lb_count), MIN(e.first_time)
-            FROM event_theme_links l JOIN limit_up_events e ON e.id=l.event_id
-            WHERE l.episode_id=? GROUP BY e.code
-            ORDER BY MAX(e.lb_count) DESC, MIN(e.first_time) ASC LIMIT 1""",
-            (ep_id,)).fetchone()
-        if row and (row[2] or 0) >= 2:      # 首板龙不认，至少2板才有辨识度
-            out.append({"theme": theme, "start_date": start, "code": row[0],
-                        "stock": row[1], "lb": row[2]})
-    return out
+# ③龙头认定已出判决队列（2026-08-03）：旧机械规则用整轮历史最高板且判过永久
+# 跳过，产生大量"过期龙头"。现由 rebuild_semantic_layer.derive_current_leaders
+# 每日按最新交易日当前连板全量重算；facts_overrides 的 leaders 仅保留人工/LLM
+# bad case 覆盖通道。
 
 
 def call_llm(claude_bin: str, payload: str) -> dict:
@@ -208,15 +191,14 @@ def main() -> int:
     dates = [r[0] for r in conn.execute(
         "SELECT DISTINCT trade_date FROM limit_up_events ORDER BY trade_date")]
     overrides = load_overrides()
-    jl, je, jld = judged_keys(overrides)
+    jl, je, _jld = judged_keys(overrides)
 
     q1 = build_link_queue(conn, dates, jl)
     q2 = build_episode_queue(conn, dates, je)
-    q3 = rule_leaders(conn, dates, jld)
-    if not q1 and not q2 and not q3:
-        print("✅ 三队列均空，无需判决")
+    if not q1 and not q2:
+        print("✅ 两队列均空，无需判决（龙头由 rebuild 每日重算，不进判决队列）")
         return 0
-    print(f"队列：归因 {len(q1)} / 新轮次 {len(q2)} / 龙头 {len(q3)}")
+    print(f"队列：归因 {len(q1)} / 新轮次 {len(q2)}")
 
     day = common.now_iso()[:10]
     n_links = n_eps = 0
@@ -254,22 +236,15 @@ def main() -> int:
             overrides["episode_verdicts"].append(row)
             n_eps += 1
 
-    for x in q3:
-        overrides["leaders"].append({
-            "theme": x["theme"], "start_date": x["start_date"], "code": x["code"],
-            "note": f"规则认定：当前{x['lb']}板最高（{x['stock']}）",
-            "decided_by": "rule", "decided_at": day})
-
     if args.dry_run:
         print(json.dumps({"拟新增判决": {
-            "links": n_links, "episodes": n_eps, "leaders": len(q3)}},
-            ensure_ascii=False))
+            "links": n_links, "episodes": n_eps}}, ensure_ascii=False))
         return 0
     OVERRIDES_PATH.write_text(
         json.dumps(overrides, ensure_ascii=False, indent=1) + "\n",
         encoding="utf-8")
-    print(f"✅ 判决落账：归因 {n_links}（leave 不落账），轮次 {n_eps}，"
-          f"龙头 {len(q3)}；跑 rebuild_semantic_layer.py 重放生效")
+    print(f"✅ 判决落账：归因 {n_links}（leave 不落账），轮次 {n_eps}；"
+          f"跑 rebuild_semantic_layer.py 重放生效")
     return 0
 
 

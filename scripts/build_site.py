@@ -352,6 +352,11 @@ def main() -> int:
             used_evidence_ids.add(evidence_id)
 
     theme_episodes: dict[int, list] = {}
+    # 数据窗口边缘：起点落在最早几个交易日内的轮次，真实启动点大概率更早
+    # （同花顺源仅1年滚动窗口）——导出标记，页面提示"起点早于数据窗口"。
+    window_edge_dates = {r[0] for r in conn.execute(
+        "SELECT DISTINCT trade_date FROM limit_up_events "
+        "ORDER BY trade_date LIMIT 6")}
     for row in conn.execute("""
         SELECT ep.id,ep.concept_id,ep.start_date,ep.end_date,ep.phase,ep.status,
                ep.catalyst_summary,ep.confidence,
@@ -371,6 +376,7 @@ def main() -> int:
         theme_episodes[episode_id] = [
             cid, start, end, phase, status, catalyst, round(confidence, 2),
             stock_count, evidence_ids,
+            1 if start in window_edge_dates else 0,   # idx9: 起点贴数据窗口开端
         ]
 
     # 题材反查业务候选池：来自显式题材→业务标签映射，再连接有证据的公司事实。

@@ -991,7 +991,8 @@ function episodePanelHtml(cid, epSel) {
   return `${noneBanner}<div class="episode-card${selHit ? ' ep-hi' : ''}"><div class="episode-head">
     <b>本轮题材</b><span class="verify-state ${status}">${esc(SEM_STATUS_LABEL[status] || status)}</span>
     <span class="type-badge theme">${esc(PHASE_LABEL[phase] || phase)}</span>${
-      isHistory ? '<span class="type-badge" style="background:var(--surface2)">历史轮次</span>' : ''}
+      isHistory ? '<span class="type-badge" style="background:var(--surface2)">历史轮次</span>' : ''}${
+      ep[9] ? '<span class="type-badge" style="background:var(--surface2)" title="数据源仅1年滚动窗口，该轮起点贴着窗口开端，真实启动大概率更早">起点早于数据窗口</span>' : ''}
     <span class="range">${esc(start)} ～ ${esc(end || '进行中')} · ${stockCount}只候选成分股
       · 置信度${Math.round(confidence * 100)}% · 轮次#${esc(episodeId)}</span>${
       isHistory ? `<span class="pill-jump" data-cid="${cid}" data-ep="${episodes[0][0]}"
@@ -1035,8 +1036,9 @@ function episodeTierListHtml(cid, epId) {
   const relRows = new Map();             // code -> {relation, maturity, note}
   for (const r of THEME_BUSINESS_CANDIDATES[cid] || []) {
     if (!relRows.has(r[0]))
-      relRows.set(r[0], { relation: r[2], maturity: r[3],
-        note: `${r[1]}·${RELATION_LABEL[r[2]] || r[2]}·${MATURITY_LABEL[r[3]] || r[3]}${r[6] ? '｜' + r[6] : ''}` });
+      relRows.set(r[0], { relation: r[2], maturity: r[3], mv: r[8] === 'verified',
+        note: `${r[1]}·${RELATION_LABEL[r[2]] || r[2]}·${MATURITY_LABEL[r[3]] || r[3]}` +
+          `｜题材→业务映射${r[8] === 'verified' ? '已核实' : '为候选（研究池，未核实）'}${r[6] ? '｜' + r[6] : ''}` });
   }
   const trading = epId != null ? episodeMembers(epId) : new Map();
   const tiers = TIER_DEFS.map(() => []);
@@ -1052,12 +1054,13 @@ function episodeTierListHtml(cid, epId) {
   for (const [code, rel] of relRows) {
     if (trading.has(code)) continue;     // watch 池：有业务未异动
     tiers[tierOf(rel.relation, rel.maturity)].push({
-      code, trading: false, note: rel.note });
+      code, trading: false, mv: rel.mv, note: rel.note });
   }
   if (!tiers.some(t => t.length)) return '';
   const chip = s => `<span class="concept-chip${s.trading ? '' : ' watch-chip'}" data-code="${s.code}"
     title="${esc(s.note)}" style="cursor:pointer">${esc(D.stocks[s.code] || s.code)}
-    <span class="x">${s.trading ? `${s.lb > 1 ? s.lb + '板' : '首板'}·${s.d.slice(5)}` : '未异动'}</span></span>`;
+    <span class="x">${s.trading ? `${s.lb > 1 ? s.lb + '板' : '首板'}·${s.d.slice(5)}`
+      : `未异动${s.mv ? '' : '·映射候选'}`}</span></span>`;
   const rows = TIER_DEFS.map(([label, hint, cls], i) => {
     const list = tiers[i];
     if (!list.length) return '';
@@ -1068,7 +1071,8 @@ function episodeTierListHtml(cid, epId) {
   }).join('');
   return `<div class="semantic-section"><div class="semantic-title">
     <b>本轮跟随分层${iInfo('tiers')}</b><span>实心=本轮已涨停(trading)，虚线=有业务未异动(watch)；
-    分层看关系成色，⑥层没有业务证据，追high前先想想</span></div>${rows}</div>`;
+    分层看关系成色，⑥层没有业务证据，追high前先想想。虚线股来自题材→业务映射，
+    标"映射候选"的是研究池而非确定业务池（映射未核实）</span></div>${rows}</div>`;
 }
 
 function themeBusinessPoolHtml(cid) {
@@ -3150,7 +3154,7 @@ function renderTagsGov() {
       </div>`;
     }).join('') || '<div class="muted small" style="padding:6px 8px">近3日无新启动轮次</div>'}</div>
     <div class="semantic-title" style="padding:8px 8px 0">
-      <b>③ 龙头认定</b><span>开放轮次当前最高板成员 · 认定后写入 market_role</span></div>
+      <b>③ 龙头认定（自动重算）</b><span>rebuild 每日按轮次最新交易日当前连板自动认定（首板不认）· 此处仅剩最新日无2板以上的轮次 · ⭐为 bad case 人工覆盖通道</span></div>
     <div>${q3.slice(0, 10).map(q => {
       const done = FACTFIX.leaders[epKey(q)];
       return `<div class="govrow">

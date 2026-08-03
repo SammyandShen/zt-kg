@@ -8,11 +8,21 @@
     "first_seal_span_min": 90,
     "first_seal_span_note": "触发日首封时间极差（分钟）；超过视为松散共振，不立轮；缺首封时间的事件不参与判定",
     "gap_days": 5,
-    "gap_days_note": "连续无响应交易日数：超过即断轮；轮末距最新交易日在此窗口内保持开放(divergence)，超过关轮(recession/closed)",
+    "gap_days_note": "连续无活跃日交易日数：超过即断轮；轮末距最新交易日在此窗口内保持开放(divergence)，超过关轮(recession/closed)",
+    "sustain_min_members": 2,
+    "sustain_min_members_note": "活跃日门槛：当日该题材≥N只涨停才算活跃日，断轮时钟只认活跃日；单股零散涨停不续命、跨度外散点不归组",
+    "wave_decay_ratio": 0.25,
+    "wave_decay_ratio_note": "动量衰减断浪：续命日广度须≥ceil(本浪峰值×ratio)，峰值27的浪尾部2-3只涓流撑不住时钟；断浪后峰值清零",
     "overlap_warn": 0.5,
     "overlap_warn_note": "同期开放轮次成员重叠比例告警阈值（只告警提示人工并轮，不自动合并）"
   },
   "candidate_expire_days": 10,
   "candidate_expire_note": "候选归因产生后 N 个交易日内未进入任何轮次、且无 supporting 旁证 → expired",
-  "calibration_log": []
+  "calibration_log": [
+    {
+      "date": "2026-08-03",
+      "change": "新增 sustain_min_members=2 + wave_decay_ratio=0.25：断轮时钟只认活跃日（当日≥2只）且续命日广度须≥浪峰×0.25，单股散点与相对峰值的涓流尾巴都不续命",
+      "reason": "旧规则任意1只涨停刷新5日时钟，人形机器人/固态电池/国企改革被粘成378天巨轮（起点还贴着数据窗口开端），启动点、阶段、龙头全部失真；仅加活跃日门槛后人形机器人仍剩250天（143活跃日日均4只涓流不断），需动量衰减才能断浪——模拟下0.25把它切成6浪、当前浪=07-21启动10天"
+    }
+  ]
 }

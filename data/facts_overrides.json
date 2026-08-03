@@ -594,6 +594,42 @@
    "note": "新闻点名AI短剧市场规模扩容为天娱数科2连板催化，与AI营销/AI内容叙事一致",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002979",
+   "trade_date": "2026-07-31",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "新闻直接点名'押注人形机器人 雷赛智能募资超11亿元扩产'，业务关联清晰且当日叙事主导明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "603316",
+   "trade_date": "2026-07-31",
+   "theme": "存储芯片",
+   "verdict": "verified",
+   "note": "定增扩产+扭亏为盈为同一存储芯片转型故事的连贯表述，business_fact凭据+T+复核支持度高(0.84)",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "002896",
+   "trade_date": "2026-07-31",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "精密减速器为人形机器人核心零部件业务，证据'大面积涨停，人形机器人午后爆发'与该股同日走势一致，无竞争性叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
+  },
+  {
+   "code": "600588",
+   "trade_date": "2026-07-31",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "新闻明确点名'重磅会议定调AI+...用友网络等批量涨停'，公司为企业软件龙头切入AI+叙事清晰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-03"
   }
  ],
  "episode_verdicts": [
@@ -616,174 +652,5 @@
    "catalyst": "AI算力建设扩产带动液冷散热组件需求增长——金富科技液冷产品(铜管/波纹管/液冷板/分集水器)产能订单同环比攀升为业务证据支撑，罗曼股份、豪尔赛跟随炒作"
   }
  ],
- "leaders": [
-  {
-   "theme": "脑机接口",
-   "start_date": "2026-06-24",
-   "code": "000566",
-   "note": "规则认定：当前6板最高（海南海药）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "算力",
-   "start_date": "2026-01-26",
-   "code": "002580",
-   "note": "规则认定：当前7板最高（圣阳股份）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "AI应用",
-   "start_date": "2026-04-08",
-   "code": "002421",
-   "note": "规则认定：当前6板最高（达实智能）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "存储芯片",
-   "start_date": "2026-02-13",
-   "code": "603137",
-   "note": "规则认定：当前11板最高（恒尚节能）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "算力租赁",
-   "start_date": "2026-01-26",
-   "code": "600666",
-   "note": "规则认定：当前6板最高（奥瑞德）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "CPO",
-   "start_date": "2026-01-05",
-   "code": "603773",
-   "note": "规则认定：当前8板最高（沃格光电）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "先进封装",
-   "start_date": "2026-03-27",
-   "code": "603002",
-   "note": "规则认定：当前6板最高（宏昌电子）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "电子皮肤",
-   "start_date": "2026-06-23",
-   "code": "605488",
-   "note": "规则认定：当前2板最高（福莱新材）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "创新药",
-   "start_date": "2026-03-24",
-   "code": "603538",
-   "note": "规则认定：当前6板最高（美诺华）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "AI算力",
-   "start_date": "2026-02-03",
-   "code": "000636",
-   "note": "规则认定：当前4板最高（风华高科）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "人形机器人",
-   "start_date": "2025-07-21",
-   "code": "002931",
-   "note": "规则认定：当前17板最高（锋龙股份）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "商业航天",
-   "start_date": "2025-10-13",
-   "code": "600783",
-   "note": "规则认定：当前11板最高（鲁信创投）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "液冷服务器",
-   "start_date": "2026-01-21",
-   "code": "002421",
-   "note": "规则认定：当前6板最高（达实智能）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "具身智能",
-   "start_date": "2026-07-01",
-   "code": "002747",
-   "note": "规则认定：当前3板最高（埃斯顿）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "AI服务器",
-   "start_date": "2026-04-22",
-   "code": "603989",
-   "note": "规则认定：当前6板最高（艾华集团）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "固态电池",
-   "start_date": "2025-07-21",
-   "code": "603778",
-   "note": "规则认定：当前11板最高（国晟科技）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "国企改革",
-   "start_date": "2025-07-21",
-   "code": "000632",
-   "note": "规则认定：当前7板最高（三木集团）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-25"
-  },
-  {
-   "theme": "光刻胶",
-   "start_date": "2026-07-28",
-   "code": "001358",
-   "note": "规则认定：当前2板最高（兴欣新材）",
-   "decided_by": "rule",
-   "decided_at": "2026-07-28"
-  },
-  {
-   "theme": "液冷服务器",
-   "start_date": "2026-07-31",
-   "code": "002963",
-   "note": "规则认定：当前2板最高（豪尔赛）",
-   "decided_by": "rule",
-   "decided_at": "2026-08-03"
-  },
-  {
-   "theme": "可控核聚变",
-   "start_date": "2026-07-09",
-   "code": "003001",
-   "note": "规则认定：当前5板最高（中岩大地）",
-   "decided_by": "rule",
-   "decided_at": "2026-08-03"
-  },
-  {
-   "theme": "AI营销",
-   "start_date": "2026-07-31",
-   "code": "002354",
-   "note": "规则认定：当前2板最高（天娱数科）",
-   "decided_by": "rule",
-   "decided_at": "2026-08-03"
-  }
- ]
+ "leaders": []
 }

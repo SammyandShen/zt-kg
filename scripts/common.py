@@ -384,9 +384,10 @@ CREATE TABLE IF NOT EXISTS attribution_reviews (
     source            TEXT NOT NULL DEFAULT 'deterministic-v1',
     mature            INTEGER NOT NULL DEFAULT 0,
     reviewed_at       TEXT NOT NULL,
-    PRIMARY KEY (event_id, concept_id, stage),
-    FOREIGN KEY (event_id, concept_id)
-      REFERENCES event_theme_links(event_id, concept_id) ON DELETE CASCADE
+    PRIMARY KEY (event_id, concept_id, stage)
+    -- 故意不设指向 event_theme_links 的外键：rebuild 每次删重建 derived 链接，
+    -- 级联外键会把 T+复核连带删光（2026-08-03 修复的事故）。自然键跨重建稳定，
+    -- 真孤儿（链接永久消失的）由 rebuild 尾部显式清理。
 );
 CREATE INDEX IF NOT EXISTS idx_attribution_review_stage
     ON attribution_reviews(stage, verdict, as_of_date);
@@ -456,6 +457,40 @@ def open_db() -> sqlite3.Connection:
     if "revenue_share" not in cand_cols:
         conn.execute("ALTER TABLE business_fact_candidates ADD COLUMN revenue_share REAL")
         conn.commit()
+    # 迁移：老库的 attribution_reviews 带 ON DELETE CASCADE 外键，rebuild 删重建
+    # derived 链接时会把复核连带删光——重建同结构表去掉外键（列序一致，直拷）
+    if conn.execute("PRAGMA foreign_key_list(attribution_reviews)").fetchall():
+        conn.execute("PRAGMA foreign_keys=OFF")
+        conn.executescript("""
+            BEGIN;
+            ALTER TABLE attribution_reviews RENAME TO attribution_reviews_old;
+            CREATE TABLE attribution_reviews (
+                event_id          INTEGER NOT NULL,
+                concept_id        INTEGER NOT NULL,
+                stage             INTEGER NOT NULL,
+                as_of_date        TEXT NOT NULL,
+                verdict           TEXT NOT NULL,
+                score             REAL NOT NULL,
+                evidence_count    INTEGER NOT NULL DEFAULT 0,
+                same_day_breadth  INTEGER NOT NULL DEFAULT 0,
+                next_day_breadth  INTEGER NOT NULL DEFAULT 0,
+                retained_count    INTEGER NOT NULL DEFAULT 0,
+                retained_rate     REAL NOT NULL DEFAULT 0,
+                t2_breadth        INTEGER NOT NULL DEFAULT 0,
+                business_relation TEXT,
+                rationale         TEXT,
+                source            TEXT NOT NULL DEFAULT 'deterministic-v1',
+                mature            INTEGER NOT NULL DEFAULT 0,
+                reviewed_at       TEXT NOT NULL,
+                PRIMARY KEY (event_id, concept_id, stage)
+            );
+            INSERT INTO attribution_reviews SELECT * FROM attribution_reviews_old;
+            DROP TABLE attribution_reviews_old;
+            CREATE INDEX IF NOT EXISTS idx_attribution_review_stage
+                ON attribution_reviews(stage, verdict, as_of_date);
+            COMMIT;
+        """)
+        conn.execute("PRAGMA foreign_keys=ON")
     return conn
 
 

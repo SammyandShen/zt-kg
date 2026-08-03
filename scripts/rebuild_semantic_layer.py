@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -30,6 +31,7 @@ ATTRIBUTIONS_PATH = common.REPO_ROOT / "data" / "event_attributions.json"
 THEME_BUSINESS_PATH = common.REPO_ROOT / "data" / "theme_business_mappings.json"
 CONFIG_PATH = common.REPO_ROOT / "data" / "semantic_config.json"
 OVERRIDES_PATH = common.REPO_ROOT / "data" / "facts_overrides.json"
+BUSINESS_TREE_PATH = common.REPO_ROOT / "data" / "business_tree.json"
 SOURCE_PRIORITY = {"ths": 0, "wencai": 1, "kpl": 2}
 
 DEFAULT_CONFIG = {
@@ -345,8 +347,23 @@ def promote_business_candidates(conn) -> int:
             "WHERE status='candidate' AND relation_type='supply_chain' "
             "AND extractor LIKE 'irm%'").fetchall():
         concept = conn.execute(
-            "SELECT id FROM business_concepts WHERE name=? LIMIT 1",
-            (tag,)).fetchone()
+            "SELECT id FROM business_concepts WHERE name=? "
+            "ORDER BY concept_type='product' DESC LIMIT 1", (tag,)).fetchone()
+        if concept and conn.execute(
+                "SELECT concept_type FROM business_concepts WHERE id=?",
+                (concept[0],)).fetchone()[0] == "product":
+            concept_id = concept[0]
+        else:
+            # 词典无同名 product 节点（可能只有同名 sector，如产业池"半导体"）：
+            # 建 product 节点——门禁要求事实末级必须挂同名 product
+            conn.execute(
+                "INSERT INTO business_concepts(name,concept_type,status,source,"
+                "created_at,updated_at) VALUES(?,?,?,?,?,?) "
+                "ON CONFLICT(name,concept_type) DO NOTHING",
+                (tag, "product", "active", "auto_qa", now, now))
+            concept_id = conn.execute(
+                "SELECT id FROM business_concepts WHERE name=? AND concept_type='product'",
+                (tag,)).fetchone()[0]
         conn.execute(
             """
             INSERT INTO stock_business_facts(
@@ -357,10 +374,11 @@ def promote_business_candidates(conn) -> int:
                      NULL,'auto_qa',?,?)
             ON CONFLICT(code,tag_name,relation_type,valid_from) DO UPDATE SET
               confidence=MAX(excluded.confidence, stock_business_facts.confidence),
+              business_concept_id=COALESCE(stock_business_facts.business_concept_id,
+                                           excluded.business_concept_id),
               updated_at=excluded.updated_at
             """,
-            (code, concept[0] if concept else None, tag, confidence,
-             summary or "", now, now))
+            (code, concept_id, tag, confidence, summary or "", now, now))
         fact_id = conn.execute(
             "SELECT id FROM stock_business_facts WHERE code=? AND tag_name=? "
             "AND relation_type='supply_chain' AND valid_from=''",
@@ -460,6 +478,77 @@ def import_event_evidence(conn, events: list[tuple]) -> int:
                 (eid, evidence_id, "context", "模型摘要仅作辅助阅读，不作为核实证据"),
             )
             n += 1
+    return n
+
+
+def ensure_fact_nodes(conn) -> int:
+    """门禁不变量兜底：任何有效业务事实必须挂同名 product 节点。
+
+    历史来源漏建节点（如 auto_qa 首批 NULL）或新增来源遗漏时自动补齐并回填
+    business_concept_id，不让发布线卡在单条脏数据上。
+    """
+    now = common.now_iso()
+    n = 0
+    for fact_id, tag in conn.execute(
+            "SELECT id, tag_name FROM stock_business_facts "
+            "WHERE status NOT IN ('rejected','expired') "
+            "AND business_concept_id IS NULL").fetchall():
+        conn.execute(
+            "INSERT INTO business_concepts(name,concept_type,status,source,"
+            "created_at,updated_at) VALUES(?,?,?,?,?,?) "
+            "ON CONFLICT(name,concept_type) DO NOTHING",
+            (tag, "product", "active", "auto_repair", now, now))
+        pid = conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? AND concept_type='product'",
+            (tag,)).fetchone()[0]
+        conn.execute(
+            "UPDATE stock_business_facts SET business_concept_id=?, updated_at=? "
+            "WHERE id=?", (pid, now, fact_id))
+        n += 1
+    return n
+
+
+def import_business_tree(conn) -> int:
+    """重放 LLM 挂树台账（business_tree.json → source='auto_tree' 层级边）。
+
+    产品节点按名匹配（不存在的跳过，等节点出现后下次重放挂上）；产业父节点
+    不存在则建 sector 节点（source='auto_tree'）。已有 manual 边的子节点不动
+    ——人工 business_path 优先于自动挂树。
+    """
+    if not BUSINESS_TREE_PATH.exists():
+        return 0
+    assignments = json.loads(
+        BUSINESS_TREE_PATH.read_text(encoding="utf-8")).get("assignments", {})
+    now = common.now_iso()
+    conn.execute("DELETE FROM business_concept_edges WHERE source='auto_tree'")
+    n = 0
+    for child_name, v in assignments.items():
+        parent_name = v.get("parent")
+        if not parent_name or parent_name == child_name:
+            continue
+        child = conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? "
+            "AND concept_type='product' AND status='active'",
+            (child_name,)).fetchone()
+        if not child:
+            continue
+        if conn.execute(
+                "SELECT 1 FROM business_concept_edges WHERE child_id=? LIMIT 1",
+                (child[0],)).fetchone():
+            continue                        # 人工路径已挂，不覆盖
+        conn.execute(
+            "INSERT INTO business_concepts(name,concept_type,status,source,"
+            "created_at,updated_at) VALUES(?,?,?,?,?,?) "
+            "ON CONFLICT(name,concept_type) DO NOTHING",
+            (parent_name, "sector", "active", "auto_tree", now, now))
+        parent_id = conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? AND concept_type='sector'",
+            (parent_name,)).fetchone()[0]
+        conn.execute(
+            "INSERT OR IGNORE INTO business_concept_edges"
+            "(parent_id,child_id,source,created_at) VALUES(?,?,?,?)",
+            (parent_id, child[0], "auto_tree", now))
+        n += 1
     return n
 
 
@@ -748,20 +837,42 @@ def import_manual_attributions(conn, stock_names: dict[str, str]) -> int:
 
 
 def split_activity_groups(rows: list[tuple], date_index: dict[str, int],
-                          gap_days: int) -> list[list[tuple]]:
-    groups: list[list[tuple]] = []
-    current: list[tuple] = []
-    last_index: int | None = None
-    for row in sorted(rows, key=lambda item: (item[1], item[2])):
-        idx = date_index[row[1]]
-        if current and last_index is not None and idx - last_index > gap_days:
-            groups.append(current)
-            current = []
-        current.append(row)
-        last_index = idx
-    if current:
-        groups.append(current)
-    return groups
+                          gap_days: int, sustain_min: int,
+                          decay_ratio: float) -> list[list[tuple]]:
+    """按活跃日+动量衰减切分轮次（2026-08-03 修正）。
+
+    活跃日 = 当日该题材 ≥sustain_min 只涨停。断轮时钟只认"够格的"活跃日：
+    广度必须 ≥ max(sustain_min, ceil(本浪峰值×decay_ratio))——浪越高，
+    尾部涓流（相对峰值衰减后的零星2-3只）越撑不住时钟，浪自然断开。
+    旧规则任意1只涨停都刷新时钟，常青题材被粘成378天巨轮（人形机器人/
+    固态电池/国企改革），启动点与阶段全部失真。断浪后峰值清零，下一浪从
+    sustain_min 重新起步（新浪成立仍需过 min_codes+触发日双门槛）。
+    轮次跨度=[首个够格日, 末个够格日]，跨度内的单股/涓流日随轮；
+    跨度外的零散涨停不归组（属个股事件，走候选过期通道）。
+    """
+    by_day: dict[str, list[tuple]] = defaultdict(list)
+    for row in rows:
+        by_day[row[1]].append(row)
+    day_breadth = {d: len({r[2] for r in rs}) for d, rs in by_day.items()}
+    sustain_days = sorted(d for d, n in day_breadth.items() if n >= sustain_min)
+    day_groups: list[list[str]] = []
+    span: list[str] = []
+    peak = 0
+    for d in sustain_days:
+        if span and date_index[d] - date_index[span[-1]] > gap_days:
+            day_groups.append(span)
+            span, peak = [], 0
+        if day_breadth[d] >= max(sustain_min, math.ceil(peak * decay_ratio)):
+            span.append(d)
+            peak = max(peak, day_breadth[d])
+    if span:
+        day_groups.append(span)
+    out: list[list[tuple]] = []
+    for days in day_groups:
+        lo, hi = days[0], days[-1]
+        out.append([r for d in sorted(by_day) if lo <= d <= hi
+                    for r in sorted(by_day[d], key=lambda item: item[2])])
+    return out
 
 
 def hhmm_minutes(ts) -> int | None:
@@ -820,8 +931,11 @@ def derive_episodes(conn, events: list[tuple], cfg: dict) -> tuple[int, list[str
     open_members: dict[int, set[str]] = {}      # 开放轮次成员，用于重叠告警
     open_names: dict[int, str] = {}
     warnings: list[str] = []
+    sustain_min = cfg_ep.get("sustain_min_members", 2)
+    decay_ratio = cfg_ep.get("wave_decay_ratio", 0.25)
     for cid, rows in links_by_concept.items():
-        for group in split_activity_groups(rows, date_index, cfg_ep["gap_days"]):
+        for group in split_activity_groups(rows, date_index, cfg_ep["gap_days"],
+                                           sustain_min, decay_ratio):
             codes = {row[2] for row in group}
             daily = Counter(row[1] for row in group)
             # 硬阈值立轮：整轮股票数 + 触发日（同日家数&首封极差）双门槛；
@@ -1018,6 +1132,26 @@ def apply_link_verdicts(conn, overrides: dict) -> int:
             print(f"⚠️ link_verdicts 找不到目标（跳过）：{v.get('code')} "
                   f"{v.get('trade_date')} {v.get('theme')}")
             continue
+        if verdict == "verified":
+            # 判决引用的叙事必须落成可追溯证据（2026-08-03）：把该事件的
+            # 新闻/公告证据绑为题材级旁证（supporting 优先，至多3条）。
+            # 一条都绑不上的 verified 不落地——保持 candidate 走过期通道，
+            # 门禁才能对全部 verified 强制证据而不阻断发布。
+            conn.execute(
+                "INSERT OR IGNORE INTO event_theme_evidence"
+                "(event_id,concept_id,evidence_id) "
+                "SELECT ee.event_id, ?, ee.evidence_id FROM event_evidence ee "
+                "WHERE ee.event_id=? AND ee.relevance_status!='rejected' "
+                "ORDER BY CASE ee.relevance_status WHEN 'supporting' THEN 0 "
+                "WHEN 'context' THEN 1 ELSE 2 END LIMIT 3",
+                (cid_row[0], event[0]))
+            if not conn.execute(
+                    "SELECT 1 FROM event_theme_evidence "
+                    "WHERE event_id=? AND concept_id=? LIMIT 1",
+                    (event[0], cid_row[0])).fetchone():
+                print(f"⚠️ verified 判决无可绑证据，保持 candidate："
+                      f"{v['code']} {v['trade_date']} {v['theme']}")
+                continue
         cur = conn.execute(
             "UPDATE event_theme_links SET status=?, "
             "theme_role=CASE WHEN ?='verified' THEN ? ELSE theme_role END, "
@@ -1062,6 +1196,44 @@ def apply_episode_overrides(conn, overrides: dict) -> tuple[int, int]:
             (now, row[0], v["code"]))
         n_leader += cur.rowcount and 1
     return n_ep, n_leader
+
+
+def derive_current_leaders(conn) -> int:
+    """龙头当前口径（2026-08-03 修正）：每次重建全量重算，不存在过期龙头。
+
+    开放轮次（provisional/verified）：只看轮次最新交易日在场的股票，取当日最高
+    连板（首板不认，平局取当日首封最早）——回答"现在谁是龙头"；
+    已关轮次（closed）：整轮最高板——回答"那一轮谁曾是龙头"（历史语义）。
+    facts_overrides 的 leaders（人工/LLM bad case 覆盖）已先重放，标过的轮次跳过。
+    """
+    now = common.now_iso()
+    n = 0
+    for ep_id, status in conn.execute(
+            "SELECT id, status FROM theme_episodes WHERE status!='rejected'"):
+        if conn.execute(
+                "SELECT 1 FROM event_theme_links WHERE episode_id=? "
+                "AND market_role='leader' LIMIT 1", (ep_id,)).fetchone():
+            continue
+        day_filter = """AND e.trade_date=(
+                SELECT MAX(e2.trade_date) FROM event_theme_links l2
+                JOIN limit_up_events e2 ON e2.id=l2.event_id
+                WHERE l2.episode_id=?)""" if status != "closed" else ""
+        params = (ep_id, ep_id) if status != "closed" else (ep_id,)
+        row = conn.execute(f"""
+            SELECT e.code FROM event_theme_links l
+            JOIN limit_up_events e ON e.id=l.event_id
+            WHERE l.episode_id=? AND e.lb_count>=2 {day_filter}
+            ORDER BY e.lb_count DESC, COALESCE(e.first_time,'99:99') ASC
+            LIMIT 1""", params).fetchone()
+        if not row:
+            continue                        # 最新日全是首板/无成员 → 本轮暂无龙头
+        conn.execute(
+            "UPDATE event_theme_links SET market_role='leader', updated_at=? "
+            "WHERE episode_id=? AND event_id IN "
+            "(SELECT id FROM limit_up_events WHERE code=?)",
+            (now, ep_id, row[0]))
+        n += 1
+    return n
 
 
 def expire_stale_candidates(conn, events: list[tuple], cfg: dict) -> int:
@@ -1138,6 +1310,8 @@ def main() -> int:
         conn.execute("DELETE FROM theme_episodes WHERE source='derived'")
         n_facts = import_business_facts(conn, stock_names)
         n_promoted = promote_business_candidates(conn)
+        n_repaired = ensure_fact_nodes(conn)
+        n_tree = import_business_tree(conn)
         n_mappings = import_theme_business_mappings(conn, tag_meta)
         n_evidence = import_event_evidence(conn, events)
         n_candidates = derive_candidate_theme_links(conn, events, tag_meta)
@@ -1148,7 +1322,15 @@ def main() -> int:
         n_verdicts = apply_link_verdicts(conn, overrides)  # 人工判决先于归组
         n_episodes, overlap_warnings = derive_episodes(conn, events, cfg)
         n_ep_verdicts, n_leaders = apply_episode_overrides(conn, overrides)
+        n_cur_leaders = derive_current_leaders(conn)
         n_expired = expire_stale_candidates(conn, events, cfg)
+        # T+复核跨重建存活（自然键，无外键）；只清理链接永久消失的真孤儿
+        n_orphan_reviews = conn.execute(
+            "DELETE FROM attribution_reviews WHERE NOT EXISTS ("
+            "  SELECT 1 FROM event_theme_links l"
+            "  WHERE l.event_id=attribution_reviews.event_id"
+            "    AND l.concept_id=attribution_reviews.concept_id)"
+        ).rowcount
         counts = audit(conn)
         if args.dry_run:
             conn.rollback()
@@ -1157,15 +1339,17 @@ def main() -> int:
             conn.commit()
             mode = "已写入"
         print(
-            f"✅ 语义层{mode}：人工业务事实 {n_facts}（年报自动晋升 {n_promoted}），"
+            f"✅ 语义层{mode}：人工业务事实 {n_facts}（年报自动晋升 {n_promoted}，"
+            f"节点兜底修复 {n_repaired}，自动挂树边 {n_tree}），"
             f"自动题材候选 {n_candidates}，"
             f"人工涨停归因 {n_manual}，题材业务映射 {n_mappings}，"
             f"题材轮次 {n_episodes}（阈值 ≥{cfg['episode']['min_codes']}只/"
             f"同日≥{cfg['episode']['min_same_day']}家/首封极差≤"
             f"{cfg['episode']['first_seal_span_min']}min），"
             f"候选过期 {n_expired}，公司事件 {n_corp}（澄清击杀 {n_killed}），"
-            f"人工判决重放 链{n_verdicts}/轮{n_ep_verdicts}/龙头{n_leaders}，"
-            f"导入事件证据 {n_evidence}"
+            f"人工判决重放 链{n_verdicts}/轮{n_ep_verdicts}/龙头覆盖{n_leaders}，"
+            f"当前龙头重算 {n_cur_leaders}，"
+            f"导入事件证据 {n_evidence}，清理孤儿复核 {n_orphan_reviews}"
         )
         for w in overlap_warnings[:10]:
             print(f"⚠️ {w}")

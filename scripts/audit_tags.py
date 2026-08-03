@@ -223,7 +223,7 @@ def main() -> int:
         JOIN concepts c ON c.id=l.concept_id
         LEFT JOIN event_theme_evidence ete
           ON ete.event_id=l.event_id AND ete.concept_id=l.concept_id
-        WHERE l.source='manual' AND l.status='verified'
+        WHERE l.status='verified'
         GROUP BY l.event_id,l.concept_id HAVING COUNT(ete.evidence_id)=0
     """).fetchall()
     if missing_attribution_evidence:
@@ -253,7 +253,10 @@ def main() -> int:
            OR r.retained_rate<0 OR r.retained_rate>1
            OR r.mature!=(r.stage=2)
            OR r.source!='deterministic-v1'
-           OR l.status!='candidate'
+           -- 复核可作为历史记录留在已判决(verified/rejected)或过期链接上
+           -- （2026-08-03 复核跨重建存活后放开）；只有"链接被升级却没有
+           -- 人工判决留痕"才违规——那条不变量由 derived_verified 检查兜住。
+           OR l.status NOT IN ('candidate','verified','rejected','expired')
     """).fetchall()
     if invalid_reviews:
         errors.append("T+归因复核记录违反旁证边界：" +
