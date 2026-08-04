@@ -511,17 +511,42 @@ def ensure_fact_nodes(conn) -> int:
 def import_business_tree(conn) -> int:
     """重放 LLM 挂树台账（business_tree.json → source='auto_tree' 层级边）。
 
-    产品节点按名匹配（不存在的跳过，等节点出现后下次重放挂上）；产业父节点
-    不存在则建 sector 节点（source='auto_tree'）。已有 manual 边的子节点不动
-    ——人工 business_path 优先于自动挂树。
+    三层结构：groups 段=产业→细分（sector→sector 边，仅一级——细分的 parent
+    不得又是别的细分）；assignments 段=产品→产业或细分。产品节点按名匹配
+    （不存在的跳过，等节点出现后下次重放挂上）；父节点不存在则建 sector 节点
+    （source='auto_tree'）。已有 manual 边的子节点不动——人工 business_path
+    优先于自动挂树。
     """
     if not BUSINESS_TREE_PATH.exists():
         return 0
-    assignments = json.loads(
-        BUSINESS_TREE_PATH.read_text(encoding="utf-8")).get("assignments", {})
+    tree = json.loads(BUSINESS_TREE_PATH.read_text(encoding="utf-8"))
+    assignments = tree.get("assignments", {})
+    groups = tree.get("groups", {})
     now = common.now_iso()
     conn.execute("DELETE FROM business_concept_edges WHERE source='auto_tree'")
     n = 0
+
+    def sector_node(name: str) -> int:
+        conn.execute(
+            "INSERT INTO business_concepts(name,concept_type,status,source,"
+            "created_at,updated_at) VALUES(?,?,?,?,?,?) "
+            "ON CONFLICT(name,concept_type) DO NOTHING",
+            (name, "sector", "active", "auto_tree", now, now))
+        return conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? AND concept_type='sector'",
+            (name,)).fetchone()[0]
+
+    for sub, v in groups.items():
+        parent_name = v.get("parent")
+        if (not parent_name or parent_name == sub
+                or parent_name in groups):      # 中间层只允许一级
+            print(f"⚠️ business_tree groups 越界（跳过）：{sub}→{parent_name}")
+            continue
+        conn.execute(
+            "INSERT OR IGNORE INTO business_concept_edges"
+            "(parent_id,child_id,source,created_at) VALUES(?,?,?,?)",
+            (sector_node(parent_name), sector_node(sub), "auto_tree", now))
+        n += 1
     for child_name, v in assignments.items():
         parent_name = v.get("parent")
         if not parent_name or parent_name == child_name:

@@ -115,6 +115,15 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
   `gen_business_tree.py` 每日在发布线以下分批（60/批）把孤立 product 喂 sonnet
   归入产业父节点（优先复用产业池，拿不准留 null），台账 business_tree.json 防重；
   rebuild 重放成 source='auto_tree' 边，产业父节点缺失自动建 sector 节点。
+- **三层业务图谱（2026-08-03 二期）**：产业→细分→产品。`gen_business_tree.py
+  --refine` 对直挂子产品≥25的根产业各调一次 sonnet 按业内口径聚成3-8个细分
+  （台账 groups 段=细分→产业、refined 段=已聚标记防重问，--force 重聚）；
+  不贴合任何细分的产品保持直挂。**中间层只允许一级**（groups 的 parent 不得又是
+  细分，生成端和 rebuild 导入端双重强制）；细分名不得与根产业/种子重名（防节点
+  复用错接两棵枝）。细分是 sector 型节点，落库后自动进日常挂树产业池——新产品
+  可直接归细分，大桶不再回涨。前端零改动即兼容：产业榜 primarySectorNodes()
+  本就只列无 sector 祖先的根产业（无双计），热力聚合 businessDescendants 走
+  传递闭包，细分出现在搜索、交叉透视与概念页上下级 chips 里。
 - **互动平台供应链链（③层专用数据源，2026-08-03；双市场）**：`fetch_interactive_qa.py`
   抓公司回复——深市走互动易 irm.cninfo.com.cn（JSON，attachedContent 非空=已回复，
   qaStatus 字段含义不稳定不作依据）；沪市走上证e互动 sns.sseinfo.com（POST
