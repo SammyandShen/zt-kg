@@ -630,6 +630,123 @@
    "note": "新闻明确点名'重磅会议定调AI+...用友网络等批量涨停'，公司为企业软件龙头切入AI+叙事清晰",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-03"
+  },
+  {
+   "code": "603629",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "证据明确将其涨停归为'消费电子概念盘初活跃'，无一条提及算力租赁，主导叙事另有其事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "000892",
+   "trade_date": "2026-08-04",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条证据一致归因'影视院线板块走高'，未提AI应用，主导叙事是另一题材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "301270",
+   "trade_date": "2026-08-04",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "新闻明确点名'拟收购千奇造物股权，布局二次元与AIGC智造'并直接关联20cm涨停，关联可解释且当日主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "605303",
+   "trade_date": "2026-08-04",
+   "theme": "存储芯片",
+   "verdict": "rejected",
+   "note": "证据显示当日'存储芯片概念下跌3.15%'，与该股涨停方向相反，明确反证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "002354",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "证据明确归因'AI语料板块走高'带动涨停，未提算力租赁，主导叙事是另一题材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "300052",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "三条证据均归因'游戏板块拉升'驱动20cm涨停，与算力租赁无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "600186",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "三条证据均指向'员工持股计划'为驱动，未提算力租赁或阶跃星辰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "001388",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "两条证据均归因'PCB概念震荡反弹'驱动涨停，与算力租赁无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "000815",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "证据明确点名'算力租赁概念板块走势活跃 美利云实现3连板'，关联直接且为当日主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "000739",
+   "trade_date": "2026-08-04",
+   "theme": "创新药",
+   "verdict": "verified",
+   "note": "公告+多条新闻明确点名与剂泰科技签署CDMO战略合作，直接解释涨停且为当日主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "002793",
+   "trade_date": "2026-08-04",
+   "theme": "创新药",
+   "verdict": "verified",
+   "note": "证据明确点名'创新药概念表现强势 罗欣药业等多股涨停'，关联直接",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "603222",
+   "trade_date": "2026-08-04",
+   "theme": "创新药",
+   "verdict": "rejected",
+   "note": "证据明确归因'主业承压跨界集成电路产业'驱动涨停，与创新药无关，反证明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "code": "002821",
+   "trade_date": "2026-08-04",
+   "theme": "创新药",
+   "verdict": "verified",
+   "note": "多条证据点名增资CDMO子公司、生物科技ETF大涨、医药外包概念集体走高，关联可解释且当日主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
   }
  ],
  "episode_verdicts": [
@@ -650,6 +767,32 @@
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-03",
    "catalyst": "AI算力建设扩产带动液冷散热组件需求增长——金富科技液冷产品(铜管/波纹管/液冷板/分集水器)产能订单同环比攀升为业务证据支撑，罗曼股份、豪尔赛跟随炒作"
+  },
+  {
+   "theme": "存储芯片",
+   "start_date": "2026-07-31",
+   "verdict": "rejected",
+   "note": "成分股主业高度分散(PVC地板/电子雷管+低空经济/照明工程/市政园林文体旅/化工等)，证据未显示共同催化，疑似标签巧合各炒各的；爱丽家居更因异常波动停牌核查而非题材驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  {
+   "theme": "创新药",
+   "start_date": "2026-08-04",
+   "verdict": "verified",
+   "note": "多成员有独立点名证据(罗欣药业'创新药概念表现强势'、凯莱英CDMO增资+ETF大涨、普洛药业公告)，济民健康证据显示其驱动为跨界芯片而非创新药，判断整体成立但济民健康归因另判rejected",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04",
+   "catalyst": "港股医药外包/生物科技ETF大涨带动A股创新药-CDMO板块普涨，叠加普洛药业与剂泰科技签署CDMO战略合作公告、凯莱英联合高瓴增资控股子公司CDMO项目等个股催化共振"
+  },
+  {
+   "theme": "商业航天",
+   "start_date": "2026-08-03",
+   "verdict": "verified",
+   "note": "证据两次明确点名'商业航天概念异动拉升 神剑股份、铖昌科技等涨停'，通宇通讯另有CPO概念催化叠加",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04",
+   "catalyst": "商业航天概念异动拉升，卫星通信/北斗导航/CPO等催化共振，带动神剑股份、通宇通讯等多股涨停"
   }
  ],
  "leaders": []

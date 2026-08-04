@@ -2552,6 +2552,158 @@
    "status": "candidate",
    "confidence": 0.95,
    "rationale": "[llm 2026-08-04] 高温超导材料是高温超导题材直接交易的核心产品"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "人形机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.98,
+   "rationale": "[llm 2026-08-04] 业务本身即人形机器人整机/相关产品的研发生产"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "具身智能核心零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-04] 具身智能核心零部件是人形机器人本体的关键构成部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "伺服电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-04] 伺服电机是人形机器人关节执行器的核心驱动部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "伺服系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-04] 伺服系统为机器人关节运动控制提供核心动力总成"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "伺服驱动器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-04] 伺服驱动器是机器人关节伺服系统的核心上游部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "减速机及配件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-04] 减速器是人形机器人关节的核心传动部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "减速电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-04] 减速电机作为关节驱动执行器的上游部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "机器人产业",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-04] 机器人产业节点直接承载人形机器人整机与产业链业务"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "机器人核心部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-04] 机器人核心部件是人形机器人整机的直接构成部分"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "机器人组件及系统应用",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-04] 机器人组件及系统应用即人形机器人题材的直接交易对象"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "永磁电机及电气控制系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-04] 永磁伺服电机是人形机器人关节驱动的核心执行部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "电机与驱动",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-04] 电机与驱动是人形机器人关节执行机构的核心上游部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "电控执行器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-04] 电控执行器是人形机器人关节驱动的直接上游部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "精密减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-04] 谐波/RV减速器是人形机器人关节核心传动部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "线性驱动系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-04] 直线执行器是人形机器人肢体关节的核心驱动部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "自动化产线及机器人设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-04] 业务明确含机器人设备制造，直接承载人形机器人整机/产线交易对象"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "谐波减速机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-04] 谐波减速器是人形机器人关节核心传动部件，属直接上游核心零部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "运动控制核心部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-04] 业务标签直接指向机器人所需的运动控制核心部件供应"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "驱动电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-04] 驱动电机是人形机器人关节执行器的核心动力部件"
   }
  ]
 }

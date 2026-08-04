@@ -59122,5 +59122,197 @@
   "p": "光伏",
   "c": 0.7,
   "model": "claude-sonnet-5"
+ },
+ "CXO龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "宁德时代供应商": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "HDI技改扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "光芯片订单": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "回购股份": {
+  "t": "catalyst",
+  "p": "回购",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "电子级树脂涨价": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "签署算力大单": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "算力订单加价": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "6G滤波器": {
+  "t": "product",
+  "p": "6G通信",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AI安防": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AI覆铜板": {
+  "t": "product",
+  "p": "覆铜板",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "CXO": {
+  "t": "sector",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "NPO/CPO": {
+  "t": "product",
+  "p": "CPO",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "上调指引": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "半导体测试分选机": {
+  "t": "product",
+  "p": "芯片测试设备",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "半导体测试探针": {
+  "t": "product",
+  "p": "半导体检测",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "华为鸿蒙": {
+  "t": "theme",
+  "p": "鸿蒙生态",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "塑胶玩具": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "天然皮革": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "字库": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "存储IC载板": {
+  "t": "product",
+  "p": "IC载板",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "市政园林": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "异常波动公告": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "模切业务": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "游戏IP": {
+  "t": "theme",
+  "p": "游戏",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "生物试剂": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "节能铝包木窗": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "超融合软件": {
+  "t": "product",
+  "p": "云计算",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "跨境数字贸易": {
+  "t": "theme",
+  "p": "跨境电商",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "阶跃星辰": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "CXO概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "人形机器人概念": {
+  "t": "theme",
+  "p": "人形机器人",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
  }
 }
