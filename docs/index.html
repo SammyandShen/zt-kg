@@ -1037,7 +1037,9 @@ function episodeTierListHtml(cid, epId) {
   for (const r of THEME_BUSINESS_CANDIDATES[cid] || []) {
     if (!relRows.has(r[0]))
       relRows.set(r[0], { relation: r[2], maturity: r[3], mv: r[8] === 'verified',
+        rs: r[12] ?? null,
         note: `${r[1]}·${RELATION_LABEL[r[2]] || r[2]}·${MATURITY_LABEL[r[3]] || r[3]}` +
+          `${r[12] != null ? `·占营收${r[12]}%` : ''}` +
           `｜题材→业务映射${r[8] === 'verified' ? '已核实' : '为候选（研究池，未核实）'}${r[6] ? '｜' + r[6] : ''}` });
   }
   const trading = epId != null ? episodeMembers(epId) : new Map();
@@ -1054,7 +1056,7 @@ function episodeTierListHtml(cid, epId) {
   for (const [code, rel] of relRows) {
     if (trading.has(code)) continue;     // watch 池：有业务未异动
     tiers[tierOf(rel.relation, rel.maturity)].push({
-      code, trading: false, mv: rel.mv, note: rel.note });
+      code, trading: false, mv: rel.mv, rs: rel.rs, note: rel.note });
   }
   if (!tiers.some(t => t.length)) return '';
   const chip = s => `<span class="concept-chip${s.trading ? '' : ' watch-chip'}" data-code="${s.code}"
@@ -1064,7 +1066,9 @@ function episodeTierListHtml(cid, epId) {
   const rows = TIER_DEFS.map(([label, hint, cls], i) => {
     const list = tiers[i];
     if (!list.length) return '';
-    list.sort((a, b) => (b.trading - a.trading) || (b.lb || 0) - (a.lb || 0));
+    // trading 在前按板数；watch 内按 映射已核实 > 营收占比 排（研究池头部才值得看）
+    list.sort((a, b) => (b.trading - a.trading) || (b.lb || 0) - (a.lb || 0)
+      || (b.mv ? 1 : 0) - (a.mv ? 1 : 0) || (b.rs || 0) - (a.rs || 0));
     return `<div class="tier-row"><div class="tier-h ${cls}"><b>${label}</b>
       <span class="muted small">${hint} · ${list.length}只</span></div>
       <div class="chips">${list.map(chip).join('')}</div></div>`;

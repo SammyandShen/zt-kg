@@ -577,18 +577,50 @@ def import_business_tree(conn) -> int:
     return n
 
 
+def graph_descendant_fact_tags(conn, node_name: str) -> list[str]:
+    """业务图谱 sector 节点（产业/细分）→ 全部后代 product 的有效事实标签名。"""
+    root = conn.execute(
+        "SELECT id FROM business_concepts WHERE name=? AND concept_type='sector' "
+        "AND status='active'", (node_name,)).fetchone()
+    if not root:
+        return []
+    seen_ids = {root[0]}
+    frontier = [root[0]]
+    while frontier:
+        nxt = [r[0] for r in conn.execute(
+            f"SELECT child_id FROM business_concept_edges WHERE parent_id IN "
+            f"({','.join('?' * len(frontier))})", frontier) if r[0] not in seen_ids]
+        seen_ids.update(nxt)
+        frontier = nxt
+    return [r[0] for r in conn.execute(
+        f"SELECT DISTINCT f.tag_name FROM stock_business_facts f "
+        f"JOIN business_concepts b ON b.id=f.business_concept_id "
+        f"WHERE b.id IN ({','.join('?' * len(seen_ids))}) "
+        f"AND b.concept_type='product' "
+        f"AND f.status NOT IN ('rejected','expired')", list(seen_ids))]
+
+
 def import_theme_business_mappings(conn, tag_meta: dict[str, dict]) -> int:
-    """导入题材→业务标签映射；它生成候选池，不生成单次涨停归因。"""
+    """导入题材→业务标签映射；它生成候选池，不生成单次涨停归因。
+
+    图谱化（2026-08-04 阶段一）：映射目标可以是三层业务图谱的 sector 节点
+    （产业/细分）——导入时展开为其后代产品的事实标签行（source='graph'，
+    每次重建重生成），下游一切按 tag_name 连接的消费端零改动受益；
+    sector 级原始行不入库（门禁要求映射行必须挂到有事实的叶子标签）。
+    直接叶子映射优先：展开行 DO NOTHING 不覆盖同键的直接映射。
+    """
     rows = load_json_list(THEME_BUSINESS_PATH, "mappings")
     seen: set[tuple[int, str]] = set()
     now = common.now_iso()
     imported = 0
+    conn.execute("DELETE FROM theme_business_mappings WHERE source='graph'")
     available_business_tags = {
         row[0] for row in conn.execute(
             "SELECT DISTINCT tag_name FROM stock_business_facts "
             "WHERE status NOT IN ('rejected','expired')"
         )
     }
+    graph_rows: list[tuple] = []
     for raw in rows:
         theme = str(raw.get("theme") or "").strip()
         business_tag = str(raw.get("business_tag_name") or "").strip()
@@ -600,9 +632,21 @@ def import_theme_business_mappings(conn, tag_meta: dict[str, dict]) -> int:
                 f"theme_business_mappings 的题材必须是 active/theme：{theme}"
             )
         if business_tag not in available_business_tags:
-            raise ValueError(
-                f"theme_business_mappings 找不到有效公司业务事实：{business_tag}"
-            )
+            expanded = graph_descendant_fact_tags(conn, business_tag)
+            if not expanded:
+                raise ValueError(
+                    f"theme_business_mappings 找不到有效公司业务事实或"
+                    f"可展开的图谱节点：{business_tag}"
+                )
+            cid = common.get_or_create_concept(conn, theme, {})
+            for leaf in expanded:
+                graph_rows.append((
+                    cid, leaf, raw.get("mapping_type", "exact"),
+                    raw.get("status", "candidate"),
+                    float(raw.get("confidence", 0)),
+                    f"[图谱展开自 {business_tag}] {raw.get('rationale') or ''}"[:200],
+                ))
+            continue
         cid = common.get_or_create_concept(conn, theme, {})
         key = (cid, business_tag)
         if key in seen:
@@ -641,6 +685,18 @@ def import_theme_business_mappings(conn, tag_meta: dict[str, dict]) -> int:
                 "WHERE concept_id=? AND business_tag_name=?",
                 (cid, business_tag),
             )
+    # 图谱展开行最后插：直接叶子映射（manual）优先，同键 DO NOTHING 不覆盖
+    for cid, leaf, mtype, status, conf, rationale in graph_rows:
+        cur = conn.execute(
+            """
+            INSERT INTO theme_business_mappings(
+              concept_id,business_tag_name,mapping_type,status,confidence,
+              rationale,source,created_at,updated_at
+            ) VALUES(?,?,?,?,?,?,'graph',?,?)
+            ON CONFLICT(concept_id,business_tag_name) DO NOTHING
+            """,
+            (cid, leaf, mtype, status, conf, rationale, now, now))
+        imported += cur.rowcount
     return imported
 
 
@@ -1223,6 +1279,38 @@ def apply_episode_overrides(conn, overrides: dict) -> tuple[int, int]:
     return n_ep, n_leader
 
 
+def corroborate_mappings(conn) -> int:
+    """映射核实飞轮（2026-08-04 阶段一）：用自己的判决数据检验映射对错。
+
+    一条"题材→业务标签"映射被 ≥3 只**不同股票**的 verified 归因作为业务凭据
+    引用（basis_kind='business_fact' 且凭据事实的标签正是该映射的标签）
+    → 自动转正 verified，rationale 追加留痕。纯确定性、每次重建幂等重算
+    （导入会从 JSON 重置状态，本工序在判决重放后执行故结果稳定）。
+    退场规则（题材归因活跃但映射长期零命中→retired）等第二层核实量到位后再开。
+    """
+    now = common.now_iso()
+    n = 0
+    for cid, tag, hits in conn.execute("""
+        SELECT m.concept_id, m.business_tag_name, COUNT(DISTINCT e.code)
+        FROM theme_business_mappings m
+        JOIN event_theme_links l ON l.concept_id=m.concept_id
+             AND l.status='verified' AND l.basis_kind='business_fact'
+        JOIN stock_business_facts f ON f.id=l.basis_id
+             AND f.tag_name=m.business_tag_name
+        JOIN limit_up_events e ON e.id=l.event_id
+        WHERE m.status='candidate'
+        GROUP BY m.concept_id, m.business_tag_name
+        HAVING COUNT(DISTINCT e.code) >= 3
+    """).fetchall():
+        conn.execute(
+            "UPDATE theme_business_mappings SET status='verified', "
+            "rationale=COALESCE(rationale,'')||'｜印证转正：'||?||'只已核实归因引用'"
+            ", updated_at=? WHERE concept_id=? AND business_tag_name=?",
+            (hits, now, cid, tag))
+        n += 1
+    return n
+
+
 def derive_current_leaders(conn) -> int:
     """龙头当前口径（2026-08-03 修正）：每次重建全量重算，不存在过期龙头。
 
@@ -1347,6 +1435,7 @@ def main() -> int:
         n_verdicts = apply_link_verdicts(conn, overrides)  # 人工判决先于归组
         n_episodes, overlap_warnings = derive_episodes(conn, events, cfg)
         n_ep_verdicts, n_leaders = apply_episode_overrides(conn, overrides)
+        n_corroborated = corroborate_mappings(conn)
         n_cur_leaders = derive_current_leaders(conn)
         n_expired = expire_stale_candidates(conn, events, cfg)
         # T+复核跨重建存活（自然键，无外键）；只清理链接永久消失的真孤儿
@@ -1373,7 +1462,7 @@ def main() -> int:
             f"{cfg['episode']['first_seal_span_min']}min），"
             f"候选过期 {n_expired}，公司事件 {n_corp}（澄清击杀 {n_killed}），"
             f"人工判决重放 链{n_verdicts}/轮{n_ep_verdicts}/龙头覆盖{n_leaders}，"
-            f"当前龙头重算 {n_cur_leaders}，"
+            f"当前龙头重算 {n_cur_leaders}，映射印证转正 {n_corroborated}，"
             f"导入事件证据 {n_evidence}，清理孤儿复核 {n_orphan_reviews}"
         )
         for w in overlap_warnings[:10]:

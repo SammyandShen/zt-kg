@@ -385,7 +385,7 @@ def main() -> int:
     for row in conn.execute("""
         SELECT m.concept_id,f.id,f.code,f.tag_name,f.relation_type,f.maturity,
                f.status,f.confidence,f.summary,m.mapping_type,m.status,
-               m.confidence,m.rationale
+               m.confidence,m.rationale,f.revenue_share
         FROM theme_business_mappings m
         JOIN stock_business_facts f ON f.tag_name=m.business_tag_name
         WHERE m.status!='rejected' AND f.status NOT IN ('rejected','expired')
@@ -394,7 +394,7 @@ def main() -> int:
     """):
         (cid, fact_id, code, business_tag, relation, maturity, fact_status,
          fact_confidence, summary, mapping_type, mapping_status,
-         mapping_confidence, rationale) = row
+         mapping_confidence, rationale, revenue_share) = row
         evidence_ids = [r[0] for r in conn.execute(
             "SELECT evidence_id FROM business_fact_evidence WHERE fact_id=?",
             (fact_id,))]
@@ -403,6 +403,7 @@ def main() -> int:
             code, business_tag, relation, maturity, fact_status,
             round(fact_confidence, 2), summary, mapping_type, mapping_status,
             round(mapping_confidence, 2), rationale, evidence_ids,
+            revenue_share if revenue_share is None else round(revenue_share, 1),
         ])
 
     semantic_evidence: dict[int, list] = {}
