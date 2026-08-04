@@ -23,7 +23,7 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
 | `data/tag_expansions.json` | 人工/LLM（用户确认后）| 一对多语义拆解（事件标签→题材+催化），改后先 `rebuild_tags.py --dry-run` 再实跑 |
 | `data/business_facts.json` | 人工核实 | 公司客观业务事实（主营/产品/参股/拟收购），每条必须带证据、成熟度和有效期 |
 | `data/event_attributions.json` | 人工核实 | 某股某日的主炒/次要题材归因；不能用来改写公司主营 |
-| `data/theme_business_mappings.json` | 人工核实 | 交易题材→客观业务标签映射，用于反查公司候选池，不自动生成涨停归因 |
+| `data/theme_business_mappings.json` | gen_theme_mappings.py 增量生成（candidate）| 交易题材→客观业务标签**或图谱sector节点**映射；不自动生成涨停归因；转正走印证飞轮（见下） |
 | `data/semantic_config.json` | 人工校准 | 语义层阈值（立轮/断轮/首封极差/候选过期/重叠告警）；改后跑 rebuild_semantic_layer.py；校准记录追加 calibration_log |
 | `data/facts_overrides.json` | 治理台导出+人工确认 | 人工判决台账（归因核实/轮次成立/龙头认定）；rebuild 每次重放，判决不因候选域重算丢失 |
 | `data/similar_dismissed.json` | Claude 判决留痕 | 疑似重复观测口的"已判不并"名单（精确对子+整族正则，如区域国企 `^..国企$`）；判过的不再上榜只露新面孔，verdict_log 记录并/不并理由；bad case 删条目即重新出现 |
@@ -115,7 +115,16 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
   `gen_business_tree.py` 每日在发布线以下分批（60/批）把孤立 product 喂 sonnet
   归入产业父节点（优先复用产业池，拿不准留 null），台账 business_tree.json 防重；
   rebuild 重放成 source='auto_tree' 边，产业父节点缺失自动建 sector 节点。
-- **三层业务图谱（2026-08-03 二期）**：产业→细分→产品。`gen_business_tree.py
+- **映射图谱化+印证飞轮（2026-08-04 阶段一；范围=一年内涨停过的股票，
+  不扩全市场——用户明确定界）**：回答"题材对应哪些真实业务、哪些公司具备该业务
+  但还没异动"。①映射目标可为图谱 sector 节点（细分/产业）：rebuild 导入时展开为
+  后代产品标签行（source='graph' 每日重生成，DO NOTHING 不覆盖直接映射，sector
+  级原始行不入库以过门禁），下游按 tag_name 连接的消费端零改动受益——上线时
+  (题材,公司)对 298→710（2.4×）；gen_theme_mappings 词表含图谱节点（提示词
+  【节点】前缀，"聚合整体贴合才映射"），分批60/批防超时、失败批次台账续传。
+  ②印证飞轮 corroborate_mappings：映射被 ≥3 只不同股票的 verified 归因作为业务
+  凭据引用→自动转正留痕（每日 rebuild 幂等重算；退场规则等第二层核实量到位再开）。
+  ③六层名单 watch 股按"映射已核实 > 营收占比"排序，chip 注"占营收X%"。产业→细分→产品。`gen_business_tree.py
   --refine` 对直挂子产品≥25的根产业各调一次 sonnet 按业内口径聚成3-8个细分
   （台账 groups 段=细分→产业、refined 段=已聚标记防重问，--force 重聚）；
   不贴合任何细分的产品保持直挂。**中间层只允许一级**（groups 的 parent 不得又是

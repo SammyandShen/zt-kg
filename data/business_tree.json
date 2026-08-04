@@ -12600,6 +12600,311 @@
    "parent": "珠宝首饰",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-04"
+  },
+  "MRO仪器仪表产品": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "MRO工具产品": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "MRO技术服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "公路货物运输": {
+   "parent": "交通物流",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "功能基膜材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "功能性涂布复合材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "受阻胺类光稳定剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "喷泉泵": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "四足机器人（具身智能装备）": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "增塑剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "大输液": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "安全注射器/安全注射针代工生产": {
+   "parent": "医疗器械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "家具驱动系统（沙发架/床架）": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "工业模块设计和制造": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "工业润滑油": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "工程服务(总承包/设计/施工/维保)": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "工程维保": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "广告喷墨打印材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "新能源电池聚氨酯制件": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "智慧办公驱动系统": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "智能家居控制系统": {
+   "parent": "智能家居设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "有机颜料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "标签标识印刷材料": {
+   "parent": "包装印刷",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "水泵配件": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "汽车尾气处理液": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "汽车电动尾门驱动系统": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "深井泵": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "混合二元酸二甲酯": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "潜水泵": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "珠光颜料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "电力工程总承包": {
+   "parent": "电力电气安装工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "电动工具": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "电子级功能材料": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "电气设备销售及服务": {
+   "parent": "电力设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "紧固件": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "线性驱动系统": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "聚氨酯弹性体(TPU)及原液": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "聚氨酯材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "聚氨酯胶黏剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "聚酯多元醇": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "脂肪醇": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "花园泵": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "药品批发零售贸易": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "车用润滑油": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "输电线路铁塔(角钢塔)": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "金属钠": {
+   "parent": "小金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "钢管塔": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "钢结构及接触网支架": {
+   "parent": "轨道交通设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "防冻液": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "革用聚氨酯树脂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "颜料中间体": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "高压清洗机": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "黑色休闲食品": {
+   "parent": "休闲食品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "黑色金属供应链": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "黑芝麻冲调食品": {
+   "parent": "休闲食品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "黑芝麻饮品(粥)": {
+   "parent": "饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "齿轮": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "齿轮加工设备及刀具": {
+   "parent": "数控机床",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "齿轮箱维修": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "（1）互联网信息服务": {
+   "parent": "互联网平台",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
+  },
+  "半导体": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-04"
   }
  },
  "groups": {
