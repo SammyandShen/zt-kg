@@ -998,7 +998,34 @@ function episodePanelHtml(cid, epSel) {
       isHistory ? `<span class="pill-jump" data-cid="${cid}" data-ep="${episodes[0][0]}"
         style="color:var(--accent);cursor:pointer;margin-left:auto">查看当前轮 →</span>` : ''}</div>
     <div class="episode-copy">${esc(catalyst || '共同催化待核实')}</div>
+    ${leaderBoardHtml(episodeId, status)}
     ${evidenceLinksHtml(evidenceIds)}</div>`;
+}
+/* 龙头榜：六维评分 rank1/2/3 + 换龙时间线（口径见 METRIC_DEFS.leader_score） */
+const LEADER_PARTS = ['空间', '先手', '封板质量', '正宗度', '隔日溢价', '断板韧性'];
+const LEADER_RANK = ['', '龙头', '龙二', '龙三'];
+function leaderBoardHtml(episodeId, status) {
+  const el = (D.episode_leaders || {})[episodeId];
+  if (!el || !el[0].length) return '';
+  const chips = el[0].map(([code, rank, score, state, parts, ov]) => {
+    const tip = `${LEADER_RANK[rank]}·评分${Math.round(score * 100)}` +
+      `${state === 'resting' ? '·断板观察中' : ''}` +
+      (parts ? '｜' + parts.map((v, i) =>
+        `${LEADER_PARTS[i]}${Math.round(v * 100)}`).join(' ') : '') +
+      (ov ? '｜人工覆盖(bad case)' : '') +
+      `${status === 'closed' ? '｜盖棺口径：rank1在位日最多' : ''}`;
+    return `<span class="concept-chip" data-code="${code}" title="${esc(tip)}"
+      style="cursor:pointer"><b style="color:var(--up)">${LEADER_RANK[rank]}</b>
+      ${esc(D.stocks[code] || code)}${ov ? ' ⭐' : ''}${
+      state === 'resting' && status !== 'closed'
+        ? ' <span class="x">断板</span>' : ''}</span>`;
+  }).join('');
+  const tl = el[1];
+  const tlHtml = tl.length > 1
+    ? `<div class="small muted" style="margin-top:4px">换龙：${
+        tl.map(([d, c]) => `${d.slice(5)} ${esc(D.stocks[c] || c)}`).join(' → ')}</div>`
+    : '';
+  return `<div style="margin-top:6px">${chips}${tlHtml}</div>`;
 }
 /* ---------- 轮次分层名单：回答"这一轮谁在跟随"，按关系成色六层分级 ---------- */
 const TIER_DEFS = [
@@ -1692,6 +1719,7 @@ const METRIC_DEFS = {
   fresh:     ['新启动', '近3日出现涨停、且此前15个交易日几乎无记录的题材；新叙事的第一现场，需核实共同催化。'],
   ebbing:    ['退潮中', '前5日日均≥1.5家但动量≤0.55 的题材；量能明显萎缩。'],
   mainline:  ['今日主线', '按最新交易日题材归因去重家数排序的前3个交易题材；点击卡片直达该轮的分层跟随名单。'],
+  leader_score:['龙头评分', '六维加权（空间30/先手15/封板质量20/正宗度10/隔日溢价15/断板韧性10）→EMA平滑逐日重算；换龙需挑战者评分超现任15%（滞后防震荡）；断板股2个活跃日内靠记忆撑席位，不反包自动让位；首板不认。龙二/龙三按当日评分直排。权重回测校准中，人工覆盖走治理台⭐。'],
   tiers:     ['本轮跟随分层', '①核心业务=主营/重要收入 ②直接成长=有产品订单收入尚小(含在研) ③上下游=真实供货关系 ④参股布局 ⑤拟收购转型=交易未完成 ⑥纯市场联想=无业务证据。实心=本轮已涨停，虚线=有业务但未异动(watch)。'],
   node_heat: ['节点热度', '所选窗口内逐日去重涨停家数相加（股次）；父节点只汇总同类型下级。'],
   lifecycle: ['生命周期', '启动=近3日均≥3且≥前15日2.2倍；高潮=近3日均≥4且≥30日峰值80%；退潮=峰值≥3且近3日<峰值35%；其余有量=活跃、无量=休眠。'],
@@ -2020,6 +2048,19 @@ function renderHeat() {
     const lead = ztL.filter(e => todaySet(x.nm).has(e[0]))
       .sort((a, b) => (b[1] || 1) - (a[1] || 1))[0];
     const { cid, ph, id } = x;
+    // 轮次龙头（评分口径）与当日领涨（板数口径）可能不同：龙头断板日仍是龙头
+    const board = id != null ? (D.episode_leaders || {})[id]?.[0] : null;
+    const lb1 = board && board.find(b => b[1] === 1);
+    const leadHtml = (() => {
+      const leadTxt = lead ? `领涨 ${esc(D.stocks[lead[0]] || lead[0])} ${
+        esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '';
+      if (!lb1) return leadTxt || '&nbsp;';
+      const l1 = `<b title="${
+        esc('六维评分' + Math.round(lb1[2] * 100) + '，点卡片看轮次面板分项')}">龙头 ${
+        esc(D.stocks[lb1[0]] || lb1[0])}</b>${lb1[3] === 'resting' ? '(断板)' : ''}`;
+      return lead && lead[0] !== lb1[0] ? `${l1} · ${leadTxt}` : l1 +
+        (lead ? ` ${esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '');
+    })();
     return `<div class="ml-card"${cid != null
         ? ` data-mljump="#/concept/${cid}${id != null ? '?ep=' + id : ''}"`
         : ` data-focus="${esc(x.nm)}"`}>
@@ -2027,8 +2068,7 @@ function renderHeat() {
         ph ? `<span class="type-badge theme">${esc(ph)}轮</span>` : ''}</div>
       <div class="ml-row"><span class="ml-num">${x.today}家</span>${dArrow(x.today, prevN)}
         ${rn != null ? `<span>续板率${iInfo('renewal')} <b>${rn}%</b></span>` : ''}</div>
-      <div class="ml-lead">${lead ? `领涨 ${esc(D.stocks[lead[0]] || lead[0])} ${
-        esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '&nbsp;'}</div>
+      <div class="ml-lead">${leadHtml}</div>
       ${related.length ? `<div class="ml-rel">同轮关联 ${related.map(r =>
         `<b class="pill-jump" data-cid="${r.cid}" data-ep="${r.id ?? ''}">${esc(r.nm)}</b>`)
         .join(' · ')}</div>` : ''}
@@ -3041,22 +3081,11 @@ function renderTagsGov() {
   const q2 = openEps.filter(([, ep]) => ep[1] >= d3)
     .map(([id, ep]) => ({ id: +id, cid: +ep[0], start: ep[1], phase: ep[3],
       cnt: ep[7], conf: ep[6] }));
-  // Q3 龙头认定（每个开放轮次当前最高板成员，尚无 leader 标记）
-  const epMembers = {};
-  for (const d of win) for (const ev of (D.events[d] || [])) {
-    if (isTouch(ev)) continue;
-    for (const l of eventThemesOf(ev[0], d)) if (l[7] && openEpIds.has(+l[7])) {
-      const m = (epMembers[+l[7]] ??= new Map());
-      m.set(ev[0], Math.max(m.get(ev[0]) || 0, ev[1] || 1));
-      if (l[3] === 'leader') m.leaderDone = true;
-    }
-  }
+  // Q3 龙头榜：六维评分自动产出的开放轮次当前 rank1/2/3，此处是 bad case 覆盖面
   const q3 = openEps.map(([id, ep]) => {
-    const m = epMembers[+id];
-    if (!m || m.leaderDone) return null;
-    const top = [...m.entries()].sort((a, b) => b[1] - a[1])[0];
-    return top ? { id: +id, cid: +ep[0], start: ep[1], code: top[0], lb: top[1] } : null;
-  }).filter(Boolean).sort((a, b) => b.lb - a.lb);
+    const board = (D.episode_leaders || {})[+id]?.[0] || [];
+    return { id: +id, cid: +ep[0], start: ep[1], board };
+  }).sort((a, b) => String(b.start).localeCompare(String(a.start)));
   const themeOf = cid => D.concepts[cid]?.[0] || `cid${cid}`;
   const lkKey = q => `${q.code}|${q.d}|${themeOf(q.cid)}`;
   const epKey = q => `${themeOf(q.cid)}|${q.start}`;
@@ -3181,17 +3210,24 @@ function renderTagsGov() {
       </div>`;
     }).join('') || '<div class="muted small" style="padding:6px 8px">近3日无新启动轮次</div>'}</div>
     <div class="semantic-title" style="padding:8px 8px 0">
-      <b>③ 龙头认定（自动重算）</b><span>rebuild 每日按轮次最新交易日当前连板自动认定（首板不认）· 此处仅剩最新日无2板以上的轮次 · ⭐为 bad case 人工覆盖通道</span></div>
+      <b>③ 龙头榜（自动评分）</b><span>六维评分+滞后换龙每日重算${iInfo('leader_score')} · 点席位按钮输入代码可 bad case 覆盖（⭐）</span></div>
     <div>${q3.slice(0, 10).map(q => {
-      const done = FACTFIX.leaders[epKey(q)];
+      const ov = FACTFIX.leaders[epKey(q)];
+      const ovMap = typeof ov === 'string' ? { 1: ov } : (ov || {});
+      const seat = r => {
+        const b = q.board.find(x => x[1] === r);
+        const oc = ovMap[r];
+        return `<button class="clsbtn${oc ? ' done' : ''}" data-fv="leader" data-flr="${r}"
+          data-fk="${esc(epKey(q))}">${LEADER_RANK[r]} ${
+          esc(oc ? (D.stocks[oc] || oc) + '⭐' : b ? (D.stocks[b[0]] || b[0]) : '—')}${
+          !oc && b && b[3] === 'resting' ? '·断板' : ''}</button>`;
+      };
       return `<div class="govrow">
-        <span class="verify-state ${done ? 'verified' : 'candidate'}">${done ? '已认定' : '待判'}</span>
-        <span class="gname" data-code="${q.code}" style="cursor:pointer">${esc(themeOf(q.cid))}</span>
-        <span class="gmeta">${esc(D.stocks[q.code] || q.code)}(${q.code}) · 窗口最高${q.lb}板 · 轮#${q.id}</span>
-        <button class="clsbtn${done === q.code ? ' done' : ''}" data-fv="leader"
-          data-fk="${esc(epKey(q))}" data-fc="${q.code}">⭐定龙头</button>
+        <span class="gname" data-cid="${q.cid}">${esc(themeOf(q.cid))}</span>
+        <span class="gmeta">轮#${q.id} · 启动${q.start.slice(5)}${q.board.length ? '' : ' · 暂无合格股（全首板）'}</span>
+        ${seat(1)}${seat(2)}${seat(3)}
       </div>`;
-    }).join('') || '<div class="muted small" style="padding:6px 8px">开放轮次均已有龙头标记</div>'}</div>
+    }).join('') || '<div class="muted small" style="padding:6px 8px">当前无开放轮次</div>'}</div>
   </div>
   ${uncov.length ? `<div class="card"><div class="card-h"><span class="cname muted">今日未入树涨停</span>
     <span class="hist">标签尚未进 taxonomy 的股票；分型链每日自动判型挂树，此处仅为观察窗</span></div>
@@ -3273,8 +3309,18 @@ function renderTagsGov() {
         FACTFIX.episodes[key]?.verdict === 'rejected' ? delete FACTFIX.episodes[key]
           : FACTFIX.episodes[key] = { verdict: 'rejected' };
       } else if (act === 'leader') {
-        FACTFIX.leaders[key] === el.dataset.fc ? delete FACTFIX.leaders[key]
-          : FACTFIX.leaders[key] = el.dataset.fc;
+        const rank = +el.dataset.flr || 1;
+        const prev = FACTFIX.leaders[key];
+        const cur = typeof prev === 'string' ? { 1: prev } : (prev || {});
+        const inp = prompt(
+          `覆盖该轮${LEADER_RANK[rank]}为哪只股票？输入6位代码；输入 - 清除覆盖`,
+          cur[rank] || '');
+        if (inp === null) return;
+        if (inp.trim() === '-' || inp.trim() === '') delete cur[rank];
+        else if (/^\d{6}$/.test(inp.trim())) cur[rank] = inp.trim();
+        else { alert('需要6位股票代码'); return; }
+        Object.keys(cur).length ? FACTFIX.leaders[key] = cur
+          : delete FACTFIX.leaders[key];
       }
       saveFactFix(); renderTagsGov();
     }));
@@ -3294,9 +3340,11 @@ function exportFactPatch() {
     if (v.catalyst) row.catalyst = v.catalyst;
     patch.episode_verdicts.push(row);
   }
-  for (const [k, code] of Object.entries(FACTFIX.leaders)) {
+  for (const [k, v] of Object.entries(FACTFIX.leaders)) {
     const [theme, start_date] = k.split('|');
-    patch.leaders.push({ theme, start_date, code });
+    const m = typeof v === 'string' ? { 1: v } : v;   // 旧值=string 兼容为 rank1
+    for (const [rank, code] of Object.entries(m))
+      patch.leaders.push({ theme, start_date, code, rank: +rank });
   }
   return JSON.stringify(patch, null, 1);
 }

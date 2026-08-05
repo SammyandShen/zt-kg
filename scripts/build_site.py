@@ -7,6 +7,8 @@ build_site.py — 从 SQLite 导出 docs/data.js（网页数据，脚本生成�
     generated_at, dates: [...],
     day_stats: { date: [num, history_num, rate, open_num] },
     next_open: { date: [avg_pct, up_ratio, down_ratio, avg_up, avg_down, n] },
+    episode_leaders: { epId: [board [[code,rank,score,state,parts6,override],..],
+                              timeline [[date,code],..]] },
     concepts:  { id: [name, total_runs, active_days] },
     aliases:   { alias: concept_id },
     stocks:    { code: name },
@@ -394,6 +396,47 @@ def main() -> int:
             1 if start in window_edge_dates else 0,   # idx9: 起点贴数据窗口开端
         ]
 
+    # 龙头榜：board=当前榜（开放轮=最新活跃日；closed=盖棺榜——rank1在位日最多，
+    # 2/3 按榜面出现的 score 累计）；timeline=rank1 换龙变更点压缩（含首任）。
+    episode_leaders: dict[int, list] = {}
+    for episode_id in theme_episodes:
+        status = theme_episodes[episode_id][4]
+        rows = conn.execute(
+            "SELECT trade_date, code, rank, score, state, parts, source "
+            "FROM episode_leader_daily WHERE episode_id=? "
+            "ORDER BY trade_date, rank", (episode_id,)).fetchall()
+        if not rows:
+            continue
+        timeline, board = [], []
+        for d, code, rank, *_ in rows:
+            if rank == 1 and (not timeline or timeline[-1][1] != code):
+                timeline.append([d, code])
+        if status == "closed":
+            stats: dict[str, list] = {}   # code -> [rank1天数, score累计, 首日]
+            for d, code, rank, score, *_ in rows:
+                st = stats.setdefault(code, [0, 0.0, d])
+                st[0] += rank == 1
+                st[1] += score or 0
+            final = sorted(stats, key=lambda c: (-stats[c][0], -stats[c][1],
+                                                 stats[c][2]))[0]
+            others = sorted((c for c in stats if c != final),
+                            key=lambda c: -stats[c][1])[:2]
+            last_state = {code: (score, state, parts, source)
+                          for _, code, _, score, state, parts, source in rows}
+            for rank, code in enumerate([final] + others, 1):
+                score, state, parts, source = last_state[code]
+                board.append([code, rank, score, state,
+                              json.loads(parts) if parts else None,
+                              1 if source == "override" else 0])
+        else:
+            last_day = rows[-1][0]
+            for d, code, rank, score, state, parts, source in rows:
+                if d == last_day:
+                    board.append([code, rank, score, state,
+                                  json.loads(parts) if parts else None,
+                                  1 if source == "override" else 0])
+        episode_leaders[episode_id] = [board, timeline]
+
     # 题材反查业务候选池：来自显式题材→业务标签映射，再连接有证据的公司事实。
     # 这里只是可研究的公司全集，不能自动算作本轮题材成分股。
     theme_business_candidates: dict[int, list] = {}
@@ -465,6 +508,7 @@ def main() -> int:
         "event_themes": event_themes,
         "event_context_evidence": event_context_evidence,
         "theme_episodes": theme_episodes,
+        "episode_leaders": episode_leaders,
         "theme_business_candidates": theme_business_candidates,
         "semantic_evidence": semantic_evidence,
     }
