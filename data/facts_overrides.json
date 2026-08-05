@@ -747,6 +747,69 @@
    "note": "多条证据点名增资CDMO子公司、生物科技ETF大涨、医药外包概念集体走高，关联可解释且当日主导",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-04"
+  },
+  {
+   "code": "600666",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "业务事实关联+新闻点名算力租赁概念股盘初活跃，supporting 0.84",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002425",
+   "trade_date": "2026-08-04",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻明确显示当日由游戏/传媒板块拉升驱动，非AI应用叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "603106",
+   "trade_date": "2026-08-04",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "财联社报道明确指出智算/AI智能体相关营收较小，反证AI应用非主导叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "001229",
+   "trade_date": "2026-08-03",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "业务事实关联+财联社连板股分析明确点名AI应用端持续走强，supporting 0.89",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "301596",
+   "trade_date": "2026-08-03",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "谐波减速机+电磁制动器为核心业务事实，supporting 0.82",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002438",
+   "trade_date": "2026-08-03",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "证据显示当日核电板块延续涨势为主导叙事，非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "000815",
+   "trade_date": "2026-08-03",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "公司公告明确澄清目前数据中心业务暂未提供算力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
   }
  ],
  "episode_verdicts": [

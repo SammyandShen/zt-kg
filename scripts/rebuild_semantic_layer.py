@@ -294,10 +294,12 @@ def promote_business_candidates(conn) -> int:
             "AND relation_type IN ('core','secondary')").fetchall():
         concept = conn.execute(
             "SELECT id FROM business_concepts WHERE name=? "
-            "ORDER BY concept_type='product' DESC LIMIT 1", (tag,)).fetchone()
+            "AND concept_type='product' LIMIT 1", (tag,)).fetchone()
         if concept:
             concept_id = concept[0]
         else:
+            # 事实末级必须挂 product 节点（门禁强制）；标签名撞上 sector 节点
+            # （如细分"印制电路板"）时建同名 product 并挂到该 sector 下
             conn.execute(
                 "INSERT INTO business_concepts(name,concept_type,status,source,"
                 "created_at,updated_at) VALUES(?,?,?,?,?,?)",
@@ -305,6 +307,13 @@ def promote_business_candidates(conn) -> int:
             concept_id = conn.execute(
                 "SELECT id FROM business_concepts WHERE name=? AND concept_type='product'",
                 (tag,)).fetchone()[0]
+            sector = conn.execute(
+                "SELECT id FROM business_concepts WHERE name=? "
+                "AND concept_type='sector' AND status='active'", (tag,)).fetchone()
+            if sector:
+                conn.execute(
+                    "INSERT OR IGNORE INTO business_concept_edges VALUES(?,?,?,?)",
+                    (sector[0], concept_id, "auto_report", now))
         conn.execute(
             """
             INSERT INTO stock_business_facts(
@@ -490,9 +499,12 @@ def ensure_fact_nodes(conn) -> int:
     now = common.now_iso()
     n = 0
     for fact_id, tag in conn.execute(
-            "SELECT id, tag_name FROM stock_business_facts "
-            "WHERE status NOT IN ('rejected','expired') "
-            "AND business_concept_id IS NULL").fetchall():
+            "SELECT f.id, f.tag_name FROM stock_business_facts f "
+            "LEFT JOIN business_concepts bc ON bc.id=f.business_concept_id "
+            "WHERE f.status NOT IN ('rejected','expired') "
+            "AND (f.business_concept_id IS NULL "
+            "     OR bc.concept_type!='product')").fetchall():
+        # 撞名 sector（细分聚类后出现，如"印制电路板"）时同样重挂到同名 product
         conn.execute(
             "INSERT INTO business_concepts(name,concept_type,status,source,"
             "created_at,updated_at) VALUES(?,?,?,?,?,?) "
@@ -504,6 +516,13 @@ def ensure_fact_nodes(conn) -> int:
         conn.execute(
             "UPDATE stock_business_facts SET business_concept_id=?, updated_at=? "
             "WHERE id=?", (pid, now, fact_id))
+        sector = conn.execute(
+            "SELECT id FROM business_concepts WHERE name=? "
+            "AND concept_type='sector' AND status='active'", (tag,)).fetchone()
+        if sector:
+            conn.execute(
+                "INSERT OR IGNORE INTO business_concept_edges VALUES(?,?,?,?)",
+                (sector[0], pid, "auto_repair", now))
         n += 1
     return n
 
