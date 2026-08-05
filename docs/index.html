@@ -207,6 +207,20 @@
   .ml-spark { margin-top: 6px; }
   .chg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px; margin-top: 12px; }
+  /* 个股页：交易概览 + 日K线 */
+  .stk-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px; margin: 10px 0 4px; }
+  .stk-tile { background: var(--surface2); border-radius: 10px; padding: 8px 11px; }
+  .stk-tile .t { font-size: 11px; color: var(--ink3); }
+  .stk-tile .v { font-size: 15.5px; font-weight: 700; margin-top: 2px; }
+  .stk-tile .s { font-size: 11px; color: var(--ink2); margin-top: 1px; }
+  .stk-chart { border: 1px solid var(--line); border-radius: 12px;
+    background: var(--card); padding: 8px 10px 4px; margin: 8px 0 12px; }
+  .stk-chart .grid { stroke: var(--line); }
+  .stk-chart text { fill: var(--ink3); font-size: 10px; }
+  .stk-chart .hovcol { fill: transparent; }
+  .stk-chart .hovcol:hover { fill: rgba(128,148,180,.12); }
+  @media (max-width: 760px) { .stk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .chg-col { border: 1px solid var(--line); border-radius: 10px; background: var(--card);
     padding: 8px 11px 6px; }
   .chg-col h4 { margin: 0 0 5px; font-size: 12.5px; display: flex; align-items: center; gap: 4px; }
@@ -1055,6 +1069,90 @@ function klineThumb(code, w = 150, h = 56) {
   return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}"
     preserveAspectRatio="none" style="display:block">${g}</svg>`;
 }
+/* 个股页日K线：data-kline.js 体积大（120日×全部涨停股），打开个股页才注入 */
+function ensureKline(cb) {
+  if (window.ZTKG_KLINE) return cb();
+  if (ensureKline._loading) return ensureKline._q.push(cb);
+  ensureKline._loading = true; ensureKline._q = [cb];
+  const s = document.createElement('script');
+  s.src = 'data-kline.js';
+  s.onload = () => ensureKline._q.forEach(f => f());
+  s.onerror = () => ensureKline._q.forEach(f => f('err'));
+  document.head.appendChild(s);
+}
+function stockChartSvg(code, evByDate) {
+  const K = window.ZTKG_KLINE, bars = K.bars[code], dates = K.dates;
+  const W = 940, PH = 250, VH = 78, padL = 46, padT = 8, gap = 16, padB = 16;
+  const H = padT + PH + gap + VH + padB;
+  const idx = [];
+  bars.forEach((b, i) => { if (b) idx.push(i); });
+  if (idx.length < 2) return '';
+  const hi = Math.max(...idx.map(i => bars[i][2]));
+  const lo = Math.min(...idx.map(i => bars[i][3]));
+  const vmax = Math.max(...idx.map(i => bars[i][4]), 1);
+  const step = (W - padL - 6) / dates.length;
+  const X = i => padL + i * step + step / 2;
+  const Y = v => padT + (PH) * (hi - v) / (hi - lo || 1);
+  const VY = v => padT + PH + gap + VH * (1 - v / vmax);
+  const closes = dates.map((_, i) => bars[i] ? bars[i][1] : null);
+  const ma = n => closes.map((_, i) => {
+    const win = [];
+    for (let j = i; j >= 0 && win.length < n; j--)
+      if (closes[j] != null) win.push(closes[j]);
+    return win.length === n ? win.reduce((s, x) => s + x, 0) / n : null;
+  });
+  let g = '';
+  for (const frac of [0, 0.5, 1]) {                     // 价格网格
+    const v = lo + (hi - lo) * frac, y = Y(v);
+    g += `<line class="grid" x1="${padL}" y1="${y.toFixed(1)}" x2="${W}" y2="${y.toFixed(1)}"
+      stroke-dasharray="3,4"></line><text x="2" y="${(y + 3.5).toFixed(1)}">${v.toFixed(2)}</text>`;
+  }
+  g += `<text x="2" y="${(VY(vmax) + 3.5).toFixed(1)}">${(vmax / 1e4).toFixed(0)}万手</text>`;
+  idx.forEach(i => {                                    // 蜡烛 + 量
+    const [o, c, bh, bl, v] = bars[i], x = X(i);
+    const col = c >= o ? 'var(--up)' : 'var(--teal)';
+    g += `<line x1="${x.toFixed(1)}" y1="${Y(bh).toFixed(1)}" x2="${x.toFixed(1)}"
+      y2="${Y(bl).toFixed(1)}" stroke="${col}" stroke-width="1"></line>
+      <rect x="${(x - step * 0.33).toFixed(1)}" y="${Y(Math.max(o, c)).toFixed(1)}"
+      width="${(step * 0.66).toFixed(1)}" height="${Math.max(1.2,
+        Y(Math.min(o, c)) - Y(Math.max(o, c))).toFixed(1)}" fill="${col}"></rect>
+      <rect x="${(x - step * 0.33).toFixed(1)}" y="${VY(v).toFixed(1)}"
+      width="${(step * 0.66).toFixed(1)}" height="${(padT + PH + gap + VH - VY(v)).toFixed(1)}"
+      fill="${col}" opacity="0.75"></rect>`;
+    const ev = evByDate[dates[i]];                      // 涨停▲ / 炸板△ 标注
+    if (ev) g += isTouch(ev)
+      ? `<path d="M ${(x - 3.4).toFixed(1)} ${(Y(bl) + 11).toFixed(1)} l3.4,-6 l3.4,6 z"
+          fill="none" stroke="var(--up)" stroke-width="1.2"></path>`
+      : `<path d="M ${(x - 3.4).toFixed(1)} ${(Y(bl) + 11).toFixed(1)} l3.4,-6 l3.4,6 z"
+          fill="var(--up)"></path>`;
+  });
+  for (const [n, col] of [[5, '#e8b339'], [10, '#2e6be6'], [20, '#b06fd8']]) {
+    const m = ma(n); let seg = [];
+    const flush = () => { if (seg.length > 1) g += `<polyline points="${seg.join(' ')}"
+      fill="none" stroke="${col}" stroke-width="1.1" opacity="0.9"></polyline>`; seg = []; };
+    m.forEach((v, i) => { if (v == null || !bars[i]) return flush();
+      seg.push(`${X(i).toFixed(1)},${Y(v).toFixed(1)}`); });
+    flush();
+  }
+  const stepLbl = Math.ceil(dates.length / 8);          // 日期轴
+  dates.forEach((d, i) => { if (i % stepLbl === 0)
+    g += `<text x="${(X(i) - 14).toFixed(1)}" y="${H - 4}">${d.slice(5)}</text>`; });
+  idx.forEach(i => {                                    // 悬浮列（置顶）
+    const [o, c, bh, bl, v] = bars[i];
+    const pi = idx[idx.indexOf(i) - 1];
+    const pct = pi != null && bars[pi] ? ((c / bars[pi][1] - 1) * 100).toFixed(2) : null;
+    const ev = evByDate[dates[i]];
+    const tip = `${dates[i]} 开${o} 高${bh} 低${bl} 收${c}` +
+      `${pct != null ? ` ${pct > 0 ? '+' : ''}${pct}%` : ''} · ${(v / 1e4).toFixed(1)}万手` +
+      (ev ? `｜${isTouch(ev) ? '炸板未封' : ((ev[1] || 1) > 1 ? ev[1] + '连板' : '首板涨停')}` : '');
+    g += `<rect class="hovcol" x="${(padL + i * step).toFixed(1)}" y="${padT}"
+      width="${step.toFixed(1)}" height="${PH + gap + VH}" data-tip="${esc(tip)}"></rect>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block">${g}
+    <text x="${padL + 4}" y="${padT + 10}">MA<tspan fill="#e8b339">5</tspan>
+    <tspan fill="#2e6be6">10</tspan> <tspan fill="#b06fd8">20</tspan>
+    · ▲涨停 △炸板 · 前复权</text></svg>`;
+}
 /* ---------- 轮次分层名单：回答"这一轮谁在跟随"，按关系成色六层分级 ---------- */
 const TIER_DEFS = [
   ['① 核心业务股', '相关业务是主营或重要收入', 'core'],
@@ -1631,11 +1729,49 @@ function renderStock(code) {
         “×N”表示该标签在本股历史涨停原因中出现N次；不代表公司主营，也不代表某次涨停已经核实。</div>
       <div style="margin-top:6px">${typedTagRows(hist)}</div>
     </details>` : '';
+  // 交易数据概览：全部由库内数据可算（隔日溢价/龙头履历来自 stock_stats 导出）
+  const zEv = zts.map(x => x.ev);
+  const maxLb = zEv.length ? Math.max(...zEv.map(e => e[1] || 1)) : 0;
+  const n2 = zEv.filter(e => (e[1] || 1) >= 2).length;
+  const sealRate = hist.length ? Math.round(100 * zts.length / hist.length) : 0;
+  const fmins = zEv.map(e => e[7]).filter(Boolean)
+    .map(t => { const [a, b] = t.split(':'); return +a * 60 + +b; });
+  const avgMin = fmins.length
+    ? Math.round(fmins.reduce((s, x) => s + x, 0) / fmins.length) : null;
+  const fm = avgMin != null ? `${String(Math.floor(avgMin / 60)).padStart(2, '0')}:${
+    String(avgMin % 60).padStart(2, '0')}` : '—';
+  const sealStyle = avgMin == null ? '' : avgMin <= 571 ? '竞价/一字型'
+    : avgMin <= 630 ? '早盘型' : avgMin <= 780 ? '午前型' : '午后型';
+  const orders = zEv.map(e => e[5]).filter(v => v != null);
+  const avgOrder = orders.length
+    ? orders.reduce((s, x) => s + x, 0) / orders.length : null;
+  const fsss = zEv.filter(e => e[5] != null && e[6]).map(e => e[5] / (e[6] * 1e4) * 100);
+  const avgFss = fsss.length ? fsss.reduce((s, x) => s + x, 0) / fsss.length : null;
+  const lastMv = [...zEv].reverse().find(e => e[6] != null);
+  const st = (D.stock_stats || {})[code] || [];
+  const tile = (t, v, s) => `<div class="stk-tile"><div class="t">${t}</div>
+    <div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ''}</div>`;
+  const overview = `<div class="stk-grid">
+    ${tile('最新收盘', '<span id="stk-close">…</span>', '<span id="stk-chg20">近20日 —</span>')}
+    ${tile('流通市值', lastMv ? lastMv[6] + '亿' : '—', '最近涨停日口径')}
+    ${tile('涨停战绩', `${zts.length}封 / ${nTouch}炸`, `封住率 ${sealRate}%`)}
+    ${tile('连板能力', maxLb ? `最高${maxLb}板` : '—', `2板以上 ${n2} 次`)}
+    ${tile('隔日开盘溢价' + iInfo('next_open_stock'), st[0] != null
+      ? `${st[0] > 0 ? '+' : ''}${st[0]}%` : '—',
+      st[0] != null ? `高开率 ${st[1]}%（${st[2]}次）· 全市场 +2.1%` : '涨停次日开盘 vs 涨停价')}
+    ${tile('首封习惯', fm, sealStyle)}
+    ${tile('封单力度', avgOrder != null ? fmtWan(avgOrder) : '—',
+      avgFss != null ? `平均封成比 ${avgFss.toFixed(2)}%` : '')}
+    ${tile('龙头履历', (st[3] || 0) + (st[4] || 0)
+      ? `${st[3] || 0} 轮龙头` : '—', `${st[4] || 0} 轮龙二/龙三`)}
+  </div>`;
   $('#app').innerHTML = `
   <div class="detail-h">
     <h2>${esc(name)} <span class="muted" style="font-size:14px">${code} · ${boardOf(code)}</span></h2>
     <div class="muted small">近1年涨停 <b>${zts.length}</b> 次${
       nTouch ? ` · 触及未封 <b>${nTouch}</b> 次` : ''}${lastZt ? ` · 最近涨停 ${lastZt}` : ''}</div>
+    ${overview}
+    <div class="stk-chart" id="stk-chart"><div class="muted small" style="padding:8px">日K线加载中…</div></div>
     ${businessFactsHtml(code)}
   </div>
   <div class="tablewrap"><table>
@@ -1649,6 +1785,36 @@ function renderStock(code) {
   document.querySelectorAll('tr[data-date]').forEach(el =>
     el.addEventListener('click', () => go('#/date/' + el.dataset.date)));
   bindChips();
+
+  const evByDate = {};
+  for (const { d, ev } of hist) evByDate[d] = ev;
+  ensureKline(err => {
+    const el = $('#stk-chart');
+    if (!el) return;                                   // 已切走别的页面
+    const K = window.ZTKG_KLINE;
+    if (err || !K || !K.bars[code]) {
+      el.innerHTML = '<div class="muted small" style="padding:8px">暂无K线数据</div>';
+      return;
+    }
+    el.innerHTML = stockChartSvg(code, evByDate);
+    el.querySelectorAll('.hovcol').forEach(h => {
+      h.addEventListener('mousemove', e => showTip(e, h.dataset.tip));
+      h.addEventListener('mouseleave', hideTip);
+    });
+    const bars = K.bars[code].filter(Boolean);
+    const last = bars[bars.length - 1], prev = bars[bars.length - 2];
+    if (last && $('#stk-close')) {
+      const chg = prev ? (last[1] / prev[1] - 1) * 100 : null;
+      $('#stk-close').innerHTML = `${last[1]}${chg != null ? ` <span style="color:${
+        chg >= 0 ? 'var(--up)' : 'var(--teal)'};font-size:12px">${
+        chg > 0 ? '+' : ''}${chg.toFixed(2)}%</span>` : ''}`;
+      const b20 = bars[bars.length - 21];
+      if (b20 && $('#stk-chg20')) {
+        const c20 = (last[1] / b20[1] - 1) * 100;
+        $('#stk-chg20').textContent = `近20日 ${c20 > 0 ? '+' : ''}${c20.toFixed(1)}%`;
+      }
+    }
+  });
 }
 
 /* ---------- 公司客观业务图谱节点 ---------- */
@@ -1748,6 +1914,7 @@ const METRIC_DEFS = {
   fresh:     ['新启动', '近3日出现涨停、且此前15个交易日几乎无记录的题材；新叙事的第一现场，需核实共同催化。'],
   ebbing:    ['退潮中', '前5日日均≥1.5家但动量≤0.55 的题材；量能明显萎缩。'],
   mainline:  ['今日主线', '按最新交易日题材归因去重家数排序的前3个交易题材；点击卡片直达该轮的分层跟随名单。'],
+  next_open_stock:['本股隔日开盘溢价', '该股历次涨停（收盘封住）后，次一交易日开盘价相对涨停价的平均涨幅；高开率=开盘>涨停价的次数占比。衡量本股涨停的"含金量/股性"，可与全市场基线（约+2.1%）对比。前复权口径，停牌顺延到复牌首开盘。'],
   leader_score:['龙头评分', '六维加权（空间30/先手15/封板质量20/正宗度10/隔日溢价15/断板韧性10）→EMA平滑逐日重算；换龙需挑战者评分超现任15%（滞后防震荡）；断板股2个活跃日内靠记忆撑席位，不反包自动让位；首板不认。龙二/龙三按当日评分直排。权重回测校准中，人工覆盖走治理台⭐。'],
   tiers:     ['本轮跟随分层', '①核心业务=主营/重要收入 ②直接成长=有产品订单收入尚小(含在研) ③上下游=真实供货关系 ④参股布局 ⑤拟收购转型=交易未完成 ⑥纯市场联想=无业务证据。实心=本轮已涨停，虚线=有业务但未异动(watch)。'],
   node_heat: ['节点热度', '所选窗口内逐日去重涨停家数相加（股次）；父节点只汇总同类型下级。'],

@@ -457,6 +457,21 @@ def main() -> int:
             kline_thumbs[code] = [[round(o, 2), round(c, 2), round(h, 2),
                                    round(lo, 2)] for o, c, h, lo in reversed(bars)]
 
+    # 个股页交易概览：本股涨停后隔日开盘表现 + 龙头榜履历（轮次去重）
+    stock_stats: dict[str, list] = {}
+    for code, avg, up_rate, n in conn.execute("""
+        SELECT e.code, ROUND(AVG(o.open_pct),2),
+               ROUND(100.0*SUM(o.open_pct>0)/COUNT(*),0), COUNT(*)
+        FROM limit_up_events e JOIN event_next_open o ON o.event_id=e.id
+        WHERE e.pool='zt' GROUP BY e.code"""):
+        stock_stats[code] = [avg, up_rate, n, 0, 0]
+    for code, r1, r23 in conn.execute("""
+        SELECT code, COUNT(DISTINCT CASE WHEN rank=1 THEN episode_id END),
+               COUNT(DISTINCT CASE WHEN rank>1 THEN episode_id END)
+        FROM episode_leader_daily GROUP BY code"""):
+        st = stock_stats.setdefault(code, [None, None, 0, 0, 0])
+        st[3], st[4] = r1, r23
+
     # 题材反查业务候选池：来自显式题材→业务标签映射，再连接有证据的公司事实。
     # 这里只是可研究的公司全集，不能自动算作本轮题材成分股。
     theme_business_candidates: dict[int, list] = {}
@@ -532,6 +547,7 @@ def main() -> int:
         "kline_thumbs": kline_thumbs,
         "theme_business_candidates": theme_business_candidates,
         "semantic_evidence": semantic_evidence,
+        "stock_stats": stock_stats,
     }
     js = ("// 由 scripts/build_site.py 生成，禁止手改\n"
           "// event 字段: [code, 连板数, high_days, 涨停类型, 炸板次数, 封单万, 流通市值亿, 首封HH:MM, 原始原因, [概念id], touch?]  最后一位=1表示触及涨停未封住\n"
@@ -541,6 +557,31 @@ def main() -> int:
     size_mb = OUT_PATH.stat().st_size / 1e6
     print(f"💾 docs/data.js: {len(dates)} 天 / {sum(len(v) for v in events.values())} 事件 / "
           f"{len(concepts)} 概念 / {size_mb:.2f} MB")
+
+    # 个股页日K线（体积大，单独文件，个股页打开时才 <script> 懒加载；
+    # file:// 下 script 注入同样可用，不破静态自包含原则）：
+    # 近120交易日 × 全部涨停股，对齐全局日期轴，停牌位 null
+    kdates = [r[0] for r in conn.execute(
+        "SELECT DISTINCT trade_date FROM daily_kline "
+        "ORDER BY trade_date DESC LIMIT 120")][::-1]
+    kline_all: dict[str, list] = {}
+    if kdates:
+        kidx = {d: i for i, d in enumerate(kdates)}
+        for code, d, o, c, h, lo, v in conn.execute(
+                "SELECT code, trade_date, open, close, high, low, volume "
+                "FROM daily_kline WHERE trade_date>=?", (kdates[0],)):
+            arr = kline_all.setdefault(code, [None] * len(kdates))
+            arr[kidx[d]] = [round(o, 2), round(c, 2), round(h, 2),
+                            round(lo, 2), int(v or 0)]
+    kpath = common.REPO_ROOT / "docs" / "data-kline.js"
+    kpath.write_text(
+        "// 由 scripts/build_site.py 生成，禁止手改（个股页按需加载）\n"
+        "window.ZTKG_KLINE = " + json.dumps(
+            {"dates": kdates, "bars": kline_all},
+            ensure_ascii=False, separators=(",", ":")) + ";\n",
+        encoding="utf-8")
+    print(f"💾 docs/data-kline.js: {len(kline_all)} 只 × {len(kdates)} 日 / "
+          f"{kpath.stat().st_size / 1e6:.2f} MB")
     return 0
 
 
