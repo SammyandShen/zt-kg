@@ -435,6 +435,34 @@ CREATE TABLE IF NOT EXISTS event_next_open (
     fetched_at  TEXT NOT NULL
 );
 
+-- 轮次龙头榜（纯派生：每日 rebuild 全量重算，derive_leader_board 唯一写入方）。
+-- 每轮每活跃日 rank1/2/3 快照；rank1 有 EMA 滞后换龙机制，2/3 无滞后。
+-- parts 存六分项 JSON [space,first,quality,purity,premium,resilience] 供解释。
+CREATE TABLE IF NOT EXISTS episode_leader_daily (
+    episode_id INTEGER NOT NULL REFERENCES theme_episodes(id) ON DELETE CASCADE,
+    trade_date TEXT NOT NULL,
+    code       TEXT NOT NULL,
+    rank       INTEGER NOT NULL,          -- 1/2/3
+    score      REAL NOT NULL,             -- ema
+    raw_score  REAL,
+    parts      TEXT,
+    state      TEXT NOT NULL,             -- active/resting
+    source     TEXT NOT NULL DEFAULT 'derived',  -- derived/override
+    PRIMARY KEY (episode_id, trade_date, rank)
+);
+CREATE INDEX IF NOT EXISTS idx_leader_daily_ep
+    ON episode_leader_daily(episode_id, trade_date);
+
+-- 日K线（东财前复权，fetch_next_open.py 顺手落库）：断板质量/反包判定用。
+-- 刷新集合=有欠账事件的股票∪非closed轮次成员；前复权值会随除权漂移，
+-- 每次抓取整段 upsert 覆盖旧值。
+CREATE TABLE IF NOT EXISTS daily_kline (
+    code       TEXT NOT NULL,
+    trade_date TEXT NOT NULL,
+    open REAL, close REAL, high REAL, low REAL, volume REAL,
+    PRIMARY KEY (code, trade_date)
+);
+
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT);
 """
 
@@ -443,6 +471,7 @@ def open_db() -> sqlite3.Connection:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.execute("PRAGMA foreign_keys=ON")  # SQLite 默认每连接关闭，必须显式开
+    conn.execute("PRAGMA busy_timeout=30000")  # 工序并发时等锁而不是立即报错
     conn.executescript(DDL)
     # 迁移：老库补 pool 列（CREATE IF NOT EXISTS 不会改已有表）
     cols = {r[1] for r in conn.execute("PRAGMA table_info(limit_up_events)")}

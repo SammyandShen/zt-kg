@@ -1263,19 +1263,21 @@ def apply_link_verdicts(conn, overrides: dict) -> int:
     return n
 
 
-def apply_episode_overrides(conn, overrides: dict) -> tuple[int, int]:
-    """判决重放（轮次归组后）：轮次成立/否定 + 龙头认定。"""
+def find_episode(conn, theme: str, start: str):
+    return conn.execute(
+        "SELECT ep.id FROM theme_episodes ep JOIN concepts c ON c.id=ep.concept_id "
+        "WHERE c.name=? AND ep.start_date=?", (theme, start)).fetchone()
+
+
+def apply_episode_overrides(conn, overrides: dict) -> int:
+    """判决重放（轮次归组后）：轮次成立/否定。龙头覆盖见 apply_leader_overrides。"""
     now = common.now_iso()
-    n_ep = n_leader = 0
-    def find_episode(theme: str, start: str):
-        return conn.execute(
-            "SELECT ep.id FROM theme_episodes ep JOIN concepts c ON c.id=ep.concept_id "
-            "WHERE c.name=? AND ep.start_date=?", (theme, start)).fetchone()
+    n_ep = 0
     for v in overrides["episode_verdicts"]:
         verdict = v.get("verdict")
         if verdict not in ("verified", "rejected"):
             raise ValueError(f"episode_verdicts 非法 verdict：{v}")
-        row = find_episode(v["theme"], v["start_date"])
+        row = find_episode(conn, v["theme"], v["start_date"])
         if not row:
             print(f"⚠️ episode_verdicts 找不到轮次（跳过）：{v.get('theme')} {v.get('start_date')}")
             continue
@@ -1284,18 +1286,7 @@ def apply_episode_overrides(conn, overrides: dict) -> tuple[int, int]:
             "catalyst_summary=COALESCE(?,catalyst_summary), updated_at=? WHERE id=?",
             (verdict, v.get("catalyst"), now, row[0]))
         n_ep += 1
-    for v in overrides["leaders"]:
-        row = find_episode(v["theme"], v["start_date"])
-        if not row:
-            print(f"⚠️ leaders 找不到轮次（跳过）：{v.get('theme')} {v.get('start_date')}")
-            continue
-        cur = conn.execute(
-            "UPDATE event_theme_links SET market_role='leader', updated_at=? "
-            "WHERE episode_id=? AND event_id IN "
-            "(SELECT id FROM limit_up_events WHERE code=?)",
-            (now, row[0], v["code"]))
-        n_leader += cur.rowcount and 1
-    return n_ep, n_leader
+    return n_ep
 
 
 def corroborate_mappings(conn) -> int:
@@ -1330,40 +1321,308 @@ def corroborate_mappings(conn) -> int:
     return n
 
 
-def derive_current_leaders(conn) -> int:
-    """龙头当前口径（2026-08-03 修正）：每次重建全量重算，不存在过期龙头。
+def _clamp(v, lo=0.0, hi=1.0):
+    return max(lo, min(hi, v))
 
-    开放轮次（provisional/verified）：只看轮次最新交易日在场的股票，取当日最高
-    连板（首板不认，平局取当日首封最早）——回答"现在谁是龙头"；
-    已关轮次（closed）：整轮最高板——回答"那一轮谁曾是龙头"（历史语义）。
-    facts_overrides 的 leaders（人工/LLM bad case 覆盖）已先重放，标过的轮次跳过。
+
+def _resil_from_break(r_break: float, fast_reband: bool | None) -> float:
+    """断板质量 → 分值。fast_reband=None 表示断板仍在进行（resting 口径）。"""
+    if fast_reband is None:                      # 进行中：r≥-2% → 0.7 起，≤-9.5% → 0
+        return _clamp(0.7 * (r_break + 0.095) / 0.075) if r_break < -0.02 else 0.7
+    top = 1.0 if fast_reband else 0.5            # 已反包：快=1.0 / 慢=0.5
+    if r_break >= -0.05:
+        return top
+    if r_break <= -0.08:
+        return 0.1
+    return 0.1 + (top - 0.1) * (r_break + 0.08) / 0.03
+
+
+def derive_leader_board(conn, cfg) -> int:
+    """龙头/龙二/龙三评分体系（2026-08-05）：逐轮逐活跃日六维评分+滞后换龙。
+
+    六分项（∈[0,1]，权重见 config.leader.weights）：
+      space 空间=0.5·绝对板高(7板顶)+0.5·相对当日轮内最高；resting=0
+      first 先手=0.5·日内首封早+0.5·轮内进场身位
+      quality 封板质量=0.5·封成比(对数)+0.3·炸板+0.2·板型；resting/炸板日=0
+      purity 正宗度=归因置信(verified≥0.85)+业务凭据/营收占比加成
+      premium 溢价=该股本轮已实现隔日开盘溢价 vs 轮均（无未来函数）
+      resilience 断板质量=断板日K线跌幅+是否2个活跃日内反包（daily_kline）
+    EMA(α=0.5) 平滑；rank1 有 swap_margin 滞后（挑战者须超现任 15% 才换龙），
+    rank2/3 逐日直排。断板股 resting≤rest_days 靠 EMA 记忆撑席位，超时 exited。
+    每日全量重算幂等；本函数是 episode_leader_daily 唯一写入方。
+    """
+    lc = cfg.get("leader", {})
+    W = lc.get("weights", {"space": .30, "first": .15, "quality": .20,
+                           "purity": .10, "premium": .15, "resilience": .10})
+    alpha = lc.get("ema_alpha", 0.5)
+    margin = lc.get("swap_margin", 0.15)
+    rest_days = lc.get("rest_days", 2)
+    min_lb = lc.get("min_lb", 2)
+    top_n = lc.get("top_n", 3)
+    fss_med = lc.get("quality_fss_median_pct", 0.84) / 100.0
+    ln9 = math.log(9)
+    now = common.now_iso()
+
+    conn.execute("DELETE FROM episode_leader_daily")
+    n_rows = 0
+    for (ep_id,) in conn.execute(
+            "SELECT id FROM theme_episodes WHERE status!='rejected'").fetchall():
+        evs = conn.execute("""
+            SELECT e.code, e.trade_date, COALESCE(e.lb_count,1), e.first_time,
+                   e.order_amount, e.currency_value, e.limit_up_type,
+                   COALESCE(e.open_num,0), e.id
+            FROM event_theme_links l JOIN limit_up_events e ON e.id=l.event_id
+            WHERE l.episode_id=? AND l.status!='rejected' AND e.pool='zt'
+            ORDER BY e.trade_date""", (ep_id,)).fetchall()
+        if not evs:
+            continue
+        days = sorted({r[1] for r in evs})
+        day_idx = {d: i for i, d in enumerate(days)}
+        codes = sorted({r[0] for r in evs})
+        by_code_day = {}                     # (code, date) -> event row
+        zt_dates = defaultdict(list)         # code -> [zt dates 升序]
+        for r in evs:
+            by_code_day[(r[0], r[1])] = r
+            zt_dates[r[0]].append(r[1])
+
+        # 静态项预取 -------------------------------------------------------
+        purity = {}
+        for code in codes:
+            base, has_bf, has_rs = 0.0, False, False
+            for conf, st, bkind, bid in conn.execute("""
+                SELECT l.confidence, l.status, l.basis_kind, l.basis_id
+                FROM event_theme_links l JOIN limit_up_events e ON e.id=l.event_id
+                WHERE l.episode_id=? AND e.code=? AND l.status!='rejected'""",
+                    (ep_id, code)):
+                base = max(base, conf or 0.0)
+                if st == "verified":
+                    base = max(base, 0.85)
+                if bkind == "business_fact" and bid:
+                    has_bf = True
+                    rs = conn.execute(
+                        "SELECT revenue_share FROM stock_business_facts WHERE id=?",
+                        (bid,)).fetchone()
+                    if rs and rs[0] is not None and rs[0] >= 30:
+                        has_rs = True
+            purity[code] = _clamp(base + (0.10 if has_bf else 0)
+                                  + (0.05 if has_rs else 0))
+        prem_events = defaultdict(list)      # code -> [(next_date, open_pct)]
+        for code, nd, pct in conn.execute("""
+            SELECT e.code, o.next_date, o.open_pct
+            FROM event_theme_links l
+            JOIN limit_up_events e ON e.id=l.event_id
+            JOIN event_next_open o ON o.event_id=e.id
+            WHERE l.episode_id=? AND l.status!='rejected' AND e.pool='zt'""",
+                (ep_id,)):
+            prem_events[code].append((nd, pct))
+        ph = ",".join("?" * len(codes))
+        touch_days = set(conn.execute(
+            f"SELECT code, trade_date FROM limit_up_events WHERE pool='touch' "
+            f"AND trade_date BETWEEN ? AND ? AND code IN ({ph})",
+            (days[0], days[-1], *codes)).fetchall())
+        bars = {}                            # code -> [(date, close)] 升序
+        for code in codes:
+            bars[code] = conn.execute(
+                "SELECT trade_date, close FROM daily_kline WHERE code=? "
+                "AND trade_date BETWEEN ? AND ? ORDER BY trade_date",
+                (code, days[0], days[-1])).fetchall()
+
+        def break_after(code, z):
+            """z 日涨停后的断板信息：(r_break, 反包耗时或 None)。无断板 → None。"""
+            b = bars.get(code) or []
+            i = next((k for k, (d, _) in enumerate(b) if d == z), None)
+            if i is None or i + 1 >= len(b):
+                return None
+            bd, bc = b[i + 1]
+            if (code, bd) in by_code_day:
+                return None                  # 次日仍涨停，无断板
+            r = bc / b[i][1] - 1 if b[i][1] else 0.0
+            nxt = next((d for d in zt_dates[code] if d > bd), None)
+            dur = None
+            if nxt is not None:              # 反包耗时=断板到再封之间的交易日数
+                dur = sum(1 for d, _ in b if bd <= d < nxt)
+            return r, dur
+
+        # 逐活跃日状态机 ---------------------------------------------------
+        ema: dict[str, float] = {}
+        rank_entry: dict[str, int] = {}
+        last_active: dict[str, int] = {}
+        cum_lb: dict[str, int] = defaultdict(int)
+        incumbent = None
+        for i, D in enumerate(days):
+            max_lb_today = max((by_code_day[(c, D)][2] for c in codes
+                                if (c, D) in by_code_day), default=0)
+            board = []
+            for code in codes:
+                ev = by_code_day.get((code, D))
+                if ev:
+                    state = "active"
+                    last_active[code] = i
+                    rank_entry.setdefault(code, i + 1)
+                    cum_lb[code] = max(cum_lb[code], ev[2])
+                elif code in last_active and (
+                        i - last_active[code] <= rest_days
+                        or (code, D) in touch_days):
+                    state = "resting"
+                else:
+                    ema.pop(code, None)      # exited：记忆清除，再封重新进场
+                    continue
+                if cum_lb[code] < min_lb:
+                    continue                 # 首板不认
+
+                t_entry = 1 - _clamp((rank_entry[code] - 1) / 3)
+                if ev:
+                    lb = ev[2]
+                    s_space = 0.5 * _clamp((lb - 1) / 6) + \
+                        0.5 * (lb / max_lb_today if max_lb_today else 0)
+                    m = hhmm_minutes(ev[3])
+                    if m is None:
+                        t_seal = 0.5
+                    else:
+                        m -= 570
+                        if m > 120:
+                            m -= 90          # 折叠午休
+                        t_seal = 1 - _clamp(m / 150)
+                    fss = (ev[4] / ev[5]) if ev[5] else 0.0
+                    q_seal = _clamp(math.log(1 + fss / fss_med) / ln9) \
+                        if fss > 0 else 0.0
+                    q_stable = 1 / (1 + ev[7])
+                    q_type = {"一字板": 1.0, "T字板": 0.85}.get(ev[6], 0.7)
+                    s_qual = 0.5 * q_seal + 0.3 * q_stable + 0.2 * q_type
+                    last_z = ev[1]
+                else:
+                    s_space, t_seal, s_qual = 0.0, 0.0, 0.0
+                    last_z = zt_dates[code][
+                        max(k for k, d in enumerate(zt_dates[code]) if d <= D)] \
+                        if any(d <= D for d in zt_dates[code]) else None
+                s_first = 0.5 * t_seal + 0.5 * t_entry
+
+                realized = [p for nd, p in prem_events[code] if nd <= D]
+                if realized:
+                    ep_all = [p for c2 in codes
+                              for nd, p in prem_events[c2] if nd <= D]
+                    ep_avg = sum(ep_all) / len(ep_all)
+                    s_prem = _clamp(0.5 + (sum(realized) / len(realized)
+                                           - ep_avg) / 10)
+                else:
+                    s_prem = 0.5
+
+                # 断板质量：resting 用进行中的断板，active 用最近一次已完成断板
+                s_resil = 0.6
+                if last_z:
+                    if state == "resting":
+                        info = break_after(code, last_z)
+                        if info:
+                            s_resil = _resil_from_break(info[0], None)
+                    else:
+                        past = [break_after(code, z)
+                                for z in zt_dates[code] if z < D]
+                        past = [p for p in past if p and p[1] is not None]
+                        if past:
+                            r, dur = past[-1]
+                            s_resil = _resil_from_break(r, dur <= 2)
+
+                raw = (W["space"] * s_space + W["first"] * s_first
+                       + W["quality"] * s_qual + W["purity"] * purity[code]
+                       + W["premium"] * s_prem + W["resilience"] * s_resil)
+                ema[code] = alpha * raw + (1 - alpha) * ema[code] \
+                    if code in ema else raw
+                board.append((code, raw, state, t_entry, t_seal,
+                              [round(x, 3) for x in
+                               (s_space, s_first, s_qual, purity[code],
+                                s_prem, s_resil)]))
+            if not board:
+                incumbent = None
+                continue
+            key = {c: (-ema[c], -te, -ts, c)
+                   for c, _, _, te, ts, _ in board}
+            order = sorted((c for c, *_ in board), key=lambda c: key[c])
+            in_board = {c for c, *_ in board}
+            if incumbent not in in_board:
+                incumbent = order[0]         # 确立/继任
+            elif order[0] != incumbent and \
+                    ema[order[0]] > ema[incumbent] * (1 + margin):
+                incumbent = order[0]         # 挑战成功才换龙
+            ranked = [incumbent] + [c for c in order if c != incumbent]
+            info = {c: (raw, st, parts) for c, raw, st, _, _, parts in board}
+            for rank, code in enumerate(ranked[:top_n], 1):
+                raw, st, parts = info[code]
+                conn.execute(
+                    "INSERT INTO episode_leader_daily VALUES (?,?,?,?,?,?,?,?,?)",
+                    (ep_id, D, code, rank, round(ema[code], 4), round(raw, 4),
+                     json.dumps(parts), st, "derived"))
+                n_rows += 1
+    return n_rows
+
+
+def final_leader(conn, ep_id: int):
+    """closed 轮盖棺龙头：rank1 在位活跃日最多（平手→在位期峰值→更早上位）。"""
+    row = conn.execute("""
+        SELECT code FROM episode_leader_daily
+        WHERE episode_id=? AND rank=1
+        GROUP BY code ORDER BY COUNT(*) DESC, MAX(score) DESC,
+                               MIN(trade_date) ASC LIMIT 1""", (ep_id,)).fetchone()
+    return row[0] if row else None
+
+
+def apply_leader_overrides(conn, overrides: dict) -> int:
+    """bad case 覆盖：钉当前榜（最新活跃日）指定席位；历史 daily 行保持自动真相。"""
+    n = 0
+    for v in overrides["leaders"]:
+        row = find_episode(conn, v["theme"], v["start_date"])
+        if not row:
+            print(f"⚠️ leaders 找不到轮次（跳过）：{v.get('theme')} {v.get('start_date')}")
+            continue
+        ep_id, rank = row[0], int(v.get("rank", 1))
+        last = conn.execute(
+            "SELECT MAX(trade_date) FROM episode_leader_daily WHERE episode_id=?",
+            (ep_id,)).fetchone()[0]
+        if last is None:                     # 全首板轮：以轮次最新活跃日立榜
+            last = conn.execute("""
+                SELECT MAX(e.trade_date) FROM event_theme_links l
+                JOIN limit_up_events e ON e.id=l.event_id
+                WHERE l.episode_id=? AND e.pool='zt'""", (ep_id,)).fetchone()[0]
+        if last is None:
+            continue
+        prev = conn.execute(
+            "SELECT score FROM episode_leader_daily WHERE episode_id=? "
+            "AND trade_date=? AND code=?", (ep_id, last, v["code"])).fetchone()
+        conn.execute(
+            "DELETE FROM episode_leader_daily WHERE episode_id=? AND trade_date=? "
+            "AND (rank=? OR code=?)", (ep_id, last, rank, v["code"]))
+        conn.execute(
+            "INSERT INTO episode_leader_daily VALUES (?,?,?,?,?,NULL,NULL,?,?)",
+            (ep_id, last, v["code"], rank,
+             prev[0] if prev else 1.0, "active", "override"))
+        n += 1
+    return n
+
+
+def sync_market_roles(conn) -> int:
+    """daily 榜 → event_theme_links.market_role='leader' 兼容写回（rank1 only）。
+
+    开放轮=最新活跃日 rank1；closed 轮=盖棺龙头。rank2/3 不进 market_role
+    （词表不扩，治理台 leaderDone 等旧消费方语义不变）。
     """
     now = common.now_iso()
+    conn.execute("UPDATE event_theme_links SET market_role=NULL "
+                 "WHERE market_role='leader'")
     n = 0
     for ep_id, status in conn.execute(
             "SELECT id, status FROM theme_episodes WHERE status!='rejected'"):
-        if conn.execute(
-                "SELECT 1 FROM event_theme_links WHERE episode_id=? "
-                "AND market_role='leader' LIMIT 1", (ep_id,)).fetchone():
+        if status == "closed":
+            code = final_leader(conn, ep_id)
+        else:
+            row = conn.execute(
+                "SELECT code FROM episode_leader_daily WHERE episode_id=? "
+                "AND rank=1 ORDER BY trade_date DESC LIMIT 1", (ep_id,)).fetchone()
+            code = row[0] if row else None
+        if not code:
             continue
-        day_filter = """AND e.trade_date=(
-                SELECT MAX(e2.trade_date) FROM event_theme_links l2
-                JOIN limit_up_events e2 ON e2.id=l2.event_id
-                WHERE l2.episode_id=?)""" if status != "closed" else ""
-        params = (ep_id, ep_id) if status != "closed" else (ep_id,)
-        row = conn.execute(f"""
-            SELECT e.code FROM event_theme_links l
-            JOIN limit_up_events e ON e.id=l.event_id
-            WHERE l.episode_id=? AND e.lb_count>=2 {day_filter}
-            ORDER BY e.lb_count DESC, COALESCE(e.first_time,'99:99') ASC
-            LIMIT 1""", params).fetchone()
-        if not row:
-            continue                        # 最新日全是首板/无成员 → 本轮暂无龙头
         conn.execute(
             "UPDATE event_theme_links SET market_role='leader', updated_at=? "
             "WHERE episode_id=? AND event_id IN "
-            "(SELECT id FROM limit_up_events WHERE code=?)",
-            (now, ep_id, row[0]))
+            "(SELECT id FROM limit_up_events WHERE code=?)", (now, ep_id, code))
         n += 1
     return n
 
@@ -1420,6 +1679,12 @@ def audit(conn) -> dict[str, int]:
         "t0_snapshots": conn.execute(
             "SELECT COUNT(*) FROM attribution_snapshots"
         ).fetchone()[0],
+        "leader_board_rows": conn.execute(
+            "SELECT COUNT(*) FROM episode_leader_daily"
+        ).fetchone()[0],
+        "episodes_with_leader": conn.execute(
+            "SELECT COUNT(DISTINCT episode_id) FROM episode_leader_daily"
+        ).fetchone()[0],
     }
 
 
@@ -1453,9 +1718,11 @@ def main() -> int:
         overrides = load_overrides()
         n_verdicts = apply_link_verdicts(conn, overrides)  # 人工判决先于归组
         n_episodes, overlap_warnings = derive_episodes(conn, events, cfg)
-        n_ep_verdicts, n_leaders = apply_episode_overrides(conn, overrides)
+        n_ep_verdicts = apply_episode_overrides(conn, overrides)
         n_corroborated = corroborate_mappings(conn)
-        n_cur_leaders = derive_current_leaders(conn)
+        n_board = derive_leader_board(conn, cfg)
+        n_leaders = apply_leader_overrides(conn, overrides)
+        n_cur_leaders = sync_market_roles(conn)
         n_expired = expire_stale_candidates(conn, events, cfg)
         # T+复核跨重建存活（自然键，无外键）；只清理链接永久消失的真孤儿
         n_orphan_reviews = conn.execute(
@@ -1481,7 +1748,8 @@ def main() -> int:
             f"{cfg['episode']['first_seal_span_min']}min），"
             f"候选过期 {n_expired}，公司事件 {n_corp}（澄清击杀 {n_killed}），"
             f"人工判决重放 链{n_verdicts}/轮{n_ep_verdicts}/龙头覆盖{n_leaders}，"
-            f"当前龙头重算 {n_cur_leaders}，映射印证转正 {n_corroborated}，"
+            f"龙头榜 {n_board} 行（有龙头轮次 {n_cur_leaders}），"
+            f"映射印证转正 {n_corroborated}，"
             f"导入事件证据 {n_evidence}，清理孤儿复核 {n_orphan_reviews}"
         )
         for w in overlap_warnings[:10]:
