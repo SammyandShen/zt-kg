@@ -437,6 +437,26 @@ def main() -> int:
                                   1 if source == "override" else 0])
         episode_leaders[episode_id] = [board, timeline]
 
+    # K线缩略图（近30根，主线卡三席/成员用）：开放轮或近10交易日内收轮的
+    # 榜面股（主线卡可能引用刚关的轮次）∪ 最新交易日 zt 池
+    recent_cut = dates[-10] if len(dates) >= 10 else (dates[0] if dates else "")
+    thumb_codes = {b[0] for ep_id, (bd, _) in episode_leaders.items()
+                   if (theme_episodes[ep_id][2] is None
+                       or theme_episodes[ep_id][2] >= recent_cut)
+                   for b in bd}
+    if dates:
+        thumb_codes.update(r[0] for r in conn.execute(
+            "SELECT DISTINCT code FROM limit_up_events "
+            "WHERE trade_date=? AND pool='zt'", (dates[-1],)))
+    kline_thumbs: dict[str, list] = {}
+    for code in sorted(thumb_codes):
+        bars = conn.execute(
+            "SELECT open,close,high,low FROM daily_kline WHERE code=? "
+            "ORDER BY trade_date DESC LIMIT 30", (code,)).fetchall()
+        if len(bars) >= 2:
+            kline_thumbs[code] = [[round(o, 2), round(c, 2), round(h, 2),
+                                   round(lo, 2)] for o, c, h, lo in reversed(bars)]
+
     # 题材反查业务候选池：来自显式题材→业务标签映射，再连接有证据的公司事实。
     # 这里只是可研究的公司全集，不能自动算作本轮题材成分股。
     theme_business_candidates: dict[int, list] = {}
@@ -509,6 +529,7 @@ def main() -> int:
         "event_context_evidence": event_context_evidence,
         "theme_episodes": theme_episodes,
         "episode_leaders": episode_leaders,
+        "kline_thumbs": kline_thumbs,
         "theme_business_candidates": theme_business_candidates,
         "semantic_evidence": semantic_evidence,
     }

@@ -194,6 +194,15 @@
     margin-top: 5px; font-size: 12px; color: var(--ink2); }
   .ml-num { font-size: 21px; font-weight: 800; color: var(--accent); line-height: 1; }
   .ml-lead { font-size: 12px; color: var(--ink2); margin-top: 4px; }
+  .ml-seats { display: flex; gap: 7px; margin-top: 7px; }
+  .ml-seat { flex: 1; min-width: 0; background: var(--surface2); border-radius: 8px;
+    padding: 5px 7px 4px; }
+  .ml-seat:hover { outline: 1.5px solid var(--accent); }
+  .ml-seat-h { font-size: 11.5px; white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; margin-bottom: 3px; color: var(--ink2); }
+  .ml-seat-h b { color: var(--up); font-weight: 700; margin-right: 2px; }
+  .ml-mem { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px;
+    max-height: 54px; overflow: hidden; }
   .ml-rel { font-size: 11px; color: var(--ink3); margin-top: 4px; }
   .ml-rel .pill-jump { color: var(--accent); }
   .ml-spark { margin-top: 6px; }
@@ -1027,6 +1036,26 @@ function leaderBoardHtml(episodeId, status) {
     : '';
   return `<div style="margin-top:6px">${chips}${tlHtml}</div>`;
 }
+/* 30日K线缩略图（数据仅覆盖开放轮次榜面股+最新日涨停股） */
+function klineThumb(code, w = 120, h = 34) {
+  const bars = (D.kline_thumbs || {})[code];
+  if (!bars || bars.length < 2) return '';
+  const hi = Math.max(...bars.map(b => b[2])), lo = Math.min(...bars.map(b => b[3]));
+  const step = w / bars.length, span = hi - lo || 1;
+  const Y = v => 1 + (h - 2) * (hi - v) / span;
+  let g = '';
+  bars.forEach((b, i) => {
+    const [o, c, bh, bl] = b, x = i * step + step / 2;
+    const col = c >= o ? 'var(--up)' : 'var(--teal)';
+    g += `<line x1="${x.toFixed(1)}" y1="${Y(bh).toFixed(1)}" x2="${x.toFixed(1)}"
+      y2="${Y(bl).toFixed(1)}" stroke="${col}" stroke-width="1"></line>
+      <rect x="${(x - step * 0.32).toFixed(1)}" y="${Y(Math.max(o, c)).toFixed(1)}"
+      width="${(step * 0.64).toFixed(1)}" height="${Math.max(1,
+        Y(Math.min(o, c)) - Y(Math.max(o, c))).toFixed(1)}" fill="${col}"></rect>`;
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}"
+    preserveAspectRatio="none" style="display:block">${g}</svg>`;
+}
 /* ---------- 轮次分层名单：回答"这一轮谁在跟随"，按关系成色六层分级 ---------- */
 const TIER_DEFS = [
   ['① 核心业务股', '相关业务是主营或重要收入', 'core'],
@@ -1296,7 +1325,8 @@ function chipHtml(ev, d) {
 }
 function bindChips() {
   document.querySelectorAll('[data-code]').forEach(el =>
-    el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
+    el.addEventListener('click', e => {           // 阻断冒泡：卡片整卡跳转不抢个股点击
+      e.stopPropagation(); go('#/stock/' + el.dataset.code); }));
   document.querySelectorAll('[data-business]').forEach(el =>
     el.addEventListener('click', () => go('#/business/' + el.dataset.business)));
   document.querySelectorAll('[data-cid]').forEach(el =>
@@ -2039,7 +2069,7 @@ function renderHeat() {
     const g = mlGroups.find(g => g.some(y => epOverlap(x, y) >= 0.5));
     if (g) g.push(x); else mlGroups.push([x]);
   }
-  const mainline = mlGroups.slice(0, 3);
+  const mainline = mlGroups.slice(0, 6);
   const mlCard = group => {
     const x = group[0], related = group.slice(1);
     const [lc, lcTxt] = lifecycleOfSeries(heatTaxSeries(x.nm));
@@ -2048,19 +2078,41 @@ function renderHeat() {
     const lead = ztL.filter(e => todaySet(x.nm).has(e[0]))
       .sort((a, b) => (b[1] || 1) - (a[1] || 1))[0];
     const { cid, ph, id } = x;
-    // 轮次龙头（评分口径）与当日领涨（板数口径）可能不同：龙头断板日仍是龙头
-    const board = id != null ? (D.episode_leaders || {})[id]?.[0] : null;
+    // 轮次三席（评分口径，带30日K线）：在同组题材里找"进行中或近3交易日内
+    // 收轮"的轮次——组头的轮次可能是早已收掉的旧浪，拿旧龙头冒充当下会误导；
+    // 找不到新轮就不摆席位，回落"领涨"文案（板数口径）
+    const freshCut = D.dates[D.dates.length - 4] || '';
+    const nodeCids = heatTaxCids(x.nm);
+    let boardId = null, boardKey = '';
+    for (const [eid, ep] of Object.entries(D.theme_episodes)) {
+      if (!nodeCids.has(+ep[0])) continue;
+      if (ep[4] !== 'provisional' && ep[4] !== 'verified') continue;
+      if (ep[2] && ep[2] < freshCut) continue;
+      const key = `${ep[2] || '9999'}|${ep[1]}`;   // 收轮晚/进行中优先，再看启动新
+      if (key > boardKey) { boardKey = key; boardId = eid; }
+    }
+    const board = boardId != null ? (D.episode_leaders || {})[boardId]?.[0] : null;
     const lb1 = board && board.find(b => b[1] === 1);
-    const leadHtml = (() => {
-      const leadTxt = lead ? `领涨 ${esc(D.stocks[lead[0]] || lead[0])} ${
-        esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '';
-      if (!lb1) return leadTxt || '&nbsp;';
-      const l1 = `<b title="${
-        esc('六维评分' + Math.round(lb1[2] * 100) + '，点卡片看轮次面板分项')}">龙头 ${
-        esc(D.stocks[lb1[0]] || lb1[0])}</b>${lb1[3] === 'resting' ? '(断板)' : ''}`;
-      return lead && lead[0] !== lb1[0] ? `${l1} · ${leadTxt}` : l1 +
-        (lead ? ` ${esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '');
-    })();
+    const leadTxt = lead ? `领涨 ${esc(D.stocks[lead[0]] || lead[0])} ${
+      esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '';
+    const seats = board && board.length ? `<div class="ml-seats">${
+      board.map(([code, rank, score, state]) => `<div class="ml-seat" data-code="${code}"
+        title="${esc(LEADER_RANK[rank] + '·评分' + Math.round(score * 100)
+          + (state === 'resting' ? '·断板观察' : '') + '，点看个股')}">
+        <div class="ml-seat-h"><b>${LEADER_RANK[rank]}</b>${esc(D.stocks[code] || code)}${
+          state === 'resting' ? '<span class="muted">·断</span>' : ''}</div>
+        ${klineThumb(code)}</div>`).join('')}</div>` : '';
+    const members = ztL.filter(e => todaySet(x.nm).has(e[0]))
+      .sort((a, b) => (b[1] || 1) - (a[1] || 1));
+    const memHtml = members.length ? `<div class="ml-mem">${
+      members.slice(0, 10).map(ev => `<span class="concept-chip" data-code="${ev[0]}"
+        style="cursor:pointer">${esc(D.stocks[ev[0]] || ev[0])}<span class="x">${
+        (ev[1] || 1) > 1 ? ev[1] + '板' : '首板'}</span></span>`).join('')}${
+      members.length > 10 ? `<span class="muted small" style="align-self:center">+${
+        members.length - 10}</span>` : ''}</div>` : '';
+    const leadHtml = seats
+      ? (lead && (!lb1 || lead[0] !== lb1[0]) ? `<div class="ml-lead">${leadTxt}</div>` : '')
+      : `<div class="ml-lead">${leadTxt || '&nbsp;'}</div>`;
     return `<div class="ml-card"${cid != null
         ? ` data-mljump="#/concept/${cid}${id != null ? '?ep=' + id : ''}"`
         : ` data-focus="${esc(x.nm)}"`}>
@@ -2068,7 +2120,7 @@ function renderHeat() {
         ph ? `<span class="type-badge theme">${esc(ph)}轮</span>` : ''}</div>
       <div class="ml-row"><span class="ml-num">${x.today}家</span>${dArrow(x.today, prevN)}
         ${rn != null ? `<span>续板率${iInfo('renewal')} <b>${rn}%</b></span>` : ''}</div>
-      <div class="ml-lead">${leadHtml}</div>
+      ${seats}${leadHtml}${memHtml}
       ${related.length ? `<div class="ml-rel">同轮关联 ${related.map(r =>
         `<b class="pill-jump" data-cid="${r.cid}" data-ep="${r.id ?? ''}">${esc(r.nm)}</b>`)
         .join(' · ')}</div>` : ''}
@@ -2277,9 +2329,12 @@ function renderHeat() {
   });
   document.querySelectorAll('[data-mljump]').forEach(el =>
     el.addEventListener('click', ev => {
-      if (ev.target.closest?.('.pill-jump')) return;   // 同轮关联 pill 自行跳转
+      // 同轮关联 pill / 三席K线卡 / 成员 chips 各自跳转，整卡点击才走轮次页
+      if (ev.target.closest?.('.pill-jump') || ev.target.closest?.('[data-code]')) return;
       go(el.dataset.mljump);
     }));
+  document.querySelectorAll('.ml-card [data-code]').forEach(el =>
+    el.addEventListener('click', () => go('#/stock/' + el.dataset.code)));
   document.querySelectorAll('[data-focus]').forEach(el =>
     el.addEventListener('click', () => { heatFocus = el.dataset.focus; renderHeat(); }));
   document.querySelectorAll('[data-detail]').forEach(el =>
