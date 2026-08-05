@@ -38,6 +38,10 @@ DEFAULT_CONFIG = {
     "episode": {"min_codes": 3, "min_same_day": 3, "first_seal_span_min": 90,
                 "gap_days": 5, "overlap_warn": 0.5},
     "candidate_expire_days": 10,
+    "leader": {"weights": {"space": 0.30, "first": 0.15, "quality": 0.20,
+                           "purity": 0.10, "premium": 0.15, "resilience": 0.10},
+               "ema_alpha": 0.5, "swap_margin": 0.25, "rest_days": 2,
+               "min_lb": 2, "top_n": 3, "quality_fss_median_pct": 0.84},
 }
 
 
@@ -46,11 +50,15 @@ def load_config() -> dict:
         return DEFAULT_CONFIG
     raw = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     cfg = {"episode": {**DEFAULT_CONFIG["episode"]},
+           "leader": {**DEFAULT_CONFIG["leader"]},
            "candidate_expire_days": raw.get(
                "candidate_expire_days", DEFAULT_CONFIG["candidate_expire_days"])}
     for key, value in (raw.get("episode") or {}).items():
         if not key.endswith("_note"):
             cfg["episode"][key] = value
+    for key, value in (raw.get("leader") or {}).items():
+        if not key.startswith("$"):
+            cfg["leader"][key] = value
     return cfg
 
 
