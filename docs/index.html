@@ -187,7 +187,8 @@
   .ml-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px; margin-top: 12px; }
   .ml-card { border: 1.5px solid var(--line); border-radius: 12px; padding: 11px 13px 9px;
-    background: var(--card); cursor: pointer; transition: border-color .12s; }
+    background: var(--card); cursor: pointer; transition: border-color .12s;
+    display: flex; flex-direction: column; }
   .ml-card:hover { border-color: var(--accent); }
   .ml-name { font-size: 16.5px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
   .ml-row { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap;
@@ -204,7 +205,8 @@
   .ml-mem { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
   .ml-rel { font-size: 11px; color: var(--ink3); margin-top: 4px; }
   .ml-rel .pill-jump { color: var(--accent); }
-  .ml-spark { margin-top: 6px; }
+  .ml-spark { margin-top: auto; padding-top: 8px; }
+  .ml-mem .concept-chip { font-size: 11.5px; padding: 2px 9px; }
   .chg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px; margin-top: 12px; }
   /* 个股页：交易概览 + 日K线 */
@@ -2310,40 +2312,44 @@ function renderHeat() {
     const [lc, lcTxt] = lifecycleOfSeries(heatTaxSeries(x.nm));
     const prevN = dPrev ? heatDayCodes(x.nm, dPrev).size : null;
     const rn = renewalOf(x.nm);
-    const lead = ztL.filter(e => todaySet(x.nm).has(e[0]))
-      .sort((a, b) => (b[1] || 1) - (a[1] || 1))[0];
     const { cid, ph, id } = x;
-    // 三席来自 boardId（分组阶段解析并已按轮次去重）；无新鲜轮回落"领涨"文案
-    const board = boardId != null ? (D.episode_leaders || {})[boardId]?.[0] : null;
-    const lb1 = board && board.find(b => b[1] === 1);
-    const leadTxt = lead ? `领涨 ${esc(D.stocks[lead[0]] || lead[0])} ${
-      esc(lead[2] || ((lead[1] || 1) > 1 ? (lead[1] || 1) + '板' : '首板'))}` : '';
-    const seats = board && board.length ? `<div class="ml-seats">${
-      board.map(([code, rank, score, state]) => `<div class="ml-seat" data-code="${code}"
-        title="${esc(LEADER_RANK[rank] + '·评分' + Math.round(score * 100)
-          + (state === 'resting' ? '·断板观察' : '') + '，点看个股')}">
-        <div class="ml-seat-h"><b>${LEADER_RANK[rank]}</b>${esc(D.stocks[code] || code)}${
-          state === 'resting' ? '<span class="muted">·断</span>' : ''}</div>
-        ${klineThumb(code)}</div>`).join('')}</div>` : '';
     const members = ztL.filter(e => todaySet(x.nm).has(e[0]))
       .sort((a, b) => (b[1] || 1) - (a[1] || 1));
-    const memHtml = members.length ? `<div class="ml-mem">${
-      members.slice(0, 10).map(ev => `<span class="concept-chip" data-code="${ev[0]}"
+    // 席位行永远存在：有新鲜轮次用评分三席；没有就用当日领涨前3（板数口径）
+    // 补席位——卡片骨架统一，不再出现中间大块空白
+    const board = boardId != null ? (D.episode_leaders || {})[boardId]?.[0] : null;
+    const seatData = board && board.length
+      ? board.map(([code, rank, score, state]) => ({
+          code, label: LEADER_RANK[rank],
+          sub: state === 'resting' ? '·断' : '',
+          tip: `${LEADER_RANK[rank]}·评分${Math.round(score * 100)}${
+            state === 'resting' ? '·断板观察' : ''}，点看个股` }))
+      : members.slice(0, 3).map((ev, i) => ({
+          code: ev[0], label: i === 0 ? '领涨' : '',
+          sub: `·${(ev[1] || 1) > 1 ? ev[1] + '板' : '首板'}`,
+          tip: '当日板数口径（该题材暂无新鲜轮次，无评分席位），点看个股' }));
+    const seats = seatData.length ? `<div class="ml-seats">${
+      seatData.map(s => `<div class="ml-seat" data-code="${s.code}" title="${esc(s.tip)}">
+        <div class="ml-seat-h">${s.label ? `<b>${s.label}</b>` : ''}${
+          esc(D.stocks[s.code] || s.code)}<span class="muted">${s.sub}</span></div>
+        ${klineThumb(s.code)}${stkStatLine(s.code)}</div>`).join('')}</div>` : '';
+    const seatCodes = new Set(seatData.map(s => s.code));
+    const rest = members.filter(ev => !seatCodes.has(ev[0]));
+    const memHtml = rest.length ? `<div class="ml-mem">${
+      rest.slice(0, 8).map(ev => `<span class="concept-chip" data-code="${ev[0]}"
         style="cursor:pointer">${esc(D.stocks[ev[0]] || ev[0])}<span class="x">${
         (ev[1] || 1) > 1 ? ev[1] + '板' : '首板'}</span></span>`).join('')}${
-      members.length > 10 ? `<span class="muted small" style="align-self:center">+${
-        members.length - 10}</span>` : ''}</div>` : '';
-    const leadHtml = seats
-      ? (lead && (!lb1 || lead[0] !== lb1[0]) ? `<div class="ml-lead">${leadTxt}</div>` : '')
-      : `<div class="ml-lead">${leadTxt || '&nbsp;'}</div>`;
+      rest.length > 8 ? `<span class="muted small" style="align-self:center">+${
+        rest.length - 8}</span>` : ''}</div>` : '';
     return `<div class="ml-card"${cid != null
         ? ` data-mljump="#/concept/${cid}${id != null ? '?ep=' + id : ''}"`
         : ` data-focus="${esc(x.nm)}"`}>
       <div class="ml-name">${esc(x.nm)}<span class="lc lc-${lc}">${lcTxt}</span>${
         ph ? `<span class="type-badge theme">${esc(ph)}轮</span>` : ''}</div>
       <div class="ml-row"><span class="ml-num">${x.today}家</span>${dArrow(x.today, prevN)}
-        ${rn != null ? `<span>续板率${iInfo('renewal')} <b>${rn}%</b></span>` : ''}</div>
-      ${seats}${leadHtml}${memHtml}
+        ${rn != null ? `<span>续板率${iInfo('renewal')} <b>${rn}%</b></span>` : ''}${
+        !board ? '<span class="muted small">未成轮·按板数领涨</span>' : ''}</div>
+      ${seats}${memHtml}
       ${related.length ? `<div class="ml-rel">同轮关联 ${related.map(r =>
         `<b class="pill-jump" data-cid="${r.cid}" data-ep="${r.id ?? ''}">${esc(r.nm)}</b>`)
         .join(' · ')}</div>` : ''}
