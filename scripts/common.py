@@ -423,6 +423,18 @@ CREATE TABLE IF NOT EXISTS attribution_snapshots (
     PRIMARY KEY (event_id, concept_id)
 );
 
+-- 涨停股次日开盘表现（情绪趋势"隔日开盘溢价"指标；fetch_next_open.py 增量补齐）。
+-- 价格取东财前复权K线：相邻两根K线的比值不受除权除息影响；停牌则顺延到
+-- 复牌首根K线（对持仓者就是"下一个开盘"）。只记 zt 池（收盘封住）事件。
+CREATE TABLE IF NOT EXISTS event_next_open (
+    event_id    INTEGER PRIMARY KEY REFERENCES limit_up_events(id),
+    next_date   TEXT NOT NULL,
+    event_close REAL NOT NULL,   -- 事件日收盘价（=涨停价，前复权）
+    next_open   REAL NOT NULL,   -- 次一交易日开盘价（前复权）
+    open_pct    REAL NOT NULL,   -- (next_open/event_close-1)*100
+    fetched_at  TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT);
 """
 

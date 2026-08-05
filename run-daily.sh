@@ -6,6 +6,8 @@ cd "$PROJECT_DIR"
 
 echo "===== $(date '+%Y-%m-%d %H:%M:%S') run-daily start ====="
 python3 scripts/fetch_daily.py
+# 昨日涨停股的今日开盘价（隔日开盘溢价指标；增量，失败明日自动重试）
+python3 scripts/fetch_next_open.py || echo "⚠️ fetch_next_open 失败，跳过"
 # 新闻关联失败不阻断网页重建（东财接口偶发抖动，次日会自动补缺）
 python3 scripts/fetch_news.py --days 2 || echo "⚠️ fetch_news 失败，跳过"
 # 巨潮官方公告标题只作为事件上下文；题材未被明确点名时绝不自动绑定或核实。

@@ -153,6 +153,14 @@ A股每日涨停股 + 涨停原因（概念题材）长周期追踪库。核心�
 - **轮次判决喂 auto_catalyst**（2026-08-03）：judge 的新轮次队列携带系统自动推导
   的催化摘要，模型任务=核对假设与成员证据一致性（确认/修订→verified；对不上
   →leave；纯标签巧合→rejected），不再要求凭空归纳催化——修复此前判决零产出。
+- **隔日开盘溢价（2026-08-05）**：情绪趋势新增两卡——"隔日开盘溢价"（全部/高开股/
+  低开股平均，%）与"隔日高开/低开比例"（比例不含平开）。数据链：
+  `fetch_next_open.py` 按股增量抓东财历史K线（push2his 免鉴权，**前复权 fqt=1**
+  ——相邻K线比值不受除权影响；市场前缀猜错自动换边），对 zt 池事件记
+  次一交易日开盘 vs 事件日收盘（=涨停价）落表 event_next_open（停牌顺延到复牌
+  首K线；最新交易日的事件次日未开盘，天然待明日）。build_site 按事件日聚合出
+  `next_open:{date:[avg,up%,down%,avgUp,avgDown,n]}`；前端 svgChart 已支持负值
+  纵轴（零线实线）。17:00 班次在 fetch_daily 后增量跑（早班不跑：07:40 无当日开盘价）。
 - **官方事件公告**：`fetch_event_announcements.py` 从巨潮资讯抓取涨停日前后2天内，
   标题命中收购/中标/合同/业绩/批复/投产等催化词的公告，作为 event 级上下文证据。
   只有公告标题或原文明确点名具体题材时才可绑定到 `event_theme_evidence`；官方来源只证明
@@ -181,7 +189,7 @@ python3 scripts/review_theme_attributions.py --days 5 # 生成T+0/T+1/T+2候选�
 python3 scripts/query.py review-attributions --days 5 # 查看候选归因及每项复核指标
 python3 scripts/audit_tags.py                  # 标签质量门禁（只读，不改配置/数据库）
 python3 scripts/build_site.py                  # 重导出网页数据
-bash install-launchd.sh status                 # 定时任务状态（工作日17:00）
+bash install-launchd.sh status                 # 定时任务状态（工作日 07:40 早班 + 17:00 晚班）
 bash deploy.sh                                 # 手动发布到 Cloudflare Pages
 open docs/index.html                           # 打开交互网页
 ```
@@ -199,8 +207,13 @@ open docs/index.html                           # 打开交互网页
 
 - **线上地址：https://sammyandshen.github.io/zt-kg/**（GitHub Pages，
   仓库 SammyandShen/zt-kg 公开，main 分支 /docs 目录，含 .nojekyll）
-- deploy.sh = git add/commit/push；`.deploy-enabled` 存在时 run-daily 每日
-  17:00 自动发布（该开关文件在 .gitignore 里，删掉即停）
+- deploy.sh = git add/commit/push；`.deploy-enabled` 存在时定时班次自动发布
+  （该开关文件在 .gitignore 里，删掉即停）
+- **双班次**（2026-08-05 用户定：昨日涨停信息必须在次日 9 点前补齐，不等 17:00）：
+  - 早班 run-morning.sh 工作日 07:40——隔夜公告/互动回复/新闻抓取 → 年报候选
+    提取+晋升 → judge 判决 → rebuild+发布；不抓当日涨停池、不跑分型/映射/挂树慢工序
+  - 晚班 run-daily.sh 工作日 17:00——当日涨停池+全量语义链+发布线后慢速富化；
+    富化产生的候选由次日早班晋升（晚班内 rebuild 在提取之前，属既定顺序）
 - db/logs 不入库（.gitignore），公网只暴露 docs/ 静态内容
 - 移动端已适配（≤640px 压缩头部、双列启动卡、热力图横向滚动+固定首列）
 - UI 主题：字节跳动风格蓝绿（--accent 蓝 #2e6be6 / --teal 青绿 #00b6a1），

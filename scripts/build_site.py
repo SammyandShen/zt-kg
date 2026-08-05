@@ -6,6 +6,7 @@ build_site.py — 从 SQLite 导出 docs/data.js（网页数据，脚本生成�
   const ZTKG_DATA = {
     generated_at, dates: [...],
     day_stats: { date: [num, history_num, rate, open_num] },
+    next_open: { date: [avg_pct, up_ratio, down_ratio, avg_up, avg_down, n] },
     concepts:  { id: [name, total_runs, active_days] },
     aliases:   { alias: concept_id },
     stocks:    { code: name },
@@ -176,6 +177,20 @@ def main() -> int:
     day_stats = {d: [n, h, round(r, 4) if r is not None else None, o]
                  for d, n, h, r, o in conn.execute(
                      "SELECT trade_date, num, history_num, rate, open_num FROM day_stats")}
+
+    # 隔日开盘溢价：当日 zt 池涨停股在次一交易日开盘的表现（fetch_next_open.py 落表）
+    next_open = {}
+    for d, avg, nup, ndn, n, avgup, avgdn in conn.execute("""
+        SELECT e.trade_date, AVG(o.open_pct),
+               SUM(o.open_pct > 0), SUM(o.open_pct < 0), COUNT(*),
+               AVG(CASE WHEN o.open_pct > 0 THEN o.open_pct END),
+               AVG(CASE WHEN o.open_pct < 0 THEN o.open_pct END)
+        FROM event_next_open o JOIN limit_up_events e ON e.id = o.event_id
+        WHERE e.pool = 'zt' GROUP BY e.trade_date"""):
+        next_open[d] = [round(avg, 2), round(100 * nup / n, 1),
+                        round(100 * ndn / n, 1),
+                        round(avgup, 2) if avgup is not None else None,
+                        round(avgdn, 2) if avgdn is not None else None, n]
 
     concepts = {}
     for cid, name, total, days in conn.execute("""
@@ -430,6 +445,7 @@ def main() -> int:
         "generated_at": common.now_iso(),
         "dates": dates,
         "day_stats": day_stats,
+        "next_open": next_open,
         "concepts": concepts,
         "aliases": aliases,
         "stocks": stocks,

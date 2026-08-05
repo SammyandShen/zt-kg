@@ -2285,6 +2285,7 @@ let trendRange = 30;
 function trendStats(dates) {
   return dates.map(d => {
     const st = D.day_stats[d] || [];
+    const no = (D.next_open || {})[d] || [];
     const evs = (D.events[d] || []).filter(e => !isTouch(e));
     return {
       d,
@@ -2295,6 +2296,9 @@ function trendStats(dates) {
       lbCnt: evs.filter(e => (e[1] || 1) >= 2).length,
       maxLb: evs.length ? Math.max(...evs.map(e => e[1] || 1)) : 0,
       yizi: evs.filter(e => (e[3] || '').includes('一字')).length,
+      // 隔日开盘溢价（当日涨停股在次一交易日开盘的表现；最新日次日未开盘为空）
+      prem: no[0] ?? null, upR: no[1] ?? null, dnR: no[2] ?? null,
+      premUp: no[3] ?? null, premDn: no[4] ?? null,
     };
   });
 }
@@ -2303,15 +2307,17 @@ function svgChart(dates, series, fmt) {
   const W = 520, H = 168, padL = 36, padB = 18, padT = 10;
   const all = series.flatMap(s => s.vals).filter(v => v != null);
   const ymax = Math.max(1, ...all) * 1.08;
+  const ymin = Math.min(0, ...all) * 1.08;   // 有负值（如低开平均跌幅）时向下扩展坐标
   const bw = (W - padL - 6) / dates.length;
   const X = i => padL + i * bw + bw / 2;
-  const Y = v => H - padB - (H - padB - padT) * v / ymax;
+  const Y = v => H - padB - (H - padB - padT) * (v - ymin) / (ymax - ymin);
   let g = '';
-  for (const frac of [1, 0.5]) {
-    const y = Y(ymax * frac / 1.08);
+  const ticks = ymin < 0 ? [ymax / 1.08, 0, ymin / 1.08] : [ymax / 1.08, ymax / 2 / 1.08];
+  for (const tv of ticks) {
+    const y = Y(tv);
     g += `<line class="grid" x1="${padL}" y1="${y.toFixed(1)}" x2="${W}" y2="${y.toFixed(1)}"
-      stroke-dasharray="3,4"></line>
-      <text x="2" y="${(y + 3.5).toFixed(1)}">${fmt(Math.round(ymax * frac / 1.08))}</text>`;
+      stroke-dasharray="${tv === 0 && ymin < 0 ? '' : '3,4'}"></line>
+      <text x="2" y="${(y + 3.5).toFixed(1)}">${fmt(Math.round(tv))}</text>`;
   }
   g += `<line class="grid" x1="${padL}" y1="${H - padB}" x2="${W}" y2="${H - padB}"></line>`;
   for (const s of series) {
@@ -2360,13 +2366,21 @@ function svgChart(dates, series, fmt) {
 function renderTrend() {
   const dates = trendRange ? D.dates.slice(-trendRange) : D.dates;
   const S = trendStats(dates);
-  const last = S[S.length - 1] || {}, prev = S[S.length - 2] || {};
-  const C1 = 'rgba(46,107,230,.85)', C2 = 'rgba(0,166,150,.8)';
+  const C1 = 'rgba(46,107,230,.85)', C2 = 'rgba(0,166,150,.8)', CU = 'rgba(224,62,45,.8)';
   const cards = [
     { key: 'num', title: '涨停家数', type: 'bar',
       extra: { key: 'touch', name: '盘中触板', type: 'line' },
       note: '触板远高于涨停=分歧大' },
     { key: 'rate', title: '封板率', type: 'line', fmt: v => v + '%', note: '≥80%强 / ≤60%弱' },
+    { key: 'prem', title: '隔日开盘溢价', type: 'line', fmt: v => v + '%',
+      note: '当日涨停股次日开盘vs涨停价',
+      multi: [{ key: 'prem', name: '全部平均', color: C1 },
+              { key: 'premUp', name: '高开股平均', color: CU },
+              { key: 'premDn', name: '低开股平均', color: C2 }] },
+    { key: 'upR', title: '隔日高开/低开比例', type: 'line', fmt: v => v + '%',
+      note: '打板赚钱效应；比例不含平开',
+      multi: [{ key: 'upR', name: '高开比例', color: CU },
+              { key: 'dnR', name: '低开比例', color: C2 }] },
     { key: 'opens', title: '炸板家数', type: 'bar', note: '越高情绪越差' },
     { key: 'lbCnt', title: '连板家数（≥2板）', type: 'bar', note: '梯队宽度' },
     { key: 'maxLb', title: '最高连板（空间板）', type: 'line', note: '梯队高度' },
@@ -2383,19 +2397,28 @@ function renderTrend() {
   <div class="trend-grid">`;
   for (const c of cards) {
     const fmt = c.fmt || (v => v);
-    const series = [{ name: c.title, vals: S.map(r => r[c.key]), type: c.type, color: C1 }];
-    if (c.extra)
+    const series = c.multi
+      ? c.multi.map(m => ({ name: m.name, vals: S.map(r => r[m.key]),
+                            type: c.type, color: m.color }))
+      : [{ name: c.title, vals: S.map(r => r[c.key]), type: c.type, color: C1 }];
+    if (!c.multi && c.extra)
       series.push({ name: c.extra.name, vals: S.map(r => r[c.extra.key]),
                     type: c.extra.type, color: C2 });
-    const lv = last[c.key], pv = prev[c.key];
+    // 末值取最后一个有数的日子（隔日溢价的最新交易日次日未开盘，恒为空）
+    const nn = S.map(r => r[c.key]).filter(v => v != null);
+    const lv = nn[nn.length - 1], pv = nn[nn.length - 2];
+    const df = v => fmt(Math.round(v * 100) / 100);
     const delta = (lv != null && pv != null)
-      ? (lv > pv ? `<span class="delta" style="color:var(--up)">▲${fmt(lv - pv)}</span>`
-        : lv < pv ? `<span class="delta muted">▼${fmt(pv - lv)}</span>`
+      ? (lv > pv ? `<span class="delta" style="color:var(--up)">▲${df(lv - pv)}</span>`
+        : lv < pv ? `<span class="delta muted">▼${df(pv - lv)}</span>`
         : '<span class="delta muted">—</span>') : '';
+    const legend = series.length > 1
+      ? `<span class="small muted">${series.map((s, i) =>
+          `<span class="dot" style="background:${s.color}${i ? ';margin-left:8px' : ''}"></span>${s.name}`).join('')}</span>`
+      : '';
     html += `<div class="tcard">
       <div class="th"><b>${c.title}</b>
-        ${c.extra ? `<span class="small muted"><span class="dot" style="background:${C1}"></span>${c.title}
-          <span class="dot" style="background:${C2};margin-left:8px"></span>${c.extra.name}</span>` : ''}
+        ${legend}
         <span class="small" style="color:var(--ink3)">${c.note}</span>
         <span class="lv">${lv == null ? '—' : fmt(lv)} ${delta}</span></div>
       ${svgChart(S.map(r => r.d), series, fmt)}</div>`;
