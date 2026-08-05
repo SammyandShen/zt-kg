@@ -810,6 +810,123 @@
    "note": "公司公告明确澄清目前数据中心业务暂未提供算力",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-05"
+  },
+  {
+   "code": "603629",
+   "trade_date": "2026-08-05",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "业务事实支撑+新闻明确点名'算力租赁掀起涨停潮！利通电子4天3板'，叙事主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002607",
+   "trade_date": "2026-08-05",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻明确点名'教育板块短线拉升，中公教育涨停'，当日主导叙事是教育板块而非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "300248",
+   "trade_date": "2026-08-05",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "三家媒体一致点名'AI应用端反复走强，新开普20%涨停'，叙事主导明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002425",
+   "trade_date": "2026-08-05",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻明确点名'游戏板块/传媒板块拉升，凯撒文化涨停'，主导叙事非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "601208",
+   "trade_date": "2026-08-05",
+   "theme": "AI算力",
+   "verdict": "rejected",
+   "note": "新闻两次明确点名'铜箔/覆铜板概念活跃，东材科技等涨停'，主导叙事是覆铜板而非AI算力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "603186",
+   "trade_date": "2026-08-05",
+   "theme": "AI算力",
+   "verdict": "rejected",
+   "note": "新闻点名'铜箔/覆铜板概念活跃'及定增获受理，主导叙事非AI算力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "605376",
+   "trade_date": "2026-08-05",
+   "theme": "AI算力",
+   "verdict": "rejected",
+   "note": "新闻两次明确点名'MLCC概念...博迁新材涨停'，主导叙事是MLCC而非AI算力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "000712",
+   "trade_date": "2026-08-05",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "三条新闻均点名'证券板块拉升/异动，锦龙股份涨停'，主导叙事是证券板块而非算力租赁",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002355",
+   "trade_date": "2026-08-05",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "新闻明确点名智能驾驶强制性国标发布带动板块，主导叙事是自动驾驶而非算力租赁",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002929",
+   "trade_date": "2026-08-04",
+   "theme": "AI应用",
+   "verdict": "verified",
+   "note": "业务事实支撑(conf0.6/supporting0.89)，公司通信服务+算力/Token工厂业务属实",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002289",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "业务事实支撑+新闻'算力牛股突然爆单，多股斩获数十亿订单'与IDC/算力租赁业务一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002929",
+   "trade_date": "2026-08-04",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "业务事实支撑(conf0.6/supporting0.89)，公司算力租赁/Token工厂业务属实",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
+  },
+  {
+   "code": "002364",
+   "trade_date": "2026-08-04",
+   "theme": "算力",
+   "verdict": "rejected",
+   "note": "公司公告澄清'电源产品未在半导体行业应用'，属明确反证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-05"
   }
  ],
  "episode_verdicts": [

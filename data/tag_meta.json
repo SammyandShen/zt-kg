@@ -146,6 +146,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "中科院系": {
+  "type": "attribute",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "中联重科系": {
   "type": "attribute",
   "status": "active",
@@ -5335,6 +5340,11 @@
   "type": "product",
   "status": "active"
  },
+ "半导体设备零部件": {
+  "type": "product",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "半导体超纯水": {
   "type": "product",
   "status": "active"
@@ -8935,6 +8945,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AI PCB微钻扩产": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "AI算力扩产": {
   "type": "catalyst",
   "status": "candidate",
@@ -9780,6 +9794,10 @@
   "status": "candidate"
  },
  "光刻气认证": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "光棒扩产": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -11763,6 +11781,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "金矿投产": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "钢帘线剥离": {
   "type": "catalyst",
   "status": "candidate",
@@ -11952,6 +11975,11 @@
   "llm": "claude-sonnet-5"
  },
  "高派息": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "黄磷涨价": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -12688,6 +12716,11 @@
  "储能定增": {
   "type": "event",
   "status": "retired"
+ },
+ "先正达续约": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "光伏剥离": {
   "type": "event",
@@ -14116,6 +14149,11 @@
  "拟15.57亿投建": {
   "type": "event",
   "status": "retired"
+ },
+ "拟3亿投建": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "拟60亿元布局AIDC配电": {
   "type": "event",
@@ -20498,6 +20536,10 @@
   "llm": "claude-sonnet-5"
  },
  "仓储物流ABS": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "代工": {
   "type": "product",
   "status": "candidate"
  },
@@ -28224,6 +28266,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "星普大模型备案": {
+  "type": "product",
+  "status": "candidate"
+ },
  "星空科技": {
   "type": "product",
   "status": "candidate"
@@ -32267,6 +32313,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "特种工程材料单体平台": {
+  "type": "product",
+  "status": "candidate"
+ },
  "特种材料": {
   "type": "product",
   "status": "candidate",
@@ -33051,6 +33101,11 @@
  "电声产品": {
   "type": "product",
   "status": "candidate"
+ },
+ "电声元器件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "电子专用材料": {
   "type": "product",
@@ -34276,6 +34331,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "社保服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "社保民生": {
   "type": "product",
   "status": "candidate"
@@ -34806,6 +34865,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "精密冷轧不锈钢": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "精密减速机": {
   "type": "product",
   "status": "retired"
@@ -34982,6 +35046,11 @@
  "红外激光": {
   "type": "product",
   "status": "candidate"
+ },
+ "红外热像仪": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "红外芯片": {
   "type": "product",
@@ -35563,6 +35632,10 @@
   "status": "candidate"
  },
  "聚焦主业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "聚焦集成电路主业": {
   "type": "product",
   "status": "candidate"
  },
@@ -36381,6 +36454,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "萃取法工艺": {
+  "type": "product",
+  "status": "candidate"
+ },
  "萤石/石英": {
   "type": "product",
   "status": "candidate"
@@ -36633,6 +36710,10 @@
   "status": "candidate"
  },
  "设备租赁": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "设立产业基金": {
   "type": "product",
   "status": "candidate"
  },
@@ -42630,6 +42711,11 @@
   "llm": "claude-sonnet-5"
  },
  "算力基础设施": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "算力数据中心": {
   "type": "theme",
   "status": "candidate",
   "llm": "claude-sonnet-5"
