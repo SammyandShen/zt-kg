@@ -221,6 +221,16 @@
   .stk-chart .hovcol { fill: transparent; }
   .stk-chart .hovcol:hover { fill: rgba(128,148,180,.12); }
   @media (max-width: 760px) { .stk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  /* 概念页：席位/分层名单里的带K线股票小卡 */
+  .tier-stk { width: 152px; background: var(--surface2); border-radius: 9px;
+    padding: 6px 8px 5px; cursor: pointer; }
+  .tier-stk:hover { outline: 1.5px solid var(--accent); }
+  .tier-stk.watch { background: transparent; outline: 1px dashed var(--line); }
+  .ts-h { font-size: 12px; display: flex; justify-content: space-between;
+    align-items: baseline; gap: 4px; white-space: nowrap; overflow: hidden;
+    margin-bottom: 3px; }
+  .ts-h .x { font-size: 10.5px; color: var(--ink3); flex-shrink: 0; }
+  .ts-s { font-size: 11.5px; margin-top: 2px; color: var(--ink2); }
   .chg-col { border: 1px solid var(--line); border-radius: 10px; background: var(--card);
     padding: 8px 11px 6px; }
   .chg-col h4 { margin: 0 0 5px; font-size: 12.5px; display: flex; align-items: center; gap: 4px; }
@@ -1029,19 +1039,20 @@ const LEADER_RANK = ['', '龙头', '龙二', '龙三'];
 function leaderBoardHtml(episodeId, status) {
   const el = (D.episode_leaders || {})[episodeId];
   if (!el || !el[0].length) return '';
-  const chips = el[0].map(([code, rank, score, state, parts, ov]) => {
-    const tip = `${LEADER_RANK[rank]}·评分${Math.round(score * 100)}` +
-      `${state === 'resting' ? '·断板观察中' : ''}` +
-      (parts ? '｜' + parts.map((v, i) =>
-        `${LEADER_PARTS[i]}${Math.round(v * 100)}`).join(' ') : '') +
-      (ov ? '｜人工覆盖(bad case)' : '') +
-      `${status === 'closed' ? '｜盖棺口径：rank1在位日最多' : ''}`;
-    return `<span class="concept-chip" data-code="${code}" title="${esc(tip)}"
-      style="cursor:pointer"><b style="color:var(--up)">${LEADER_RANK[rank]}</b>
-      ${esc(D.stocks[code] || code)}${ov ? ' ⭐' : ''}${
-      state === 'resting' && status !== 'closed'
-        ? ' <span class="x">断板</span>' : ''}</span>`;
-  }).join('');
+  const chips = `<div class="ml-seats" style="max-width:560px">${
+    el[0].map(([code, rank, score, state, parts, ov]) => {
+      const tip = `${LEADER_RANK[rank]}·评分${Math.round(score * 100)}` +
+        `${state === 'resting' ? '·断板观察中' : ''}` +
+        (parts ? '｜' + parts.map((v, i) =>
+          `${LEADER_PARTS[i]}${Math.round(v * 100)}`).join(' ') : '') +
+        (ov ? '｜人工覆盖(bad case)' : '') +
+        `${status === 'closed' ? '｜盖棺口径：rank1在位日最多' : ''}`;
+      return `<div class="ml-seat" data-code="${code}" title="${esc(tip)}">
+        <div class="ml-seat-h"><b>${LEADER_RANK[rank]}</b>${esc(D.stocks[code] || code)}${
+          ov ? ' ⭐' : ''}${state === 'resting' && status !== 'closed'
+          ? '<span class="muted">·断</span>' : ''}</div>
+        ${klineThumb(code)}${stkStatLine(code)}</div>`;
+    }).join('')}</div>`;
   const tl = el[1];
   const tlHtml = tl.length > 1
     ? `<div class="small muted" style="margin-top:4px">换龙：${
@@ -1049,9 +1060,24 @@ function leaderBoardHtml(episodeId, status) {
     : '';
   return `<div style="margin-top:6px">${chips}${tlHtml}</div>`;
 }
-/* 30日K线缩略图（数据仅覆盖开放轮次榜面股+最新日涨停股） */
+/* 30日K线缩略图：主 data.js 只带热门股，其余从懒加载的 ZTKG_KLINE 取尾30根 */
+function thumbBars(code) {
+  const t = (D.kline_thumbs || {})[code];
+  if (t) return t;
+  const b = window.ZTKG_KLINE?.bars?.[code];
+  return b ? b.filter(Boolean).slice(-30) : null;
+}
+function stkStatLine(code, extra) {
+  const b = thumbBars(code);
+  if (!b || b.length < 2) return '';
+  const last = b[b.length - 1], prev = b[b.length - 2];
+  const pct = prev[1] ? (last[1] / prev[1] - 1) * 100 : 0;
+  return `<div class="ts-s">${last[1]} <span style="color:${
+    pct >= 0 ? 'var(--up)' : 'var(--teal)'}">${pct > 0 ? '+' : ''}${
+    pct.toFixed(1)}%</span>${extra || ''}</div>`;
+}
 function klineThumb(code, w = 150, h = 56) {
-  const bars = (D.kline_thumbs || {})[code];
+  const bars = thumbBars(code);
   if (!bars || bars.length < 2) return '';
   const hi = Math.max(...bars.map(b => b[2])), lo = Math.min(...bars.map(b => b[3]));
   const step = w / bars.length, span = hi - lo || 1;
@@ -1212,10 +1238,25 @@ function episodeTierListHtml(cid, epId) {
       code, trading: false, mv: rel.mv, rs: rel.rs, note: rel.note });
   }
   if (!tiers.some(t => t.length)) return '';
-  const chip = s => `<span class="concept-chip${s.trading ? '' : ' watch-chip'}" data-code="${s.code}"
-    title="${esc(s.note)}" style="cursor:pointer">${esc(D.stocks[s.code] || s.code)}
-    <span class="x">${s.trading ? `${s.lb > 1 ? s.lb + '板' : '首板'}·${s.d.slice(5)}`
-      : `未异动${s.mv ? '' : '·映射候选'}`}</span></span>`;
+  const chip = s => {
+    const lbl = s.trading ? `${s.lb > 1 ? s.lb + '板' : '首板'}·${s.d.slice(5)}`
+      : `未异动${s.mv ? '' : '·映射候选'}`;
+    // 停后涨跌：最新收盘 vs 该股本轮最近涨停日收盘（回撤/继续走强一眼可见）
+    let after = '';
+    const K = window.ZTKG_KLINE;
+    if (s.trading && K) {
+      const i = K.dates.indexOf(s.d), b = i >= 0 && K.bars[s.code]?.[i];
+      const lastB = K.bars[s.code] && [...K.bars[s.code]].reverse().find(Boolean);
+      if (b && lastB && b[1] && lastB !== b) {
+        const p = (lastB[1] / b[1] - 1) * 100;
+        after = ` <span class="muted">停后${p > 0 ? '+' : ''}${p.toFixed(0)}%</span>`;
+      }
+    }
+    return `<div class="tier-stk${s.trading ? '' : ' watch'}" data-code="${s.code}"
+      title="${esc(s.note)}"><div class="ts-h">${esc(D.stocks[s.code] || s.code)}
+      <span class="x">${lbl}</span></div>
+      ${klineThumb(s.code, 150, 38)}${stkStatLine(s.code, after)}</div>`;
+  };
   const rows = TIER_DEFS.map(([label, hint, cls], i) => {
     const list = tiers[i];
     if (!list.length) return '';
@@ -1579,6 +1620,12 @@ function renderConcept(cid, qs) {
       <th>炸板</th><th>封单</th><th>首封时间</th><th>流通市值</th><th>最近涨停题材</th><th>同花顺原始原因</th><th>消息</th></tr></thead>
     <tbody>${stockTableRows}</tbody></table></div>`;
 
+  // 席位/分层小卡的K线来自懒加载文件：首渲染无图，加载完成后重渲染补上
+  if (!window.ZTKG_KLINE)
+    ensureKline(err => {
+      if (!err && location.hash.replace(/\?.*/, '') === '#/concept/' + cid)
+        renderConcept(cid, qs);
+    });
   drawTimeline(cid, scopeDays);
   $('#r60').onclick = () => { conceptRange = 60; renderConcept(cid); };
   $('#rall').onclick = () => { conceptRange = 0; renderConcept(cid); };
