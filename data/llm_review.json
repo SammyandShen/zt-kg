@@ -59428,5 +59428,167 @@
   "p": "黄金采选",
   "c": 0.65,
   "model": "claude-sonnet-5"
+ },
+ "气体投资": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "终止委托管理": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "AI服务器电源PCB": {
+  "t": "product",
+  "p": "服务器电源",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "SiC MOSFET": {
+  "t": "product",
+  "p": "SiC功率半导体",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "上马煤矿探转采": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "供热工程": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "国产打印机": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "大健康食品": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "存储测试": {
+  "t": "product",
+  "p": "存储芯片封测",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "打印扫描": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "拟入股佳贤通信": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "新能源矿车": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "汽车电子PCB": {
+  "t": "product",
+  "p": "汽车电子",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "消防": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "环卫保洁": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电力调度": {
+  "t": "product",
+  "p": "智能电网",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "矿产": {
+  "t": "sector",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "端侧AI芯片": {
+  "t": "product",
+  "p": "AI芯片",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "绿色智算中心": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "聚焦集成电路": {
+  "t": "sector",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "英伟达相关": {
+  "t": "theme",
+  "p": "英伟达产业链",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "赛克": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "金融智能终端": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "锂电池膜": {
+  "t": "product",
+  "p": "锂电池",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "陶瓷PCB": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "零售数字化": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "腾讯生态": {
+  "t": "theme",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
  }
 }

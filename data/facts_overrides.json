@@ -927,6 +927,51 @@
    "note": "公司公告澄清'电源产品未在半导体行业应用'，属明确反证",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-05"
+  },
+  {
+   "code": "000839",
+   "trade_date": "2026-08-06",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "两条新闻标题均为'信息安全股异动拉升'，当日主导叙事是信息安全而非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-06"
+  },
+  {
+   "code": "300711",
+   "trade_date": "2026-08-06",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条新闻标题均为'6G概念异动拉升'，当日主导叙事是6G而非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-06"
+  },
+  {
+   "code": "003040",
+   "trade_date": "2026-08-06",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "证据显示当日板块驱动为稳定币/数字货币概念，非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-06"
+  },
+  {
+   "code": "002721",
+   "trade_date": "2026-08-05",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "两条新闻均指向数字货币板块/贵金属概念拉升，当日主导叙事非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-06"
+  },
+  {
+   "code": "600611",
+   "trade_date": "2026-08-05",
+   "theme": "算力",
+   "verdict": "rejected",
+   "note": "两条新闻标题均为'智能驾驶概念午后活跃'，当日主导叙事是智能驾驶而非算力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-06"
   }
  ],
  "episode_verdicts": [
@@ -973,6 +1018,15 @@
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-04",
    "catalyst": "商业航天概念异动拉升，卫星通信/北斗导航/CPO等催化共振，带动神剑股份、通宇通讯等多股涨停"
+  },
+  {
+   "theme": "数字人民币",
+   "start_date": "2026-08-06",
+   "verdict": "verified",
+   "note": "政策消息为财经媒体转述而非官方公告直接点名个股，来源级别中等；轮次层面证据成立，但三只成员的个股级归因证据仍不足，各自维持leave",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-06",
+   "catalyst": "多部门联合印发《关于加快零售业创新发展的意见》，明确提升数智化能力，带动稳定币/数字货币概念集体涨停（中新经纬、财联社08-06报道）；翠微股份、楚天龙、恒宝股份三只涨停股原始归因均含数字人民币标签，与该政策驱动的板块行情吻合，达到立轮门槛"
   }
  ],
  "leaders": []

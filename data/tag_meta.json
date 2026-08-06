@@ -12408,6 +12408,11 @@
   "type": "event",
   "status": "retired"
  },
+ "上马煤矿探转采": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "与五粮液续签协议": {
   "type": "event",
   "status": "retired"
@@ -14164,6 +14169,11 @@
   "type": "event",
   "status": "retired"
  },
+ "拟入股佳贤通信": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "拟全资控股科为升": {
   "type": "event",
   "status": "retired",
@@ -15596,6 +15606,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "气体投资": {
+  "type": "event",
+  "status": "candidate"
+ },
  "氦气涨价": {
   "type": "event",
   "status": "retired"
@@ -16188,6 +16202,11 @@
   "type": "event",
   "status": "retired"
  },
+ "终止委托管理": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "终止收购": {
   "type": "event",
   "status": "retired",
@@ -16599,6 +16618,11 @@
  "资产转让": {
   "type": "event",
   "status": "retired"
+ },
+ "赛克": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "超导参股": {
   "type": "event",
@@ -17700,6 +17724,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "AI服务器电源PCB": {
+  "type": "product",
+  "status": "candidate"
  },
  "AI服务器钻针": {
   "type": "product",
@@ -19503,6 +19531,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "SiC MOSFET": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "SiC增长": {
   "type": "product",
   "status": "candidate"
@@ -20785,6 +20818,11 @@
   "status": "candidate"
  },
  "供热": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "供热工程": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -24179,6 +24217,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "国产打印机": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "国产数据库": {
   "type": "product",
   "status": "candidate",
@@ -24755,6 +24798,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "大健康食品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "大兆瓦产品": {
   "type": "product",
   "status": "candidate"
@@ -25087,6 +25134,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "存储测试": {
+  "type": "product",
+  "status": "candidate"
  },
  "存储测试设备": {
   "type": "product",
@@ -26668,6 +26719,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "打印扫描": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "打印机": {
   "type": "product",
   "status": "candidate"
@@ -27820,6 +27876,11 @@
  "新能源矿卡": {
   "type": "product",
   "status": "candidate"
+ },
+ "新能源矿车": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "新能源碳材料": {
   "type": "product",
@@ -30429,6 +30490,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车电子PCB": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "汽车电机": {
   "type": "product",
   "status": "candidate"
@@ -31231,6 +31297,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "消防": {
+  "type": "product",
+  "status": "candidate"
  },
  "消防机器人": {
   "type": "product",
@@ -32582,6 +32652,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "环卫保洁": {
+  "type": "product",
+  "status": "candidate"
+ },
  "环卫管理": {
   "type": "product",
   "status": "candidate"
@@ -33045,6 +33119,10 @@
   "llm": "claude-sonnet-5"
  },
  "电力设计": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电力调度": {
   "type": "product",
   "status": "candidate"
  },
@@ -33993,6 +34071,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "矿产": {
+  "type": "product",
+  "status": "candidate"
+ },
  "矿产资源": {
   "type": "product",
   "status": "candidate"
@@ -34613,6 +34695,11 @@
  "童装品牌": {
   "type": "product",
   "status": "candidate"
+ },
+ "端侧AI芯片": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "端午消费": {
   "type": "product",
@@ -35442,6 +35529,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "绿色智算中心": {
+  "type": "product",
+  "status": "candidate"
+ },
  "绿色炭黑": {
   "type": "product",
   "status": "candidate"
@@ -35632,6 +35723,10 @@
   "status": "candidate"
  },
  "聚焦主业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "聚焦集成电路": {
   "type": "product",
   "status": "candidate"
  },
@@ -36380,6 +36475,10 @@
   "status": "candidate"
  },
  "苯胺": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "英伟达相关": {
   "type": "product",
   "status": "candidate"
  },
@@ -38143,6 +38242,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "金融智能终端": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "金融智能装备": {
   "type": "product",
   "status": "candidate"
@@ -39017,6 +39121,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "锂电池膜": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "锂电池装备": {
   "type": "product",
   "status": "candidate",
@@ -39534,6 +39643,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "陶瓷PCB": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "陶瓷基板": {
   "type": "product",
   "status": "candidate"
@@ -39661,6 +39775,10 @@
   "status": "candidate"
  },
  "零售政策": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "零售数字化": {
   "type": "product",
   "status": "candidate"
  },
@@ -42851,6 +42969,10 @@
   "type": "theme",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "腾讯生态": {
+  "type": "theme",
+  "status": "candidate"
  },
  "自动驾驶": {
   "type": "theme",

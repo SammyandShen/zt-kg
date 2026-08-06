@@ -3544,6 +3544,158 @@
    "status": "candidate",
    "confidence": 0.75,
    "rationale": "[llm 2026-08-05] 高速光模块业务直接对应800G光模块产品"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "信创",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-06] 业务标签与题材同名，信创软硬件产品直接对应"
+  },
+  {
+   "theme": "复合铜箔",
+   "business_tag_name": "复合铜箔",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-06] 业务标签与题材同名，复合铜箔产品直接对应"
+  },
+  {
+   "theme": "存储芯片",
+   "business_tag_name": "半导体存储芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-06] 半导体存储芯片即存储芯片题材的直接交易标的"
+  },
+  {
+   "theme": "光刻胶",
+   "business_tag_name": "光刻胶配套试剂",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-06] 配套试剂是光刻胶生产使用环节的直接上游辅材"
+  },
+  {
+   "theme": "钨丝金刚线",
+   "business_tag_name": "光伏用钨丝",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-06] 钨丝是钨丝金刚线（切割用金刚线）镀覆前的核心基材"
+  },
+  {
+   "theme": "东数西算",
+   "business_tag_name": "数据中心运营(IDC)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-06] IDC运营是东数西算算力基础设施的直接载体"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "智能舱驾域控制器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-06] 智能座舱/驾驶域控制器是现代汽车产业链核心电子部件"
+  },
+  {
+   "theme": "Robobus自动驾驶",
+   "business_tag_name": "激光雷达",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-06] 激光雷达是自动驾驶感知系统核心上游传感器"
+  },
+  {
+   "theme": "车联网",
+   "business_tag_name": "车路协同/智能网联",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-06] 车路协同/智能网联本身就是车联网题材的交易对象"
+  },
+  {
+   "theme": "车联网",
+   "business_tag_name": "车载智能网联终端",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-06] 车载智能网联终端是车联网落地的核心硬件产品"
+  },
+  {
+   "theme": "车联网",
+   "business_tag_name": "车载模组",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-06] 车载模组是车联网通信功能的直接上游器件"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "银行IT软件服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-06] 银行IT软件服务本身就是金融科技的核心业务载体"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "财富管理软件解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-06] 财富管理软件解决方案属于金融科技的直接产品形态"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "键合丝",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-06] 键合丝是芯片先进封装引线键合工艺的直接上游材料"
+  },
+  {
+   "theme": "钨丝金刚线",
+   "business_tag_name": "钨矿采选",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-06] 钨矿采选提供钨丝金刚线所需的钨原料"
+  },
+  {
+   "theme": "钨丝金刚线",
+   "business_tag_name": "钨粉体制品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-06] 钨粉体是拉制钨丝金刚线母线的直接上游材料"
+  },
+  {
+   "theme": "3D打印",
+   "business_tag_name": "金属粉末",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-06] 金属粉末是金属3D打印增材制造的直接原料"
+  },
+  {
+   "theme": "碳化硅",
+   "business_tag_name": "高纯石英及碳化硅零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-06] 碳化硅零部件即碳化硅题材的直接交易标的"
+  },
+  {
+   "theme": "第三代半导体",
+   "business_tag_name": "高纯石英及碳化硅零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-06] 碳化硅零部件是第三代半导体器件制造的核心材料"
   }
  ]
 }
