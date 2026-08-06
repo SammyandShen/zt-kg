@@ -972,6 +972,33 @@
    "note": "两条新闻标题均为'智能驾驶概念午后活跃'，当日主导叙事是智能驾驶而非算力",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-06"
+  },
+  {
+   "code": "603106",
+   "trade_date": "2026-08-06",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "财联社报道公司澄清智算软硬件/AI智能体相关业务收入较小，AI应用非当日主导叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "002425",
+   "trade_date": "2026-08-06",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻明确归因为'游戏板块走强'带动3连板，且有异常波动公告无应披露事项，AI应用无支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "603039",
+   "trade_date": "2026-08-06",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻明确将6天3板归因于半年报业绩预增52%~83%，证据中无任何AI应用叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
   }
  ],
  "episode_verdicts": [
