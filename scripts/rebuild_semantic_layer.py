@@ -729,10 +729,17 @@ def import_theme_business_mappings(conn, tag_meta: dict[str, dict]) -> int:
 
 def derive_candidate_theme_links(conn, events: list[tuple],
                                  tag_meta: dict[str, dict]) -> int:
-    """只从 active/theme 原因标签生成低置信候选，不生成公司业务事实。"""
+    """从 active 的题材频道标签生成低置信候选，不生成公司业务事实。
+
+    范围 = theme|sector|product（与热力频道、前端"待归因"判定同口径，
+    2026-08-07 扩围）：市场炒"半导体靶材/房地产"这类产业与产品标签同样是
+    题材交易，只认 theme 单型曾让近半涨停事件永远停在"待归因"。
+    catalyst/attribute（半年报增长、央企）仍不生成——它们不是炒作对象。
+    """
     active_themes = {
         name for name, meta in tag_meta.items()
-        if meta.get("type") == "theme" and meta.get("status") == "active"
+        if meta.get("type") in ("theme", "sector", "product")
+        and meta.get("status") == "active"
     }
     if not active_themes:
         return 0

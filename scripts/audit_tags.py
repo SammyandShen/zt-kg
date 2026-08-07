@@ -367,13 +367,14 @@ def main() -> int:
             WHERE l.status!='rejected'
         """)
     ]
+    # 归因可引用题材频道三型（theme|sector|product，2026-08-07 与生成端同步扩围）
     bad_event_theme_types = sorted(
         name for name in event_theme_names
-        if meta.get(name, {}).get("type") != "theme"
+        if meta.get(name, {}).get("type") not in {"theme", "sector", "product"}
         or meta.get(name, {}).get("status") != "active"
     )
     if bad_event_theme_types:
-        errors.append("单次涨停题材关系引用了非 active/theme 标签：" +
+        errors.append("单次涨停题材关系引用了非 active 题材频道标签：" +
                       "、".join(bad_event_theme_types[:20]))
 
     reviewed = Counter((value["status"], value["type"]) for value in meta.values())

@@ -305,6 +305,11 @@ erDiagram
 
 ### 7.5 涨停归因（event_theme_links）
 
+- **候选生成范围**（2026-08-07 扩围）：事件原因标签中 **active 的
+  theme|sector|product 三型**各生成一条低置信候选——与热力频道、前端"待归因"
+  判定同口径。catalyst/attribute（半年报增长、央企）不生成，candidate 状态
+  标签不生成。此前只认 theme 单型，近半涨停事件（如半导体靶材、房地产驱动的）
+  永远停在"待归因"。置信度=0.35+同日广度加成，封顶 0.55（有旁证 0.7）。
 - **link_basis 强制凭据**：派生归因必须引用业务边(basis_kind='business_fact')或
   官方公告('announcement')；无凭据=仅盘面联想，**置信度封顶 0.45**，页面标"无凭据"。
 - verified 归因强制证据：应用 verified 判决时必须绑定 ≥1 条新闻/公告旁证

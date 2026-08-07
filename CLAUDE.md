@@ -123,6 +123,12 @@ semantic_config.calibration_log，前端口径同步 METRIC_DEFS）。本文件�
   +1.22pct（胜率61%，t≈8.8，735样本）> 旧最高板基线 +1.06pct；单调
   rank1>rank2>rank3；权重±0.10 均在噪声内。前端：主线卡双口径（轮次龙头·当日
   领涨）、轮次面板三席 chips+换龙时间线、治理台③三席⭐覆盖。
+- **归因候选生成扩围（2026-08-07）**：derive_candidate_theme_links 从 theme 单型
+  扩为 **active 的 theme|sector|product 三型**（audit 门禁同步放行三型）——
+  与热力频道/前端"待归因"判定统一口径。此前近半涨停事件（半导体靶材、房地产等
+  产业/产品标签驱动）零归因永远"待归因"（bad case：有研新材连板两日无归因）。
+  catalyst/attribute 与 candidate 状态标签仍不生成。轮次 121→253（产业波段
+  开始立轮），既有阈值/过期/判决漏斗不变。
 - **verified 归因强制证据（2026-08-03）**：apply_link_verdicts 应用 verified 判决时
   把该事件的新闻/公告证据绑为题材级旁证（supporting 优先，至多3条）；一条都绑
   不上的 verified 不落地（保持 candidate 走过期通道）。audit 门禁对**全部** verified
