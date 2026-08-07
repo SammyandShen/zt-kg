@@ -7918,6 +7918,11 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "仿制药龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "企业软件龙头": {
   "type": "attribute",
   "status": "candidate",
@@ -8424,6 +8429,11 @@
   "status": "candidate"
  },
  "杭州": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "椒江国资": {
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -9515,6 +9525,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "中报预计减亏": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "中期分红": {
   "type": "catalyst",
   "status": "candidate",
@@ -9888,6 +9903,10 @@
  "减持完毕": {
   "type": "catalyst",
   "status": "retired"
+ },
+ "减持未实施": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "减持终止": {
   "type": "catalyst",
@@ -10870,6 +10889,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "技改获批": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "投资扩产": {
   "type": "catalyst",
   "status": "candidate",
@@ -10879,6 +10902,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "拟中标集采": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "拟分拆子公司上市": {
   "type": "catalyst",
@@ -12835,6 +12862,10 @@
  "创新药上市": {
   "type": "event",
   "status": "retired"
+ },
+ "创新药合作": {
+  "type": "event",
+  "status": "candidate"
  },
  "创新药获批": {
   "type": "event",
@@ -15118,6 +15149,11 @@
   "type": "event",
   "status": "retired"
  },
+ "收购新材料公司": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "收购新能源运维公司": {
   "type": "event",
   "status": "retired"
@@ -15609,6 +15645,11 @@
  "气体投资": {
   "type": "event",
   "status": "candidate"
+ },
+ "氟泽雷塞获批": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "氦气涨价": {
   "type": "event",
@@ -17484,6 +17525,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AI医药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI司法": {
   "type": "product",
   "status": "candidate"
@@ -17919,6 +17964,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI蛋白质设计": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI融媒体": {
   "type": "product",
   "status": "candidate"
@@ -18228,6 +18277,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "CGT": {
+  "type": "product",
+  "status": "candidate"
+ },
  "CIS外延片": {
   "type": "product",
   "status": "candidate"
@@ -18245,6 +18298,10 @@
   "status": "candidate"
  },
  "CNG": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "CNS研发": {
   "type": "product",
   "status": "candidate"
  },
@@ -19747,6 +19804,11 @@
   "status": "candidate"
  },
  "eVTOL模拟器": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "p-Tau217蛋白": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -24439,6 +24501,10 @@
   "status": "candidate"
  },
  "基因修饰动物模型": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "基因修饰模型": {
   "type": "product",
   "status": "candidate"
  },
@@ -29731,6 +29797,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "模块化建筑": {
+  "type": "product",
+  "status": "candidate"
+ },
  "模块化数据中心": {
   "type": "product",
   "status": "candidate",
@@ -29739,6 +29809,11 @@
  "模塑一体化": {
   "type": "product",
   "status": "candidate"
+ },
+ "模式动物": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "模训器材": {
   "type": "product",
@@ -35312,6 +35387,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "细胞与基因治疗": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "细胞免疫治疗": {
   "type": "product",
   "status": "candidate"
@@ -36511,7 +36591,16 @@
   "type": "product",
   "status": "candidate"
  },
+ "药品生产许可证": {
+  "type": "product",
+  "status": "candidate"
+ },
  "药店": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "药物分子砌块": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -38087,6 +38176,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "重组蛋白": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "重组进行": {
   "type": "product",
   "status": "candidate"
@@ -38780,6 +38874,10 @@
   "status": "candidate"
  },
  "铜贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "铜金矿投产": {
   "type": "product",
   "status": "candidate"
  },
@@ -41299,6 +41397,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "CRO概念": {
+  "type": "theme",
+  "status": "candidate"
+ },
  "CVD硅碳负极": {
   "type": "theme",
   "status": "candidate"
@@ -43269,5 +43371,60 @@
  "黑磷": {
   "type": "theme",
   "status": "candidate"
+ },
+ "CAR-T细胞疗法": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "单抗概念": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "AI制药（医疗）": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "创新医疗服务": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "医药医疗风格": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "阿兹海默": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "基金重仓": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "免疫治疗": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "病原体防治": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "百元股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "青蒿素": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
  }
 }

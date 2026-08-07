@@ -999,6 +999,69 @@
    "note": "新闻明确将6天3板归因于半年报业绩预增52%~83%，证据中无任何AI应用叙事",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-07"
+  },
+  {
+   "code": "600183",
+   "trade_date": "2026-08-07",
+   "theme": "PCB",
+   "verdict": "verified",
+   "note": "生益科技主营覆铜板/PCB材料，业务凭据+业绩预增，PCB板块当日集体涨停印证叙事主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "600601",
+   "trade_date": "2026-08-07",
+   "theme": "PCB",
+   "verdict": "verified",
+   "note": "方正科技主营印制电路板，2连板+业绩预增，与同日PCB板块共振",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "002913",
+   "trade_date": "2026-08-07",
+   "theme": "PCB",
+   "verdict": "verified",
+   "note": "奥士康主营PCB，AI服务器订单叙事，业务凭据充分",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "301366",
+   "trade_date": "2026-08-07",
+   "theme": "PCB",
+   "verdict": "verified",
+   "note": "公司公开回应'产能满产、订单积压'且订单同比增超70%，新闻点名当日涨停原因，与PCB主业吻合",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "603328",
+   "trade_date": "2026-08-07",
+   "theme": "PCB",
+   "verdict": "verified",
+   "note": "新闻明确点名'依顿电子涨停，公司非公开发行预案披露'，募资投向PCB项目，业务+公告双重印证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "002369",
+   "trade_date": "2026-08-06",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻明确将涨停归因于'消费电子板块短线拉升'，证据显示当日主导叙事是消费电子而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
+  },
+  {
+   "code": "002376",
+   "trade_date": "2026-08-06",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "两条新闻均明确将涨停归因于'数字货币概念异动拉升'，证据显示当日主导叙事是数字货币而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
   }
  ],
  "episode_verdicts": [
@@ -1054,6 +1117,14 @@
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-06",
    "catalyst": "多部门联合印发《关于加快零售业创新发展的意见》，明确提升数智化能力，带动稳定币/数字货币概念集体涨停（中新经纬、财联社08-06报道）；翠微股份、楚天龙、恒宝股份三只涨停股原始归因均含数字人民币标签，与该政策驱动的板块行情吻合，达到立轮门槛"
+  },
+  {
+   "theme": "汽车电子",
+   "start_date": "2026-08-05",
+   "verdict": "rejected",
+   "note": "三只成分股各有独立驱动（共达电声-股东增持贷款、波导股份-参股北斗+摘帽、常润股份-收购达峰智能+回购），证据未见共同汽车电子催化事件，属标签巧合各炒各的",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-07"
   }
  ],
  "leaders": []

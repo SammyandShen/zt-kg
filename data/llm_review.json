@@ -59590,5 +59590,143 @@
   "p": "",
   "c": 0.55,
   "model": "claude-sonnet-5"
+ },
+ "仿制药龙头": {
+  "t": "attribute",
+  "p": "仿制药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "椒江国资": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "中报预计减亏": {
+  "t": "catalyst",
+  "p": "中报减亏",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "减持未实施": {
+  "t": "catalyst",
+  "p": "减持",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "技改获批": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "拟中标集采": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "氟泽雷塞获批": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "创新药合作": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "收购新材料公司": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "AI医药": {
+  "t": "theme",
+  "p": "AI医疗",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI蛋白质设计": {
+  "t": "theme",
+  "p": "AI制药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "CGT": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "CNS研发": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "p-Tau217蛋白": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "基因修饰模型": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "模块化建筑": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "模式动物": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "细胞与基因治疗": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "药品生产许可证": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "药物分子砌块": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "重组蛋白": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "铜金矿投产": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "CRO概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
  }
 }

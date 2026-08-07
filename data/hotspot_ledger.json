@@ -64,6 +64,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-08-07": {
+   "at": "2026-08-07T18:04:00+08:00",
+   "terms": [
+    {
+     "term": "煤炭",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "PCB",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "存储芯片",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "稳定币",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "电子特气",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "氟化工",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "创新药",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "6G",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "卫星互联网",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "网络安全",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "水泥",
+     "source": "news_terms",
+     "hot": 3
+    }
+   ]
   }
  }
 }

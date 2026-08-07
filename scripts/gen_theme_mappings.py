@@ -30,7 +30,6 @@ META_PATH = common.REPO_ROOT / "data" / "tag_meta.json"
 MODEL = "claude-sonnet-5"
 TIMEOUT_SEC = 600
 BATCH = 60             # 新目标×全部题材按批调用；238节点一口气调会超时
-THEME_BATCH = 60       # 新题材×存量标签的题材侧批量（三型扩围后新题材可达数十个）
 MAX_CALLS = 12         # 单次运行 LLM 调用预算：约 15-20 分钟，积压靠台账逐日消化
 
 PROMPT = """你是A股题材研究员。下面给出「交易题材」列表和「公司业务标签」列表
@@ -132,10 +131,21 @@ def main() -> int:
     results: list[dict] = []
     judged_tags_ok = set(ledger["judged_tags"]) & set(tags)
     judged_themes_ok = set(ledger["judged_themes"]) & set(themes)
+    # 新题材处理（2026-08-07 重构）：不再走"题材块×标签块"二维批（60题材×200
+    # 标签的 prompt 实测超时，且单题材块需 17 次调用全成才记台账，预算 12 之下
+    # 永不收敛）。改为把存量标签重新入队——标签批通道按块记台账断点续传、
+    # 262题材×60标签形状已验证不超时；代价是老题材陪跑一轮（一次性），
+    # 换来收敛性保证。sweep 期间又出新题材会再次触发重置，同样收敛。
+    if new_themes and old_tags:
+        print(f"ℹ️ 新题材 {len(new_themes)} 个：存量标签重新入队全量对判"
+              f"（{len(old_tags)} 个，分批断点续传）")
+        new_tags = sorted(set(new_tags) | set(old_tags))
+        judged_tags_ok -= set(old_tags)
+        judged_themes_ok.update(new_themes)
     calls = 0
     for i in range(0, len(new_tags), BATCH):
         if calls >= MAX_CALLS:
-            print(f"ℹ️ 调用预算 {MAX_CALLS} 用尽，剩余新标签明日续跑")
+            print(f"ℹ️ 调用预算 {MAX_CALLS} 用尽，剩余标签明日续跑")
             break
         chunk = new_tags[i:i + BATCH]
         try:
@@ -144,29 +154,7 @@ def main() -> int:
             judged_tags_ok.update(chunk)
         except Exception as exc:
             calls += 1
-            print(f"⚠️ 新标签批次失败（下次重试）：{exc}", file=sys.stderr)
-    # 新题材×存量标签：题材也分批，每个题材批完整跑完全部标签批才记台账
-    # （三型扩围一次性带来数十新题材，单一 all-or-nothing 台账永远收敛不了）
-    if new_themes and old_tags:
-        for j in range(0, len(new_themes), THEME_BATCH):
-            if calls >= MAX_CALLS:
-                print(f"ℹ️ 调用预算 {MAX_CALLS} 用尽，剩余新题材明日续跑")
-                break
-            tchunk = new_themes[j:j + THEME_BATCH]
-            chunk_ok = True
-            for i in range(0, len(old_tags), 200):
-                if calls >= MAX_CALLS:
-                    chunk_ok = False
-                    break
-                try:
-                    results += call_llm(claude_bin, tchunk,
-                                        mark(old_tags[i:i + 200]))
-                except Exception as exc:
-                    chunk_ok = False
-                    print(f"⚠️ 新题材批次失败（下次重试）：{exc}", file=sys.stderr)
-                calls += 1
-            if chunk_ok:
-                judged_themes_ok.update(tchunk)
+            print(f"⚠️ 标签批次失败（下次重试）：{exc}", file=sys.stderr)
 
     doc = load_json(MAPPING_PATH, {"mappings": []})
     existing = {(m.get("theme"), m.get("business_tag_name"))
