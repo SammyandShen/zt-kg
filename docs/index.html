@@ -209,6 +209,16 @@
   .ml-mem .concept-chip { font-size: 11.5px; padding: 2px 9px; }
   .chg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px; margin-top: 12px; }
+  /* 📡 热点雷达（发现层）：外源提名展示 */
+  .radar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px; margin-top: 8px; }
+  .radar-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    padding: 7px 11px; background: var(--card); border: 1px solid var(--line);
+    border-radius: 9px; font-size: 12.5px; }
+  .radar-row[data-mljump]:hover { outline: 1.5px solid var(--accent); cursor: pointer; }
+  .radar-row .rb { margin-left: auto; font-size: 11px; color: var(--ink3);
+    flex-shrink: 0; }
+  @media (max-width: 760px) { .radar-grid { grid-template-columns: 1fr; } }
   /* 个股页：交易概览 + 日K线 */
   .stk-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px; margin: 10px 0 4px; }
@@ -1961,6 +1971,7 @@ const METRIC_DEFS = {
   momentum:  ['动量', '(近3日日均+0.25)/(前5日日均+0.25)。>1.6 视为加速，<0.55 视为退潮；只反映量能变化。'],
   renewal:   ['续板率', '昨日该题材涨停股中，今日再度涨停的比例；触及未封不计。反映题材内部的持续性/分歧度。'],
   fresh:     ['新启动', '近3日出现涨停、且此前15个交易日几乎无记录的题材；新叙事的第一现场，需核实共同催化。'],
+  radar:     ['热点雷达', '外源热点提名（发现层）：①东财概念板块涨幅榜前20且上涨≥10家（东财自建词表，与同花顺原因独立）②业务图谱共振=同日≥3家且≥节点覆盖股数15%的同业务公司涨停、而同花顺标签未覆盖。提名仅展示：命中词典的标"词典内"（主线卡加📡外源印证），新词待分型链转正后才进热力统计；5个交易日无新信号自动退场。'],
   ebbing:    ['退潮中', '前5日日均≥1.5家但动量≤0.55 的题材；量能明显萎缩。'],
   mainline:  ['今日主线', '按最新交易日题材归因去重家数排序的前3个交易题材；点击卡片直达该轮的分层跟随名单。'],
   next_open_stock:['本股隔日开盘溢价', '该股历次涨停（收盘封住）后，次一交易日开盘价相对涨停价的平均涨幅；高开率=开盘>涨停价的次数占比。衡量本股涨停的"含金量/股性"，可与全市场基线（约+2.1%）对比。前复权口径，停牌顺延到复牌首开盘。'],
@@ -2345,7 +2356,9 @@ function renderHeat() {
         ? ` data-mljump="#/concept/${cid}${id != null ? '?ep=' + id : ''}"`
         : ` data-focus="${esc(x.nm)}"`}>
       <div class="ml-name">${esc(x.nm)}<span class="lc lc-${lc}">${lcTxt}</span>${
-        ph ? `<span class="type-badge theme">${esc(ph)}轮</span>` : ''}</div>
+        ph ? `<span class="type-badge theme">${esc(ph)}轮</span>` : ''}${
+        radarByName[x.nm] ? `<span title="外源印证：${
+          esc(radarByName[x.nm][6])}" style="cursor:help">📡</span>` : ''}</div>
       <div class="ml-row"><span class="ml-num">${x.today}家</span>${dArrow(x.today, prevN)}
         ${rn != null ? `<span>续板率${iInfo('renewal')} <b>${rn}%</b></span>` : ''}${
         !board ? '<span class="muted small">未成轮·按板数领涨</span>' : ''}</div>
@@ -2355,6 +2368,25 @@ function renderHeat() {
         .join(' · ')}</div>` : ''}
       <div class="ml-spark">${spark(heatTaxSeries(x.nm).slice(-10))}</div></div>`;
   };
+
+  // 📡 热点雷达（发现层）：外源提名仅展示，不进热力/归因/轮次统计
+  const radarRows = (D.radar || []).slice(0, 12);
+  const radarByName = {};
+  for (const r of radarRows) if (r[1] != null) radarByName[r[1]] = r;
+  const radarHtml = radarRows.length ? `
+  <div class="sec-h"><b>📡 热点雷达</b>${iInfo('radar')}
+    <span class="muted small">外源提名 · 不进热力统计 · 新词经分型转正后才参与</span></div>
+  <div class="radar-grid">${radarRows.map(r => {
+    const [term, mname, status, nDays, , last, brief] = r;
+    const rcid = mname != null ? nameToCid[mname] : null;
+    return `<div class="radar-row"${rcid != null
+        ? ` data-mljump="#/concept/${rcid}"` : ''}>
+      <b>${esc(term)}</b>${status === 'adopted'
+        ? '<span class="type-badge theme">词典内</span>'
+        : '<span class="type-badge attribute">新词·待分型</span>'}
+      <span class="muted small">${esc(brief)}</span>
+      <span class="rb">${nDays > 1 ? nDays + '日 · ' : ''}${last.slice(5)}</span></div>`;
+  }).join('')}</div>` : '';
 
   // ③ 变化面：加速 / 新启动 / 退潮（只看交易题材，产业/产品覆盖率不足时无意义）
   const themeStats = themeNodes.map(nm => {
@@ -2402,6 +2434,7 @@ function renderHeat() {
     ${chgCol('🌱 新启动', 'fresh', freshRows, x => '近3日' + x.r3sum + '股次', 'var(--teal)')}
     ${chgCol('🌊 退潮中', 'ebbing', ebbRows, x => '×' + x.ratio.toFixed(1), 'var(--ink3)')}
   </div>
+  ${radarHtml}
   <div class="sec-h"><b>结构面</b>
     <span class="muted small">近5日股次${iInfo('gushi')} · 产业/产品只统计已核实在营业务${iInfo('heat_biz')} · 题材来自单次归因${iInfo('heat_theme')}</span></div>
   <div class="layer-overview">

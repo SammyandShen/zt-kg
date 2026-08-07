@@ -123,6 +123,14 @@ semantic_config.calibration_log，前端口径同步 METRIC_DEFS）。本文件�
   +1.22pct（胜率61%，t≈8.8，735样本）> 旧最高板基线 +1.06pct；单调
   rank1>rank2>rank3；权重±0.10 均在噪声内。前端：主线卡双口径（轮次龙头·当日
   领涨）、轮次面板三席 chips+换龙时间线、治理台③三席⭐覆盖。
+- **热点雷达阶段1（2026-08-07）**：发现层回答"市场在讨论什么"，补同花顺打标
+  盲区。两源：fetch_em_boards（东财概念板块涨幅榜，独立词表，前20且上涨≥10家；
+  盘中手动跑默认跳过防错记日期）+ discover_hotspots S2 业务共振（同日≥3家同业务
+  节点涨停、≥节点基数15%意外度、同花顺归因未覆盖）。信号留痕 theme_signals，
+  提名 hotspot_nominations 纯派生重算（词典对齐 adopted/radar，5日退场）。
+  **红线：提名只展示（热力页📡雷达卡+主线卡印证徽章），不写归因/轮次/热力**；
+  新词转正只走既有分型链。阈值 semantic_config.discovery。阶段2待建：新闻标题
+  LLM 提词+新词自动入 gen_tag_meta；阶段3：快讯RSS。详见 ARCHITECTURE §7.8。
 - **归因候选生成扩围（2026-08-07）**：derive_candidate_theme_links 从 theme 单型
   扩为 **active 的 theme|sector|product 三型**（audit 门禁同步放行三型）——
   与热力频道/前端"待归因"判定统一口径。此前近半涨停事件（半导体靶材、房地产等

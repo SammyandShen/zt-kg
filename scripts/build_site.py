@@ -472,6 +472,36 @@ def main() -> int:
         st = stock_stats.setdefault(code, [None, None, 0, 0, 0])
         st[3], st[4] = r1, r23
 
+    # 热点雷达（发现层，2026-08-07）：外源提名仅展示，不进任何热度/归因统计。
+    alias_map_radar = common.load_aliases()
+    sig_by_canon: dict[str, dict[str, tuple]] = {}
+    for d, source, term, detail in conn.execute(
+            "SELECT signal_date,source,term,detail FROM theme_signals"):
+        canon = alias_map_radar.get(term, term)
+        cur = sig_by_canon.setdefault(canon, {})
+        if source not in cur or d > cur[source][0]:
+            cur[source] = (d, detail)
+    radar: list[list] = []
+    for term, last, n_days, ssum, mname, status in conn.execute(
+            "SELECT term,last_date,n_days,strength_sum,matched_name,status "
+            "FROM hotspot_nominations WHERE status!='dismissed' "
+            "ORDER BY strength_sum DESC"):
+        parts = []
+        for source, (_d, det) in sorted((sig_by_canon.get(term) or {}).items()):
+            try:
+                dd = json.loads(det or "{}")
+            except ValueError:
+                dd = {}
+            if source == "em_board":
+                parts.append(f"东财榜#{dd.get('rank', '?')} "
+                             f"{dd.get('chg', '?')}% 涨{dd.get('up', '?')}家")
+            elif source == "biz_resonance":
+                parts.append(f"业务共振{dd.get('n', '?')}/{dd.get('base', '?')}家")
+            else:
+                parts.append(source)
+        radar.append([term, mname, status, n_days, round(ssum, 2), last,
+                      " · ".join(parts)])
+
     # 题材反查业务候选池：来自显式题材→业务标签映射，再连接有证据的公司事实。
     # 这里只是可研究的公司全集，不能自动算作本轮题材成分股。
     theme_business_candidates: dict[int, list] = {}
@@ -548,6 +578,7 @@ def main() -> int:
         "theme_business_candidates": theme_business_candidates,
         "semantic_evidence": semantic_evidence,
         "stock_stats": stock_stats,
+        "radar": radar,
     }
     js = ("// 由 scripts/build_site.py 生成，禁止手改\n"
           "// event 字段: [code, 连板数, high_days, 涨停类型, 炸板次数, 封单万, 流通市值亿, 首封HH:MM, 原始原因, [概念id], touch?]  最后一位=1表示触及涨停未封住\n"

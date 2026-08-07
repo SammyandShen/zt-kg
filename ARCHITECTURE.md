@@ -61,7 +61,7 @@ claude CLI (sonnet/haiku) ┘ 归因判决/分型/年报抽取/一句话解读
 | 班次 | 时间 | 脚本 | 干什么 | 不干什么 |
 |---|---|---|---|---|
 | 早班 | 07:40 | run-morning.sh | 隔夜新闻/公告/互动回复/年报候选收拢（--days 4 覆盖周一）→ rebuild 晋升候选 → T+复核 → judge 判决 → rebuild → audit → build_site → 发布。目的：9 点前昨日涨停股信息完整 | 不抓当日涨停池（盘前无数据）、不跑 fetch_next_open（无当日开盘价）、不跑分型/映射/挂树慢工序 |
-| 晚班 | 17:00 | run-daily.sh | fetch_daily（当日双池）→ fetch_next_open（昨日事件的今日开盘价+日K）→ 新闻/公告/summarize → 分型链（gen_tag_meta/classify/auto_adopt）→ gen_theme_mappings → rebuild → T+复核 → judge → rebuild → audit → build_site → 发布 → **发布线以下慢工序**：年报抓取/抽取、互动抓取、gen_business_tree 挂树 | 慢工序产生的候选等次日早班 rebuild 晋升（既定顺序，不是 bug） |
+| 晚班 | 17:00 | run-daily.sh | fetch_daily（当日双池）→ fetch_next_open（昨日事件的今日开盘价+日K）→ **fetch_em_boards（雷达S1东财榜）** → 新闻/公告/summarize → 分型链（gen_tag_meta/classify/auto_adopt）→ gen_theme_mappings → rebuild → T+复核 → judge → rebuild → **discover_hotspots（雷达S2+提名）** → audit → build_site → 发布 → **发布线以下慢工序**：年报抓取/抽取、互动抓取、gen_business_tree 挂树 | 慢工序产生的候选等次日早班 rebuild 晋升（既定顺序，不是 bug） |
 
 安装/状态：`bash install-launchd.sh status|install|test-morning`。
 launchd 用 homebrew bash（TCC 权限），日志在 `logs/daily-*.log` / `logs/morning-*.log`。
@@ -120,6 +120,8 @@ zt-kg/
 | judge_attributions.py | claude CLI 三队列判决（保守；写覆盖台账） | data/facts_overrides.json |
 | audit_tags.py | 质量门禁（只读；不过则停发布） | — |
 | build_site.py | 导出 data.js / data-kline.js | docs/data.js, docs/data-kline.js |
+| fetch_em_boards.py | 雷达S1：东财概念板块涨幅榜（独立词表第二观测口；盘中手动跑默认跳过防错记，--force 覆盖） | theme_signals |
+| discover_hotspots.py | 雷达S2 业务共振信号 + hotspot_nominations 提名收敛 | theme_signals, hotspot_nominations |
 | backtest_leader.py | 龙头评分回测（只读，不进班次；--scan 权重敏感性） | — |
 | query.py | CLI 查询（codes/stock/concept/date/similar/tree/review-*） | — |
 
@@ -179,7 +181,17 @@ DDL 唯一定义处 = `scripts/common.py` 的 `DDL` 常量 + `open_db()` 内迁�
 |---|---|---|
 | **episode_leader_daily** | (episode_id, trade_date, rank) | 轮次龙头榜逐日快照，rank 1/2/3。score=EMA、raw_score、parts=六分项JSON、state=active/resting、source=derived/override。**纯派生**：derive_leader_board 唯一写入方，每次 rebuild DELETE 全量重算，幂等已验证 |
 
-### 4.5 辅助表
+### 4.5 热点发现层（2026-08-07）
+
+| 表 | 主键/唯一 | 说明 |
+|---|---|---|
+| **theme_signals** | UNIQUE(signal_date, source, term) | 热点信号留痕（append-only，类比 evidence_items）。source：em_board(东财概念榜)/biz_resonance(业务共振)/news_terms(二期)/flash_rss(三期)；strength 归一化 0-1；detail JSON |
+| **hotspot_nominations** | term | 提名（**纯派生**，discover_hotspots 每日 DELETE 全量重算）。match_kind=exact/alias/none 与词典对齐；status=radar(新词展示)/adopted(已在词典·外源印证)/dismissed(退场) |
+
+红线：提名永不写 event_theme_links / theme_episodes / 正式热力；新词转正只走
+gen_tag_meta → classify_tags → auto_adopt 既有分型链。
+
+### 4.6 辅助表
 
 news / news_log / briefs（新闻与一句话解读，成熟度规则见 §7.9）、meta(k/v)。
 
@@ -380,7 +392,22 @@ rank1>rank2>rank3；权重 ±0.10 敏感性均在噪声内（平坦最优）；s
 **"停后"指标**（概念页六层名单 mini 卡）= 最新收盘 vs 该股涨停日收盘的涨跌%，
 衡量"涨停之后到现在拿住的话赚/亏多少"。
 
-### 7.8 标签七类分型（tag_meta.json）
+### 7.8 热点雷达（发现层，semantic_config.discovery）
+
+- **S1 东财概念榜**：涨幅榜前 board_top_n=20 且上涨家数 ≥ board_min_up=10 入选；
+  strength = (21−rank)/20。东财自建概念词表，与同花顺涨停原因完全独立。
+- **S2 业务共振**：当日 zt 池中 ≥ resonance_min=3 家共享同一 active 业务节点
+  （verified 事实，含祖先闭包），且共振家数 ≥ 节点全库覆盖股数 ×
+  resonance_univ_ratio=0.15（意外度分母：3/3 焦炭是信号、11/97 电子元器件是噪声），
+  且该节点同名概念当日归因家数 < 共振家数 × resonance_attr_ratio=0.5
+  （同花顺已覆盖的不重复报）。strength = 共振/基数。
+- **提名门槛**（任一）：≥2 源 / 连续≥2 日 / 单信号强度 ≥ nomination_strength=0.55。
+  词过归一化管线对齐词典：命中 → adopted（主线卡 📡外源印证徽章）；
+  新词 → radar（待分型链转正）；最后信号距最新交易日 > radar_expire_days=5 → dismissed。
+- 阶段2/3 待建：新闻标题 LLM 提词（news_terms）、快讯 RSS（flash_rss）、
+  新词自动入 gen_tag_meta。验收指标：提名日早于该概念首次立轮日 ≥1 交易日的比例。
+
+### 7.9 标签七类分型（tag_meta.json）
 
 - 类型：sector(稳定大产业) / product(细分行业、产品、技术、业务线) /
   theme(交易题材) / catalyst(催化) / attribute(属性) / event(一次性事件，
@@ -394,7 +421,7 @@ rank1>rank2>rank3；权重 ±0.10 敏感性均在噪声内（平坦最优）；s
 - 分型链（零人工）：gen_tag_meta 登记 → classify_tags(sonnet 复核，active 改判
   门槛 conf≥0.8) → auto_adopt_tags 转正+挂树四道闸。
 
-### 7.9 新闻与解读成熟度
+### 7.10 新闻与解读成熟度
 
 - 抓取窗口 [涨停日−2, +1]，标题点名优先、榜单类降权，每次最多存3条（URL去重）。
   每股查两次（时间序+相关性序合并），防大盘综述刷屏。
@@ -402,7 +429,7 @@ rank1>rank2>rank3；权重 ±0.10 敏感性均在噪声内（平坦最优）；s
   未关闭=不成熟，--days 覆盖到就自动重查/重算；之后为终态永久跳过。
 - data.js 只导出最近 60 个交易日的新闻/briefs（控体积）。
 
-### 7.10 六层名单（概念页轮次卡）
+### 7.11 六层名单（概念页轮次卡）
 
 按关系成色分层：①核心业务(core/secondary 已商业化) ②直接成长(early_revenue/
 research) ③上下游映射(supply_chain，互动平台候选专用层) ④参股布局(holding)
@@ -436,6 +463,7 @@ verified 事实；③④⑤只进反查候选池。
 | episode_leaders | {epId: [board, timeline]}。board=[[code, rank, score, state, [六分项], override01]]（开放轮=最新活跃日榜；closed=盖棺榜）；timeline=[[date, code]] rank1 变更点压缩（含首任） |
 | kline_thumbs | {code: [[o,c,h,l]×≤30]}——范围：开放轮或近10日内收轮的榜面股 ∪ 最新日 zt 池 |
 | stock_stats | {code: [溢价均值, 高开率, n, rank1轮次数, rank2/3轮次数]} |
+| radar | [[term, matched_name\|null, status, n_days, strength_sum, last_date, brief]]（不含 dismissed；brief 如"东财榜#3 +6.3% 涨38家 · 业务共振3/3家"） |
 | theme_business_candidates | {cid: [[code, 业务标签, relation, maturity, 事实status, 事实conf, summary, 映射type, 映射status, 映射conf, rationale, [evidence_ids], revenue_share]]} |
 | semantic_evidence | {eid: [type, source, title, url, published, subject_status, claim, reliability]} |
 

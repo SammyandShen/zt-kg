@@ -8,6 +8,8 @@ echo "===== $(date '+%Y-%m-%d %H:%M:%S') run-daily start ====="
 python3 scripts/fetch_daily.py
 # 昨日涨停股的今日开盘价（隔日开盘溢价指标；增量，失败明日自动重试）
 python3 scripts/fetch_next_open.py || echo "⚠️ fetch_next_open 失败，跳过"
+# 热点雷达信号源S1：东财概念板块榜（与同花顺独立的第二观测口；只留痕不进热力）
+python3 scripts/fetch_em_boards.py || echo "⚠️ fetch_em_boards 失败，跳过"
 # 新闻关联失败不阻断网页重建（东财接口偶发抖动，次日会自动补缺）
 python3 scripts/fetch_news.py --days 2 || echo "⚠️ fetch_news 失败，跳过"
 # 巨潮官方公告标题只作为事件上下文；题材未被明确点名时绝不自动绑定或核实。
@@ -30,6 +32,8 @@ python3 scripts/review_theme_attributions.py --days 5
 python3 scripts/judge_attributions.py || echo "⚠️ judge_attributions 失败，跳过"
 # 重放当日新判决（facts_overrides）到语义层
 python3 scripts/rebuild_semantic_layer.py
+# 热点雷达S2+提名收敛（需最终归因家数对比，故在第二次 rebuild 之后）
+python3 scripts/discover_hotspots.py || echo "⚠️ discover_hotspots 失败，跳过"
 python3 scripts/audit_tags.py
 python3 scripts/build_site.py
 # 公网发布（存在 .deploy-enabled 开关文件才执行；见 deploy.sh 头部说明）

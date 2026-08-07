@@ -463,6 +463,33 @@ CREATE TABLE IF NOT EXISTS daily_kline (
     PRIMARY KEY (code, trade_date)
 );
 
+-- 热点发现层（2026-08-07）：外源/库内信号提名"市场在讨论什么"。
+-- theme_signals 留痕不删（类比 evidence_items）；nominations 纯派生每日重算。
+-- 提名永不直接写归因/轮次/热力——新词走 gen_tag_meta 分型链转正后才被统计。
+CREATE TABLE IF NOT EXISTS theme_signals (
+    id          INTEGER PRIMARY KEY,
+    signal_date TEXT NOT NULL,       -- 交易日
+    source      TEXT NOT NULL,       -- em_board/biz_resonance/news_terms/flash_rss
+    term        TEXT NOT NULL,       -- 源侧原始写法
+    strength    REAL NOT NULL,       -- 归一化 0-1
+    detail      TEXT,                -- JSON：{rank,chg,up,lead,codes...}
+    created_at  TEXT NOT NULL,
+    UNIQUE (signal_date, source, term)
+);
+CREATE INDEX IF NOT EXISTS idx_signals_date ON theme_signals(signal_date, source);
+
+CREATE TABLE IF NOT EXISTS hotspot_nominations (
+    term         TEXT PRIMARY KEY,   -- 归一化后的规范词
+    first_date   TEXT NOT NULL,
+    last_date    TEXT NOT NULL,
+    n_days       INTEGER NOT NULL,
+    n_sources    INTEGER NOT NULL,
+    strength_sum REAL NOT NULL,
+    match_kind   TEXT NOT NULL,      -- exact/alias/none 与词典对齐结果
+    matched_name TEXT,               -- 命中的库内概念名（none 时为 NULL）
+    status       TEXT NOT NULL       -- radar/adopted/dismissed
+);
+
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT);
 """
 
