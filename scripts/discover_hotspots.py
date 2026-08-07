@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import defaultdict
 
@@ -192,7 +193,11 @@ def register_new_terms(conn, cfg: dict) -> list[str]:
     for term, first, n_days, n_sources in rows:
         if term in meta:
             continue
-        meta[term] = {"type": "unknown", "status": "candidate",
+        # audit 命名规则："XX概念/产业链/生态"必须归 theme——登记时直接给足
+        # 类型建议（unknown 会撞门禁中止班次，2026-08-07 首跑事故）
+        suggested = ("theme" if re.search(r"(概念|产业链|生态)$", term)
+                     else "unknown")
+        meta[term] = {"type": suggested, "status": "candidate",
                       "radar": f"{first}·{n_sources}源{n_days}日"}
         added.append(term)
     if added:
