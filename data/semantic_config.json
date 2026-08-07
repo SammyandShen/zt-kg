@@ -47,7 +47,10 @@
   "nomination_strength": 0.55,
   "nomination_note": "提名门槛：≥2源 或 连续≥2日 或 单信号强度≥0.55（东财榜前10），三者任一",
   "radar_expire_days": 5,
-  "radar_expire_days_note": "最后信号距最新交易日超N个交易日 → dismissed 退场"
+  "radar_expire_days_note": "最后信号距最新交易日超N个交易日 → dismissed 退场",
+  "adopt_min_sources": 2,
+  "adopt_min_days": 2,
+  "adopt_note": "radar 新词自动登记 tag_meta candidate 的门槛（比提名严）：≥2源 或 ≥2日；登记后走分型链收敛，radar 字段留痕"
  },
  "leader": {
   "$note": "龙头/龙二/龙三评分（2026-08-05）：六维加权→EMA平滑→rank1滞后换龙。权重待回测校准（backtest_leader.py），改动记 calibration_log",

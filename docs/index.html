@@ -843,9 +843,15 @@ const heatBucketOf = nm => isTheme(nm) ? 'theme' : isCatalyst(nm) ? 'catalyst' :
 const isActiveTheme = nm => statusOf(nm) === 'active' && isTheme(nm);
 const isActiveCatalyst = nm => statusOf(nm) === 'active' && isCatalyst(nm);
 function semanticEventsForCid(cid, d) {
+  // 热度口径统一（2026-08-07）：题材频道三型（theme|sector|product）一律读
+  // 归因链接（"因它涨"）。theme 保持严格归因；sector/product 型标签若从未有
+  // 归因数据（词典外/纯历史概念）按节点回落原始标签口径，不逐日混算。
   const nm = D.concepts[cid]?.[0];
-  if (nm && typeOf(nm) === 'theme')
+  const t = nm ? typeOf(nm) : null;
+  if (t === 'theme')
     return (eventThemeByCid[cid]?.days.get(d) || []).map(x => x.ev);
+  if ((t === 'sector' || t === 'product') && eventThemeByCid[cid])
+    return (eventThemeByCid[cid].days.get(d) || []).map(x => x.ev);
   return byConcept[cid]?.days.get(d) || [];
 }
 const _heatCidsCache = {};
@@ -1944,9 +1950,9 @@ const heatExpanded = new Set();
 const heatLayerAll = new Set();
 const HEAT_LAYER = {
   sector:  { label: '产业', title: '产业热力', cls: 'sector', rgb: '46,107,230',
-             hint: '格子=当天有已核实在营业务事实的去重涨停家数' },
+             hint: '格子=当天因子树内题材涨停的去重家数（归因口径；词典无对应词的节点回落业务口径，悬停行名看口径）' },
   product: { label: '细分', title: '细分产品热力', cls: 'product', rgb: '0,143,168',
-             hint: '格子=当天有已核实在营产品/服务事实的去重涨停家数' },
+             hint: '格子=当天因该产品方向涨停的去重家数（归因口径；词典无对应词的节点回落业务口径，悬停行名看口径）' },
   theme:   { label: '题材', title: '交易题材热力', cls: 'theme', rgb: '119,85,204',
              hint: '格子=当天单次涨停题材候选/核实关系覆盖的去重涨停家数' },
   catalyst:{ label: '催化', title: '催化热力', cls: 'catalyst', rgb: '0,182,161',
@@ -1973,7 +1979,7 @@ const METRIC_DEFS = {
   fresh:     ['新启动', '近3日出现涨停、且此前15个交易日几乎无记录的题材；新叙事的第一现场，需核实共同催化。'],
   radar:     ['热点雷达', '外源热点提名（发现层）：①东财概念板块涨幅榜前20且上涨≥10家（东财自建词表，与同花顺原因独立）②业务图谱共振=同日≥3家且≥节点覆盖股数15%的同业务公司涨停、而同花顺标签未覆盖。提名仅展示：命中词典的标"词典内"（主线卡加📡外源印证），新词待分型链转正后才进热力统计；5个交易日无新信号自动退场。'],
   ebbing:    ['退潮中', '前5日日均≥1.5家但动量≤0.55 的题材；量能明显萎缩。'],
-  mainline:  ['今日主线', '按最新交易日题材归因去重家数排序的前3个交易题材；点击卡片直达该轮的分层跟随名单。'],
+  mainline:  ['今日主线', '按最新交易日归因去重家数排序的前6个热点（交易题材+产业/产品型概念，2026-08-07 起三型同权；轮次成员重叠≥50%并卡展示）；点击卡片直达该轮的分层跟随名单。'],
   next_open_stock:['本股隔日开盘溢价', '该股历次涨停（收盘封住）后，次一交易日开盘价相对涨停价的平均涨幅；高开率=开盘>涨停价的次数占比。衡量本股涨停的"含金量/股性"，可与全市场基线（约+2.1%）对比。前复权口径，停牌顺延到复牌首开盘。'],
   leader_score:['龙头评分', '六维加权（空间30/先手15/封板质量20/正宗度10/隔日溢价15/断板韧性10）→EMA平滑逐日重算；换龙需挑战者评分超现任15%（滞后防震荡）；断板股2个活跃日内靠记忆撑席位，不反包自动让位；首板不认。龙二/龙三按当日评分直排。权重回测校准中，人工覆盖走治理台⭐。'],
   tiers:     ['本轮跟随分层', '①核心业务=主营/重要收入 ②直接成长=有产品订单收入尚小(含在研) ③上下游=真实供货关系 ④参股布局 ⑤拟收购转型=交易未完成 ⑥纯市场联想=无业务证据。实心=本轮已涨停，虚线=有业务但未异动(watch)。'],
@@ -2038,16 +2044,39 @@ function primarySectorNodes() {
   return formalHeatNodes('sector').filter(n =>
     ![...heatAncestorsAll(n)].some(a => heatTypeOf(a) === 'sector'));
 }
+// 业务节点→归因概念集：子树内节点名（含别名）能对上词典概念且有归因数据的 cid。
+// 非空 = 该节点热度走归因口径（因该方向涨停）；空 = 词典外图谱节点，业务口径兜底。
+const _bizAttrCidsCache = {};
+function bizAttrCids(name) {
+  if (_bizAttrCidsCache[name]) return _bizAttrCidsCache[name];
+  const s = new Set();
+  for (const id of businessDescendants(businessIdOf(name))) {
+    const cid = nameToCid[BUSINESS_CONCEPTS[id]?.[0]];
+    if (cid != null && eventThemeByCid[cid]) s.add(cid);
+  }
+  return (_bizAttrCidsCache[name] = s);
+}
+const bizModeOf = name => bizAttrCids(name).size
+  ? '归因口径：当日因该方向（子树内题材）涨停的去重家数'
+  : '业务口径：做该业务的公司当日涨停家数（词典暂无对应题材词，可能含因无关题材涨停的股）';
 function heatDayCodes(name, d) {
   const key = name + '\n' + d;
   if (_heatDayCodesCache[key]) return _heatDayCodesCache[key];
   const out = new Set();
   if (isBusinessKey(name)) {
-    const ids = businessDescendants(businessIdOf(name));
-    for (const ev of D.events[d] || []) {
-      if (isTouch(ev)) continue;
-      if (businessFactsOn(ev[0], d, true).some(f => ids.has(+f[10])))
-        out.add(ev[0]);
+    // 口径统一（2026-08-07）：能对上词典的业务节点按归因计数，
+    // "做机器人但因重组涨停"不再灌进机器人热度
+    const cids = bizAttrCids(name);
+    if (cids.size) {
+      for (const cid of cids)
+        for (const x of eventThemeByCid[cid].days.get(d) || []) out.add(x.ev[0]);
+    } else {
+      const ids = businessDescendants(businessIdOf(name));
+      for (const ev of D.events[d] || []) {
+        if (isTouch(ev)) continue;
+        if (businessFactsOn(ev[0], d, true).some(f => ids.has(+f[10])))
+          out.add(ev[0]);
+      }
     }
   } else {
     for (const cid of heatTaxCids(name))
@@ -2172,8 +2201,10 @@ function layerHeatRowHtml(r, dates, vmax, type) {
       style="background:rgba(${def.rgb},${a.toFixed(2)});color:${fg}">${v || ''}</td>`;
   }).join('');
   const action = type === 'catalyst' ? `data-detail="${esc(r.nm)}"` : `data-focus="${esc(r.nm)}"`;
+  const modeTip = (type === 'sector' || type === 'product') && isBusinessKey(r.nm)
+    ? ` title="${esc(bizModeOf(r.nm))}"` : '';
   return `<tr><td class="rowlab"><span class="row-type ${def.cls}"></span>
-    <span class="lname lvl1" ${action}>${esc(heatNameOf(r.nm))}</span>
+    <span class="lname lvl1" ${action}${modeTip}>${esc(heatNameOf(r.nm))}</span>
     <span class="rsum">近5日${r.sum5}股次</span></td>${cells}</tr>`;
 }
 function renderHeat() {
@@ -2275,8 +2306,16 @@ function renderHeat() {
     const [id, ep] = eps[0];
     return { cid, ph: !ep[2] ? (PHASE_LABEL[ep[3]] || '') : '', id: +id };
   };
+  // 候选池三型（2026-08-07 扩围下半场）：theme 树节点 ∪ active 的 sector/product
+  // 型词典标签（半导体靶材/机器人/PCB 这类归因扩围后有链接的产业与产品概念）
+  const mlChannelTags = Object.keys(META).filter(nm => {
+    const t = META[nm]?.[0];
+    return (t === 'sector' || t === 'product') && META[nm]?.[1] === 'active'
+      && nameToCid[nm] != null && eventThemeByCid[nameToCid[nm]];
+  });
+  const mlPool = [...new Set([...themeNodes, ...mlChannelTags])];
   // 展示层聚合：轮次成员重叠≥50%的题材并成一张主卡（数据层不合并，只解决视角分裂）
-  const mlCand = themeNodes.map(nm => ({
+  const mlCand = mlPool.map(nm => ({
     nm, today: todaySet(nm).size, mom: momentumOf(heatTaxSeries(nm)).ratio,
   })).filter(x => x.today >= 2)
     .sort((a, b) => b.today - a.today || b.mom - a.mom).slice(0, 8)

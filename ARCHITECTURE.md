@@ -61,7 +61,7 @@ claude CLI (sonnet/haiku) ┘ 归因判决/分型/年报抽取/一句话解读
 | 班次 | 时间 | 脚本 | 干什么 | 不干什么 |
 |---|---|---|---|---|
 | 早班 | 07:40 | run-morning.sh | 隔夜新闻/公告/互动回复/年报候选收拢（--days 4 覆盖周一）→ rebuild 晋升候选 → T+复核 → judge 判决 → rebuild → audit → build_site → 发布。目的：9 点前昨日涨停股信息完整 | 不抓当日涨停池（盘前无数据）、不跑 fetch_next_open（无当日开盘价）、不跑分型/映射/挂树慢工序 |
-| 晚班 | 17:00 | run-daily.sh | fetch_daily（当日双池）→ fetch_next_open（昨日事件的今日开盘价+日K）→ **fetch_em_boards（雷达S1东财榜）** → 新闻/公告/summarize → 分型链（gen_tag_meta/classify/auto_adopt）→ gen_theme_mappings → rebuild → T+复核 → judge → rebuild → **discover_hotspots（雷达S2+提名）** → audit → build_site → 发布 → **发布线以下慢工序**：年报抓取/抽取、互动抓取、gen_business_tree 挂树 | 慢工序产生的候选等次日早班 rebuild 晋升（既定顺序，不是 bug） |
+| 晚班 | 17:00 | run-daily.sh | fetch_daily（当日双池）→ fetch_next_open（昨日事件的今日开盘价+日K）→ **fetch_em_boards（雷达S1东财榜）** → 新闻/公告/summarize → 分型链（gen_tag_meta/classify/auto_adopt）→ gen_theme_mappings → rebuild → T+复核 → judge → rebuild → **discover_news_terms（雷达S3/S4提词）→ discover_hotspots（S2+提名+新词登记）** → audit → build_site → 发布 → **发布线以下慢工序**：年报抓取/抽取、互动抓取、gen_business_tree 挂树 | 慢工序产生的候选等次日早班 rebuild 晋升（既定顺序，不是 bug） |
 
 安装/状态：`bash install-launchd.sh status|install|test-morning`。
 launchd 用 homebrew bash（TCC 权限），日志在 `logs/daily-*.log` / `logs/morning-*.log`。
@@ -121,7 +121,8 @@ zt-kg/
 | audit_tags.py | 质量门禁（只读；不过则停发布） | — |
 | build_site.py | 导出 data.js / data-kline.js | docs/data.js, docs/data-kline.js |
 | fetch_em_boards.py | 雷达S1：东财概念板块涨幅榜（独立词表第二观测口；盘中手动跑默认跳过防错记，--force 覆盖） | theme_signals |
-| discover_hotspots.py | 雷达S2 业务共振信号 + hotspot_nominations 提名收敛 | theme_signals, hotspot_nominations |
+| discover_news_terms.py | 雷达S3/S4：库内新闻标题（去噪）+ 快讯RSS（华尔街见闻/界面/36氪/钛媒体）→ sonnet 每日一次提词；台账 hotspot_ledger.json 防重 | theme_signals |
+| discover_hotspots.py | 雷达S2 业务共振信号 + hotspot_nominations 提名收敛 + 达标新词自动登记 tag_meta candidate | theme_signals, hotspot_nominations, tag_meta.json |
 | backtest_leader.py | 龙头评分回测（只读，不进班次；--scan 权重敏感性） | — |
 | query.py | CLI 查询（codes/stock/concept/date/similar/tree/review-*） | — |
 
@@ -259,6 +260,7 @@ erDiagram
 | event_attributions.json | 人工核实 | 某股某日归因人工条目 |
 | theme_business_mappings.json | gen_theme_mappings | 题材→业务映射台账（candidate 起步） |
 | business_tree.json | gen_business_tree | 挂树台账：条目=product→父产业；groups 段=细分→产业；refined 段防重问 |
+| hotspot_ledger.json | discover_news_terms | 提词台账：news_terms 段按交易日防重（存当日提取结果；改提示词删日期条目重跑） |
 | llm_review.json / llm_parent_suggestions.json | classify_tags | 分型判决台账/父建议（不自动改树） |
 | similar_dismissed.json | Claude 判决留痕 | 疑似重复"已判不并"名单（精确对+整族正则） |
 
@@ -283,8 +285,11 @@ erDiagram
 
 ### 7.2 板块热度与生命周期
 
-- **板块热度** = 标签层级子树内每日**去重**涨停家数（业务图谱侧走
-  businessDescendants 传递闭包）。
+- **板块热度 = 归因口径统一**（2026-08-07）：题材频道三型（theme|sector|product）
+  一律按**归因链接**计当日去重家数（"因它涨"）。业务图谱节点（产业/细分/产品层）
+  按子树节点名对齐词典概念后走归因口径；词典无对应词的节点按节点整体回落
+  业务事实口径（"做它的公司涨停"，行名悬停显示口径）——"做机器人但因重组涨停"
+  不再灌进机器人热度。归因口径受 data.js 60 交易日导出窗口限制。
 - **启动判定** = 近3日均≥3家 且 ≥2.2×前15日基线。
 - **变化面**（只看题材层）：动量 = 近3日均/前15日均——🔥加速中≥1.6、
   🌱新启动=近3日有量且前15日≈0、🌊退潮中≤0.55。
@@ -401,11 +406,18 @@ rank1>rank2>rank3；权重 ±0.10 敏感性均在噪声内（平坦最优）；s
   resonance_univ_ratio=0.15（意外度分母：3/3 焦炭是信号、11/97 电子元器件是噪声），
   且该节点同名概念当日归因家数 < 共振家数 × resonance_attr_ratio=0.5
   （同花顺已覆盖的不重复报）。strength = 共振/基数。
+- **S3 news_terms / S4 flash_rss**（discover_news_terms.py，阶段2/3）：库内近2日
+  新闻标题（正则去噪：龙虎榜/异动/风险提示等模板）+ 快讯 RSS 标题，合并一次
+  sonnet 调用提取题材短语（≤8字、剔股票名/退休词；strength=0.3+热度直觉×0.1）；
+  台账 hotspot_ledger.json 按交易日防重。LLM 不可用当天跳过，不做规则兜底。
 - **提名门槛**（任一）：≥2 源 / 连续≥2 日 / 单信号强度 ≥ nomination_strength=0.55。
   词过归一化管线对齐词典：命中 → adopted（主线卡 📡外源印证徽章）；
   新词 → radar（待分型链转正）；最后信号距最新交易日 > radar_expire_days=5 → dismissed。
-- 阶段2/3 待建：新闻标题 LLM 提词（news_terms）、快讯 RSS（flash_rss）、
-  新词自动入 gen_tag_meta。验收指标：提名日早于该概念首次立轮日 ≥1 交易日的比例。
+- **新词自动入分型链**（阶段2）：radar 新词达 adopt_min_sources=2 源或
+  adopt_min_days=2 日 → 自动登记 tag_meta（type=unknown, status=candidate,
+  radar 字段留痕溯源）→ classify_tags 复核分型 → auto_adopt 四道闸转正。
+  单日单源的榜单过客不进词典；bad case 删条目即可。
+- 验收指标：提名日早于该概念首次立轮日 ≥1 交易日的比例（前向记账）。
 
 ### 7.9 标签七类分型（tag_meta.json）
 
@@ -478,7 +490,7 @@ script 注入加载（file:// 兼容）。build_site 每日随班次重生成。
 | 路由 | 页面 | 要点 |
 |---|---|---|
 | #/date/{d} | 每日复盘 | 顶部标签库日报卡（覆盖率/未入树/待审/🆕新面孔） |
-| #/heat | 板块热力 | 四段式：市场状态条→今日主线卡（6张，统一骨架：三席K线卡[评分席位或"未成轮·按板数领涨"回落]+成员chips+热度柱钉底）→变化面→结构面+交叉透视+bump+三层热力表 |
+| #/heat | 板块热力 | 四段式：市场状态条→今日主线卡（6张，候选池=theme树节点∪active sector/product标签三型同权，📡外源印证徽章；统一骨架：三席K线卡[评分席位或"未成轮·按板数领涨"回落]+成员chips+热度柱钉底）→变化面+📡热点雷达→结构面+交叉透视+bump+三层热力表 |
 | #/trend | 情绪趋势 | 涨停家数/封板率/最高板 + 隔日开盘溢价两卡 |
 | #/concept/{cid} | 概念页 | 轮次卡+龙头三席+换龙时间线+六层名单（tier mini 卡=K线+停后%）+上下级 chips |
 | #/stock/{code} | 个股页 | 日K全图(MA5/10/20+量柱+涨停▲炸板△+十字悬浮) + 概览8块 + 涨停史 |

@@ -129,8 +129,17 @@ semantic_config.calibration_log，前端口径同步 METRIC_DEFS）。本文件�
   节点涨停、≥节点基数15%意外度、同花顺归因未覆盖）。信号留痕 theme_signals，
   提名 hotspot_nominations 纯派生重算（词典对齐 adopted/radar，5日退场）。
   **红线：提名只展示（热力页📡雷达卡+主线卡印证徽章），不写归因/轮次/热力**；
-  新词转正只走既有分型链。阈值 semantic_config.discovery。阶段2待建：新闻标题
-  LLM 提词+新词自动入 gen_tag_meta；阶段3：快讯RSS。详见 ARCHITECTURE §7.8。
+  新词转正只走既有分型链。阈值 semantic_config.discovery。详见 ARCHITECTURE §7.8。
+- **热点雷达阶段2+3（2026-08-07 同日）**：discover_news_terms.py——库内新闻标题
+  （正则去噪）+ 快讯RSS（华尔街见闻/界面/36氪/钛媒体，单源失败跳过）合并一次
+  sonnet 提词写 theme_signals(news_terms/flash_rss)，台账 hotspot_ledger.json
+  按日防重；radar 新词 ≥2源或≥2日 自动登记 tag_meta candidate（radar字段留痕）
+  进分型链。LLM 不可用当天跳过不做规则兜底。
+- **主线卡三型+热度口径统一（2026-08-07）**：主线卡候选池 = theme 树节点 ∪
+  active sector/product 词典标签（煤炭/机器人/半导体靶材可上主线）；
+  semanticEventsForCid 三型一律归因口径；业务图谱节点热度按子树对齐词典走
+  归因口径（"因它涨"），词典外节点回落业务口径（行名悬停标注）——
+  "做机器人但因重组涨停"不再灌进机器人热度。归因口径受 60 日导出窗口限制。
 - **归因候选生成扩围（2026-08-07）**：derive_candidate_theme_links 从 theme 单型
   扩为 **active 的 theme|sector|product 三型**（audit 门禁同步放行三型）——
   与热力频道/前端"待归因"判定统一口径。此前近半涨停事件（半导体靶材、房地产等

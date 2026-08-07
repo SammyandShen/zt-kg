@@ -1,0 +1,69 @@
+{
+ "news_terms": {
+  "2026-08-06": {
+   "at": "2026-08-07T14:53:39+08:00",
+   "terms": [
+    {
+     "term": "算力硬件",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "小金属",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "液冷服务器",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "CPO",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "PCB",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "存储芯片",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "电子化学品",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "智能驾驶",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "贵金属",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "培育钻石",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "AI应用",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 3
+    }
+   ]
+  }
+ }
+}

@@ -171,6 +171,37 @@ def rebuild_nominations(conn, cfg: dict, dates: list[str]) -> dict[str, int]:
     return counts
 
 
+def register_new_terms(conn, cfg: dict) -> list[str]:
+    """达标 radar 新词自动登记 tag_meta candidate（阶段2，2026-08-07）。
+
+    门槛比提名更严：≥2源 或 ≥2日（单日单源的榜单过客不进词典）。登记后走既有
+    分型链收敛（classify_tags 复核分型 → auto_adopt 四道闸转正），本函数不设
+    任何人工环节；bad case 删 tag_meta 条目即可（radar 字段留痕溯源）。
+    """
+    min_sources = cfg.get("adopt_min_sources", 2)
+    min_days = cfg.get("adopt_min_days", 2)
+    rows = conn.execute(
+        "SELECT term, first_date, n_days, n_sources FROM hotspot_nominations "
+        "WHERE status='radar' AND match_kind='none' "
+        "AND (n_sources>=? OR n_days>=?)", (min_sources, min_days)).fetchall()
+    if not rows:
+        return []
+    meta_path = common.REPO_ROOT / "data" / "tag_meta.json"
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    added = []
+    for term, first, n_days, n_sources in rows:
+        if term in meta:
+            continue
+        meta[term] = {"type": "unknown", "status": "candidate",
+                      "radar": f"{first}·{n_sources}源{n_days}日"}
+        added.append(term)
+    if added:
+        meta_path.write_text(
+            json.dumps(meta, ensure_ascii=False, indent=1) + "\n",
+            encoding="utf-8")
+    return added
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -192,12 +223,16 @@ def main() -> int:
         if args.dry_run:
             conn.rollback()
             mode = "dry-run（已回滚）"
+            added: list[str] = []
         else:
             conn.commit()
             mode = "已写入"
+            added = register_new_terms(conn, cfg)
         print(f"✅ 热点雷达{mode}：{dates[-1]} 业务共振信号 {n_res} 条；"
               f"提名 radar {counts['radar']} / 已在词典 {counts['adopted']} / "
-              f"退场 {counts['dismissed']}")
+              f"退场 {counts['dismissed']}"
+              + (f"；新词登记入分型链 {len(added)}：" + "、".join(added)
+                 if added else ""))
         return 0
     except Exception:
         conn.rollback()

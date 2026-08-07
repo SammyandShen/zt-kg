@@ -32,7 +32,9 @@ python3 scripts/review_theme_attributions.py --days 5
 python3 scripts/judge_attributions.py || echo "⚠️ judge_attributions 失败，跳过"
 # 重放当日新判决（facts_overrides）到语义层
 python3 scripts/rebuild_semantic_layer.py
-# 热点雷达S2+提名收敛（需最终归因家数对比，故在第二次 rebuild 之后）
+# 热点雷达S3+S4：新闻标题/快讯RSS 提词（sonnet每日一次，台账防重，失败不阻断）
+python3 scripts/discover_news_terms.py || echo "⚠️ discover_news_terms 失败，跳过"
+# 热点雷达S2+提名收敛+新词登记（需最终归因家数对比，故在第二次 rebuild 之后）
 python3 scripts/discover_hotspots.py || echo "⚠️ discover_hotspots 失败，跳过"
 python3 scripts/audit_tags.py
 python3 scripts/build_site.py
