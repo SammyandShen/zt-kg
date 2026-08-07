@@ -140,6 +140,13 @@ semantic_config.calibration_log，前端口径同步 METRIC_DEFS）。本文件�
   semanticEventsForCid 三型一律归因口径；业务图谱节点热度按子树对齐词典走
   归因口径（"因它涨"），词典外节点回落业务口径（行名悬停标注）——
   "做机器人但因重组涨停"不再灌进机器人热度。归因口径受 60 日导出窗口限制。
+- **归因链四优化（2026-08-07，review 落地）**：①T+复核 business_relation 加
+  同名直配（与 find_basis 口径对齐，"业务标签即题材名"不再被记未映射误杀）
+  ②business_fact 凭据候选免过期（969条复活；config candidate_expire_exempt_basis）
+  ③映射链扩三型：gen_theme_mappings 词表=theme全部+**立过轮次**的 sector/product
+  （587全量会低质），导入/audit 门禁同步放行；新题材×存量标签按 THEME_BATCH=60
+  分批记台账、单次运行 MAX_CALLS=12 预算逐日消化 ④证据绑定/brief 加成匹配
+  规范名∪全部别名。复核结果：旁证较强 35→45。
 - **归因候选生成扩围（2026-08-07）**：derive_candidate_theme_links 从 theme 单型
   扩为 **active 的 theme|sector|product 三型**（audit 门禁同步放行三型）——
   与热力频道/前端"待归因"判定统一口径。此前近半涨停事件（半导体靶材、房地产等

@@ -654,9 +654,12 @@ def import_theme_business_mappings(conn, tag_meta: dict[str, dict]) -> int:
         if not theme or not business_tag:
             raise ValueError("theme_business_mappings 缺少 theme/business_tag_name")
         meta = tag_meta.get(theme) or {}
-        if meta.get("type") != "theme" or meta.get("status") != "active":
+        # 2026-08-07 扩三型：映射左侧允许题材频道全部类型（与归因/热度同口径）
+        if (meta.get("type") not in ("theme", "sector", "product")
+                or meta.get("status") != "active"):
             raise ValueError(
-                f"theme_business_mappings 的题材必须是 active/theme：{theme}"
+                f"theme_business_mappings 的题材必须是 active 的题材频道标签"
+                f"（theme|sector|product）：{theme}"
             )
         if business_tag not in available_business_tags:
             expanded = graph_descendant_fact_tags(conn, business_tag)
@@ -782,17 +785,26 @@ def derive_candidate_theme_links(conn, events: list[tuple],
             return "announcement", announcement_ids[0]
         return None, None
 
+    # 题材名变体（2026-08-07）：证据/解读匹配同时认规范名和全部别名——
+    # 新闻里写"CPO概念/共封装光学"都算命中"CPO"，凭据率不再被精确子串卡住
+    alias_variants: dict[str, list[str]] = defaultdict(list)
+    for alias, canon in common.load_aliases().items():
+        if alias != canon:
+            alias_variants[canon].append(alias)
+
     now = common.now_iso()
     for eid, cid, name in eligible:
         d, code, stock_name = (
             event_info[eid][1], event_info[eid][2], event_info[eid][3]
         )
+        variants = [name] + alias_variants.get(name, [])
+        mentions = lambda text: any(v in text for v in variants)  # noqa: E731
         same_day = breadth[(d, cid)]
         confidence = min(0.55, 0.35 + min(3, max(0, same_day - 1)) * 0.05)
         brief = conn.execute(
             "SELECT brief FROM briefs WHERE code=? AND trade_date=?", (code, d)
         ).fetchone()
-        if brief and name in brief[0]:
+        if brief and mentions(brief[0]):
             confidence = min(0.55, confidence + 0.05)
         matched_evidence: list[int] = []
         matched_announcements: list[int] = []
@@ -816,7 +828,7 @@ def derive_candidate_theme_links(conn, events: list[tuple],
                     or code in haystack
                 )
             )
-            if name in haystack and direct_stock:
+            if mentions(haystack) and direct_stock:
                 matched_evidence.append(evidence_id)
                 if evidence_type == "announcement":
                     matched_announcements.append(evidence_id)
@@ -1643,16 +1655,24 @@ def sync_market_roles(conn) -> int:
 
 
 def expire_stale_candidates(conn, events: list[tuple], cfg: dict) -> int:
-    """退场：候选归因 N 个交易日内未进任何轮次、且无 supporting 旁证 → expired。"""
+    """退场：候选归因 N 个交易日内未进任何轮次、且无 supporting 旁证 → expired。
+
+    豁免（2026-08-07）：带业务凭据（basis_kind='business_fact'）的候选不过期——
+    公司做这个业务是持续事实，归因大概率正确，只是窄题材没凑齐立轮门槛
+    （同日<3家），不该和纯盘面联想一样 10 日一刀切。公告凭据仍过期（时效性强）。
+    """
     all_dates = sorted({row[1] for row in events})
     days = cfg["candidate_expire_days"]
     if len(all_dates) <= days:
         return 0
+    exempt = set(cfg.get("candidate_expire_exempt_basis", ["business_fact"]))
     cutoff = all_dates[-days - 1]
+    ph = ",".join("?" for _ in exempt) or "''"
     cur = conn.execute(
-        """
+        f"""
         UPDATE event_theme_links SET status='expired', updated_at=?
         WHERE source='derived' AND status='candidate' AND episode_id IS NULL
+          AND (basis_kind IS NULL OR basis_kind NOT IN ({ph}))
           AND event_id IN (SELECT id FROM limit_up_events WHERE trade_date<=?)
           AND NOT EXISTS (
             SELECT 1 FROM attribution_reviews r
@@ -1660,7 +1680,7 @@ def expire_stale_candidates(conn, events: list[tuple], cfg: dict) -> int:
               AND r.concept_id=event_theme_links.concept_id
               AND r.verdict='supporting')
         """,
-        (common.now_iso(), cutoff),
+        (common.now_iso(), *sorted(exempt), cutoff),
     )
     return cur.rowcount
 

@@ -18,6 +18,8 @@
  },
  "candidate_expire_days": 10,
  "candidate_expire_note": "候选归因产生后 N 个交易日内未进入任何轮次、且无 supporting 旁证 → expired",
+ "candidate_expire_exempt_basis": ["business_fact"],
+ "candidate_expire_exempt_note": "带此类凭据的候选免过期（2026-08-07）：业务事实是持续凭据，窄题材凑不齐立轮门槛不等于归因错误；公告凭据时效性强仍过期",
  "calibration_log": [
   {
    "date": "2026-08-03",

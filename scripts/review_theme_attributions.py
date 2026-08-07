@@ -50,6 +50,11 @@ def theme_codes(conn, concept_id: int, trade_date: str | None) -> set[str]:
 
 
 def business_relation(conn, concept_id: int, code: str) -> str | None:
+    """映射命中 ∪ 同名直配——与 derive 端 find_basis 同口径（2026-08-07 对齐）。
+
+    此前只查映射 join：归因扩围后"业务标签即题材名"的股（房地产/半导体靶材）
+    链接上有 business_fact 凭据、复核却记"未映射"少拿加分，10 日后被误杀。
+    """
     rows = [
         row[0] for row in conn.execute("""
             SELECT f.relation_type
@@ -58,7 +63,12 @@ def business_relation(conn, concept_id: int, code: str) -> str | None:
             WHERE m.concept_id=? AND f.code=?
               AND m.status!='rejected'
               AND f.status NOT IN ('rejected','expired')
-        """, (concept_id, code))
+            UNION ALL
+            SELECT f.relation_type
+            FROM stock_business_facts f
+            WHERE f.code=? AND f.status NOT IN ('rejected','expired')
+              AND f.tag_name=(SELECT name FROM concepts WHERE id=?)
+        """, (concept_id, code, code, concept_id))
     ]
     return max(rows, key=lambda value: RELATION_PRIORITY.get(value, 0)) if rows else None
 

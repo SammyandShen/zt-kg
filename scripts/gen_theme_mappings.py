@@ -30,6 +30,8 @@ META_PATH = common.REPO_ROOT / "data" / "tag_meta.json"
 MODEL = "claude-sonnet-5"
 TIMEOUT_SEC = 600
 BATCH = 60             # 新目标×全部题材按批调用；238节点一口气调会超时
+THEME_BATCH = 60       # 新题材×存量标签的题材侧批量（三型扩围后新题材可达数十个）
+MAX_CALLS = 12         # 单次运行 LLM 调用预算：约 15-20 分钟，积压靠台账逐日消化
 
 PROMPT = """你是A股题材研究员。下面给出「交易题材」列表和「公司业务标签」列表
 （业务标签来自年报核实的公司在营业务；其中带【节点】前缀的是三层业务图谱的
@@ -57,11 +59,25 @@ def load_json(path, default):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
 
 
-def active_themes() -> list[str]:
+def active_themes(conn) -> list[str]:
+    """映射左侧词表（2026-08-07 扩三型）：active theme 全部 + active 的
+    sector/product 中**立过题材轮次**的——被市场实际炒过的产业/产品概念才需要
+    反查公司池；587 个产品标签全量进词表会产生几十次低质大 prompt 调用。
+    新标签成轮后自动进入词表，增量收敛。
+    """
     meta = load_json(META_PATH, {})
     meta.pop("$note", None)
-    return sorted(nm for nm, m in meta.items()
-                  if m.get("type") == "theme" and m.get("status") == "active")
+    episode_names = {r[0] for r in conn.execute(
+        "SELECT DISTINCT c.name FROM theme_episodes ep "
+        "JOIN concepts c ON c.id=ep.concept_id")}
+    out = []
+    for nm, m in meta.items():
+        if m.get("status") != "active":
+            continue
+        t = m.get("type")
+        if t == "theme" or (t in ("sector", "product") and nm in episode_names):
+            out.append(nm)
+    return sorted(out)
 
 
 def business_tags(conn) -> list[str]:
@@ -97,7 +113,7 @@ def main() -> int:
     args = ap.parse_args()
 
     conn = common.open_db()
-    themes = active_themes()
+    themes = active_themes(conn)
     node_set = set(graph_sector_nodes(conn))
     tags = sorted(set(business_tags(conn)) | node_set)   # 叶子标签 + 图谱聚合节点
     mark = lambda ts: [("【节点】" + t) if t in node_set else t for t in ts]
@@ -115,22 +131,42 @@ def main() -> int:
     claude_bin = find_claude()
     results: list[dict] = []
     judged_tags_ok = set(ledger["judged_tags"]) & set(tags)
-    themes_all_ok = True
+    judged_themes_ok = set(ledger["judged_themes"]) & set(themes)
+    calls = 0
     for i in range(0, len(new_tags), BATCH):
+        if calls >= MAX_CALLS:
+            print(f"ℹ️ 调用预算 {MAX_CALLS} 用尽，剩余新标签明日续跑")
+            break
         chunk = new_tags[i:i + BATCH]
         try:
             results += call_llm(claude_bin, themes, mark(chunk))
+            calls += 1
             judged_tags_ok.update(chunk)
         except Exception as exc:
+            calls += 1
             print(f"⚠️ 新标签批次失败（下次重试）：{exc}", file=sys.stderr)
+    # 新题材×存量标签：题材也分批，每个题材批完整跑完全部标签批才记台账
+    # （三型扩围一次性带来数十新题材，单一 all-or-nothing 台账永远收敛不了）
     if new_themes and old_tags:
-        for i in range(0, len(old_tags), 200):
-            try:
-                results += call_llm(claude_bin, new_themes,
-                                    mark(old_tags[i:i + 200]))
-            except Exception as exc:
-                themes_all_ok = False
-                print(f"⚠️ 新题材批次失败（下次重试）：{exc}", file=sys.stderr)
+        for j in range(0, len(new_themes), THEME_BATCH):
+            if calls >= MAX_CALLS:
+                print(f"ℹ️ 调用预算 {MAX_CALLS} 用尽，剩余新题材明日续跑")
+                break
+            tchunk = new_themes[j:j + THEME_BATCH]
+            chunk_ok = True
+            for i in range(0, len(old_tags), 200):
+                if calls >= MAX_CALLS:
+                    chunk_ok = False
+                    break
+                try:
+                    results += call_llm(claude_bin, tchunk,
+                                        mark(old_tags[i:i + 200]))
+                except Exception as exc:
+                    chunk_ok = False
+                    print(f"⚠️ 新题材批次失败（下次重试）：{exc}", file=sys.stderr)
+                calls += 1
+            if chunk_ok:
+                judged_themes_ok.update(tchunk)
 
     doc = load_json(MAPPING_PATH, {"mappings": []})
     existing = {(m.get("theme"), m.get("business_tag_name"))
@@ -169,8 +205,7 @@ def main() -> int:
         json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     # 只把成功批次记入台账，失败批次明日自动重试
     ledger["judged_tags"] = sorted(judged_tags_ok)
-    if themes_all_ok:
-        ledger["judged_themes"] = themes
+    ledger["judged_themes"] = sorted(judged_themes_ok)
     LEDGER_PATH.write_text(
         json.dumps(ledger, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print("✅ 已写盘；跑 rebuild_semantic_layer.py + build_site.py 生效")

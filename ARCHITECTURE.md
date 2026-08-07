@@ -169,7 +169,7 @@ DDL 唯一定义处 = `scripts/common.py` 的 `DDL` 常量 + `open_db()` 内迁�
 | **event_evidence** | (event_id, evidence_id) | 事件级上下文证据（公告等） |
 | **event_theme_evidence** | (event_id, concept_id, evidence_id) | 题材级旁证（新闻同时点名股票+题材才绑定） |
 | **theme_episode_evidence** | (episode_id, evidence_id) | 轮次级证据 |
-| **theme_business_mappings** | (concept_id, business_tag_name) | 题材→业务标签映射（源=JSON+图谱展开行 source='graph' 每日重生成）。可研究公司池，≠本轮成分 |
+| **theme_business_mappings** | (concept_id, business_tag_name) | 题材→业务标签映射（源=JSON+图谱展开行 source='graph' 每日重生成）。左侧允许题材频道三型（2026-08-07；生成词表=active theme 全部+立过轮次的 sector/product，587全量会产生低质大prompt）。可研究公司池，≠本轮成分 |
 | **company_reports** | (code, report_year) | 年报抓取台账（PDF/文本在 report_cache/，不入git） |
 | **business_fact_candidates** | UNIQUE(code, report_year, tag_name, relation_type) | 年报/互动抽取的主营候选，等 rebuild 晋升 |
 | **attribution_reviews** | (event_id, concept_id, stage) | T+0/1/2 旁证评分。**故意无外键**（2026-08-03 事故：CASCADE 曾把复核连带删光）；孤儿由 rebuild 尾部显式清理 |
@@ -332,9 +332,14 @@ erDiagram
 - verified 归因强制证据：应用 verified 判决时必须绑定 ≥1 条新闻/公告旁证
   （supporting 优先，至多3条），绑不上保持 candidate；audit 门禁查全部 verified。
 - **候选退场**：产生后 candidate_expire_days=10 个交易日未进任何轮次且无
-  supporting 旁证 → expired；澄清公告点名题材 → 对应候选直接 rejected。
+  supporting 旁证 → expired；**basis_kind='business_fact' 的候选免过期**
+  （2026-08-07：业务是持续事实，窄题材凑不齐立轮门槛≠归因错误；公告凭据仍过期，
+  config `candidate_expire_exempt_basis`）；澄清公告点名题材 → 直接 rejected。
+- **证据/解读匹配走别名变体**（2026-08-07）：新闻/公告绑定旁证与 brief 加成的
+  题材名匹配 = 规范名 ∪ aliases.json 全部别名（"共封装光学"命中"CPO"）。
 - **T+复核**（attribution_reviews，只作旁证排序，任何分数不自动升 verified）：
   T+0 看同日题材广度+题材级证据+业务映射；T+1 看次日广度+同股延续；T+2 再看延续。
+  业务关系判定 = 映射命中 ∪ **同名直配**（与 find_basis 同口径，2026-08-07 对齐）。
 - **judge 三队列**（claude-sonnet-5 保守判决，写 facts_overrides 留痕）：
   ①活跃轮次主炒归因(近2日) ②新轮次提案(近3日，喂系统自动推导的 auto_catalyst，
   模型只核对一致性) ③龙头认定已改为评分体系自动产出。verified 需可解释关联+

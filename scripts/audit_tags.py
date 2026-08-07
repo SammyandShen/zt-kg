@@ -352,12 +352,13 @@ def main() -> int:
             WHERE m.status!='rejected'
         """)
     ]
+    # 2026-08-07 扩三型：映射左侧允许题材频道全部类型（与生成/导入端同步）
     bad_mapping_theme_types = sorted(
         name for name in mapping_theme_names
-        if meta_type_by_name.get(name) != "theme"
+        if meta_type_by_name.get(name) not in {"theme", "sector", "product"}
     )
     if bad_mapping_theme_types:
-        errors.append("题材业务映射左侧不是 theme：" +
+        errors.append("题材业务映射左侧不是题材频道标签（theme|sector|product）：" +
                       "、".join(bad_mapping_theme_types[:20]))
 
     event_theme_names = [

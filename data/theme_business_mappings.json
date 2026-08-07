@@ -3696,6 +3696,3238 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-08-06] 碳化硅零部件是第三代半导体器件制造的核心材料"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] PCB制造直接对应PCB交易题材本身"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "人形机器人芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 专用芯片是人形机器人的核心上游零部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "人形机器人芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 专用芯片是人形机器人的核心上游零部件"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "先进封装",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即先进封装本身"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "功率IC",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 功率IC是半导体芯片产品"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "动力煤",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 动力煤即煤炭交易品种"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "化工煤",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 化工煤是煤炭的用途分类之一"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医疗产品流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 医疗产品流通即医药流通业务"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药批发零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 医药批发零售即医药流通业务"
+  },
+  {
+   "theme": "数字人民币",
+   "business_tag_name": "数字人民币",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即数字人民币本身"
+  },
+  {
+   "theme": "数字人民币",
+   "business_tag_name": "数字人民币产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即数字人民币相关产品"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即机器人本身"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 汽车电子芯片是汽车电子题材交易的核心标的"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "消费电子产品制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 消费电子产品制造直接就是消费电子题材的交易对象"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "炼焦煤",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 炼焦煤是煤炭的具体品类"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "焦煤",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 焦煤是煤炭的具体品类"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "焦炭",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 焦炭是煤炭炼焦后的直接下游产品"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "煤化工",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 煤化工是以煤炭为原料的直接下游深加工"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "煤炭开采与洗选",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 煤炭开采与洗选就是煤炭题材本身的主营业务"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "用电信息采集终端设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 用电信息采集终端是智能电网的核心终端设备"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "电力线载波通信模块",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 电力线载波通信模块是智能电表/智能电网通信的核心上游组件"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "电能表",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 电能表是智能电网建设的核心终端设备"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "配电自动化设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 配电自动化设备直接构成智能电网的交易对象"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "配电自动化设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 配电自动化设备属于电网设备的具体品类"
+  },
+  {
+   "theme": "热电联产",
+   "business_tag_name": "电力及蒸汽",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 电力及蒸汽联供就是热电联产的产出物"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "电子级氢氟酸",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 电子级氢氟酸是晶圆清洗刻蚀的核心工艺化学品"
+  },
+  {
+   "theme": "跨境电商",
+   "business_tag_name": "跨境电商",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 跨境电商业务本身就是该题材的交易对象"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "金融科技解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 金融科技解决方案就是金融科技题材的核心业务"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "集成电路封装测试",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] IC封装测试企业直接从事先进封装工艺，是该题材的直接承载"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "集成电路封装测试",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 封装测试是半导体产业链核心环节之一"
+  },
+  {
+   "theme": "风电",
+   "business_tag_name": "风电混塔",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 混塔是风电机组塔筒部件，直接对应风电题材"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB印刷电路板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] PCB印刷电路板即PCB题材直接交易标的"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB电路板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 电路板产品即PCB核心产品"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "HDI",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] HDI是高密度互连PCB细分品类"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB专用设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] PCB制造专用设备为PCB生产上游装备"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 业务图谱中药产业聚合节点与中药题材直接对应"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "一次性使用无菌输注类医疗器械的研发、制造和销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 一次性无菌输注类产品即医疗器械核心品类"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "一次性医用防护手套",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 医用防护手套属于医疗器械/耗材范畴"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "SPD医院物资供应链服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 医院物资供应链服务即医药流通核心业务"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "IC设计技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 芯片设计服务属于半导体产业核心环节"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "LNG生产与调峰运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] LNG生产调峰运营即天然气产业核心环节"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "LNG的采购、运输、销售业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] LNG采购运输销售即天然气贸易核心业务"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC及智算中心服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] IDC及智算中心服务即数据中心核心业务"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] IDC技术服务直接服务于数据中心运营"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC数据中心",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] IDC数据中心即题材直接交易标的"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC机柜租赁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 机柜租赁是数据中心核心基础设施业务"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "AIDC算力基础设施服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] AIDC算力基础设施服务即数据中心/智算中心业务"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "LED封装",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] LED封装属于光电子器件核心制造环节"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "OLED面板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] OLED面板属于光电子显示核心产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "万向节",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 万向节是汽车传动系统核心零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "乘用车零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 乘用车零部件即汽车零部件题材直接标的"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "乘用车轮胎",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 轮胎属于汽车零部件核心品类"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.99,
+   "rationale": "[llm 2026-08-07] 业务标签与题材同名，直接对应光伏产业公司"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏EPC及运维服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光伏电站工程建设与运维是光伏产业链核心业务环节"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏储能电站建设",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光伏电站建设业务直接属于光伏题材"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "光伏储能电站建设",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 业务同时涵盖储能电站建设"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏及储能EPC工程",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光伏EPC工程即光伏产业核心业务"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "光伏及储能EPC工程",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 业务同时涵盖储能EPC工程"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 光伏发电即光伏产业核心变现环节"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏导电浆料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 光伏电池片核心导电材料，属直接上游"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏建筑一体化",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] BIPV是光伏应用的细分业态"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏玻璃",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 光伏组件封装核心材料，直接上游"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏用聚酯薄膜",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光伏背板核心材料，直接上游"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电池组件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 光伏电池与组件即光伏产业核心产品"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 光伏电站是光伏产业核心资产形态"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站EPC",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光伏电站工程承包属光伏核心业务"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站EPC及运维服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光伏电站EPC及运维属光伏核心业务"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 光伏电站发电即光伏产业核心变现"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站投资运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光伏电站投资运营属光伏核心业务"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光伏电站运营属光伏核心业务"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏硅片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 光伏电池核心上游材料"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏组件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 光伏组件即光伏产业核心产品"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光伏制造设备是光伏产业直接上游"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏银粉",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光伏电池导电银浆核心材料，直接上游"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.99,
+   "rationale": "[llm 2026-08-07] 业务标签与题材同名"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能PACK组装",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 储能电池PACK组装即储能产业核心制造环节"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能电池及系统集成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 储能电池与系统集成即储能核心业务"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能电池系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 储能电池系统即储能核心产品"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能电站",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 储能电站是储能产业核心资产形态"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 储能系统即储能题材核心产品聚合节点"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "人形机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 业务标签与题材直接同义"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "伺服系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 伺服系统是机器人运动控制的核心上游部件"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "伺服驱动器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 伺服驱动器是机器人核心上游部件"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "信号链模拟芯片(放大器)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 模拟芯片本身即半导体产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "先进封装技术",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 先进封装是半导体制造核心上游工艺环节"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光学元件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光学元件即光学光电子核心产品"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光学光电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 业务聚合节点名称与题材几乎同义"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光学组件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光学组件即光学光电子核心产品"
+  },
+  {
+   "theme": "证券",
+   "business_tag_name": "交易及机构业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 交易及机构业务是证券公司核心业务条线"
+  },
+  {
+   "theme": "证券",
+   "business_tag_name": "信用交易业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 信用交易（融资融券）是证券公司核心业务"
+  },
+  {
+   "theme": "白酒",
+   "business_tag_name": "五粮浓香系列酒",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 业务即白酒产品"
+  },
+  {
+   "theme": "白酒",
+   "business_tag_name": "五粮液酒",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 业务即白酒产品"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "便利店连锁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 便利店连锁即零售业态核心业务"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "便利店零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 便利店零售即零售业态核心业务"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "体外诊断",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 体外诊断产品/试剂/仪器即医疗器械核心产品聚合节点"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "住宅开发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 住宅地产开发即房地产题材核心业务"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光通信",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 业务本身即光通信"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光通信产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 光通信产品即该题材交易对象"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光通信器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 光通信核心器件"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光通讯器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 光通信核心器件"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光通信设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 光通信设备节点整体贴合"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光纤光缆",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 光纤光缆是光通信传输核心介质"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 光芯片是光通信核心上游器件"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光芯片光器件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 光通信核心上游器件"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光连接器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光通信线路连接必需上游器件"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "光模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 业务本身即光模块"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "光引擎",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 光引擎是光模块核心内部组件"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "光芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 光芯片是光模块核心上游材料"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "光芯片光器件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 光模块核心上游器件"
+  },
+  {
+   "theme": "光纤",
+   "business_tag_name": "光纤光缆",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 业务本身即光纤光缆"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光学镜头及影像模组",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光学镜头影像模组属光电子核心产品"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光电分选设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光电分选设备属光电子应用产品"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光电器件系列产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 业务本身即光电器件"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光电显示器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光电显示器件属光电子核心产品"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光电显示模组",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 光电显示模组属光电子核心产品"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "刚性电路板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 刚性电路板即PCB产品"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "军工装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 军工装备节点整体贴合军工题材"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "军用通信装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 军用通信装备属军工核心产品"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "军用通信设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 军用通信设备属军工核心产品"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "军用飞机整机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 军用飞机整机属军工核心产品"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "光电防务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光电防务产品属军工应用"
+  },
+  {
+   "theme": "六氟磷酸锂",
+   "business_tag_name": "六氟磷酸锂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 业务本身即六氟磷酸锂"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "化学制药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 化学制药节点整体贴合题材"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "化学原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务本身即化学原料药"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "化学药中间体",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 药物中间体是原料药直接上游"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "化学药品原料药及中间体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 业务本身即原料药及中间体"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医疗器械",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 医疗器械节点整体贴合题材"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "化合物半导体材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 化合物半导体材料是半导体制造上游材料"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "功率半导体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 功率半导体属半导体核心产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "功率器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 功率器件节点属半导体核心产品"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "区域开发与房地产开发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务本身即房地产开发"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "动力锂电池",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 动力锂电池是新能源汽车核心上游部件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "动力电池",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 动力电池是新能源汽车核心上游部件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "动力电池系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 动力电池系统是新能源汽车核心上游部件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "动力总成系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 动力总成系统属新能源汽车核心系统"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "具身智能核心零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 业务本身即机器人核心零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "分动箱油泵",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 分动箱油泵属汽车零部件产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "凸轮轴",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 凸轮轴属汽车零部件产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "制动系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 制动系统属汽车零部件核心产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "内燃机零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 内燃机零部件属汽车零部件产品"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "其他消费电子",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 业务本身即消费电子"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "创新消费电子产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 业务本身即消费电子产品"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "光学镜头及影像模组",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 摄像模组是消费电子终端核心上游部件"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "六氟磷酸锂",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 六氟磷酸锂是锂电池电解液核心上游原料"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "动力锂电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 业务本身即锂电池"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "动力电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 业务本身即锂电池"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "动力电池系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 业务本身即锂电池系统"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "分布式光伏发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务本身即分布式光伏发电"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "分布式光伏电站",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务本身即分布式光伏电站"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "分布式光伏与虚拟电厂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 业务本身含分布式光伏"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医疗器械批发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 医疗器械批发即医疗器械交易环节"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医疗器械流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 医疗器械流通即医疗器械交易环节"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医疗器械销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 医疗器械销售即医疗器械交易对象"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医疗电子制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 医疗电子设备属医疗器械范畴"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医疗结构件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 结构件是医疗器械制造的直接上游部件"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "口腔正畸医疗器械材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 正畸医疗器械材料即医疗器械产品"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "医药中间体",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 中间体是药品生产的直接上游原料"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "医药中间体",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 中间体是原料药合成的直接上游"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "医药制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 制剂即化学制药最终产品"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "医药制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 医药制造直接对应化学制药"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "医药工业(化学药/中成药/生物药研发生产销售)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 涵盖化学药研产销"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "医药工业(化学药/中成药/生物药研发生产销售)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 涵盖中成药研产销"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "医药研发与制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 药物研发制造即化学制药环节"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "呼吸系统类药物",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 呼吸系统药物为化学制药具体品类"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 同名业务即原料药"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "原料药中间体",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 中间体是原料药生产直接上游"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药商业",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 医药商业聚合节点即医药流通"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药商业/医药流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 直接同义"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药商业分销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 分销即医药流通环节"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药商业流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 直接同义"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药商业（批发零售）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 批发零售即医药流通"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药商业，并以纯销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 纯销模式属医药流通"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药批发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 批发即医药流通核心环节"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药流通(药品/生物制品批发配送)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 直接同义"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药流通（批发经销）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 直接同义"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药物流",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 药品物流是医药流通配送环节"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药电商",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 医药电商为医药流通零售渠道"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 零售是医药流通终端环节"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 半导体产业聚合节点直接对应半导体题材"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体专用设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 专用设备即半导体设备"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "半导体光学元器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 半导体光学元器件属光学光电子产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体分立器件与集成电路封测",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 分立器件与IC封测属半导体核心环节"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体制程关键系统与设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 制程系统与设备即半导体设备"
+  },
+  {
+   "theme": "电子化学品",
+   "business_tag_name": "半导体前驱体材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 前驱体材料属电子化学品范畴"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体前驱体材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 前驱体是芯片制造直接上游材料"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体单晶硅材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 单晶硅材料是芯片制造直接上游"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体及光模块自动化设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 自动化设备用于半导体制造属半导体设备"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体器件封装（海外）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 器件封装属半导体核心环节"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体存储器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 存储器为半导体产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体存储芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 存储芯片为半导体产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体封装测试",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 封装测试为半导体核心环节"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体整流器件封测",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 整流器件封测属半导体产品环节"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "半导体显示",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 半导体显示聚合节点即光学光电子显示业务"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "半导体显示器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 显示器件为光学光电子产品"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "半导体显示面板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 显示面板为光学光电子产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 半导体材料聚合节点是芯片制造直接上游"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体真空泵",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 真空泵是半导体设备核心配套部件"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体硅材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 硅材料是芯片制造直接上游"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体芯片测试探针",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 测试探针是测试设备直接部件"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 半导体设备聚合节点直接对应题材"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体设备及被动元器件设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 半导体设备部分直接对应题材"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体设备零组件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 零组件是半导体设备直接上游"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "半导体靶材及热沉材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 靶材热沉是芯片制造直接上游材料"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "单双面板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 单双面板是PCB产品类型"
+  },
+  {
+   "theme": "燃气轮机",
+   "business_tag_name": "单晶涡轮叶片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 单晶涡轮叶片是燃气轮机核心部件"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "单晶硅片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 单晶硅片是光伏电池片直接上游材料"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "单晶硅片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 单晶硅片是芯片制造直接上游材料"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "卡客车轮胎",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 轮胎属汽车零部件产品"
+  },
+  {
+   "theme": "卫星通信",
+   "business_tag_name": "卫星通信",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 卫星通信聚合节点直接对应题材"
+  },
+  {
+   "theme": "卫星通信",
+   "business_tag_name": "卫星通信芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 通信芯片是卫星通信设备直接上游部件"
+  },
+  {
+   "theme": "卫星通信",
+   "business_tag_name": "卫星通信运营服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 通信运营服务即卫星通信业务本身"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "印制电路板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 聚合节点直接对应PCB题材"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "印制电路板(PCB)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 同名业务"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "印制线路板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 印制线路板即PCB"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "印刷OLED",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] OLED显示技术属光学光电子"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "反应堆主管道",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 反应堆主管道是核电站核心部件"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "发动机热管理节能减排部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 发动机热管理部件直接对应题材"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "发动机热管理重要部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 发动机热管理部件直接对应题材"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 发电业务直接对应电力题材"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电收入",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 发电收入直接对应电力业务"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 发电机为电力生产核心设备"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电机组",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 发电机组直接用于电力生产"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电机组制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 发电机组制造服务电力生产"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 发电装备聚合节点直接对应电力题材"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 发电设备直接用于电力生产"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "变压器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 同名业务"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "变压器分接开关",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 分接开关是变压器核心部件"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "变压器绝缘油",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 绝缘油是变压器直接配套材料"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "口岸服务机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 服务机器人直接对应机器人题材"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "四足机器人（具身智能装备）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 四足机器人直接对应机器人题材"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "合质金",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 合质金为黄金冶炼中间产品"
+  },
+  {
+   "theme": "大消费",
+   "business_tag_name": "含乳饮料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 含乳饮料为大消费食品饮料产品"
+  },
+  {
+   "theme": "大消费",
+   "business_tag_name": "含乳饮料产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 含乳饮料产品为大消费食品饮料产品"
+  },
+  {
+   "theme": "大消费",
+   "business_tag_name": "品牌服饰",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 品牌服饰聚合节点属大消费产品"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "售电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 售电为电力产业链直接环节"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "售电服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 售电服务为电力产业链直接环节"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业不动产运营管理",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 商业不动产运营即房地产业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业地产",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 商业地产聚合节点直接对应房地产题材"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业地产开发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 商业地产开发即房地产业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业地产租赁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 商业地产租赁即房地产业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业地产运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 商业地产运营即房地产业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业物业出租",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 商业物业出租属房地产业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业物业租赁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 商业物业租赁属房地产业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业物业运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 商业物业运营属房地产业务"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "商业零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 商业零售直接对应零售题材"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "四氧化三锰",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 四氧化三锰是锰系锂电正极材料前驱体"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "商超零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 商超零售聚合节点直接对应零售题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "双金属复合制动鼓",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 制动鼓属汽车零部件"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "压缩空气储能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 压缩空气储能即储能技术路线"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "商用车车载电子产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 车载电子产品直接对应汽车电子题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "商用车传动轴",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 传动轴属汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "商用车制动系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 制动系统属汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "商用车底盘零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 底盘零部件直接对应汽车零部件题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "商用车车桥（零部件）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 车桥直接对应汽车零部件题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "商用车零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 同义直接对应"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "商用车齿轮",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 齿轮属汽车零部件"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "固态变压器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 固态变压器即变压器产品的新型态"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "固晶键合封装设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 固晶键合设备是半导体封装环节核心设备"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "封装测试",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 封测是半导体产业链后道核心环节"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "存储主控芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 存储主控芯片是半导体芯片产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "存储芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 存储芯片本身即半导体品类"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "存储芯片封装测试",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 存储芯片封测属半导体产业链环节"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "射频器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 射频器件是半导体分立器件品类"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "射频器件(滤波器)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 滤波器为半导体射频器件"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "多层板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 多层板即PCB产品本身"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "多高层印制电路板的研发、生产与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务描述即PCB研产销"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "天然气业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 直接同名业务"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "天然气发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 以天然气为原料的发电业务"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "天然气销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 天然气终端销售业务"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "天然气长输管网运输",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 天然气管网运输是天然气产业链核心环节"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "城市燃气供应",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 城市燃气供应即天然气终端分销"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "太阳能发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 太阳能发电即光伏发电业务"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "太阳能电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 太阳能电池是光伏核心产品"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "太阳能光伏",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 业务节点与题材同名"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "复合集流体（复合铝箔/复合铜箔）",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 复合集流体是锂电池核心上游材料"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "复合铜箔",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 复合铜箔用作锂电池集流体材料"
+  },
+  {
+   "theme": "风电",
+   "business_tag_name": "塔筒制造",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 塔筒是风电机组核心结构部件"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "声学产品",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 声学器件（扬声器/受话器等）用于消费电子产品"
+  },
+  {
+   "theme": "大消费",
+   "business_tag_name": "大消费",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 业务节点与题材同名聚合"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "大输液",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 大输液是化学制药成品药类别"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "头孢类抗生素",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 抗生素成品药属化学制药"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "多肽原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务标签即原料药品类"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "多肽类药物",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 多肽药物是化学制药成品药类别"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "安全注射器/安全注射针代工生产",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 安全注射器械属医疗器械品类"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "安全输注器械",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 输注器械是医疗器械核心品类"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "巡检机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 巡检机器人本身就是机器人产品"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "数据中心",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 业务本身即数据中心服务，直接承载该题材"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "数据中心建设运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 数据中心建设运营产业聚合节点，整体贴合该题材"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "数据中心交换机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 数据中心网络核心硬件，直接供货数据中心"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "数据中心液冷压缩机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 数据中心液冷散热核心设备"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "数据中心电源",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 数据中心配套电源设备"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "数据中心燃气轮机发电设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 数据中心备用/主力发电设备"
+  },
+  {
+   "theme": "燃气轮机",
+   "business_tag_name": "数据中心燃气轮机发电设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 产品本身即燃气轮机发电设备"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "数据通信光模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即光模块产品本身"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "数据通信光模块",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 光模块是光通信系统核心器件"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "数据通讯用PCB",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即PCB产品本身"
+  },
+  {
+   "theme": "覆铜板",
+   "business_tag_name": "挠性覆铜板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 挠性覆铜板即覆铜板细分产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "无线通信集成电路芯片的研发与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] IC芯片即半导体产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "无线通讯集成电路芯片的研发与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] IC芯片即半导体产品"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "抗生素原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即原料药产品本身"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "抗生素类药物",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 抗生素类药物属化学制药范畴"
+  },
+  {
+   "theme": "甲醇",
+   "business_tag_name": "控股子公司金牛旭阳的甲醇",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 业务明确标注甲醇产品"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "投资性房地产租赁及物业服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 业务即房地产租赁物业服务本身"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "新零售(跨境电商零售)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 业务即零售业态本身"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "新型储能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 储能产业聚合节点，整体贴合该题材"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 业务即新能源汽车零部件本身"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车零部件制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 业务即新能源汽车零部件制造本身"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车驱动电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 驱动电机为新能源汽车核心动力总成部件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源乘用车整车",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 业务即新能源整车产品本身"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "新能源汽车热管理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 业务即汽车热管理系统本身"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "整车集成式热管理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 业务即整车热管理系统本身"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "新能源汽车空调压缩机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 空调压缩机为汽车热管理系统核心上游部件"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "新能源车用电动涡旋压缩机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 电动涡旋压缩机为汽车热管理系统核心上游部件"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "新能源锂电智能装备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 锂电智能装备为锂电池制造直接上游设备"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "排气系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 业务即汽车排气系统零部件本身"
+  },
+  {
+   "theme": "智能驾驶",
+   "business_tag_name": "无人驾驶矿卡",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 无人驾驶矿卡是智能驾驶技术的直接应用产品"
+  },
+  {
+   "theme": "智能驾驶",
+   "business_tag_name": "无人驾驶清扫车",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 无人驾驶清扫车是智能驾驶技术的直接应用产品"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "智能汽车用PCB",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 该业务本身即车用PCB产品，直接落入PCB题材交易对象"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "显示器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 显示器件是光学光电子器件的核心聚合品类"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "显示模组",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 显示模组是光电子显示产品的直接载体"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "智能图像芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 图像芯片本身即半导体芯片产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "智能视频芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 视频芯片本身即半导体芯片产品"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "曲马多",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 曲马多是化学合成药品，直接属于化学制药业务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "替戈拉生片（泰欣赞®）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 该片剂是化学合成新药，直接属于化学制药业务"
+  },
+  {
+   "theme": "智能驾驶",
+   "business_tag_name": "智驾服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 业务名称本身即智能驾驶服务"
+  },
+  {
+   "theme": "期货",
+   "business_tag_name": "期货业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 业务名称即期货交易对象本身"
+  },
+  {
+   "theme": "期货",
+   "business_tag_name": "期货服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 期货服务聚合节点直接对应期货题材"
+  },
+  {
+   "theme": "期货",
+   "business_tag_name": "期货经纪",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 期货经纪业务直接属于期货题材"
+  },
+  {
+   "theme": "期货",
+   "business_tag_name": "期货经纪业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 期货经纪业务直接属于期货题材"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "智能配电设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 配电设备本身即电网设备交易对象"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "智能电表",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 智能电表是电网计量设备的直接产品"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "智能输配电设备及元器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 输配电设备及元器件本身即电网设备交易对象"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "机器人产业",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 机器人产业节点整体贴合机器人题材"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "机器人核心部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 核心部件业务直接服务于机器人本体"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "机器人组件及系统应用",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 机器人组件及系统应用直接属于机器人题材"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "智能机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 业务本身即机器人整机产品"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "智能手机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 智能手机本身即消费电子核心交易对象"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "智算中心建设运维",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 业务名称本身即数据中心/智算中心建设运维"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "服务器与算力硬件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 服务器与算力硬件聚合节点直接对应数据中心题材"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "智算/算力资源租赁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 算力资源租赁直接属于数据中心题材交易对象"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "智算服务(算力设备销售/运维/算力租赁)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 算力设备销售运维租赁直接属于数据中心业务链"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "智算算力服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 算力服务直接依托数据中心基础设施"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "核电主泵泵壳及容器类锻件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 核电站主泵关键承压锻件，专用于核电设备"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "核电制冷设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 核电站专用制冷设备"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "核电工程建设",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 核电站工程建设直接对应核电题材"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "核电站用电缆",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 核电站专用电缆"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "核电装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 核电装备产业聚合节点，整体贴合核电题材"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "氮化镓芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 氮化镓芯片本身即半导体产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "氮化镓通信基站射频芯片与器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 射频芯片与器件属半导体产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "模拟集成电路",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 模拟集成电路是典型半导体产品"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "氨基酸原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 标签本身即原料药产品"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "格列美脲",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 格列美脲为具体化学药活性成分/原料药"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "格列美脲",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 格列美脲为具体化学制剂药品"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "氟非尼酮",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 氟非尼酮为具体化学药品"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "油浸式变压器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 油浸式变压器即变压器题材直接交易对象"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "模块化数据中心",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 模块化数据中心即数据中心题材直接产品"
+  },
+  {
+   "theme": "稀土永磁",
+   "business_tag_name": "永磁材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 永磁材料即稀土永磁题材交易对象"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "水利发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 水力发电属电力题材发电业务"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "水力发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 水力发电属电力题材发电业务"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "氢氧化锂",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 氢氧化锂是锂电池正极材料的直接上游原料"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "氢燃料电池商用车",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 氢燃料电池商用车属新能源汽车产品"
+  },
+  {
+   "theme": "智能驾驶",
+   "business_tag_name": "毫米波雷达",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 毫米波雷达是智能驾驶核心感知硬件"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "汽车热管理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 标签名与题材直接对应"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "汽车空调压缩机及热管理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 车用空调压缩机及热管理系统即题材核心产品"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "汽车空调压缩机及综合热管理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 车用综合热管理系统即题材核心产品"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 标签名与题材名完全一致"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 汽车电子制造直接对应题材"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子系统集成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-07] 汽车电子系统集成直接对应题材"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子配套件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 汽车电子配套件直接对应题材"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车传感器(SBR/HOD)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 车载传感器属汽车电子产品"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电动尾门驱动系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 电动尾门驱动系统属车用电子执行部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-07] 标签名与题材名完全一致"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车零部件产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 标签名与题材名基本一致"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车零部件制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-07] 汽车零部件制造直接对应题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车零部件加工",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 汽车零部件加工直接对应题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车零部件的设计、开发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 汽车零部件设计开发直接对应题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车配套零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-07] 汽车配套零部件直接对应题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车冲焊件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 冲焊件是汽车结构零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车减振器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 减振器是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车动力总成(CVT变速器)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] CVT变速器属动力总成核心零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车发动机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 发动机是核心汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车变速器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 变速器是核心汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车外饰件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 外饰件是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车安全带",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 安全带是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车安全气囊布",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 安全气囊布是安全气囊零部件材料"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车安全气囊气体发生器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 气体发生器是安全气囊核心零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车安全气囊袋",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 安全气囊袋是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车尾气后处理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 尾气后处理系统是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车底盘系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 底盘系统是核心汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车底盘零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-07] 底盘零部件直接对应题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车座椅",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 座椅是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车座椅零部件的研发、生产与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 座椅零部件直接对应题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车泵类",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 车用泵类是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车照明",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 车灯照明是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车紧固件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 紧固件是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车线束",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 线束是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车转向系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-07] 转向系统是核心汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车轮胎",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 轮胎是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车铝合金精密铸件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 铝合金精密铸件是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车铝合金轮毂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-07] 铝合金轮毂是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车铝合金部品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 铝合金部品是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车车桥",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 车桥是具体汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车车身零部件及模具",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 车身零部件直接对应题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车齿轮",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-07] 齿轮是具体汽车零部件"
   }
  ]
 }
