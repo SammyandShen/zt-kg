@@ -28,8 +28,34 @@ import urllib.request
 import common
 
 KLINE_API = "https://push2his.eastmoney.com/api/qt/stock/kline/get"
+TX_KLINE_API = "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get"
 TIMEOUT_SEC = 15
 SLEEP_BASE = 0.2
+
+
+def _tx_symbol(code: str) -> str:
+    if code.startswith("6"):
+        return "sh" + code
+    if code.startswith(("0", "3")):
+        return "sz" + code
+    return "bj" + code            # 北交所；腾讯不支持时该股走失败重试通道
+
+
+def fetch_kline_tx(code: str) -> list[tuple]:
+    """腾讯前复权K线兜底（2026-08-07：本机代理 fake-IP 把 push2his 全镜像
+    断连，连续三晚 200+ 只失败）。腾讯与东财复权因子不同，跨源混存会在
+    接缝处扭曲相邻K线比值——兜底一律整段重抓覆盖该股全窗口，单股同源。"""
+    sym = _tx_symbol(code)
+    qs = urllib.parse.urlencode(
+        {"param": f"{sym},day,2025-07-01,2050-01-01,800,qfq"})
+    req = urllib.request.Request(
+        f"{TX_KLINE_API}?{qs}",
+        headers={"User-Agent": common.HEADERS["User-Agent"]})
+    payload = json.loads(urllib.request.urlopen(req, timeout=TIMEOUT_SEC).read())
+    node = (payload.get("data") or {}).get(sym) or {}
+    rows = node.get("qfqday") or node.get("day") or []
+    return [(r[0], float(r[1]), float(r[2]), float(r[3]), float(r[4]),
+             float(r[5])) for r in rows]
 
 
 def fetch_kline(code: str, beg_yyyymmdd: str) -> list[tuple]:
@@ -61,8 +87,11 @@ def fetch_kline(code: str, beg_yyyymmdd: str) -> list[tuple]:
                 out.append((p[0], float(p[1]), float(p[2]),
                             float(p[3]), float(p[4]), float(p[5])))
             return out
-    if last_exc is not None:          # 两个前缀都没拿到响应才算失败
-        raise last_exc
+    if last_exc is not None:          # 两个前缀都没拿到响应 → 腾讯兜底
+        try:
+            return fetch_kline_tx(code)
+        except Exception:
+            raise last_exc
     return []
 
 
