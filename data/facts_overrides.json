@@ -1062,6 +1062,24 @@
    "note": "两条新闻均明确将涨停归因于'数字货币概念异动拉升'，证据显示当日主导叙事是数字货币而非机器人",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-07"
+  },
+  {
+   "code": "601606",
+   "trade_date": "2026-08-10",
+   "theme": "军工",
+   "verdict": "verified",
+   "note": "三家媒体独立报道点名弹药主业+央企重组预期，当日叙事明确以军工为主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  {
+   "code": "600316",
+   "trade_date": "2026-08-10",
+   "theme": "军工",
+   "verdict": "verified",
+   "note": "两家独立媒体均点名'军工板块...洪都航空涨停/封涨停'，叙事明确且公司系航空军工央企业务可解释",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
   }
  ],
  "episode_verdicts": [

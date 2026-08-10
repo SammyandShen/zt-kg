@@ -129,6 +129,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-08-10": {
+   "at": "2026-08-10T17:17:19+08:00",
+   "terms": [
+    {
+     "term": "PCB",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "创新药",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "CRO",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "稀土永磁",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "半导体设备",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "液冷服务器",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "PET铜箔",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "存储芯片",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "先进封装",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "MLCC",
+     "source": "flash_rss",
+     "hot": 2
+    },
+    {
+     "term": "具身智能",
+     "source": "flash_rss",
+     "hot": 2
+    },
+    {
+     "term": "核电",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

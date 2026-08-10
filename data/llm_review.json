@@ -59728,5 +59728,371 @@
   "p": "",
   "c": 0.5,
   "model": "claude-sonnet-5"
+ },
+ "卷烟纸龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "种鸡龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "半年报预计减亏": {
+  "t": "catalyst",
+  "p": "中报减亏",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "可转债募投结项": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "定增实施": {
+  "t": "catalyst",
+  "p": "定增落地",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "新能源订单": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "集采中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "集采拟中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "鱼粉涨价": {
+  "t": "catalyst",
+  "p": "鱼粉",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购存储测试": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "暂缓加拿大投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "风电投资": {
+  "t": "catalyst",
+  "p": "风电",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "ADC": {
+  "t": "product",
+  "p": "ADC/XDC",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "AI收入增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "HNB": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "Omega-3鱼油": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "PPP项目": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "《欢迎来龙餐馆》": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "《欢迎来龙餐馆》定档": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "代建": {
+  "t": "product",
+  "p": "房地产",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "依诺肝素制剂": {
+  "t": "product",
+  "p": "医药制造",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "储能电缆": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "军工智能装备": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "军车复合材料": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "国际金价上涨": {
+  "t": "catalyst",
+  "p": "黄金涨价",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "小盘炒作": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "建筑起重机械租赁": {
+  "t": "product",
+  "p": "工程机械",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "拟认购股权": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "拟重大资产重组": {
+  "t": "catalyst",
+  "p": "重大资产重组筹划",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "教练机": {
+  "t": "product",
+  "p": "航空装备",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "汽车整椅": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "混合动力": {
+  "t": "product",
+  "p": "新能源汽车",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "演艺演出": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "环境监测": {
+  "t": "product",
+  "p": "环保",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "电网储能": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "真空镀膜设备": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "离子注入设备": {
+  "t": "product",
+  "p": "离子注入机",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "股东人数减少": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "茶饮店": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "设立创投": {
+  "t": "catalyst",
+  "p": "创投",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "设立长空事业部": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "资产重组完成": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "车载玻璃": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "软饮料": {
+  "t": "product",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "辅酶Q10": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "酒店SaaS": {
+  "t": "product",
+  "p": "云计算",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "防冰除冰机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "饰面板": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "鸡苗景气": {
+  "t": "catalyst",
+  "p": "行业景气回暖",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "NMN概念": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "单抗概念": {
+  "t": "theme",
+  "p": "创新药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI制药（医疗）": {
+  "t": "theme",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "CAR-T细胞疗法": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "免疫治疗": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "创新医疗服务": {
+  "t": "product",
+  "p": "医药医疗",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "医药医疗风格": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "基金重仓": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "病原体防治": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "百元股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "阿兹海默": {
+  "t": "theme",
+  "p": "创新药",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "青蒿素": {
+  "t": "product",
+  "p": "中药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
  }
 }

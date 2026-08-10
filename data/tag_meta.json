@@ -4343,6 +4343,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "集采中标": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "项目中标": {
   "type": "catalyst",
   "status": "active",
@@ -6079,6 +6084,11 @@
  "离子注入机": {
   "type": "product",
   "status": "active"
+ },
+ "离子注入设备": {
+  "type": "product",
+  "status": "active",
+  "llm": "claude-sonnet-5"
  },
  "稀土": {
   "type": "product",
@@ -8131,6 +8141,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "卷烟纸龙头": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "压缩机主业": {
   "type": "attribute",
   "status": "candidate",
@@ -8198,6 +8212,12 @@
  "在建项目": {
   "type": "attribute",
   "status": "candidate"
+ },
+ "基金重仓": {
+  "type": "attribute",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日",
+  "llm": "claude-sonnet-5"
  },
  "外资控股": {
   "type": "attribute",
@@ -8354,6 +8374,11 @@
  "小批量供货": {
   "type": "attribute",
   "status": "candidate"
+ },
+ "小盘炒作": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "小米概念": {
   "type": "attribute",
@@ -8544,6 +8569,12 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "百元股": {
+  "type": "attribute",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日",
+  "llm": "claude-sonnet-5"
+ },
  "短期超跌": {
   "type": "attribute",
   "status": "candidate",
@@ -8581,6 +8612,10 @@
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "种鸡龙头": {
+  "type": "attribute",
+  "status": "candidate"
  },
  "算力国家队": {
   "type": "attribute",
@@ -10173,6 +10208,11 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "半年报预计减亏": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "半年报预计扭亏": {
   "type": "catalyst",
   "status": "retired"
@@ -10259,6 +10299,10 @@
   "llm": "claude-sonnet-5"
  },
  "口腔种植医保": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "可转债募投结项": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -10426,6 +10470,11 @@
   "status": "candidate"
  },
  "国际订单": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "国际金价上涨": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -10620,6 +10669,11 @@
  "定增加码算力": {
   "type": "catalyst",
   "status": "candidate"
+ },
+ "定增实施": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "定增审核通过": {
   "type": "catalyst",
@@ -10940,6 +10994,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "拟重大资产重组": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "控制权变更风险": {
   "type": "catalyst",
   "status": "candidate",
@@ -11056,6 +11115,10 @@
   "status": "candidate"
  },
  "新能源装机": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "新能源订单": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -11630,6 +11693,11 @@
   "type": "catalyst",
   "status": "retired"
  },
+ "设立创投": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "诉讼进展": {
   "type": "catalyst",
   "status": "candidate"
@@ -11964,6 +12032,11 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "集采拟中标": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "集采放量": {
   "type": "catalyst",
   "status": "candidate",
@@ -12002,6 +12075,16 @@
   "llm": "claude-sonnet-5"
  },
  "高派息": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "鱼粉涨价": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "鸡苗景气": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -12390,6 +12473,16 @@
  "《异环》即将上线": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "《欢迎来龙餐馆》": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "《欢迎来龙餐馆》定档": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "《疯狂动物城2》": {
@@ -14568,6 +14661,11 @@
   "type": "event",
   "status": "retired"
  },
+ "拟收购存储测试": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "拟收购存储资产": {
   "type": "event",
   "status": "retired",
@@ -14855,6 +14953,11 @@
  "拟现金并购数珩科技": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "拟认购股权": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "拟设AI公司": {
@@ -15465,6 +15568,11 @@
  "暂不推进转让中石光芯挂牌工作": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "暂缓加拿大投资": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "更名北投科技": {
@@ -16615,6 +16723,11 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "设立长空事业部": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "询价转让": {
   "type": "event",
   "status": "retired"
@@ -17036,6 +17149,10 @@
   "type": "event",
   "status": "retired"
  },
+ "风电投资": {
+  "type": "event",
+  "status": "candidate"
+ },
  "风电项目备案证": {
   "type": "event",
   "status": "retired",
@@ -17299,6 +17416,11 @@
   "status": "candidate"
  },
  "ABF载板": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "ADC": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -17640,6 +17762,10 @@
   "llm": "claude-sonnet-5"
  },
  "AI支付": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI收入增长": {
   "type": "product",
   "status": "candidate"
  },
@@ -18241,6 +18367,12 @@
   "type": "product",
   "status": "candidate"
  },
+ "CAR-T细胞疗法": {
+  "type": "product",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日",
+  "llm": "claude-sonnet-5"
+ },
  "CBF膜": {
   "type": "product",
   "status": "candidate"
@@ -18601,6 +18733,11 @@
   "status": "candidate"
  },
  "HMOs（母乳低聚糖）": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "HNB": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -19150,6 +19287,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "Omega-3鱼油": {
+  "type": "product",
+  "status": "candidate"
+ },
  "OpenClaw": {
   "type": "product",
   "status": "candidate"
@@ -19434,6 +19575,10 @@
   "status": "candidate"
  },
  "PPP": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "PPP项目": {
   "type": "product",
   "status": "candidate"
  },
@@ -20638,6 +20783,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "代建": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "代糖": {
   "type": "product",
   "status": "candidate",
@@ -20897,6 +21047,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "依诺肝素制剂": {
+  "type": "product",
+  "status": "candidate"
+ },
  "便利超市": {
   "type": "product",
   "status": "candidate",
@@ -21105,6 +21259,11 @@
   "llm": "claude-sonnet-5"
  },
  "储能电极箔": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "储能电缆": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -22148,6 +22307,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "军工智能装备": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "军工材料": {
   "type": "product",
   "status": "candidate",
@@ -22240,6 +22404,11 @@
  "军贸雷达": {
   "type": "product",
   "status": "candidate"
+ },
+ "军车复合材料": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "军需品": {
   "type": "product",
@@ -26331,6 +26500,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "建筑起重机械租赁": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "建筑防水": {
   "type": "product",
   "status": "candidate"
@@ -27167,6 +27341,11 @@
  "教材出版": {
   "type": "product",
   "status": "candidate"
+ },
+ "教练机": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "教育出版": {
   "type": "product",
@@ -30516,6 +30695,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车整椅": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "汽车整车": {
   "type": "product",
   "status": "candidate",
@@ -31625,6 +31809,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "混合动力": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "混塔": {
   "type": "product",
   "status": "candidate",
@@ -31768,6 +31957,10 @@
   "llm": "claude-sonnet-5"
  },
  "漆包线漆涂料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "演艺演出": {
   "type": "product",
   "status": "candidate"
  },
@@ -32743,6 +32936,11 @@
  "环境治理": {
   "type": "product",
   "status": "candidate"
+ },
+ "环境监测": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "环氧丙烷": {
   "type": "product",
@@ -33725,6 +33923,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "电网储能": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "电能表": {
   "type": "product",
   "status": "candidate"
@@ -34006,6 +34209,10 @@
   "status": "candidate"
  },
  "真空镀膜": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "真空镀膜设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -35876,6 +36083,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "股东人数减少": {
+  "type": "product",
+  "status": "candidate"
+ },
  "股东减少": {
   "type": "product",
   "status": "candidate"
@@ -36587,6 +36798,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "茶饮店": {
+  "type": "product",
+  "status": "candidate"
+ },
  "草甘膦": {
   "type": "product",
   "status": "candidate"
@@ -37089,6 +37304,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "资产重组完成": {
+  "type": "product",
+  "status": "candidate"
+ },
  "资源储备": {
   "type": "product",
   "status": "candidate"
@@ -37544,6 +37763,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "车载玻璃": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "车载电子": {
   "type": "product",
   "status": "candidate",
@@ -37662,6 +37886,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "软饮料": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "轴向磁通电机": {
   "type": "product",
   "status": "candidate"
@@ -37697,6 +37926,11 @@
   "status": "candidate"
  },
  "辅助生殖": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "辅酶Q10": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -38034,6 +38268,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "酒店SaaS": {
+  "type": "product",
+  "status": "candidate"
  },
  "酒店主业": {
   "type": "product",
@@ -39627,6 +39865,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "防冰除冰机器人": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "防弹防护": {
   "type": "product",
   "status": "candidate"
@@ -40351,6 +40594,10 @@
   "llm": "claude-sonnet-5"
  },
  "饰品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "饰面板": {
   "type": "product",
   "status": "candidate"
  },
@@ -41139,6 +41386,12 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AI制药（医疗）": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日",
+  "llm": "claude-sonnet-5"
+ },
  "AI厨电": {
   "type": "theme",
   "status": "candidate"
@@ -41480,6 +41733,10 @@
   "status": "candidate"
  },
  "MiniMax概念": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "NMN概念": {
   "type": "theme",
   "status": "candidate"
  },
@@ -43377,16 +43634,6 @@
   "type": "theme",
   "status": "candidate"
  },
- "AI制药（医疗）": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-06·1源2日"
- },
- "CAR-T细胞疗法": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-06·1源2日"
- },
  "免疫治疗": {
   "type": "unknown",
   "status": "candidate",
@@ -43402,17 +43649,7 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
- "基金重仓": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-06·1源2日"
- },
  "病原体防治": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-06·1源2日"
- },
- "百元股": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"

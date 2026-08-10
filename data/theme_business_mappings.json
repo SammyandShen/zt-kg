@@ -12136,6 +12136,406 @@
    "status": "candidate",
    "confidence": 0.8,
    "rationale": "[llm 2026-08-09] 黄磷是磷化工产业链的核心上游原料"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB设计服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-10] PCB设计是PCB产业链核心环节"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB化学品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] PCB化学品是PCB制造用直接上游材料"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB电子电路铜箔",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 铜箔是覆铜板/PCB的核心上游材料"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "带载体可剥离超薄铜箔(可剥铜)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 超薄铜箔是高端PCB/覆铜板的上游材料"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "挠性覆铜板(FCCL)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] FCCL是软板PCB的核心上游基材"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCBA制造服务",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] PCBA组装是PCB板卡的直接下游加工环节"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体封装设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 封装设备属于半导体设备的一个细分品类"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "半导体封装设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 封装设备是先进封装产线的直接上游设备"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "半导体封装模具",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 封装模具是芯片封装工艺的直接上游耗材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "变速器箱体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 变速器箱体属于汽车零部件产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "曲轴",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 曲轴属于发动机核心汽车零部件"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "无框力矩电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 力矩电机是机器人关节的核心上游部件"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "无框力矩电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 力矩电机是人形机器人关节驱动的核心上游部件"
+  },
+  {
+   "theme": "AI智能家居",
+   "business_tag_name": "智能家居家电控制器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 家电控制器是智能家居设备的直接上游部件"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-10] 储能产品本身即储能题材交易对象"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "光伏储能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 光伏储能业务即储能应用场景之一"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏储能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 光伏储能业务直接属于光伏系统集成范畴"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "新型消费电子产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 新型消费电子产品即消费电子题材交易对象"
+  },
+  {
+   "theme": "AI医疗",
+   "business_tag_name": "数字医疗服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 数字医疗服务是AI医疗的直接应用场景"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药经销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-10] 医药经销即医药流通题材交易对象"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "小分子原料药CDMO",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 原料药CDMO代工生产即原料药产业链核心环节"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "替格瑞洛原料药及中间体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-10] 具体原料药品种直接属于原料药题材"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "临床前CRO服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 临床前CRO是创新药研发外包核心上游环节"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "临床前药效评价服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 药效评价是创新药临床前研发的直接上游服务"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "全人源抗体开发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 抗体药物开发属于创新药研发本身"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "小分子制剂CDMO",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 制剂CDMO代工是创新药商业化生产的直接上游环节"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "新分子药物CDMO",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 新分子药物CDMO是创新药生产外包的直接环节"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "模块封装及芯片测试服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 封装测试是半导体制造产业链的核心环节业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "气缸体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 发动机气缸体本身就是汽车零部件产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "气缸盖",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 发动机气缸盖本身就是汽车零部件产品"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "氢能管道",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 输氢管道是氢能储运基础设施的直接上游设备"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车内饰零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 汽车内饰件本身就是汽车零部件产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车橡胶密封件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 橡胶密封件本身就是汽车零部件产品"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子控制器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 车用电子控制器本身就是汽车电子产品"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子电器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 汽车电子电器本身就是汽车电子产品"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "热场系统系列产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 热场系统是单晶硅拉晶炉的核心热场材料，为光伏硅片制造直接上游"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "电线电缆及附件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 电线电缆及附件本身就是电网设备产品"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "电解铜箔",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 电解铜箔是锂电池负极集流体的直接上游材料"
+  },
+  {
+   "theme": "覆铜板",
+   "business_tag_name": "电阻薄膜(埋阻铜箔)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 埋阻铜箔是覆铜板埋容埋阻工艺的直接原料"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "硅片及切片加工服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 硅片切片加工产出光伏硅片，是电池组件制造的直接上游材料"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "离子注入机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-10] 离子注入机本身就是半导体制造核心设备"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "药品分销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-10] 药品分销本身就是医药流通业务"
+  },
+  {
+   "theme": "设备更新",
+   "business_tag_name": "设备改造及服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 设备改造服务本身就是设备更新题材的直接业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "轮毂组件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 轮毂组件本身就是汽车零部件产品"
+  },
+  {
+   "theme": "钨丝金刚线",
+   "business_tag_name": "金刚石线",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-10] 金刚石线是钨丝金刚线所属的产品大类，业务即题材交易对象"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "金刚石线",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-10] 金刚石线用于光伏硅片切割，是直接上游耗材"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "锂电池材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 锂电池材料本身就是锂电池题材交易对象"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "锂电铜箔",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 锂电铜箔是锂电池负极集流体的直接上游材料"
+  },
+  {
+   "theme": "新材料",
+   "business_tag_name": "高性能材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-10] 高性能材料是新材料题材直接交易的标的物"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "高精密数控切磨抛设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-10] 高精密数控切磨抛设备属于数控机床（工业母机）品类"
   }
  ]
 }
