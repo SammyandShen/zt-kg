@@ -41992,6 +41992,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "单抗概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
  "卫星光伏": {
   "type": "theme",
   "status": "candidate",
@@ -43372,17 +43377,17 @@
   "type": "theme",
   "status": "candidate"
  },
+ "AI制药（医疗）": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
  "CAR-T细胞疗法": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
- "单抗概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-06·1源2日"
- },
- "AI制药（医疗）": {
+ "免疫治疗": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
@@ -43397,17 +43402,7 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
- "阿兹海默": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-06·1源2日"
- },
  "基金重仓": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-06·1源2日"
- },
- "免疫治疗": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
@@ -43418,6 +43413,11 @@
   "radar": "2026-08-06·1源2日"
  },
  "百元股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-06·1源2日"
+ },
+ "阿兹海默": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
