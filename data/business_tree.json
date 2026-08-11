@@ -15880,6 +15880,636 @@
    "parent": "新型显示",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-07"
+  },
+  "ABS": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "O型圈": {
+   "parent": "液压元件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "PCBA制造服务": {
+   "parent": "代工制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "PCB化学品": {
+   "parent": "电子化学品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "PCB电子电路铜箔": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "PCB设计服务": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "临床前CRO服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "临床前药效评价服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "储能产品": {
+   "parent": "储能系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "催化剂和配体": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "光伏储能": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "全人源抗体开发": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "全人源抗体转基因小鼠平台": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "其他模式生物技术服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "分子砌块": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "功能性软糖": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "功能饮品": {
+   "parent": "饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "动物药": {
+   "parent": "动物保健",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "化学试剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "化工材料营销": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "医美服务": {
+   "parent": "医疗美容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "医药健康": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "医药商业化生产CMO": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "医药经销": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "半导体封装模具": {
+   "parent": "半导体设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "半导体封装设备": {
+   "parent": "半导体设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "变速器箱体": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "基因工程小鼠模型定制": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "基础原料及中间体": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "塑料挤出成型下游设备": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "塑料挤出成型模具及装置": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "塑料添加剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "定制化动物模型": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "定制家居": {
+   "parent": "家具家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "实验动物代理进出口": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "实验动物定制繁育服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "实验动物饲养服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "实验小鼠模型": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "实验模型繁育与销售": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "宠物健康": {
+   "parent": "动物保健",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "家电零部件": {
+   "parent": "家电家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "对位芳纶": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "小分子制剂CDMO": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "小分子原料药CDMO": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "尼龙66": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "工艺研发CDMO": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "带载体可剥离超薄铜箔(可剥铜)": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "建筑模架": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "抗体及试剂盒产品": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "挠性覆铜板(FCCL)": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "数字医疗服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "新分子药物CDMO": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "新型消费电子产品": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "无框力矩电机": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "智能制造系统集成": {
+   "parent": "工业数字化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "智能家居家电控制器": {
+   "parent": "智能家居设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "曲轴": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "替格瑞洛原料药及中间体": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "木地板": {
+   "parent": "家具家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "标准化动物模型": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "检验检测": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "模块封装及芯片测试服务": {
+   "parent": "封装测试",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "模型繁育服务": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "橡胶防老剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "母婴消费品": {
+   "parent": "大消费",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "气缸体": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "气缸盖": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "氢能管道": {
+   "parent": "氢能",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "汽车内饰零部件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "汽车橡胶密封件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "汽车电子控制器": {
+   "parent": "汽车电子网联",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "汽车电子电器": {
+   "parent": "汽车电子网联",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "涂布加工服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "消费电子控制器": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "热场系统系列产品": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "焊接钢管": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "片剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "物资贸易": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "环氧树脂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "环氧氯丙烷": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "生命科学试剂": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "生物试剂技术服务": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "电磁屏蔽膜": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "电线电缆及附件": {
+   "parent": "线缆",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "电解质类药物": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "电解铜箔": {
+   "parent": "铜产业链",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "电阻薄膜(埋阻铜箔)": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "真空镀膜": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "石墨烯制备设备": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "石墨烯应用产品": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "石墨烯检测服务": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "硅片及切片加工服务": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "硬胶囊": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "离子注入机": {
+   "parent": "半导体设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "粉剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "精密注塑模具及自动化设备": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "精密零部件制造": {
+   "parent": "精密机械零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "糖尿病类药物": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "细胞与基因治疗CDMO": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "维生素类药物": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "聚合物添加剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "自主品牌营养保健食品": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "药品分销": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "药物临床服务": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "药物制剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "药物发现CRO": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "药物非临床研究服务": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "营养保健食品合同生产(OEM)": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "设备改造及服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "轮毂组件": {
+   "parent": "底盘与制动系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "软胶囊": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "轴封": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "进口药品代理及营销外包": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "酶及试剂": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "重组抗体": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "重组蛋白试剂": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "金刚石线": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "铋材料": {
+   "parent": "小金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "锂电池材料": {
+   "parent": "动力锂电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "锂电铜箔": {
+   "parent": "动力锂电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "镀锌钢管": {
+   "parent": "五金管件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "镇痛类药物": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "靶点及因子类蛋白": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "骨科药物": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "高性能材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
+  },
+  "高精密数控切磨抛设备": {
+   "parent": "数控机床",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-10"
   }
  },
  "groups": {

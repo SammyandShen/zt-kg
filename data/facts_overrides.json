@@ -1080,6 +1080,15 @@
    "note": "两家独立媒体均点名'军工板块...洪都航空涨停/封涨停'，叙事明确且公司系航空军工央企业务可解释",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-10"
+  },
+  {
+   "code": "603459",
+   "trade_date": "2026-08-07",
+   "theme": "PCB",
+   "verdict": "verified",
+   "note": "公司公告及机构调研均点名赣州红板高阶mSAP高端精密电路板产业化项目、HDI技改扩产，与公司PCB主业直接对应，叙事一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
   }
  ],
  "episode_verdicts": [
