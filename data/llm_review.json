@@ -60094,5 +60094,89 @@
   "p": "中药",
   "c": 0.55,
   "model": "claude-sonnet-5"
+ },
+ "金华国资": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.82,
+  "model": "claude-sonnet-5"
+ },
+ "圆台磨床中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "参股算力建设（金额较小）": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购埃福思科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "重整投资人招募": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "《欢迎来龙餐馆》上映": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "汽车内饰件": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "汽车轮毂轴承": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "汽车饰件": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "独家许可协议": {
+  "t": "catalyst",
+  "p": "许可协议",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "米制鲜食": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "药品零售": {
+  "t": "sector",
+  "p": "医药零售",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "车联网安全": {
+  "t": "product",
+  "p": "车联网",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "载带满产": {
+  "t": "catalyst",
+  "p": "产能满产",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
  }
 }

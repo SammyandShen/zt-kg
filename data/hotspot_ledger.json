@@ -194,6 +194,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-08-11": {
+   "at": "2026-08-11T17:21:02+08:00",
+   "terms": [
+    {
+     "term": "创新药",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "黄金",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "军工",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "影视院线",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "算力",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "预制菜",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "电网设备",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "磷化铟",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "半导体设备",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "量子计算",
+     "source": "flash_rss",
+     "hot": 2
+    },
+    {
+     "term": "CPO",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

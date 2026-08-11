@@ -2185,6 +2185,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "金华国资": {
+  "type": "attribute",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "金针菇龙头": {
   "type": "attribute",
   "status": "active",
@@ -3315,6 +3320,11 @@
   "type": "catalyst",
   "status": "active"
  },
+ "圆台磨床中标": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "境外大单": {
   "type": "catalyst",
   "status": "active",
@@ -3816,6 +3826,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "独家许可协议": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "环卫中标": {
   "type": "catalyst",
   "status": "active",
@@ -4211,6 +4226,11 @@
  "转股价下修": {
   "type": "catalyst",
   "status": "active"
+ },
+ "载带满产": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
  },
  "近期中标": {
   "type": "catalyst",
@@ -6201,6 +6221,11 @@
   "llm": "claude-sonnet-5"
  },
  "草铵膦": {
+  "type": "product",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
+ "药品零售": {
   "type": "product",
   "status": "active",
   "llm": "claude-sonnet-5"
@@ -12480,6 +12505,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "《欢迎来龙餐馆》上映": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "《欢迎来龙餐馆》定档": {
   "type": "event",
   "status": "candidate",
@@ -13382,6 +13412,11 @@
  "参股算力": {
   "type": "event",
   "status": "retired"
+ },
+ "参股算力建设（金额较小）": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "参股联讯仪器": {
   "type": "event",
@@ -14635,6 +14670,11 @@
  "拟收购四药": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "拟收购埃福思科技": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "拟收购天宽科技": {
@@ -16902,6 +16942,10 @@
  "重大出售": {
   "type": "event",
   "status": "retired"
+ },
+ "重整投资人招募": {
+  "type": "event",
+  "status": "candidate"
  },
  "重组上市": {
   "type": "event",
@@ -30642,6 +30686,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车内饰件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "汽车内饰增长": {
   "type": "product",
   "status": "candidate"
@@ -30809,6 +30858,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "汽车轮毂轴承": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "汽车轴承": {
   "type": "product",
   "status": "candidate",
@@ -30840,6 +30894,11 @@
  "汽车非金属件": {
   "type": "product",
   "status": "candidate"
+ },
+ "汽车饰件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "汽轮机": {
   "type": "product",
@@ -35162,6 +35221,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "米制鲜食": {
+  "type": "product",
+  "status": "candidate"
+ },
  "米拉多铜矿": {
   "type": "product",
   "status": "candidate"
@@ -37653,6 +37716,11 @@
   "status": "candidate"
  },
  "车灯控制器": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "车联网安全": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"

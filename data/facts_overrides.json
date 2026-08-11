@@ -1089,6 +1089,69 @@
    "note": "公司公告及机构调研均点名赣州红板高阶mSAP高端精密电路板产业化项目、HDI技改扩产，与公司PCB主业直接对应，叙事一致",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-11"
+  },
+  {
+   "code": "300426",
+   "trade_date": "2026-08-11",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条新闻均指向半年报扭亏为盈，无一提及AI应用，当日主导叙事是业绩反转",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  {
+   "code": "002229",
+   "trade_date": "2026-08-11",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "上海证券报等新闻明确点名'算力租赁概念走强 杭钢股份、鸿博股份涨停'，当日以算力租赁为主导叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  {
+   "code": "600126",
+   "trade_date": "2026-08-11",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "上海证券报/东方财富Choice/财联社三源一致报道'算力租赁概念异动拉升 杭钢股份、鸿博股份直线涨停'，叙事确凿",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  {
+   "code": "603897",
+   "trade_date": "2026-08-11",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "三条证据均为半年报净利增长派息公告，无机器人相关表述，当日叙事为业绩驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  {
+   "code": "301550",
+   "trade_date": "2026-08-11",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "东方财富Choice与财联社均直接报道'人形机器人概念震荡拉升 斯菱智驱涨超10%'，叙事明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  {
+   "code": "603009",
+   "trade_date": "2026-08-11",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "东方财富证券/Choice多源直接报道'人形机器人概念午后强势拉升 巨轮智能北特科技双双涨停'，叙事明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  {
+   "code": "002031",
+   "trade_date": "2026-08-11",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "21世纪经济报道/东方财富Choice均直接点名'人形机器人板块巨轮智能1分钟封板'，叙事明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
   }
  ],
  "episode_verdicts": [

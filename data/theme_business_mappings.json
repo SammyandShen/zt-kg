@@ -12536,6 +12536,222 @@
    "status": "candidate",
    "confidence": 0.7,
    "rationale": "[llm 2026-08-10] 高精密数控切磨抛设备属于数控机床（工业母机）品类"
+  },
+  {
+   "theme": "智慧交通",
+   "business_tag_name": "交通管理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-11] 交通管理系统是智慧交通题材的核心落地产品"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "信创政务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-11] 信创政务本身即信创在政府端的落地业务"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能电站开发运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-11] 储能电站开发运营是储能产业的核心经营业务"
+  },
+  {
+   "theme": "储能调频",
+   "business_tag_name": "储能调频电站运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-11] 储能调频电站运营即储能调频题材的直接经营业务"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏EPC",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-11] EPC工程总承包是光伏产业链核心环节"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏建筑(BIPV异型光伏组件)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-11] BIPV光伏组件属于光伏产品本身"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "军用配套装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-11] 军用配套装备直接属于军工产业范畴"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "医药原料（吡喹酮等）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-11] 医药原料即原料药产品本身"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "原生金矿",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-11] 金矿开采是黄金产业链的直接上游"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "发电供热",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-11] 发电供热业务直接属于电力生产经营"
+  },
+  {
+   "theme": "热电联产",
+   "business_tag_name": "发电供热",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-11] 发电供热即热电联产业务的直接体现"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "商超及便利店零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-11] 商超便利店零售即零售业务本身"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "差速器及底盘铸造零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-11] 差速器及底盘铸件是汽车零部件产品本身"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "抗生素类制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-11] 抗生素制剂属于化学制药产品"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "教练机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-11] 教练机是军工航空装备产品"
+  },
+  {
+   "theme": "无人机",
+   "business_tag_name": "无人机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-11] 业务标签与题材同名直接对应"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "普通机床",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-11] 机床即工业母机产品本身"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "特种变压器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-11] 特种变压器本身即变压器产品，直接承载该题材"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "电气开关设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-11] 开关设备是电网设备的核心品类之一"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "涡轮增压器中间壳",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-11] 涡轮增压器壳体是汽车发动机零部件产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "涡轮增压器涡轮壳",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-11] 涡轮增压器壳体是汽车发动机零部件产品"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "机床配件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-11] 机床配件是机床（工业母机）的直接零部件供应"
+  },
+  {
+   "theme": "生猪养殖",
+   "business_tag_name": "种猪养殖",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-11] 种猪养殖是生猪养殖产业链的直接环节"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "肝素原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-11] 肝素原料药本身即属于原料药品类"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "肝素制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-11] 肝素制剂属于化学药品制剂产品"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "钴",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-11] 钴是三元锂电池正极材料的核心原料"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "非抗生素类制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-11] 非抗生素类制剂本身就是化学制药的核心产品"
   }
  ]
 }
