@@ -60178,5 +60178,203 @@
   "p": "产能满产",
   "c": 0.8,
   "model": "claude-sonnet-5"
+ },
+ "民营房企龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "红枣龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "减持届满": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "船舶大单": {
+  "t": "catalyst",
+  "p": "船舶制造",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "参股鸣鸣很忙": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "成立科技公司": {
+  "t": "event",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购岚创科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "换电合作": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "AI视频生成": {
+  "t": "product",
+  "p": "AI应用",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "上海": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "不再持有索尔思光电": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "中交房地产控股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "关税退税": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "北京地产": {
+  "t": "theme",
+  "p": "房地产",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "商用餐饮设备": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "园区数字经济": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "奶水牛种源": {
+  "t": "product",
+  "p": "水牛奶",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "家居塑料": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "工业智能体": {
+  "t": "theme",
+  "p": "AGI智能体",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "广电网络": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "战略并购": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "掺稀土光纤": {
+  "t": "product",
+  "p": "光纤光缆",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "新皇岗口岸": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "汽车软内饰": {
+  "t": "product",
+  "p": "汽车内饰皮革",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "海外幕墙": {
+  "t": "product",
+  "p": "建筑幕墙",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "液态食品装备": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "渠道稳健": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "烟气脱硫": {
+  "t": "product",
+  "p": "环保",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "牛散新进": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "神经退行性疾病": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "精酿鲜啤": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "通信业务增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "销售额逆势增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
  }
 }

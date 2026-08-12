@@ -8488,6 +8488,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "民营房企龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "汽车Tier1": {
   "type": "attribute",
   "status": "candidate",
@@ -8647,6 +8652,11 @@
   "status": "candidate"
  },
  "粤港澳": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "红枣龙头": {
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -9907,6 +9917,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "关税退税": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "关联方中标": {
   "type": "catalyst",
   "status": "candidate",
@@ -9963,6 +9978,10 @@
  "减持完毕": {
   "type": "catalyst",
   "status": "retired"
+ },
+ "减持届满": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "减持未实施": {
   "type": "catalyst",
@@ -10913,6 +10932,11 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "战略并购": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "战略重组": {
   "type": "catalyst",
   "status": "candidate",
@@ -11595,6 +11619,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "船舶大单": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "船舶购置": {
   "type": "catalyst",
   "status": "candidate"
@@ -11967,6 +11996,11 @@
   "llm": "claude-sonnet-5"
  },
  "销售大增": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "销售额逆势增长": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -12559,6 +12593,11 @@
   "status": "retired"
  },
  "上马煤矿探转采": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "不再持有索尔思光电": {
   "type": "event",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -13469,6 +13508,11 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "参股鸣鸣很忙": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "参股黄河信产": {
   "type": "event",
   "status": "retired",
@@ -14183,6 +14227,11 @@
   "type": "event",
   "status": "retired"
  },
+ "成立科技公司": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "战略合作": {
   "type": "event",
   "status": "retired"
@@ -14720,6 +14769,11 @@
   "type": "event",
   "status": "retired"
  },
+ "拟收购岚创科技": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "拟收购德维嘉": {
   "type": "event",
   "status": "retired"
@@ -15082,6 +15136,10 @@
  "持股长鑫科技": {
   "type": "event",
   "status": "retired"
+ },
+ "换电合作": {
+  "type": "event",
+  "status": "candidate"
  },
  "捷普合作": {
   "type": "event",
@@ -15513,6 +15571,11 @@
  "新疆合作": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "新皇岗口岸": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "新能源合作": {
@@ -18167,6 +18230,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI视频生成": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI解决方案": {
   "type": "product",
   "status": "candidate"
@@ -20111,6 +20178,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "上海": {
+  "type": "product",
+  "status": "candidate"
+ },
  "上海不动产信托": {
   "type": "product",
   "status": "candidate"
@@ -20294,6 +20365,10 @@
   "status": "candidate"
  },
  "中东重建": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "中交房地产控股": {
   "type": "product",
   "status": "candidate"
  },
@@ -23135,6 +23210,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "北京地产": {
+  "type": "product",
+  "status": "candidate"
+ },
  "北斗技术": {
   "type": "product",
   "status": "candidate"
@@ -24300,6 +24379,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "商用餐饮设备": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "商管": {
   "type": "product",
   "status": "candidate"
@@ -24355,6 +24439,10 @@
   "status": "candidate"
  },
  "园区开发": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "园区数字经济": {
   "type": "product",
   "status": "candidate"
  },
@@ -25330,6 +25418,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "奶水牛种源": {
+  "type": "product",
+  "status": "candidate"
+ },
  "奶牛育种": {
   "type": "product",
   "status": "candidate"
@@ -25669,6 +25761,10 @@
   "llm": "claude-sonnet-5"
  },
  "家居产品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "家居塑料": {
   "type": "product",
   "status": "candidate"
  },
@@ -26035,6 +26131,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "工业智能体": {
+  "type": "product",
+  "status": "candidate"
  },
  "工业机器人销售": {
   "type": "product",
@@ -26404,6 +26504,10 @@
   "status": "candidate"
  },
  "广电整合": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "广电网络": {
   "type": "product",
   "status": "candidate"
  },
@@ -27298,6 +27402,11 @@
   "status": "candidate"
  },
  "掩膜版": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "掺稀土光纤": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -30863,6 +30972,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "汽车软内饰": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "汽车轴承": {
   "type": "product",
   "status": "candidate",
@@ -31424,6 +31538,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外幕墙": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "海外建厂": {
   "type": "product",
   "status": "candidate"
@@ -31747,6 +31866,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "液态食品装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "液晶光阀": {
   "type": "product",
   "status": "candidate",
@@ -31923,6 +32046,10 @@
   "status": "candidate"
  },
  "渠道扩张": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "渠道稳健": {
   "type": "product",
   "status": "candidate"
  },
@@ -32203,6 +32330,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "烟气脱硫": {
+  "type": "product",
+  "status": "candidate"
  },
  "烟用白卡纸": {
   "type": "product",
@@ -32612,6 +32743,10 @@
   "llm": "claude-sonnet-5"
  },
  "牛散举牌": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "牛散新进": {
   "type": "product",
   "status": "candidate"
  },
@@ -34798,6 +34933,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "神经退行性疾病": {
+  "type": "product",
+  "status": "candidate"
+ },
  "票房增长": {
   "type": "product",
   "status": "candidate"
@@ -35418,6 +35557,11 @@
  "精酿啤酒": {
   "type": "product",
   "status": "candidate"
+ },
+ "精酿鲜啤": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "精麻药品": {
   "type": "product",
@@ -38157,6 +38301,10 @@
   "status": "candidate"
  },
  "通信与指控装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "通信业务增长": {
   "type": "product",
   "status": "candidate"
  },

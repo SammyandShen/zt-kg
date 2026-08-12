@@ -1161,6 +1161,78 @@
    "note": "证券日报点名飞亚达子公司长空齿轮精密减速器已与机器人领域客户合作，业务凭据+当日新闻叙事一致",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-12"
+  },
+  {
+   "code": "000665",
+   "trade_date": "2026-08-12",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "证据显示当日实际拉升的是文化传媒板块（与省广集团并列），与算力租赁无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  {
+   "code": "002229",
+   "trade_date": "2026-08-12",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "新闻明确将鸿博股份列入算力租赁概念走强名单，且公司新设AI科技子公司支撑叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  {
+   "code": "603887",
+   "trade_date": "2026-08-12",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "多条新闻直接点名城地香江属算力租赁概念走强股，公司模块化数据中心业务支撑关联",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  {
+   "code": "600105",
+   "trade_date": "2026-08-12",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "新闻明确点名永鼎股份在CPO概念走强中涨停，公司光通信业务支撑关联",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  {
+   "code": "000048",
+   "trade_date": "2026-08-12",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "证据全部指向猪肉/养鸡等生猪养殖题材，与机器人无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  {
+   "code": "002031",
+   "trade_date": "2026-08-12",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "新闻明确点名宇树科技申购引爆人形机器人板块带动巨轮智能1分钟封板，因果链清晰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  {
+   "code": "603466",
+   "trade_date": "2026-08-12",
+   "theme": "具身智能",
+   "verdict": "rejected",
+   "note": "证据全部指向暑期档影视概念走强，与具身智能无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  {
+   "code": "603887",
+   "trade_date": "2026-08-11",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "新闻明确点名城地香江属算力租赁概念股，复核旁证较强(0.74)",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
   }
  ],
  "episode_verdicts": [
@@ -1224,6 +1296,14 @@
    "note": "三只成分股各有独立驱动（共达电声-股东增持贷款、波导股份-参股北斗+摘帽、常润股份-收购达峰智能+回购），证据未见共同汽车电子催化事件，属标签巧合各炒各的",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-07"
+  },
+  {
+   "theme": "具身智能",
+   "start_date": "2026-08-12",
+   "verdict": "rejected",
+   "note": "成员业务跨度大（减速器零部件/教育/展示设计），风语筑证据实际指向暑期档影视概念而非具身智能，缺乏共同叙事，属标签巧合",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
   }
  ],
  "leaders": []

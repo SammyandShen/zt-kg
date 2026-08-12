@@ -12752,6 +12752,310 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-08-11] 非抗生素类制剂本身就是化学制药的核心产品"
+  },
+  {
+   "theme": "算力服务",
+   "business_tag_name": "AI算力服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] AI算力服务即为该题材直接提供的算力服务业务"
+  },
+  {
+   "theme": "AI算力",
+   "business_tag_name": "AI算力服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-12] 业务即AI算力服务本身，与题材直接对应"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "DTP专业药房服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] DTP专业药房是药品流通零售的直接终端业态"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC投资及运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] IDC即数据中心，投资运营是题材核心业务"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC综合解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] IDC综合解决方案直接服务于数据中心建设运营"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "云计算与数据中心",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 业务名称直接包含数据中心核心业务"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药饮片及中成药生产",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-12] 中药饮片和中成药生产是中药题材的核心业务"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药饮片及中成药零售",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] 中成药零售是中药产业链的下游销售环节"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "中西成药零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] 药品零售终端即医药流通题材的核心业态"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "临床研究服务(CRO)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] CRO临床研究服务是创新药研发的直接上游支撑环节"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "医药研发外包(CRO)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] 研发外包CRO直接服务于创新药研发流程"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药零售连锁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 医药零售连锁是医药流通题材的核心零售业态"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "军事仿真系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-12] 军事仿真系统属于军工装备体系的直接业务"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "数字兵力仿真平台",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-12] 数字兵力仿真平台是军工领域作战模拟装备业务"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-12] 减速器是机器人关节传动的核心上游零部件"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-12] 减速器是人形机器人关节传动的核心上游零部件"
+  },
+  {
+   "theme": "XT减速器",
+   "business_tag_name": "减速器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] 减速器生产业务与该题材直接对应"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车三电嵌件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-12] 三电嵌件是新能源汽车电池电机电控系统的直接零部件"
+  },
+  {
+   "theme": "复合铜箔",
+   "business_tag_name": "复合集流体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] 复合集流体是复合铜箔题材的核心产品业务"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "电子封装材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-12] 电子封装材料是先进封装工艺的直接上游材料"
+  },
+  {
+   "theme": "电子化学品",
+   "business_tag_name": "电子级薄膜材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] 电子级薄膜材料属于电子化学品范畴的核心产品"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "电磁线",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] 电磁线是变压器绕组的直接上游材料"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车仪表板总成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车仪表板总成即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车保险杠总成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车保险杠总成即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车内饰功能件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车内饰功能件即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车内饰装饰件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车内饰装饰件即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车内饰附件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车内饰附件即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车外饰附件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车外饰附件即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车座椅及座椅附件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车座椅及座椅附件即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车轴承",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车轴承即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车门内护板总成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-12] 汽车门内护板总成即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车顶置文件柜总成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] 汽车顶置文件柜总成即汽车零部件题材的具体产品业务"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "芯片设计及解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] 提供芯片设计及解决方案的公司直接从事半导体设计业务"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "谐波减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] 谐波减速器是机器人关节传动的核心上游部件"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "谐波减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-12] 谐波减速器是人形机器人关节的核心上游部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "谐波减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-12] 谐波减速器是人形机器人关节的核心上游部件"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "谐波减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] 谐波减速器是具身智能硬件本体关节传动的上游部件"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "非药品零售（健康食品/个护/生活用品）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-12] 该业务即零售渠道经营本身"
   }
  ]
 }
