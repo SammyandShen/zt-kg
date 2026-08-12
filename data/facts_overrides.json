@@ -1152,6 +1152,15 @@
    "note": "21世纪经济报道/东方财富Choice均直接点名'人形机器人板块巨轮智能1分钟封板'，叙事明确",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-11"
+  },
+  {
+   "code": "000026",
+   "trade_date": "2026-08-10",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "证券日报点名飞亚达子公司长空齿轮精密减速器已与机器人领域客户合作，业务凭据+当日新闻叙事一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
   }
  ],
  "episode_verdicts": [

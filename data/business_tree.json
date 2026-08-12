@@ -16510,6 +16510,711 @@
    "parent": "数控机床",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-10"
+  },
+  "AC发泡剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "DMPA": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "中间体": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "云通信": {
+   "parent": "计算机软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "交通管理系统": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "产业园区开发与运营": {
+   "parent": "产业园区",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "人造革": {
+   "parent": "皮革及基布",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "低温奶": {
+   "parent": "乳制品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "信创政务": {
+   "parent": "信创国产化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "健身器材": {
+   "parent": "轻工制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "储能电站开发运营": {
+   "parent": "储能系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "储能调频电站运营": {
+   "parent": "储能系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "儿童生长发育医疗服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "光伏EPC": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "光伏建筑(BIPV异型光伏组件)": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "军用车辆人机环系统内饰": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "军用配套装备": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "农牧设备": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "冲泡奶茶": {
+   "parent": "饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "化工环保设备": {
+   "parent": "环保工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "医农药中间体": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "医疗保健及食品接触用特种纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "医药原料（吡喹酮等）": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "半导体设备维修": {
+   "parent": "半导体设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "即饮饮料": {
+   "parent": "饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "原生金矿": {
+   "parent": "贵金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "发电供热": {
+   "parent": "供热",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "受阻胺光稳定剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "呼叫中心服务外包": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "商超及便利店零售": {
+   "parent": "商超零售",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "固废及废水处理": {
+   "parent": "环保公用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "基金管理": {
+   "parent": "资产管理服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "复配助剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "多用途重吊船运输": {
+   "parent": "港口航运",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "女包": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "宠物主粮": {
+   "parent": "饲料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "宠物牵引用具": {
+   "parent": "日用百货",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "宠物玩具": {
+   "parent": "日用百货",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "宠物零食": {
+   "parent": "饲料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "室内装饰工程": {
+   "parent": "装饰装修幕墙工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "室内设计服务": {
+   "parent": "工程设计咨询",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "家居装饰饰面材料": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "差速器及底盘铸造零部件": {
+   "parent": "底盘与制动系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "常温奶": {
+   "parent": "乳制品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "干散货运输": {
+   "parent": "港口航运",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "建筑耐火饰面板材": {
+   "parent": "耐火材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "影视剧投资制作发行": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "影院广告": {
+   "parent": "广告营销",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "抗生素类制剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "排水管网工程": {
+   "parent": "市政基础设施工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "排水管网运维服务": {
+   "parent": "水务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "支付系统": {
+   "parent": "金融科技软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "政务软件产品及服务": {
+   "parent": "智慧政务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "教练机": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "数智海关": {
+   "parent": "智慧政务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "整装交付服务": {
+   "parent": "装饰装修幕墙工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "旅游休闲信息系统": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "无人机": {
+   "parent": "低空经济与航天",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "时尚珠宝产品": {
+   "parent": "珠宝首饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "普通机床": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "智慧党建": {
+   "parent": "智慧政务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "智慧水务软件平台": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "智能商用设备": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "有色金属采选(铅锑锌银)": {
+   "parent": "铅锌",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "机床配件": {
+   "parent": "数控机床",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "机械光泽纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "染料中间体": {
+   "parent": "染料涂料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "气象观测仪器": {
+   "parent": "仪器仪表",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "氢氧化钴": {
+   "parent": "小金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "氯化亚砜": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "水产品加工": {
+   "parent": "渔业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "水处理设备": {
+   "parent": "环保工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "污水厂委托运行服务": {
+   "parent": "水务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "污泥处理": {
+   "parent": "固废处理",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "汽车内饰饰面材料": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "涡轮增压器中间壳": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "涡轮增压器涡轮壳": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "游戏发行运营": {
+   "parent": "游戏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "潮玩零售": {
+   "parent": "日用百货",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "澳洲院线运营": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "烟草工业用纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "特种变压器": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "特需儿童康复服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "猪浓缩料": {
+   "parent": "饲料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "猪配合料": {
+   "parent": "饲料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "猪预混料": {
+   "parent": "饲料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "玻璃防护屏/玻璃盖板": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "生物制品": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "生物大分子CDMO": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "电梯部件": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "电梯金属材料": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "电气开关设备": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "电源": {
+   "parent": "电力设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "白羽肉鸡育种": {
+   "parent": "畜禽养殖",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "眼科医疗服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "矿产开采": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "社会餐饮信息系统": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "种猪养殖": {
+   "parent": "畜禽养殖",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "第三方硬件配套": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "紫外线吸收剂及抗氧剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "纳米碳酸钙": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "维生素A/D3系列": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "综合医院医疗服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "肝素制剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "肝素原料药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "自来水": {
+   "parent": "水务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "营养保健食品（保健品成品）": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "蒸汽": {
+   "parent": "供热",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "薄型印刷纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "薄膜": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "藻油Omega-3（DHA/ARA）": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "观影及餐饮商品销售": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "超滤膜组件": {
+   "parent": "环保工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "蹦床": {
+   "parent": "轻工制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "车载玻璃盖板": {
+   "parent": "汽车电子网联",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "载金炭含金": {
+   "parent": "贵金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "辅酶Q10": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "过碳酸钠": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "运动器材": {
+   "parent": "轻工制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "酒店信息管理系统": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "酒店咨询服务": {
+   "parent": "酒店住宿",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "钢结构产品制造": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "钢结构配套绿色建材": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "钴": {
+   "parent": "小金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "铅锌原矿": {
+   "parent": "铅锌",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "铅锑精矿(含银)": {
+   "parent": "小金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "锌精矿": {
+   "parent": "铅锌",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "锑精矿": {
+   "parent": "小金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "阻聚剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "零售信息管理系统": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "零散气回收": {
+   "parent": "油气产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "非抗生素类制剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "风电电站开发": {
+   "parent": "风能发电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "食品加工与销售": {
+   "parent": "食品饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "食品配料贸易": {
+   "parent": "食品饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "饰边条": {
+   "parent": "家具家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "饰面板": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "饲料原料": {
+   "parent": "饲料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "香料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "高锑原矿": {
+   "parent": "小金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
+  },
+  "黄金饰品": {
+   "parent": "珠宝首饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-11"
   }
  },
  "groups": {
