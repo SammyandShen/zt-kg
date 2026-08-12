@@ -1233,6 +1233,51 @@
    "note": "新闻明确点名城地香江属算力租赁概念股，复核旁证较强(0.74)",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-12"
+  },
+  {
+   "code": "001696",
+   "trade_date": "2026-08-12",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "公司新闻和公告均围绕重大资产置换（摩托车发动机业务换隆鑫机械业务）展开，当日主导叙事为资产置换而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "603277",
+   "trade_date": "2026-08-12",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "三条证据均指向关税退税这一具体利好，当日主导叙事是关税退税而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "002682",
+   "trade_date": "2026-08-12",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "证据显示宁德时代换电合作协议是具体驱动事件，当日主导叙事为换电合作而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "002520",
+   "trade_date": "2026-08-12",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "新闻明确将涨停归因于工业母机概念反弹并点名日发精机，当日主导叙事是工业母机而非人形机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "000887",
+   "trade_date": "2026-08-12",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "公司澄清涨停系与腾讯云合作传闻所致且尚无实质落地内容，当日主导叙事为腾讯云合作/液冷服务器传闻而非人形机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
   }
  ],
  "episode_verdicts": [

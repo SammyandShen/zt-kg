@@ -17215,6 +17215,371 @@
    "parent": "珠宝首饰",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-11"
+  },
+  "AI算力服务": {
+   "parent": "算力租赁运维",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "DTP专业药房服务": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "IDC投资及运营": {
+   "parent": "数据中心建设运营",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "IDC综合解决方案": {
+   "parent": "数据中心建设运营",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "O2O及新零售线上业务": {
+   "parent": "电商零售",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "中药饮片及中成药生产": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "中药饮片及中成药零售": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "中西成药零售": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "临床研究服务(CRO)": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "云计算与数据中心": {
+   "parent": "云计算",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "互联网营销服务": {
+   "parent": "广告营销",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "军事仿真系统": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "减水剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "减速器专用轴承": {
+   "parent": "轴承",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "医药": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "医药研发外包(CRO)": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "医药零售连锁": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "单轨吊": {
+   "parent": "矿山机械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "原燃料及金属贸易": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "复合集流体": {
+   "parent": "电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "彩票及票证印刷": {
+   "parent": "包装印刷",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "影视剧本创作及销售": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "影视投资制作及发行": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "影院及院线运营": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "影院经营": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "掘进机": {
+   "parent": "工程机械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "数字兵力仿真平台": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "新能源汽车三电嵌件": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "智慧矿山智能化系统": {
+   "parent": "工业数字化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "气雾剂": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "水泥建材": {
+   "parent": "水泥",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车仪表板总成": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车保险杠总成": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车内饰功能件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车内饰装饰件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车内饰附件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车外饰附件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车座椅及座椅附件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车轴承": {
+   "parent": "轴承",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车门内护板总成": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "汽车顶置文件柜总成": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "泵站电液控及阀设备": {
+   "parent": "阀门",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "活性炭及催化剂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "游戏研发发行与运营": {
+   "parent": "游戏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "热轧钢材": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "煤炭生产及销售": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "特种工业泵": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "环保器材": {
+   "parent": "环保公用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "瓦楞纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "电子封装材料": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "电子级薄膜材料": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "电影投资发行": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "电梯门系统": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "电磁线": {
+   "parent": "线缆",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "电磁阀": {
+   "parent": "阀门",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "电视剧制作发行": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "矿山工程施工": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "矿山节能减排设备": {
+   "parent": "矿山机械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "硝化棉": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "箱板纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "胰岛素类似物药物": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "芯片设计及解决方案": {
+   "parent": "集成电路设计",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "药品技术转移与特许权服务": {
+   "parent": "医药研发",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "药品零售加盟与联盟分销": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "药学研究服务": {
+   "parent": "医药研发",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "装备维修保障平台": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "谐波减速器": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "采煤机": {
+   "parent": "矿山机械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "钢铁": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "防护器材": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "集装箱装卸设备": {
+   "parent": "工程机械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "非药品零售（健康食品/个护/生活用品）": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
+  },
+  "减速器": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-12"
   }
  },
  "groups": {
