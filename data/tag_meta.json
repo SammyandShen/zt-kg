@@ -900,6 +900,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "小盘股": {
+  "type": "attribute",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "小米客户": {
   "type": "attribute",
   "status": "active",
@@ -8378,6 +8383,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "客户联想集团": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "客户落地": {
   "type": "attribute",
   "status": "candidate"
@@ -8441,6 +8451,11 @@
  "应用载人航天": {
   "type": "attribute",
   "status": "candidate"
+ },
+ "建筑装饰龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "成本优势": {
   "type": "attribute",
@@ -8789,6 +8804,11 @@
  "长鑫科技": {
   "type": "attribute",
   "status": "candidate"
+ },
+ "间接参股光芯片": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "间接参股宇树科技": {
   "type": "attribute",
@@ -11043,6 +11063,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "拟终止定增": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "拟重大资产重组": {
   "type": "catalyst",
   "status": "candidate",
@@ -12802,6 +12827,10 @@
   "type": "event",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "互联网企业合作": {
+  "type": "event",
+  "status": "candidate"
  },
  "亚马逊合作": {
   "type": "event",
@@ -14625,6 +14654,11 @@
  "拟收购伽蓝特": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "拟收购佰内科技": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "拟收购信为通讯": {
@@ -16556,6 +16590,11 @@
  "联席董事长": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "联手宇树科技": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "联营挂牌": {
@@ -18953,6 +18992,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "IDC全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
  "IDC应用": {
   "type": "product",
   "status": "candidate",
@@ -20463,6 +20506,10 @@
   "status": "candidate"
  },
  "中药主业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "中药创新": {
   "type": "product",
   "status": "candidate"
  },
@@ -23468,6 +23515,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医药零售整合": {
+  "type": "product",
+  "status": "candidate"
+ },
  "十五运会": {
   "type": "product",
   "status": "candidate"
@@ -23960,6 +24011,10 @@
   "status": "candidate"
  },
  "去地产化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "参建数据中心": {
   "type": "product",
   "status": "candidate"
  },
@@ -25988,6 +26043,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "小罐番茄酱": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "小金属": {
   "type": "product",
   "status": "candidate"
@@ -26953,6 +27013,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "感冒止咳": {
+  "type": "product",
+  "status": "candidate"
+ },
  "感冒药": {
   "type": "product",
   "status": "candidate"
@@ -27218,6 +27282,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "抗肿瘤": {
+  "type": "product",
+  "status": "candidate"
  },
  "抗肿瘤药": {
   "type": "product",
@@ -29442,6 +29510,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "服务器技术服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "服务器租赁": {
   "type": "product",
   "status": "candidate"
@@ -31341,6 +31413,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "洛索洛芬钠凝胶贴膏": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "洞藏系列": {
   "type": "product",
   "status": "candidate",
@@ -31374,6 +31451,11 @@
  "流体电磁阀": {
   "type": "product",
   "status": "candidate"
+ },
+ "流感中成药": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "流感检测": {
   "type": "product",
@@ -32115,6 +32197,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "源网荷储绿电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "溴系阻燃剂": {
   "type": "product",
   "status": "candidate",
@@ -32396,6 +32482,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "热泵": {
+  "type": "product",
+  "status": "candidate"
+ },
  "热泵出口": {
   "type": "product",
   "status": "candidate"
@@ -32598,6 +32688,10 @@
   "status": "candidate"
  },
  "煤矿装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "照明": {
   "type": "product",
   "status": "candidate"
  },
@@ -33145,6 +33239,11 @@
   "status": "candidate"
  },
  "环氧乙烷": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "环氧塑封材料": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -35301,6 +35400,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "算力液冷": {
+  "type": "product",
+  "status": "candidate"
+ },
  "算力电源全栈": {
   "type": "product",
   "status": "candidate",
@@ -36111,6 +36214,10 @@
   "llm": "claude-sonnet-5"
  },
  "网络直播": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "网通设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -37395,6 +37502,10 @@
   "status": "retired"
  },
  "谐波电机": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "谐音炒作": {
   "type": "product",
   "status": "candidate"
  },
@@ -39679,6 +39790,11 @@
   "llm": "claude-sonnet-5"
  },
  "锂电池装备": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "锂电池负极": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -43167,6 +43283,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "海外风电": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "海峡两岸": {
   "type": "theme",
   "status": "candidate"
@@ -43879,5 +44000,20 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
+ },
+ "昨日连板_含一字": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "近期新高": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "题材股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
  }
 }

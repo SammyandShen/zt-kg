@@ -324,6 +324,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-08-13": {
+   "at": "2026-08-13T17:21:06+08:00",
+   "terms": [
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "算力租赁",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "AI芯片",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "AI服务器",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "房地产",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "CPO",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "光通信",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "减速器",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "具身智能",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "光伏储能",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "白酒",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "量子科技",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

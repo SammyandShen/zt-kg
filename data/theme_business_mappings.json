@@ -13056,6 +13056,278 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-08-12] 该业务即零售渠道经营本身"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药材与中药饮片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-13] 中药材与饮片即中药题材直接交易的产品本身"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "全品类中药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-13] 全品类中药业务直接对应中药题材"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "住宅销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-13] 住宅销售是房地产行业核心业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业地产出租",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-13] 商业地产出租属于房地产经营范畴"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "商业地产运营（吾悦广场）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-13] 商业地产运营即房地产业务的直接体现"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "房地产代建",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-13] 房地产代建业务名称直接对应题材"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "文旅地产",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-13] 文旅地产属于房地产开发业态的一种"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "便携式DR",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-13] 便携式DR是医疗影像器械产品"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医用超声",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-13] 医用超声设备属于医疗器械"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药贸易流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-13] 医药贸易流通与医药流通题材直接对应"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "原料药及医药中间体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-13] 原料药及中间体业务即原料药题材本身"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "抗感染类药品(抗耐药抗生素/喹诺酮)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-13] 抗感染化学药品属于化学制药范畴"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电池自动化设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-13] 光伏电池生产自动化设备是光伏产业链上游设备"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏组件自动化设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-13] 光伏组件生产自动化设备是光伏产业链上游设备"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光学类功能性器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 光学功能性器件即光学光电子题材交易对象"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "半导体激光元器件和原材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 激光器件是光模块的核心上游元器件"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "取向硅钢",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-13] 取向硅钢是变压器铁芯的核心上游材料"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "成品油及天然气销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 天然气销售业务直接对应天然气题材"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车充配电系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-13] 充配电系统是新能源汽车产业链的直接组成部分"
+  },
+  {
+   "theme": "电解铝",
+   "business_tag_name": "电解铝",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-13] 业务即电解铝生产本身"
+  },
+  {
+   "theme": "电解铝",
+   "business_tag_name": "氧化铝",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-13] 氧化铝是电解铝冶炼的直接原料"
+  },
+  {
+   "theme": "电解铝",
+   "business_tag_name": "氢氧化铝",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 氢氧化铝是拜耳法制氧化铝进而电解铝的上游中间品"
+  },
+  {
+   "theme": "电解铝",
+   "business_tag_name": "铝合金锭",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 铝合金锭是电解铝的直接下游铸造产品"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "电力变压器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-13] 业务即变压器产品本身"
+  },
+  {
+   "theme": "变压器",
+   "business_tag_name": "牵引变压器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-13] 牵引变压器是变压器细分品类"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "金属切削机床",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-13] 金属切削机床即工业母机核心品类"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "金属成形机床",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-13] 金属成形机床即工业母机核心品类"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "航空航天数控机床及生产线",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-13] 数控机床及生产线属于工业母机范畴"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "机床零部件配套",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 机床零部件是工业母机的直接上游配套"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "泛半导体制程解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 半导体制程解决方案即半导体设备/工艺服务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "特色化学药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-13] 业务名称直接对应化学制药"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "激素类药品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 激素类药品属于化学制药品类"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "车灯LED",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-13] 车灯LED属于汽车零部件产品"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车智能座舱部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-13] 智能座舱部件即汽车电子核心产品"
   }
  ]
 }

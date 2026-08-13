@@ -60376,5 +60376,167 @@
   "p": "业绩增长",
   "c": 0.6,
   "model": "claude-sonnet-5"
+ },
+ "客户联想集团": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "建筑装饰龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "互联网企业合作": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购佰内科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "拟终止定增": {
+  "t": "catalyst",
+  "p": "终止定增",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "间接参股光芯片": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "IDC全产业链": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "中药创新": {
+  "t": "theme",
+  "p": "中药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "医药零售整合": {
+  "t": "theme",
+  "p": "医药零售",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "参建数据中心": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "小盘股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "小罐番茄酱": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "感冒止咳": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "抗肿瘤": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "服务器技术服务": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "洛索洛芬钠凝胶贴膏": {
+  "t": "product",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "流感中成药": {
+  "t": "product",
+  "p": "中药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "海外风电": {
+  "t": "theme",
+  "p": "风电",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "源网荷储绿电": {
+  "t": "theme",
+  "p": "虚拟电厂",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "热泵": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "照明": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "环氧塑封材料": {
+  "t": "product",
+  "p": "半导体封装材料",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "算力液冷": {
+  "t": "theme",
+  "p": "算力散热",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "网通设备": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "联手宇树科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "谐音炒作": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "锂电池负极": {
+  "t": "product",
+  "p": "负极材料",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
  }
 }

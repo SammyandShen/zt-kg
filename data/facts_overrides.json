@@ -1278,6 +1278,69 @@
    "note": "公司澄清涨停系与腾讯云合作传闻所致且尚无实质落地内容，当日主导叙事为腾讯云合作/液冷服务器传闻而非人形机器人",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-13"
+  },
+  {
+   "code": "603956",
+   "trade_date": "2026-08-13",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻明确点名当日涨停系近期取得安徽提曼51.02%股权（并购），非AI应用叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "002174",
+   "trade_date": "2026-08-13",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "新闻标题直接点名涨停因联手落地2.5D/3D先进封装中心，主导叙事是先进封装非AI应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "002322",
+   "trade_date": "2026-08-13",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "三条证据均为半年报净利增长及高分红，无AI应用相关内容，主导叙事是业绩分红",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "688137",
+   "trade_date": "2026-08-13",
+   "theme": "CRO",
+   "verdict": "verified",
+   "note": "多条新闻明确点名'CRO概念走强'并列出该股，当日主导叙事清晰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "301520",
+   "trade_date": "2026-08-13",
+   "theme": "CRO",
+   "verdict": "verified",
+   "note": "新闻反复点名该股与'CRO概念爆发/走强'，叙事一致且突出",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "300404",
+   "trade_date": "2026-08-13",
+   "theme": "CRO",
+   "verdict": "verified",
+   "note": "新闻反复点名该股与'CRO概念走强/爆发'，叙事一致且突出",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
+  },
+  {
+   "code": "688167",
+   "trade_date": "2026-08-12",
+   "theme": "CPO",
+   "verdict": "rejected",
+   "note": "三条证据一致指向定增募资10亿元及连续亏损才是当日主导叙事，非CPO",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
   }
  ],
  "episode_verdicts": [
@@ -1349,6 +1412,14 @@
    "note": "成员业务跨度大（减速器零部件/教育/展示设计），风语筑证据实际指向暑期档影视概念而非具身智能，缺乏共同叙事，属标签巧合",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-12"
+  },
+  {
+   "theme": "AI应用",
+   "start_date": "2026-08-13",
+   "verdict": "rejected",
+   "note": "四只成分股各有独立驱动：威派格系并购取得股权、游族网络系先进封装中心落地、理工能科系中报分红、出版传媒系板块泛涨，无共同AI应用催化，属标签巧合各炒各的",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-13"
   }
  ],
  "leaders": []
