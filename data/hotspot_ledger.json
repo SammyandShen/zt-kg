@@ -389,6 +389,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-08-14": {
+   "at": "2026-08-14T17:41:56+08:00",
+   "terms": [
+    {
+     "term": "CRO",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "光模块",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "CPO",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "算力硬件",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "算力租赁",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "存储芯片",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "电力",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "绿电",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "创新药",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "白酒",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "改性塑料",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

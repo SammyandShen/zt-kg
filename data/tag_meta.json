@@ -8513,6 +8513,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "汽车减震器龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "河南国资重组": {
   "type": "attribute",
   "status": "candidate",
@@ -9647,6 +9652,11 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "中标基建": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "中标大单": {
   "type": "catalyst",
   "status": "candidate",
@@ -9695,6 +9705,11 @@
   "status": "candidate"
  },
  "中证1000纳入": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "临床试验批准": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -10069,6 +10084,11 @@
   "llm": "claude-sonnet-5"
  },
  "分红提升": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "分红提议": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -12798,6 +12818,11 @@
  "中车订单": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "中际旭创入股": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "临港项目": {
@@ -15687,6 +15712,10 @@
   "type": "event",
   "status": "retired"
  },
+ "智算转型": {
+  "type": "event",
+  "status": "candidate"
+ },
  "智能系统成立": {
   "type": "event",
   "status": "retired",
@@ -16976,6 +17005,10 @@
  "转型升级": {
   "type": "event",
   "status": "retired"
+ },
+ "转型科技": {
+  "type": "event",
+  "status": "candidate"
  },
  "转型预期": {
   "type": "event",
@@ -18424,6 +18457,11 @@
  "B2B集采": {
   "type": "product",
   "status": "candidate"
+ },
+ "BAF污水处理": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "BBU": {
   "type": "product",
@@ -23549,6 +23587,10 @@
   "type": "product",
   "status": "retired"
  },
+ "半导体切割": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体划片机": {
   "type": "product",
   "status": "candidate",
@@ -23645,6 +23687,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "半导体气体检测": {
+  "type": "product",
+  "status": "candidate"
  },
  "半导体注入猜测": {
   "type": "product",
@@ -24376,6 +24422,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "商业航天检测": {
+  "type": "product",
+  "status": "candidate"
+ },
  "商业航天配套": {
   "type": "product",
   "status": "candidate",
@@ -25046,6 +25096,10 @@
   "status": "candidate"
  },
  "声学元件": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "声纹监测": {
   "type": "product",
   "status": "candidate"
  },
@@ -25936,6 +25990,10 @@
   "status": "candidate"
  },
  "导热散热": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "导热材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -29742,6 +29800,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "机器人轻量化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人连接器": {
   "type": "product",
   "status": "candidate",
@@ -31757,6 +31819,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海洋通信": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海洋馆": {
   "type": "product",
   "status": "candidate"
@@ -33146,6 +33212,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "环保催化剂": {
+  "type": "product",
+  "status": "candidate"
+ },
  "环保再生纸": {
   "type": "product",
   "status": "candidate"
@@ -33392,6 +33462,10 @@
   "status": "candidate"
  },
  "理财收益": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "瑞香素": {
   "type": "product",
   "status": "candidate"
  },
@@ -35520,6 +35594,10 @@
   "status": "candidate"
  },
  "精准医疗": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "精准诊断": {
   "type": "product",
   "status": "candidate"
  },
@@ -40503,6 +40581,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "青光眼": {
+  "type": "product",
+  "status": "candidate"
+ },
  "青岛地铁": {
   "type": "product",
   "status": "candidate"
@@ -44012,6 +44094,26 @@
   "radar": "2026-08-06·1源2日"
  },
  "题材股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "被动元件概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-11·1源2日"
+ },
+ "高带宽内存": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "光通信模块": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "装饰装修幕墙工程": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"

@@ -13328,6 +13328,246 @@
    "status": "candidate",
    "confidence": 0.65,
    "rationale": "[llm 2026-08-13] 智能座舱部件即汽车电子核心产品"
+  },
+  {
+   "theme": "AIDC电源",
+   "business_tag_name": "10kV中压直供电力模组",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 中压直供是AIDC电源架构的核心产品形态"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "CRO服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-14] 业务标签即CRO题材本身"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "IVD集约化服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] IVD体外诊断试剂/设备属于医疗器械范畴"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "PON光通信设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-14] PON设备本身即光通信传输设备"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "中药CRO服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-14] 为中药行业提供合同研发外包服务，属于CRO业务"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "临床前CRO服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-14] 临床前合同研发外包服务即CRO核心业务"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "临床前研究服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-14] 临床前研究服务属于CRO业务范畴"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "临床前药效评价服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-14] 临床前药效评价是CRO服务的具体环节"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "临床研究服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-14] 临床研究服务是CRO业务核心构成"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "临床研究服务(CRO)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-14] 业务标签本身即标注为CRO"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "临床试验及生物等效性研究服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-14] 生物等效性/临床试验服务属于CRO业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "主动悬架电机液压泵",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 主动悬架电机液压泵是汽车底盘零部件的具体产品"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "互联网银行解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-14] 面向银行的互联网技术解决方案即金融科技的直接载体"
+  },
+  {
+   "theme": "创投",
+   "business_tag_name": "产业投资孵化",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-14] 产业投资孵化业务即创投题材的直接承载"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "伺服电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 伺服电机是数控机床进给驱动的核心部件"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "伺服系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 伺服系统是数控机床运动控制核心部件"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "伺服驱动器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 伺服驱动器是数控机床伺服控制核心部件"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "信创集成服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-14] 信创集成服务是信创落地交付的直接业务"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "促红细胞生成素",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 促红细胞生成素是生物创新药具体品种"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "保障性租赁住房",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 保障性租赁住房是地产业务的具体细分"
+  },
+  {
+   "theme": "热电联产",
+   "business_tag_name": "余热发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 余热发电是热电联产/余热利用的直接业务形式"
+  },
+  {
+   "theme": "大消费",
+   "business_tag_name": "保健品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 保健品聚合节点整体属于大消费板块"
+  },
+  {
+   "theme": "大消费",
+   "business_tag_name": "便利店连锁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 便利店连锁是大消费零售业态的直接业务"
+  },
+  {
+   "theme": "大消费",
+   "business_tag_name": "便利店零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 便利店零售是大消费零售业态的直接业务"
+  },
+  {
+   "theme": "存储芯片",
+   "business_tag_name": "内存条",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 内存条是存储芯片题材的直接下游承载产品"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "其他模式生物技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 模式生物技术服务即CRO类研发服务业务"
+  },
+  {
+   "theme": "AI光学",
+   "business_tag_name": "光学镜头及影像模组",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 镜头及影像模组是AI光学的直接硬件承载"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-14] 减速器是人形机器人关节核心传动部件的直接上游"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "分子砌块",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 分子砌块是药物研发合成服务的直接上游原料"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "制冷压缩机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-14] 制冷压缩机是汽车热管理系统核心上游部件"
   }
  ]
 }

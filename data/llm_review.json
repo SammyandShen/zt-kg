@@ -60538,5 +60538,137 @@
   "p": "负极材料",
   "c": 0.75,
   "model": "claude-sonnet-5"
+ },
+ "汽车减震器龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "中标基建": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "分红提议": {
+  "t": "catalyst",
+  "p": "拟分红",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "智算转型": {
+  "t": "theme",
+  "p": "算力",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "转型科技": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "BAF污水处理": {
+  "t": "product",
+  "p": "污水处理",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "中际旭创入股": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "临床试验批准": {
+  "t": "catalyst",
+  "p": "临床试验获批",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "半导体切割": {
+  "t": "product",
+  "p": "半导体",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "半导体气体检测": {
+  "t": "product",
+  "p": "半导体检测",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "商业航天检测": {
+  "t": "product",
+  "p": "商业航天",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "声纹监测": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "导热材料": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "机器人轻量化": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "海洋通信": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "环保催化剂": {
+  "t": "product",
+  "p": "环保",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "瑞香素": {
+  "t": "product",
+  "p": "化学制药",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "精准诊断": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "青光眼": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "昨日连板_含一字": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "近期新高": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "题材股": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
  }
 }

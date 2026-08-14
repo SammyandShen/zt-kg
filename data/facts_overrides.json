@@ -1377,6 +1377,87 @@
    "note": "公司公告澄清不涉及创新药研发、无重大资产重组计划，7连板炒作缺乏CRO业务实证支撑",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-14"
+  },
+  {
+   "code": "603629",
+   "trade_date": "2026-08-14",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "业务事实凭据+新闻明确将其归入算力租赁概念(与英伟达合作)，当日叙事一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "600186",
+   "trade_date": "2026-08-14",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "财经新闻明确写明'算力租赁斩获大额订单'为涨停直接原因",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "603989",
+   "trade_date": "2026-08-14",
+   "theme": "算力",
+   "verdict": "rejected",
+   "note": "两条新闻均将涨停明确归因为超级电容概念异动，非算力叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "600487",
+   "trade_date": "2026-08-14",
+   "theme": "CPO",
+   "verdict": "rejected",
+   "note": "两条新闻均明确将该股涨停归因光纤概念板块走高，未提CPO",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "603083",
+   "trade_date": "2026-08-14",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "三条新闻两次明确点名CPO概念持续走强驱动其涨停，叙事一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "301419",
+   "trade_date": "2026-08-14",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "三条新闻均明确点名CPO板块/概念驱动其20%涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "603118",
+   "trade_date": "2026-08-14",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻明确归因通信设备板块拉升，同期公告为剥离子公司股权，与机器人叙事无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "002418",
+   "trade_date": "2026-08-14",
+   "theme": "算力",
+   "verdict": "rejected",
+   "note": "新闻明确归因液冷技术国标发布带动液冷概念大涨，非算力题材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "002820",
+   "trade_date": "2026-08-14",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "两条新闻均明确归因食品饮料板块异动拉升，且中报亏损扩大，无国企改革叙事支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
   }
  ],
  "episode_verdicts": [
