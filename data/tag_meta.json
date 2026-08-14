@@ -43986,10 +43986,20 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "昨日连板_含一字": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
  "病原体防治": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
+ },
+ "近期新高": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
  },
  "阿兹海默": {
   "type": "unknown",
@@ -44000,16 +44010,6 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
- },
- "昨日连板_含一字": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "近期新高": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
  },
  "题材股": {
   "type": "unknown",

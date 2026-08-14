@@ -1341,6 +1341,42 @@
    "note": "三条证据一致指向定增募资10亿元及连续亏损才是当日主导叙事，非CPO",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-13"
+  },
+  {
+   "code": "000887",
+   "trade_date": "2026-08-13",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "公司公告澄清腾讯云合作尚无实质落地内容、暂未产生收入，题材炒作缺乏事实支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "603758",
+   "trade_date": "2026-08-13",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "公司多次公告澄清主营业务不涉及人形机器人零配件生产制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "603758",
+   "trade_date": "2026-08-12",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "公司多次公告澄清主营业务不涉及人形机器人零配件生产制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
+  },
+  {
+   "code": "600721",
+   "trade_date": "2026-08-12",
+   "theme": "CRO",
+   "verdict": "rejected",
+   "note": "公司公告澄清不涉及创新药研发、无重大资产重组计划，7连板炒作缺乏CRO业务实证支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-14"
   }
  ],
  "episode_verdicts": [
