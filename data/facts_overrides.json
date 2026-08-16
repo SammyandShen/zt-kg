@@ -1458,6 +1458,33 @@
    "note": "两条新闻均明确归因食品饮料板块异动拉升，且中报亏损扩大，无国企改革叙事支撑",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-14"
+  },
+  {
+   "code": "603881",
+   "trade_date": "2026-08-14",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "新闻明确点名'算力租赁概念走强，网宿科技、数据港、利通电子涨停'，题材与当日异动直接绑定，数据港IDC主业与算力租赁业务关联可解释",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "002575",
+   "trade_date": "2026-08-13",
+   "theme": "算力租赁",
+   "verdict": "rejected",
+   "note": "公司独家回应'酒类业务仍是基本盘'，明确淡化算力租赁叙事；且当日算力租赁板块整体震荡走低（城地香江跌停），一字板后即大跌，属蹭概念",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "603118",
+   "trade_date": "2026-08-13",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻明确归因'通信设备板块拉升 共进股份、大唐电信涨停'，当日主导叙事是通信设备而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
   }
  ],
  "episode_verdicts": [

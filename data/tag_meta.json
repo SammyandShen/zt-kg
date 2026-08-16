@@ -43793,6 +43793,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "被动元件概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-11·1源2日"
+ },
  "西部基建": {
   "type": "theme",
   "status": "candidate"
@@ -44053,6 +44058,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "光通信模块": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
  "免疫治疗": {
   "type": "unknown",
   "status": "candidate",
@@ -44078,6 +44088,11 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "装饰装修幕墙工程": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
  "近期新高": {
   "type": "unknown",
   "status": "candidate",
@@ -44098,22 +44113,7 @@
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
  },
- "被动元件概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-11·1源2日"
- },
  "高带宽内存": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "光通信模块": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "装饰装修幕墙工程": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
