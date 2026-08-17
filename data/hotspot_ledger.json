@@ -454,6 +454,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-08-17": {
+   "at": "2026-08-17T17:44:04+08:00",
+   "terms": [
+    {
+     "term": "稀土永磁",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "CPO",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "液冷",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "算力租赁",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "光纤",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "半导体设备",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "存储芯片",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "超级电容",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "电子化学品",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "细胞与基因治疗",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "智能驾驶",
+     "source": "news_terms",
+     "hot": 3
+    }
+   ]
   }
  }
 }

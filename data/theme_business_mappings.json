@@ -13568,6 +13568,310 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-08-14] 制冷压缩机是汽车热管理系统核心上游部件"
+  },
+  {
+   "theme": "边缘计算",
+   "business_tag_name": "CDN及边缘计算",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-17] CDN与边缘计算业务即该题材直接交易对象"
+  },
+  {
+   "theme": "数据中心液冷",
+   "business_tag_name": "IDC及液冷",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-17] IDC液冷业务即数据中心液冷题材本身"
+  },
+  {
+   "theme": "液冷",
+   "business_tag_name": "IDC及液冷",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-17] 液冷业务是液冷题材直接承载"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC托管服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-17] IDC托管即数据中心业务本身"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-17] IDC解决方案属于数据中心业务范畴"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "体外诊断设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-17] 体外诊断设备属于医疗器械品类"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-17] 储能设备即储能题材直接交易对象"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "医药CDMO",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 医药CDMO属于医药合同外包服务范畴"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药分销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-17] 医药分销即医药流通业务本身"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "医药制造（中成药、化学药）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-17] 明确含中成药制造业务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "医药制造（中成药、化学药）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-17] 明确含化学药制造业务"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "医药受托研发服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-17] 受托研发服务即CRO业务本身"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药商业（批发配送与零售）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-17] 批发配送零售即医药流通业务"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "医药注册申报咨询服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 注册申报咨询属于医药研发外包服务范畴"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药进出口贸易",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-17] 跨境医药贸易属于医药流通渠道的一种"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药电商平台",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-17] 医药电商平台是医药流通的线上渠道"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "医药研发外包(CRO)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-17] 业务本身即CRO题材交易的对象"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "呼吸系统用药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 呼吸系统用药是化学制药的具体产品类别"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "叶酸",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 叶酸是典型原料药品种"
+  },
+  {
+   "theme": "光纤",
+   "business_tag_name": "四氯化硅",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 四氯化硅是光纤预制棒气相沉积法的核心原料"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "天然气发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-17] 天然气发电即电力生产业务"
+  },
+  {
+   "theme": "绿色电力",
+   "business_tag_name": "太阳能发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-17] 太阳能发电即绿色电力生产业务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "安乃近",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-17] 安乃近是化学合成解热镇痛药，属化学制药产品"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "定制化动物模型",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 实验动物模型是CRO临床前研究服务的上游支撑"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "实验动物定制繁育服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 实验动物定制繁育是CRO临床前研究的直接支撑环节"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "实验动物饲养服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 实验动物饲养服务是CRO临床前研究的上游环节"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "实验小鼠模型",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 实验小鼠模型是CRO临床前药物研究的核心工具"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "实验模型繁育与销售",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 实验模型繁育销售直接服务于CRO临床前研究"
+  },
+  {
+   "theme": "算力温控",
+   "business_tag_name": "导热界面材料(TIM)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] TIM材料是服务器/芯片散热温控的关键上游材料"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "小分子制剂CDMO",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 小分子制剂CDMO即化学药制剂生产服务"
+  },
+  {
+   "theme": "AI机器视觉",
+   "business_tag_name": "工业物联网(工控主板/机器视觉/具身智能控制器)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-17] 该业务明确包含机器视觉组件，直接承载AI机器视觉题材"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "工业物联网(工控主板/机器视觉/具身智能控制器)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-17] 该业务明确包含具身智能控制器，直接承载具身智能题材"
+  },
+  {
+   "theme": "AI机器视觉",
+   "business_tag_name": "工业相机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 工业相机是机器视觉系统的核心上游硬件"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "干式变压器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-17] 变压器是电网设备的核心组成部分"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "平板电脑面板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 平板电脑面板属于光学光电子显示产品"
+  },
+  {
+   "theme": "覆铜板",
+   "business_tag_name": "带载体可剥离超薄铜箔(可剥铜)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 超薄铜箔是覆铜板生产的直接上游原材料"
+  },
+  {
+   "theme": "家居商贸",
+   "business_tag_name": "床垫",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-17] 床垫是家居商贸经营的核心家居产品"
+  },
+  {
+   "theme": "银发经济",
+   "business_tag_name": "康养服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-17] 康养服务直接服务于银发经济核心老龄群体需求"
   }
  ]
 }

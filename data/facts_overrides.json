@@ -1485,6 +1485,96 @@
    "note": "新闻明确归因'通信设备板块拉升 共进股份、大唐电信涨停'，当日主导叙事是通信设备而非机器人",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-17"
+  },
+  {
+   "code": "603110",
+   "trade_date": "2026-08-17",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "两条新闻均直接点名'算力租赁概念震荡回升 东方材料涨停'，题材与个股绑定明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "603118",
+   "trade_date": "2026-08-17",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻明确点名'CPO概念震荡走高 共进股份涨停'，当日主导叙事是CPO而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "300570",
+   "trade_date": "2026-08-17",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "新闻直接点名'CPO板块集体爆发，太辰光20CM涨停'，叙事明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "603773",
+   "trade_date": "2026-08-17",
+   "theme": "CPO",
+   "verdict": "rejected",
+   "note": "两条新闻均点名'玻璃基板概念震荡拉升 沃格光电涨停'，当日主导叙事是玻璃基板而非CPO",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "603330",
+   "trade_date": "2026-08-17",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "新闻点名'CPO概念股表现活跃 天洋新材4连板'，叙事明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "600545",
+   "trade_date": "2026-08-17",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻点名'玻纤概念持续走强，卓郎智能直线涨停'，当日主导叙事是玻纤而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "301282",
+   "trade_date": "2026-08-17",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "三条新闻均点名'PCB概念板块持续拉升，金禄电子涨停'，当日主导叙事是PCB而非人形机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "603286",
+   "trade_date": "2026-08-17",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "新闻点名'机器人概念持续走高 日盈电子等多股涨停'，并有宇树科技视频作为催化背景",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "601700",
+   "trade_date": "2026-08-17",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "新闻明确点名'电网设备板块异动拉升 风范股份11天7板'，当日主导叙事是电网设备而非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
+  },
+  {
+   "code": "002682",
+   "trade_date": "2026-08-17",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "新闻明确点名'机器人概念股走势活跃，龙洲股份...直线涨停'，当日主导叙事是机器人而非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-17"
   }
  ],
  "episode_verdicts": [

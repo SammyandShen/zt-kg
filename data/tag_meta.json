@@ -4514,6 +4514,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "AIDC燃气轮机": {
+  "type": "product",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "AIoT芯片": {
   "type": "product",
   "status": "active"
@@ -5264,6 +5269,11 @@
  "化合物半导体": {
   "type": "product",
   "status": "active"
+ },
+ "医用内窥镜": {
+  "type": "product",
+  "status": "active",
+  "llm": "claude-sonnet-5"
  },
  "医疗手套": {
   "type": "product",
@@ -6302,6 +6312,12 @@
   "type": "product",
   "status": "active"
  },
+ "装饰装修幕墙工程": {
+  "type": "product",
+  "status": "active",
+  "radar": "2026-08-12·1源2日",
+  "llm": "claude-sonnet-5"
+ },
  "覆铜板": {
   "type": "product",
   "status": "active"
@@ -6553,6 +6569,12 @@
  "高多层HDI": {
   "type": "product",
   "status": "active"
+ },
+ "高带宽内存": {
+  "type": "product",
+  "status": "active",
+  "radar": "2026-08-12·1源2日",
+  "llm": "claude-sonnet-5"
  },
  "高端存储封测": {
   "type": "product",
@@ -8574,6 +8596,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "混凝土外加剂龙头": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "渠道下沉": {
   "type": "attribute",
   "status": "candidate"
@@ -10249,6 +10275,11 @@
   "type": "catalyst",
   "status": "retired"
  },
+ "半年报分红": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "半年报增长": {
   "type": "catalyst",
   "status": "candidate",
@@ -11372,6 +11403,11 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "海外收购": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "海洋订单": {
   "type": "catalyst",
   "status": "candidate",
@@ -11840,6 +11876,11 @@
   "llm": "claude-sonnet-5"
  },
  "超短期融资券发行": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "超级电容扩产": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -13839,6 +13880,11 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "天脉转债上市": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "央企入主": {
   "type": "event",
   "status": "retired",
@@ -14639,6 +14685,11 @@
  "拟收购中兴系统": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "拟收购中冷科技": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "拟收购中控信息": {
@@ -18005,6 +18056,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI智慧家电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI智慧屏": {
   "type": "product",
   "status": "candidate"
@@ -18852,6 +18907,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "GBF增层膜": {
+  "type": "product",
+  "status": "candidate"
+ },
  "GEO": {
   "type": "product",
   "status": "candidate"
@@ -18956,6 +19015,11 @@
  "HRSG产线": {
   "type": "product",
   "status": "candidate"
+ },
+ "HRSG管（用于燃机）": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "HTCC陶瓷封装": {
   "type": "product",
@@ -19329,6 +19393,10 @@
   "status": "candidate"
  },
  "MPO": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "MPO连接器": {
   "type": "product",
   "status": "candidate"
  },
@@ -20158,6 +20226,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "“牛”字炒作": {
+  "type": "product",
+  "status": "candidate"
+ },
  "“算力": {
   "type": "product",
   "status": "candidate"
@@ -20508,6 +20580,10 @@
   "status": "candidate"
  },
  "中报预亏": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "中报预披露": {
   "type": "product",
   "status": "candidate"
  },
@@ -22106,6 +22182,12 @@
   "type": "product",
   "status": "candidate"
  },
+ "光通信模块": {
+  "type": "product",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日",
+  "llm": "claude-sonnet-5"
+ },
  "光通信测试": {
   "type": "product",
   "status": "candidate"
@@ -23005,6 +23087,11 @@
  "列控主业": {
   "type": "product",
   "status": "candidate"
+ },
+ "创口贴": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "创可贴": {
   "type": "product",
@@ -24339,6 +24426,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "品牌推广": {
+  "type": "product",
+  "status": "candidate"
+ },
  "品牌新零售": {
   "type": "product",
   "status": "candidate"
@@ -24998,6 +25089,10 @@
   "status": "candidate"
  },
  "塑料管道": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "塑料餐饮具": {
   "type": "product",
   "status": "candidate"
  },
@@ -25680,6 +25775,10 @@
   "llm": "claude-sonnet-5"
  },
  "宁德时代": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "宁德时代换电": {
   "type": "product",
   "status": "candidate"
  },
@@ -26825,6 +26924,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "弗迪电池供汽": {
+  "type": "product",
+  "status": "candidate"
+ },
  "弹簧扁钢": {
   "type": "product",
   "status": "candidate",
@@ -26927,6 +27030,10 @@
   "status": "candidate"
  },
  "微光学": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "微创外科器械": {
   "type": "product",
   "status": "candidate"
  },
@@ -27478,6 +27585,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "排水机器人": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "探索物理AI": {
   "type": "product",
   "status": "candidate"
@@ -27786,6 +27898,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数据中心(AIDC)": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数据中心AIDC": {
   "type": "product",
   "status": "candidate"
@@ -27844,6 +27960,11 @@
  "数据中心节能": {
   "type": "product",
   "status": "candidate"
+ },
+ "数据中心设计": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "数据中心连接器": {
   "type": "product",
@@ -28169,6 +28290,10 @@
   "status": "candidate"
  },
  "新疆水泥": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新疆煤化工项目": {
   "type": "product",
   "status": "candidate"
  },
@@ -31169,6 +31294,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "沥青物流": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "河图AI": {
   "type": "product",
   "status": "candidate"
@@ -31301,6 +31431,10 @@
   "status": "candidate"
  },
  "油电协同": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "油脂加工": {
   "type": "product",
   "status": "candidate"
  },
@@ -31501,6 +31635,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "活畜销售增长": {
+  "type": "product",
+  "status": "candidate"
  },
  "流体控制阀": {
   "type": "product",
@@ -31958,6 +32096,11 @@
  "液冷智算": {
   "type": "product",
   "status": "candidate"
+ },
+ "液冷服务器用铝型材": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "液冷核心部件焊接": {
   "type": "product",
@@ -32436,6 +32579,10 @@
   "status": "candidate"
  },
  "炼化一体化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "烘焙": {
   "type": "product",
   "status": "candidate"
  },
@@ -33331,6 +33478,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "玻璃基Mini LED": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "玻璃基封装": {
   "type": "product",
   "status": "candidate",
@@ -33420,6 +33572,10 @@
   "status": "candidate"
  },
  "玻纤新材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "玻纤机": {
   "type": "product",
   "status": "candidate"
  },
@@ -35315,6 +35471,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "空白掩膜版": {
+  "type": "product",
+  "status": "candidate"
+ },
  "空调橡胶件": {
   "type": "product",
   "status": "candidate",
@@ -35445,6 +35605,11 @@
  "算力储能": {
   "type": "product",
   "status": "candidate"
+ },
+ "算力光器件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "算力出海": {
   "type": "product",
@@ -36459,6 +36624,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "肉牛全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
  "肉鸡养殖": {
   "type": "product",
   "status": "candidate"
@@ -36592,6 +36761,10 @@
   "status": "candidate"
  },
  "胶粘材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "能源": {
   "type": "product",
   "status": "candidate"
  },
@@ -37749,6 +37922,10 @@
   "status": "candidate"
  },
  "赛事IP": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "赛克产品": {
   "type": "product",
   "status": "candidate"
  },
@@ -39384,6 +39561,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "铂类靶向抗癌药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铅酸电池": {
   "type": "product",
   "status": "candidate",
@@ -39585,6 +39766,11 @@
   "llm": "claude-sonnet-5"
  },
  "铝合金车轮": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "铝合金轮毂": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -42702,6 +42888,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "县域消费": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "反内卷": {
   "type": "theme",
   "status": "candidate",
@@ -43496,6 +43687,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "生肖炒作": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "用电信息采集": {
   "type": "theme",
   "status": "candidate"
@@ -43796,7 +43992,8 @@
  "被动元件概念": {
   "type": "theme",
   "status": "candidate",
-  "radar": "2026-08-11·1源2日"
+  "radar": "2026-08-11·1源2日",
+  "llm": "claude-sonnet-5"
  },
  "西部基建": {
   "type": "theme",
@@ -44058,11 +44255,6 @@
   "type": "theme",
   "status": "candidate"
  },
- "光通信模块": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
  "免疫治疗": {
   "type": "unknown",
   "status": "candidate",
@@ -44088,11 +44280,6 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
- "装饰装修幕墙工程": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
  "近期新高": {
   "type": "unknown",
   "status": "candidate",
@@ -44109,11 +44296,6 @@
   "radar": "2026-08-06·1源2日"
  },
  "题材股": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "高带宽内存": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"

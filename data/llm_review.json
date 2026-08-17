@@ -60670,5 +60670,269 @@
   "p": "",
   "c": 0.9,
   "model": "claude-sonnet-5"
+ },
+ "混凝土外加剂龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "半年报分红": {
+  "t": "catalyst",
+  "p": "现金分红",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "超级电容扩产": {
+  "t": "catalyst",
+  "p": "超级电容",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "天脉转债上市": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购中冷科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "海外收购": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "AIDC燃气轮机": {
+  "t": "product",
+  "p": "燃气轮机",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "AI智慧家电": {
+  "t": "product",
+  "p": "智能家居",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "GBF增层膜": {
+  "t": "product",
+  "p": "IC载板",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "HRSG管（用于燃机）": {
+  "t": "product",
+  "p": "燃气轮机",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "MPO连接器": {
+  "t": "product",
+  "p": "光模块",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "“牛”字炒作": {
+  "t": "theme",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "中报预披露": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "创口贴": {
+  "t": "product",
+  "p": "医疗耗材",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "医用内窥镜": {
+  "t": "product",
+  "p": "内窥镜",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "县域消费": {
+  "t": "theme",
+  "p": "大消费",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "品牌推广": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "塑料餐饮具": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "宁德时代换电": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "弗迪电池供汽": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "微创外科器械": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "排水机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "数据中心(AIDC)": {
+  "t": "theme",
+  "p": "算力与AI基建",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "数据中心设计": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "新疆煤化工项目": {
+  "t": "catalyst",
+  "p": "新疆扩产",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "沥青物流": {
+  "t": "product",
+  "p": "物流",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "油脂加工": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "活畜销售增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "液冷服务器用铝型材": {
+  "t": "product",
+  "p": "液冷服务器",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "烘焙": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "玻璃基Mini LED": {
+  "t": "product",
+  "p": "玻璃基板",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "玻纤机": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "生肖炒作": {
+  "t": "theme",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "空白掩膜版": {
+  "t": "product",
+  "p": "半导体材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "算力光器件": {
+  "t": "product",
+  "p": "算力光模块",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "肉牛全产业链": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "能源": {
+  "t": "sector",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "赛克产品": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "铂类靶向抗癌药": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "铝合金轮毂": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "被动元件概念": {
+  "t": "theme",
+  "p": "被动元件",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "光通信模块": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "装饰装修幕墙工程": {
+  "t": "product",
+  "p": "建筑幕墙",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "高带宽内存": {
+  "t": "product",
+  "p": "HBM",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
  }
 }
