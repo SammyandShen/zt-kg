@@ -519,6 +519,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-08-18": {
+   "at": "2026-08-18T17:43:33+08:00",
+   "terms": [
+    {
+     "term": "CPO",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "PCB",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "半导体",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "存储芯片",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "算力硬件",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "光刻胶",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "港口航运",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "粮食",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "培育钻石",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "玻璃基板",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "算力租赁",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

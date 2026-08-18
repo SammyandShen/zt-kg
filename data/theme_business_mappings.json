@@ -13872,6 +13872,374 @@
    "status": "candidate",
    "confidence": 0.75,
    "rationale": "[llm 2026-08-17] 康养服务直接服务于银发经济核心老龄群体需求"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "IC封装基板",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-18] 封装基板是先进封装工艺的核心上游材料"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "OLED有机发光材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-18] OLED发光材料是OLED面板制造的核心上游材料"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "OLED封装材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] OLED封装材料是OLED面板制造的直接上游材料"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCB贸易",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] PCB贸易业务本身即为PCB产业链的直接组成"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "单/双面板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 单/双面板是PCB产品的具体品类"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中成药固体制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 中成药固体制剂即中药产品本身"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药口服液制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 中药口服液制剂即中药产品本身"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药材加工与贸易",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-18] 中药材加工与贸易是中药产业的直接上游环节"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能系统及元件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-18] 储能系统及元件即储能题材的直接交易标的"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "儿产科保育设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-18] 儿产科保育设备属于医疗器械产品"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏硅片检测分选设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-18] 硅片检测分选设备是光伏硅片制造环节的直接上游设备"
+  },
+  {
+   "theme": "电子化学品",
+   "business_tag_name": "光敏聚酰亚胺(PSPI)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 光敏聚酰亚胺属于电子化学品材料"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "具身智能方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 具身智能方案即具身智能题材的直接交易对象"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "具身智能方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 具身智能方案直接服务于人形机器人整机与场景落地"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医用内窥镜器械",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 医用内窥镜器械属于医疗器械产品"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医用胶布胶带及绷带",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 医用胶布胶带及绷带属于医疗器械/耗材范畴"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "医药合同研发服务(CRO)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-18] 医药合同研发服务即CRO业务本身"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体温控设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 半导体温控设备属于半导体制造设备的直接品类"
+  },
+  {
+   "theme": "卫星通信",
+   "business_tag_name": "卫星通信终端",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 卫星通信终端即卫星通信题材的直接交易标的"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "变电站复合外绝缘",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 变电站复合外绝缘属于电网设备的具体品类"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "微创外科手术器械",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-18] 微创外科手术器械本身就是医疗器械题材交易的标的产品"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "开关设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 开关设备是电网设备题材交易的核心产品品类"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "抗体",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 抗体药物属于创新生物药主要品类"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "拉床",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 拉床是金属切削机床（工业母机）的一种"
+  },
+  {
+   "theme": "覆铜板",
+   "business_tag_name": "挠性覆铜板(FCCL)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-18] FCCL即挠性覆铜板，属覆铜板细分品类"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "支付清算软件解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 支付清算软件是金融科技的直接产品形态"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "支付系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 支付系统建设运营属于金融科技核心业务"
+  },
+  {
+   "theme": "AI服务器电源",
+   "business_tag_name": "数据中心电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 数据中心电源供应服务器用电需求"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源商用车",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 新能源商用车整车制造属于新能源汽车核心范畴"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车充电业务",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 充电运营服务是新能源汽车使用环节的直接下游"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车充电枪",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 充电枪是新能源汽车充电配套的直接下游部件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车充电连接器",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 充电连接器是新能源汽车充电配套的直接下游部件"
+  },
+  {
+   "theme": "绿色电力",
+   "business_tag_name": "新能源发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 新能源发电业务即绿色电力题材的直接交易对象"
+  },
+  {
+   "theme": "无人机",
+   "business_tag_name": "无人机人工影响天气",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 人工增雨等特种应用仍以无人机整机为业务主体"
+  },
+  {
+   "theme": "AI智算",
+   "business_tag_name": "智算云",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 智算云业务直接承载AI智算需求"
+  },
+  {
+   "theme": "算力服务",
+   "business_tag_name": "智算服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-18] 智算服务即算力服务题材的直接对象"
+  },
+  {
+   "theme": "AI智能家居",
+   "business_tag_name": "智能家居硬件销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 智能家居硬件销售即题材直接交易对象"
+  },
+  {
+   "theme": "AI教育",
+   "business_tag_name": "智慧教学与校园信息化",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 智慧教学是AI在教育场景的直接下游应用"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能电网",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-18] 公司核心业务即智能电网相关设备与技术"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "智能输液泵",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 输液泵是医疗器械核心产品"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "替戈拉生片（泰欣赞®）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 该药品是公司主推的创新药制剂产品"
+  },
+  {
+   "theme": "算力服务器",
+   "business_tag_name": "服务器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-18] 服务器业务直接对应算力服务器题材标的"
+  },
+  {
+   "theme": "AIDC电源",
+   "business_tag_name": "服务器电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-18] 服务器电源是AIDC电源系统的直接产品"
+  },
+  {
+   "theme": "算力电源",
+   "business_tag_name": "服务器电源",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-18] 服务器电源即算力电源产品"
+  },
+  {
+   "theme": "AI机器视觉",
+   "business_tag_name": "机器视觉",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-18] 机器视觉业务直接对应AI机器视觉题材"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "核电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-18] 业务本身即核电，属于该题材交易对象"
   }
  ]
 }

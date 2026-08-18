@@ -1575,6 +1575,78 @@
    "note": "新闻明确点名'机器人概念股走势活跃，龙洲股份...直线涨停'，当日主导叙事是机器人而非国企改革",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-17"
+  },
+  {
+   "code": "603089",
+   "trade_date": "2026-08-18",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "新闻明确标题《机器人概念活跃 正裕工业三连板》，业务(汽车减震器切入机器人零部件)+新闻点名当日主导叙事均满足",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
+  },
+  {
+   "code": "600707",
+   "trade_date": "2026-08-18",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "两条证据均明确将涨停归因于玻璃基板概念（《玻璃基板概念震荡走强 红星发展、彩虹股份双双涨停》），当日主导叙事是玻璃基板而非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
+  },
+  {
+   "code": "002820",
+   "trade_date": "2026-08-18",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "证据明确归因为《食品加工制造板块走高，桂发祥3连板》，当日主导叙事是食品加工/大消费而非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
+  },
+  {
+   "code": "002820",
+   "trade_date": "2026-08-18",
+   "theme": "大消费",
+   "verdict": "verified",
+   "note": "新闻标题《食品加工制造板块走高，桂发祥3连板》直接点名该股并归因于消费食品板块走强",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
+  },
+  {
+   "code": "002229",
+   "trade_date": "2026-08-17",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "basis=business_fact且T+复核supporting(0.91)，公司算力租赁业务凭据充分",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
+  },
+  {
+   "code": "000026",
+   "trade_date": "2026-08-17",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "basis=business_fact且T+复核supporting(0.83)，设立长空事业部拓展机器人/航空航天业务有业务凭据支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
+  },
+  {
+   "code": "603089",
+   "trade_date": "2026-08-17",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "同一事件链证据《机器人概念活跃 正裕工业三连板》点名当日主导叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
+  },
+  {
+   "code": "002820",
+   "trade_date": "2026-08-17",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "同链证据显示主导叙事为食品加工制造板块走强，非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-18"
   }
  ],
  "episode_verdicts": [
