@@ -584,6 +584,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-08-19": {
+   "at": "2026-08-19T17:35:49+08:00",
+   "terms": [
+    {
+     "term": "粮食",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "存储芯片",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "磷化铟",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "化肥",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "猪肉",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "转基因",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "国产操作系统",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "光刻胶",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "信创",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "玻璃基板",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "光纤",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

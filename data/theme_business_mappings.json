@@ -14240,6 +14240,334 @@
    "status": "candidate",
    "confidence": 0.95,
    "rationale": "[llm 2026-08-18] 业务本身即核电，属于该题材交易对象"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "党政信创解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-19] 党政信创解决方案就是信创产业的直接业务对象"
+  },
+  {
+   "theme": "玻璃基板",
+   "business_tag_name": "基板玻璃",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-19] 基板玻璃与玻璃基板为同一产品的不同表述"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "体外诊断试剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] 体外诊断试剂在国内监管体系中属于医疗器械范畴"
+  },
+  {
+   "theme": "鸿蒙",
+   "business_tag_name": "政务信创终端（开源鸿蒙）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-19] 党政终端产品直接基于开源鸿蒙系统，是鸿蒙的直接落地产品"
+  },
+  {
+   "theme": "鸿蒙生态",
+   "business_tag_name": "政务信创终端（开源鸿蒙）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-19] 开源鸿蒙政务终端是鸿蒙生态的直接商业化应用"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "政务信创终端（开源鸿蒙）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] 党政信创终端是信创产业的核心落地场景"
+  },
+  {
+   "theme": "智能驾驶",
+   "business_tag_name": "智能网联汽车操作系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-19] 车载操作系统是智能网联汽车/智能驾驶的核心软件底座"
+  },
+  {
+   "theme": "车联网",
+   "business_tag_name": "智能网联汽车操作系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-19] 智能网联汽车操作系统直接服务于车联网场景"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "新能源工程与储能设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] 业务本身即储能设备的研发与工程实施"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车产业链",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] 节点下属产品均为具体汽车零部件品类，整体即汽车零部件业务集合"
+  },
+  {
+   "theme": "出海",
+   "business_tag_name": "汽车出口（整车海外销售）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-19] 整车海外销售即汽车出海业务，直接承载出海题材"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车悬架系统减震器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-19] 减震器是底盘核心零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车橡胶减震产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-19] 橡胶减震件属车用零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车软内饰材料及产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-19] 内饰材料属车用零部件范畴"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车轻量化铝型材",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-19] 铝型材是轻量化车身零部件的直接上游材料"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车连接器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-19] 连接器是车用零部件品类"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车配件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-19] 与汽车零部件同义"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子PCBA代工",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-19] PCBA代工直接服务车用电子产品"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电子控制系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-19] 控制系统属车用电子"
+  },
+  {
+   "theme": "智慧清洁机器人",
+   "business_tag_name": "清洁家居机器人代工制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-19] 代工制造清洁家居机器人即该题材的直接生产环节"
+  },
+  {
+   "theme": "智慧清洁机器人",
+   "business_tag_name": "清洁电器整机ODM/OEM",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-19] 清洁电器整机代工覆盖扫地机器人等智能清洁机器人品类"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "煤炭流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-19] 煤炭流通环节直接承载煤炭题材"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "煤炭生产及销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-19] 煤炭题材的标准主营表述"
+  },
+  {
+   "theme": "热电联产",
+   "business_tag_name": "热电整机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-19] 热电整机制造直接对应热电联产题材"
+  },
+  {
+   "theme": "热电联产",
+   "business_tag_name": "热电系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] 热电系统业务直接承载热电联产题材"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "热管理材料及器件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-19] 热管理材料器件是汽车热管理系统的直接上游零部件"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "热泵压缩机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 热泵压缩机是新能源汽车热管理系统核心上游部件"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "燃气发电",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 燃气发电是电力生产的直接业务形式"
+  },
+  {
+   "theme": "AIoT平台",
+   "business_tag_name": "物联网软件服务平台",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-19] 物联网软件服务平台直接构成AIoT平台业务"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "特种PCB",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] 特种PCB即PCB产品的细分品类"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "特种装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 特种装备为军工行业年报常用表述，业务即武器装备"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "特种装备制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 特种装备制造为军工行业年报常用表述，业务即武器装备生产"
+  },
+  {
+   "theme": "猪肉",
+   "business_tag_name": "猪肉制品加工",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 猪肉制品加工是猪肉的直接下游深加工环节"
+  },
+  {
+   "theme": "猪肉",
+   "business_tag_name": "生猪养殖",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 生猪养殖是猪肉供应链的上游环节"
+  },
+  {
+   "theme": "猪肉",
+   "business_tag_name": "生猪屠宰加工",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-19] 屠宰加工直接产出猪肉相关制品"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "生物大分子CDMO",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] CDMO是医药研发生产外包服务，属CRO产业范畴"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "生物大分子CDMO服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-19] CDMO服务是CRO题材的直接业务承载"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "生物学研究服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-19] 生物学研究外包服务属于CRO核心业务"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "生物技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 生物技术外包服务是CRO业务的一种形式"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "生物试剂技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 试剂相关技术服务属于CRO服务链条"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "电力、热力、煤炭",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-19] 涵盖电力生产销售业务"
   }
  ]
 }

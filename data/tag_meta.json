@@ -9652,6 +9652,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "中报扣非净利增长": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "中报预亏收窄": {
   "type": "catalyst",
   "status": "retired"
@@ -11489,6 +11494,11 @@
   "llm": "claude-sonnet-5"
  },
  "激励计划": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "煤矿投产": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -15028,6 +15038,11 @@
  "拟收购电商": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "拟收购盟萤科技": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "拟收购知学云": {
@@ -29527,6 +29542,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能晾晒": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "智能柱上开关": {
   "type": "product",
   "status": "candidate"
@@ -32949,6 +32969,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "煤炭设备后市场": {
+  "type": "product",
+  "status": "candidate"
+ },
  "煤炭运输": {
   "type": "product",
   "status": "candidate"
@@ -34915,6 +34939,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "石墨烯导热膜": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "石墨烯散热膜": {
   "type": "product",
   "status": "candidate"
@@ -34924,6 +34953,10 @@
   "status": "candidate"
  },
  "石墨电极": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "石墨矿": {
   "type": "product",
   "status": "candidate"
  },
@@ -36626,6 +36659,10 @@
   "status": "candidate"
  },
  "羽绒出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "老房焕新": {
   "type": "product",
   "status": "candidate"
  },
@@ -41901,6 +41938,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "麦芽": {
+  "type": "product",
+  "status": "candidate"
+ },
  "麻精药品": {
   "type": "product",
   "status": "candidate"
@@ -43630,6 +43671,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "氢能全产业链": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "氢能汽车": {
   "type": "theme",
   "status": "candidate"
@@ -44350,7 +44396,8 @@
  "预制菜概念": {
   "type": "theme",
   "status": "candidate",
-  "radar": "2026-08-10·1源2日"
+  "radar": "2026-08-10·1源2日",
+  "llm": "claude-sonnet-5"
  },
  "风光储": {
   "type": "theme",
@@ -44465,5 +44512,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "粮食": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-18·2源2日"
  }
 }

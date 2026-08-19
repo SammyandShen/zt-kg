@@ -61132,5 +61132,89 @@
   "p": "",
   "c": 0.55,
   "model": "claude-sonnet-5"
+ },
+ "拟收购盟萤科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "中报扣非净利增长": {
+  "t": "catalyst",
+  "p": "中报业绩大增",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "智能晾晒": {
+  "t": "product",
+  "p": "智能家居",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "氢能全产业链": {
+  "t": "theme",
+  "p": "氢能",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "煤炭设备后市场": {
+  "t": "product",
+  "p": "煤炭",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "煤矿投产": {
+  "t": "catalyst",
+  "p": "新产能投放",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "石墨烯导热膜": {
+  "t": "product",
+  "p": "石墨烯",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "石墨矿": {
+  "t": "product",
+  "p": "负极材料",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "老房焕新": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "麦芽": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "水产概念": {
+  "t": "theme",
+  "p": "水产品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "调味品概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "预制菜概念": {
+  "t": "theme",
+  "p": "预制菜",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "社区团购": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
  }
 }
