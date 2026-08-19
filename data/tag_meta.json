@@ -43646,6 +43646,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "水产概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
  "水泥概念": {
   "type": "theme",
   "status": "candidate",
@@ -44154,6 +44159,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "调味品概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
  "谷子经济": {
   "type": "theme",
   "status": "candidate",
@@ -44337,6 +44347,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "预制菜概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
  "风光储": {
   "type": "theme",
   "status": "candidate"
@@ -44426,6 +44441,11 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "社区团购": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
  "近期新高": {
   "type": "unknown",
   "status": "candidate",
@@ -44445,25 +44465,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "社区团购": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-10·1源2日"
- },
- "水产概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-10·1源2日"
- },
- "预制菜概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-10·1源2日"
- },
- "调味品概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-10·1源2日"
  }
 }

@@ -1647,6 +1647,24 @@
    "note": "同链证据显示主导叙事为食品加工制造板块走强，非国企改革",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-18"
+  },
+  {
+   "code": "002289",
+   "trade_date": "2026-08-17",
+   "theme": "算力租赁",
+   "verdict": "verified",
+   "note": "basis=business_fact确认公司算力租赁/IDC业务关联，T+复核supporting(0.75)，题材标签算力租赁列首位显示当日主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-19"
+  },
+  {
+   "code": "003031",
+   "trade_date": "2026-08-17",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "多条新闻明确以'CPO人气股''CPO概念走高'定性该股三连板行情，业务上电子陶瓷基板可配套CPO封装，当日叙事明确以CPO为主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-19"
   }
  ],
  "episode_verdicts": [
