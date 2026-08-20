@@ -44493,6 +44493,11 @@
   "status": "candidate",
   "radar": "2026-08-10·1源2日"
  },
+ "粮食": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-18·2源2日"
+ },
  "近期新高": {
   "type": "unknown",
   "status": "candidate",
@@ -44512,10 +44517,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "粮食": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-18·2源2日"
  }
 }
