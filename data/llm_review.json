@@ -61216,5 +61216,275 @@
   "p": "",
   "c": 0.4,
   "model": "claude-sonnet-5"
+ },
+ "PVP龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "天然橡胶龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "血凝酶龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "仿制药获批": {
+  "t": "catalyst",
+  "p": "药品获批",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "半年报业绩大增": {
+  "t": "catalyst",
+  "p": "半年报业绩增长",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "产业转型": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "阿斯利康合作": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AD检测": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "FDA批准": {
+  "t": "catalyst",
+  "p": "FDA获批",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "KAT6/7抑制剂": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA原料": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA平台": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA技术": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA疫苗": {
+  "t": "theme",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA癌症疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "siRNA药物": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "九价HPV疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "低温储藏玻璃门体": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "创新疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "医药研发试剂": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "基因编辑": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "实控人涉及黄金开采": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "广电网络设备": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "抗体": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "抗肿瘤药物": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "新药受理": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "此前炒作生肖": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.25,
+  "model": "claude-sonnet-5"
+ },
+ "灵便型船": {
+  "t": "product",
+  "p": "干散货航运",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "狂犬病疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "百白破疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "端侧AI智能模组": {
+  "t": "product",
+  "p": "边缘AI",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "精麻镇痛": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "细胞因子蛋白": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "聚乙二醇": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "肺炎支原体检测": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "肿瘤疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "自有品牌高增": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "船舶SCR": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "采浆增长": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "集采拟中选": {
+  "t": "catalyst",
+  "p": "集采中标",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "饮料": {
+  "t": "product",
+  "p": "大消费",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "默沙东代理": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "鼻喷流感疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "粮食": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
  }
 }

@@ -1665,6 +1665,60 @@
    "note": "多条新闻明确以'CPO人气股''CPO概念走高'定性该股三连板行情，业务上电子陶瓷基板可配套CPO封装，当日叙事明确以CPO为主导",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-19"
+  },
+  {
+   "code": "603626",
+   "trade_date": "2026-08-20",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "两条新闻均明确标题为'折叠屏概念震荡拉升 科森科技涨停'，当日主导叙事是折叠屏而非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  {
+   "code": "688433",
+   "trade_date": "2026-08-20",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "三条新闻均明确为3D打印概念带动涨停，无机器人题材点名，主导叙事另有其题",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  {
+   "code": "603958",
+   "trade_date": "2026-08-20",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻将其与华曙高科并列归为3D打印概念带动，另有交易异常波动/重组类公告，无机器人叙事支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  {
+   "code": "601118",
+   "trade_date": "2026-08-20",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "新闻明确为'农业板块局部回暖 海南橡胶涨停'，当日主导叙事是农业/天然橡胶板块而非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  {
+   "code": "002038",
+   "trade_date": "2026-08-20",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "证据均为生物疫苗/创新药/辅助生殖概念资金流入新闻，当日主导叙事是创新药相关题材而非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  {
+   "code": "603506",
+   "trade_date": "2026-08-19",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "三条新闻均明确为房地产服务板块带动涨停，与我爱我家同涨，主导叙事非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
   }
  ],
  "episode_verdicts": [

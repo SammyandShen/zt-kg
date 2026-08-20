@@ -2599,6 +2599,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "FDA批准": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "FDA获批": {
   "type": "catalyst",
   "status": "active",
@@ -3197,6 +3202,11 @@
   "llm": "claude-sonnet-5"
  },
  "半年报业绩增长": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
+ "半年报业绩大增": {
   "type": "catalyst",
   "status": "active",
   "llm": "claude-sonnet-5"
@@ -7849,6 +7859,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "PVP龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "SK海力士": {
   "type": "attribute",
   "status": "retired"
@@ -8334,6 +8349,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "天然橡胶龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "央企储能": {
   "type": "attribute",
   "status": "candidate",
@@ -8774,6 +8794,11 @@
  "虚拟IDM": {
   "type": "attribute",
   "status": "candidate"
+ },
+ "血凝酶龙头": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "行业龙头": {
   "type": "attribute",
@@ -9853,6 +9878,11 @@
   "llm": "claude-sonnet-5"
  },
  "仿制药一致性评价": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "仿制药获批": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -12216,6 +12246,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "集采拟中选": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "集采放量": {
   "type": "catalyst",
   "status": "candidate",
@@ -12940,6 +12975,10 @@
  "产业投资人加持": {
   "type": "event",
   "status": "retired"
+ },
+ "产业转型": {
+  "type": "event",
+  "status": "candidate"
  },
  "产品测试进展": {
   "type": "event",
@@ -17395,6 +17434,10 @@
   "type": "event",
   "status": "retired"
  },
+ "阿斯利康合作": {
+  "type": "event",
+  "status": "candidate"
+ },
  "阿联酋项目": {
   "type": "event",
   "status": "retired",
@@ -17731,6 +17774,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "AD检测": {
+  "type": "product",
+  "status": "candidate"
  },
  "AGV产品": {
   "type": "product",
@@ -19242,6 +19289,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "KAT6/7抑制剂": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "KC1086临床进展": {
   "type": "product",
   "status": "candidate"
@@ -20269,7 +20321,37 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "mRNA": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "mRNA原料": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "mRNA平台": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "mRNA技术": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "mRNA疫苗": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "mRNA癌症疫苗": {
+  "type": "product",
+  "status": "candidate"
+ },
  "p-Tau217蛋白": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "siRNA药物": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -20816,6 +20898,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "九价HPV疫苗": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "乳业": {
   "type": "product",
   "status": "candidate"
@@ -21284,6 +21371,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "低温储藏玻璃门体": {
+  "type": "product",
+  "status": "candidate"
  },
  "低温储藏设备": {
   "type": "product",
@@ -23167,6 +23258,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "创新疫苗": {
+  "type": "product",
+  "status": "candidate"
+ },
  "创新研发中心": {
   "type": "product",
   "status": "candidate"
@@ -23709,6 +23804,11 @@
  "医药百强": {
   "type": "product",
   "status": "candidate"
+ },
+ "医药研发试剂": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "医药装备": {
   "type": "product",
@@ -25107,6 +25207,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "基因编辑": {
+  "type": "product",
+  "status": "candidate"
+ },
  "基孔热病毒检测": {
   "type": "product",
   "status": "candidate",
@@ -25970,6 +26074,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "实控人涉及黄金开采": {
+  "type": "product",
+  "status": "candidate"
+ },
  "实控人认购": {
   "type": "product",
   "status": "candidate"
@@ -26823,6 +26931,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "广电网络设备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "广电设备": {
   "type": "product",
   "status": "candidate"
@@ -27513,6 +27625,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "抗体": {
+  "type": "product",
+  "status": "candidate"
+ },
  "抗性糊精": {
   "type": "product",
   "status": "candidate"
@@ -27548,6 +27664,10 @@
   "status": "candidate"
  },
  "抗肿瘤药": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "抗肿瘤药物": {
   "type": "product",
   "status": "candidate"
  },
@@ -28755,6 +28875,10 @@
   "status": "candidate"
  },
  "新船交付": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新药受理": {
   "type": "product",
   "status": "candidate"
  },
@@ -30582,6 +30706,10 @@
   "status": "candidate"
  },
  "此前披露半年报": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "此前炒作生肖": {
   "type": "product",
   "status": "candidate"
  },
@@ -32689,6 +32817,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "灵便型船": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "灵感岛": {
   "type": "product",
   "status": "candidate"
@@ -33434,6 +33567,11 @@
  "狂犬疫苗": {
   "type": "product",
   "status": "candidate"
+ },
+ "狂犬病疫苗": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "独家产品": {
   "type": "product",
@@ -34725,6 +34863,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "百白破疫苗": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "百船计划": {
   "type": "product",
   "status": "candidate"
@@ -35663,6 +35806,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "端侧AI智能模组": {
+  "type": "product",
+  "status": "candidate"
+ },
  "端侧AI芯片": {
   "type": "product",
   "status": "candidate",
@@ -36075,6 +36222,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "精麻镇痛": {
+  "type": "product",
+  "status": "candidate"
+ },
  "糖宁通络片": {
   "type": "product",
   "status": "candidate"
@@ -36315,6 +36466,10 @@
   "llm": "claude-sonnet-5"
  },
  "细胞免疫治疗": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "细胞因子蛋白": {
   "type": "product",
   "status": "candidate"
  },
@@ -36696,6 +36851,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "聚乙二醇": {
+  "type": "product",
+  "status": "candidate"
+ },
  "聚乙烯醇": {
   "type": "product",
   "status": "candidate"
@@ -36878,11 +37037,20 @@
   "type": "product",
   "status": "candidate"
  },
+ "肺炎支原体检测": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "肿瘤医疗": {
   "type": "product",
   "status": "candidate"
  },
  "肿瘤放疗": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "肿瘤疫苗": {
   "type": "product",
   "status": "candidate"
  },
@@ -37068,6 +37236,10 @@
   "status": "candidate"
  },
  "自持电站": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "自有品牌高增": {
   "type": "product",
   "status": "candidate"
  },
@@ -37305,6 +37477,10 @@
   "status": "candidate"
  },
  "船用齿轮箱": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "船舶SCR": {
   "type": "product",
   "status": "candidate"
  },
@@ -39071,6 +39247,10 @@
   "status": "candidate"
  },
  "采棉机": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "采浆增长": {
   "type": "product",
   "status": "candidate"
  },
@@ -41341,6 +41521,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "饮料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "饮料代工": {
   "type": "product",
   "status": "candidate"
@@ -42067,6 +42251,15 @@
  "黑龙江自贸区": {
   "type": "product",
   "status": "candidate"
+ },
+ "默沙东代理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鼻喷流感疫苗": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "鼻腔护理": {
   "type": "product",
@@ -44517,5 +44710,15 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "生物制药": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-07·1源2日"
+ },
+ "体外诊断概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-13·1源2日"
  }
 }

@@ -14568,6 +14568,310 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-08-19] 涵盖电力生产销售业务"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-20] 中药制剂产品直接对应中药题材交易标的"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "四磨汤口服液",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-20] 四磨汤口服液是具体中成药产品"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "天麻醒脑胶囊",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-20] 天麻醒脑胶囊是具体中成药产品"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-20] 光伏产品即光伏题材直接交易标的"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏铝合金边框",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-20] 铝合金边框是光伏组件生产的直接结构部件"
+  },
+  {
+   "theme": "创投",
+   "business_tag_name": "创业投资",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 创业投资业务即创投题材本身"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "热力电力供应",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-20] 电力供应业务直接对应电力题材"
+  },
+  {
+   "theme": "热电联产",
+   "business_tag_name": "热力电力供应",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-20] 热力电力联合供应即热电联产业务本身"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "热电（发电与供热）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-20] 发电业务直接对应电力题材"
+  },
+  {
+   "theme": "热电联产",
+   "business_tag_name": "热电（发电与供热）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 发电与供热一体即热电联产业务本身"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "玻璃绝缘子",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-20] 绝缘子是电网输变电设备的核心部件"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "IGBT模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] IGBT模块本身是功率半导体器件产品"
+  },
+  {
+   "theme": "碳化硅",
+   "business_tag_name": "SiC MOSFET模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] SiC MOSFET模块即碳化硅功率器件产品本身"
+  },
+  {
+   "theme": "第三代半导体",
+   "business_tag_name": "SiC MOSFET模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-20] 碳化硅属于第三代半导体材料体系"
+  },
+  {
+   "theme": "白酒",
+   "business_tag_name": "白酒销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 白酒销售业务直接承载白酒题材"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "真空灭弧室",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 真空灭弧室是断路器等电网设备的核心上游部件"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "砷化镓芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-20] 砷化镓芯片属于化合物半导体产品本身"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "硅基射频芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-20] 硅基射频芯片即半导体芯片产品"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "硅片及切片加工服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 硅片是半导体芯片制造的直接衬底材料"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "硫酸亚铁原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 硫酸亚铁原料药本身即为原料药产品"
+  },
+  {
+   "theme": "碳化硅",
+   "business_tag_name": "碳化硅衬底及外延片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 衬底及外延片是碳化硅产业链核心材料环节"
+  },
+  {
+   "theme": "第三代半导体",
+   "business_tag_name": "碳化硅衬底及外延片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 碳化硅衬底外延片是第三代半导体材料核心环节"
+  },
+  {
+   "theme": "猪肉",
+   "business_tag_name": "种猪养殖",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 种猪养殖是猪肉产业链上游养殖环节"
+  },
+  {
+   "theme": "拼多多概念",
+   "business_tag_name": "社交电商",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 社交电商是拼多多的核心商业模式"
+  },
+  {
+   "theme": "稀土永磁",
+   "business_tag_name": "稀土氧化物",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 稀土氧化物是烧结钕铁硼等永磁材料生产的直接上游原料"
+  },
+  {
+   "theme": "边缘AI",
+   "business_tag_name": "端侧AI解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-20] 端侧AI解决方案即边缘AI题材的直接承载业务"
+  },
+  {
+   "theme": "算力租赁",
+   "business_tag_name": "算力云",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-20] 算力云即按需出租算力资源，是算力租赁的直接体现"
+  },
+  {
+   "theme": "算力",
+   "business_tag_name": "算力基础设施综合服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 算力基础设施综合服务是算力题材的直接承载业务"
+  },
+  {
+   "theme": "算力硬件",
+   "business_tag_name": "算力硬件及资源服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-20] 业务明确包含算力硬件，是算力硬件题材的直接承载"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "精密减速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 精密减速器是机器人关节核心传动部件"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "精煤",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 精煤即煤炭题材交易的洗选产品本身"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "继电保护及自动化设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 继电保护及自动化设备是电网变电站的核心装备"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "缩泉胶囊",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-20] 缩泉胶囊为中成药产品，是中药题材的具体交易标的"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "肠炎宁系列",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-20] 肠炎宁系列为中成药产品线，直接属于中药业务"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "自有品牌服务器产品(神州鲲泰)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 神州鲲泰为国产化信创服务器自主品牌，直接承载信创题材"
+  },
+  {
+   "theme": "大飞机",
+   "business_tag_name": "航空维修",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 航空维修是大飞机机队的下游服务市场"
+  },
+  {
+   "theme": "3D打印",
+   "business_tag_name": "航空航天零部件增材制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-20] 增材制造即3D打印工艺在航空航天零部件的直接应用"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "芯片设计技术服务",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-20] 芯片设计技术服务是半导体设计环节的配套服务"
   }
  ]
 }
