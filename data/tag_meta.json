@@ -42961,6 +42961,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "体外诊断概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-13·1源2日"
+ },
  "体验经济": {
   "type": "theme",
   "status": "candidate"
@@ -44676,6 +44681,11 @@
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
  },
+ "生物制药": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-07·1源2日"
+ },
  "病原体防治": {
   "type": "unknown",
   "status": "candidate",
@@ -44710,15 +44720,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "生物制药": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-07·1源2日"
- },
- "体外诊断概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-13·1源2日"
  }
 }

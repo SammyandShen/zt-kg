@@ -20825,6 +20825,271 @@
    "parent": "化学制药",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-19"
+  },
+  "ABS树脂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "BDO": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "DDGS饲料": {
+   "parent": "饲料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "IGBT模块": {
+   "parent": "功率器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "SiC MOSFET模块": {
+   "parent": "功率器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "丁二烯": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "三羟甲基丙烷": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "中药制剂": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "光伏产品": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "光伏铝合金边框": {
+   "parent": "铝产业链",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "净水机": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "创业投资": {
+   "parent": "金融服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "副产品及原材料销售": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "化工工程施工": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "医用造影剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "四磨汤口服液": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "塑料包装制品": {
+   "parent": "塑料包装",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "壁挂炉": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "天麻醒脑胶囊": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "太阳能热水器": {
+   "parent": "家电家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "季戊四醇": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "对甲基苯酚": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "山梨酸钾": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "戏剧演出": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "智能化建筑工程": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "智能晾衣机": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "晾衣架": {
+   "parent": "日用百货",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "润滑油": {
+   "parent": "油气产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "炼油": {
+   "parent": "油气产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "热力电力供应": {
+   "parent": "电力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "热电（发电与供热）": {
+   "parent": "电力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "煤焦油": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "物业基础服务": {
+   "parent": "物业管理",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "物业增值服务": {
+   "parent": "物业管理",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "环氧乙烷": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "玻璃绝缘子": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "电热水器": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "盘扣支架租赁": {
+   "parent": "租赁业务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "石墨烯新材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "磨具": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "空气能热泵": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "算力硬件及资源服务": {
+   "parent": "服务器与算力硬件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "粗苯": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "精煤": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "缩泉胶囊": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "聚烯烃": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "芳烃": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "车规级MCU": {
+   "parent": "集成电路设计",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "道路沥青": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "铝合金系统门窗": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "银杏叶胶囊": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "麦芽": {
+   "parent": "农产品流通",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
+  },
+  "氢能": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-20"
   }
  },
  "groups": {
