@@ -61486,5 +61486,107 @@
   "p": "农业食品",
   "c": 0.45,
   "model": "claude-sonnet-5"
+ },
+ "项目投资": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "IDM模式": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "LNP递送": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA原料酶": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA疫苗平台": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "mRNA肿瘤疫苗": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "储能安防": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "先进光电封装": {
+  "t": "product",
+  "p": "先进封装",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "光耦": {
+  "t": "product",
+  "p": "光学光电子",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "化药": {
+  "t": "product",
+  "p": "医药医疗",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "半导体照明": {
+  "t": "product",
+  "p": "LED",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "多金属综合": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "液态包装装备": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "燃料油深加工": {
+  "t": "product",
+  "p": "石油炼化",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "麻精镇痛": {
+  "t": "product",
+  "p": "医药医疗",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "体外诊断概念": {
+  "t": "theme",
+  "p": "体外诊断",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "生物制药": {
+  "t": "product",
+  "p": "医药医疗",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
  }
 }

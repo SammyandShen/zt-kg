@@ -7840,6 +7840,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "IDM模式": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "IP优势": {
   "type": "attribute",
   "status": "candidate",
@@ -17474,6 +17479,10 @@
   "type": "event",
   "status": "retired"
  },
+ "项目投资": {
+  "type": "event",
+  "status": "candidate"
+ },
  "风电投资": {
   "type": "event",
   "status": "candidate"
@@ -19396,6 +19405,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "LNP递送": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "LPG深加工": {
   "type": "product",
   "status": "candidate"
@@ -20330,6 +20344,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "mRNA原料酶": {
+  "type": "product",
+  "status": "candidate"
+ },
  "mRNA平台": {
   "type": "product",
   "status": "candidate"
@@ -20342,9 +20360,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "mRNA疫苗平台": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "mRNA癌症疫苗": {
   "type": "product",
   "status": "candidate"
+ },
+ "mRNA肿瘤疫苗": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "p-Tau217蛋白": {
   "type": "product",
@@ -21642,6 +21670,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "储能安防": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "储能工程": {
   "type": "product",
   "status": "candidate"
@@ -21766,6 +21799,11 @@
  "先进光源": {
   "type": "product",
   "status": "candidate"
+ },
+ "先进光电封装": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "先进制程": {
   "type": "product",
@@ -22291,6 +22329,10 @@
   "llm": "claude-sonnet-5"
  },
  "光网络": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光耦": {
   "type": "product",
   "status": "candidate"
  },
@@ -23547,6 +23589,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "化药": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "北京地产": {
   "type": "product",
   "status": "candidate"
@@ -23984,6 +24031,11 @@
  "半导体热电": {
   "type": "product",
   "status": "candidate"
+ },
+ "半导体照明": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "半导体物流": {
   "type": "product",
@@ -25547,6 +25599,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "多金属综合": {
+  "type": "product",
+  "status": "candidate"
  },
  "大件货物物流": {
   "type": "product",
@@ -32399,6 +32455,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "液态包装装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "液态金属": {
   "type": "product",
   "status": "candidate",
@@ -33193,6 +33253,11 @@
  "燃料油": {
   "type": "product",
   "status": "candidate"
+ },
+ "燃料油深加工": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "燃料电池": {
   "type": "product",
@@ -42130,6 +42195,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "麻精镇痛": {
+  "type": "product",
+  "status": "candidate"
+ },
  "麻纺": {
   "type": "product",
   "status": "candidate"
@@ -44720,5 +44789,20 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "F5G概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-14·1源2日"
+ },
+ "柔性屏(折叠屏)": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-14·1源2日"
+ },
+ "疫苗": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-20·1源2日"
  }
 }

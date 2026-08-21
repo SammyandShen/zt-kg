@@ -14872,6 +14872,646 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-08-20] 芯片设计技术服务是半导体设计环节的配套服务"
+  },
+  {
+   "theme": "3D打印",
+   "business_tag_name": "3D打印服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 3D打印服务即该题材直接经营的业务"
+  },
+  {
+   "theme": "3D打印",
+   "business_tag_name": "3D打印材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 3D打印材料是该题材核心业务对象"
+  },
+  {
+   "theme": "3D打印",
+   "business_tag_name": "3D打印设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 3D打印设备是该题材核心业务对象"
+  },
+  {
+   "theme": "GLP-1减肥药",
+   "business_tag_name": "GLP-1多肽药物原料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-21] GLP-1多肽原料是GLP-1减肥药制剂的直接上游原料"
+  },
+  {
+   "theme": "减肥药",
+   "business_tag_name": "GLP-1多肽药物原料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 减肥药主流成分GLP-1多肽原料为其直接上游"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "GLP-1多肽药物原料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 该业务本身即属于原料药范畴"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "多肽及寡核苷酸原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 业务名称明确即原料药"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "多肽定制生产技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 多肽定制生产技术服务属CRO/CDMO委托研发生产范畴"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中成药生产及销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 中成药生产销售即中药题材核心业务"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中成药（贴膏类）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 贴膏类中成药属中药题材直接产品"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中藏成药(诺迪康胶囊等)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 藏成药属中药题材直接产品"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "创新药独家经销(佐利替尼)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 独家经销创新药即该题材直接业务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "化学仿制药制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 化学仿制药制剂即化学制药题材核心业务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "化学合成药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 化学合成药即化学制药题材核心业务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "单硝酸异山梨酯缓释片(依姆多)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-21] 化学药制剂产品属化学制药题材直接对象"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "体外诊断仪器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 体外诊断仪器即医疗器械题材核心产品"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "体外诊断原料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 体外诊断原料是诊断仪器/试剂的直接上游材料"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "分子诊断试剂盒",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 分子诊断试剂盒属医疗器械题材直接产品"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "医疗器械（内窥镜/支气管镜）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 业务名称明确即医疗器械"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "基因测序仪",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 基因测序仪即医疗器械题材直接产品"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药国际贸易销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 医药国际贸易销售即医药流通题材直接业务"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药技术服务与推广",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 医药技术服务与推广属医药流通业务范畴"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药流通代理",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 业务名称明确即医药流通"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 业务名称明确即光伏"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站工程承包",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-21] 光伏电站工程承包是光伏产业链的直接下游应用环节"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "商用清洁机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-21] 商用清洁机器人属机器人题材直接产品"
+  },
+  {
+   "theme": "智慧清洁机器人",
+   "business_tag_name": "商用清洁机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 商用清洁机器人即该细分题材核心产品"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "低压断路器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 低压断路器是电网配电设备的直接组成部件"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "抗体药物",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 抗体药物是创新药核心生物药类型"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "生命科学综合技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 生命科学综合技术服务即医药研发外包服务本身"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "机器人产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-21] 业务本身即机器人产品"
+  },
+  {
+   "theme": "无人机",
+   "business_tag_name": "无人机巡检服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 无人机巡检服务是无人机的直接应用场景"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能电网及智能自动化设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 业务本身即智能电网设备"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "电站运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 电站运营即电力发电业务本身"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "药物发现CRO",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-21] 药物发现外包本身就是CRO的核心业务环节"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "药物临床服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 临床试验外包服务是CRO的核心业务"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "药物非临床研究服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-08-21] 非临床研究外包属于CRO标准业务范畴"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "药物测试服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 药物检测服务是CRO业务链的组成部分"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "药学研究服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-21] 药学研究外包服务属于CRO业务"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "药物研发与CMC开发服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] CMC开发外包是CRO/CDMO核心环节"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "药物制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 药物制剂生产即化学制药核心业务"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "药品制造和医康养护服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 药品制造业务属于化学制药范畴"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "药品制造（原料药、制剂药）和药品流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 原料药与制剂药制造是化学制药核心业务"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "药品制造（原料药、制剂药）和药品流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 业务标签明确包含药品流通"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "药品批发（医药流通）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-21] 业务标签直接标注为医药流通"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "药品流通",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-21] 业务标签名称与题材完全一致"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "药品零售加盟与联盟分销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 药品零售分销属医药流通业务"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "药品销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-21] 药品销售是医药流通的直接环节"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "药品生产与销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 生产环节属化学制药核心业务"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "蓄冷储能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-21] 蓄冷储能是储能技术的具体形式"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "诊断产品销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 诊断产品销售即医疗器械题材中体外诊断板块的直接经营内容"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "诊断仪器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 诊断仪器是医疗器械题材的直接产品"
+  },
+  {
+   "theme": "零售",
+   "business_tag_name": "超市连锁经营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 超市连锁经营即零售题材的直接经营主体"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "车规级MCU",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 车规MCU是汽车电子的核心控制芯片"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "车规级MCU",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] MCU本身是半导体芯片产品"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "车规级晶振",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 晶振是汽车电子系统的时钟基准元器件"
+  },
+  {
+   "theme": "智慧交通",
+   "business_tag_name": "车路协同解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 车路协同是智慧交通的核心应用场景"
+  },
+  {
+   "theme": "车联网",
+   "business_tag_name": "车载前装模组",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 前装模组是车联网车端联网的直接载体"
+  },
+  {
+   "theme": "智能驾驶",
+   "business_tag_name": "车载模块与传感器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 车载传感器是智能驾驶感知层的上游硬件"
+  },
+  {
+   "theme": "超级电容",
+   "business_tag_name": "超级电容",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-08-21] 业务标签即题材本身"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "超高分子量聚乙烯",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] UHMWPE树脂是湿法锂电池隔膜的核心上游原料"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "轮胎",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-21] 轮胎是汽车零部件整车配套的核心产品"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "输液泵/注射泵设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 输液泵/注射泵是医疗器械具体产品"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "输电线路铁塔(角钢塔)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-21] 输电铁塔是电网设备的组成部分"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "输配电及控制设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 输配电及控制设备直接属于电网设备"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "输配电控制设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 输配电控制设备直接属于电网设备"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "输配电设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 输配电设备即电网设备"
+  },
+  {
+   "theme": "家居商贸",
+   "business_tag_name": "软装",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 软装属于家居商贸经营范畴"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "软板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-21] 软板(FPC)是PCB的柔性细分产品"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "进口药品代理及营销外包",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 药品代理营销外包本身就是医药流通业务的核心环节"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "逆变器及储能",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 业务本身即包含储能系统"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "重组人脑利钠肽(新活素)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-08-21] 新活素是已上市的重组生物创新药产品"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "铁剂原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-08-21] 铁剂原料药就是原料药品类的一种"
+  },
+  {
+   "theme": "电解铝",
+   "business_tag_name": "铝冶炼与加工",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 电解法炼铝的核心工艺就是铝冶炼与加工"
+  },
+  {
+   "theme": "电解铝",
+   "business_tag_name": "铝冶炼及加工",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-08-21] 同义表述，铝冶炼加工即电解铝主业"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "铝合金车轮",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-08-21] 铝合金车轮本身即汽车零部件产品"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "铝热传输材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 铝热传输材料是汽车热管理系统换热部件的核心原材料"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "银杏叶胶囊",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-08-21] 银杏叶胶囊为典型中成药产品，业务本身即中药题材交易对象"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "银行业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 银行IT系统、核心业务系统、收单等银行科技业务是金融科技题材的直接承载"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "锂电新能源材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-08-21] 锂电新能源材料是锂电池生产的直接上游材料"
   }
  ]
 }

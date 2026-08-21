@@ -1719,6 +1719,51 @@
    "note": "三条新闻均明确为房地产服务板块带动涨停，与我爱我家同涨，主导叙事非机器人",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-20"
+  },
+  {
+   "code": "002396",
+   "trade_date": "2026-08-21",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "两条新闻均明确点名'CPO板块/概念拉升，星网锐捷涨停'，当日主导叙事清晰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  {
+   "code": "603052",
+   "trade_date": "2026-08-21",
+   "theme": "CPO",
+   "verdict": "verified",
+   "note": "两条新闻均明确点名'CPO概念股异动拉升/走强，可川科技涨停'",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  {
+   "code": "603626",
+   "trade_date": "2026-08-21",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "两条新闻均明确点名当日主导叙事为'折叠屏概念'拉升带动涨停，非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  {
+   "code": "603958",
+   "trade_date": "2026-08-21",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻明确点名当日主导叙事为'3D打印概念'拉升带动涨停，非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  {
+   "code": "601700",
+   "trade_date": "2026-08-20",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "多条证据一致指向公告驱动的'中标南方电网/特高压项目'催化，未见国企改革叙事支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
   }
  ],
  "episode_verdicts": [
