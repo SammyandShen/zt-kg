@@ -44830,6 +44830,11 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "昨日涨停_含一字": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
  "昨日连板_含一字": {
   "type": "unknown",
   "status": "candidate",
@@ -44860,10 +44865,25 @@
   "status": "candidate",
   "radar": "2026-08-10·1源2日"
  },
+ "稀缺资源": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-21·1源2日"
+ },
  "粮食": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-18·2源2日"
+ },
+ "红利破净股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
+ },
+ "红利股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
  },
  "近期新高": {
   "type": "unknown",
@@ -44884,25 +44904,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "昨日涨停_含一字": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "红利破净股": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-19·1源2日"
- },
- "红利股": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-19·1源2日"
- },
- "稀缺资源": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-21·1源2日"
  }
 }
