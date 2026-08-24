@@ -13803,6 +13803,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "国资拟入主": {
+  "type": "event",
+  "status": "candidate"
+ },
  "国资股权转让": {
   "type": "event",
   "status": "retired",
@@ -17360,6 +17364,14 @@
   "type": "event",
   "status": "retired"
  },
+ "间接参股磷化铟公司": {
+  "type": "event",
+  "status": "candidate"
+ },
+ "间接参股长存": {
+  "type": "event",
+  "status": "candidate"
+ },
  "间接投资光纤公司": {
   "type": "event",
   "status": "retired"
@@ -20607,6 +20619,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "东南亚航线": {
+  "type": "product",
+  "status": "candidate"
+ },
  "东方略": {
   "type": "product",
   "status": "candidate"
@@ -22199,6 +22215,10 @@
   "status": "candidate"
  },
  "光模块并购": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光模块胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -26688,6 +26708,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "工商业储能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "工商储逆变器": {
   "type": "product",
   "status": "candidate",
@@ -27433,6 +27457,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "情绪过热": {
+  "type": "product",
+  "status": "candidate"
+ },
  "惯性导航": {
   "type": "product",
   "status": "candidate"
@@ -27526,6 +27554,10 @@
   "status": "candidate"
  },
  "户外用品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "户用储能": {
   "type": "product",
   "status": "candidate"
  },
@@ -27794,6 +27826,10 @@
   "status": "candidate"
  },
  "拟并购养殖": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "拟并购热电": {
   "type": "product",
   "status": "candidate"
  },
@@ -30162,6 +30198,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "机器人电池": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人电源": {
   "type": "product",
   "status": "candidate",
@@ -30408,6 +30448,10 @@
   "llm": "claude-sonnet-5"
  },
  "柔性触控": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "柔性触觉": {
   "type": "product",
   "status": "candidate"
  },
@@ -32842,6 +32886,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "火电热力": {
+  "type": "product",
+  "status": "candidate"
+ },
  "火电盈利": {
   "type": "product",
   "status": "candidate"
@@ -33371,6 +33419,10 @@
   "llm": "claude-sonnet-5"
  },
  "牛散举牌": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "牛散入股": {
   "type": "product",
   "status": "candidate"
  },
@@ -35929,6 +35981,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "签署算电协同项目": {
+  "type": "product",
+  "status": "candidate"
+ },
  "算力RWA": {
   "type": "product",
   "status": "candidate"
@@ -36097,6 +36153,10 @@
   "status": "candidate"
  },
  "粉末油脂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "粉磨装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -36362,6 +36422,10 @@
   "llm": "claude-sonnet-5"
  },
  "红曲增长": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "红海航线": {
   "type": "product",
   "status": "candidate"
  },
@@ -37553,6 +37617,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "船队扩张": {
+  "type": "product",
+  "status": "candidate"
+ },
  "色母粒": {
   "type": "product",
   "status": "candidate"
@@ -38528,6 +38596,10 @@
   "status": "candidate"
  },
  "越南出海": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "越南制造": {
   "type": "product",
   "status": "candidate"
  },
@@ -39732,6 +39804,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "钡盐放量": {
+  "type": "product",
+  "status": "candidate"
  },
  "钢丝": {
   "type": "product",
@@ -41115,6 +41191,10 @@
   "status": "candidate"
  },
  "集装箱设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "集装箱运输": {
   "type": "product",
   "status": "candidate"
  },
@@ -44804,5 +44884,25 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "昨日涨停_含一字": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "红利破净股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
+ },
+ "红利股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
+ },
+ "稀缺资源": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-21·1源2日"
  }
 }
