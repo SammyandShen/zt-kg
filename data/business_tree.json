@@ -21090,6 +21090,736 @@
    "parent": null,
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-20"
+  },
+  "疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "保健食品": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "抗感染类药物": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "3D打印服务": {
+   "parent": "3D打印",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "3D打印材料": {
+   "parent": "3D打印",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "3D打印设备": {
+   "parent": "3D打印",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "GLP-1多肽药物原料": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "HPV疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "HPV疫苗代理": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "PCM有机涂层板": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "PVP": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "RSV疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "VCM覆膜板": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "中医医院服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "中成药生产及销售": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "中成药（贴膏类）": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "中藏成药(诺迪康胶囊等)": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "乳胶丝": {
+   "parent": "纺织原料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "乳胶寝具制品": {
+   "parent": "家具家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "五联疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "人血白蛋白": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "代理产品经销": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "代理进口疫苗": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "低压断路器": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "低温储藏设备玻璃门体": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "体外诊断仪器": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "体外诊断原料": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "健康体检": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "充气床垫": {
+   "parent": "家具家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "光伏业务": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "光伏电站工程承包": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "六联疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "共享充电": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "出境旅行社服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "分子检测原料酶": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "分子诊断服务": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "分子诊断试剂盒": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "创新药独家经销(佐利替尼)": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "前端系统": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "功能性原料及保健食品": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "化学仿制药制剂": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "化学合成药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "医用药用聚乙二醇及活性衍生物": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "医疗冷链物流": {
+   "parent": "仓储物流",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "医疗器械（内窥镜/支气管镜）": {
+   "parent": "医疗器械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "医药国际贸易销售": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "医药技术服务与推广": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "医药流通代理": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "单硝酸异山梨酯缓释片(依姆多)": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "单采血浆": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "口腔及五官科用药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "司法鉴定": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "品牌代理运营": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "商用清洁机器人": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "国内贸易": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "基因工程药": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "基因检测技术服务": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "基因测序仪": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "基因测序检测服务": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "多组学产品": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "多肽及寡核苷酸原料药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "多肽定制生产技术服务": {
+   "parent": "医药研发",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "多肽药物": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "天然橡胶初加工": {
+   "parent": "农林牧渔",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "天然橡胶种植": {
+   "parent": "种植业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "天然橡胶贸易": {
+   "parent": "农产品流通",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "实验室自动化设备": {
+   "parent": "仪器仪表",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "宠物用药": {
+   "parent": "动物保健",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "家电用复合材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "带状疱疹疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "带状疱疹疫苗代理": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "心血管用药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "户外箱包": {
+   "parent": "轻工制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "户外运动用品": {
+   "parent": "轻工制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "抗体药物": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "数据通信系统": {
+   "parent": "通信设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "新药研发试剂": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "无人机巡检服务": {
+   "parent": "低空经济与航天",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "智能化监控设备": {
+   "parent": "仪器仪表",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "智能电网及智能自动化设备": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "有线电视光纤传输设备": {
+   "parent": "通信设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "有线电视电缆传输设备": {
+   "parent": "通信设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "机器人产品": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "核酸保存试剂": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "核酸提取纯化试剂": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "核酸药物原料": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "模塑绝缘制品": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "橡胶木加工": {
+   "parent": "家具家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "欧瑞姿(PVM/MA共聚物)": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "水上游览服务": {
+   "parent": "文旅景区",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "水痘疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "沉浸式文旅体验项目": {
+   "parent": "文旅景区",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "注射用尖吻蝮蛇血凝酶": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "流感疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "测序配套试剂耗材": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "消防机器人": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "液体鼻喷流感疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "照明产品生产销售": {
+   "parent": "家电家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "特色专科类药物（抗肿瘤药/消化系统药/肠外营养药）": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "特色中间体": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "狂犬病疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "玻璃深加工制品": {
+   "parent": "玻璃玻纤",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "生命科学仪器及耗材": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "生命科学综合技术服务": {
+   "parent": "医药研发",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "生物医药": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "生物检测仪器": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "生物试剂": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "电信增值服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "电子卖场运营": {
+   "parent": "电商零售",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "电机及电动操作机构": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "电站运营": {
+   "parent": "电力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "疫苗中间产品": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "疫苗技术转移及中间品销售": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "疫苗进出口与保税仓储服务": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "第三方医学检验": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "第三方食品及公共卫生检测": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "精准医疗服务": {
+   "parent": "医疗服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "纳米炭混悬注射液(卡纳琳)": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "绒促卵泡激素α N01注射液（晟诺娃®，独家代理）": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "结核病诊断与预防治疗产品": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "聚乙二醇医药应用技术服务": {
+   "parent": "医药研发",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "肺炎克雷伯菌疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "肺炎球菌疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "肿瘤早期诊断": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "脑膜炎球菌多糖疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "脑膜炎球菌疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "膳食营养补充剂": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "自主研发疫苗": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "药品批发（医药流通）": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "药品生产工艺研究开发服务": {
+   "parent": "医药研发",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "蛇类养殖": {
+   "parent": "畜禽养殖",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "设备售后服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "诊断产品销售": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "诊断仪器": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "逆变器及储能": {
+   "parent": "储能系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "通信工程服务": {
+   "parent": "通信网络设施",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "重组人脑利钠肽(新活素)": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "钢材贸易": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "阿卡波糖": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "降糖类药物": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "静注人免疫球蛋白": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "食用糖": {
+   "parent": "食品饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "香氛家居清洁护理用品": {
+   "parent": "个护家清",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "鲑降钙素注射液": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "鲑降钙素鼻用喷雾剂": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
+  },
+  "麻醉及精神类药品": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-08-21"
   }
  },
  "groups": {

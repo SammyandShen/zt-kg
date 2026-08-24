@@ -42725,6 +42725,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "F5G概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-14·1源2日"
+ },
  "FlinkAI平台": {
   "type": "theme",
   "status": "candidate"
@@ -44750,10 +44755,20 @@
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
  },
+ "柔性屏(折叠屏)": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-14·1源2日"
+ },
  "生物制药": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-07·1源2日"
+ },
+ "疫苗": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-20·1源2日"
  },
  "病原体防治": {
   "type": "unknown",
@@ -44789,20 +44804,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "F5G概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-14·1源2日"
- },
- "柔性屏(折叠屏)": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-14·1源2日"
- },
- "疫苗": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-20·1源2日"
  }
 }
