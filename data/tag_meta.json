@@ -11858,6 +11858,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "订单交付": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "订单回暖": {
   "type": "catalyst",
   "status": "candidate",
@@ -14126,6 +14130,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "定增入主": {
+  "type": "event",
+  "status": "candidate"
  },
  "定增加码AI": {
   "type": "event",
@@ -17263,6 +17271,10 @@
   "type": "event",
   "status": "retired"
  },
+ "金融投资": {
+  "type": "event",
+  "status": "candidate"
+ },
  "金融资产出售": {
   "type": "event",
   "status": "retired"
@@ -18780,6 +18792,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "CIPS": {
+  "type": "product",
+  "status": "candidate"
+ },
  "CIS外延片": {
   "type": "product",
   "status": "candidate"
@@ -19405,6 +19421,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "LNG加工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "LNG运贸": {
   "type": "product",
   "status": "candidate"
@@ -19662,6 +19682,10 @@
   "status": "candidate"
  },
  "OLED蒸发源": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "OLED设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -20032,6 +20056,10 @@
   "status": "candidate"
  },
  "Phase8L量产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "Q2回升": {
   "type": "product",
   "status": "candidate"
  },
@@ -22885,6 +22913,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "军工防护": {
+  "type": "product",
+  "status": "candidate"
+ },
  "军用无线通信设备": {
   "type": "product",
   "status": "candidate"
@@ -23123,6 +23155,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "净利增长": {
+  "type": "product",
+  "status": "candidate"
  },
  "净水": {
   "type": "product",
@@ -23609,6 +23645,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "化肥保供": {
+  "type": "product",
+  "status": "candidate"
+ },
  "化药": {
   "type": "product",
   "status": "candidate",
@@ -23915,6 +23955,10 @@
   "type": "product",
   "status": "retired"
  },
+ "半导体光罩": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体切割": {
   "type": "product",
   "status": "candidate"
@@ -24110,6 +24154,10 @@
   "status": "candidate"
  },
  "半年报": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "半年报公布": {
   "type": "product",
   "status": "candidate"
  },
@@ -25437,6 +25485,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "增资整合": {
+  "type": "product",
+  "status": "candidate"
+ },
  "增资智造": {
   "type": "product",
   "status": "candidate"
@@ -26324,6 +26376,10 @@
   "status": "candidate"
  },
  "家纺": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "家装业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -27230,6 +27286,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "弹药贮运": {
+  "type": "product",
+  "status": "candidate"
+ },
  "归母净利润增长": {
   "type": "product",
   "status": "candidate"
@@ -27312,6 +27372,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "循环化工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "循环经济": {
   "type": "product",
   "status": "candidate"
@@ -27337,6 +27401,10 @@
   "status": "candidate"
  },
  "微型链": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "微型驱动": {
   "type": "product",
   "status": "candidate"
  },
@@ -29449,6 +29517,10 @@
   "status": "candidate"
  },
  "智慧变电站": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧城域": {
   "type": "product",
   "status": "candidate"
  },
@@ -31956,6 +32028,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "洗染服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "洛索洛芬钠凝胶贴膏": {
   "type": "product",
   "status": "candidate",
@@ -33091,6 +33167,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "烯烃": {
+  "type": "product",
+  "status": "candidate"
+ },
  "焊割设备": {
   "type": "product",
   "status": "candidate"
@@ -33978,6 +34058,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "珠宝加工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "珠宝零售": {
   "type": "product",
   "status": "candidate"
@@ -34090,6 +34174,10 @@
   "status": "candidate"
  },
  "生态环境建设": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "生活服务": {
   "type": "product",
   "status": "candidate"
  },
@@ -35611,6 +35699,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "磷肥": {
+  "type": "product",
+  "status": "candidate"
+ },
  "磷虾": {
   "type": "product",
   "status": "candidate"
@@ -35944,6 +36036,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "竹浆纸": {
+  "type": "product",
+  "status": "candidate"
+ },
  "笔电结构件": {
   "type": "product",
   "status": "candidate"
@@ -36088,6 +36184,10 @@
   "status": "candidate"
  },
  "算力采购": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "算力集成": {
   "type": "product",
   "status": "candidate"
  },
@@ -36273,6 +36373,14 @@
   "type": "product",
   "status": "candidate"
  },
+ "精密空调": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "精密管": {
+  "type": "product",
+  "status": "candidate"
+ },
  "精密箱体": {
   "type": "product",
   "status": "candidate"
@@ -36290,6 +36398,10 @@
   "status": "candidate"
  },
  "精密零件": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "精密零组件": {
   "type": "product",
   "status": "candidate"
  },
@@ -36926,6 +37038,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "美妆零售": {
+  "type": "product",
+  "status": "candidate"
+ },
  "美容护理": {
   "type": "product",
   "status": "candidate"
@@ -37163,6 +37279,10 @@
   "status": "candidate"
  },
  "股票发行受理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "育繁推一体化": {
   "type": "product",
   "status": "candidate"
  },
@@ -38000,6 +38120,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "蜡烛香薰": {
+  "type": "product",
+  "status": "candidate"
+ },
  "融资券发行": {
   "type": "product",
   "status": "candidate"
@@ -38036,6 +38160,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "装备零部件": {
+  "type": "product",
+  "status": "candidate"
  },
  "装配式项目": {
   "type": "product",
@@ -38325,6 +38453,10 @@
   "status": "candidate"
  },
  "资产托管": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "资产捐赠承诺": {
   "type": "product",
   "status": "candidate"
  },
@@ -38701,6 +38833,10 @@
   "status": "candidate"
  },
  "车主信息服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "车企配套": {
   "type": "product",
   "status": "candidate"
  },
@@ -41198,6 +41334,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "集采药品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "雨水回收": {
   "type": "product",
   "status": "candidate"
@@ -43333,6 +43473,10 @@
   "type": "theme",
   "status": "candidate"
  },
+ "医药产业链": {
+  "type": "theme",
+  "status": "candidate"
+ },
  "半导体产业链": {
   "type": "theme",
   "status": "candidate"
@@ -44904,5 +45048,20 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "微盘精选": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
+ "微盘股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
+ "肝素概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-13·1源2日"
  }
 }
