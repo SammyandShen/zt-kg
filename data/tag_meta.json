@@ -13113,6 +13113,10 @@
   "type": "event",
   "status": "retired"
  },
+ "光纤参股": {
+  "type": "event",
+  "status": "candidate"
+ },
  "入股天易合芯": {
   "type": "event",
   "status": "retired",
@@ -17582,6 +17586,10 @@
  "高速光模块发布": {
   "type": "event",
   "status": "retired"
+ },
+ "高附加值转型": {
+  "type": "event",
+  "status": "candidate"
  },
  "鸿海“提前供货”英伟达全光CPO机柜": {
   "type": "event",
@@ -23021,6 +23029,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "农机出海": {
+  "type": "product",
+  "status": "candidate"
+ },
  "农机应用": {
   "type": "product",
   "status": "candidate"
@@ -24911,6 +24923,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "噻唑锌": {
+  "type": "product",
+  "status": "candidate"
+ },
  "四代堆": {
   "type": "product",
   "status": "candidate",
@@ -25910,7 +25926,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "头部客户": {
+  "type": "product",
+  "status": "candidate"
+ },
  "女娲GPT": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "女性健康": {
   "type": "product",
   "status": "candidate"
  },
@@ -26117,6 +26141,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "宇航存储": {
+  "type": "product",
+  "status": "candidate"
  },
  "宇航服": {
   "type": "product",
@@ -27974,6 +28002,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "控股矿业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "控股股东为长江产业集团": {
   "type": "product",
   "status": "candidate"
@@ -28574,6 +28606,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新品研发": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新品管线": {
   "type": "product",
   "status": "candidate"
@@ -28669,6 +28705,10 @@
   "status": "candidate"
  },
  "新疆煤化工项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新疆燃气": {
   "type": "product",
   "status": "candidate"
  },
@@ -31390,6 +31430,10 @@
   "status": "candidate"
  },
  "永续债融资": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "求婚钻戒": {
   "type": "product",
   "status": "candidate"
  },
@@ -35018,6 +35062,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "疫苗诊断": {
+  "type": "product",
+  "status": "candidate"
+ },
  "疼痛管理": {
   "type": "product",
   "status": "candidate"
@@ -35430,6 +35478,10 @@
   "status": "candidate"
  },
  "研究中心": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "破伤风疫苗": {
   "type": "product",
   "status": "candidate"
  },
@@ -36184,6 +36236,10 @@
   "status": "candidate"
  },
  "算力采购": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "算力铜箔": {
   "type": "product",
   "status": "candidate"
  },
@@ -37239,6 +37295,10 @@
   "status": "candidate"
  },
  "股份拍卖": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "股份捐赠": {
   "type": "product",
   "status": "candidate"
  },
@@ -40243,6 +40303,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "铜业主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铜冶炼": {
   "type": "product",
   "status": "candidate",
@@ -42083,6 +42147,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高端农机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端制造": {
   "type": "product",
   "status": "candidate"
@@ -42103,6 +42171,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高端婚嫁黄金": {
+  "type": "product",
+  "status": "candidate"
  },
  "高端家电": {
   "type": "product",
@@ -42360,6 +42432,10 @@
   "status": "candidate"
  },
  "高频覆铜板": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高频高速": {
   "type": "product",
   "status": "candidate"
  },
@@ -45063,5 +45139,30 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "昨日首板": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
+ "最近多板": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "东方财富热股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "昨日涨停": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "金融地产风格": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
  }
 }
