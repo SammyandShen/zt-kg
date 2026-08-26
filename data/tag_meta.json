@@ -45040,6 +45040,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "东方财富热股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
  "免疫治疗": {
   "type": "unknown",
   "status": "candidate",
@@ -45065,12 +45070,27 @@
   "status": "candidate",
   "radar": "2026-08-10·1源2日"
  },
+ "昨日涨停": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
  "昨日涨停_含一字": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
  },
  "昨日连板_含一字": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
+ "昨日首板": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
+ "最近多板": {
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
@@ -45125,6 +45145,11 @@
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
  },
+ "金融地产风格": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
+ },
  "阿兹海默": {
   "type": "unknown",
   "status": "candidate",
@@ -45139,30 +45164,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "昨日首板": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-10·1源2日"
- },
- "最近多板": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "东方财富热股": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "昨日涨停": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "金融地产风格": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-19·1源2日"
  }
 }
