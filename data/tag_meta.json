@@ -8644,6 +8644,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "湖南国企": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "灯塔工厂": {
   "type": "attribute",
   "status": "candidate",
@@ -9619,6 +9623,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "业绩高增长": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "东南亚布局": {
   "type": "catalyst",
   "status": "candidate",
@@ -10065,6 +10073,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "净利扭亏": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "减亏": {
   "type": "catalyst",
@@ -11558,6 +11570,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "珠海产能": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "生猪出栏大增": {
   "type": "catalyst",
   "status": "candidate",
@@ -12240,6 +12256,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "隧道中标": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "集采中选": {
   "type": "catalyst",
@@ -17983,6 +18003,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI光联": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI养老": {
   "type": "product",
   "status": "candidate"
@@ -18970,6 +18994,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "EDA软件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "EDR": {
   "type": "product",
   "status": "candidate"
@@ -19491,6 +19519,14 @@
   "type": "product",
   "status": "candidate"
  },
+ "MEMS-OCS": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "MEMS代工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "MEMS微振镜": {
   "type": "product",
   "status": "candidate",
@@ -19758,6 +19794,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "PCB制造": {
+  "type": "product",
+  "status": "candidate"
+ },
  "PCB化学品": {
   "type": "product",
   "status": "candidate",
@@ -20017,6 +20057,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "PTFE": {
+  "type": "product",
+  "status": "candidate"
+ },
  "PTFE薄膜": {
   "type": "product",
   "status": "candidate",
@@ -20252,6 +20296,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "TOD物业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "TOD轨道物业": {
   "type": "product",
   "status": "candidate"
@@ -20453,6 +20501,10 @@
   "status": "candidate"
  },
  "“马字辈”": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "一体化": {
   "type": "product",
   "status": "candidate"
  },
@@ -21871,6 +21923,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "先进粉体材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "先进陶瓷": {
   "type": "product",
   "status": "candidate",
@@ -22354,6 +22410,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "光纤石英": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光纤级锗": {
   "type": "product",
   "status": "candidate"
@@ -22367,6 +22427,10 @@
   "status": "candidate"
  },
  "光纤送样验证": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光纤通信": {
   "type": "product",
   "status": "candidate"
  },
@@ -25223,6 +25287,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "在线监测": {
+  "type": "product",
+  "status": "candidate"
+ },
  "地下管网": {
   "type": "product",
   "status": "candidate"
@@ -25375,6 +25443,10 @@
   "status": "candidate"
  },
  "基建数字化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "基建施工": {
   "type": "product",
   "status": "candidate"
  },
@@ -26057,6 +26129,14 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "存储方案": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "存储模组": {
+  "type": "product",
+  "status": "candidate"
+ },
  "存储测试": {
   "type": "product",
   "status": "candidate"
@@ -26147,6 +26227,10 @@
   "status": "candidate"
  },
  "宇航服": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "安保安防": {
   "type": "product",
   "status": "candidate"
  },
@@ -26492,6 +26576,10 @@
   "llm": "claude-sonnet-5"
  },
  "射孔服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "射频前端": {
   "type": "product",
   "status": "candidate"
  },
@@ -27012,6 +27100,10 @@
   "status": "candidate"
  },
  "并购整合": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "并购易冲": {
   "type": "product",
   "status": "candidate"
  },
@@ -28317,6 +28409,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数据中心业务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数据中心供冷": {
   "type": "product",
   "status": "candidate"
@@ -28728,6 +28824,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新签增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新股": {
   "type": "product",
   "status": "candidate"
@@ -29051,6 +29151,10 @@
   "llm": "claude-sonnet-5"
  },
  "新能源重卡": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新能源铝材": {
   "type": "product",
   "status": "candidate"
  },
@@ -30130,6 +30234,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "服务器液冷": {
+  "type": "product",
+  "status": "candidate"
+ },
  "服务器租赁": {
   "type": "product",
   "status": "candidate"
@@ -30280,6 +30388,10 @@
   "status": "candidate"
  },
  "机器人应用": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "机器人执行器": {
   "type": "product",
   "status": "candidate"
  },
@@ -30782,6 +30894,10 @@
   "status": "candidate"
  },
  "棉花全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "棉蛋白": {
   "type": "product",
   "status": "candidate"
  },
@@ -32579,6 +32695,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "液冷水泵": {
+  "type": "product",
+  "status": "candidate"
+ },
  "液冷测试": {
   "type": "product",
   "status": "candidate"
@@ -33981,6 +34101,14 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "环氧树脂投产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "现代农业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "现代化养殖服务": {
   "type": "product",
   "status": "candidate"
@@ -34173,6 +34301,10 @@
   "status": "candidate"
  },
  "甘肃项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "甘草制品": {
   "type": "product",
   "status": "candidate"
  },
@@ -35421,6 +35553,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "矿产贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
  "矿产资源": {
   "type": "product",
   "status": "candidate"
@@ -35498,6 +35634,10 @@
   "status": "candidate"
  },
  "硅产品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "硅光子": {
   "type": "product",
   "status": "candidate"
  },
@@ -36340,6 +36480,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "粮食加工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "粮食安全": {
   "type": "product",
   "status": "candidate"
@@ -36353,6 +36497,10 @@
   "status": "candidate"
  },
  "精准诊断": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "精品商超": {
   "type": "product",
   "status": "candidate"
  },
@@ -37817,6 +37965,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "艺术珠宝": {
+  "type": "product",
+  "status": "candidate"
+ },
  "艺术黄金": {
   "type": "product",
   "status": "candidate",
@@ -38077,6 +38229,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "菜籽油": {
+  "type": "product",
+  "status": "candidate"
+ },
  "萃取法工艺": {
   "type": "product",
   "status": "candidate"
@@ -38122,6 +38278,10 @@
   "status": "candidate"
  },
  "蒸压加气混凝土装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "蒸发冷凝": {
   "type": "product",
   "status": "candidate"
  },
@@ -40325,6 +40485,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "铜合金": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铜合金板带": {
   "type": "product",
   "status": "candidate"
@@ -41120,6 +41284,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "长飞光纤": {
+  "type": "product",
+  "status": "candidate"
+ },
  "门店优化": {
   "type": "product",
   "status": "candidate"
@@ -41848,6 +42016,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "食品餐饮": {
+  "type": "product",
+  "status": "candidate"
+ },
  "食品饮料": {
   "type": "product",
   "status": "candidate"
@@ -42216,6 +42388,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高端油品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端海参": {
   "type": "product",
   "status": "candidate",
@@ -42300,6 +42476,10 @@
   "llm": "claude-sonnet-5"
  },
  "高纯氟化氢": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高纯石英": {
   "type": "product",
   "status": "candidate"
  },
@@ -42435,6 +42615,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高频通讯": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高频高速": {
   "type": "product",
   "status": "candidate"
@@ -42560,6 +42744,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "黄金租赁": {
+  "type": "product",
+  "status": "candidate"
  },
  "黄金自营": {
   "type": "product",
@@ -45035,6 +45223,10 @@
   "type": "theme",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "黄金产业链": {
+  "type": "theme",
+  "status": "candidate"
  },
  "黑磷": {
   "type": "theme",
