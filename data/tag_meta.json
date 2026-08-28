@@ -8296,6 +8296,14 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "国资控股": {
+  "type": "attribute",
+  "status": "candidate"
+ },
+ "国资赋能": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "在建项目": {
   "type": "attribute",
   "status": "candidate"
@@ -12228,6 +12236,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "锶盐扩产": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "镍粉大单": {
   "type": "catalyst",
   "status": "candidate",
@@ -12297,6 +12309,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "风电扩产": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "饲料增长": {
   "type": "catalyst",
@@ -18336,6 +18352,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AI渔业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI物流": {
   "type": "product",
   "status": "candidate"
@@ -19290,6 +19310,10 @@
   "llm": "claude-sonnet-5"
  },
  "IDM": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "IMU传感器": {
   "type": "product",
   "status": "candidate"
  },
@@ -20845,6 +20869,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "中报扣非增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "中报营收增": {
   "type": "product",
   "status": "candidate"
@@ -20922,6 +20950,10 @@
   "status": "candidate"
  },
  "中药新药": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "中药材种业": {
   "type": "product",
   "status": "candidate"
  },
@@ -21263,6 +21295,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "产销量增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "享界": {
   "type": "product",
   "status": "candidate"
@@ -21485,6 +21521,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "低压断路器": {
+  "type": "product",
+  "status": "candidate"
  },
  "低压电器": {
   "type": "product",
@@ -22353,6 +22393,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光电分选": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光电器件": {
   "type": "product",
   "status": "candidate"
@@ -23045,6 +23089,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "农产品加工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "农产品批发": {
   "type": "product",
   "status": "candidate"
@@ -23118,6 +23166,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "农药出口": {
+  "type": "product",
+  "status": "candidate"
  },
  "农药出海": {
   "type": "product",
@@ -23376,6 +23428,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "出版主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "出版传媒": {
   "type": "product",
   "status": "candidate"
@@ -23420,6 +23476,10 @@
   "status": "candidate"
  },
  "列控主业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "创制除草剂": {
   "type": "product",
   "status": "candidate"
  },
@@ -23948,6 +24008,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医药主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医药产品": {
   "type": "product",
   "status": "candidate"
@@ -24278,6 +24342,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "华锦阿美": {
+  "type": "product",
+  "status": "candidate"
+ },
  "协同办公": {
   "type": "product",
   "status": "candidate"
@@ -24510,6 +24578,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "原药制剂": {
+  "type": "product",
+  "status": "candidate"
+ },
  "厨卫电器": {
   "type": "product",
   "status": "candidate"
@@ -24539,6 +24611,10 @@
   "status": "candidate"
  },
  "双十一重保": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "双基药": {
   "type": "product",
   "status": "candidate"
  },
@@ -24882,6 +24958,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "商业综合体": {
+  "type": "product",
+  "status": "candidate"
+ },
  "商业航天产业配套": {
   "type": "product",
   "status": "candidate",
@@ -25186,6 +25266,10 @@
   "status": "candidate"
  },
  "国家大基金": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "国家电投": {
   "type": "product",
   "status": "candidate"
  },
@@ -25813,6 +25897,10 @@
   "status": "candidate"
  },
  "大宗贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "大家居": {
   "type": "product",
   "status": "candidate"
  },
@@ -26880,6 +26968,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "工业铝材": {
+  "type": "product",
+  "status": "candidate"
+ },
  "工商业储能": {
   "type": "product",
   "status": "candidate"
@@ -27612,6 +27704,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "快充芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
  "快递": {
   "type": "product",
   "status": "candidate"
@@ -27745,6 +27841,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "户外面料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "户用储能": {
   "type": "product",
   "status": "candidate"
@@ -27866,6 +27966,10 @@
   "status": "candidate"
  },
  "技改项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "技术储备": {
   "type": "product",
   "status": "candidate"
  },
@@ -28242,6 +28346,10 @@
   "status": "candidate"
  },
  "教育数字化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "教育服务": {
   "type": "product",
   "status": "candidate"
  },
@@ -30020,6 +30128,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能矿卡": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能矿山": {
   "type": "product",
   "status": "candidate"
@@ -30588,6 +30700,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "林业主业": {
+  "type": "product",
+  "status": "candidate"
  },
  "林木主业": {
   "type": "product",
@@ -32713,6 +32829,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "液冷铝材": {
+  "type": "product",
+  "status": "candidate"
+ },
  "液冷阀门": {
   "type": "product",
   "status": "candidate"
@@ -32928,6 +33048,10 @@
   "status": "candidate"
  },
  "渠道扩张": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "渠道拓展": {
   "type": "product",
   "status": "candidate"
  },
@@ -34218,6 +34342,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "玻纤纱": {
+  "type": "product",
+  "status": "candidate"
+ },
  "玻纤设备": {
   "type": "product",
   "status": "candidate"
@@ -34512,6 +34640,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "甲醇提价": {
+  "type": "product",
+  "status": "candidate"
  },
  "甲醇电动": {
   "type": "product",
@@ -35319,6 +35451,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "盐穴储气": {
+  "type": "product",
+  "status": "candidate"
  },
  "盐酸氨丙啉": {
   "type": "product",
@@ -37169,6 +37305,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "绿色面料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "绿证政策": {
   "type": "product",
   "status": "candidate"
@@ -37389,6 +37529,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "聚醚": {
+  "type": "product",
+  "status": "candidate"
+ },
  "聚醚多元醇": {
   "type": "product",
   "status": "candidate",
@@ -37487,6 +37631,10 @@
   "status": "candidate"
  },
  "股票发行受理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "育种研发": {
   "type": "product",
   "status": "candidate"
  },
@@ -38186,6 +38334,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "药材种植": {
+  "type": "product",
+  "status": "candidate"
  },
  "药物分子砌块": {
   "type": "product",
@@ -39287,6 +39439,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "软件化交付": {
+  "type": "product",
+  "status": "candidate"
+ },
  "软件开发": {
   "type": "product",
   "status": "candidate"
@@ -39403,6 +39559,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "运动功能面料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "运动服饰应用": {
   "type": "product",
   "status": "candidate"
@@ -39458,6 +39618,10 @@
   "llm": "claude-sonnet-5"
  },
  "连锁酒店": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "连锁零售": {
   "type": "product",
   "status": "candidate"
  },
@@ -39861,6 +40025,10 @@
   "status": "candidate"
  },
  "重金属治理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "重防腐涂料": {
   "type": "product",
   "status": "candidate"
  },
@@ -42302,6 +42470,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高端产品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端产品升级": {
   "type": "product",
   "status": "candidate"
@@ -42794,6 +42966,10 @@
   "status": "candidate"
  },
  "黑色金属": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "黑色食养": {
   "type": "product",
   "status": "candidate"
  },
