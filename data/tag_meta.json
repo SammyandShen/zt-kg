@@ -15418,6 +15418,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "控股变更": {
+  "type": "event",
+  "status": "candidate"
+ },
  "控股奎芯科技": {
   "type": "event",
   "status": "retired",
@@ -15431,6 +15435,10 @@
  "控股权划转": {
   "type": "event",
   "status": "retired"
+ },
+ "控股权转让": {
+  "type": "event",
+  "status": "candidate"
  },
  "推出“股票通”": {
   "type": "event",
@@ -15743,6 +15751,10 @@
   "type": "event",
   "status": "retired"
  },
+ "收购达峰": {
+  "type": "event",
+  "status": "candidate"
+ },
  "收购达峰智能": {
   "type": "event",
   "status": "retired"
@@ -15948,6 +15960,10 @@
  "服务器资产收购": {
   "type": "event",
   "status": "retired"
+ },
+ "木作转型": {
+  "type": "event",
+  "status": "candidate"
  },
  "本源量子IPO": {
   "type": "event",
@@ -17684,6 +17700,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "3D建筑打印": {
+  "type": "product",
+  "status": "candidate"
+ },
  "3D打印液冷": {
   "type": "product",
   "status": "candidate"
@@ -17941,6 +17961,10 @@
   "status": "candidate"
  },
  "AIGC影视": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AIGC长剧": {
   "type": "product",
   "status": "candidate"
  },
@@ -19432,6 +19456,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "LED电源": {
+  "type": "product",
+  "status": "candidate"
+ },
  "LED结构件": {
   "type": "product",
   "status": "candidate",
@@ -19656,6 +19684,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "Microduck催化": {
+  "type": "product",
+  "status": "candidate"
  },
  "Mini LED": {
   "type": "product",
@@ -20937,6 +20969,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "中药制造": {
+  "type": "product",
+  "status": "candidate"
+ },
  "中药医保": {
   "type": "product",
   "status": "candidate"
@@ -21036,6 +21072,10 @@
   "status": "candidate"
  },
  "主营优势": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "主题园区": {
   "type": "product",
   "status": "candidate"
  },
@@ -21202,6 +21242,10 @@
   "status": "candidate"
  },
  "五氟化锑": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "五轴机床": {
   "type": "product",
   "status": "candidate"
  },
@@ -21485,6 +21529,10 @@
   "llm": "claude-sonnet-5"
  },
  "传媒主业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "传媒内容": {
   "type": "product",
   "status": "candidate"
  },
@@ -23436,6 +23484,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "出版发行": {
+  "type": "product",
+  "status": "candidate"
+ },
  "出租率修复": {
   "type": "product",
   "status": "candidate"
@@ -24306,6 +24358,10 @@
   "status": "candidate"
  },
  "半年报披露": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "半年报改善": {
   "type": "product",
   "status": "candidate"
  },
@@ -25343,6 +25399,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "图书增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "圆柱电池": {
   "type": "product",
   "status": "candidate"
@@ -25629,6 +25689,10 @@
   "status": "candidate"
  },
  "境外清算": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "境外电商": {
   "type": "product",
   "status": "candidate"
  },
@@ -26251,6 +26315,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "存储载板": {
+  "type": "product",
+  "status": "candidate"
+ },
  "存算一体": {
   "type": "product",
   "status": "candidate"
@@ -26264,6 +26332,10 @@
   "status": "candidate"
  },
  "存量房检测": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "存量翻新": {
   "type": "product",
   "status": "candidate"
  },
@@ -26592,6 +26664,10 @@
   "status": "candidate"
  },
  "宽厚板": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "密封胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -27556,6 +27632,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "影视剧": {
+  "type": "product",
+  "status": "candidate"
+ },
  "影视文旅": {
   "type": "product",
   "status": "candidate"
@@ -28082,6 +28162,10 @@
   "llm": "claude-sonnet-5"
  },
  "抽水蓄能装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "拉链业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -28639,6 +28723,10 @@
   "status": "candidate"
  },
  "数显量具": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数智化升级": {
   "type": "product",
   "status": "candidate"
  },
@@ -29472,6 +29560,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "无线芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
  "无线通信模组": {
   "type": "product",
   "status": "candidate"
@@ -29793,11 +29885,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "智慧广电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智慧应急": {
   "type": "product",
   "status": "candidate"
  },
  "智慧康养": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧招考": {
   "type": "product",
   "status": "candidate"
  },
@@ -29892,6 +29992,10 @@
   "status": "candidate"
  },
  "智慧路灯": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧轨道": {
   "type": "product",
   "status": "candidate"
  },
@@ -30351,6 +30455,10 @@
   "status": "candidate"
  },
  "服务器租赁": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "服务器采购": {
   "type": "product",
   "status": "candidate"
  },
@@ -31898,6 +32006,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车维修保养设备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车胶管": {
   "type": "product",
   "status": "candidate",
@@ -32475,6 +32587,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外交付": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外仓自建": {
   "type": "product",
   "status": "candidate"
@@ -32801,6 +32917,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "液冷机柜": {
+  "type": "product",
+  "status": "candidate"
+ },
  "液冷核心部件焊接": {
   "type": "product",
   "status": "candidate",
@@ -32812,6 +32932,10 @@
   "llm": "claude-sonnet-5"
  },
  "液冷水泵": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "液冷油泵": {
   "type": "product",
   "status": "candidate"
  },
@@ -33697,7 +33821,15 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "燃机出海": {
+  "type": "product",
+  "status": "candidate"
+ },
  "燃机轴承": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "燃机锅炉": {
   "type": "product",
   "status": "candidate"
  },
@@ -34705,6 +34837,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电力资质": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电动两轮车": {
   "type": "product",
   "status": "candidate",
@@ -35412,6 +35548,10 @@
   "status": "candidate"
  },
  "皮革市场": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "皮鞋制造": {
   "type": "product",
   "status": "candidate"
  },
@@ -36989,6 +37129,10 @@
   "status": "candidate"
  },
  "线上渠道拓展": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "线上电商": {
   "type": "product",
   "status": "candidate"
  },
@@ -38884,6 +39028,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "资管业务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "资管高增长": {
   "type": "product",
   "status": "candidate"
@@ -39469,6 +39617,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "轴承保持架": {
+  "type": "product",
+  "status": "candidate"
+ },
  "轴承钢球": {
   "type": "product",
   "status": "candidate",
@@ -39980,6 +40132,10 @@
   "status": "candidate"
  },
  "重整预期": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "重点影片": {
   "type": "product",
   "status": "candidate"
  },
@@ -40825,6 +40981,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "铝基新材": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铝基新材料": {
   "type": "product",
   "status": "candidate",
@@ -41594,6 +41754,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "院线经营": {
+  "type": "product",
+  "status": "candidate"
  },
  "除湿机": {
   "type": "product",
@@ -42490,6 +42654,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高端全屋定制": {
+  "type": "product",
+  "status": "candidate"
  },
  "高端农机": {
   "type": "product",
@@ -44284,6 +44452,10 @@
   "type": "theme",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "房地产产业链": {
+  "type": "theme",
+  "status": "candidate"
  },
  "抖音概念": {
   "type": "theme",
