@@ -44044,6 +44044,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "供销社概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-28·1源2日"
+ },
  "信创替代": {
   "type": "theme",
   "status": "candidate",
@@ -44615,6 +44620,11 @@
   "type": "theme",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "影视概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
  },
  "微短剧": {
   "type": "theme",
@@ -45762,6 +45772,11 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "农林牧渔": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-18·1源2日"
+ },
  "创新医疗服务": {
   "type": "unknown",
   "status": "candidate",
@@ -45876,20 +45891,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "农林牧渔": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-18·1源2日"
- },
- "供销社概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-28·1源2日"
- },
- "影视概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-31·1源2日"
  }
 }
