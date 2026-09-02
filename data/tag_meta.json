@@ -11695,6 +11695,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "算力AI订单": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "算力并购": {
   "type": "catalyst",
   "status": "candidate",
@@ -12644,6 +12648,10 @@
  "PCB并购": {
   "type": "event",
   "status": "retired"
+ },
+ "PCB收购": {
+  "type": "event",
+  "status": "candidate"
  },
  "PCB涨价": {
   "type": "event",
@@ -18864,6 +18872,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "CCUS装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "CDMO": {
   "type": "product",
   "status": "candidate"
@@ -22513,6 +22525,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光纤互联": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光纤传感": {
   "type": "product",
   "status": "candidate"
@@ -25133,6 +25149,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "商用车发电机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "商用车热管理": {
   "type": "product",
   "status": "candidate",
@@ -25405,6 +25425,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "国防配套": {
+  "type": "product",
+  "status": "candidate"
  },
  "国际化": {
   "type": "product",
@@ -25806,6 +25830,10 @@
   "status": "candidate"
  },
  "复产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "复合材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -27308,6 +27336,10 @@
   "status": "candidate"
  },
  "年轻化布局": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "并购布局": {
   "type": "product",
   "status": "candidate"
  },
@@ -28917,6 +28949,10 @@
   "status": "candidate"
  },
  "文旅演艺": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "文旅科技": {
   "type": "product",
   "status": "candidate"
  },
@@ -31726,6 +31762,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "水务业务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "水务建设": {
   "type": "product",
   "status": "candidate"
@@ -34162,6 +34202,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "特种玻纤": {
+  "type": "product",
+  "status": "candidate"
+ },
  "特种电机": {
   "type": "product",
   "status": "candidate"
@@ -34211,6 +34255,14 @@
   "status": "candidate"
  },
  "特种钢丝绳": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "特种防护": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "特种高分子": {
   "type": "product",
   "status": "candidate"
  },
@@ -35548,6 +35600,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "电驱动定转子": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电驱动系统": {
   "type": "product",
   "status": "candidate",
@@ -36837,6 +36893,10 @@
   "status": "candidate"
  },
  "类ABF膜": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "类金融": {
   "type": "product",
   "status": "candidate"
  },
@@ -39782,6 +39842,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "轻资产代建": {
+  "type": "product",
+  "status": "candidate"
+ },
  "轻资产扩张": {
   "type": "product",
   "status": "candidate"
@@ -41494,6 +41558,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "锂盐新材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "锂盐湖": {
   "type": "product",
   "status": "candidate",
@@ -42580,6 +42648,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "饲料业务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "首仿药": {
   "type": "product",
   "status": "candidate",
@@ -42988,6 +43060,10 @@
   "llm": "claude-sonnet-5"
  },
  "高纯氟化氢": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高纯氦气": {
   "type": "product",
   "status": "candidate"
  },
