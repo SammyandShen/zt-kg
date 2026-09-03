@@ -14225,6 +14225,10 @@
   "type": "event",
   "status": "retired"
  },
+ "实控人变更（追觅）": {
+  "type": "event",
+  "status": "candidate"
+ },
  "实控人将变更": {
   "type": "event",
   "status": "retired",
@@ -18039,6 +18043,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI低代码": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI体育": {
   "type": "product",
   "status": "candidate"
@@ -18327,6 +18335,10 @@
   "llm": "claude-sonnet-5"
  },
  "AI智能超市": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI智能运维": {
   "type": "product",
   "status": "candidate"
  },
@@ -19250,6 +19262,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "HPV疫苗": {
+  "type": "product",
+  "status": "candidate"
+ },
  "HRSG": {
   "type": "product",
   "status": "candidate",
@@ -19424,6 +19440,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "JH389": {
+  "type": "product",
+  "status": "candidate"
  },
  "JH389进展": {
   "type": "product",
@@ -19862,6 +19882,10 @@
   "status": "candidate"
  },
  "PCBA电路板": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "PCB三防漆": {
   "type": "product",
   "status": "candidate"
  },
@@ -21986,6 +22010,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "储能配套": {
+  "type": "product",
+  "status": "candidate"
+ },
  "储能项目": {
   "type": "product",
   "status": "candidate",
@@ -22675,6 +22703,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "免税零售": {
+  "type": "product",
+  "status": "candidate"
+ },
  "免费通风设计": {
   "type": "product",
   "status": "candidate"
@@ -23031,6 +23063,10 @@
   "status": "candidate"
  },
  "军工应用": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "军工数字化": {
   "type": "product",
   "status": "candidate"
  },
@@ -25600,6 +25636,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "城镇燃气运营": {
+  "type": "product",
+  "status": "candidate"
+ },
  "域控量产": {
   "type": "product",
   "status": "candidate"
@@ -25951,6 +25991,10 @@
   "llm": "claude-sonnet-5"
  },
  "多板块协同": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "多模态数据库": {
   "type": "product",
   "status": "candidate"
  },
@@ -27900,6 +27944,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "恒隆租约": {
+  "type": "product",
+  "status": "candidate"
  },
  "恒隆长期租约": {
   "type": "product",
@@ -30767,6 +30815,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "机器人研发": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人系统集成": {
   "type": "product",
   "status": "candidate"
@@ -31646,6 +31698,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "氩气": {
+  "type": "product",
+  "status": "candidate"
+ },
  "氮化铝": {
   "type": "product",
   "status": "candidate"
@@ -32212,6 +32268,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽配出口": {
+  "type": "product",
+  "status": "candidate"
+ },
  "沐曦GPU": {
   "type": "product",
   "status": "candidate",
@@ -32668,6 +32728,10 @@
   "status": "candidate"
  },
  "海南低空": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海南免税": {
   "type": "product",
   "status": "candidate"
  },
@@ -33559,6 +33623,10 @@
   "status": "candidate"
  },
  "炊具": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "炊具小家电": {
   "type": "product",
   "status": "candidate"
  },
@@ -34958,6 +35026,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "电力信息化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电力光缆": {
   "type": "product",
   "status": "candidate",
@@ -35431,6 +35503,10 @@
   "status": "candidate"
  },
  "电池铝箔扩建": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电池项目": {
   "type": "product",
   "status": "candidate"
  },
@@ -38286,6 +38362,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "航天电池": {
+  "type": "product",
+  "status": "candidate"
+ },
  "航天科工控股": {
   "type": "product",
   "status": "candidate"
@@ -39927,6 +40007,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "运动控制": {
+  "type": "product",
+  "status": "candidate"
+ },
  "运动服饰应用": {
   "type": "product",
   "status": "candidate"
@@ -40332,6 +40416,10 @@
   "status": "candidate"
  },
  "重整完成": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "重整撤回": {
   "type": "product",
   "status": "candidate"
  },
@@ -45967,5 +46055,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "科创板做市商": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-26·1源2日"
  }
 }
