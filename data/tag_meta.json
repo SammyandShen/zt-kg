@@ -8381,6 +8381,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "央企平台": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "央企油服": {
   "type": "attribute",
   "status": "candidate",
@@ -9880,6 +9884,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "产能去化": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "产能并购整合": {
   "type": "catalyst",
@@ -20953,6 +20961,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "中报净利增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "中报净利大增": {
   "type": "product",
   "status": "candidate"
@@ -21263,6 +21275,10 @@
   "status": "candidate"
  },
  "云通信": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "云集系列": {
   "type": "product",
   "status": "candidate"
  },
@@ -22505,6 +22521,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光热风电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光电产品": {
   "type": "product",
   "status": "candidate"
@@ -22938,6 +22958,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "养殖降本": {
+  "type": "product",
+  "status": "candidate"
  },
  "养老AI": {
   "type": "product",
@@ -24109,6 +24133,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "医疗数智化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医疗服务": {
   "type": "product",
   "status": "candidate",
@@ -24783,6 +24811,10 @@
   "status": "candidate"
  },
  "反光材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "反刍料": {
   "type": "product",
   "status": "candidate"
  },
@@ -25500,6 +25532,10 @@
   "llm": "claude-sonnet-5"
  },
  "国际航线": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "图书出版": {
   "type": "product",
   "status": "candidate"
  },
@@ -27379,6 +27415,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "年轻化产品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "年轻化布局": {
   "type": "product",
   "status": "candidate"
@@ -28801,6 +28841,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "数据中心运维": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数据中心连接器": {
   "type": "product",
   "status": "candidate"
@@ -28863,6 +28907,10 @@
   "status": "candidate"
  },
  "数显量具": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数智化出版": {
   "type": "product",
   "status": "candidate"
  },
@@ -28932,6 +28980,10 @@
   "status": "candidate"
  },
  "文体旅": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "文体旅融合": {
   "type": "product",
   "status": "candidate"
  },
@@ -34105,6 +34157,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "爽酒": {
+  "type": "product",
+  "status": "candidate"
+ },
  "版权交易": {
   "type": "product",
   "status": "candidate"
@@ -34430,6 +34486,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "猪价回暖": {
+  "type": "product",
+  "status": "candidate"
+ },
  "猪饲料": {
   "type": "product",
   "status": "candidate"
@@ -34463,6 +34523,10 @@
   "llm": "claude-sonnet-5"
  },
  "玩具AI": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "玩具制造": {
   "type": "product",
   "status": "candidate"
  },
@@ -38382,6 +38446,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "航材国产化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "航空军工": {
   "type": "product",
   "status": "candidate",
@@ -40223,6 +40291,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "速冻食品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "速冻鱼糜": {
   "type": "product",
   "status": "candidate"
@@ -40436,6 +40508,10 @@
   "status": "candidate"
  },
  "重点影片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "重点项目": {
   "type": "product",
   "status": "candidate"
  },
@@ -42740,6 +42816,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "饲料主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "首仿药": {
   "type": "product",
   "status": "candidate",
@@ -43464,6 +43544,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "黑猪育种": {
+  "type": "product",
+  "status": "candidate"
  },
  "黑色健康食品": {
   "type": "product",
@@ -46060,5 +46144,35 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "鸡肉概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
+ "味蕾经济": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
+ "短剧互动游戏": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
+ },
+ "Kimi概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
+ },
+ "快手概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
+ },
+ "退税商店": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-01·1源2日"
  }
 }
