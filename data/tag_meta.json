@@ -44012,6 +44012,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "Kimi概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
+ },
  "L3自动驾驶": {
   "type": "theme",
   "status": "candidate",
@@ -44877,6 +44882,11 @@
  "微短剧": {
   "type": "theme",
   "status": "retired"
+ },
+ "快手概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
  },
  "戴尔产业链": {
   "type": "theme",
@@ -45988,6 +45998,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "鸡肉概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
+ },
  "鸿蒙概念": {
   "type": "theme",
   "status": "retired"
@@ -46034,6 +46049,11 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
+ },
+ "味蕾经济": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-10·1源2日"
  },
  "微盘精选": {
   "type": "unknown",
@@ -46090,6 +46110,11 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "短剧互动游戏": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
+ },
  "社区团购": {
   "type": "unknown",
   "status": "candidate",
@@ -46125,6 +46150,11 @@
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
  },
+ "退税商店": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-01·1源2日"
+ },
  "金融地产风格": {
   "type": "unknown",
   "status": "candidate",
@@ -46144,35 +46174,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "鸡肉概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-10·1源2日"
- },
- "味蕾经济": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-10·1源2日"
- },
- "短剧互动游戏": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-31·1源2日"
- },
- "Kimi概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-31·1源2日"
- },
- "快手概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-31·1源2日"
- },
- "退税商店": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-09-01·1源2日"
  }
 }
