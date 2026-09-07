@@ -8442,6 +8442,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "客户Coherent": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "客户优势": {
   "type": "attribute",
   "status": "candidate",
@@ -8776,6 +8780,10 @@
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "育种体系": {
+  "type": "attribute",
+  "status": "candidate"
  },
  "自有品牌": {
   "type": "attribute",
@@ -11430,6 +11438,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "核电订单": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "正丙醇满产": {
   "type": "catalyst",
   "status": "candidate",
@@ -11793,6 +11805,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "股票回购": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "股票期权激励": {
   "type": "catalyst",
@@ -12357,6 +12373,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高端扩产": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "鱼粉涨价": {
   "type": "catalyst",
@@ -15092,6 +15112,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "拟收购新能动力": {
+  "type": "event",
+  "status": "candidate"
  },
  "拟收购旭域股份": {
   "type": "event",
@@ -19781,6 +19805,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "NPO模块": {
+  "type": "product",
+  "status": "candidate"
+ },
  "N公司": {
   "type": "product",
   "status": "candidate"
@@ -20937,6 +20965,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "中国出版集团": {
+  "type": "product",
+  "status": "candidate"
+ },
  "中国航油增资": {
   "type": "product",
   "status": "candidate"
@@ -21631,6 +21663,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "伽蓝特并表": {
+  "type": "product",
+  "status": "candidate"
+ },
  "低介电纤维布": {
   "type": "product",
   "status": "candidate",
@@ -21919,6 +21955,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "储能PACK": {
+  "type": "product",
+  "status": "candidate"
  },
  "储能PCS": {
   "type": "product",
@@ -23721,6 +23761,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "制造业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "刻蚀硅材": {
   "type": "product",
   "status": "candidate",
@@ -23754,6 +23798,10 @@
   "status": "candidate"
  },
  "功能性沙发": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "功能性涂布": {
   "type": "product",
   "status": "candidate"
  },
@@ -24256,6 +24304,10 @@
   "status": "candidate"
  },
  "半导体业务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "半导体仪表": {
   "type": "product",
   "status": "candidate"
  },
@@ -24771,6 +24823,10 @@
   "status": "candidate"
  },
  "参建数据中心": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "参设合资公司（光器件）": {
   "type": "product",
   "status": "candidate"
  },
@@ -26422,6 +26478,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "存储PCB": {
+  "type": "product",
+  "status": "candidate"
+ },
  "存储上游": {
   "type": "product",
   "status": "candidate",
@@ -26454,6 +26514,10 @@
   "status": "candidate"
  },
  "存储测试设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "存储算力": {
   "type": "product",
   "status": "candidate"
  },
@@ -28649,6 +28713,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数字出版": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数字化": {
   "type": "product",
   "status": "candidate"
@@ -29395,6 +29463,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源电机轴": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源电池": {
   "type": "product",
   "status": "candidate"
@@ -29421,6 +29493,10 @@
   "status": "candidate"
  },
  "新能源电池配件": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新能源电源": {
   "type": "product",
   "status": "candidate"
  },
@@ -30004,6 +30080,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "景区旅游": {
+  "type": "product",
+  "status": "candidate"
+ },
  "景区运营": {
   "type": "product",
   "status": "candidate",
@@ -30282,6 +30362,10 @@
   "status": "candidate"
  },
  "智能会议": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能传感器": {
   "type": "product",
   "status": "candidate"
  },
@@ -30987,6 +31071,10 @@
   "status": "candidate"
  },
  "杀菌剂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "权益融资": {
   "type": "product",
   "status": "candidate"
  },
@@ -32892,6 +32980,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外支架": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外收入": {
   "type": "product",
   "status": "candidate"
@@ -33384,6 +33476,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "清洁机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "清洁电器": {
   "type": "product",
   "status": "candidate",
@@ -33457,6 +33553,10 @@
   "status": "candidate"
  },
  "港机出海": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "港机装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -34161,6 +34261,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "片式电感": {
+  "type": "product",
+  "status": "candidate"
+ },
  "版权交易": {
   "type": "product",
   "status": "candidate"
@@ -34383,6 +34487,10 @@
   "status": "candidate"
  },
  "特种防护": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "特种饲料": {
   "type": "product",
   "status": "candidate"
  },
@@ -35316,6 +35424,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "电子级氧化铁": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电子级环氧树脂": {
   "type": "product",
   "status": "candidate"
@@ -35368,6 +35480,10 @@
   "status": "candidate"
  },
  "电子通信": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电子通讯": {
   "type": "product",
   "status": "candidate"
  },
@@ -36610,6 +36726,10 @@
   "status": "candidate"
  },
  "种业股": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "种子业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -38573,6 +38693,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "船舶海工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "船舶涂料": {
   "type": "product",
   "status": "candidate"
@@ -38870,6 +38994,10 @@
   "status": "candidate"
  },
  "萃取法工艺": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "萃取法钛白": {
   "type": "product",
   "status": "candidate"
  },
@@ -39858,6 +39986,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "车载过滤": {
+  "type": "product",
+  "status": "candidate"
+ },
  "车载高压电源": {
   "type": "product",
   "status": "candidate"
@@ -40064,6 +40196,10 @@
   "status": "candidate"
  },
  "过滤器": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "过滤部件": {
   "type": "product",
   "status": "candidate"
  },
@@ -41202,6 +41338,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "铜基新材": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铜基新材料": {
   "type": "product",
   "status": "candidate",
@@ -41237,6 +41377,10 @@
   "llm": "claude-sonnet-5"
  },
  "铜箔": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "铜箔装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -41802,6 +41946,10 @@
   "status": "candidate"
  },
  "锌铜冶炼": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "锌铜矿": {
   "type": "product",
   "status": "candidate"
  },
@@ -43033,6 +43181,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高端HDI": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端MIM粉末": {
   "type": "product",
   "status": "candidate"
@@ -43253,6 +43405,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高纯铜粉": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高血压疫苗": {
   "type": "product",
   "status": "candidate"
@@ -43355,6 +43511,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高阶PCB": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高阻隔PVDC乳液": {
   "type": "product",
   "status": "candidate"
@@ -43408,6 +43568,10 @@
   "status": "candidate"
  },
  "鳗鱼全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鳗鱼出口": {
   "type": "product",
   "status": "candidate"
  },
@@ -46174,5 +46338,15 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "商超零售": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-01·1源2日"
+ },
+ "肉制品": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-04·1源2日"
  }
 }
