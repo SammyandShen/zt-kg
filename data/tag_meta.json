@@ -8878,6 +8878,10 @@
   "type": "attribute",
   "status": "retired"
  },
+ "锚链龙头": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "长三角": {
   "type": "attribute",
   "status": "candidate",
@@ -10454,6 +10458,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "南网中标": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "南网解禁": {
   "type": "catalyst",
@@ -17853,6 +17861,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "6G布局": {
+  "type": "product",
+  "status": "candidate"
+ },
  "6G技术储备": {
   "type": "product",
   "status": "candidate"
@@ -21560,6 +21572,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "代糖饮料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "以太网交换芯片": {
   "type": "product",
   "status": "candidate"
@@ -21843,6 +21859,10 @@
   "status": "candidate"
  },
  "依诺肝素制剂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "便利店扩张": {
   "type": "product",
   "status": "candidate"
  },
@@ -23261,6 +23281,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "军用锚链": {
+  "type": "product",
+  "status": "candidate"
+ },
  "军贸": {
   "type": "product",
   "status": "candidate"
@@ -24523,6 +24547,10 @@
   "llm": "claude-sonnet-5"
  },
  "半导体结构件": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "半导体耗材": {
   "type": "product",
   "status": "candidate"
  },
@@ -27286,6 +27314,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "工业消防": {
+  "type": "product",
+  "status": "candidate"
+ },
  "工业清洗剂": {
   "type": "product",
   "status": "candidate",
@@ -27508,6 +27540,10 @@
   "llm": "claude-sonnet-5"
  },
  "干式变压器技": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "干散货": {
   "type": "product",
   "status": "candidate"
  },
@@ -27860,6 +27896,10 @@
   "llm": "claude-sonnet-5"
  },
  "引线框架": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "弗迪供汽": {
   "type": "product",
   "status": "candidate"
  },
@@ -31455,6 +31495,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "核能材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "核能核电": {
   "type": "product",
   "status": "candidate",
@@ -31510,6 +31554,10 @@
   "status": "candidate"
  },
  "棉花全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "棉花种业": {
   "type": "product",
   "status": "candidate"
  },
@@ -32693,6 +32741,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "油运高景气": {
+  "type": "product",
+  "status": "candidate"
+ },
  "泌尿制剂": {
   "type": "product",
   "status": "candidate"
@@ -32940,6 +32992,10 @@
   "status": "candidate"
  },
  "海上大兆瓦": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海上油气": {
   "type": "product",
   "status": "candidate"
  },
@@ -34068,11 +34124,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "焦炭主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "焦炭产销": {
   "type": "product",
   "status": "candidate"
  },
  "焦炭受托加工": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "焦炭增产": {
   "type": "product",
   "status": "candidate"
  },
@@ -35069,6 +35133,10 @@
   "status": "candidate"
  },
  "甘草制品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "甘草深加工": {
   "type": "product",
   "status": "candidate"
  },
@@ -41515,6 +41583,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "铜板合同": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铜板采购": {
   "type": "product",
   "status": "candidate"
@@ -43072,6 +43144,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "食用油储备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "食用油项目": {
   "type": "product",
   "status": "candidate"
@@ -43516,6 +43592,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高端铜合金": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端铜箔": {
   "type": "product",
   "status": "candidate"
@@ -43859,6 +43939,10 @@
   "llm": "claude-sonnet-5"
  },
  "黄金销售": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "黄金锑钨": {
   "type": "product",
   "status": "candidate"
  },
@@ -46530,5 +46614,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "航母概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-09-02·1源2日"
  }
 }
