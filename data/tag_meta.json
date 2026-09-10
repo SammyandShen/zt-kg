@@ -11622,6 +11622,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "生猪产能": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "生猪出栏大增": {
   "type": "catalyst",
   "status": "candidate",
@@ -11854,6 +11858,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "芯片扩产": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "苹果订单": {
   "type": "catalyst",
@@ -17892,6 +17900,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "800G光引擎": {
+  "type": "product",
+  "status": "candidate"
+ },
  "800G光模块PCB": {
   "type": "product",
   "status": "candidate",
@@ -23486,6 +23498,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "冷冻面": {
+  "type": "product",
+  "status": "candidate"
+ },
  "冷却塔": {
   "type": "product",
   "status": "candidate"
@@ -25809,6 +25825,10 @@
   "llm": "claude-sonnet-5"
  },
  "城市运营": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "城镇燃气": {
   "type": "product",
   "status": "candidate"
  },
@@ -28594,6 +28614,10 @@
   "status": "candidate"
  },
  "挂牌降价": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "挂面主业": {
   "type": "product",
   "status": "candidate"
  },
@@ -32665,6 +32689,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "油气船舶": {
+  "type": "product",
+  "status": "candidate"
+ },
  "油气设备": {
   "type": "product",
   "status": "candidate"
@@ -33149,6 +33177,10 @@
   "status": "candidate"
  },
  "海外注册": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海外游戏": {
   "type": "product",
   "status": "candidate"
  },
@@ -33687,6 +33719,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "港口机械": {
+  "type": "product",
+  "status": "candidate"
+ },
  "港口物流": {
   "type": "product",
   "status": "candidate"
@@ -33717,6 +33753,10 @@
   "status": "candidate"
  },
  "游戏新品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "游船票务": {
   "type": "product",
   "status": "candidate"
  },
@@ -34382,6 +34422,10 @@
   "status": "candidate"
  },
  "燃气板块拉升": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "燃气热水器": {
   "type": "product",
   "status": "candidate"
  },
@@ -35986,6 +36030,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电能表芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电芯片": {
   "type": "product",
   "status": "candidate"
@@ -36434,6 +36482,10 @@
   "status": "candidate"
  },
  "石英砂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "石英纤维": {
   "type": "product",
   "status": "candidate"
  },
@@ -40725,6 +40777,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "配电自动化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "酒店": {
   "type": "product",
   "status": "candidate",
@@ -41804,6 +41860,10 @@
   "status": "candidate"
  },
  "铝电解专用起重设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "铝电解电容器": {
   "type": "product",
   "status": "candidate"
  },
@@ -46619,5 +46679,25 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "长期破净": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
+ },
+ "中特估": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
+ },
+ "证金持股": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
+ },
+ "券商概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-26·1源2日"
  }
 }
