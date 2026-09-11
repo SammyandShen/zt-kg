@@ -8367,6 +8367,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "央企传媒": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "央企储能": {
   "type": "attribute",
   "status": "candidate",
@@ -8579,6 +8583,10 @@
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "果蔬供应链": {
+  "type": "attribute",
+  "status": "candidate"
  },
  "椒江国资": {
   "type": "attribute",
@@ -9876,6 +9884,10 @@
   "status": "retired"
  },
  "产品矩阵拓展": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "产能出清": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -12651,6 +12663,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "Kimi合作": {
+  "type": "event",
+  "status": "candidate"
+ },
  "LED涨价": {
   "type": "event",
   "status": "retired"
@@ -12742,6 +12758,10 @@
  "SOI布局": {
   "type": "event",
   "status": "retired"
+ },
+ "ST风险澄清": {
+  "type": "event",
+  "status": "candidate"
  },
  "SpaceX传闻": {
   "type": "event",
@@ -14960,6 +14980,10 @@
  "拟收购先导微电子": {
   "type": "event",
   "status": "retired"
+ },
+ "拟收购光泰通信": {
+  "type": "event",
+  "status": "candidate"
  },
  "拟收购光隆集成": {
   "type": "event",
@@ -17929,6 +17953,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "A0车型": {
+  "type": "product",
+  "status": "candidate"
+ },
  "ABF载板": {
   "type": "product",
   "status": "candidate",
@@ -19973,6 +20001,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "PCB主营": {
+  "type": "product",
+  "status": "candidate"
+ },
  "PCB光学": {
   "type": "product",
   "status": "candidate"
@@ -20328,6 +20360,10 @@
   "status": "candidate"
  },
  "RFID": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "RFID物联网": {
   "type": "product",
   "status": "candidate"
  },
@@ -20708,6 +20744,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "一站式文旅": {
+  "type": "product",
+  "status": "candidate"
  },
  "丁腈整合": {
   "type": "product",
@@ -21292,6 +21332,10 @@
   "llm": "claude-sonnet-5"
  },
  "二氯二氢硅反倾销": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "二氯硅反倾销": {
   "type": "product",
   "status": "candidate"
  },
@@ -24906,6 +24950,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "厨房小家电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "厨电": {
   "type": "product",
   "status": "candidate"
@@ -25579,6 +25627,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "固液电池": {
+  "type": "product",
+  "status": "candidate"
+ },
  "国产化芯片": {
   "type": "product",
   "status": "candidate"
@@ -25782,6 +25834,10 @@
   "status": "candidate"
  },
  "垂直供电": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "垂直大模型": {
   "type": "product",
   "status": "candidate"
  },
@@ -26116,6 +26172,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "复工复产": {
+  "type": "product",
+  "status": "candidate"
+ },
  "复杂制剂": {
   "type": "product",
   "status": "candidate",
@@ -26433,6 +26493,10 @@
   "status": "candidate"
  },
  "天青石项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "太空厨房设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -28238,6 +28302,10 @@
   "status": "candidate"
  },
  "成套设备出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "成本压降": {
   "type": "product",
   "status": "candidate"
  },
@@ -32119,6 +32187,10 @@
   "status": "candidate"
  },
  "水务建设": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "水务机器人": {
   "type": "product",
   "status": "candidate"
  },
@@ -40561,6 +40633,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "适老产品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "适老化补贴": {
   "type": "product",
   "status": "candidate"
@@ -42485,6 +42561,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "防务产品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "防弹防护": {
   "type": "product",
   "status": "candidate"
@@ -43309,6 +43389,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "马来西亚项目": {
+  "type": "product",
+  "status": "candidate"
+ },
  "马钢有限协同": {
   "type": "product",
   "status": "candidate"
@@ -43750,6 +43834,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高速数据线": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高速树脂": {
   "type": "product",
   "status": "candidate",
@@ -43856,6 +43944,10 @@
   "status": "candidate"
  },
  "高频高速电路": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高频高速覆铜板": {
   "type": "product",
   "status": "candidate"
  },
