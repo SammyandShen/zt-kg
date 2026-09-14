@@ -8765,6 +8765,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "科创次新": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "算力国家队": {
   "type": "attribute",
   "status": "candidate"
@@ -8820,6 +8824,10 @@
   "status": "retired"
  },
  "英伟达电感": {
+  "type": "attribute",
+  "status": "candidate"
+ },
+ "苹果供应链": {
   "type": "attribute",
   "status": "candidate"
  },
@@ -12650,6 +12658,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "H股上市筹划": {
+  "type": "event",
+  "status": "candidate"
+ },
  "IDC转型": {
   "type": "event",
   "status": "retired"
@@ -14229,6 +14241,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "完成收购": {
+  "type": "event",
+  "status": "candidate"
  },
  "定增29.37亿": {
   "type": "event",
@@ -19750,6 +19766,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "MFC": {
+  "type": "product",
+  "status": "candidate"
+ },
  "MIM": {
   "type": "product",
   "status": "candidate"
@@ -20488,6 +20508,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "TFT石英粉": {
+  "type": "product",
+  "status": "candidate"
+ },
  "TGV产品": {
   "type": "product",
   "status": "retired"
@@ -20744,6 +20768,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "一汽配套": {
+  "type": "product",
+  "status": "candidate"
  },
  "一站式文旅": {
   "type": "product",
@@ -22808,6 +22836,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光通信上游": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光通信元器件": {
   "type": "product",
   "status": "candidate"
@@ -22856,6 +22888,10 @@
   "status": "candidate"
  },
  "免税商业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "免税申请": {
   "type": "product",
   "status": "candidate"
  },
@@ -24291,6 +24327,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医疗": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医疗信息化": {
   "type": "product",
   "status": "candidate",
@@ -24524,6 +24564,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "半导体新材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体显示器件": {
   "type": "product",
   "status": "candidate",
@@ -24638,6 +24682,10 @@
   "llm": "claude-sonnet-5"
  },
  "半导体资产注入猜测": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "半导体钽材": {
   "type": "product",
   "status": "candidate"
  },
@@ -25175,6 +25223,10 @@
   "status": "candidate"
  },
  "合成润滑油": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "合成生物学": {
   "type": "product",
   "status": "candidate"
  },
@@ -25826,6 +25878,10 @@
   "status": "candidate"
  },
  "场地电动车": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "场景改造": {
   "type": "product",
   "status": "candidate"
  },
@@ -26633,6 +26689,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "媒体内容安全监测": {
+  "type": "product",
+  "status": "candidate"
+ },
  "子公司股权": {
   "type": "product",
   "status": "candidate"
@@ -26996,6 +27056,10 @@
   "status": "candidate"
  },
  "家庭医生": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "家庭机器人": {
   "type": "product",
   "status": "candidate"
  },
@@ -27828,6 +27892,10 @@
   "status": "candidate"
  },
  "废盐项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "座椅舒适系统": {
   "type": "product",
   "status": "candidate"
  },
@@ -28873,6 +28941,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "教育事业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "教育出版": {
   "type": "product",
   "status": "candidate"
@@ -29228,6 +29300,10 @@
   "status": "candidate"
  },
  "整家一体化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "整车业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -31485,6 +31561,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "核心景区": {
+  "type": "product",
+  "status": "candidate"
+ },
  "核氢光储": {
   "type": "product",
   "status": "candidate"
@@ -33292,6 +33372,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外配电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外需求": {
   "type": "product",
   "status": "candidate"
@@ -33474,6 +33558,10 @@
   "status": "candidate"
  },
  "液冷业务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "液冷产品": {
   "type": "product",
   "status": "candidate"
  },
@@ -34039,6 +34127,10 @@
   "status": "candidate"
  },
  "炊具小家电": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "点胶机器人": {
   "type": "product",
   "status": "candidate"
  },
@@ -35188,6 +35280,10 @@
   "llm": "claude-sonnet-5"
  },
  "珠海地产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "珠海晶瓷": {
   "type": "product",
   "status": "candidate"
  },
@@ -38278,6 +38374,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "网络靶场": {
+  "type": "product",
+  "status": "candidate"
+ },
  "网通设备": {
   "type": "product",
   "status": "candidate"
@@ -38753,6 +38853,10 @@
   "status": "candidate"
  },
  "自主品牌": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "自主研发": {
   "type": "product",
   "status": "candidate"
  },
@@ -39872,6 +39976,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "赛德盛并购": {
+  "type": "product",
+  "status": "candidate"
+ },
  "赞比亚光伏": {
   "type": "product",
   "status": "candidate"
@@ -40630,6 +40738,10 @@
   "status": "candidate"
  },
  "送样": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "送样推进": {
   "type": "product",
   "status": "candidate"
  },
@@ -41502,6 +41614,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "钼精矿": {
+  "type": "product",
+  "status": "candidate"
+ },
  "钼资源": {
   "type": "product",
   "status": "candidate"
@@ -41564,6 +41680,10 @@
   "status": "candidate"
  },
  "铁矿石": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "铁矿采选": {
   "type": "product",
   "status": "candidate"
  },
@@ -43764,6 +43884,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高精密PCB": {
+  "type": "product",
+  "status": "candidate"
  },
  "高纯PFA": {
   "type": "product",
@@ -46041,6 +46165,10 @@
   "type": "theme",
   "status": "candidate"
  },
+ "电子产业链": {
+  "type": "theme",
+  "status": "candidate"
+ },
  "电磁制动器": {
   "type": "theme",
   "status": "candidate"
@@ -46791,5 +46919,15 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "VPN": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-11·1源2日"
+ },
+ "电子纸概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-18·1源2日"
  }
 }
