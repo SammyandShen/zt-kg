@@ -11552,6 +11552,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "海工订单": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "海洋订单": {
   "type": "catalyst",
   "status": "candidate",
@@ -17837,6 +17841,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "4D毫米波雷达": {
+  "type": "product",
+  "status": "candidate"
+ },
  "5.0新零售": {
   "type": "product",
   "status": "candidate"
@@ -23118,6 +23126,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "兰亭": {
+  "type": "product",
+  "status": "candidate"
+ },
  "兰地洛尔": {
   "type": "product",
   "status": "candidate"
@@ -24421,6 +24433,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "医药原料药": {
+  "type": "product",
+  "status": "candidate"
  },
  "医药商业": {
   "type": "product",
@@ -26368,6 +26384,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "大兆瓦装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "大冰箱ODM": {
   "type": "product",
   "status": "candidate"
@@ -26690,6 +26710,10 @@
   "llm": "claude-sonnet-5"
  },
  "媒体内容安全监测": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "子公司完成增资": {
   "type": "product",
   "status": "candidate"
  },
@@ -30213,6 +30237,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "日用陶瓷出口": {
+  "type": "product",
+  "status": "candidate"
+ },
  "日用餐厨具": {
   "type": "product",
   "status": "candidate"
@@ -30268,6 +30296,10 @@
   "status": "candidate"
  },
  "明星代言": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "易开盖": {
   "type": "product",
   "status": "candidate"
  },
@@ -32107,6 +32139,10 @@
   "llm": "claude-sonnet-5"
  },
  "氧化铝": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "氧化锆": {
   "type": "product",
   "status": "candidate"
  },
@@ -34858,6 +34894,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "特种运输": {
+  "type": "product",
+  "status": "candidate"
+ },
  "特种钢丝绳": {
   "type": "product",
   "status": "candidate"
@@ -35398,6 +35438,10 @@
   "status": "candidate"
  },
  "生活服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "生活用纸": {
   "type": "product",
   "status": "candidate"
  },
@@ -36186,6 +36230,10 @@
   "status": "candidate"
  },
  "电网MRO": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电网侧储能": {
   "type": "product",
   "status": "candidate"
  },
@@ -39662,6 +39710,14 @@
   "llm": "claude-sonnet-5"
  },
  "覆铜板材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "视听大数据": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "视听安全": {
   "type": "product",
   "status": "candidate"
  },
@@ -43851,6 +43907,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高端部件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端配电": {
   "type": "product",
   "status": "candidate",
@@ -46929,5 +46989,15 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "中芯概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-17·1源2日"
+ },
+ "科技风格": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-27·1源2日"
  }
 }
