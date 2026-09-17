@@ -8263,6 +8263,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "吉利供应链": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "国产气源": {
   "type": "attribute",
   "status": "candidate"
@@ -8805,6 +8809,10 @@
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "航运龙头": {
+  "type": "attribute",
+  "status": "candidate"
  },
  "芯片供货宇树": {
   "type": "attribute",
@@ -19719,6 +19727,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "MAH业务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "MASH": {
   "type": "product",
   "status": "candidate"
@@ -19811,6 +19823,10 @@
   "status": "candidate"
  },
  "MLCC镍粉": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "MLCC验证": {
   "type": "product",
   "status": "candidate"
  },
@@ -20618,6 +20634,10 @@
   "status": "candidate"
  },
  "UTG量产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "V2G": {
   "type": "product",
   "status": "candidate"
  },
@@ -23150,6 +23170,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "具身机器人送样": {
+  "type": "product",
+  "status": "candidate"
+ },
  "养殖业": {
   "type": "product",
   "status": "candidate",
@@ -24928,6 +24952,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "卷烟纸": {
+  "type": "product",
+  "status": "candidate"
+ },
  "压力容器": {
   "type": "product",
   "status": "candidate",
@@ -25309,6 +25337,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "呼吸用药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "咖啡": {
   "type": "product",
   "status": "candidate"
@@ -25361,6 +25393,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "哪吒重整关联": {
+  "type": "product",
+  "status": "candidate"
+ },
  "唐探1900": {
   "type": "product",
   "status": "candidate"
@@ -25379,6 +25415,10 @@
   "status": "candidate"
  },
  "商业化推进": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "商业化育种": {
   "type": "product",
   "status": "candidate"
  },
@@ -26297,6 +26337,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "多元化布局": {
+  "type": "product",
+  "status": "candidate"
+ },
  "多元醇": {
   "type": "product",
   "status": "candidate"
@@ -26849,6 +26893,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "宁德时代定点": {
+  "type": "product",
+  "status": "candidate"
+ },
  "宁德时代换电": {
   "type": "product",
   "status": "candidate"
@@ -27011,6 +27059,10 @@
   "status": "candidate"
  },
  "客车出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "客车销量": {
   "type": "product",
   "status": "candidate"
  },
@@ -27390,6 +27442,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "岩土固化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "岩土固化剂": {
   "type": "product",
   "status": "candidate"
@@ -27719,6 +27775,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "干散货运输": {
+  "type": "product",
+  "status": "candidate"
+ },
  "干法电极设备": {
   "type": "product",
   "status": "candidate"
@@ -27784,6 +27844,10 @@
   "status": "candidate"
  },
  "并购易冲": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "并购莱恩光电": {
   "type": "product",
   "status": "candidate"
  },
@@ -28705,6 +28769,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "拟参投硅臻芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
  "拟发H股": {
   "type": "product",
   "status": "candidate"
@@ -29392,6 +29460,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "文化消费": {
+  "type": "product",
+  "status": "candidate"
+ },
  "文旅": {
   "type": "product",
   "status": "candidate"
@@ -29870,6 +29942,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源营销": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源装备": {
   "type": "product",
   "status": "candidate"
@@ -30050,6 +30126,10 @@
   "status": "candidate"
  },
  "旅游演艺": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "旅游经营": {
   "type": "product",
   "status": "candidate"
  },
@@ -30939,6 +31019,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能配电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能配电设备": {
   "type": "product",
   "status": "candidate",
@@ -31038,6 +31122,10 @@
   "status": "candidate"
  },
  "有线电视": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "有色交易": {
   "type": "product",
   "status": "candidate"
  },
@@ -31592,6 +31680,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "核心品种": {
+  "type": "product",
+  "status": "candidate"
  },
  "核心景区": {
   "type": "product",
@@ -32701,6 +32793,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "汽车贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车轮毂轴承": {
   "type": "product",
   "status": "candidate",
@@ -32954,6 +33050,10 @@
   "status": "candidate"
  },
  "油运周期": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "油运景气": {
   "type": "product",
   "status": "candidate"
  },
@@ -33457,6 +33557,10 @@
   "status": "candidate"
  },
  "海普存储量产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海洋公园": {
   "type": "product",
   "status": "candidate"
  },
@@ -34207,6 +34311,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "烟标印刷": {
+  "type": "product",
+  "status": "candidate"
+ },
  "烟标酒标": {
   "type": "product",
   "status": "candidate",
@@ -34475,6 +34583,10 @@
   "status": "candidate"
  },
  "煤焦一体化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "煤焦价格": {
   "type": "product",
   "status": "candidate"
  },
@@ -35647,6 +35759,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电力服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电力板块": {
   "type": "product",
   "status": "candidate"
@@ -36419,6 +36535,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "皮肤科学": {
+  "type": "product",
+  "status": "candidate"
+ },
  "皮质激素": {
   "type": "product",
   "status": "candidate"
@@ -36467,6 +36587,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "盐及盐化工": {
+  "type": "product",
+  "status": "candidate"
  },
  "盐穴储气": {
   "type": "product",
@@ -36846,6 +36970,10 @@
   "status": "candidate"
  },
  "硅片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "硅砂矿": {
   "type": "product",
   "status": "candidate"
  },
@@ -38286,6 +38414,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "绿色印染": {
+  "type": "product",
+  "status": "candidate"
+ },
  "绿色厂务": {
   "type": "product",
   "status": "candidate"
@@ -38879,6 +39011,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "膜分离": {
+  "type": "product",
+  "status": "candidate"
+ },
  "膜分离技术": {
   "type": "product",
   "status": "candidate"
@@ -38909,6 +39045,10 @@
   "status": "candidate"
  },
  "自免赛道": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "自动化装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -39505,6 +39645,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "营养健康": {
+  "type": "product",
+  "status": "candidate"
+ },
  "营销传播": {
   "type": "product",
   "status": "candidate"
@@ -39916,6 +40060,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "购置液冷": {
+  "type": "product",
+  "status": "candidate"
+ },
  "贴牌加工": {
   "type": "product",
   "status": "candidate"
@@ -39977,6 +40125,10 @@
   "status": "candidate"
  },
  "资源储量": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "资源再生": {
   "type": "product",
   "status": "candidate"
  },
@@ -43549,6 +43701,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "香精配料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "马来西亚基地": {
   "type": "product",
   "status": "candidate"
@@ -43676,6 +43832,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高压高速连接器": {
+  "type": "product",
+  "status": "candidate"
  },
  "高吸水性树脂": {
   "type": "product",
@@ -44160,6 +44320,10 @@
   "status": "candidate"
  },
  "鳗鱼出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鸭业全产业链": {
   "type": "product",
   "status": "candidate"
  },
@@ -46999,5 +47163,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "百日新高": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-27·1源2日"
  }
 }
