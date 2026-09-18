@@ -8810,6 +8810,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "航天背景": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "航运龙头": {
   "type": "attribute",
   "status": "candidate"
@@ -10949,6 +10953,10 @@
   "llm": "claude-sonnet-5"
  },
  "定增扩船": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "定增提交注册": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -15067,6 +15075,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "拟收购华羿微电": {
+  "type": "event",
+  "status": "candidate"
+ },
  "拟收购南通星辰": {
   "type": "event",
   "status": "retired"
@@ -16511,6 +16523,10 @@
   "type": "event",
   "status": "retired"
  },
+ "激光通信投资": {
+  "type": "event",
+  "status": "candidate"
+ },
  "火山引擎合作": {
   "type": "event",
   "status": "candidate",
@@ -16873,6 +16889,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "终止收购酷尔芯": {
+  "type": "event",
+  "status": "candidate"
  },
  "终止筹划收购": {
   "type": "event",
@@ -20257,6 +20277,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "PKI安全": {
+  "type": "product",
+  "status": "candidate"
+ },
  "PLC芯片": {
   "type": "product",
   "status": "candidate"
@@ -21525,6 +21549,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "产业协同": {
+  "type": "product",
+  "status": "candidate"
+ },
  "产业园": {
   "type": "product",
   "status": "candidate"
@@ -22686,6 +22714,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光模块测试": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光模块胶": {
   "type": "product",
   "status": "candidate"
@@ -23057,6 +23089,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "全球客户": {
+  "type": "product",
+  "status": "candidate"
+ },
  "全球布局": {
   "type": "product",
   "status": "candidate"
@@ -23241,6 +23277,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "再生资源": {
+  "type": "product",
+  "status": "candidate"
  },
  "再生铅": {
   "type": "product",
@@ -24471,6 +24511,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "医药数字化": {
+  "type": "product",
+  "status": "candidate"
  },
  "医药电商": {
   "type": "product",
@@ -26074,6 +26118,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "基建项目": {
+  "type": "product",
+  "status": "candidate"
+ },
  "基板玻璃": {
   "type": "product",
   "status": "candidate"
@@ -26663,6 +26711,10 @@
   "status": "candidate"
  },
  "头部客户": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "奎芯科技": {
   "type": "product",
   "status": "candidate"
  },
@@ -29028,6 +29080,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "教科书发行": {
+  "type": "product",
+  "status": "candidate"
+ },
  "教练机": {
   "type": "product",
   "status": "candidate",
@@ -29081,6 +29137,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数字内容": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数字出版": {
   "type": "product",
   "status": "candidate"
@@ -29105,6 +29165,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数字化教育": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数字化智造": {
   "type": "product",
   "status": "candidate"
@@ -29122,6 +29186,10 @@
   "status": "candidate"
  },
  "数字安全": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数字家装": {
   "type": "product",
   "status": "candidate"
  },
@@ -30126,6 +30194,10 @@
   "status": "candidate"
  },
  "旅游演艺": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "旅游索道": {
   "type": "product",
   "status": "candidate"
  },
@@ -31914,6 +31986,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "模块化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "模块化建筑": {
   "type": "product",
   "status": "candidate"
@@ -32045,6 +32121,10 @@
   "status": "candidate"
  },
  "毛发医疗": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "毛毯出口": {
   "type": "product",
   "status": "candidate"
  },
@@ -33909,6 +33989,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "深铁支持": {
+  "type": "product",
+  "status": "candidate"
+ },
  "混凝土外加剂": {
   "type": "product",
   "status": "candidate",
@@ -34640,6 +34724,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "照明业务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "照明工程": {
   "type": "product",
   "status": "candidate"
@@ -35244,7 +35332,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "环卫机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "环卫管理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "环卫自动驾驶": {
   "type": "product",
   "status": "candidate"
  },
@@ -35939,6 +36035,10 @@
   "status": "candidate"
  },
  "电子测试测量仪器": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电子测量": {
   "type": "product",
   "status": "candidate"
  },
@@ -36639,6 +36739,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "相转移催化剂": {
+  "type": "product",
+  "status": "candidate"
+ },
  "盾构刀具": {
   "type": "product",
   "status": "candidate"
@@ -37163,6 +37267,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "磷化铟材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "磷复肥": {
   "type": "product",
   "status": "candidate"
@@ -37521,6 +37629,10 @@
   "status": "candidate"
  },
  "竹基新材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "竹基禾塑": {
   "type": "product",
   "status": "candidate"
  },
@@ -41001,6 +41113,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "通信测试": {
+  "type": "product",
+  "status": "candidate"
+ },
  "通信电源": {
   "type": "product",
   "status": "candidate"
@@ -41612,6 +41728,10 @@
   "status": "candidate"
  },
  "钙钛矿太空": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "钙钛矿玻璃": {
   "type": "product",
   "status": "candidate"
  },
@@ -43146,6 +43266,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "零售主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "零售回暖": {
   "type": "product",
   "status": "candidate"
@@ -43235,6 +43359,10 @@
   "status": "candidate"
  },
  "非晶纳米晶": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "非标压力容器": {
   "type": "product",
   "status": "candidate"
  },
@@ -44213,6 +44341,10 @@
   "status": "candidate"
  },
  "高速通信芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高速铜线": {
   "type": "product",
   "status": "candidate"
  },
@@ -47168,5 +47300,15 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "EDA概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-17·1源2日"
+ },
+ "氦气概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-21·1源2日"
  }
 }
