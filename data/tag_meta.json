@@ -47079,6 +47079,11 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "百日新高": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-27·1源2日"
+ },
  "短剧互动游戏": {
   "type": "unknown",
   "status": "candidate",
@@ -47163,10 +47168,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "百日新高": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-27·1源2日"
  }
 }
