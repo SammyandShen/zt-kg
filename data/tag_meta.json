@@ -45017,6 +45017,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "EDA概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-17·1源2日"
+ },
  "EDR概念": {
   "type": "theme",
   "status": "candidate"
@@ -46290,6 +46295,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "氦气概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-21·1源2日"
+ },
  "氧化锆替代": {
   "type": "theme",
   "status": "candidate"
@@ -47300,15 +47310,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "EDA概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-17·1源2日"
- },
- "氦气概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-08-21·1源2日"
  }
 }
