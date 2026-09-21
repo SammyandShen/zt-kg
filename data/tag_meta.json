@@ -8312,6 +8312,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "地板人造板龙头": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "基金重仓": {
   "type": "attribute",
   "status": "candidate",
@@ -9942,6 +9946,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "产能扩充": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "产能爬坡": {
   "type": "catalyst",
@@ -16523,6 +16531,10 @@
   "type": "event",
   "status": "retired"
  },
+ "澄清液冷": {
+  "type": "event",
+  "status": "candidate"
+ },
  "激光通信投资": {
   "type": "event",
   "status": "candidate"
@@ -18564,6 +18576,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI照明": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI物流": {
   "type": "product",
   "status": "candidate"
@@ -19279,6 +19295,10 @@
   "status": "candidate"
  },
  "FISH产品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "FISH诊断": {
   "type": "product",
   "status": "candidate"
  },
@@ -21388,6 +21408,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "乳酸": {
+  "type": "product",
+  "status": "candidate"
+ },
  "二低一小战略": {
   "type": "product",
   "status": "candidate"
@@ -21599,6 +21623,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "产品获证": {
+  "type": "product",
+  "status": "candidate"
+ },
  "产线升级": {
   "type": "product",
   "status": "candidate"
@@ -21654,6 +21682,10 @@
   "status": "candidate"
  },
  "人工智能基金": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "人工智能游戏": {
   "type": "product",
   "status": "candidate"
  },
@@ -21980,6 +22012,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "供港活猪": {
+  "type": "product",
+  "status": "candidate"
+ },
  "供热": {
   "type": "product",
   "status": "candidate",
@@ -22098,6 +22134,10 @@
   "llm": "claude-sonnet-5"
  },
  "信托业务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "修仙时代": {
   "type": "product",
   "status": "candidate"
  },
@@ -22664,6 +22704,10 @@
   "status": "candidate"
  },
  "光学膜": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光学膜片": {
   "type": "product",
   "status": "candidate"
  },
@@ -23949,6 +23993,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "创新药研发": {
+  "type": "product",
+  "status": "candidate"
+ },
  "利基DRAM": {
   "type": "product",
   "status": "candidate",
@@ -24342,6 +24390,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "区域品牌": {
+  "type": "product",
+  "status": "candidate"
+ },
  "区域深耕": {
   "type": "product",
   "status": "candidate"
@@ -24383,6 +24435,10 @@
   "status": "candidate"
  },
  "医养": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "医学检测": {
   "type": "product",
   "status": "candidate"
  },
@@ -25271,6 +25327,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "可降解材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "可降解纤维": {
   "type": "product",
   "status": "candidate"
@@ -26122,6 +26182,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "基本药物": {
+  "type": "product",
+  "status": "candidate"
+ },
  "基板玻璃": {
   "type": "product",
   "status": "candidate"
@@ -26225,6 +26289,10 @@
   "status": "candidate"
  },
  "境外营收高": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "境外金融服务": {
   "type": "product",
   "status": "candidate"
  },
@@ -26341,7 +26409,15 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "外用剂型": {
+  "type": "product",
+  "status": "candidate"
+ },
  "外用药": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "外贸出口": {
   "type": "product",
   "status": "candidate"
  },
@@ -26461,6 +26537,10 @@
   "status": "candidate"
  },
  "大健康": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "大健康品牌": {
   "type": "product",
   "status": "candidate"
  },
@@ -26994,6 +27074,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "安全传感器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "安全合规": {
   "type": "product",
   "status": "candidate"
@@ -27058,6 +27142,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "定制显示器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "实控人涉及黄金开采": {
   "type": "product",
   "status": "candidate"
@@ -27067,6 +27155,10 @@
   "status": "candidate"
  },
  "实验室管理系统": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "实验室耗材": {
   "type": "product",
   "status": "candidate"
  },
@@ -27603,6 +27695,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "工业照明": {
+  "type": "product",
+  "status": "candidate"
+ },
  "工业物联网": {
   "type": "product",
   "status": "candidate",
@@ -27988,6 +28084,10 @@
   "status": "candidate"
  },
  "广电设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "应急救援": {
   "type": "product",
   "status": "candidate"
  },
@@ -28762,6 +28862,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "抗生素": {
+  "type": "product",
+  "status": "candidate"
+ },
  "抗病毒药物": {
   "type": "product",
   "status": "candidate",
@@ -29057,6 +29161,10 @@
   "status": "candidate"
  },
  "政务招采": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "政务数字化": {
   "type": "product",
   "status": "candidate"
  },
@@ -29737,6 +29845,10 @@
   "status": "candidate"
  },
  "新疆聚焦": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新疆项目": {
   "type": "product",
   "status": "candidate"
  },
@@ -30938,6 +31050,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能按摩椅": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能控制": {
   "type": "product",
   "status": "candidate"
@@ -30988,6 +31104,10 @@
   "status": "candidate"
  },
  "智能电控": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能电梯": {
   "type": "product",
   "status": "candidate"
  },
@@ -32318,6 +32438,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "氧化锆新材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "氧化锆材料": {
   "type": "product",
   "status": "candidate",
@@ -32796,6 +32920,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "汽车注塑": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车物流": {
   "type": "product",
   "status": "candidate",
@@ -32813,6 +32941,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "汽车电子板": {
+  "type": "product",
+  "status": "candidate"
  },
  "汽车电机": {
   "type": "product",
@@ -32988,6 +33120,10 @@
   "status": "candidate"
  },
  "油服业务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "油服产品": {
   "type": "product",
   "status": "candidate"
  },
@@ -33185,6 +33321,10 @@
   "status": "candidate"
  },
  "注册地迁闽": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "注塑业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -33669,6 +33809,10 @@
   "status": "candidate"
  },
  "海洋馆": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海绵锆": {
   "type": "product",
   "status": "candidate"
  },
@@ -35477,6 +35621,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "玻纤主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "玻纤制品": {
   "type": "product",
   "status": "candidate",
@@ -35758,6 +35906,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "生物过滤": {
+  "type": "product",
+  "status": "candidate"
+ },
  "生物降解塑料": {
   "type": "product",
   "status": "candidate",
@@ -36020,6 +36172,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "电子收费": {
+  "type": "product",
+  "status": "candidate"
  },
  "电子材料": {
   "type": "product",
@@ -36651,6 +36807,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "皮鞋皮具": {
+  "type": "product",
+  "status": "candidate"
+ },
  "盆底康复": {
   "type": "product",
   "status": "candidate"
@@ -36994,6 +37154,10 @@
   "status": "candidate"
  },
  "研发投入": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "研发推进": {
   "type": "product",
   "status": "candidate"
  },
@@ -38280,6 +38444,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "线上渠道": {
+  "type": "product",
+  "status": "candidate"
+ },
  "线上渠道拓展": {
   "type": "product",
   "status": "candidate"
@@ -39112,6 +39280,10 @@
   "status": "candidate"
  },
  "腱绳": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "腹膜透析": {
   "type": "product",
   "status": "candidate"
  },
@@ -40379,6 +40551,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "超短焦投影": {
+  "type": "product",
+  "status": "candidate"
+ },
  "超硬刀具": {
   "type": "product",
   "status": "candidate"
@@ -41025,6 +41201,10 @@
   "status": "candidate"
  },
  "连锁医疗网络": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "连锁服务": {
   "type": "product",
   "status": "candidate"
  },
@@ -42052,6 +42232,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "铂族金属加工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "铂族金属回收": {
   "type": "product",
   "status": "candidate"
@@ -42857,6 +43041,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "锡锑铟": {
+  "type": "product",
+  "status": "candidate"
+ },
  "锡锑锌铟": {
   "type": "product",
   "status": "candidate"
@@ -43288,6 +43476,10 @@
   "llm": "claude-sonnet-5"
  },
  "零售消费": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "零售电商": {
   "type": "product",
   "status": "candidate"
  },
@@ -44012,6 +44204,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高效电机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高标准农田": {
   "type": "product",
   "status": "candidate"
@@ -44134,6 +44330,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高端新品": {
+  "type": "product",
+  "status": "candidate"
  },
  "高端木作": {
   "type": "product",
@@ -44419,6 +44619,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高频高速PCB": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高频高速电路": {
   "type": "product",
   "status": "candidate"
@@ -44440,6 +44644,10 @@
   "status": "candidate"
  },
  "鱼油": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鱼油原料": {
   "type": "product",
   "status": "candidate"
  },
@@ -47310,5 +47518,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "超市零售": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-01·1源2日"
  }
 }
