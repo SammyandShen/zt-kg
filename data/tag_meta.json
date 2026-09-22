@@ -47484,6 +47484,11 @@
   "status": "candidate",
   "radar": "2026-08-19·1源2日"
  },
+ "超市零售": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-01·1源2日"
+ },
  "近期新高": {
   "type": "unknown",
   "status": "candidate",
@@ -47518,10 +47523,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "超市零售": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-09-01·1源2日"
  }
 }
