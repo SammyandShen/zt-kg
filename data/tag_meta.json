@@ -13418,6 +13418,10 @@
   "type": "event",
   "status": "retired"
  },
+ "功率半导体投资": {
+  "type": "event",
+  "status": "candidate"
+ },
  "加拿大油气暂缓": {
   "type": "event",
   "status": "retired"
@@ -15217,6 +15221,10 @@
   "type": "event",
   "status": "candidate"
  },
+ "拟收购旋智电子100%股权": {
+  "type": "event",
+  "status": "candidate"
+ },
  "拟收购旭域股份": {
   "type": "event",
   "status": "retired",
@@ -15252,6 +15260,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "拟收购民族出版社": {
+  "type": "event",
+  "status": "candidate"
  },
  "拟收购沧州隆泰迪53%股权": {
   "type": "event",
@@ -16588,6 +16600,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "玛莎拉蒂合作传闻": {
+  "type": "event",
+  "status": "candidate"
  },
  "环保新业务": {
   "type": "event",
@@ -18358,6 +18374,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI应用出海": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI建筑": {
   "type": "product",
   "status": "candidate"
@@ -18503,6 +18523,10 @@
   "status": "candidate"
  },
  "AI智能运维": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI智能通信": {
   "type": "product",
   "status": "candidate"
  },
@@ -19886,6 +19910,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "MRO工业品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "MRO工业品平台": {
   "type": "product",
   "status": "candidate"
@@ -20808,6 +20836,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "“华”字辈": {
+  "type": "product",
+  "status": "candidate"
+ },
  "“柴发": {
   "type": "product",
   "status": "candidate"
@@ -20817,6 +20849,10 @@
   "status": "candidate"
  },
  "“算力": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "“羊”字辈": {
   "type": "product",
   "status": "candidate"
  },
@@ -22149,6 +22185,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "健康机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "健康消费": {
   "type": "product",
   "status": "candidate"
@@ -23049,6 +23089,10 @@
   "status": "candidate"
  },
  "全国扩张": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "全域营销": {
   "type": "product",
   "status": "candidate"
  },
@@ -24580,6 +24624,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医药研发服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医药研发试剂": {
   "type": "product",
   "status": "candidate",
@@ -25307,6 +25355,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "可信大模型": {
+  "type": "product",
+  "status": "candidate"
+ },
  "可剥铜": {
   "type": "product",
   "status": "candidate"
@@ -25403,6 +25455,10 @@
   "status": "candidate"
  },
  "含乳饮料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "含氟废液资源化": {
   "type": "product",
   "status": "candidate"
  },
@@ -27226,6 +27282,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "家具智能装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "家具智造": {
   "type": "product",
   "status": "candidate"
@@ -27376,6 +27436,10 @@
   "status": "candidate"
  },
  "导光板": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "导热凝胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -28299,6 +28363,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "弹性地板": {
+  "type": "product",
+  "status": "candidate"
+ },
  "弹簧扁钢": {
   "type": "product",
   "status": "candidate",
@@ -28966,6 +29034,10 @@
   "status": "candidate"
  },
  "拟投GPU": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "拟收欧康诺": {
   "type": "product",
   "status": "candidate"
  },
@@ -31232,6 +31304,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能马桶": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能驾培": {
   "type": "product",
   "status": "candidate"
@@ -31686,6 +31762,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "杭州日报": {
+  "type": "product",
+  "status": "candidate"
  },
  "杭州百大置业": {
   "type": "product",
@@ -37205,6 +37285,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "硅基OLED": {
+  "type": "product",
+  "status": "candidate"
+ },
  "硅基功能性新材料": {
   "type": "product",
   "status": "candidate"
@@ -37701,6 +37785,10 @@
   "llm": "claude-sonnet-5"
  },
  "稀贵金属": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "稀贵金属回收": {
   "type": "product",
   "status": "candidate"
  },
@@ -40042,6 +40130,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "行业数据智能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "补流": {
   "type": "product",
   "status": "candidate"
@@ -40066,6 +40158,10 @@
   "llm": "claude-sonnet-5"
  },
  "装备零部件": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "装机增长": {
   "type": "product",
   "status": "candidate"
  },
@@ -40740,6 +40836,10 @@
   "status": "candidate"
  },
  "跨境贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "跨境通信": {
   "type": "product",
   "status": "candidate"
  },
@@ -44671,7 +44771,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "鸿蒙办公": {
+  "type": "product",
+  "status": "candidate"
+ },
  "鸿蒙技术": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鸿蒙智选": {
   "type": "product",
   "status": "candidate"
  },
