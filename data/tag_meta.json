@@ -9951,6 +9951,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "产能扩建": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "产能爬坡": {
   "type": "catalyst",
   "status": "candidate",
@@ -11698,6 +11702,10 @@
   "status": "candidate"
  },
  "电梯新规": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
+ "电梯订单": {
   "type": "catalyst",
   "status": "candidate"
  },
@@ -15300,6 +15308,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "拟收购界面财联社": {
+  "type": "event",
+  "status": "candidate"
+ },
  "拟收购盟萤科技": {
   "type": "event",
   "status": "candidate",
@@ -16660,6 +16672,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "电驱合作": {
+  "type": "event",
+  "status": "candidate"
  },
  "疯狂动物城IP": {
   "type": "event",
@@ -20207,6 +20223,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "PCB配套": {
+  "type": "product",
+  "status": "candidate"
+ },
  "PCB钻针": {
   "type": "product",
   "status": "candidate"
@@ -20730,6 +20750,10 @@
   "status": "candidate"
  },
  "VLCC油轮": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "VNA矢量网络分析仪": {
   "type": "product",
   "status": "candidate"
  },
@@ -21440,6 +21464,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "乳果糖原料药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "乳胶纸": {
   "type": "product",
   "status": "candidate"
@@ -21449,6 +21477,10 @@
   "status": "candidate"
  },
  "二低一小战略": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "二手房复苏": {
   "type": "product",
   "status": "candidate"
  },
@@ -22794,6 +22826,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光模块基座": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光模块并购": {
   "type": "product",
   "status": "candidate"
@@ -23190,6 +23226,10 @@
   "status": "candidate"
  },
  "全球渠道": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "全球第二": {
   "type": "product",
   "status": "candidate"
  },
@@ -27202,11 +27242,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "宝马经销": {
+  "type": "product",
+  "status": "candidate"
+ },
  "实控人涉及黄金开采": {
   "type": "product",
   "status": "candidate"
  },
  "实控人认购": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "实验仪器": {
   "type": "product",
   "status": "candidate"
  },
@@ -28794,6 +28842,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "房屋租赁": {
+  "type": "product",
+  "status": "candidate"
+ },
  "扁电磁线": {
   "type": "product",
   "status": "candidate"
@@ -28840,6 +28892,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "批量精装修": {
+  "type": "product",
+  "status": "candidate"
  },
  "技改临近": {
   "type": "product",
@@ -29237,6 +29293,10 @@
   "status": "candidate"
  },
  "政务数字化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "政务智能体": {
   "type": "product",
   "status": "candidate"
  },
@@ -30051,6 +30111,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源汽车电子": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源汽车电机": {
   "type": "product",
   "status": "candidate"
@@ -30088,6 +30152,10 @@
   "status": "candidate"
  },
  "新能源环卫": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新能源用胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -30611,6 +30679,10 @@
   "status": "candidate"
  },
  "时空大数据": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "时间频率": {
   "type": "product",
   "status": "candidate"
  },
@@ -31657,6 +31729,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "机器人缝制": {
+  "type": "product",
+  "status": "candidate"
  },
  "机器人腱绳": {
   "type": "product",
@@ -33723,6 +33799,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外客户": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外工厂": {
   "type": "product",
   "status": "candidate"
@@ -34748,6 +34828,10 @@
   "status": "candidate"
  },
  "焊接切割": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "焊接机器人": {
   "type": "product",
   "status": "candidate"
  },
@@ -36278,6 +36362,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电子测量仪器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电子烟": {
   "type": "product",
   "status": "candidate",
@@ -37031,6 +37119,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "矢量网络分析仪": {
+  "type": "product",
+  "status": "candidate"
+ },
  "知识产权": {
   "type": "product",
   "status": "candidate"
@@ -37174,6 +37266,10 @@
   "status": "candidate"
  },
  "矿业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "矿业整合": {
   "type": "product",
   "status": "candidate"
  },
@@ -38909,6 +39005,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "网络分析仪": {
+  "type": "product",
+  "status": "candidate"
+ },
  "网络可视化": {
   "type": "product",
   "status": "candidate"
@@ -39363,6 +39463,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "脱敏治疗": {
+  "type": "product",
+  "status": "candidate"
+ },
  "脱硫技术": {
   "type": "product",
   "status": "candidate"
@@ -39396,6 +39500,10 @@
   "status": "candidate"
  },
  "膜技术": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "膳食纤维": {
   "type": "product",
   "status": "candidate"
  },
@@ -41232,6 +41340,10 @@
   "status": "candidate"
  },
  "迁建项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "过敏诊断": {
   "type": "product",
   "status": "candidate"
  },
@@ -44444,6 +44556,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高端模组": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端水电": {
   "type": "product",
   "status": "candidate"
@@ -44458,6 +44574,10 @@
   "llm": "claude-sonnet-5"
  },
  "高端液压": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高端电子铜箔": {
   "type": "product",
   "status": "candidate"
  },
