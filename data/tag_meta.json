@@ -20632,6 +20632,10 @@
   "type": "product",
   "status": "retired"
  },
+ "TGV光学": {
+  "type": "product",
+  "status": "candidate"
+ },
  "TGV封装": {
   "type": "product",
   "status": "candidate",
@@ -20885,6 +20889,10 @@
   "status": "candidate"
  },
  "“马字辈”": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "《三星堆：未来往事》": {
   "type": "product",
   "status": "candidate"
  },
@@ -21167,6 +21175,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "个人医保云": {
+  "type": "product",
+  "status": "candidate"
+ },
  "个护用品": {
   "type": "product",
   "status": "candidate"
@@ -21374,6 +21386,10 @@
   "status": "candidate"
  },
  "中高档时装": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "中高端增长": {
   "type": "product",
   "status": "candidate"
  },
@@ -23241,6 +23257,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "全球销售": {
+  "type": "product",
+  "status": "candidate"
+ },
  "全球领先": {
   "type": "product",
   "status": "candidate"
@@ -23727,6 +23747,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "农药医药中间体": {
+  "type": "product",
+  "status": "candidate"
  },
  "农药原药": {
   "type": "product",
@@ -24495,6 +24519,10 @@
   "status": "candidate"
  },
  "医保全覆盖": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "医保支付改革": {
   "type": "product",
   "status": "candidate"
  },
@@ -25573,6 +25601,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "品牌运营": {
+  "type": "product",
+  "status": "candidate"
+ },
  "品质零售": {
   "type": "product",
   "status": "candidate"
@@ -26007,6 +26039,10 @@
   "status": "candidate"
  },
  "国际化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "国际化布局": {
   "type": "product",
   "status": "candidate"
  },
@@ -27203,6 +27239,10 @@
   "status": "candidate"
  },
  "安徽项目": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "安赛蜜": {
   "type": "product",
   "status": "candidate"
  },
@@ -28553,6 +28593,10 @@
   "status": "candidate"
  },
  "微型驱动": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "微棱镜": {
   "type": "product",
   "status": "candidate"
  },
@@ -31019,6 +31063,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智慧运维": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智慧零售": {
   "type": "product",
   "status": "candidate",
@@ -32613,6 +32661,10 @@
   "status": "candidate"
  },
  "氨基酸": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "氨基酸制剂": {
   "type": "product",
   "status": "candidate"
  },
@@ -34567,6 +34619,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "激光装备": {
+  "type": "product",
+  "status": "candidate"
  },
  "激光设备": {
   "type": "product",
@@ -44144,6 +44200,14 @@
   "type": "product",
   "status": "candidate"
  },
+ "食品饲料添加剂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "食欲素": {
+  "type": "product",
+  "status": "candidate"
+ },
  "食用油储备": {
   "type": "product",
   "status": "candidate"
@@ -44222,6 +44286,10 @@
   "llm": "claude-sonnet-5"
  },
  "首季盈利": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "首部AI电影上映": {
   "type": "product",
   "status": "candidate"
  },
