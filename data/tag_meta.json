@@ -9865,6 +9865,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "中间体涨价": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "临床试验批准": {
   "type": "catalyst",
   "status": "candidate",
@@ -10678,6 +10682,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "回购提议": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "回购方案": {
   "type": "catalyst",
@@ -20717,6 +20725,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "TOPCon组件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "TPES弹性体": {
   "type": "product",
   "status": "candidate"
@@ -22534,6 +22546,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "光伏一体化": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光伏储能": {
   "type": "product",
   "status": "candidate"
@@ -23179,10 +23195,18 @@
   "type": "product",
   "status": "candidate"
  },
+ "全人源单抗": {
+  "type": "product",
+  "status": "candidate"
+ },
  "全光核心交换机": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "全国化": {
+  "type": "product",
+  "status": "candidate"
  },
  "全国化布局": {
   "type": "product",
@@ -24692,6 +24716,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医药CDMO": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医药主业": {
   "type": "product",
   "status": "candidate"
@@ -25554,6 +25582,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "合胞病毒预防": {
+  "type": "product",
+  "status": "candidate"
+ },
  "合金钢带": {
   "type": "product",
   "status": "candidate"
@@ -25780,6 +25812,10 @@
  "商业零售": {
   "type": "product",
   "status": "retired"
+ },
+ "商办物业": {
+  "type": "product",
+  "status": "candidate"
  },
  "商办运营": {
   "type": "product",
@@ -26872,6 +26908,10 @@
   "status": "candidate"
  },
  "天津基地": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "天然橡胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -28814,6 +28854,10 @@
   "status": "candidate"
  },
  "成人用品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "成人疫苗": {
   "type": "product",
   "status": "candidate"
  },
@@ -32545,6 +32589,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "民爆重组": {
+  "type": "product",
+  "status": "candidate"
+ },
  "民用水泵": {
   "type": "product",
   "status": "candidate",
@@ -33263,6 +33311,10 @@
   "status": "candidate"
  },
  "汽车维修保养设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "汽车网络安全": {
   "type": "product",
   "status": "candidate"
  },
@@ -35731,6 +35783,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "环保增塑剂": {
+  "type": "product",
+  "status": "candidate"
+ },
  "环保技改": {
   "type": "product",
   "status": "candidate"
@@ -36297,6 +36353,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "电力人工智能": {
+  "type": "product",
+  "status": "candidate"
  },
  "电力信息化": {
   "type": "product",
@@ -37031,6 +37091,10 @@
   "status": "candidate"
  },
  "疼痛管理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "病毒载体服务": {
   "type": "product",
   "status": "candidate"
  },
@@ -37804,6 +37868,10 @@
   "status": "candidate"
  },
  "社保民生": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "社区养老": {
   "type": "product",
   "status": "candidate"
  },
@@ -38854,6 +38922,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "细胞存储": {
+  "type": "product",
+  "status": "candidate"
+ },
  "细胞治疗": {
   "type": "product",
   "status": "candidate"
@@ -39076,6 +39148,10 @@
   "status": "candidate"
  },
  "绿色炭黑": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "绿色燃料": {
   "type": "product",
   "status": "candidate"
  },
@@ -39402,6 +39478,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "股份划转完成": {
+  "type": "product",
+  "status": "candidate"
+ },
  "股份拍卖": {
   "type": "product",
   "status": "candidate"
@@ -39544,6 +39624,10 @@
   "status": "candidate"
  },
  "能源托管": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "能源数字化": {
   "type": "product",
   "status": "candidate"
  },
@@ -40376,6 +40460,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "血凝酶": {
+  "type": "product",
+  "status": "candidate"
+ },
  "血液制品": {
   "type": "product",
   "status": "candidate",
@@ -40468,6 +40556,10 @@
   "status": "candidate"
  },
  "西藏券商": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "西藏民爆": {
   "type": "product",
   "status": "candidate"
  },
@@ -41876,6 +41968,10 @@
   "llm": "claude-sonnet-5"
  },
  "酱油新品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "酶制剂": {
   "type": "product",
   "status": "candidate"
  },
@@ -43766,6 +43862,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "集中供热": {
+  "type": "product",
+  "status": "candidate"
+ },
  "集成厨电": {
   "type": "product",
   "status": "candidate"
@@ -43859,6 +43959,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "零售调改": {
+  "type": "product",
+  "status": "candidate"
  },
  "零售超市": {
   "type": "product",
@@ -44036,6 +44140,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "项目量产": {
+  "type": "product",
+  "status": "candidate"
+ },
  "顺酐投产": {
   "type": "product",
   "status": "candidate"
@@ -44138,6 +44246,10 @@
   "status": "candidate"
  },
  "风电EPC": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "风电主机": {
   "type": "product",
   "status": "candidate"
  },
@@ -45254,6 +45366,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "龙头客户": {
+  "type": "product",
+  "status": "candidate"
  },
  "光伏概念": {
   "type": "sector",
