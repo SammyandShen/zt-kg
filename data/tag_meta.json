@@ -10795,6 +10795,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "埃及产能": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "基建中标": {
   "type": "catalyst",
   "status": "candidate",
@@ -17160,6 +17164,10 @@
   "type": "event",
   "status": "retired"
  },
+ "航空航天投资": {
+  "type": "event",
+  "status": "candidate"
+ },
  "航空航天相关投资": {
   "type": "event",
   "status": "retired"
@@ -19585,6 +19593,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "H股配售": {
+  "type": "product",
+  "status": "candidate"
+ },
  "H酸": {
   "type": "product",
   "status": "candidate",
@@ -19724,6 +19736,10 @@
   "status": "candidate"
  },
  "L3准入": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "LCD光刻胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -20936,6 +20952,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "“超级细菌”": {
+  "type": "product",
+  "status": "candidate"
+ },
  "“马”字辈": {
   "type": "product",
   "status": "candidate"
@@ -21050,6 +21070,10 @@
   "status": "candidate"
  },
  "上海": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "上海LNG增资": {
   "type": "product",
   "status": "candidate"
  },
@@ -21470,6 +21494,10 @@
   "status": "candidate"
  },
  "临空型园区": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "主业调整": {
   "type": "product",
   "status": "candidate"
  },
@@ -22068,6 +22096,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "低温光伏浆料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "低温肉制品": {
   "type": "product",
   "status": "candidate"
@@ -22581,6 +22613,10 @@
   "status": "candidate"
  },
  "光伏屋顶": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光伏幕墙": {
   "type": "product",
   "status": "candidate"
  },
@@ -24195,6 +24231,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "制冷压缩机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "制冷系统解决方案": {
   "type": "product",
   "status": "candidate"
@@ -24213,6 +24253,10 @@
   "status": "candidate"
  },
  "制剂拓展": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "制动踏板": {
   "type": "product",
   "status": "candidate"
  },
@@ -24977,6 +25021,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "半导体环保": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体电镀液": {
   "type": "product",
   "status": "candidate"
@@ -25463,6 +25511,10 @@
   "status": "candidate"
  },
  "取向硅钢": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "受托加工": {
   "type": "product",
   "status": "candidate"
  },
@@ -26191,6 +26243,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "圆柱锂电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "圆柱锂电池": {
   "type": "product",
   "status": "candidate"
@@ -26578,6 +26634,10 @@
   "status": "candidate"
  },
  "复产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "复合储能": {
   "type": "product",
   "status": "candidate"
  },
@@ -29408,6 +29468,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "摩洛哥基地": {
+  "type": "product",
+  "status": "candidate"
+ },
  "撤销风险警示": {
   "type": "product",
   "status": "candidate"
@@ -30156,6 +30220,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源EPC": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源”": {
   "type": "product",
   "status": "candidate"
@@ -30345,6 +30413,10 @@
   "llm": "claude-sonnet-5"
  },
  "新能源电池材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新能源电池模组": {
   "type": "product",
   "status": "candidate"
  },
@@ -33207,6 +33279,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车控制系统": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车整椅": {
   "type": "product",
   "status": "candidate",
@@ -34040,6 +34116,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外电梯": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外短剧": {
   "type": "product",
   "status": "candidate"
@@ -34262,6 +34342,10 @@
   "llm": "claude-sonnet-5"
  },
  "涤纶长丝": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "涤纶面料": {
   "type": "product",
   "status": "candidate"
  },
@@ -35710,6 +35794,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "独立储能电站": {
+  "type": "product",
+  "status": "candidate"
+ },
  "独角兽基地": {
   "type": "product",
   "status": "candidate"
@@ -36333,6 +36421,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "甲醇价格": {
+  "type": "product",
+  "status": "candidate"
+ },
  "甲醇提价": {
   "type": "product",
   "status": "candidate"
@@ -36353,6 +36445,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "电力主业": {
+  "type": "product",
+  "status": "candidate"
  },
  "电力人工智能": {
   "type": "product",
@@ -36818,6 +36914,10 @@
   "status": "candidate"
  },
  "电池壳材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电池客户": {
   "type": "product",
   "status": "candidate"
  },
@@ -38764,6 +38864,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "纳米分散体": {
+  "type": "product",
+  "status": "candidate"
  },
  "纳米材料": {
   "type": "product",
@@ -41221,6 +41325,10 @@
   "status": "candidate"
  },
  "路桥施工": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "蹦床": {
   "type": "product",
   "status": "candidate"
  },
@@ -43918,6 +44026,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "集采": {
+  "type": "product",
+  "status": "candidate"
+ },
  "集采药品": {
   "type": "product",
   "status": "candidate"
@@ -44666,6 +44778,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高强瓦楞纸": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高性能光学材料": {
   "type": "product",
   "status": "candidate"
@@ -44693,6 +44809,10 @@
   "status": "candidate"
  },
  "高性能颜料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高效变频": {
   "type": "product",
   "status": "candidate"
  },
@@ -45024,6 +45144,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高速电梯": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高速电连接器": {
   "type": "product",
   "status": "candidate"
@@ -45342,6 +45466,10 @@
   "status": "candidate"
  },
  "默沙东代理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鼠疫": {
   "type": "product",
   "status": "candidate"
  },
