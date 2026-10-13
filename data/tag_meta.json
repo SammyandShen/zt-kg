@@ -8901,6 +8901,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "道达尔供应商": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "遮阳龙头": {
   "type": "attribute",
   "status": "retired"
@@ -9882,6 +9886,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "乙腈涨价": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "二期投产": {
   "type": "catalyst",
@@ -13253,6 +13261,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "伽蓝特收购": {
+  "type": "event",
+  "status": "candidate"
+ },
  "信披违规处罚落地": {
   "type": "event",
   "status": "retired"
@@ -16355,6 +16367,10 @@
   "llm": "claude-sonnet-5"
  },
  "比亚迪合作": {
+  "type": "event",
+  "status": "candidate"
+ },
+ "毕棚沟收购": {
   "type": "event",
   "status": "candidate"
  },
@@ -21201,6 +21217,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "专业视听": {
+  "type": "product",
+  "status": "candidate"
+ },
  "专业音视频": {
   "type": "product",
   "status": "candidate",
@@ -21726,6 +21746,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "云网算力": {
+  "type": "product",
+  "status": "candidate"
+ },
  "云网融合基础设施": {
   "type": "product",
   "status": "candidate"
@@ -21922,6 +21946,14 @@
   "status": "candidate"
  },
  "人工智能安全": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "人工智能应用": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "人工智能教育": {
   "type": "product",
   "status": "candidate"
  },
@@ -23513,6 +23545,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "公路市政": {
+  "type": "product",
+  "status": "candidate"
+ },
  "公路施工": {
   "type": "product",
   "status": "candidate"
@@ -23979,6 +24015,18 @@
   "type": "product",
   "status": "candidate"
  },
+ "冰雪工程": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "冰雪旅游保障": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "冰雪消费": {
+  "type": "product",
+  "status": "candidate"
+ },
  "冰雪装备": {
   "type": "product",
   "status": "candidate"
@@ -24315,6 +24363,10 @@
   "llm": "claude-sonnet-5"
  },
  "到期赎回": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "制冰系统": {
   "type": "product",
   "status": "candidate"
  },
@@ -25340,6 +25392,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "印制板": {
+  "type": "product",
+  "status": "candidate"
+ },
  "印刷版材": {
   "type": "product",
   "status": "candidate"
@@ -25861,6 +25917,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "哈尔滨景区": {
+  "type": "product",
+  "status": "candidate"
+ },
  "哈药集团": {
   "type": "product",
   "status": "candidate"
@@ -26032,6 +26092,10 @@
   "status": "candidate"
  },
  "商贸物流": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "啤白融合": {
   "type": "product",
   "status": "candidate"
  },
@@ -26772,6 +26836,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "复合铜箔基膜": {
+  "type": "product",
+  "status": "candidate"
+ },
  "复合铜箔量产": {
   "type": "product",
   "status": "candidate"
@@ -26818,6 +26886,10 @@
   "status": "candidate"
  },
  "外贸增长": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "外贸配套": {
   "type": "product",
   "status": "candidate"
  },
@@ -27799,6 +27871,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "寒区施工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "寒潮": {
   "type": "product",
   "status": "candidate"
@@ -27989,6 +28065,10 @@
   "llm": "claude-sonnet-5"
  },
  "尾气后处理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "尾气回收": {
   "type": "product",
   "status": "candidate"
  },
@@ -28993,6 +29073,10 @@
   "status": "candidate"
  },
  "恐龙化石": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "恐龙文旅": {
   "type": "product",
   "status": "candidate"
  },
@@ -30465,6 +30549,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源汽车减速器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源汽车检测": {
   "type": "product",
   "status": "candidate"
@@ -30614,6 +30702,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源管桩": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源紧固件": {
   "type": "product",
   "status": "candidate"
@@ -30731,6 +30823,10 @@
   "status": "candidate"
  },
  "新能源铝箔": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新能源锂电池": {
   "type": "product",
   "status": "candidate"
  },
@@ -31193,6 +31289,10 @@
   "status": "candidate"
  },
  "景区旅游": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "景区经营": {
   "type": "product",
   "status": "candidate"
  },
@@ -33130,6 +33230,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "水利技术": {
+  "type": "product",
+  "status": "candidate"
+ },
  "水利水务": {
   "type": "product",
   "status": "candidate"
@@ -33674,6 +33778,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "河图平台": {
+  "type": "product",
+  "status": "candidate"
+ },
  "油井加热电缆": {
   "type": "product",
   "status": "candidate"
@@ -34207,6 +34315,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外制冷": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外制剂": {
   "type": "product",
   "status": "candidate"
@@ -34373,6 +34485,10 @@
   "status": "candidate"
  },
  "海工": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海工桩": {
   "type": "product",
   "status": "candidate"
  },
@@ -34864,6 +34980,10 @@
   "status": "candidate"
  },
  "温控设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "温泉度假": {
   "type": "product",
   "status": "candidate"
  },
@@ -36709,6 +36829,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电力造价": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电动两轮车": {
   "type": "product",
   "status": "candidate",
@@ -36857,6 +36981,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "电子气体": {
+  "type": "product",
+  "status": "candidate"
  },
  "电子水泵": {
   "type": "product",
@@ -37019,6 +37147,10 @@
   "status": "candidate"
  },
  "电影发行": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电影屏": {
   "type": "product",
   "status": "candidate"
  },
@@ -37440,6 +37572,10 @@
   "status": "candidate"
  },
  "白羽肉鸡": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "白酒主业": {
   "type": "product",
   "status": "candidate"
  },
@@ -37894,6 +38030,10 @@
   "status": "candidate"
  },
  "硅产品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "硅光产品": {
   "type": "product",
   "status": "candidate"
  },
@@ -38429,6 +38569,10 @@
   "status": "candidate"
  },
  "空冷": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "空冷设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -39117,6 +39261,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "纸张化学品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "纸纹防伪": {
   "type": "product",
   "status": "candidate"
@@ -39185,6 +39333,10 @@
   "status": "candidate"
  },
  "线上电商": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "线上营销": {
   "type": "product",
   "status": "candidate"
  },
@@ -40618,6 +40770,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "药品出海": {
+  "type": "product",
+  "status": "candidate"
+ },
  "药品生产许可证": {
   "type": "product",
   "status": "candidate"
@@ -40773,6 +40929,10 @@
   "llm": "claude-sonnet-5"
  },
  "藕芯结构": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "虚拟拍摄": {
   "type": "product",
   "status": "candidate"
  },
@@ -42443,6 +42603,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "重点工程": {
+  "type": "product",
+  "status": "candidate"
+ },
  "重点影片": {
   "type": "product",
   "status": "candidate"
@@ -43968,6 +44132,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "长江1000A": {
+  "type": "product",
+  "status": "candidate"
+ },
  "长江产业控股": {
   "type": "product",
   "status": "candidate"
@@ -44756,6 +44924,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "飞翼式空冷": {
+  "type": "product",
+  "status": "candidate"
+ },
  "食品": {
   "type": "product",
   "status": "candidate"
@@ -45403,6 +45575,10 @@
   "status": "candidate"
  },
  "高速公路": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高速公路运营": {
   "type": "product",
   "status": "candidate"
  },
@@ -48456,5 +48632,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "航天航空": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-02·1源2日"
  }
 }
