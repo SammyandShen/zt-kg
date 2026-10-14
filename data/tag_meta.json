@@ -8280,6 +8280,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "国企控股": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "国企背景": {
   "type": "attribute",
   "status": "retired",
@@ -8650,6 +8654,10 @@
   "type": "attribute",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "海外供应商": {
+  "type": "attribute",
+  "status": "candidate"
  },
  "海外品牌总代": {
   "type": "attribute",
@@ -16374,6 +16382,10 @@
   "type": "event",
   "status": "candidate"
  },
+ "民族出版收购": {
+  "type": "event",
+  "status": "candidate"
+ },
  "民爆注入": {
   "type": "event",
   "status": "retired",
@@ -18745,6 +18757,10 @@
   "status": "candidate"
  },
  "AI生态管家": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI用研": {
   "type": "product",
   "status": "candidate"
  },
@@ -24111,6 +24127,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "冷链配送": {
+  "type": "product",
+  "status": "candidate"
+ },
  "冻干食品": {
   "type": "product",
   "status": "candidate",
@@ -25303,6 +25323,10 @@
   "status": "candidate"
  },
  "南孚电池": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "南极磷虾": {
   "type": "product",
   "status": "candidate"
  },
@@ -26662,6 +26686,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "基金备案": {
+  "type": "product",
+  "status": "candidate"
+ },
  "基金布局": {
   "type": "product",
   "status": "candidate"
@@ -26889,6 +26917,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "外贸转包": {
+  "type": "product",
+  "status": "candidate"
+ },
  "外贸配套": {
   "type": "product",
   "status": "candidate"
@@ -27016,6 +27048,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "大健康硬件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "大健康食品": {
   "type": "product",
   "status": "candidate"
@@ -27033,6 +27069,10 @@
   "status": "candidate"
  },
  "大化工一体化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "大型H型钢": {
   "type": "product",
   "status": "candidate"
  },
@@ -27271,6 +27311,10 @@
   "status": "candidate"
  },
  "头部客户": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "夹克男装": {
   "type": "product",
   "status": "candidate"
  },
@@ -28807,6 +28851,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "异辛酸项目": {
+  "type": "product",
+  "status": "candidate"
+ },
  "引线框架": {
   "type": "product",
   "status": "candidate"
@@ -29459,6 +29507,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "抬头显示": {
+  "type": "product",
+  "status": "candidate"
  },
  "抽水蓄能": {
   "type": "product",
@@ -32010,6 +32062,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "服务机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "服装": {
   "type": "product",
   "status": "candidate",
@@ -32664,6 +32720,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "梦三国IP": {
+  "type": "product",
+  "status": "candidate"
+ },
  "检测业务": {
   "type": "product",
   "status": "candidate"
@@ -32922,6 +32982,10 @@
   "status": "candidate"
  },
  "民爆用品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "民爆装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -35535,6 +35599,10 @@
   "status": "candidate"
  },
  "煤炭/焦炭": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "煤炭主业": {
   "type": "product",
   "status": "candidate"
  },
@@ -38572,6 +38640,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "空冷器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "空冷设备": {
   "type": "product",
   "status": "candidate"
@@ -38706,6 +38778,10 @@
   "status": "candidate"
  },
  "第四代半导体": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "筒子纱": {
   "type": "product",
   "status": "candidate"
  },
@@ -38953,6 +39029,10 @@
   "status": "candidate"
  },
  "精准诊断": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "精品IP": {
   "type": "product",
   "status": "candidate"
  },
@@ -40269,6 +40349,10 @@
   "status": "candidate"
  },
  "自持电站": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "自有IP": {
   "type": "product",
   "status": "candidate"
  },
@@ -42792,6 +42876,10 @@
   "status": "candidate"
  },
  "金属镓": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "金枪鱼": {
   "type": "product",
   "status": "candidate"
  },
