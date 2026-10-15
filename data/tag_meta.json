@@ -9988,6 +9988,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "产能翻番": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "人民币升值": {
   "type": "catalyst",
   "status": "candidate",
@@ -21651,6 +21655,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "乳制品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "乳品": {
   "type": "product",
   "status": "candidate",
@@ -24988,6 +24996,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医药研发": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医药研发服务": {
   "type": "product",
   "status": "candidate"
@@ -25176,6 +25188,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "半导体湿法设备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体激光芯片": {
   "type": "product",
   "status": "candidate"
@@ -25229,6 +25245,10 @@
   "llm": "claude-sonnet-5"
  },
  "半导体认证": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "半导体设备服务": {
   "type": "product",
   "status": "candidate"
  },
@@ -26366,6 +26386,10 @@
   "status": "candidate"
  },
  "国缘V3": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "国网入围": {
   "type": "product",
   "status": "candidate"
  },
@@ -30272,6 +30296,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "文教用品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "文旅": {
   "type": "product",
   "status": "candidate"
@@ -31731,6 +31759,10 @@
   "status": "candidate"
  },
  "智能床垫": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能报关": {
   "type": "product",
   "status": "candidate"
  },
@@ -34307,6 +34339,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海南仓储": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海南低空": {
   "type": "product",
   "status": "candidate"
@@ -35424,6 +35460,10 @@
   "llm": "claude-sonnet-5"
  },
  "热水服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "热水采暖": {
   "type": "product",
   "status": "candidate"
  },
@@ -39024,6 +39064,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "粽子食品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "精准医疗": {
   "type": "product",
   "status": "candidate"
@@ -39862,6 +39906,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "老窖池": {
+  "type": "product",
+  "status": "candidate"
+ },
  "老酒战略": {
   "type": "product",
   "status": "candidate"
@@ -40099,6 +40147,10 @@
   "status": "candidate"
  },
  "股票发行受理": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "股票期权": {
   "type": "product",
   "status": "candidate"
  },
@@ -41110,6 +41162,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "装饰面料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "裘皮服饰": {
   "type": "product",
   "status": "candidate"
@@ -41278,6 +41334,10 @@
   "status": "candidate"
  },
  "诊断服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "读者品牌": {
   "type": "product",
   "status": "candidate"
  },
@@ -42290,6 +42350,10 @@
   "status": "candidate"
  },
  "连锁零售": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "连锁餐饮": {
   "type": "product",
   "status": "candidate"
  },
@@ -45598,6 +45662,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高纯工艺系统": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高纯晶硅": {
   "type": "product",
   "status": "candidate",
@@ -46014,6 +46082,10 @@
   "status": "candidate"
  },
  "鼠疫": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鼠疫适应症": {
   "type": "product",
   "status": "candidate"
  },
