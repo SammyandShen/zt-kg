@@ -8580,6 +8580,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "数字供应链": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "新凯来": {
   "type": "attribute",
   "status": "candidate",
@@ -13936,6 +13940,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "台湾资产出售": {
+  "type": "event",
+  "status": "candidate"
+ },
  "合作开发": {
   "type": "event",
   "status": "retired",
@@ -19043,6 +19051,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AMT系统": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AM市场": {
   "type": "product",
   "status": "candidate"
@@ -20603,6 +20615,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "PVDC新材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "PVDF布局": {
   "type": "product",
   "status": "candidate"
@@ -21152,6 +21168,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "三部门联合调查": {
+  "type": "product",
+  "status": "candidate"
  },
  "上交所通报": {
   "type": "product",
@@ -22241,6 +22261,10 @@
   "status": "candidate"
  },
  "低碳脂肪胺": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "低空规划": {
   "type": "product",
   "status": "candidate"
  },
@@ -23738,6 +23762,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "军工复材": {
+  "type": "product",
+  "status": "candidate"
+ },
  "军工存储": {
   "type": "product",
   "status": "candidate"
@@ -23832,6 +23860,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "军工通风": {
+  "type": "product",
+  "status": "candidate"
+ },
  "军工配套": {
   "type": "product",
   "status": "candidate"
@@ -23850,6 +23882,14 @@
   "status": "candidate"
  },
  "军工防护": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "军民协同": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "军用无人机": {
   "type": "product",
   "status": "candidate"
  },
@@ -25392,6 +25432,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "卫星应用": {
+  "type": "product",
+  "status": "candidate"
+ },
  "卫星数据": {
   "type": "product",
   "status": "candidate"
@@ -25404,6 +25448,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "卫星星座": {
+  "type": "product",
+  "status": "candidate"
  },
  "卫星核心网": {
   "type": "product",
@@ -25683,6 +25731,10 @@
   "status": "candidate"
  },
  "发动机核心零部件": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "发动机电子": {
   "type": "product",
   "status": "candidate"
  },
@@ -27706,6 +27758,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "定点协议": {
+  "type": "product",
+  "status": "candidate"
+ },
  "宝马经销": {
   "type": "product",
   "status": "candidate"
@@ -27747,6 +27803,10 @@
   "status": "candidate"
  },
  "宠物新品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "宠物消费": {
   "type": "product",
   "status": "candidate"
  },
@@ -28032,6 +28092,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "尊界V800": {
+  "type": "product",
+  "status": "candidate"
  },
  "小型发电机": {
   "type": "product",
@@ -30663,6 +30727,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源汽车电驱": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源汽车过滤": {
   "type": "product",
   "status": "candidate"
@@ -31062,6 +31130,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "无人机物流": {
+  "type": "product",
+  "status": "candidate"
+ },
  "无人物流": {
   "type": "product",
   "status": "candidate"
@@ -31394,6 +31466,10 @@
   "status": "candidate"
  },
  "智慧专网": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧仓储": {
   "type": "product",
   "status": "candidate"
  },
@@ -31766,6 +31842,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能按摩": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能按摩椅": {
   "type": "product",
   "status": "candidate"
@@ -32030,6 +32110,10 @@
   "status": "candidate"
  },
  "有机种植": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "有机胺": {
   "type": "product",
   "status": "candidate"
  },
@@ -32349,6 +32433,10 @@
   "llm": "claude-sonnet-5"
  },
  "机器人铝材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "机器人集成": {
   "type": "product",
   "status": "candidate"
  },
@@ -32719,6 +32807,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "核聚变电源": {
+  "type": "product",
+  "status": "candidate"
+ },
  "核能合同": {
   "type": "product",
   "status": "candidate"
@@ -33043,6 +33135,10 @@
   "status": "candidate"
  },
  "民营控股": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "气体储运": {
   "type": "product",
   "status": "candidate"
  },
@@ -35982,6 +36078,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "特斯拉机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "特斯拉监督版FSD入华": {
   "type": "product",
   "status": "candidate"
@@ -36018,6 +36118,10 @@
   "llm": "claude-sonnet-5"
  },
  "特种单体": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "特种合金": {
   "type": "product",
   "status": "candidate"
  },
@@ -36107,6 +36211,10 @@
   "status": "candidate"
  },
  "特种表面活性剂": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "特种装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -36654,6 +36762,10 @@
   "status": "candidate"
  },
  "生态园林": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "生态建设": {
   "type": "product",
   "status": "candidate"
  },
@@ -37634,6 +37746,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "界面财联社重组": {
+  "type": "product",
+  "status": "candidate"
+ },
  "番茄制品": {
   "type": "product",
   "status": "candidate"
@@ -37887,6 +38003,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "眼科用药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "眼科连锁": {
   "type": "product",
   "status": "candidate"
@@ -38082,6 +38202,10 @@
   "status": "candidate"
  },
  "矿山装备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "矿服民爆": {
   "type": "product",
   "status": "candidate"
  },
@@ -38693,6 +38817,10 @@
   "status": "candidate"
  },
  "空气净化产品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "空气分离设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -40569,6 +40697,10 @@
   "status": "candidate"
  },
  "航空座椅": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "航空惯导": {
   "type": "product",
   "status": "candidate"
  },
@@ -42779,6 +42911,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "重组审核中止": {
+  "type": "product",
+  "status": "candidate"
+ },
  "重组恢复": {
   "type": "product",
   "status": "candidate"
@@ -44365,6 +44501,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "防务装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "防弹防护": {
   "type": "product",
   "status": "candidate"
@@ -45603,6 +45743,10 @@
   "status": "candidate"
  },
  "高端聚烯烃": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高端自动化": {
   "type": "product",
   "status": "candidate"
  },
@@ -48797,5 +48941,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "飞行汽车(eVTOL)": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-02·1源2日"
  }
 }
