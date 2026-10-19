@@ -8193,6 +8193,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "半导体供应链": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "半导体客户": {
   "type": "attribute",
   "status": "candidate",
@@ -11835,6 +11839,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "签境外词元大单": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "签署算力大单": {
   "type": "catalyst",
   "status": "candidate"
@@ -13235,6 +13243,10 @@
  "仲裁撤案": {
   "type": "event",
   "status": "retired"
+ },
+ "仲裁澄清": {
+  "type": "event",
+  "status": "candidate"
  },
  "优化业务": {
   "type": "event",
@@ -18567,6 +18579,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI数字孪生": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI数据": {
   "type": "product",
   "status": "candidate"
@@ -19701,6 +19717,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "H酸传导": {
+  "type": "product",
+  "status": "candidate"
  },
  "IC分销": {
   "type": "product",
@@ -21761,6 +21781,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "云数服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "云服务": {
   "type": "product",
   "status": "candidate",
@@ -22947,6 +22971,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "光刻机保税寄售维修": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光刻机冷却": {
   "type": "product",
   "status": "candidate"
@@ -23623,6 +23651,10 @@
   "status": "candidate"
  },
  "关注机器人行业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "具身数据": {
   "type": "product",
   "status": "candidate"
  },
@@ -25774,6 +25806,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "受托生产": {
+  "type": "product",
+  "status": "candidate"
+ },
  "受益于银价上涨": {
   "type": "product",
   "status": "candidate"
@@ -27758,6 +27794,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "定制服务器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "定点协议": {
   "type": "product",
   "status": "candidate"
@@ -27831,6 +27871,10 @@
   "status": "candidate"
  },
  "客车出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "客车制造": {
   "type": "product",
   "status": "candidate"
  },
@@ -28303,6 +28347,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "工业控制PCB": {
+  "type": "product",
+  "status": "candidate"
+ },
  "工业操作系统": {
   "type": "product",
   "status": "candidate",
@@ -28421,6 +28469,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "工程仿真": {
+  "type": "product",
+  "status": "candidate"
+ },
  "工程咨询": {
   "type": "product",
   "status": "candidate"
@@ -28502,6 +28554,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "巴西甜蛋白": {
+  "type": "product",
+  "status": "candidate"
  },
  "巴西铜金矿": {
   "type": "product",
@@ -29033,6 +29089,10 @@
   "status": "candidate"
  },
  "影视剧": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "影视剧获奖": {
   "type": "product",
   "status": "candidate"
  },
@@ -31924,6 +31984,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能睡眠": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能矿卡": {
   "type": "product",
   "status": "candidate"
@@ -31949,6 +32013,10 @@
   "status": "candidate"
  },
  "智能终端": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能终端结构件": {
   "type": "product",
   "status": "candidate"
  },
@@ -34696,6 +34764,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海底光缆": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海底电缆": {
   "type": "product",
   "status": "candidate"
@@ -36066,6 +36138,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "物理AI仿真": {
+  "type": "product",
+  "status": "candidate"
+ },
  "物理AI收入": {
   "type": "product",
   "status": "candidate"
@@ -37002,6 +37078,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "电力市场化": {
+  "type": "product",
+  "status": "candidate"
  },
  "电力改革": {
   "type": "product",
@@ -38892,7 +38972,15 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "端侧智能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "端午消费": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "竹制餐厨具": {
   "type": "product",
   "status": "candidate"
  },
@@ -41200,6 +41288,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "藻油": {
+  "type": "product",
+  "status": "candidate"
+ },
  "虚拟拍摄": {
   "type": "product",
   "status": "candidate"
@@ -42663,6 +42755,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "速效救心丸": {
+  "type": "product",
+  "status": "candidate"
+ },
  "造影剂": {
   "type": "product",
   "status": "candidate"
@@ -42738,6 +42834,10 @@
   "status": "candidate"
  },
  "配电自动化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "酒器": {
   "type": "product",
   "status": "candidate"
  },
@@ -44480,6 +44580,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "阀用特种塑料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "阀门管件": {
   "type": "product",
   "status": "candidate"
@@ -45073,6 +45177,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "风光水电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "风光火储": {
   "type": "product",
   "status": "candidate"
@@ -45220,6 +45328,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "飞行汽车概念股活跃": {
+  "type": "product",
+  "status": "candidate"
+ },
  "食品": {
   "type": "product",
   "status": "candidate"
@@ -45295,6 +45407,10 @@
   "status": "candidate"
  },
  "餐饮": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "餐饮客户": {
   "type": "product",
   "status": "candidate"
  },
