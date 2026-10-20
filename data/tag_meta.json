@@ -10343,6 +10343,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "制剂获批": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "券业并购": {
   "type": "catalyst",
   "status": "candidate",
@@ -18224,6 +18228,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AGV减速器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI ASIC": {
   "type": "product",
   "status": "candidate",
@@ -18234,6 +18242,10 @@
   "status": "candidate"
  },
  "AI Drive 2.0": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI ISP": {
   "type": "product",
   "status": "candidate"
  },
@@ -18334,6 +18346,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "AIoT量产": {
+  "type": "product",
+  "status": "candidate"
  },
  "AI一体机": {
   "type": "product",
@@ -18809,6 +18825,10 @@
   "status": "candidate"
  },
  "AI电极箔": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI病理": {
   "type": "product",
   "status": "candidate"
  },
@@ -22009,11 +22029,19 @@
   "type": "product",
   "status": "candidate"
  },
+ "人工智能内容": {
+  "type": "product",
+  "status": "candidate"
+ },
  "人工智能基金": {
   "type": "product",
   "status": "candidate"
  },
  "人工智能安全": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "人工智能安防": {
   "type": "product",
   "status": "candidate"
  },
@@ -22237,6 +22265,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "低功耗SoC": {
+  "type": "product",
+  "status": "candidate"
  },
  "低压断路器": {
   "type": "product",
@@ -23654,6 +23686,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "具身仿真": {
+  "type": "product",
+  "status": "candidate"
+ },
  "具身数据": {
   "type": "product",
   "status": "candidate"
@@ -24716,6 +24752,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "化学原料药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "化学工程": {
   "type": "product",
   "status": "candidate"
@@ -24915,6 +24955,10 @@
   "status": "candidate"
  },
  "医学检测": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "医学检验": {
   "type": "product",
   "status": "candidate"
  },
@@ -27401,6 +27445,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "太阳能光热": {
+  "type": "product",
+  "status": "candidate"
+ },
  "太阳能热水器": {
   "type": "product",
   "status": "candidate",
@@ -27411,6 +27459,10 @@
   "status": "candidate"
  },
  "头孢产品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "头孢克洛": {
   "type": "product",
   "status": "candidate"
  },
@@ -27530,6 +27582,10 @@
   "llm": "claude-sonnet-5"
  },
  "媒体内容安全监测": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "媒体经营": {
   "type": "product",
   "status": "candidate"
  },
@@ -28055,6 +28111,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "对台贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
  "导光板": {
   "type": "product",
   "status": "candidate"
@@ -28576,6 +28636,10 @@
   "status": "candidate"
  },
  "市政工程": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "市政环卫": {
   "type": "product",
   "status": "candidate"
  },
@@ -29977,6 +30041,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "教育培训": {
+  "type": "product",
+  "status": "candidate"
+ },
  "教育数字化": {
   "type": "product",
   "status": "candidate"
@@ -31252,6 +31320,14 @@
   "type": "product",
   "status": "candidate"
  },
+ "无线模组": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "无线网关": {
+  "type": "product",
+  "status": "candidate"
+ },
  "无线芯片": {
   "type": "product",
   "status": "candidate"
@@ -31780,6 +31856,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智算布局": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智算服务": {
   "type": "product",
   "status": "candidate",
@@ -31854,6 +31934,10 @@
   "status": "candidate"
  },
  "智能厨卫": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能可穿戴": {
   "type": "product",
   "status": "candidate"
  },
@@ -32202,6 +32286,10 @@
   "status": "candidate"
  },
  "有色合金材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "有色回收": {
   "type": "product",
   "status": "candidate"
  },
@@ -33890,6 +33978,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车电子玻璃": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车电机": {
   "type": "product",
   "status": "candidate"
@@ -34866,6 +34958,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "消费电子电池": {
+  "type": "product",
+  "status": "candidate"
  },
  "消费电子精密制造": {
   "type": "product",
@@ -36146,6 +36242,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "物理AI数据": {
+  "type": "product",
+  "status": "candidate"
+ },
  "物管": {
   "type": "product",
   "status": "candidate"
@@ -37078,6 +37178,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "电力巡检": {
+  "type": "product",
+  "status": "candidate"
  },
  "电力市场化": {
   "type": "product",
@@ -41491,6 +41595,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "视频监控": {
+  "type": "product",
+  "status": "candidate"
+ },
  "触控显示": {
   "type": "product",
   "status": "candidate"
@@ -41608,6 +41716,10 @@
   "status": "candidate"
  },
  "豆包大模型": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "豆浆机": {
   "type": "product",
   "status": "candidate"
  },
@@ -42650,6 +42762,10 @@
   "status": "candidate"
  },
  "通信服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "通信模组": {
   "type": "product",
   "status": "candidate"
  },
@@ -44244,6 +44360,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "锂电隔热": {
+  "type": "product",
+  "status": "candidate"
+ },
  "锂电隔膜": {
   "type": "product",
   "status": "candidate",
@@ -44306,6 +44426,10 @@
   "llm": "claude-sonnet-5"
  },
  "锅炉发电": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "锆基材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -44716,6 +44840,10 @@
   "status": "candidate"
  },
  "院线经营": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "除冰机器人": {
   "type": "product",
   "status": "candidate"
  },
