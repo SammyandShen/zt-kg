@@ -13166,6 +13166,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "中润收购": {
+  "type": "event",
+  "status": "candidate"
+ },
  "中车订单": {
   "type": "event",
   "status": "retired",
@@ -13835,6 +13839,10 @@
   "type": "event",
   "status": "retired",
   "llm": "claude-sonnet-5"
+ },
+ "参股投资收益": {
+  "type": "event",
+  "status": "candidate"
  },
  "参股摩尔线程": {
   "type": "event",
@@ -18431,6 +18439,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI创意": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI创新药": {
   "type": "product",
   "status": "candidate",
@@ -20043,6 +20055,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "MEMS传感": {
+  "type": "product",
+  "status": "candidate"
+ },
  "MEMS微振镜": {
   "type": "product",
   "status": "candidate",
@@ -20807,6 +20823,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "SpaceX": {
+  "type": "product",
+  "status": "candidate"
+ },
  "T/R组件": {
   "type": "product",
   "status": "candidate"
@@ -20902,6 +20922,10 @@
   "status": "candidate"
  },
  "TSN技术": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "Token业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -25171,6 +25195,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "半导体入股": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体切割": {
   "type": "product",
   "status": "candidate"
@@ -25677,6 +25705,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "原料制剂一体化": {
+  "type": "product",
+  "status": "candidate"
  },
  "原料短缺": {
   "type": "product",
@@ -26268,6 +26300,10 @@
   "status": "candidate"
  },
  "商贸物流": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "商贸零售": {
   "type": "product",
   "status": "candidate"
  },
@@ -27545,6 +27581,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "妙创平台": {
+  "type": "product",
+  "status": "candidate"
+ },
  "委托理财": {
   "type": "product",
   "status": "candidate"
@@ -28610,6 +28650,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "差别化涤纶长丝": {
+  "type": "product",
+  "status": "candidate"
+ },
  "差速器": {
   "type": "product",
   "status": "candidate",
@@ -29173,6 +29217,10 @@
   "status": "candidate"
  },
  "影院拓展": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "影院运营": {
   "type": "product",
   "status": "candidate"
  },
@@ -30213,6 +30261,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数字财税": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数字货币": {
   "type": "product",
   "status": "candidate"
@@ -30226,6 +30278,10 @@
   "status": "candidate"
  },
  "数字风洞": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数据": {
   "type": "product",
   "status": "candidate"
  },
@@ -30314,6 +30370,10 @@
   "status": "candidate"
  },
  "数据中心（发电机）": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数据分析": {
   "type": "product",
   "status": "candidate"
  },
@@ -32420,6 +32480,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "机器人传感": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人传感器": {
   "type": "product",
   "status": "candidate"
@@ -33147,6 +33211,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "橡胶骨架材料": {
+  "type": "product",
+  "status": "candidate"
+ },
  "欧式起重机": {
   "type": "product",
   "status": "candidate",
@@ -33864,6 +33932,10 @@
   "llm": "claude-sonnet-5"
  },
  "汽车制造": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "汽车动力": {
   "type": "product",
   "status": "candidate"
  },
@@ -38079,7 +38151,15 @@
   "type": "product",
   "status": "candidate"
  },
+ "益生菌出海": {
+  "type": "product",
+  "status": "candidate"
+ },
  "益生菌新药": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "益生菌食品": {
   "type": "product",
   "status": "candidate"
  },
@@ -40165,6 +40245,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "网络安全大模型": {
+  "type": "product",
+  "status": "candidate"
+ },
  "网络游戏": {
   "type": "product",
   "status": "candidate",
@@ -40191,6 +40275,10 @@
   "status": "candidate"
  },
  "罗茨鼓风机": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "羊毛羊绒": {
   "type": "product",
   "status": "candidate"
  },
@@ -41280,6 +41368,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "菌株研发": {
+  "type": "product",
+  "status": "candidate"
+ },
  "菌草": {
   "type": "product",
   "status": "candidate",
@@ -41669,6 +41761,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "词元出海": {
+  "type": "product",
+  "status": "candidate"
+ },
  "读者品牌": {
   "type": "product",
   "status": "candidate"
@@ -41779,6 +41875,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "质谱诊断": {
+  "type": "product",
+  "status": "candidate"
  },
  "购买专利": {
   "type": "product",
@@ -44668,6 +44768,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "长源并表": {
+  "type": "product",
+  "status": "candidate"
+ },
  "长租公寓": {
   "type": "product",
   "status": "candidate"
@@ -44811,6 +44915,10 @@
   "llm": "claude-sonnet-5"
  },
  "降本增效": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "降脂复方药": {
   "type": "product",
   "status": "candidate"
  },
@@ -45456,6 +45564,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "飞翼空冷器": {
+  "type": "product",
+  "status": "candidate"
+ },
  "飞行汽车概念股活跃": {
   "type": "product",
   "status": "candidate"
@@ -45742,6 +45854,10 @@
   "llm": "claude-sonnet-5"
  },
  "高压高速连接器": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高可靠应用": {
   "type": "product",
   "status": "candidate"
  },
