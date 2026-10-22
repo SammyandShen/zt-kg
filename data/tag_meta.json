@@ -19119,6 +19119,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AR-AI显示": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AR/VR拓展": {
   "type": "product",
   "status": "candidate"
@@ -20187,6 +20191,10 @@
   "llm": "claude-sonnet-5"
  },
  "Mini/Micro LED": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "Mini/Micro-LED": {
   "type": "product",
   "status": "candidate"
  },
@@ -21420,6 +21428,10 @@
   "status": "candidate"
  },
  "两轮换电": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "两轮电驱": {
   "type": "product",
   "status": "candidate"
  },
@@ -22736,6 +22748,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "像素车灯": {
+  "type": "product",
+  "status": "candidate"
  },
  "儿科医疗": {
   "type": "product",
@@ -26846,6 +26862,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "基建盘活": {
+  "type": "product",
+  "status": "candidate"
+ },
  "基建设计": {
   "type": "product",
   "status": "candidate"
@@ -29293,6 +29313,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "微特减速电机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "微特电机": {
   "type": "product",
   "status": "candidate",
@@ -30369,6 +30393,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数据中心风机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数据中心（发电机）": {
   "type": "product",
   "status": "candidate"
@@ -31298,6 +31326,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "无人应急装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "无人机业务": {
   "type": "product",
   "status": "candidate"
@@ -31662,6 +31694,10 @@
   "status": "candidate"
  },
  "智慧专网": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧交管": {
   "type": "product",
   "status": "candidate"
  },
@@ -36064,6 +36100,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "煤矿服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "煤矿机械": {
   "type": "product",
   "status": "candidate"
@@ -36402,6 +36442,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "特种油升级": {
+  "type": "product",
+  "status": "candidate"
+ },
  "特种油脂": {
   "type": "product",
   "status": "candidate"
@@ -36471,6 +36515,10 @@
   "status": "candidate"
  },
  "特种钢丝绳": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "特种钢索": {
   "type": "product",
   "status": "candidate"
  },
@@ -37652,6 +37700,10 @@
   "status": "candidate"
  },
  "电机与驱动": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电机业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -38916,6 +38968,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "离心压缩机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "禽流感": {
   "type": "product",
   "status": "candidate"
@@ -39581,6 +39637,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "精密铁芯": {
+  "type": "product",
+  "status": "candidate"
+ },
  "精密零件": {
   "type": "product",
   "status": "candidate"
@@ -39660,6 +39720,10 @@
   "status": "candidate"
  },
  "系统门窗": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "系统集成": {
   "type": "product",
   "status": "candidate"
  },
