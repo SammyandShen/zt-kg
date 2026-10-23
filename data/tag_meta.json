@@ -13217,6 +13217,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "产业合作": {
+  "type": "event",
+  "status": "candidate"
+ },
  "产业投资人加持": {
   "type": "event",
   "status": "retired"
@@ -17224,6 +17228,10 @@
   "type": "event",
   "status": "retired"
  },
+ "股权转让议案": {
+  "type": "event",
+  "status": "candidate"
+ },
  "脑机接口（已澄清）": {
   "type": "event",
   "status": "retired"
@@ -19622,6 +19630,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "H2-X": {
+  "type": "product",
+  "status": "candidate"
+ },
  "HDI能力": {
   "type": "product",
   "status": "candidate",
@@ -21197,6 +21209,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "三季度增长": {
+  "type": "product",
+  "status": "candidate"
+ },
  "三季报": {
   "type": "product",
   "status": "candidate"
@@ -21570,6 +21586,10 @@
   "status": "candidate"
  },
  "中硼硅药用玻璃": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "中移动协同": {
   "type": "product",
   "status": "candidate"
  },
@@ -22186,6 +22206,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "仿生机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "仿生飞行器": {
   "type": "product",
   "status": "candidate"
@@ -22561,6 +22585,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "信托股权交易": {
+  "type": "product",
+  "status": "candidate"
+ },
  "信达资源": {
   "type": "product",
   "status": "candidate"
@@ -22777,6 +22805,10 @@
   "status": "candidate"
  },
  "充电桩": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "充电管理": {
   "type": "product",
   "status": "candidate"
  },
@@ -23130,6 +23162,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "光学动捕": {
+  "type": "product",
+  "status": "candidate"
  },
  "光学器件": {
   "type": "product",
@@ -23781,6 +23817,10 @@
   "status": "candidate"
  },
  "内容IP": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "内容安全审核": {
   "type": "product",
   "status": "candidate"
  },
@@ -24473,6 +24513,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "分拣机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "分接开关龙头": {
   "type": "product",
   "status": "candidate",
@@ -25058,10 +25102,18 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "医疗物流机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医疗电子": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "医疗美容": {
+  "type": "product",
+  "status": "candidate"
  },
  "医疗设备": {
   "type": "product",
@@ -28436,6 +28488,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "工业人工智能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "工业制动器": {
   "type": "product",
   "status": "candidate"
@@ -28475,6 +28531,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "工业智能": {
+  "type": "product",
+  "status": "candidate"
  },
  "工业智能体": {
   "type": "product",
@@ -28863,6 +28923,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "广告喷墨": {
+  "type": "product",
+  "status": "candidate"
+ },
  "广告营销": {
   "type": "product",
   "status": "candidate"
@@ -28908,6 +28972,10 @@
   "status": "candidate"
  },
  "广电整合": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "广电智能体": {
   "type": "product",
   "status": "candidate"
  },
@@ -29738,6 +29806,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "抗敏牙膏": {
+  "type": "product",
+  "status": "candidate"
+ },
  "抗流感": {
   "type": "product",
   "status": "candidate"
@@ -29905,6 +29977,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "指纹识别": {
+  "type": "product",
+  "status": "candidate"
+ },
  "按摩器具": {
   "type": "product",
   "status": "candidate",
@@ -29923,6 +29999,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "换电站": {
+  "type": "product",
+  "status": "candidate"
  },
  "换股吸并": {
   "type": "product",
@@ -30226,6 +30306,10 @@
   "status": "candidate"
  },
  "数字建设": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数字成套": {
   "type": "product",
   "status": "candidate"
  },
@@ -30544,6 +30628,10 @@
   "status": "candidate"
  },
  "文体旅融合": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "文体旅集成": {
   "type": "product",
   "status": "candidate"
  },
@@ -31513,6 +31601,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "时尚女装": {
+  "type": "product",
+  "status": "candidate"
+ },
  "时尚女鞋": {
   "type": "product",
   "status": "candidate",
@@ -31764,6 +31856,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智慧安全4.0": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智慧安防": {
   "type": "product",
   "status": "candidate"
@@ -31772,6 +31868,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "智慧家庭": {
+  "type": "product",
+  "status": "candidate"
  },
  "智慧平台": {
   "type": "product",
@@ -32033,6 +32133,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能口腔": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能可穿戴": {
   "type": "product",
   "status": "candidate"
@@ -32106,6 +32210,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能显示": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能景观": {
   "type": "product",
   "status": "candidate"
@@ -32161,6 +32269,10 @@
   "status": "candidate"
  },
  "智能电钢": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能眼镜电池": {
   "type": "product",
   "status": "candidate"
  },
@@ -32512,6 +32624,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "机器人乐队": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人代工": {
   "type": "product",
   "status": "candidate"
@@ -32666,6 +32782,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "机器人触觉": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人训练场": {
   "type": "product",
   "status": "candidate"
@@ -32743,6 +32863,10 @@
   "status": "candidate"
  },
  "机械制造": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "机电组件": {
   "type": "product",
   "status": "candidate"
  },
@@ -33340,6 +33464,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "毛利率提升": {
+  "type": "product",
+  "status": "candidate"
+ },
  "毛发医疗": {
   "type": "product",
   "status": "candidate"
@@ -33551,6 +33679,10 @@
   "status": "candidate"
  },
  "氧化锆": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "氧化锆微珠": {
   "type": "product",
   "status": "candidate"
  },
@@ -33993,6 +34125,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "汽车外饰件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "汽车安全": {
   "type": "product",
   "status": "candidate",
@@ -34154,6 +34290,10 @@
   "llm": "claude-sonnet-5"
  },
  "汽车贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "汽车车桥": {
   "type": "product",
   "status": "candidate"
  },
@@ -34577,6 +34717,10 @@
   "status": "candidate"
  },
  "洗染服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "洗衣机离合器": {
   "type": "product",
   "status": "candidate"
  },
@@ -35130,6 +35274,10 @@
   "status": "candidate"
  },
  "润滑油": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "润滑油脂": {
   "type": "product",
   "status": "candidate"
  },
@@ -36552,6 +36700,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "特色工艺": {
+  "type": "product",
+  "status": "candidate"
+ },
  "特色影厅": {
   "type": "product",
   "status": "candidate"
@@ -37353,6 +37505,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电力软件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电力造价": {
   "type": "product",
   "status": "candidate"
@@ -37361,6 +37517,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "电动工具": {
+  "type": "product",
+  "status": "candidate"
  },
  "电动装载机": {
   "type": "product",
@@ -37690,6 +37850,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电控产品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电控减振器": {
   "type": "product",
   "status": "candidate",
@@ -37971,6 +38135,10 @@
   "status": "candidate"
  },
  "电能表芯片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "电脑横机": {
   "type": "product",
   "status": "candidate"
  },
@@ -38586,6 +38754,10 @@
   "status": "candidate"
  },
  "硅光子": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "硅光工艺": {
   "type": "product",
   "status": "candidate"
  },
@@ -39211,6 +39383,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "端侧安全": {
+  "type": "product",
+  "status": "candidate"
  },
  "端侧智能": {
   "type": "product",
@@ -41772,6 +41948,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "训练数据": {
+  "type": "product",
+  "status": "candidate"
+ },
  "记忆绵家居": {
   "type": "product",
   "status": "candidate"
@@ -42118,6 +42298,10 @@
   "status": "candidate"
  },
  "超声波指纹": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "超声波指纹传感器": {
   "type": "product",
   "status": "candidate"
  },
@@ -42612,6 +42796,10 @@
   "llm": "claude-sonnet-5"
  },
  "转增股本": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "轮毂单元": {
   "type": "product",
   "status": "candidate"
  },
@@ -44613,6 +44801,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "锆钛精炼": {
+  "type": "product",
+  "status": "candidate"
+ },
  "锆铪分离": {
   "type": "product",
   "status": "candidate"
@@ -44793,6 +44985,10 @@
   "status": "candidate"
  },
  "镍钴": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "镜片主业": {
   "type": "product",
   "status": "candidate"
  },
@@ -45175,6 +45371,10 @@
   "status": "candidate"
  },
  "零售主业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "零售促销": {
   "type": "product",
   "status": "candidate"
  },
@@ -46329,6 +46529,10 @@
   "status": "candidate"
  },
  "高速线缆": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高速轴承": {
   "type": "product",
   "status": "candidate"
  },
