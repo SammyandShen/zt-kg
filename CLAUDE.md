@@ -140,6 +140,14 @@ semantic_config.calibration_log，前端口径同步 METRIC_DEFS）。本文件�
   semanticEventsForCid 三型一律归因口径；业务图谱节点热度按子树对齐词典走
   归因口径（"因它涨"），词典外节点回落业务口径（行名悬停标注）——
   "做机器人但因重组涨停"不再灌进机器人热度。归因口径受 60 日导出窗口限制。
+- **LLM 层健康哨兵（2026-10-25，事故修复）**：claude CLI OAuth 会话 08-22 过期，
+  summarize_news/classify_tags/judge/discover_news_terms 连续两个月每日失败，全部
+  被 `|| echo 跳过` 吞掉、确定性工序照常发布，无人察觉（briefs 停在 08-21，judge
+  每日"判决 0 条"）。修复：`check_llm.py` 班次开头探测 → `data/llm_status.json`
+  （.gitignore）→ build_site 导出 `llm_status` → 热力页状态条红牌"LLM层 离线N天"
+  + ⓘ修复命令；audit 加观察哨（最新日有涨停但 briefs=0 → 🚨 警告，不阻断）。
+  OAuth 续期是零人工干预原则的硬边界——只能 `claude auth login`，系统的责任是不沉默。
+  登录后回补：`summarize_news.py --days N`；judge/classify/提词按台账自动续跑。
 - **归因链四优化（2026-08-07，review 落地）**：①T+复核 business_relation 加
   同名直配（与 find_basis 口径对齐，"业务标签即题材名"不再被记未映射误杀）
   ②business_fact 凭据候选免过期（969条复活；config candidate_expire_exempt_basis）

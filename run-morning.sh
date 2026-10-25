@@ -12,6 +12,7 @@ PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$PROJECT_DIR"
 
 echo "===== $(date '+%Y-%m-%d %H:%M:%S') run-morning start ====="
+python3 scripts/check_llm.py || true
 # --days 4：周一早晨要覆盖到上周五的事件
 python3 scripts/fetch_news.py --days 4 || echo "⚠️ fetch_news 失败，跳过"
 python3 scripts/fetch_event_announcements.py --days 4 || echo "⚠️ fetch_event_announcements 失败，跳过"

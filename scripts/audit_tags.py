@@ -378,6 +378,19 @@ def main() -> int:
         errors.append("单次涨停题材关系引用了非 active 题材频道标签：" +
                       "、".join(bad_event_theme_types[:20]))
 
+    # LLM 层观察哨（2026-10-25）：最新交易日有涨停事件却零条一句话归因 → 警告
+    # （不阻断：OAuth 过期是人工事项，门禁只负责让它显眼）
+    latest = conn.execute(
+        "SELECT MAX(trade_date) FROM limit_up_events WHERE pool='zt'").fetchone()[0]
+    if latest:
+        n_ev, n_brief = conn.execute(
+            "SELECT (SELECT COUNT(*) FROM limit_up_events WHERE trade_date=? AND pool='zt'),"
+            "       (SELECT COUNT(*) FROM briefs WHERE trade_date=?)", (latest, latest)).fetchone()
+        if n_ev and not n_brief:
+            last_ok = conn.execute("SELECT MAX(trade_date) FROM briefs").fetchone()[0]
+            print(f"🚨 LLM 层观察哨：{latest} 有 {n_ev} 只涨停但一句话归因 0 条"
+                  f"（briefs 最后有数据 {last_ok}）——检查 claude auth status / 跑 check_llm.py")
+
     reviewed = Counter((value["status"], value["type"]) for value in meta.values())
     print(f"数据库概念 {len(concepts)}；tag_meta {len(meta)}；taxonomy 节点 {len(nodes)}")
     print(f"  virtual    {sum(bool(value.get('virtual')) for value in meta.values())}")

@@ -118,7 +118,8 @@ zt-kg/
 | rebuild_semantic_layer.py | **语义层核心**：归因/轮次/龙头/晋升/映射导入/覆盖重放 | event_theme_links, theme_episodes, episode_leader_daily, stock_business_facts, business_concepts(+edges), attribution_snapshots |
 | review_theme_attributions.py | T+0/1/2 归因旁证评分 | attribution_reviews |
 | judge_attributions.py | claude CLI 三队列判决（保守；写覆盖台账） | data/facts_overrides.json |
-| audit_tags.py | 质量门禁（只读；不过则停发布） | — |
+| audit_tags.py | 质量门禁（只读；不过则停发布）+ LLM 层观察哨（最新日 briefs=0 警告） | — |
+| check_llm.py | LLM 层健康哨兵：班次开头探测 claude CLI，离线时大声报警（不阻断） | data/llm_status.json |
 | build_site.py | 导出 data.js / data-kline.js | docs/data.js, docs/data-kline.js |
 | fetch_em_boards.py | 雷达S1：东财概念板块涨幅榜（独立词表第二观测口；盘中手动跑默认跳过防错记，--force 覆盖） | theme_signals |
 | discover_news_terms.py | 雷达S3/S4：库内新闻标题（去噪）+ 快讯RSS（华尔街见闻/界面/36氪/钛媒体）→ sonnet 每日一次提词；台账 hotspot_ledger.json 防重 | theme_signals |
@@ -518,6 +519,10 @@ script 注入加载（file:// 兼容）。build_site 每日随班次重生成。
 - 浏览器验证页面：用 http.server + `index.html?v=N` + `fetch(url,{cache:'reload'})`
   破缓存；热力页路由是 **#/heat**。
 - claude CLI 不在 launchd PATH 时脚本自动找 ~/.local/bin 等位置。
+- **claude CLI OAuth 会过期且不自动续期**（2026-08-22 事故，静默两个月）：所有 LLM
+  工序都是 `|| echo 跳过`，失败不阻断发布。看 `claude auth status`；修复
+  `claude auth login`（人工）。check_llm.py 哨兵 + 状态条红牌 + audit 观察哨
+  三处会报，别再只看"✅ 发布成功"。恢复后 `summarize_news.py --days N` 回补。
 - 慢工序候选"当天不晋升"是设计（次日早班晋升），不是 bug。
 - 8月底待办：wave_decay_ratio / sustain_min_members / candidate_expire_days /
   龙头权重 随数据增厚复核（见 semantic_config.calibration_log）。

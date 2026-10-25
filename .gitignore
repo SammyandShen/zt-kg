@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 .deploy-enabled
 .DS_Store
+data/llm_status.json

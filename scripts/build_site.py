@@ -53,6 +53,17 @@ def load_llm_sugg(tag_meta: dict) -> dict:
             if (tag_meta.get(k) or ["", ""])[1] == "candidate"}
 
 
+def load_llm_status() -> dict | None:
+    """check_llm.py 哨兵状态：{ok, checked_at, error, down_since}；无文件=未探测。"""
+    p = common.REPO_ROOT / "data" / "llm_status.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except ValueError:
+        return None
+
+
 def load_similar_dismissed() -> dict:
     """疑似重复观测口的已判不并名单：{pairs:[...], patterns:[[a, b正则],...]}。"""
     if not SIMILAR_DISMISSED_PATH.exists():
@@ -579,6 +590,7 @@ def main() -> int:
         "semantic_evidence": semantic_evidence,
         "stock_stats": stock_stats,
         "radar": radar,
+        "llm_status": load_llm_status(),
     }
     js = ("// 由 scripts/build_site.py 生成，禁止手改\n"
           "// event 字段: [code, 连板数, high_days, 涨停类型, 炸板次数, 封单万, 流通市值亿, 首封HH:MM, 原始原因, [概念id], touch?]  最后一位=1表示触及涨停未封住\n"

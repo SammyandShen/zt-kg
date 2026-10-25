@@ -5,6 +5,8 @@ PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$PROJECT_DIR"
 
 echo "===== $(date '+%Y-%m-%d %H:%M:%S') run-daily start ====="
+# LLM 层健康哨兵：CLI 离线（OAuth 过期等）时大声报警+状态条红牌，不阻断班次
+python3 scripts/check_llm.py || true
 python3 scripts/fetch_daily.py
 # 昨日涨停股的今日开盘价（隔日开盘溢价指标；增量，失败明日自动重试）
 python3 scripts/fetch_next_open.py || echo "⚠️ fetch_next_open 失败，跳过"
