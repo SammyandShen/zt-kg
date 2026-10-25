@@ -1764,6 +1764,60 @@
    "note": "多条证据一致指向公告驱动的'中标南方电网/特高压项目'催化，未见国企改革叙事支撑",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-08-21"
+  },
+  {
+   "code": "603081",
+   "trade_date": "2026-10-23",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "新闻明确点名大丰实业在上海成立机器人公司，与其机器人乐队/文体旅集成业务关联可解释",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-25"
+  },
+  {
+   "code": "688836",
+   "trade_date": "2026-10-23",
+   "theme": "物理AI",
+   "verdict": "verified",
+   "note": "多条新闻直接点名宇树科技20cm涨停及人形机器人/物理AI叙事，公司本身即该赛道龙头",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-25"
+  },
+  {
+   "code": "300296",
+   "trade_date": "2026-10-23",
+   "theme": "物理AI",
+   "verdict": "rejected",
+   "note": "公司公告澄清AI空间计算营收占比仅5.55%，属于反证说明涨停并非该业务驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-25"
+  },
+  {
+   "code": "301313",
+   "trade_date": "2026-10-23",
+   "theme": "物理AI",
+   "verdict": "verified",
+   "note": "三条新闻均明确点名\"物理AI概念\"反弹带动凡拓数创涨停，叙事主导性强",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-25"
+  },
+  {
+   "code": "301101",
+   "trade_date": "2026-10-23",
+   "theme": "AI眼镜",
+   "verdict": "verified",
+   "note": "多条新闻明确点名\"AI眼镜概念\"拉升带动明月镜片涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-25"
+  },
+  {
+   "code": "002097",
+   "trade_date": "2026-10-22",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "新闻明确将涨停归因为工程机械板块活跃和军工板块拉升，无机器人叙事支持",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-25"
   }
  ],
  "episode_verdicts": [
