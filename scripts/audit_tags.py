@@ -433,8 +433,9 @@ def main() -> int:
         import datetime
         if rate < 20 and datetime.date.today() >= datetime.date(2026, 8, 8):
             warnings.append(
-                f"凭据率宽限期已过仍仅 {rate}%：theme→业务映射桥疑似断了，"
-                "检查 gen_theme_mappings 是否覆盖年报新业务标签")
+                f"凭据率宽限期已过仍仅 {rate}%：先查 LLM 层是否停摆（check_llm.py；"
+                "2026-08~10 停摆两月、年报抽取零产出致新股无业务事实，是本哨首次触发"
+                "的真因），再查 theme→业务映射是否覆盖年报新业务标签")
     if warnings:
         print("\n警告：")
         for warning in warnings:
