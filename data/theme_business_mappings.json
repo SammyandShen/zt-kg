@@ -15512,6 +15512,278 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-08-21] 锂电新能源材料是锂电池生产的直接上游材料"
+  },
+  {
+   "theme": "3D打印",
+   "business_tag_name": "3D打印",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-10-25] 业务图谱3D打印产业节点即该题材交易标的整体，无需逐个映射其下叶子产品"
+  },
+  {
+   "theme": "AI智算",
+   "business_tag_name": "AI智算产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-25] 业务即题材本身"
+  },
+  {
+   "theme": "数据中心",
+   "business_tag_name": "IDC及液冷",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] IDC液冷业务属于数据中心基础设施范畴"
+  },
+  {
+   "theme": "天然气",
+   "business_tag_name": "LNG液化及销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-10-25] 液化销售即天然气核心贸易业务"
+  },
+  {
+   "theme": "PCB",
+   "business_tag_name": "PCBA电子制造服务",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] PCBA电子制造是PCB的直接下游应用环节"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "PKI基础设施产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-25] PKI基础设施是网络安全核心身份认证加密产品"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "PKI安全应用产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-25] PKI安全应用产品直接属于网络安全业务"
+  },
+  {
+   "theme": "碳化硅",
+   "business_tag_name": "SiC功率器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-10-25] 碳化硅功率器件是该题材交易的核心产品"
+  },
+  {
+   "theme": "信创",
+   "business_tag_name": "SUNDB分布式数据库",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-25] 国产分布式数据库是信创基础软件国产替代的核心品类"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "一体化运动控制器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 运动控制器是机器人运动系统的核心零部件"
+  },
+  {
+   "theme": "原料药",
+   "business_tag_name": "中成药及原料药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-25] 原料药部分直接属于原料药题材"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药CRO服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 面向中药的研发服务直接服务该题材"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药材",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-10-25] 中药材是中成药生产的直接上游原料"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "中药配送",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-25] 药品配送即医药流通题材核心业务"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "中药饮片及中成药零售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-25] 药品零售属医药流通题材核心环节"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业园区开发与运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业园区开发运营属于产业地产开发经营范畴"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业园区开发运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业园区开发运营属于产业地产开发经营范畴"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业园区物业租赁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业物业租赁属于地产持有运营业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业园区空间销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业空间销售属于地产销售业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业园区运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业园区运营属于产业地产经营范畴"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业园区运营管理",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业园区运营管理属于产业地产经营范畴"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业新城运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业新城运营属于大型地产开发运营业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业载体租赁",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业载体租赁属于地产持有运营业务"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "产业载体销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 产业载体销售属于地产销售业务"
+  },
+  {
+   "theme": "工业机器人",
+   "business_tag_name": "伺服电机",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-10-25] 伺服电机是工业机器人传统核心部件"
+  },
+  {
+   "theme": "工业机器人",
+   "business_tag_name": "伺服系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-10-25] 伺服系统是工业机器人核心部件"
+  },
+  {
+   "theme": "工业机器人",
+   "business_tag_name": "伺服驱动器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-10-25] 伺服驱动器是工业机器人核心部件"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "保护屏盖板玻璃",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 盖板玻璃是手机等消费电子终端的上游保护部件"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "信创安全",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 信创安全业务本质也是网络安全产品"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "信息安全",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-25] 信息安全保密类业务整体即网络安全题材的交易标的"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "光传输设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-10-25] 光传输设备是光通信题材的直接交易对象"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-10-25] 光芯片即光学光电子器件本身"
+  },
+  {
+   "theme": "光学光电子",
+   "business_tag_name": "光芯片光器件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 光芯片光器件属于光学光电子器件范畴"
+  },
+  {
+   "theme": "CRO",
+   "business_tag_name": "全人源抗体转基因小鼠平台",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-25] 该平台对外提供抗体药物研发外包服务，属CRO业务"
   }
  ]
 }
