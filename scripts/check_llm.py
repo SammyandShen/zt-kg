@@ -34,13 +34,29 @@ def probe() -> tuple[bool, str]:
         return False, f"找不到 claude CLI：{e}"
     try:
         r = subprocess.run([claude_bin, "-p", "--model", PROBE_MODEL, "只回复两个字母：OK"],
-                           capture_output=True, text=True, timeout=TIMEOUT_SEC)
+                           capture_output=True, text=True, timeout=TIMEOUT_SEC,
+                           stdin=subprocess.DEVNULL)   # 不给 stdin 否则 CLI 等 3s 并刷警告
     except subprocess.TimeoutExpired:
         return False, f"探测超时 {TIMEOUT_SEC}s"
     if r.returncode == 0 and "OK" in r.stdout.upper():
         return True, ""
-    err = (r.stderr.strip() or r.stdout.strip() or f"退出码 {r.returncode}")
+    lines = [ln.strip() for ln in (r.stderr + "\n" + r.stdout).splitlines()
+             if ln.strip() and "no stdin data" not in ln]
+    err = lines[-1] if lines else f"退出码 {r.returncode}"
     return False, err[:200]
+
+
+def first_gap_date() -> str | None:
+    """首次发现离线时回溯起点：briefs 最后有数据之后的第一个涨停交易日。
+    （哨兵 2026-10-25 才上线，但事故从 08-22 开始——不能把起点记成上线日）"""
+    try:
+        conn = common.open_db()
+        row = conn.execute(
+            "SELECT MIN(trade_date) FROM limit_up_events WHERE pool='zt' "
+            "AND trade_date > (SELECT COALESCE(MAX(trade_date),'') FROM briefs)").fetchone()
+        return row[0] if row and row[0] else None
+    except Exception:                           # noqa: BLE001
+        return None
 
 
 def main() -> int:
@@ -52,7 +68,7 @@ def main() -> int:
             prev = {}
     ok, err = probe()
     now = common.now_iso()
-    down_since = None if ok else (prev.get("down_since") or now)
+    down_since = None if ok else (prev.get("down_since") or first_gap_date() or now)
     status = {"ok": ok, "checked_at": now, "error": err,
               "down_since": down_since, "probe_model": PROBE_MODEL}
     STATUS_PATH.write_text(json.dumps(status, ensure_ascii=False, indent=1) + "\n",
