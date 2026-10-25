@@ -61588,5 +61588,7115 @@
   "p": "医药医疗",
   "c": 0.5,
   "model": "claude-sonnet-5"
+ },
+ "制浆龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "半导体供应链": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "吉利供应链": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "国企控股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "国资控股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "国资赋能": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "地板人造板龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "央企传媒": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "央企平台": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "央企种业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "客户Coherent": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "客户供货": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "数字供应链": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "果蔬供应链": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "海外供应商": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "湖南国企": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "科创次新": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "育种体系": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "航天背景": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "航运龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "苹果供应链": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "道达尔供应商": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "钢企供货": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "锚链龙头": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "业绩高增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "中间体涨价": {
+  "t": "catalyst",
+  "p": "染料涨价",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "乙腈涨价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "产能出清": {
+  "t": "catalyst",
+  "p": "行业反内卷",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "产能去化": {
+  "t": "catalyst",
+  "p": "行业反内卷",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "产能扩充": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "产能扩建": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "产能翻番": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "伽蓝特订单": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "净利扭亏": {
+  "t": "catalyst",
+  "p": "扭亏为盈",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "制剂获批": {
+  "t": "catalyst",
+  "p": "药品获批",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "南网中标": {
+  "t": "catalyst",
+  "p": "南方电网中标",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "回购提议": {
+  "t": "catalyst",
+  "p": "拟回购",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "埃及产能": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "多基地产能": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "定增提交注册": {
+  "t": "catalyst",
+  "p": "定增注册稿",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "定增支持": {
+  "t": "catalyst",
+  "p": "定增",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "核电订单": {
+  "t": "catalyst",
+  "p": "核电中标",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "海工订单": {
+  "t": "catalyst",
+  "p": "订单饱满",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "珠海产能": {
+  "t": "catalyst",
+  "p": "珠海产能释放",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "生猪产能": {
+  "t": "catalyst",
+  "p": "生猪养殖",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电梯订单": {
+  "t": "catalyst",
+  "p": "订单饱满",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "签境外词元大单": {
+  "t": "catalyst",
+  "p": "境外大单",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "算力AI订单": {
+  "t": "catalyst",
+  "p": "订单饱满",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "股票回购": {
+  "t": "catalyst",
+  "p": "回购",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "芯片扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "订单交付": {
+  "t": "catalyst",
+  "p": "订单饱满",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "锶盐扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "隧道中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "风电扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高端扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "H股上市筹划": {
+  "t": "catalyst",
+  "p": "拟H股上市",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "Kimi合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "PCB收购": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "ST风险澄清": {
+  "t": "catalyst",
+  "p": "摘帽",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "中润收购": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "产业合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "仲裁澄清": {
+  "t": "catalyst",
+  "p": "诉讼利空落地",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "伽蓝特收购": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "光纤参股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "光芯片收购": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "功率半导体投资": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "参股光纤": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "参股投资收益": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "台湾资产出售": {
+  "t": "catalyst",
+  "p": "资产处置",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "园林剥离": {
+  "t": "catalyst",
+  "p": "资产处置",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "国资拟入主": {
+  "t": "catalyst",
+  "p": "控制权拟变更",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "大众合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "宁德合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "宇树科技投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "完成收购": {
+  "t": "catalyst",
+  "p": "资产收购",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "定增入主": {
+  "t": "catalyst",
+  "p": "控制权变更",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "实控人变更（追觅）": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "拟国资入主": {
+  "t": "catalyst",
+  "p": "控制权拟变更",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购光泰通信": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购华羿微电": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购新能动力": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购旋智电子100%股权": {
+  "t": "event",
+  "p": "",
+  "c": 0.92,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购民族出版社": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购界面财联社": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购财联社": {
+  "t": "event",
+  "p": "",
+  "c": 0.88,
+  "model": "claude-sonnet-5"
+ },
+ "控股变更": {
+  "t": "catalyst",
+  "p": "控股权变更",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "控股权转让": {
+  "t": "catalyst",
+  "p": "控制权转让",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "收购达峰": {
+  "t": "event",
+  "p": "",
+  "c": 0.88,
+  "model": "claude-sonnet-5"
+ },
+ "期货收购": {
+  "t": "catalyst",
+  "p": "资产收购",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "木作转型": {
+  "t": "catalyst",
+  "p": "跨界转型",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "比亚迪合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "毕棚沟收购": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "民族出版收购": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "澄清液冷": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "激光通信投资": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "牛散持股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "玛莎拉蒂合作传闻": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "电驱合作": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "终止收购酷尔芯": {
+  "t": "event",
+  "p": "",
+  "c": 0.88,
+  "model": "claude-sonnet-5"
+ },
+ "股东变更": {
+  "t": "catalyst",
+  "p": "控股股东变更",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "股权转让议案": {
+  "t": "catalyst",
+  "p": "股权转让",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "航空航天投资": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "重整投资人": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "金融投资": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "间接参股磷化铟公司": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "间接参股长存": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "风电收购": {
+  "t": "catalyst",
+  "p": "资产收购",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高附加值转型": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "3D建筑打印": {
+  "t": "product",
+  "p": "3D打印",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "4D毫米波雷达": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "6G布局": {
+  "t": "theme",
+  "p": "6G通信",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "800G光引擎": {
+  "t": "product",
+  "p": "CPO光引擎",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "A0车型": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AGV减速器": {
+  "t": "product",
+  "p": "精密减速器",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "AI ISP": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AIGC出版": {
+  "t": "theme",
+  "p": "出版",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AIGC长剧": {
+  "t": "theme",
+  "p": "短剧/漫剧",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AIoT量产": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AI低代码": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI光联": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI内容安全": {
+  "t": "product",
+  "p": "网络安全",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI出海": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "AI创意": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "AI应用出海": {
+  "t": "theme",
+  "p": "AI应用",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AI微短剧": {
+  "t": "theme",
+  "p": "短剧/漫剧",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AI数字孪生": {
+  "t": "theme",
+  "p": "具身智能",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI智能运维": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AI智能通信": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "AI渔业": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI照明": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AI用研": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "AI电影": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AI病理": {
+  "t": "product",
+  "p": "AI医疗",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AI算力服务器": {
+  "t": "product",
+  "p": "AI服务器",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "AMT系统": {
+  "t": "product",
+  "p": "汽车传动",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "APDC": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.2,
+  "model": "claude-sonnet-5"
+ },
+ "AR-AI显示": {
+  "t": "product",
+  "p": "AR/VR光学元件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "CCUS装备": {
+  "t": "product",
+  "p": "油气装备",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "CIPS": {
+  "t": "theme",
+  "p": "跨境支付",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "EDA软件": {
+  "t": "product",
+  "p": "EDA",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "FISH产品": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "FISH诊断": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "H2-X": {
+  "t": "product",
+  "p": "人形机器人",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "HPV疫苗": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "H股配售": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "H酸传导": {
+  "t": "product",
+  "p": "染料中间体",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "IMU传感器": {
+  "t": "product",
+  "p": "传感器",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "JH389": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "LCD光刻胶": {
+  "t": "product",
+  "p": "光刻胶",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "LED电源": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "LNG加工": {
+  "t": "product",
+  "p": "天然气",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "LPDDR5X": {
+  "t": "product",
+  "p": "存储芯片",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "MAH业务": {
+  "t": "product",
+  "p": "医药医疗",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "MEMS-OCS": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "MEMS代工": {
+  "t": "product",
+  "p": "晶圆代工",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "MEMS传感": {
+  "t": "product",
+  "p": "传感器",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "MFC": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "MLCC验证": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "MRO工业品": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "Microduck催化": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "Mini/Micro-LED": {
+  "t": "product",
+  "p": "显示与光电子",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "NPO模块": {
+  "t": "product",
+  "p": "CPO/NPO",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "OLED设备": {
+  "t": "product",
+  "p": "显示与光电子",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "PCB三防漆": {
+  "t": "product",
+  "p": "印制电路板",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "PCB主营": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "PCB制造": {
+  "t": "product",
+  "p": "印制电路板",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "PCB配套": {
+  "t": "product",
+  "p": "印制电路板",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "PCCP水利管道": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "PKI安全": {
+  "t": "product",
+  "p": "网络安全",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "PTFE": {
+  "t": "product",
+  "p": "氟化工",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "PVDC新材料": {
+  "t": "product",
+  "p": "氯碱化工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "Q2回升": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "RFID物联网": {
+  "t": "product",
+  "p": "物联网",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "SAP业务": {
+  "t": "product",
+  "p": "化工新材料",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "SpaceX": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "TFT石英粉": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "TGV光学": {
+  "t": "product",
+  "p": "TGV",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "TOD物业": {
+  "t": "product",
+  "p": "房地产",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "TOPCon组件": {
+  "t": "product",
+  "p": "光伏组件",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "Token业务": {
+  "t": "product",
+  "p": "Token工厂",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "V2G": {
+  "t": "product",
+  "p": "智能电网",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "VNA矢量网络分析仪": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "​光模块芯片": {
+  "t": "product",
+  "p": "光模块",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "“华”字辈": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.25,
+  "model": "claude-sonnet-5"
+ },
+ "“羊”字辈": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.25,
+  "model": "claude-sonnet-5"
+ },
+ "“超级细菌”": {
+  "t": "theme",
+  "p": "创新药",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "《三星堆：未来往事》": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "一体化": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "一汽配套": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "一站式文旅": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "三季度增长": {
+  "t": "catalyst",
+  "p": "三季度业绩增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "三部门联合调查": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "上海LNG增资": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "专业视听": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "业务多元化": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "东南亚航线": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "两轮电驱": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "个人医保云": {
+  "t": "product",
+  "p": "AI医疗",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "中交集团协同": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "中国出版集团": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "中报净利增长": {
+  "t": "catalyst",
+  "p": "中报业绩大增",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "中报扣非增长": {
+  "t": "catalyst",
+  "p": "中报业绩大增",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "中移动协同": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "中药制造": {
+  "t": "sector",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "中药材种业": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "中药独家": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "中高端增长": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "主业调整": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "主题园区": {
+  "t": "product",
+  "p": "房地产",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "乳制品": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "乳果糖原料药": {
+  "t": "product",
+  "p": "原料药",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "乳酸": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "乳酸提价": {
+  "t": "catalyst",
+  "p": "产品涨价",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "乳酸菌饮料": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "二手房复苏": {
+  "t": "theme",
+  "p": "房地产",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "二氯二氢硅反倾销": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "二氯硅反倾销": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "云数服务": {
+  "t": "product",
+  "p": "云计算",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "云网算力": {
+  "t": "theme",
+  "p": "算力",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "云集系列": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "五轴机床": {
+  "t": "product",
+  "p": "工业母机",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "产业协同": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "产品创新": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "产品获证": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "产销量增长": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "人工智能内容": {
+  "t": "theme",
+  "p": "AI应用",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "人工智能安全": {
+  "t": "theme",
+  "p": "网络安全",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "人工智能安防": {
+  "t": "theme",
+  "p": "AI应用",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "人工智能应用": {
+  "t": "theme",
+  "p": "AI应用",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "人工智能教育": {
+  "t": "theme",
+  "p": "教育",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "人工智能游戏": {
+  "t": "theme",
+  "p": "游戏",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "代糖饮料": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "仿生机器人": {
+  "t": "theme",
+  "p": "机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "传媒内容": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "传媒安全": {
+  "t": "theme",
+  "p": "网络安全",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "伽蓝特并表": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "低功耗SoC": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "低压断路器": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "低温光伏浆料": {
+  "t": "product",
+  "p": "光伏银浆",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "低碳冶金": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "低空规划": {
+  "t": "theme",
+  "p": "低空经济",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "体育传媒": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "体育营销": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "供水主业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "供港活猪": {
+  "t": "product",
+  "p": "生猪养殖",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "便利店扩张": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "信托股权交易": {
+  "t": "catalyst",
+  "p": "股权转让",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "信达资源": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "修仙时代": {
+  "t": "product",
+  "p": "游戏",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "健康机器人": {
+  "t": "theme",
+  "p": "机器人",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "储能PACK": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "储能配套": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "像素车灯": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "充电管理": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "先进粉体材料": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "光伏一体化": {
+  "t": "theme",
+  "p": "光伏",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "光伏幕墙": {
+  "t": "product",
+  "p": "建筑幕墙",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "光刻机保税寄售维修": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "光学动捕": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "光学膜片": {
+  "t": "product",
+  "p": "偏光片",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "光探测芯片": {
+  "t": "product",
+  "p": "光芯片",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "光模块基座": {
+  "t": "product",
+  "p": "光模块",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "光模块测试": {
+  "t": "product",
+  "p": "光模块",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "光模块胶": {
+  "t": "product",
+  "p": "光模块",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "光热风电": {
+  "t": "product",
+  "p": "新能源发电",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "光电分选": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "光纤互联": {
+  "t": "product",
+  "p": "光纤",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "光纤石英": {
+  "t": "product",
+  "p": "光纤材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "光纤通信": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "光通信上游": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "免税申请": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "免税零售": {
+  "t": "product",
+  "p": "零售",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "全人源单抗": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "全国化": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "全域营销": {
+  "t": "theme",
+  "p": "AI营销",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "全球客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "全球第二": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "全球销售": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "公路市政": {
+  "t": "product",
+  "p": "地产基建",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "兰亭": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "具身仿真": {
+  "t": "product",
+  "p": "具身智能",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "具身数据": {
+  "t": "product",
+  "p": "具身智能",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "具身机器人送样": {
+  "t": "catalyst",
+  "p": "人形机器人",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "养殖降本": {
+  "t": "catalyst",
+  "p": "盈利修复",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "内容IP": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "内容安全审核": {
+  "t": "product",
+  "p": "AI应用",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "内容电商": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "再生资源": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "军工复材": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "军工数字化": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "军工通风": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "军工防护": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "军民协同": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "军用无人机": {
+  "t": "product",
+  "p": "无人机",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "军用锚链": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "农产品加工": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "农作物种业": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "农机出海": {
+  "t": "catalyst",
+  "p": "出海",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "农药出口": {
+  "t": "catalyst",
+  "p": "出海",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "农药医药中间体": {
+  "t": "product",
+  "p": "医药中间体",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "冰雪工程": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "冰雪旅游保障": {
+  "t": "theme",
+  "p": "旅游景区",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "冰雪消费": {
+  "t": "theme",
+  "p": "旅游景区",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "冲水组件": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "冶金自动化": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "冷冻面": {
+  "t": "product",
+  "p": "预制菜",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "冷链配送": {
+  "t": "product",
+  "p": "物流",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "净利增长": {
+  "t": "catalyst",
+  "p": "净利润增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "减糖甜味剂": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "出版主业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "出版发行": {
+  "t": "sector",
+  "p": "出版",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "分拣机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "创制除草剂": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "创新药研发": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "制冰系统": {
+  "t": "product",
+  "p": "数据中心液冷",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "制冷压缩机": {
+  "t": "product",
+  "p": "空调",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "制剂拓展": {
+  "t": "catalyst",
+  "p": "化学制药",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "制动踏板": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "制种基地": {
+  "t": "product",
+  "p": "转基因",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "制造业": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "功能性涂布": {
+  "t": "product",
+  "p": "柔性传感器",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "化学原料药": {
+  "t": "product",
+  "p": "原料药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "化肥保供": {
+  "t": "theme",
+  "p": "磷化工",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "化肥农药": {
+  "t": "sector",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "区域品牌": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "医保支付改革": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "医学检测": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "医学检验": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "医用手套": {
+  "t": "product",
+  "p": "医疗耗材",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "医疗": {
+  "t": "sector",
+  "p": "医药医疗",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "医疗数智化": {
+  "t": "theme",
+  "p": "AI医疗",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "医疗物流机器人": {
+  "t": "product",
+  "p": "物流机器人",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "医疗美容": {
+  "t": "sector",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "医药CDMO": {
+  "t": "product",
+  "p": "创新药CDMO",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "医药主业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "医药健康": {
+  "t": "sector",
+  "p": "医药医疗",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "医药原料药": {
+  "t": "product",
+  "p": "原料药",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "医药数字化": {
+  "t": "theme",
+  "p": "医药流通",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "医药研发": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "医药研发服务": {
+  "t": "product",
+  "p": "创新药CRO",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "半导体仪表": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "半导体光罩": {
+  "t": "product",
+  "p": "半导体材料",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "半导体入股": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "半导体新材料": {
+  "t": "product",
+  "p": "半导体材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "半导体湿法设备": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "半导体环保": {
+  "t": "product",
+  "p": "环保",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "半导体耗材": {
+  "t": "product",
+  "p": "半导体材料",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "半导体设备服务": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "半导体钽材": {
+  "t": "product",
+  "p": "钽铌",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "半年报公布": {
+  "t": "catalyst",
+  "p": "半年度业绩增长",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "半年报改善": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "华锦阿美": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "南北丰田": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "南极磷虾": {
+  "t": "product",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "卫星应用": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "卫星星座": {
+  "t": "product",
+  "p": "卫星互联网",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "印制板": {
+  "t": "product",
+  "p": "印制电路板",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "卷烟纸": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "原料制剂一体化": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "原药制剂": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "原药投产": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "厨房小家电": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "参设合资公司（光器件）": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "双基药": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "反刍料": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "发动机电子": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "受托加工": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "受托生产": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "可信大模型": {
+  "t": "theme",
+  "p": "大模型",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "可降解材料": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "合成生物学": {
+  "t": "sector",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "合胞病毒预防": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "含氟废液资源化": {
+  "t": "product",
+  "p": "环保",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "呼吸用药": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "咖啡": {
+  "t": "product",
+  "p": "大消费",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "品牌优化": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "品牌运营": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "哈尔滨景区": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "哪吒重整关联": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "商业REITs": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "商业化育种": {
+  "t": "product",
+  "p": "玉米种业",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "商业综合体": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "商办物业": {
+  "t": "product",
+  "p": "房地产",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "商用显示": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "商用车发电机": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "商贸零售": {
+  "t": "sector",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "啤白融合": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "噻唑锌": {
+  "t": "product",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "固液电池": {
+  "t": "product",
+  "p": "固态电池",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "国家电投": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "国有股东": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "国网入围": {
+  "t": "catalyst",
+  "p": "国网中标",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "国防配套": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "国际化布局": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "图书出版": {
+  "t": "product",
+  "p": "出版",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "图书增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "圆柱锂电": {
+  "t": "product",
+  "p": "锂电池",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "在线监测": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "场景改造": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "坚戈油田": {
+  "t": "product",
+  "p": "油气开采",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "垂直大模型": {
+  "t": "theme",
+  "p": "大模型",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "城市发展": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "城镇燃气": {
+  "t": "product",
+  "p": "天然气",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "城镇燃气运营": {
+  "t": "product",
+  "p": "天然气",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "基建施工": {
+  "t": "product",
+  "p": "地产基建",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "基建盘活": {
+  "t": "catalyst",
+  "p": "资产盘活",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "基建项目": {
+  "t": "catalyst",
+  "p": "项目中标",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "基本药物": {
+  "t": "catalyst",
+  "p": "基药目录",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "基金备案": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "境外电商": {
+  "t": "product",
+  "p": "跨境电商",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "境外金融服务": {
+  "t": "sector",
+  "p": "金融",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "增资整合": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "复合储能": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "复合材料": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "复合铜箔基膜": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "复工复产": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "外用剂型": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "外用药": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "外贸出口": {
+  "t": "catalyst",
+  "p": "出海",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "外贸转包": {
+  "t": "catalyst",
+  "p": "外贸订单",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "外贸配套": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "多元化布局": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "多模态数据库": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "大健康品牌": {
+  "t": "sector",
+  "p": "大消费",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "大健康硬件": {
+  "t": "sector",
+  "p": "大消费",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "大兆瓦装备": {
+  "t": "product",
+  "p": "风电齿轮箱",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "大型H型钢": {
+  "t": "product",
+  "p": "特钢",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "大家居": {
+  "t": "sector",
+  "p": "家居商贸",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "大资管": {
+  "t": "sector",
+  "p": "金融",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "大连零售": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "天然橡胶": {
+  "t": "product",
+  "p": "橡胶制品",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "天然矿泉水": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "太空厨房设备": {
+  "t": "product",
+  "p": "商业航天",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "太阳能光热": {
+  "t": "sector",
+  "p": "新能源",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "头孢产品": {
+  "t": "product",
+  "p": "化学制药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "头孢克洛": {
+  "t": "product",
+  "p": "化学制药",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "头部客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "夹克男装": {
+  "t": "product",
+  "p": "男装",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "奎芯科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "女性健康": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "奶酪产品": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "奶酪深加工": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "妙创平台": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "媒体内容安全监测": {
+  "t": "product",
+  "p": "网络安全",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "媒体经营": {
+  "t": "sector",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "子公司完成增资": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "存储PCB": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "存储方案": {
+  "t": "product",
+  "p": "存储芯片",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "存储模组": {
+  "t": "product",
+  "p": "存储芯片",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "存储算力": {
+  "t": "theme",
+  "p": "算力",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "存储载板": {
+  "t": "product",
+  "p": "IC载板",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "存量翻新": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "宁德时代定点": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "宇航存储": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "安保安防": {
+  "t": "sector",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "安全传感器": {
+  "t": "product",
+  "p": "传感器",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "安赛蜜": {
+  "t": "product",
+  "p": "精细化工",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "定制显示器": {
+  "t": "product",
+  "p": "面板",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "定制服务器": {
+  "t": "product",
+  "p": "AI服务器",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "定点协议": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "宝马经销": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "实验仪器": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "实验室耗材": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "宠物消费": {
+  "t": "theme",
+  "p": "大消费",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "客车制造": {
+  "t": "product",
+  "p": "汽车",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "客车销量": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "家具智能装备": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "家庭机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "家装业务": {
+  "t": "sector",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "密封胶": {
+  "t": "product",
+  "p": "橡胶制品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "寒区施工": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "对台贸易": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "导热凝胶": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "射频前端": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "尊界V800": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "就医支付": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "尾气回收": {
+  "t": "product",
+  "p": "电子特气",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "尿素出口": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "尿素化肥": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "岩土固化": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "工业人工智能": {
+  "t": "product",
+  "p": "工业互联网",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "工业控制PCB": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "工业智能": {
+  "t": "product",
+  "p": "工业互联网",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "工业消防": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "工业照明": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "工业铝材": {
+  "t": "product",
+  "p": "铝全产业链",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "工商业储能": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "工程仿真": {
+  "t": "product",
+  "p": "物理AI",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "差别化涤纶长丝": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "巴西甜蛋白": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "市政环卫": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "干散货": {
+  "t": "product",
+  "p": "干散货航运",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "干散货运输": {
+  "t": "product",
+  "p": "干散货航运",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "年轻化产品": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "并购布局": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "并购易冲": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "并购莱恩光电": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "广告喷墨": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "广电智能体": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "应急救援": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "座椅舒适系统": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "开塞露": {
+  "t": "product",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "异辛酸项目": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "弗迪供汽": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "弹性地板": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "弹药贮运": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "影视剧": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "影视剧获奖": {
+  "t": "event",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "影院运营": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "循环化工": {
+  "t": "product",
+  "p": "化工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "微型驱动": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "微棱镜": {
+  "t": "product",
+  "p": "精密光学",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "微特减速电机": {
+  "t": "product",
+  "p": "机器人减速器",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "快充芯片": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "恐龙文旅": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "恒隆租约": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "情绪过热": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "成人疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "成本压降": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "户外面料": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "户用储能": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "房屋租赁": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "批量精装修": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "技术储备": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "抗感染药物": {
+  "t": "product",
+  "p": "医药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "抗敏牙膏": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "抗生素": {
+  "t": "product",
+  "p": "医药",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "抗癌药物": {
+  "t": "product",
+  "p": "医药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "抬头显示": {
+  "t": "product",
+  "p": "智能座舱",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "拉链业务": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "拟参投硅臻芯片": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "拟并购热电": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "拟收欧康诺": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "拟购AI电商": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "拟购买一汽丰田50%股权": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "挂面主业": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "指纹识别": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "换电站": {
+  "t": "product",
+  "p": "新能源汽车",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "控股矿业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "摩洛哥基地": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "政务数字化": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "政务智能体": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "教材教辅": {
+  "t": "product",
+  "p": "出版",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "教科书发行": {
+  "t": "product",
+  "p": "出版",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "教育事业": {
+  "t": "product",
+  "p": "教育",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "教育培训": {
+  "t": "product",
+  "p": "教育",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "教育服务": {
+  "t": "product",
+  "p": "教育",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "教辅图书": {
+  "t": "product",
+  "p": "出版",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "数字内容": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "数字出版": {
+  "t": "product",
+  "p": "出版",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "数字化教育": {
+  "t": "product",
+  "p": "教育",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "数字家装": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "数字成套": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "数字文创": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "数字财税": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "数据": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "数据中心业务": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "数据中心电缆": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "数据中心运维": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "数据中心风机": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "数据分析": {
+  "t": "product",
+  "p": "AI应用",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "数智化出版": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "数智化升级": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "数智基金": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "整车业务": {
+  "t": "product",
+  "p": "汽车产业链",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "整车客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "文体旅融合": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "文体旅集成": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "文化消费": {
+  "t": "theme",
+  "p": "大消费",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "文教用品": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "文旅科技": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "新厂投产": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "新品研发": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "新品种审定": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "新疆燃气": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "新疆零售": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "新疆项目": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "新签增长": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "新能源EPC": {
+  "t": "product",
+  "p": "新能源",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "新能源整车": {
+  "t": "product",
+  "p": "新能源汽车",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "新能源汽车减速器": {
+  "t": "product",
+  "p": "新能源汽车零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "新能源汽车电子": {
+  "t": "product",
+  "p": "新能源汽车零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "新能源汽车电驱": {
+  "t": "product",
+  "p": "新能源汽车零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "新能源用胶": {
+  "t": "product",
+  "p": "新能源",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "新能源电机轴": {
+  "t": "product",
+  "p": "新能源汽车零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "新能源电池模组": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "新能源电源": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "新能源管桩": {
+  "t": "product",
+  "p": "海上风电",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "新能源综合服务": {
+  "t": "product",
+  "p": "新能源",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "新能源营销": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "新能源铝材": {
+  "t": "product",
+  "p": "铝全产业链",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "新能源锂电池": {
+  "t": "product",
+  "p": "锂电池",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "旅游索道": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "旅游经营": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "无人应急装备": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "无人机物流": {
+  "t": "product",
+  "p": "无人机",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "无线模组": {
+  "t": "product",
+  "p": "物联网模组",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "无线网关": {
+  "t": "product",
+  "p": "物联网模组",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "无线芯片": {
+  "t": "product",
+  "p": "半导体",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "日用陶瓷出口": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "时尚女装": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "时间频率": {
+  "t": "product",
+  "p": "商业航天",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "易开盖": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "景区旅游": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "景区经营": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智慧交管": {
+  "t": "product",
+  "p": "智慧交通",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "智慧仓储": {
+  "t": "product",
+  "p": "物联网",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智慧制造": {
+  "t": "product",
+  "p": "工业互联网",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智慧城域": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "智慧安全4.0": {
+  "t": "product",
+  "p": "网络安全",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "智慧家庭": {
+  "t": "product",
+  "p": "智能家居",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "智慧广电": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智慧招考": {
+  "t": "product",
+  "p": "教育",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智慧轨道": {
+  "t": "product",
+  "p": "轨道交通",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "智慧运维": {
+  "t": "product",
+  "p": "风电",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智算布局": {
+  "t": "theme",
+  "p": "算力",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智能交互显示产品": {
+  "t": "product",
+  "p": "显示与光电子",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "智能传感器": {
+  "t": "product",
+  "p": "传感器",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "智能口腔": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "智能可穿戴": {
+  "t": "product",
+  "p": "消费电子",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智能报关": {
+  "t": "product",
+  "p": "物流",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智能按摩": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "智能按摩椅": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "智能显示": {
+  "t": "product",
+  "p": "显示与光电子",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "智能检测": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "智能电梯": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智能眼镜电池": {
+  "t": "product",
+  "p": "AI眼镜",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智能睡眠": {
+  "t": "product",
+  "p": "智能家居",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "智能矿卡": {
+  "t": "product",
+  "p": "工程机械",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "智能终端结构件": {
+  "t": "product",
+  "p": "消费电子",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智能设备": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "智能配电": {
+  "t": "product",
+  "p": "智能电网",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "智能马桶": {
+  "t": "product",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "有机胺": {
+  "t": "product",
+  "p": "电子化学品",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "有色交易": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "有色回收": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "服务器液冷": {
+  "t": "product",
+  "p": "液冷",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "服务器采购": {
+  "t": "theme",
+  "p": "算力服务器",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "服务机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "机器人乐队": {
+  "t": "theme",
+  "p": "人形机器人概念",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "机器人传感": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "机器人执行器": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "机器人电池": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "机器人研发": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "机器人缝制": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "机器人触觉": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "机器人集成": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "机电组件": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "权益融资": {
+  "t": "catalyst",
+  "p": "定增",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "杭州日报": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "林业主业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "柔性触觉": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "核心品种": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "核心景区": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "核电项目": {
+  "t": "theme",
+  "p": "核电",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "核聚变电源": {
+  "t": "product",
+  "p": "可控核聚变",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "核能材料": {
+  "t": "product",
+  "p": "核电材料",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "梦三国IP": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "棉花种业": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "棉蛋白": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "植物基": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "模块化": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "橡胶科技": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "橡胶骨架材料": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "毛利率提升": {
+  "t": "catalyst",
+  "p": "业绩改善",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "毛毯出口": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "民爆装备": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "民爆重组": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "民生AI": {
+  "t": "theme",
+  "p": "AI应用",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "气体储运": {
+  "t": "product",
+  "p": "工业气体",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "氧化锆": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "氧化锆微珠": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "氧化锆新材料": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "氨基酸制剂": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "氩气": {
+  "t": "product",
+  "p": "工业气体",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "水产品加工": {
+  "t": "product",
+  "p": "水产品",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "水利技术": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "水务业务": {
+  "t": "product",
+  "p": "智慧水务",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "水务机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "水稻出海": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "求婚钻戒": {
+  "t": "product",
+  "p": "培育钻石",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "汽车动力": {
+  "t": "product",
+  "p": "汽车",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "汽车外饰件": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "汽车控制系统": {
+  "t": "product",
+  "p": "汽车电子",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "汽车注塑": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "汽车电子前装": {
+  "t": "product",
+  "p": "汽车电子",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "汽车电子板": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "汽车电子玻璃": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "汽车维修保养设备": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "汽车网络安全": {
+  "t": "theme",
+  "p": "网络安全",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "汽车贸易": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "汽车车桥": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "汽配出口": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "河图平台": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "油服产品": {
+  "t": "product",
+  "p": "油气装备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "油气船舶": {
+  "t": "product",
+  "p": "船舶制造",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "油脂整合": {
+  "t": "catalyst",
+  "p": "资产重组",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "油运景气": {
+  "t": "theme",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "油运高景气": {
+  "t": "theme",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "泛文化": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "注塑业务": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "洗染服务": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "洗衣机离合器": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "海上油气": {
+  "t": "sector",
+  "p": "油气开采",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "海南仓储": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "海南免税": {
+  "t": "theme",
+  "p": "海南自贸港",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "海外交付": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "海外出海": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "海外制冷": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "海外客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "海外总代": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "海外支架": {
+  "t": "product",
+  "p": "光伏支架",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "海外游戏": {
+  "t": "product",
+  "p": "游戏",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "海外电梯": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "海外登记": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "海外配套": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "海外配电": {
+  "t": "product",
+  "p": "配电设备",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "海外销售": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "海工桩": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "海底光缆": {
+  "t": "product",
+  "p": "光纤光缆",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "海洋公园": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "海绵锆": {
+  "t": "product",
+  "p": "锆产品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "消费场景": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "消费电子电池": {
+  "t": "product",
+  "p": "3C消费电池",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "消费电池": {
+  "t": "product",
+  "p": "3C电池",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "涤纶面料": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "润滑油脂": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "液冷产品": {
+  "t": "product",
+  "p": "液冷",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "液冷机柜": {
+  "t": "product",
+  "p": "液冷",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "液冷水泵": {
+  "t": "product",
+  "p": "液冷泵",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "液冷油泵": {
+  "t": "product",
+  "p": "液冷泵",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "液冷铝材": {
+  "t": "product",
+  "p": "液冷",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "淀粉糖": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "深铁支持": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "清洁机器人": {
+  "t": "product",
+  "p": "智慧清洁机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "渠道去库": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "渠道拓展": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "温泉度假": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "港口机械": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "港机装备": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "游船票务": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "激光装备": {
+  "t": "product",
+  "p": "激光",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "火电热力": {
+  "t": "sector",
+  "p": "火电",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "炊具小家电": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "炒菜机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "点胶机器人": {
+  "t": "product",
+  "p": "工业机器人",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "烟标印刷": {
+  "t": "product",
+  "p": "烟标包装",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "热水采暖": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "热管理材料": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "烯烃": {
+  "t": "product",
+  "p": "化工",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "焊接机器人": {
+  "t": "product",
+  "p": "工业机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "焦化主业": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "焦炉煤气制氢": {
+  "t": "product",
+  "p": "氢能",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "焦炭主业": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "焦炭产销": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "焦炭增产": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "焦炭生产": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "煤炭主业": {
+  "t": "sector",
+  "p": "煤炭",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "煤焦价格": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "煤矿服务": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "照明业务": {
+  "t": "product",
+  "p": "LED",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "燃料乙醇": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "燃机出海": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "燃机锅炉": {
+  "t": "product",
+  "p": "燃气轮机",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "燃气热水器": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "爽酒": {
+  "t": "product",
+  "p": "白酒",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "片式电感": {
+  "t": "product",
+  "p": "电子元件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "牛散入股": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "物理AI仿真": {
+  "t": "theme",
+  "p": "具身智能",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "物理AI数据": {
+  "t": "theme",
+  "p": "具身智能",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "特斯拉机器人": {
+  "t": "theme",
+  "p": "人形机器人",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "特殊资产": {
+  "t": "product",
+  "p": "金融",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "特种合金": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "特种油升级": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "特种玻纤": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "特种装备": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "特种运输": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "特种钢索": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "特种防护": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "特种饲料": {
+  "t": "product",
+  "p": "饲料",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "特种高分子": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "特色工艺": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "独立储能电站": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "猪价回暖": {
+  "t": "theme",
+  "p": "生猪养殖",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "玉米加工": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "玩具制造": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "环保增塑剂": {
+  "t": "product",
+  "p": "精细化工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "环卫机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "环卫自动驾驶": {
+  "t": "product",
+  "p": "智能驾驶",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "环氧树脂投产": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "现代农业": {
+  "t": "sector",
+  "p": "农业食品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "玻纤主业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "玻纤纱": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "珠宝加工": {
+  "t": "product",
+  "p": "黄金珠宝",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "珠海晶瓷": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "甘草制品": {
+  "t": "product",
+  "p": "中药",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "甘草深加工": {
+  "t": "product",
+  "p": "中药",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "生态建设": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "生活服务": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "生活用纸": {
+  "t": "product",
+  "p": "造纸",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "生物育种": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "生物过滤": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "甲醇下游": {
+  "t": "product",
+  "p": "甲醇",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "甲醇价格": {
+  "t": "theme",
+  "p": "甲醇",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "甲醇提价": {
+  "t": "catalyst",
+  "p": "甲醇涨价",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "电力主业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电力人工智能": {
+  "t": "theme",
+  "p": "电力",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电力信息化": {
+  "t": "product",
+  "p": "电力",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电力巡检": {
+  "t": "product",
+  "p": "电力",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电力市场化": {
+  "t": "theme",
+  "p": "电力",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电力服务": {
+  "t": "product",
+  "p": "电力",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电力资质": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电力软件": {
+  "t": "product",
+  "p": "电力",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电力造价": {
+  "t": "product",
+  "p": "电力",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电动工具": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电商增长": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电商酒类": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电子收费": {
+  "t": "product",
+  "p": "智慧交通",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电子气体": {
+  "t": "product",
+  "p": "电子特气",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电子测量": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电子测量仪器": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电子级氧化铁": {
+  "t": "product",
+  "p": "电子化学品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电子通信": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电子通讯": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电容配件": {
+  "t": "product",
+  "p": "电子元件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电影制作": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电影屏": {
+  "t": "product",
+  "p": "LED",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电影院线": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电控产品": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电机业务": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "电池客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电池项目": {
+  "t": "event",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电热元件": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电网侧储能": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "电网应用": {
+  "t": "product",
+  "p": "电网设备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "电能表芯片": {
+  "t": "product",
+  "p": "智能电网",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "电脑横机": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "电驱动定转子": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "界面财联社重组": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "疫苗诊断": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "病毒载体服务": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "白酒主业": {
+  "t": "sector",
+  "p": "白酒",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "皮肤科学": {
+  "t": "product",
+  "p": "医药医疗",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "皮鞋制造": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "皮鞋皮具": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "益生菌出海": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "益生菌食品": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "盐及盐化工": {
+  "t": "product",
+  "p": "化工",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "盐穴储气": {
+  "t": "product",
+  "p": "储能",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "相转移催化剂": {
+  "t": "product",
+  "p": "电子化学品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "眼科用药": {
+  "t": "product",
+  "p": "眼科医疗",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "矢量网络分析仪": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "知识产权运营": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "石化炼化": {
+  "t": "sector",
+  "p": "石油炼化",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "石英纤维": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "矿业整合": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "矿产贸易": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "矿服民爆": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "研发推进": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "破伤风疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "硅光产品": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "硅光子": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "硅光工艺": {
+  "t": "product",
+  "p": "晶圆代工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "硅基OLED": {
+  "t": "product",
+  "p": "显示与光电子",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "硅砂矿": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "硬折扣": {
+  "t": "theme",
+  "p": "零售",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "磷化铟材料": {
+  "t": "product",
+  "p": "磷化铟",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "磷肥": {
+  "t": "product",
+  "p": "磷化工",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "社区养老": {
+  "t": "theme",
+  "p": "银发经济",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "票务整合": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "离心压缩机": {
+  "t": "product",
+  "p": "通用设备",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "种子业务": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "稀贵金属回收": {
+  "t": "product",
+  "p": "环保",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "空冷器": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "空冷设备": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "空气分离设备": {
+  "t": "product",
+  "p": "空分设备",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "端侧安全": {
+  "t": "theme",
+  "p": "网络安全",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "端侧智能": {
+  "t": "theme",
+  "p": "边缘AI",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "竹制餐厨具": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "竹基禾塑": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "竹浆纸": {
+  "t": "product",
+  "p": "造纸",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "筒子纱": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "签署算电协同项目": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "签订光储充协议": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "算力铜箔": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "算力集成": {
+  "t": "theme",
+  "p": "算力",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "类金融": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "粉磨装备": {
+  "t": "product",
+  "p": "通用设备",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "粮食加工": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "粮食种植": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "粮食贸易": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "粽子食品": {
+  "t": "product",
+  "p": "预制菜",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "精品IP": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "精品商超": {
+  "t": "product",
+  "p": "零售",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "精密空调": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "精密管": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "精密铁芯": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "精密零组件": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "糖醇": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "系统集成": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "红海航线": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "纳米分散体": {
+  "t": "product",
+  "p": "光刻胶",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "纳米炭铁": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "纸张化学品": {
+  "t": "product",
+  "p": "精细化工",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "线上渠道": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "线上电商": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "线上营销": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "细胞培养基": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "细胞存储": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "绿色印染": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "绿色燃料": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "绿色面料": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "网络分析仪": {
+  "t": "product",
+  "p": "半导体检测",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "网络安全大模型": {
+  "t": "theme",
+  "p": "网络安全",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "网络靶场": {
+  "t": "theme",
+  "p": "网络安全",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "羊毛羊绒": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "美妆零售": {
+  "t": "sector",
+  "p": "零售",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "老窖池": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "聚醚": {
+  "t": "product",
+  "p": "化工新材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "肌酸业务": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "股东合并": {
+  "t": "event",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "股价被操纵": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "股份划转完成": {
+  "t": "catalyst",
+  "p": "股份转让",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "股份捐赠": {
+  "t": "catalyst",
+  "p": "股份转让",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "股票期权": {
+  "t": "catalyst",
+  "p": "股权激励",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "育种研发": {
+  "t": "product",
+  "p": "玉米种业",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "育繁推一体化": {
+  "t": "product",
+  "p": "玉米种业",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "胶粘剂涂料": {
+  "t": "product",
+  "p": "化工新材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "能源数字化": {
+  "t": "theme",
+  "p": "智能电网",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "能源服务": {
+  "t": "theme",
+  "p": "虚拟电厂",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "脂肪肝药": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "脱敏治疗": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "腹膜透析": {
+  "t": "product",
+  "p": "医疗器械",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "膜分离": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "膳食纤维": {
+  "t": "product",
+  "p": "大消费",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "自主研发": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "自动化装备": {
+  "t": "product",
+  "p": "通用设备",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "自有IP": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "自研车型": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "航天电池": {
+  "t": "product",
+  "p": "航天应用",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "航材国产化": {
+  "t": "theme",
+  "p": "国产替代",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "航空惯导": {
+  "t": "product",
+  "p": "航空装备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "船舶海工": {
+  "t": "sector",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "船队扩张": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "艺术珠宝": {
+  "t": "product",
+  "p": "黄金珠宝",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "药品出海": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "药材种植": {
+  "t": "product",
+  "p": "中药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "菌株研发": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "菜籽油": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "萃取法钛白": {
+  "t": "product",
+  "p": "钛白粉",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "营养健康": {
+  "t": "sector",
+  "p": "大消费",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "蒸发冷凝": {
+  "t": "product",
+  "p": "液冷",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "藻油": {
+  "t": "product",
+  "p": "大消费",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "虚拟拍摄": {
+  "t": "product",
+  "p": "AI数字人",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "蜡烛香薰": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "融资租赁": {
+  "t": "sector",
+  "p": "金融",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "血凝酶": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "行业数据智能": {
+  "t": "theme",
+  "p": "AI大模型",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "装备零部件": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "装机增长": {
+  "t": "catalyst",
+  "p": "新能源发电",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "装饰面料": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "裘皮服饰": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "西藏券商": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "西藏民爆": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "视听大数据": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "视听安全": {
+  "t": "theme",
+  "p": "网络安全",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "视频监控": {
+  "t": "product",
+  "p": "AI视觉",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "训练数据": {
+  "t": "product",
+  "p": "具身智能",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "词元出海": {
+  "t": "theme",
+  "p": "出海",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "读者品牌": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "豆浆机": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "财经新媒体": {
+  "t": "sector",
+  "p": "出版",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "财联社重组": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "质谱诊断": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "购置液冷": {
+  "t": "catalyst",
+  "p": "液冷",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "资产捐赠承诺": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "资源再生": {
+  "t": "theme",
+  "p": "环保",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "资管业务": {
+  "t": "sector",
+  "p": "金融",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "赛德盛并购": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "超声波指纹传感器": {
+  "t": "product",
+  "p": "传感器",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "超市调改": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "超短焦投影": {
+  "t": "product",
+  "p": "AR/VR光学元件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "超纤革": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "越南制造": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "跨境通信": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "蹦床": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "车企配套": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "车身控制": {
+  "t": "product",
+  "p": "汽车电子",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "车载过滤": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "轨道扣件": {
+  "t": "product",
+  "p": "轨道交通",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "轮毂单元": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "软件化交付": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "软装增长": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "轴承保持架": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "轻型飞机": {
+  "t": "product",
+  "p": "低空经济",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "轻资产代建": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "过敏诊断": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "过滤部件": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "运动功能面料": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "运动控制": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "连锁服务": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "连锁零售": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "连锁餐饮": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "送样推进": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "适老产品": {
+  "t": "theme",
+  "p": "银发经济",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "适老卫浴": {
+  "t": "product",
+  "p": "银发经济",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "通信模组": {
+  "t": "product",
+  "p": "物联网模组",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "通信测试": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "速冻食品": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "速效救心丸": {
+  "t": "product",
+  "p": "中药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "道路客运": {
+  "t": "product",
+  "p": "交通运输",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "配电自动化": {
+  "t": "product",
+  "p": "智能电网",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "酒器": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "酶制剂": {
+  "t": "product",
+  "p": "动物保健",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "重整撤回": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "重点工程": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "重点影片": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "重点项目": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "重组审核中止": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "重防腐涂料": {
+  "t": "product",
+  "p": "精细化工",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "金枪鱼": {
+  "t": "product",
+  "p": "水产品",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "金融信息平台": {
+  "t": "product",
+  "p": "金融科技",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "钙钛矿玻璃": {
+  "t": "product",
+  "p": "钙钛矿电池",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "钡盐放量": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "钢企直供": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "钢铁智能化": {
+  "t": "product",
+  "p": "工业互联网",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "钼精矿": {
+  "t": "product",
+  "p": "钼",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "铁矿采选": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "铁路货车": {
+  "t": "product",
+  "p": "轨道交通",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "铂族金属加工": {
+  "t": "product",
+  "p": "贵金属",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "铜业主业": {
+  "t": "product",
+  "p": "铜",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "铜合金": {
+  "t": "product",
+  "p": "铜",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "铜基新材": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "铜板合同": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "铜板采购": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "铜箔装备": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "铝基新材": {
+  "t": "product",
+  "p": "新材料",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "铝电解电容器": {
+  "t": "product",
+  "p": "铝电解电容",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "铟资源循环": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "锂电智能装备": {
+  "t": "product",
+  "p": "锂电池",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "锂电隔热": {
+  "t": "product",
+  "p": "锂电池",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "锂盐新材料": {
+  "t": "product",
+  "p": "锂盐",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "锆基材料": {
+  "t": "product",
+  "p": "锆材料",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "锆钛精炼": {
+  "t": "product",
+  "p": "锆产品",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "锌铜矿": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "锡锑铟": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "镜片主业": {
+  "t": "product",
+  "p": "AI眼镜",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "长江1000A": {
+  "t": "product",
+  "p": "航空装备",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "长源并表": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "长视频": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "长飞光纤": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "阀用特种塑料": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "防务产品": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "防务装备": {
+  "t": "sector",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "降脂复方药": {
+  "t": "product",
+  "p": "化学制药",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "院线影院": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "院线经营": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "除冰机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "集中供热": {
+  "t": "product",
+  "p": "热电联产",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "集装箱运输": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "集采": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "集采药品": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "零售主业": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "零售促销": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "零售消费": {
+  "t": "sector",
+  "p": "大消费",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "零售电商": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "零售调改": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "非标压力容器": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "项目量产": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "风光水电": {
+  "t": "product",
+  "p": "新能源发电",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "风电主机": {
+  "t": "product",
+  "p": "风电整机",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "飞翼式空冷": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "飞翼空冷器": {
+  "t": "product",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "飞行汽车概念股活跃": {
+  "t": "theme",
+  "p": "飞行汽车",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "食品加工": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "食品配料": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "食品餐饮": {
+  "t": "sector",
+  "p": "农业食品",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "食品饲料添加剂": {
+  "t": "product",
+  "p": "精细化工",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "食欲素": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "食用油储备": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "食用油项目": {
+  "t": "event",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "食糖业务": {
+  "t": "product",
+  "p": "食糖全产业链",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "餐饮客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "饮料品牌": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "饲料业务": {
+  "t": "product",
+  "p": "饲料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "饲料主业": {
+  "t": "product",
+  "p": "饲料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "首部AI电影上映": {
+  "t": "event",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "香精配料": {
+  "t": "product",
+  "p": "香精香料",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "马来西亚项目": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高压高速连接器": {
+  "t": "product",
+  "p": "汽车连接器",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高可靠应用": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "高强瓦楞纸": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高效变频": {
+  "t": "product",
+  "p": "机器人电机",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "高效电机": {
+  "t": "product",
+  "p": "家电零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "高端HDI": {
+  "t": "product",
+  "p": "HDI板",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高端产品": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "高端全屋定制": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高端农机": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高端婚嫁黄金": {
+  "t": "product",
+  "p": "黄金珠宝",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "高端新品": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "高端模组": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "高端油品": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高端电子铜箔": {
+  "t": "product",
+  "p": "PCB铜箔",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高端自动化": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "高端部件": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "高端铜合金": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "高精密PCB": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高纯工艺系统": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高纯氦气": {
+  "t": "product",
+  "p": "氦气",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "高纯石英": {
+  "t": "product",
+  "p": "半导体石英",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "高纯铜粉": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "高透产品": {
+  "t": "product",
+  "p": "光伏玻璃",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高速公路运营": {
+  "t": "product",
+  "p": "交通运输",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "高速数据线": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高速电梯": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高速轴承": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "高速铜线": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "高阶PCB": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "高频通讯": {
+  "t": "product",
+  "p": "高频PCB",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "高频高速": {
+  "t": "product",
+  "p": "覆铜板",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高频高速PCB": {
+  "t": "product",
+  "p": "PCB",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "高频高速覆铜板": {
+  "t": "product",
+  "p": "覆铜板",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "鱼油原料": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "鳗鱼出口": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "鸭业全产业链": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "鸿蒙办公": {
+  "t": "theme",
+  "p": "鸿蒙生态",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "鸿蒙智选": {
+  "t": "theme",
+  "p": "鸿蒙生态",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "黄金业务": {
+  "t": "product",
+  "p": "黄金",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "黄金租赁": {
+  "t": "product",
+  "p": "黄金",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "黄金锑钨": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "黑猪育种": {
+  "t": "product",
+  "p": "生猪养殖",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "黑色食养": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "鼠疫": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "鼠疫适应症": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "龙头客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "EDA概念": {
+  "t": "theme",
+  "p": "EDA",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "F5G概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "Kimi概念": {
+  "t": "theme",
+  "p": "AI大模型",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "中芯概念": {
+  "t": "theme",
+  "p": "半导体",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "供销社概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "券商概念": {
+  "t": "theme",
+  "p": "金融",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "医药产业链": {
+  "t": "theme",
+  "p": "医药",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "影视概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "快手概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "房地产产业链": {
+  "t": "theme",
+  "p": "房地产",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "染料产业链": {
+  "t": "theme",
+  "p": "染料",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "氦气概念": {
+  "t": "theme",
+  "p": "氦气",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "煤化工概念": {
+  "t": "theme",
+  "p": "煤化工",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "电子产业链": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "电子纸概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "肝素概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "航母概念": {
+  "t": "theme",
+  "p": "军工",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "鸡肉概念": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "黄金产业链": {
+  "t": "theme",
+  "p": "黄金",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "VPN": {
+  "t": "product",
+  "p": "网络安全",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "东方财富热股": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "中特估": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "农林牧渔": {
+  "t": "sector",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "农药兽药": {
+  "t": "sector",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "味蕾经济": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "商超零售": {
+  "t": "sector",
+  "p": "零售",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "微盘精选": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "微盘股": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "文娱消费": {
+  "t": "sector",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "昨日涨停": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "昨日涨停_含一字": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "昨日首板": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "最近多板": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "柔性屏(折叠屏)": {
+  "t": "product",
+  "p": "显示面板",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "疫苗": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "百日新高": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "短剧互动游戏": {
+  "t": "theme",
+  "p": "短剧",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "科创板做市商": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "科技风格": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "稀缺资源": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "红利破净股": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "红利股": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "肉制品": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "航天航空": {
+  "t": "sector",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "证金持股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "超市零售": {
+  "t": "sector",
+  "p": "零售",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "退税商店": {
+  "t": "theme",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "金融地产风格": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "长期破净": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "飞行汽车(eVTOL)": {
+  "t": "theme",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
  }
 }
