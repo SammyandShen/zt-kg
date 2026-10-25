@@ -147,6 +147,12 @@ semantic_config.calibration_log，前端口径同步 METRIC_DEFS）。本文件�
   （.gitignore）→ build_site 导出 `llm_status` → 热力页状态条红牌"LLM层 离线N天"
   + ⓘ修复命令；audit 加观察哨（最新日有涨停但 briefs=0 → 🚨 警告，不阻断）。
   OAuth 续期是零人工干预原则的硬边界——只能 `claude auth login`，系统的责任是不沉默。
+  **停摆后遗症与回补路径（10-25 实操）**：briefs 回补 `summarize_news --days 45`
+  （37 日 2083 条，一次跑完）；classify+auto_adopt 一次清积压（写回 347/转正 20）；
+  judge 队列窗口只有近 2 日，无需回补；**年报抽取两月零产出但不写占位，541 份自动
+  回到待抽队列**（select_reports 以"已有候选"去重），用 `extract_business_candidates
+  --limit N` 分批重抽，这是凭据率 33%→10% 的真因；映射台账 judged_tags 被重置为 0
+  后从未成功 sweep，需多轮 gen_theme_mappings 收敛。
   登录后回补：`summarize_news.py --days N`；judge/classify/提词按台账自动续跑。
 - **归因链四优化（2026-08-07，review 落地）**：①T+复核 business_relation 加
   同名直配（与 find_basis 口径对齐，"业务标签即题材名"不再被记未映射误杀）
