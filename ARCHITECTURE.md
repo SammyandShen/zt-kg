@@ -519,7 +519,7 @@ script 注入加载（file:// 兼容）。build_site 每日随班次重生成。
 - 浏览器验证页面：用 http.server + `index.html?v=N` + `fetch(url,{cache:'reload'})`
   破缓存；热力页路由是 **#/heat**。
 - claude CLI 不在 launchd PATH 时脚本自动找 ~/.local/bin 等位置。
-- **claude CLI OAuth 会过期且不自动续期**（2026-08-22 事故，静默两个月）：所有 LLM
+- **claude CLI OAuth 会过期且不自动续期**（2026-08-24 起事故，静默两个月）：所有 LLM
   工序都是 `|| echo 跳过`，失败不阻断发布。看 `claude auth status`；修复
   `claude auth login`（人工）。check_llm.py 哨兵 + 状态条红牌 + audit 观察哨
   三处会报，别再只看"✅ 发布成功"。恢复后 `summarize_news.py --days N` 回补。

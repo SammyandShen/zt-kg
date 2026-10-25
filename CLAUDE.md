@@ -140,7 +140,7 @@ semantic_config.calibration_log，前端口径同步 METRIC_DEFS）。本文件�
   semanticEventsForCid 三型一律归因口径；业务图谱节点热度按子树对齐词典走
   归因口径（"因它涨"），词典外节点回落业务口径（行名悬停标注）——
   "做机器人但因重组涨停"不再灌进机器人热度。归因口径受 60 日导出窗口限制。
-- **LLM 层健康哨兵（2026-10-25，事故修复）**：claude CLI OAuth 会话 08-22 过期，
+- **LLM 层健康哨兵（2026-10-25，事故修复）**：claude CLI OAuth 会话 08-24 起探测失败（briefs 停在 08-21），
   summarize_news/classify_tags/judge/discover_news_terms 连续两个月每日失败，全部
   被 `|| echo 跳过` 吞掉、确定性工序照常发布，无人察觉（briefs 停在 08-21，judge
   每日"判决 0 条"）。修复：`check_llm.py` 班次开头探测 → `data/llm_status.json`
