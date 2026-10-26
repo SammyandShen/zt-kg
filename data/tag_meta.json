@@ -9236,6 +9236,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "黑色金属供应链": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "黑龙江龙头": {
   "type": "attribute",
   "status": "candidate",
@@ -9701,6 +9705,11 @@
   "status": "candidate"
  },
  "三季报分红": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "三季报单季增长": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -13607,6 +13616,10 @@
   "status": "candidate"
  },
  "光芯片收购": {
+  "type": "event",
+  "status": "candidate"
+ },
+ "光通信收购": {
   "type": "event",
   "status": "candidate"
  },
@@ -19172,6 +19185,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AI科技": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI穿戴": {
   "type": "product",
   "status": "candidate"
@@ -20148,6 +20165,10 @@
   "status": "candidate"
  },
  "IP联名": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "IP衍生": {
   "type": "product",
   "status": "candidate"
  },
@@ -21482,6 +21503,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "一品一链": {
+  "type": "product",
+  "status": "candidate"
+ },
  "一站式文旅": {
   "type": "product",
   "status": "candidate"
@@ -22514,6 +22539,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "休闲新品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "休闲食品": {
   "type": "product",
   "status": "candidate",
@@ -23531,6 +23560,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "光模块散热": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "光模块测试": {
   "type": "product",
   "status": "candidate",
@@ -23753,6 +23787,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "光通信重组": {
+  "type": "product",
+  "status": "candidate"
  },
  "光通信陶瓷外壳": {
   "type": "product",
@@ -25353,6 +25391,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医疗SPD": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医疗信息化": {
   "type": "product",
   "status": "candidate",
@@ -25481,6 +25523,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "医药物流": {
+  "type": "product",
+  "status": "candidate"
+ },
  "医药电商": {
   "type": "product",
   "status": "candidate"
@@ -25507,6 +25553,10 @@
   "status": "candidate"
  },
  "医药零售整合": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "医院智能化": {
   "type": "product",
   "status": "candidate"
  },
@@ -26446,6 +26496,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "品牌客户": {
+  "type": "product",
+  "status": "candidate"
+ },
  "品牌战略升级": {
   "type": "product",
   "status": "candidate"
@@ -26593,6 +26647,10 @@
   "status": "candidate"
  },
  "商务信息用纸": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "商品数据": {
   "type": "product",
   "status": "candidate"
  },
@@ -27869,6 +27927,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "奥创引擎": {
+  "type": "product",
+  "status": "candidate"
+ },
  "女娲GPT": {
   "type": "product",
   "status": "candidate"
@@ -28288,6 +28350,10 @@
   "status": "candidate"
  },
  "宠物新品": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "宠物服务": {
   "type": "product",
   "status": "candidate"
  },
@@ -28902,6 +28968,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "工业铝型材": {
+  "type": "product",
+  "status": "candidate"
  },
  "工业铝材": {
   "type": "product",
@@ -29680,6 +29750,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "微透膜": {
+  "type": "product",
+  "status": "candidate"
  },
  "微通道冷板": {
   "type": "product",
@@ -30791,6 +30865,10 @@
   "status": "candidate"
  },
  "数据跨境": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数据采集手套": {
   "type": "product",
   "status": "candidate"
  },
@@ -32046,6 +32124,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "景观设计": {
+  "type": "product",
+  "status": "candidate"
+ },
  "晶圆磨切": {
   "type": "product",
   "status": "candidate"
@@ -32355,6 +32437,10 @@
   "status": "candidate"
  },
  "智能体一体机": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能体应用": {
   "type": "product",
   "status": "candidate"
  },
@@ -32889,6 +32975,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "机器人下线": {
+  "type": "product",
+  "status": "candidate"
+ },
  "机器人丝杠": {
   "type": "product",
   "status": "candidate"
@@ -32954,6 +33044,10 @@
   "status": "candidate"
  },
  "机器人增资": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "机器人展区": {
   "type": "product",
   "status": "candidate"
  },
@@ -33466,6 +33560,11 @@
  "核级锆": {
   "type": "product",
   "status": "candidate"
+ },
+ "核聚变焊材": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "核聚变电源": {
   "type": "product",
@@ -34063,6 +34162,10 @@
   "llm": "claude-sonnet-5"
  },
  "水产养殖": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "水产加工": {
   "type": "product",
   "status": "candidate"
  },
@@ -35929,6 +36032,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "游戏研运": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "游船票务": {
   "type": "product",
   "status": "candidate"
@@ -36298,6 +36406,10 @@
   "status": "candidate"
  },
  "热电全产业链": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "热电协同": {
   "type": "product",
   "status": "candidate"
  },
@@ -37398,6 +37510,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "理想汽车": {
+  "type": "product",
+  "status": "candidate"
  },
  "理想零跑": {
   "type": "product",
@@ -38938,6 +39054,10 @@
   "status": "candidate"
  },
  "矿产资源": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "矿冶机器人": {
   "type": "product",
   "status": "candidate"
  },
@@ -40504,6 +40624,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "综合文旅": {
+  "type": "product",
+  "status": "candidate"
+ },
  "综合能源": {
   "type": "product",
   "status": "candidate"
@@ -40793,6 +40917,10 @@
   "status": "candidate"
  },
  "羰基铁粉": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "羽毛球机器人": {
   "type": "product",
   "status": "candidate"
  },
@@ -43168,6 +43296,10 @@
   "status": "candidate"
  },
  "输送设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "输送链": {
   "type": "product",
   "status": "candidate"
  },
@@ -45767,6 +45899,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "非遗麻花": {
+  "type": "product",
+  "status": "candidate"
+ },
  "非金属复合材料": {
   "type": "product",
   "status": "candidate"
@@ -46214,6 +46350,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "饼干食品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "首仿药": {
   "type": "product",
   "status": "candidate",
@@ -46592,6 +46732,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高端焊材": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高端电子铜箔": {
   "type": "product",
   "status": "candidate",
@@ -46916,6 +47060,10 @@
   "status": "candidate"
  },
  "鱼油原料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鱼粉鱼油": {
   "type": "product",
   "status": "candidate"
  },
@@ -47436,6 +47584,11 @@
  "AI设计": {
   "type": "theme",
   "status": "candidate"
+ },
+ "AI诊断": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "AI语料": {
   "type": "theme",
@@ -47971,6 +48124,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "具身智能数据采集": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "具身智能机器人": {
   "type": "theme",
   "status": "candidate",
@@ -48162,6 +48320,10 @@
   "type": "theme",
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
+ },
+ "南昌产业链": {
+  "type": "theme",
+  "status": "candidate"
  },
  "卫星光伏": {
   "type": "theme",
@@ -48779,6 +48941,10 @@
   "llm": "claude-sonnet-5"
  },
  "本地生活": {
+  "type": "theme",
+  "status": "candidate"
+ },
+ "机器人产业链": {
   "type": "theme",
   "status": "candidate"
  },

@@ -844,6 +844,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-10-26": {
+   "at": "2026-10-26T17:31:55+08:00",
+   "terms": [
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "物理AI",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "存储芯片",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "卫星互联网",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "AI眼镜",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "网络安全",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "具身智能",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "券商",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "互联网金融",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "零售",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "次新股",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "储能",
+     "source": "flash_rss",
+     "hot": 2
+    }
+   ]
   }
  }
 }

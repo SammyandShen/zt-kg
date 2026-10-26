@@ -1836,6 +1836,33 @@
    "note": "21世纪经济报道专文点名公司已沉淀2万小时多模态数据、加速补齐工业具身智能短板，业务关联明确且为当日专属报道",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-26"
+  },
+  {
+   "code": "300916",
+   "trade_date": "2026-10-26",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "证据显示当日主导叙事为6.63亿元收购成都奥捷，与机器人无关",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  {
+   "code": "002093",
+   "trade_date": "2026-10-26",
+   "theme": "AI应用",
+   "verdict": "rejected",
+   "note": "证据明确为教育板块震荡拉升带动涨停，非AI应用叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  {
+   "code": "603341",
+   "trade_date": "2026-10-23",
+   "theme": "AI眼镜",
+   "verdict": "verified",
+   "note": "业务凭据+复核supporting(0.72)最高档，公司智能终端ODM具备AI眼镜产品关联性",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
   }
  ],
  "episode_verdicts": [
