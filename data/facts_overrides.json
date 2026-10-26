@@ -1818,6 +1818,24 @@
    "note": "新闻明确将涨停归因为工程机械板块活跃和军工板块拉升，无机器人叙事支持",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-25"
+  },
+  {
+   "code": "603341",
+   "trade_date": "2026-10-23",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "财联社点名公司在南昌成立机器人科技公司，属公司公告/新闻明确业务关联，当日叙事可解释",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  {
+   "code": "002009",
+   "trade_date": "2026-10-23",
+   "theme": "工业机器人",
+   "verdict": "verified",
+   "note": "21世纪经济报道专文点名公司已沉淀2万小时多模态数据、加速补齐工业具身智能短板，业务关联明确且为当日专属报道",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
   }
  ],
  "episode_verdicts": [
