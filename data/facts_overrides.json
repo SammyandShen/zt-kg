@@ -1881,6 +1881,24 @@
    "note": "业务凭据(电子皮肤)+T+0旁证强(supporting0.81)，当日人形机器人板块普涨背景支持",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-27"
+  },
+  {
+   "code": "002708",
+   "trade_date": "2026-10-27",
+   "theme": "汽车零部件",
+   "verdict": "rejected",
+   "note": "证据明确显示当日主导叙事是人形机器人概念（2连板），非汽车零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-27"
+  },
+  {
+   "code": "002708",
+   "trade_date": "2026-10-26",
+   "theme": "汽车零部件",
+   "verdict": "rejected",
+   "note": "证据明确显示当日主导叙事是人形机器人概念持续活跃，非汽车零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-27"
   }
  ],
  "episode_verdicts": [

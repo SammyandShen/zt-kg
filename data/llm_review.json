@@ -68938,5 +68938,173 @@
   "p": "机器人",
   "c": 0.55,
   "model": "claude-sonnet-5"
+ },
+ "AI智慧照明": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "MPO跳线": {
+  "t": "product",
+  "p": "MPO光连接器",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "PCCP管道": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "交通机器人": {
+  "t": "product",
+  "p": "智慧交通",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "仓储资源": {
+  "t": "product",
+  "p": "物流",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "免税退税": {
+  "t": "theme",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "全国拓展": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "关节电机铁芯": {
+  "t": "product",
+  "p": "人形机器人",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "军用方舱": {
+  "t": "product",
+  "p": "军工",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "半导体温控": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "参投墨现科技": {
+  "t": "event",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "布局半导体检测": {
+  "t": "catalyst",
+  "p": "半导体检测",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "整车配套": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "文旅产业": {
+  "t": "sector",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "新能源车型": {
+  "t": "product",
+  "p": "新能源汽车",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "新能源车铁芯": {
+  "t": "product",
+  "p": "新能源汽车零部件",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "新零售业态": {
+  "t": "product",
+  "p": "零售",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "景区索道": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "机器人量产": {
+  "t": "catalyst",
+  "p": "人形机器人",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "机器人钢丝绳": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "柔性压力传感器": {
+  "t": "product",
+  "p": "传感器",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "汽车减震": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "游戏运营": {
+  "t": "product",
+  "p": "游戏",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "特种电容": {
+  "t": "product",
+  "p": "电子元件",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "绿色食品": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "罗山基地": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "驾驶辅助": {
+  "t": "product",
+  "p": "智能驾驶",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高端特种钢索": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
  }
 }

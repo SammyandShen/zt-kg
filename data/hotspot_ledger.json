@@ -909,6 +909,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-10-27": {
+   "at": "2026-10-27T17:34:33+08:00",
+   "terms": [
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "白酒",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "固态电池",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "算电协同",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "存储芯片",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "脑机接口",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "车联网",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "乳业奶粉",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "休闲食品",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "并购重组",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "光伏",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "卫星互联网",
+     "source": "flash_rss",
+     "hot": 2
+    }
+   ]
   }
  }
 }

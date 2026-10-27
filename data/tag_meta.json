@@ -13941,6 +13941,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "参投墨现科技": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "参投开普勒机器人": {
   "type": "event",
   "status": "retired",
@@ -19002,6 +19007,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "AI智慧照明": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI智能助手": {
   "type": "product",
   "status": "candidate"
@@ -20480,6 +20489,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "MPO跳线": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "MPO连接器": {
   "type": "product",
   "status": "candidate"
@@ -20830,6 +20844,10 @@
   "status": "candidate"
  },
  "PCCP管材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "PCCP管道": {
   "type": "product",
   "status": "candidate"
  },
@@ -22287,6 +22305,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "交通机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "产业互联网": {
   "type": "product",
   "status": "candidate"
@@ -22457,6 +22479,10 @@
   "llm": "claude-sonnet-5"
  },
  "仓储物流ABS": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "仓储资源": {
   "type": "product",
   "status": "candidate"
  },
@@ -23820,6 +23846,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "免税退税": {
+  "type": "product",
+  "status": "candidate"
+ },
  "免税重组": {
   "type": "product",
   "status": "candidate"
@@ -23870,6 +23900,10 @@
   "status": "candidate"
  },
  "全国扩张": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "全国拓展": {
   "type": "product",
   "status": "candidate"
  },
@@ -24080,6 +24114,10 @@
   "status": "candidate"
  },
  "关注机器人行业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "关节电机铁芯": {
   "type": "product",
   "status": "candidate"
  },
@@ -24355,6 +24393,10 @@
   "status": "candidate"
  },
  "军民协同": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "军用方舱": {
   "type": "product",
   "status": "candidate"
  },
@@ -25734,6 +25776,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "半导体温控": {
+  "type": "product",
+  "status": "candidate"
  },
  "半导体湿法设备": {
   "type": "product",
@@ -29114,6 +29160,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "布局半导体检测": {
+  "type": "product",
+  "status": "candidate"
+ },
  "布局电缆": {
   "type": "product",
   "status": "candidate"
@@ -30967,6 +31017,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "整车配套": {
+  "type": "product",
+  "status": "candidate"
+ },
  "整车项目": {
   "type": "product",
   "status": "candidate"
@@ -31017,6 +31071,10 @@
   "status": "candidate"
  },
  "文旅": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "文旅产业": {
   "type": "product",
   "status": "candidate"
  },
@@ -31556,6 +31614,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源车型": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源车检测": {
   "type": "product",
   "status": "candidate"
@@ -31584,6 +31646,10 @@
   "llm": "claude-sonnet-5"
  },
  "新能源车配套": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新能源车铁芯": {
   "type": "product",
   "status": "candidate"
  },
@@ -31662,6 +31728,10 @@
   "status": "candidate"
  },
  "新院区投运": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新零售业态": {
   "type": "product",
   "status": "candidate"
  },
@@ -32110,6 +32180,11 @@
  "景区旅游": {
   "type": "product",
   "status": "candidate"
+ },
+ "景区索道": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "景区经营": {
   "type": "product",
@@ -33175,6 +33250,15 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "机器人量产": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "机器人钢丝绳": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "机器人铝材": {
   "type": "product",
   "status": "candidate"
@@ -33346,6 +33430,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "柔性压力传感器": {
+  "type": "product",
+  "status": "candidate"
  },
  "柔性定制": {
   "type": "product",
@@ -34482,6 +34570,11 @@
  "汽车减反射玻璃": {
   "type": "product",
   "status": "candidate"
+ },
+ "汽车减震": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "汽车减震器": {
   "type": "product",
@@ -36037,6 +36130,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "游戏运营": {
+  "type": "product",
+  "status": "candidate"
+ },
  "游船票务": {
   "type": "product",
   "status": "candidate"
@@ -36993,6 +37090,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "特种电容": {
+  "type": "product",
+  "status": "candidate"
  },
  "特种电机": {
   "type": "product",
@@ -40827,6 +40928,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "绿色食品": {
+  "type": "product",
+  "status": "candidate"
+ },
  "绿证政策": {
   "type": "product",
   "status": "candidate"
@@ -40885,6 +40990,10 @@
   "status": "candidate"
  },
  "网通设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "罗山基地": {
   "type": "product",
   "status": "candidate"
  },
@@ -46416,6 +46525,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "驾驶辅助": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高世代产线": {
   "type": "product",
   "status": "candidate"
@@ -46733,6 +46846,10 @@
   "status": "candidate"
  },
  "高端焊材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高端特种钢索": {
   "type": "product",
   "status": "candidate"
  },
