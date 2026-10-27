@@ -22495,6 +22495,1006 @@
    "parent": "商超零售",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-25"
+  },
+  "工业机器人": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "原料药及中间体": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "新能源客车": {
+   "parent": "整车制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "爆破工程服务": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "特种纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "航空零部件": {
+   "parent": "航空零部件制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "3D可视化产品及服务": {
+   "parent": "计算机软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AC/DC电源芯片": {
+   "parent": "功率器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI 3D数字孪生产品及解决方案": {
+   "parent": "工业数字化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI PC": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI产品与服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI智能体开发平台": {
+   "parent": "人工智能应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI智能终端": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI硬件产品": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI算力服务器": {
+   "parent": "服务器与算力硬件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AI驱动型订阅服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "AKD造纸化学品": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "B2B办公物资集采": {
+   "parent": "供应链服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "BOPP薄膜": {
+   "parent": "塑料包装",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "CPE": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "DTY差别化聚酯纤维长丝": {
+   "parent": "纺织原料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "EPC总包工程": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "FDY差别化聚酯纤维长丝": {
+   "parent": "纺织原料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "IC分销": {
+   "parent": "电子元器件分销",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "IVD产品经销(渠道代理产品)": {
+   "parent": "体外诊断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "LED光源产品": {
+   "parent": "光学光电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "LED显示": {
+   "parent": "新型显示",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "LED灯具产品": {
+   "parent": "光学光电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "LED照明及封装产品": {
+   "parent": "光学光电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "LED照明驱动芯片": {
+   "parent": "功率器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "LNG受托加工": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "LNG生产销售": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "Low-E镀膜玻璃": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "MRO工业品集采": {
+   "parent": "供应链服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "MS板材": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "MS树脂": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "Micro LED显示": {
+   "parent": "新型显示",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "NFC/eSE/eSIM安全芯片": {
+   "parent": "集成电路设计",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "OLED触控显示驱动集成方案(TDDI)": {
+   "parent": "半导体显示",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "PCBA": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "PCB表面贴装(SMT)服务": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "PCCP管材": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "PMMA板材": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "POY差别化聚酯纤维长丝": {
+   "parent": "纺织原料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "PPP项目施工及运营维护服务": {
+   "parent": "市政基础设施工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "PU合成革": {
+   "parent": "皮革及基布",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "PVDC": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "RAID卡": {
+   "parent": "服务器与算力硬件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "RFID图书馆智能化解决方案": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "RFID文旅互动文创产品": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "RFID服饰零售供应链管理": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "RFID烟草行业解决方案": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "RFID电子标签": {
+   "parent": "电子元器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "RFID铁路车号识别系统": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "SMT": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "T恤": {
+   "parent": "针织服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "VoIP及IPTV": {
+   "parent": "通信设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "β-内酰胺类抗菌药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "一线成型电脑横机": {
+   "parent": "纺织机械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "三抽设备": {
+   "parent": "石油钻采设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "专用化学品": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "专网通信解决方案": {
+   "parent": "通信设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "中压电气产品分销": {
+   "parent": "电力设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "中空玻璃": {
+   "parent": "建筑建材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "中置电机": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "中药材及中药饮片": {
+   "parent": "中药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "主题公园与景区运营": {
+   "parent": "文旅景区",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "二氧化碳": {
+   "parent": "工业气体",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "云与数据服务": {
+   "parent": "云计算",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "云服务器代理销售": {
+   "parent": "服务器与算力硬件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "互联网广告服务": {
+   "parent": "广告营销",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "互联网直播社交平台": {
+   "parent": "互联网平台",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "交通工程系统集成": {
+   "parent": "电子信息工程服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "人工智能服务器及系统集成": {
+   "parent": "服务器与算力硬件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "人形机器人精密零组件": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "人机界面(HMI)": {
+   "parent": "智能控制部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "仿真产品开发": {
+   "parent": "计算机软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "仿真技术服务": {
+   "parent": "计算机软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "企业级SSD": {
+   "parent": "存储芯片",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "企业级SaaS软件及服务": {
+   "parent": "企业管理软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "企业邮箱": {
+   "parent": "企业管理软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "传动与控制系统及船用设备": {
+   "parent": "船舶制造",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "传媒安全": {
+   "parent": "信息安全",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "传感器及旋转变压器铁芯": {
+   "parent": "电子元器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "低功耗蓝牙SoC": {
+   "parent": "集成电路设计",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "低压电气产品分销": {
+   "parent": "电力设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "低温石化设备": {
+   "parent": "压力容器",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "供应链管理及咨询": {
+   "parent": "供应链服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "供应链管理软件": {
+   "parent": "企业管理软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "便携式太阳能消费类产品": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "促性激素产品": {
+   "parent": "生物制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "信号处理类电子元件": {
+   "parent": "电子元器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "信息审核": {
+   "parent": "互联网平台",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "偏光片": {
+   "parent": "新型显示",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "健康传感器(生理监测AFE)": {
+   "parent": "医疗器械",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "健康智能光源": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "健康食品": {
+   "parent": "保健品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "储能减速电机": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "储能系统集成与销售": {
+   "parent": "储能系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "充电桩及储能": {
+   "parent": "充换电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光伏回转减速器": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光伏电池片及组件": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光伏电站EPC工程": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光伏电站开发运营转让": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光学动作捕捉": {
+   "parent": "光学光电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光学树脂镜片": {
+   "parent": "光学光电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光学级PMMA": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光学胶膜材料": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光学膜": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光学防伪膜": {
+   "parent": "包装印刷",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "光线传感器": {
+   "parent": "电子元器件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "全球化网络服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "全球移动业务(MGM)": {
+   "parent": "国际货运代理",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "全球货代业务(MGF)": {
+   "parent": "国际货运代理",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "公寓运营管理": {
+   "parent": "租赁住房",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "公路工程施工": {
+   "parent": "市政基础设施工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "六氯环三磷腈": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "其他芯片": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "军工零部件配套": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "军用特种装备": {
+   "parent": "军工装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冰鲜禽肉": {
+   "parent": "肉制品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冲压模具": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冶金工程总承包(EPC)": {
+   "parent": "专业工程承包",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冶金自动化机器人设备": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冶金设备": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冶金设备核心备件": {
+   "parent": "精密机械零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冷冻冷藏机组": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冷冻鸭肉制品": {
+   "parent": "肉制品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "冷锻精制线材加工": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "分布式光伏电站运营": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "创新业务（大健康/企业AI服务/AI教育）": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "制冰设备": {
+   "parent": "商用餐饮制冷设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "制冷空调零部件": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "制冷设备": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "券商信息系统服务": {
+   "parent": "金融科技软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "前端视频监控产品": {
+   "parent": "信息安全",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "办公协同软件": {
+   "parent": "企业管理软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "功能性胶粘材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "功能糖": {
+   "parent": "食品饮料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "加气站运营": {
+   "parent": "燃气",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "动力总成智能测试设备": {
+   "parent": "仪器仪表",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "包装材料": {
+   "parent": "包装印刷",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "包装码垛装备": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "化妆品渠道分销": {
+   "parent": "大消费",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "化学原料药及中间体": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "化学药/西药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "化学药品制剂与原料药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "化工医药中间体": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "化工品分销(MCD)": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "区域仓储业务(MRW)": {
+   "parent": "仓储物流",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "区域内贸交付业务(MRT)": {
+   "parent": "供应链服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "医药农药中间体": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "医药流通": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "医药贸易": {
+   "parent": "医药商业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "十字轴": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "十字轴万向节总成": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "单面板": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "卫浴水龙头五金制品": {
+   "parent": "五金管件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "卫生陶瓷": {
+   "parent": "陶瓷石材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "印制电路板制造": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "印刷品": {
+   "parent": "包装印刷",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "危险废物处置": {
+   "parent": "固废处理",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "即时零售": {
+   "parent": "电商零售",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "压力容器设备": {
+   "parent": "压力容器",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "原料贸易": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "厨房小家电": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "厨房炊具": {
+   "parent": "家电家居",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "双面板/多层板": {
+   "parent": "印制电路板",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "变电站自动化": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "变频器与软起动器": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "可编程逻辑控制器(PLC)": {
+   "parent": "智能控制部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "合成纤维吊装带索具": {
+   "parent": "工业设备零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "后端视频监控产品": {
+   "parent": "信息安全",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "员工福利集采服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "味精": {
+   "parent": "调味品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "商务流程服务": {
+   "parent": null,
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "商用车离合器": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "商用车零部件（客车底架/平衡轴/翻转机构）": {
+   "parent": "底盘与制动系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "商铺租赁": {
+   "parent": "商业地产",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "喹诺酮类抗菌药": {
+   "parent": "化学制药",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "固态食品包装设备": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "国际教育": {
+   "parent": "教育服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "国际海缆": {
+   "parent": "通信网络设施",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "土壤修复服务": {
+   "parent": "环保工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "在线客服": {
+   "parent": "企业管理软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "坯布/面料": {
+   "parent": "纺织面料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "城市公共安全软件产品": {
+   "parent": "垂直行业信息化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "城市更新服务": {
+   "parent": "城市更新代建",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "城轨车辆制造": {
+   "parent": "轨道交通设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "基金代销": {
+   "parent": "金融服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "境外金融信息服务": {
+   "parent": "金融科技软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "复膜纸": {
+   "parent": "造纸",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "外购非标金贸易": {
+   "parent": "贵金属",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "多模态大数据": {
+   "parent": "人工智能应用",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "大中型客车热管理产品": {
+   "parent": "热管理系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "大宗商品电商": {
+   "parent": "供应链服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "大气污染治理": {
+   "parent": "环保工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "天花膜产品": {
+   "parent": "装饰装修幕墙工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "太阳能光伏减速电机": {
+   "parent": "电机与驱动",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
+  },
+  "夹层玻璃": {
+   "parent": "玻璃玻纤",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-26"
   }
  },
  "groups": {

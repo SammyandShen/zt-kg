@@ -1863,6 +1863,24 @@
    "note": "业务凭据+复核supporting(0.72)最高档，公司智能终端ODM具备AI眼镜产品关联性",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-26"
+  },
+  {
+   "code": "002380",
+   "trade_date": "2026-10-23",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "业务凭据+T+0旁证强(supporting0.86)，当日机器人产业催化密集背景支持",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-27"
+  },
+  {
+   "code": "300307",
+   "trade_date": "2026-10-23",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "业务凭据(电子皮肤)+T+0旁证强(supporting0.81)，当日人形机器人板块普涨背景支持",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-27"
   }
  ],
  "episode_verdicts": [
