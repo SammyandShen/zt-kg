@@ -974,6 +974,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-10-28": {
+   "at": "2026-10-28T17:41:11+08:00",
+   "terms": [
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "存储芯片",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "算力硬件",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "具身智能",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "先进封装",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "工业母机",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "短剧游戏",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "脑机接口",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "休闲食品",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "教育",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "冰雪经济",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "离境退税",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

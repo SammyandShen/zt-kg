@@ -1899,6 +1899,69 @@
    "note": "证据明确显示当日主导叙事是人形机器人概念持续活跃，非汽车零部件",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-27"
+  },
+  {
+   "code": "002708",
+   "trade_date": "2026-10-28",
+   "theme": "汽车零部件",
+   "verdict": "rejected",
+   "note": "三条新闻均点名减速器/机器人题材为3连板驱动，无一提及汽车零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-28"
+  },
+  {
+   "code": "002889",
+   "trade_date": "2026-10-28",
+   "theme": "机器人",
+   "verdict": "rejected",
+   "note": "两条新闻均点名半导体设备板块为涨停驱动，非机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-28"
+  },
+  {
+   "code": "002164",
+   "trade_date": "2026-10-28",
+   "theme": "机器人",
+   "verdict": "verified",
+   "note": "两家媒体分别点名'人形机器人概念活跃，宁波东力涨停/直线涨停'，当日主导叙事明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-28"
+  },
+  {
+   "code": "301261",
+   "trade_date": "2026-10-28",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "公司三季报公告明确披露具身机器人业务收入同比增长1174%，业务关联与当日叙事均成立",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-28"
+  },
+  {
+   "code": "000559",
+   "trade_date": "2026-10-28",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "公司公告明确机器人业务为第三大战略板块，叠加同期减速器/机器人题材集体活跃，当日叙事以此为主导",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-28"
+  },
+  {
+   "code": "002708",
+   "trade_date": "2026-10-28",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "媒体明确点名'减速器概念活跃，光洋股份3连板'及'字节跳动加码机器人'，当日主导叙事清楚",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-28"
+  },
+  {
+   "code": "002708",
+   "trade_date": "2026-10-27",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "同一组减速器/机器人概念活跃报道覆盖本轮2连板，当日叙事明确指向机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-28"
   }
  ],
  "episode_verdicts": [
