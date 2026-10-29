@@ -49660,6 +49660,11 @@
   "type": "theme",
   "status": "candidate"
  },
+ "空间站概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-10-16·1源2日"
+ },
  "端侧AI": {
   "type": "theme",
   "status": "candidate"
@@ -50396,10 +50401,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "空间站概念": {
-  "type": "theme",
-  "status": "candidate",
-  "radar": "2026-10-16·1源2日"
  }
 }

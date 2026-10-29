@@ -1962,6 +1962,15 @@
    "note": "同一组减速器/机器人概念活跃报道覆盖本轮2连板，当日叙事明确指向机器人",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-28"
+  },
+  {
+   "code": "603337",
+   "trade_date": "2026-10-28",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "交易所问询公告明确回应机器人业务，确认当日异动叙事即人形机器人（公司提示业务尚早期不影响题材归因）",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-10-29"
   }
  ],
  "episode_verdicts": [
