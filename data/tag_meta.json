@@ -2922,6 +2922,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "三季报净利增": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "三季报净利增长": {
   "type": "catalyst",
   "status": "active",
@@ -7945,6 +7950,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "FSC森林认证": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "IDM模式": {
   "type": "attribute",
   "status": "candidate",
@@ -11000,6 +11010,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "土耳其产能": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "在手订单": {
   "type": "catalyst",
@@ -14828,6 +14842,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "小笼包扩张": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "小笼包新店型": {
   "type": "event",
   "status": "retired",
@@ -14836,6 +14855,11 @@
  "尚界H5正式开启预订": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "尚阳通重组": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "工业杀菌剂提价": {
@@ -19309,6 +19333,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AI职业教育": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "AI职教": {
   "type": "product",
   "status": "candidate"
@@ -21894,6 +21923,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "中式面点": {
+  "type": "product",
+  "status": "candidate"
+ },
  "中德合资": {
   "type": "product",
   "status": "candidate"
@@ -24178,6 +24211,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "具身智能培训": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "具身智能智脑": {
   "type": "product",
   "status": "candidate"
@@ -26083,7 +26121,16 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "卫星能源": {
+  "type": "product",
+  "status": "candidate"
+ },
  "卫星芯片": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "卫星通信终端": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -29768,6 +29815,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "影院多元业态": {
+  "type": "product",
+  "status": "candidate"
+ },
  "影院拓展": {
   "type": "product",
   "status": "candidate"
@@ -30255,6 +30306,11 @@
  "抗体": {
   "type": "product",
   "status": "candidate"
+ },
+ "抗体研发": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "抗性糊精": {
   "type": "product",
@@ -34521,6 +34577,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "水溶性维生素试剂": {
+  "type": "product",
+  "status": "candidate"
+ },
  "水电": {
   "type": "product",
   "status": "candidate"
@@ -35974,6 +36034,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "液压主业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "液压元件": {
   "type": "product",
   "status": "candidate",
@@ -36507,6 +36571,11 @@
  "炼化一体化": {
   "type": "product",
   "status": "candidate"
+ },
+ "炼焦煤": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "烘焙": {
   "type": "product",
@@ -37274,6 +37343,11 @@
  "特种纸": {
   "type": "product",
   "status": "candidate"
+ },
+ "特种纸印刷": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "特种线缆": {
   "type": "product",
@@ -38483,6 +38557,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "电影放映": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电影院线": {
   "type": "product",
   "status": "candidate"
@@ -39661,6 +39739,10 @@
   "status": "candidate"
  },
  "磷化铟单晶片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "磷化铟设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -41854,6 +41936,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "航天铌合金": {
+  "type": "product",
+  "status": "candidate"
+ },
  "航季新开线": {
   "type": "product",
   "status": "candidate"
@@ -41990,6 +42076,10 @@
   "status": "candidate"
  },
  "船舶SCR": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "船舶制冷": {
   "type": "product",
   "status": "candidate"
  },
@@ -43896,6 +43986,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "速冻调理肉制品": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "速冻食品": {
   "type": "product",
   "status": "candidate"
@@ -44067,6 +44162,10 @@
   "status": "candidate"
  },
  "重卡换电": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "重吊船": {
   "type": "product",
   "status": "candidate"
  },
@@ -49132,6 +49231,11 @@
   "llm": "claude-sonnet-5"
  },
  "智元代工": {
+  "type": "theme",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "智元机器人": {
   "type": "theme",
   "status": "candidate",
   "llm": "claude-sonnet-5"

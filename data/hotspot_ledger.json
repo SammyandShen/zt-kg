@@ -1039,6 +1039,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-10-29": {
+   "at": "2026-10-29T17:37:32+08:00",
+   "terms": [
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "存储芯片",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "PCB",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "半导体设备",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "创新药",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "影视院线",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "液冷",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "苹果产业链",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "工业母机",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "PEEK材料",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "短剧游戏",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "预焙阳极",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

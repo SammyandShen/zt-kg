@@ -69382,5 +69382,149 @@
   "p": "创新药",
   "c": 0.45,
   "model": "claude-sonnet-5"
+ },
+ "土耳其产能": {
+  "t": "catalyst",
+  "p": "产能释放",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AI职业教育": {
+  "t": "product",
+  "p": "AI教育",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "FSC森林认证": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "三季报净利增": {
+  "t": "catalyst",
+  "p": "三季报净利增长",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "中式面点": {
+  "t": "product",
+  "p": "农业食品",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "具身智能培训": {
+  "t": "product",
+  "p": "具身智能",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "卫星能源": {
+  "t": "product",
+  "p": "商业航天",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "卫星通信终端": {
+  "t": "product",
+  "p": "卫星通信",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "小笼包扩张": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "尚阳通重组": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "影院多元业态": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "抗体研发": {
+  "t": "product",
+  "p": "创新药",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "智元机器人": {
+  "t": "theme",
+  "p": "人形机器人概念",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "水溶性维生素试剂": {
+  "t": "product",
+  "p": "体外诊断",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "液压主业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "炼焦煤": {
+  "t": "product",
+  "p": "煤炭",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "特种纸印刷": {
+  "t": "product",
+  "p": "包装印刷",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "电影放映": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "磷化铟设备": {
+  "t": "product",
+  "p": "磷化铟",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "航天铌合金": {
+  "t": "product",
+  "p": "商业航天",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "船舶制冷": {
+  "t": "product",
+  "p": "船舶制造",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "速冻调理肉制品": {
+  "t": "product",
+  "p": "预制菜",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "重吊船": {
+  "t": "product",
+  "p": "船舶制造",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "空间站概念": {
+  "t": "theme",
+  "p": "商业航天",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
  }
 }
