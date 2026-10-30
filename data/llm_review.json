@@ -69526,5 +69526,179 @@
   "p": "商业航天",
   "c": 0.5,
   "model": "claude-sonnet-5"
+ },
+ "业绩环增": {
+  "t": "catalyst",
+  "p": "业绩增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "青啤拟入主": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "三季度净利增": {
+  "t": "catalyst",
+  "p": "三季报净利增",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "三季报增": {
+  "t": "catalyst",
+  "p": "三季报增长",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "三季报落地": {
+  "t": "catalyst",
+  "p": "业绩落地",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "中高档白酒": {
+  "t": "product",
+  "p": "白酒",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "人工智能培训": {
+  "t": "product",
+  "p": "AI教育",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "仓储": {
+  "t": "product",
+  "p": "物流",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "低温鲜奶": {
+  "t": "product",
+  "p": "大消费",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "农业无人机": {
+  "t": "product",
+  "p": "无人机",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "医药外包": {
+  "t": "product",
+  "p": "CRO/CMO",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "小笼包": {
+  "t": "product",
+  "p": "大消费",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "库存去化": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "徽酒代表": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "护理机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "混凝土装备": {
+  "t": "product",
+  "p": "工程机械",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "百草枯": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "真空采血": {
+  "t": "product",
+  "p": "医疗器械",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "矿泉水": {
+  "t": "product",
+  "p": "大消费",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "糖尿病照护": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "经销回暖": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "自动化": {
+  "t": "product",
+  "p": "机械设备",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "许可证延续": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "购买资产": {
+  "t": "catalyst",
+  "p": "资产收购",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "集装箱航运": {
+  "t": "product",
+  "p": "交通运输",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高洁净板": {
+  "t": "product",
+  "p": "印制电路板",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "高端白酒": {
+  "t": "product",
+  "p": "白酒",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "鲸鸿动能": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "鸣鸣很忙": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
  }
 }

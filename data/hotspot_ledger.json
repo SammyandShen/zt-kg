@@ -1104,6 +1104,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-10-30": {
+   "at": "2026-10-30T17:21:26+08:00",
+   "terms": [
+    {
+     "term": "商业航天",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "光模块",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "冰雪经济",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "风电设备",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "油运",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "算力硬件",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "算力租赁",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "煤炭",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "光伏",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "食品饮料",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "AI短剧",
+     "source": "flash_rss",
+     "hot": 2
+    },
+    {
+     "term": "数字人民币",
+     "source": "flash_rss",
+     "hot": 2
+    }
+   ]
   }
  }
 }

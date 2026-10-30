@@ -21696,6 +21696,350 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-10-29] 饲料级磷酸氢钙是磷化工企业的直接磷酸盐产品"
+  },
+  {
+   "theme": "卫星制造",
+   "business_tag_name": "卫星制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-10-30] 业务即题材本身，卫星整机制造"
+  },
+  {
+   "theme": "商业航天",
+   "business_tag_name": "卫星制造",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 卫星制造是商业航天产业链核心上游环节"
+  },
+  {
+   "theme": "军工",
+   "business_tag_name": "军用电信网通信设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 军用通信设备是军工装备体系的直接组成部分"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "智能配电网设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 智能配电网设备即智能电网题材的直接硬件载体"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "智能配电网设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 配电网设备属于电网设备题材的直接细分"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车充电桩",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 充电桩是新能源汽车生态的直接配套基础设施"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电池片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-10-30] 电池片是光伏产业链核心环节产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "传动轴总成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 传动轴总成是汽车零部件的直接产品品类"
+  },
+  {
+   "theme": "家庭具身机器人",
+   "business_tag_name": "智能割草机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 智能割草机是已商业化的家用具身机器人产品"
+  },
+  {
+   "theme": "家庭具身机器人",
+   "business_tag_name": "智能扫地机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-10-30] 扫地机器人是最成熟的家用具身机器人产品形态"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车内饰件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 内饰件是汽车零部件的直接构成品类"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "等速万向节",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-10-30] 等速万向节是汽车传动系统核心零部件"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "车规USB hub芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 车规芯片是汽车电子的直接上游元器件"
+  },
+  {
+   "theme": "智慧清洁机器人",
+   "business_tag_name": "洗地机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 洗地机是智慧清洁机器人的典型产品形态"
+  },
+  {
+   "theme": "煤炭",
+   "business_tag_name": "洗精煤",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 洗精煤是煤炭的直接加工产品"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "电化学储能设备与系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-10-30] 业务即储能题材本身的核心产品"
+  },
+  {
+   "theme": "算力租赁",
+   "business_tag_name": "算力租赁及服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-10-30] 业务名称与题材完全对应"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "网络内容安全",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-30] 网络内容安全是网络安全的核心子领域"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "网络可视化",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 网络可视化是网络安全监测态势感知的直接产品"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "网络空间内生安全",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-30] 网络空间内生安全是网络安全核心细分方向"
+  },
+  {
+   "theme": "网络安全",
+   "business_tag_name": "网络靶场及运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 网络靶场是网络安全攻防演练的直接产品"
+  },
+  {
+   "theme": "航天应用",
+   "business_tag_name": "航天技术应用综合信息服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-10-30] 业务即航天技术应用服务本身"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "自身免疫检测试剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-10-30] 体外诊断试剂属于医疗器械范畴"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "过敏检测试剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-10-30] 体外诊断试剂属于医疗器械范畴"
+  },
+  {
+   "theme": "低空经济",
+   "business_tag_name": "轻型运动飞机制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 轻型运动飞机制造属于低空经济通用航空范畴"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻串类制品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 速冻调理食品属于预制菜范畴"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻丸制品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 速冻调理食品属于预制菜范畴"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻油炸食品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 速冻调理食品属于预制菜范畴"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "速冻肠类制品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-10-30] 速冻调理食品属于预制菜范畴"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "避雷器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-10-30] 避雷器是电网设备的核心组成部分"
+  },
+  {
+   "theme": "预制菜",
+   "business_tag_name": "预制菜",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-10-30] 业务标签即预制菜产品本身"
+  },
+  {
+   "theme": "核电",
+   "business_tag_name": "锆加工材",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 锆合金是核反应堆燃料包壳的专用上游材料"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "高压复合气瓶",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 高压复合气瓶是氢气储运的核心上游设备（如IV型储氢瓶）"
+  },
+  {
+   "theme": "算力电源",
+   "business_tag_name": "高性能计算电源芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 高性能计算电源芯片直接对应算力电源题材的核心部件"
+  },
+  {
+   "theme": "卫星导航",
+   "business_tag_name": "高精度GNSS数据应用及系统解决方案",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-10-30] GNSS系统解决方案本身属于卫星导航应用业务"
+  },
+  {
+   "theme": "卫星导航",
+   "business_tag_name": "高精度GNSS数据采集设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-30] GNSS数据采集设备是卫星导航产业链的终端设备"
+  },
+  {
+   "theme": "卫星导航",
+   "business_tag_name": "高精度GNSS板卡模块",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-10-30] GNSS板卡模块是卫星导航接收终端的核心硬件"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "黄金采选冶炼",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-10-30] 黄金采选冶炼企业直接受益于金价"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "黄金采选冶炼加工",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-10-30] 黄金采选冶炼加工企业直接受益于金价"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "黄金饰品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-10-30] 黄金饰品以黄金为主要原料"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "黄金饰品深加工",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-10-30] 黄金饰品深加工以黄金为主要原料"
+  },
+  {
+   "theme": "电子化学品",
+   "business_tag_name": "高纯度溶剂EBR",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] EBR边缘去除溶剂属于半导体制程用电子化学品"
+  },
+  {
+   "theme": "XT减速器",
+   "business_tag_name": "齿轮及减速机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-10-30] 该业务生产齿轮与减速机，减速器即题材交易标的本身"
   }
  ]
 }

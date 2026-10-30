@@ -2892,6 +2892,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "三季度净利增": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "三季度扭亏": {
   "type": "catalyst",
   "status": "active",
@@ -2933,6 +2938,11 @@
   "llm": "claude-sonnet-5"
  },
  "三季报减亏": {
+  "type": "catalyst",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
+ "三季报增": {
   "type": "catalyst",
   "status": "active",
   "llm": "claude-sonnet-5"
@@ -6732,6 +6742,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "高端白酒": {
+  "type": "product",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "高纯二氧化碳": {
   "type": "product",
   "status": "active"
@@ -8693,6 +8708,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "徽酒代表": {
+  "type": "attribute",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "恒隆租约": {
   "type": "attribute",
   "status": "candidate",
@@ -9855,6 +9875,11 @@
   "status": "candidate"
  },
  "业绩爆发": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "业绩环增": {
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -12376,6 +12401,11 @@
  "负极产能": {
   "type": "catalyst",
   "status": "candidate"
+ },
+ "购买资产": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "资产处置收益": {
   "type": "catalyst",
@@ -18286,6 +18316,11 @@
   "type": "event",
   "status": "retired"
  },
+ "青啤拟入主": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "页岩气收购": {
   "type": "event",
   "status": "retired"
@@ -21635,6 +21670,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "三季报落地": {
+  "type": "product",
+  "status": "candidate"
+ },
  "三明治复合材料": {
   "type": "product",
   "status": "candidate",
@@ -22087,6 +22126,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "中高档白酒": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "中高端增长": {
   "type": "product",
   "status": "candidate"
@@ -22495,6 +22539,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "人工智能培训": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "人工智能基金": {
   "type": "product",
   "status": "candidate"
@@ -22540,6 +22589,10 @@
   "llm": "claude-sonnet-5"
  },
  "亿企赢": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "仓储": {
   "type": "product",
   "status": "candidate"
  },
@@ -22771,6 +22824,10 @@
   "status": "candidate"
  },
  "低温脱硝": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "低温鲜奶": {
   "type": "product",
   "status": "candidate"
  },
@@ -24533,6 +24590,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "农业无人机": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "农业种业": {
   "type": "product",
   "status": "candidate"
@@ -25660,6 +25722,11 @@
   "llm": "claude-sonnet-5"
  },
  "医药器械": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "医药外包": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -28861,6 +28928,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "小笼包": {
+  "type": "product",
+  "status": "candidate"
+ },
  "小罐番茄酱": {
   "type": "product",
   "status": "candidate",
@@ -29499,6 +29570,10 @@
   "status": "candidate"
  },
  "广电设备": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "库存去化": {
   "type": "product",
   "status": "candidate"
  },
@@ -30399,6 +30474,11 @@
   "status": "candidate"
  },
  "抛光硅片": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "护理机器人": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -36175,6 +36255,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "混凝土装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "混动燃油系统": {
   "type": "product",
   "status": "candidate"
@@ -39036,6 +39120,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "百草枯": {
+  "type": "product",
+  "status": "candidate"
+ },
  "百货零售": {
   "type": "product",
   "status": "candidate",
@@ -39207,6 +39295,11 @@
  "真空泵": {
   "type": "product",
   "status": "candidate"
+ },
+ "真空采血": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "真空镀膜": {
   "type": "product",
@@ -39429,6 +39522,10 @@
   "status": "candidate"
  },
  "矿服民爆": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "矿泉水": {
   "type": "product",
   "status": "candidate"
  },
@@ -40628,6 +40725,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "糖尿病照护": {
+  "type": "product",
+  "status": "candidate"
+ },
  "糖尿病监测": {
   "type": "product",
   "status": "candidate"
@@ -40932,6 +41033,10 @@
   "status": "candidate"
  },
  "经营风险改善": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "经销回暖": {
   "type": "product",
   "status": "candidate"
  },
@@ -41787,6 +41892,10 @@
   "status": "candidate"
  },
  "自免赛道": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "自动化": {
   "type": "product",
   "status": "candidate"
  },
@@ -42717,6 +42826,10 @@
   "status": "candidate"
  },
  "记忆绵家居": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "许可证延续": {
   "type": "product",
   "status": "candidate"
  },
@@ -46126,6 +46239,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "集装箱航运": {
+  "type": "product",
+  "status": "candidate"
+ },
  "集装箱设备": {
   "type": "product",
   "status": "candidate"
@@ -46981,6 +47098,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "高洁净板": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高温SPM": {
   "type": "product",
   "status": "candidate",
@@ -47475,6 +47596,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "鲸鸿动能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "鳗鱼": {
   "type": "product",
   "status": "candidate"
@@ -47484,6 +47609,10 @@
   "status": "candidate"
  },
  "鳗鱼出口": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "鸣鸣很忙": {
   "type": "product",
   "status": "candidate"
  },
