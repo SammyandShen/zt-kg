@@ -2025,6 +2025,60 @@
    "note": "业务事实凭据（智能控制器用于机器人）确认业务关联，T+复核旁证较强(0.89)，判定成立",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-29"
+  },
+  {
+   "code": "000995",
+   "trade_date": "2026-11-02",
+   "theme": "白酒",
+   "verdict": "verified",
+   "note": "业务凭据+多家媒体直接点名皇台酒业涨停并归入白酒板块走强叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-02"
+  },
+  {
+   "code": "600199",
+   "trade_date": "2026-11-02",
+   "theme": "白酒",
+   "verdict": "verified",
+   "note": "业务凭据+自身去库存/减亏公告新闻与白酒板块多股涨停报道均点名该股",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-02"
+  },
+  {
+   "code": "600189",
+   "trade_date": "2026-11-02",
+   "theme": "白酒",
+   "verdict": "rejected",
+   "note": "泉阳泉主业矿泉水非白酒，证据显示当日叙事落在龙虎榜游资/饮料乳品概念，白酒标签疑似因'阳字辈'谐音蹭概念",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-02"
+  },
+  {
+   "code": "600779",
+   "trade_date": "2026-11-02",
+   "theme": "白酒",
+   "verdict": "verified",
+   "note": "两家媒体明确将水井坊点名列入白酒板块集体走强涨停叙事，且有公司品牌战略公告佐证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-02"
+  },
+  {
+   "code": "000995",
+   "trade_date": "2026-10-30",
+   "theme": "白酒",
+   "verdict": "verified",
+   "note": "业务凭据+多家媒体直接点名皇台酒业封板，归入白酒股集体走强叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-02"
+  },
+  {
+   "code": "000596",
+   "trade_date": "2026-10-30",
+   "theme": "白酒",
+   "verdict": "verified",
+   "note": "业务凭据+徽酒三季报观察报道点名古井贡酒中期分红方案，叙事与白酒板块回暖一致",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-02"
   }
  ],
  "episode_verdicts": [
@@ -2113,6 +2167,15 @@
    "decided_by": "llm-sonnet",
    "decided_at": "2026-10-29",
    "catalyst": "东方财富研究中心研报称商业航天产业规模预期或超3.5万亿、叠加板块情绪回暖，中国卫星、航天晨光等商业航天产业链龙头同日/连续走高带动板块共振，南方财经网、界面新闻均明确报道'商业航天板块震荡反弹，中国卫星、航天晨光双双涨停'"
+  },
+  {
+   "theme": "白酒",
+   "start_date": "2026-10-30",
+   "verdict": "verified",
+   "note": "核心成员（皇台酒业、金种子酒、水井坊、古井贡酒）均有业务凭据及板块级新闻点名一致叙事；成员泉阳泉与白酒业务不符、疑似蹭概念混入，不代表板块真实催化",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-02",
+   "catalyst": "白酒板块三季报业绩边际改善（减亏/扭亏/分红方案）叠加超跌反弹情绪共振，带动板块内多股集体涨停"
   }
  ],
  "leaders": []

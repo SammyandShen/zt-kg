@@ -22040,6 +22040,110 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-10-30] 该业务生产齿轮与减速机，减速器即题材交易标的本身"
+  },
+  {
+   "theme": "白酒",
+   "business_tag_name": "中高档白酒",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-11-02] 中高档白酒业务本身就是白酒题材交易的标的"
+  },
+  {
+   "theme": "白酒",
+   "business_tag_name": "普通白酒",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-11-02] 普通白酒业务本身就是白酒题材交易的标的"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "心脑血管中药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-02] 心脑血管中药产品本身即中药题材标的"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "过敏性鼻炎用药",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-02] 过敏性鼻炎用药为化学药品，属化学制药题材直接标的"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "骨科外用贴膏剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-02] 骨科外用贴膏剂为化学药制剂，属化学制药题材直接标的"
+  },
+  {
+   "theme": "化学制药",
+   "business_tag_name": "鼻喷剂酊剂制剂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-02] 鼻喷剂酊剂制剂为化学药品剂型，属化学制药题材直接标的"
+  },
+  {
+   "theme": "医药流通",
+   "business_tag_name": "医药连锁加盟与分销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-02] 医药连锁加盟与分销业务即医药流通题材的直接承载"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "真空采血系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-02] 真空采血系统属于医疗器械产品"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "血栓弹力图仪",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-02] 血栓弹力图仪属于医疗器械/体外诊断设备"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "微生物转运系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-02] 微生物转运系统属于体外诊断相关医疗器械产品"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "护理机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-02] 护理机器人本身即机器人题材的产品标的"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "机器人集成应用",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-02] 机器人集成应用业务即机器人题材的直接承载"
+  },
+  {
+   "theme": "房地产",
+   "business_tag_name": "土地一级开发",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-02] 土地一级开发是房地产开发链条的直接环节"
   }
  ]
 }
