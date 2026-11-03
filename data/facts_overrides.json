@@ -2079,6 +2079,15 @@
    "note": "业务凭据+徽酒三季报观察报道点名古井贡酒中期分红方案，叙事与白酒板块回暖一致",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-02"
+  },
+  {
+   "code": "300781",
+   "trade_date": "2026-11-02",
+   "theme": "AI营销",
+   "verdict": "verified",
+   "note": "basis=business_fact且新闻点名其营销主业客户增长，与AI营销题材业务关联可解释，证据支持度最高(supporting 0.77)",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-03"
   }
  ],
  "episode_verdicts": [

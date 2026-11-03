@@ -50809,6 +50809,11 @@
   "status": "candidate",
   "radar": "2026-10-09·1源2日"
  },
+ "文旅景区": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-08·1源2日"
+ },
  "昨日涨停": {
   "type": "unknown",
   "status": "candidate",
@@ -50948,10 +50953,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "文旅景区": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-09-08·1源2日"
  }
 }
