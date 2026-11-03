@@ -15530,6 +15530,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "拟收购中复碳芯股权": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "拟收购中控信息": {
   "type": "event",
   "status": "retired",
@@ -15620,6 +15625,11 @@
  "拟收购半导体": {
   "type": "event",
   "status": "retired"
+ },
+ "拟收购半导体公司": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "拟收购半导体材料": {
   "type": "event",
@@ -21699,6 +21709,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "“羊字辈”": {
+  "type": "product",
+  "status": "candidate"
+ },
  "“超级细菌”": {
   "type": "product",
   "status": "candidate"
@@ -22637,6 +22651,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "京东租赁": {
+  "type": "product",
+  "status": "candidate"
+ },
  "人力资源服务": {
   "type": "product",
   "status": "candidate",
@@ -22927,6 +22945,10 @@
   "status": "candidate"
  },
  "低温SCR脱硝": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "低温乳制品": {
   "type": "product",
   "status": "candidate"
  },
@@ -26974,6 +26996,10 @@
   "status": "candidate"
  },
  "商业焕新": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "商业物业": {
   "type": "product",
   "status": "candidate"
  },
@@ -31673,6 +31699,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新疆商业": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新疆基建": {
   "type": "product",
   "status": "candidate"
@@ -33638,6 +33668,10 @@
   "status": "candidate"
  },
  "机器人测试": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "机器人焊接材料": {
   "type": "product",
   "status": "candidate"
  },
@@ -44561,6 +44595,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "采选扩能": {
+  "type": "product",
+  "status": "candidate"
+ },
  "重卡换电": {
   "type": "product",
   "status": "candidate"
@@ -47152,6 +47190,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "饮用水": {
+  "type": "product",
+  "status": "candidate"
  },
  "饰品": {
   "type": "product",

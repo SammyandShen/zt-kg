@@ -70126,5 +70126,65 @@
   "p": "交通运输",
   "c": 0.65,
   "model": "claude-sonnet-5"
+ },
+ "拟收购中复碳芯股权": {
+  "t": "event",
+  "p": "",
+  "c": 0.92,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购半导体公司": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "京东租赁": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "低温乳制品": {
+  "t": "product",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "商业物业": {
+  "t": "product",
+  "p": "房地产",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "新疆商业": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "机器人焊接材料": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "采选扩能": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "饮用水": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "文旅景区": {
+  "t": "product",
+  "p": "旅游景区",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
  }
 }

@@ -22144,6 +22144,310 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-11-02] 土地一级开发是房地产开发链条的直接环节"
+  },
+  {
+   "theme": "AI营销",
+   "business_tag_name": "AI营销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-11-03] 业务标签与题材名完全一致，直接承载"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "IVD产品研发生产制造",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-03] IVD体外诊断产品本身即医疗器械细分品类"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "企金与保险核心科技服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 面向企金与保险的核心科技服务即金融科技业务"
+  },
+  {
+   "theme": "证券",
+   "business_tag_name": "信用业务（融资融券/股票质押回购）",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 融资融券/股票质押是券商证券业务核心组成"
+  },
+  {
+   "theme": "证券",
+   "business_tag_name": "做市交易业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 做市交易是证券公司核心业务线之一"
+  },
+  {
+   "theme": "证券",
+   "business_tag_name": "境外证券业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 境外证券业务即证券公司海外展业板块"
+  },
+  {
+   "theme": "短剧",
+   "business_tag_name": "微短剧制作发行",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-03] 微短剧制作发行即短剧题材直接承载业务"
+  },
+  {
+   "theme": "短剧/漫剧",
+   "business_tag_name": "微短剧制作发行",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-03] 微短剧制作发行即短剧/漫剧题材直接承载业务"
+  },
+  {
+   "theme": "工业母机",
+   "business_tag_name": "数控机床及自动化装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-03] 数控机床即工业母机题材的核心承载产品"
+  },
+  {
+   "theme": "智慧交通",
+   "business_tag_name": "智慧交通技术服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-03] 业务标签与题材名直接对应"
+  },
+  {
+   "theme": "期货",
+   "business_tag_name": "期货信息化系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 期货信息化系统即期货行业专用科技服务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车空调",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 汽车空调是汽车零部件的典型构成"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车轮毂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-03] 汽车轮毂是汽车零部件的典型构成"
+  },
+  {
+   "theme": "短剧",
+   "business_tag_name": "短剧微短剧制作发行",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-03] 短剧微短剧制作发行即短剧题材直接承载业务"
+  },
+  {
+   "theme": "短剧/漫剧",
+   "business_tag_name": "短剧微短剧制作发行",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-03] 短剧微短剧制作发行即短剧/漫剧题材直接承载业务"
+  },
+  {
+   "theme": "创投",
+   "business_tag_name": "私募股权基金管理业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 私募股权基金管理业务即创投题材的直接承载"
+  },
+  {
+   "theme": "稀土永磁",
+   "business_tag_name": "稀土冶炼分离",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-03] 稀土冶炼分离产出的稀土氧化物/金属是永磁材料生产的直接上游原料"
+  },
+  {
+   "theme": "稀土永磁",
+   "business_tag_name": "稀土矿开采",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 稀土矿是稀土永磁材料链条最前端的直接上游原料"
+  },
+  {
+   "theme": "创投",
+   "business_tag_name": "私募股权投资基金管理",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-03] 私募股权基金管理业务本身就是创投题材交易的主体"
+  },
+  {
+   "theme": "证券",
+   "business_tag_name": "证券投资业务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 证券投资业务是证券公司核心主营业务"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "证券期货核心交易系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 证券期货核心交易系统即金融科技服务于证券期货行业的典型产品"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "证券运营信息化系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 证券运营信息化系统是面向证券机构的金融科技产品"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "财富科技服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-03] 财富科技服务直接属于金融科技业务范畴"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "财富管理信息化平台",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-03] 财富管理信息化平台是面向财富管理机构的金融科技产品"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "资产托管系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 资产托管系统是服务金融机构的金融科技产品"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "资产管理信息化系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 资产管理信息化系统属于金融科技产品"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "资产管理系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-03] 资产管理系统属于面向资管机构的金融科技产品"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "资管信息披露系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-03] 资管信息披露系统属于金融科技产品范畴"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "资管科技服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 资管科技服务直接属于金融科技业务"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "运营与机构科技服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 运营与机构科技服务是面向金融机构的科技服务，属于金融科技"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "风险与平台科技服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 风险与平台科技服务是面向金融机构的风控科技产品，属于金融科技"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "金融云服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-03] 金融云服务直接属于金融科技业务范畴"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "金融信息技术",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-03] 金融信息技术直接属于金融科技业务范畴"
+  },
+  {
+   "theme": "跨境电商",
+   "business_tag_name": "跨境电子商务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-03] 跨境电子商务业务本身即跨境电商题材的交易对象"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "车身与内外饰系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-03] 车身与内外饰系统节点整体贴合汽车零部件题材"
+  },
+  {
+   "theme": "汽车产业链",
+   "business_tag_name": "车身与内外饰系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 车身与内外饰系统属于汽车产业链上的核心零部件环节"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "铝合金轻量化压铸件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-03] 铝合金轻量化压铸件是汽车零部件的一种"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "锂电池导电剂新材料（碳纳米管导电浆料/高比表炭黑）",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-03] 导电剂是锂电池电极制造的直接上游关键材料"
   }
  ]
 }

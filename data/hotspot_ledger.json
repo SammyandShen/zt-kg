@@ -1234,6 +1234,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-11-03": {
+   "at": "2026-11-03T17:18:57+08:00",
+   "terms": [
+    {
+     "term": "AI漫剧",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "游戏",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "影视院线",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "白酒",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "光伏",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "并购重组",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "金融科技",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "券商",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "MLCC",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "商业航天",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "具身智能",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }
