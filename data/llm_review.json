@@ -70186,5 +70186,359 @@
   "p": "旅游景区",
   "c": 0.45,
   "model": "claude-sonnet-5"
+ },
+ "三星供货": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "与AOI签订长期供货协议": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "智元供应链": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "科创次新股": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "国网预中标": {
+  "t": "catalyst",
+  "p": "国网中标",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "在手订单增长": {
+  "t": "catalyst",
+  "p": "订单增长",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "拟定增13亿元": {
+  "t": "event",
+  "p": "",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "算力PCB订单饱满": {
+  "t": "catalyst",
+  "p": "订单饱满",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "靶材扩产": {
+  "t": "catalyst",
+  "p": "产能扩张",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "启元气体收购": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "投资计划": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "拟投建莆田项目": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购威泰思": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购康豪机电": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "楚能合作": {
+  "t": "event",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "紫金入主": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "AI PCB微钻": {
+  "t": "product",
+  "p": "AI PCB钻针",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "AI制药服务": {
+  "t": "product",
+  "p": "AI制药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "AMD封测": {
+  "t": "product",
+  "p": "封装测试",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "CBF积层绝缘膜": {
+  "t": "product",
+  "p": "覆铜板",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "FGM选厂": {
+  "t": "event",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "“羊字辈”": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.2,
+  "model": "claude-sonnet-5"
+ },
+ "乐享科技": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "先进存储": {
+  "t": "product",
+  "p": "存储芯片",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "光储充放油": {
+  "t": "product",
+  "p": "新型储能",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "光刻胶材料": {
+  "t": "product",
+  "p": "光刻胶",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "光模块基板": {
+  "t": "product",
+  "p": "光模块",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "入股深迪半导体": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "全渠道零售": {
+  "t": "product",
+  "p": "零售",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "共封装光学": {
+  "t": "product",
+  "p": "CPO",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "前期跌幅较大": {
+  "t": "catalyst",
+  "p": "超跌反弹",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "加纳金矿": {
+  "t": "product",
+  "p": "黄金采选",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "医康养护": {
+  "t": "product",
+  "p": "银发经济",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "半导体流控": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "卫星解除装置": {
+  "t": "product",
+  "p": "卫星制造",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "卫星锗晶片": {
+  "t": "product",
+  "p": "锗",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "国际客户": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "大兆瓦风电": {
+  "t": "product",
+  "p": "风电设备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "央行购金": {
+  "t": "catalyst",
+  "p": "黄金涨价",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "存储探针卡": {
+  "t": "product",
+  "p": "半导体测试设备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "工业风扇": {
+  "t": "product",
+  "p": "通用设备",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "拟购境外金矿": {
+  "t": "catalyst",
+  "p": "拟收购",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "拟购方鑫矿业": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "斐济金矿": {
+  "t": "product",
+  "p": "黄金采选",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "春晖仪表": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.25,
+  "model": "claude-sonnet-5"
+ },
+ "晶圆测试探针卡": {
+  "t": "product",
+  "p": "半导体测试设备",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "海外金矿": {
+  "t": "product",
+  "p": "黄金采选",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "涂胶显影": {
+  "t": "product",
+  "p": "半导体设备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "混合键合": {
+  "t": "product",
+  "p": "先进封装",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "特高压避雷器": {
+  "t": "product",
+  "p": "特高压",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "电路板设备": {
+  "t": "product",
+  "p": "印制电路板",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "白银采选": {
+  "t": "product",
+  "p": "贵金属",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "白银黄金": {
+  "t": "product",
+  "p": "贵金属",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "硅光子技术": {
+  "t": "product",
+  "p": "光通信",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "航空轴承": {
+  "t": "product",
+  "p": "航空装备",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "超跌修复": {
+  "t": "catalyst",
+  "p": "超跌反弹",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "车辆齿轮": {
+  "t": "product",
+  "p": "汽车传动",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "银漫矿业复产": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高速交换机": {
+  "t": "product",
+  "p": "交换机",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
  }
 }

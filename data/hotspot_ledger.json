@@ -1299,6 +1299,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-11-04": {
+   "at": "2026-11-04T17:22:46+08:00",
+   "terms": [
+    {
+     "term": "黄金",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "半导体",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "固态电池",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "算力",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "光模块",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "羊年概念",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "游戏",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "PCB",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "光伏",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "并购重组",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "云计算",
+     "source": "flash_rss",
+     "hot": 3
+    }
+   ]
   }
  }
 }

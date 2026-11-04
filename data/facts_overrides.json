@@ -2088,6 +2088,105 @@
    "note": "basis=business_fact且新闻点名其营销主业客户增长，与AI营销题材业务关联可解释，证据支持度最高(supporting 0.77)",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-03"
+  },
+  {
+   "code": "000506",
+   "trade_date": "2026-11-04",
+   "theme": "黄金",
+   "verdict": "verified",
+   "note": "自身即黄金业务公司，叠加现货黄金拉升引发黄金股集体涨停的当日主导叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "600641",
+   "trade_date": "2026-11-04",
+   "theme": "半导体设备",
+   "verdict": "verified",
+   "note": "两条新闻直接点名该股归入半导体板块/芯片产业链反弹语境",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "600641",
+   "trade_date": "2026-11-04",
+   "theme": "半导体设备",
+   "verdict": "verified",
+   "note": "重复项同上",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "600547",
+   "trade_date": "2026-11-04",
+   "theme": "黄金",
+   "verdict": "verified",
+   "note": "新闻直接点名其属于贵金属板块活跃+涨停，公司本身为黄金主业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "300139",
+   "trade_date": "2026-11-04",
+   "theme": "黄金",
+   "verdict": "verified",
+   "note": "新闻直接点名'黄金概念震荡反弹 晓程科技涨超10%'，且自身有海外金矿业务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "000975",
+   "trade_date": "2026-11-04",
+   "theme": "黄金",
+   "verdict": "verified",
+   "note": "新闻直接点名其属于贵金属板块活跃涨停，公司本身为黄金主业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "600988",
+   "trade_date": "2026-11-04",
+   "theme": "黄金",
+   "verdict": "verified",
+   "note": "公司公告成立黄金冶炼公司+新闻直接点名港股黄金股走强带动该股涨超13%，业务与叙事双重印证",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "688200",
+   "trade_date": "2026-11-04",
+   "theme": "半导体设备",
+   "verdict": "verified",
+   "note": "新闻直接点名其随半导体产业链全线爆发涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "002371",
+   "trade_date": "2026-11-04",
+   "theme": "半导体设备",
+   "verdict": "verified",
+   "note": "多条新闻直接点名北方华创随半导体设备板块反弹涨停，公司为行业龙头",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "688652",
+   "trade_date": "2026-11-04",
+   "theme": "半导体设备",
+   "verdict": "verified",
+   "note": "多条新闻直接点名其属于半导体设备概念午后涨停潮",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
+  },
+  {
+   "code": "600699",
+   "trade_date": "2026-11-04",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "三条证据全部指向回购注销公告，无一提及人形机器人，证据显示当日主导叙事是另一题材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04"
   }
  ],
  "episode_verdicts": [
@@ -2185,6 +2284,24 @@
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-02",
    "catalyst": "白酒板块三季报业绩边际改善（减亏/扭亏/分红方案）叠加超跌反弹情绪共振，带动板块内多股集体涨停"
+  },
+  {
+   "theme": "黄金",
+   "start_date": "2026-11-04",
+   "verdict": "verified",
+   "note": "6只成员均为黄金业务公司，多条新闻直接确认贵金属板块活跃带动集体涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04",
+   "catalyst": "现货黄金价格拉升（避险需求/央行购金预期），带动A股贵金属板块个股集体涨停（市场层面，新闻报道级）"
+  },
+  {
+   "theme": "半导体设备",
+   "start_date": "2026-11-04",
+   "verdict": "verified",
+   "note": "7只成员中5只有直接点名的半导体设备板块反弹证据，大族激光/春晖智控个股层面证据偏弱但不影响板块共振判断",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-04",
+   "catalyst": "半导体设备板块午后大幅拉升（半导体设备ETF招商561980午后涨停），存储芯片等产业链景气带动北方华创、京仪装备、华峰测控、拓荆科技、先导基电等设备股接力封板（市场层面，新闻+行业ETF级）"
   }
  ],
  "leaders": []

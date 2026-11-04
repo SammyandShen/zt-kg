@@ -22448,6 +22448,46 @@
    "status": "candidate",
    "confidence": 0.85,
    "rationale": "[llm 2026-11-03] 导电剂是锂电池电极制造的直接上游关键材料"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏边框",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-04] 光伏边框是光伏组件的直接构成部件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车电池托盘及液冷系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-04] 电池托盘及液冷系统是新能源汽车核心部件"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "新能源汽车电池托盘及液冷系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-04] 电池液冷系统本身就是汽车热管理产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "新能源汽车电池托盘及液冷系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-04] 电池托盘属于汽车零部件范畴"
+  },
+  {
+   "theme": "电解铝",
+   "business_tag_name": "铝锭贸易",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-04] 铝锭是电解铝的直接产出物，铝锭贸易是其下游流通环节"
   }
  ]
 }
