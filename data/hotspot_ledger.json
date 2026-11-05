@@ -1364,6 +1364,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-11-05": {
+   "at": "2026-11-05T17:17:37+08:00",
+   "terms": [
+    {
+     "term": "黄金",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "半导体设备",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "人形机器人",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "创新药",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "小金属",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "磷化铟",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "AI算力PCB",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "储能",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "光伏",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "CPO",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "工业大麻",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "数据中心",
+     "source": "flash_rss",
+     "hot": 3
+    }
+   ]
   }
  }
 }

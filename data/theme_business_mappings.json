@@ -22488,6 +22488,294 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-11-04] 铝锭是电解铝的直接产出物，铝锭贸易是其下游流通环节"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "ALD设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] ALD设备本身即半导体制造设备产品"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "PECVD设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] PECVD设备属于半导体制造设备"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "SACVD设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] SACVD设备属于半导体制造设备"
+  },
+  {
+   "theme": "碳化硅",
+   "business_tag_name": "SiC MOSFET",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-05] SiC MOSFET即碳化硅功率器件，直接对应碳化硅题材"
+  },
+  {
+   "theme": "第三代半导体",
+   "business_tag_name": "SiC MOSFET",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] SiC属于第三代半导体材料制成的器件"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "SoC测试系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-05] SoC测试系统属于半导体测试设备"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "三维集成设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] 三维集成设备用于先进封装的3D堆叠工艺"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "临时键合解键合设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-05] 临时键合解键合设备是先进封装晶圆减薄/堆叠的关键工艺设备"
+  },
+  {
+   "theme": "先进封装",
+   "business_tag_name": "先进封装设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-05] 业务标签本身即先进封装所用设备"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏及新能源设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] 光伏及新能源设备直接服务于光伏产业生产环节"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "刻蚀设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-05] 刻蚀设备是核心半导体制造设备品类"
+  },
+  {
+   "theme": "电网设备出海",
+   "business_tag_name": "加纳配电及关口表BOT项目",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 该项目即海外配电设备BOT出口业务"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "化合物半导体设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 化合物半导体设备属于半导体专用设备"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体专用温控设备",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 温控设备是半导体制造产线的关键配套设备"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体检测设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] 检测设备属于半导体设备核心品类"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体气体传输系统",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 气体传输系统是半导体制造产线的配套设备"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体精密零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 精密零部件是半导体设备制造的上游部件"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体自动化测试系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-05] 自动化测试系统属于半导体检测设备品类"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体设备精密零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 设备精密零部件是半导体设备的上游供应"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体设备零配件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 设备零配件是半导体设备的上游供应"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "半导体量测设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] 量测设备属于半导体设备核心品类"
+  },
+  {
+   "theme": "工业互联网",
+   "business_tag_name": "工业物联网及系统集成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 工业物联网及系统集成即工业互联网落地形态"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车精密零部件其他件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] 汽车精密零部件直接属于汽车零部件产业"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车精锻件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-05] 精锻件是汽车零部件的典型形态"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车阀类零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-05] 阀类零部件属于汽车零部件产业"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "晶圆传片设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-05] 晶圆传片设备属于半导体制造产线设备"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "晶圆清洗设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-05] 晶圆清洗设备是半导体制造核心设备品类"
+  },
+  {
+   "theme": "机器人",
+   "business_tag_name": "机器人力学传感器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-05] 业务标签本身即机器人力觉感知部件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "IGBT",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] IGBT是新能源汽车电驱系统的核心功率器件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "活塞冷却喷嘴",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 活塞冷却喷嘴是发动机零部件，属于汽车零部件业务范畴"
+  },
+  {
+   "theme": "半导体设备",
+   "business_tag_name": "涂胶显影设备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-05] 涂胶显影设备（Track设备）是半导体前道光刻配套设备的直接品类"
+  },
+  {
+   "theme": "电网设备",
+   "business_tag_name": "电能表及集成电路设计",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-05] 电能表是电网设备的典型终端产品"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "电能表及集成电路设计",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-05] 智能电能表是智能电网用电信息采集的核心终端"
+  },
+  {
+   "theme": "稀土永磁",
+   "business_tag_name": "稀土采选",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-05] 稀土采选是稀土永磁产业链最上游的原料环节，业务本身即题材对象"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "黄金开采及销售",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-05] 黄金开采及销售直接是黄金题材的交易对象"
+  },
+  {
+   "theme": "黄金",
+   "business_tag_name": "黄金采选与冶炼",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-05] 黄金采选与冶炼直接是黄金题材的交易对象"
   }
  ]
 }

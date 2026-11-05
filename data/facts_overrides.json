@@ -2187,6 +2187,51 @@
    "note": "三条证据全部指向回购注销公告，无一提及人形机器人，证据显示当日主导叙事是另一题材",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-04"
+  },
+  {
+   "code": "603381",
+   "trade_date": "2026-11-05",
+   "theme": "光伏",
+   "verdict": "verified",
+   "note": "多条独立新闻明确指出光伏设备板块走强带动永臻股份3连板，有业务凭据支撑",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-05"
+  },
+  {
+   "code": "000700",
+   "trade_date": "2026-11-05",
+   "theme": "人形机器人",
+   "verdict": "verified",
+   "note": "三条独立新闻均明确点名人形机器人概念拉升带动模塑科技直线涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-05"
+  },
+  {
+   "code": "603381",
+   "trade_date": "2026-11-05",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "当日证据一致显示主导叙事是光伏/电力设备板块，非人形机器人",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-05"
+  },
+  {
+   "code": "002131",
+   "trade_date": "2026-11-05",
+   "theme": "AI营销",
+   "verdict": "verified",
+   "note": "上证报专文点名利欧股份构建GEO+智能体+MCP交付生态，业务叙事具体且当日点名",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-05"
+  },
+  {
+   "code": "603381",
+   "trade_date": "2026-11-04",
+   "theme": "人形机器人",
+   "verdict": "rejected",
+   "note": "证据一致显示光伏/电力设备板块走强才是主导叙事",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-05"
   }
  ],
  "episode_verdicts": [
