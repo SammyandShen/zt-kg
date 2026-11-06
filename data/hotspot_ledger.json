@@ -1429,6 +1429,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-11-06": {
+   "at": "2026-11-06T17:14:53+08:00",
+   "terms": [
+    {
+     "term": "光伏",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "算力租赁",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "贵金属",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "半导体",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "稀有金属",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "端侧AI",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "物理AI",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "数据中心",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "电网设备",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "工业大麻",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "AI漫剧",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

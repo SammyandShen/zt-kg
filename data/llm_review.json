@@ -70714,5 +70714,47 @@
   "p": "",
   "c": 0.6,
   "model": "claude-sonnet-5"
+ },
+ "新疆兵团国资": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "光刻机保税维修": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "应收账款回款": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "智慧仓": {
+  "t": "product",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "现代物流": {
+  "t": "sector",
+  "p": "物流",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "苎麻纺织": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "风光储一体化": {
+  "t": "theme",
+  "p": "新能源",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
  }
 }

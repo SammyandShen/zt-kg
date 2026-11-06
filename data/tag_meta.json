@@ -1092,6 +1092,11 @@
   "status": "active",
   "llm": "claude-sonnet-5"
  },
+ "新疆兵团国资": {
+  "type": "attribute",
+  "status": "active",
+  "llm": "claude-sonnet-5"
+ },
  "新疆国企": {
   "type": "attribute",
   "status": "active",
@@ -21845,6 +21850,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "“东方”": {
+  "type": "product",
+  "status": "candidate"
+ },
  "“华”字辈": {
   "type": "product",
   "status": "candidate"
@@ -23873,6 +23882,10 @@
   "status": "candidate"
  },
  "光刻机保税寄售维修": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光刻机保税维修": {
   "type": "product",
   "status": "candidate"
  },
@@ -30061,6 +30074,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "应收账款回款": {
+  "type": "product",
+  "status": "candidate"
+ },
  "应用于光通信": {
   "type": "product",
   "status": "candidate"
@@ -32954,6 +32971,10 @@
   "status": "candidate"
  },
  "智慧交管": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧仓": {
   "type": "product",
   "status": "candidate"
  },
@@ -38381,6 +38402,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "现代物流": {
+  "type": "product",
+  "status": "candidate"
+ },
  "现金管理": {
   "type": "product",
   "status": "candidate"
@@ -43047,6 +43072,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "苎麻纺织": {
+  "type": "product",
+  "status": "candidate"
+ },
  "苏州": {
   "type": "product",
   "status": "candidate"
@@ -47264,6 +47293,10 @@
   "llm": "claude-sonnet-5"
  },
  "颌面修复": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "风光储一体化": {
   "type": "product",
   "status": "candidate"
  },

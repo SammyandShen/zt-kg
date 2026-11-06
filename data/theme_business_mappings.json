@@ -22776,6 +22776,302 @@
    "status": "candidate",
    "confidence": 0.85,
    "rationale": "[llm 2026-11-05] 黄金采选与冶炼直接是黄金题材的交易对象"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏封装胶膜",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-06] 封装胶膜是光伏组件封装环节直接上游材料"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏湿制程辅助品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 电池湿制程工艺用辅助化学品，直接上游耗材"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-06] 光伏电池即光伏题材核心交易标的"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电池及组件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-06] 光伏电池及组件制造即光伏产业链核心环节"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站EPC与运营",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-06] 电站EPC与运营是光伏产业链下游应用环节"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站开发及合同能源管理",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-06] 电站开发运营是光伏下游应用"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏电站维修延寿材料(MoPro®)",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 电站维修延寿材料服务于光伏电站运维环节"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏系统集成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-06] 系统集成是光伏产业链核心交付环节"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "光伏背板",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-06] 背板是光伏组件关键上游材料"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "分布式光伏电站应用",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-06] 分布式电站应用是光伏下游场景"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "单晶硅棒/硅片/光伏组件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-06] 硅棒硅片是光伏产业链最核心上游材料"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "多晶硅还原炉",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-06] 多晶硅还原炉是光伏硅料生产的上游设备"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "建筑光伏一体化(BIPV)",
+   "mapping_type": "downstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-06] BIPV是光伏在建筑场景的直接下游应用"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "人形机器人精密零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-06] 人形机器人精密零部件即该题材直接承载的核心部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "人形机器人精密零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-06] 业务标签与题材同义指向人形机器人零部件"
+  },
+  {
+   "theme": "具身智能",
+   "business_tag_name": "人形机器人精密零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 人形机器人是具身智能主要载体，精密零部件为其上游"
+  },
+  {
+   "theme": "创新药",
+   "business_tag_name": "基因治疗",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-06] 基因治疗是创新药的重要细分方向"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "定制和自研芯片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 自研芯片设计属半导体产业链核心环节"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "抗肝纤维化药品(复方鳖甲软肝片)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-06] 复方鳖甲软肝片为中药制剂"
+  },
+  {
+   "theme": "液冷",
+   "business_tag_name": "散热液冷产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-06] 液冷产品即液冷题材直接承载的产品"
+  },
+  {
+   "theme": "液冷散热",
+   "business_tag_name": "散热液冷产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-06] 散热液冷产品直接对应液冷散热题材"
+  },
+  {
+   "theme": "AI液冷",
+   "business_tag_name": "散热液冷产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-06] 散热液冷产品可用于AI服务器液冷场景"
+  },
+  {
+   "theme": "数据中心液冷",
+   "business_tag_name": "散热液冷产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 液冷产品是数据中心液冷系统的直接上游组件"
+  },
+  {
+   "theme": "AIDC液冷",
+   "business_tag_name": "散热液冷产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 液冷产品是AIDC液冷系统的上游组件"
+  },
+  {
+   "theme": "AI服务器液冷",
+   "business_tag_name": "散热液冷产品",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 液冷产品是AI服务器液冷方案的上游组件"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源汽车及电力电子绝缘材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-06] 绝缘材料是新能源汽车电力电子系统直接上游材料"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "新能源车热管理部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-06] 新能源车热管理部件即该题材直接承载产品"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源车热管理部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-06] 热管理部件是新能源汽车的直接上游零部件"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "智能音频及声学器件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 声学器件是耳机音箱等消费电子产品的上游元件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车精密注塑件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 精密注塑件是汽车零部件的直接上游制造环节"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "消费电子材料",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-06] 消费电子材料即该题材直接承载的上游材料"
+  },
+  {
+   "theme": "AIoT平台",
+   "business_tag_name": "物联网通讯模块",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-06] 通讯模块是AIoT平台终端联网的直接上游硬件"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "绿电智能制氢系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-06] 智能制氢系统即氢能题材核心承载业务"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "电池箔",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-06] 电池箔是锂电池正负极集流体的直接上游材料"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "肝纤维化诊断设备(FibroScan系列)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-06] FibroScan系列是具体的医疗诊断设备，直接属于医疗器械"
+  },
+  {
+   "theme": "医疗器械",
+   "business_tag_name": "诊断设备按次收费与租赁服务",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-06] 诊断设备的按次收费/租赁服务本质仍是医疗器械业务模式的延伸"
+  },
+  {
+   "theme": "设备更新",
+   "business_tag_name": "节能节水装备",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-06] 节能节水装备是设备更新政策直接受益的具体设备品类"
   }
  ]
 }

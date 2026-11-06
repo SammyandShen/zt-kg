@@ -2232,6 +2232,33 @@
    "note": "证据一致显示光伏/电力设备板块走强才是主导叙事",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-05"
+  },
+  {
+   "code": "603381",
+   "trade_date": "2026-11-06",
+   "theme": "光伏",
+   "verdict": "verified",
+   "note": "多条新闻直接点名永臻股份4连板且明确归因光伏设备/光伏概念延续强势，业务凭据+当日叙事主导均满足",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-06"
+  },
+  {
+   "code": "600539",
+   "trade_date": "2026-11-05",
+   "theme": "光伏",
+   "verdict": "rejected",
+   "note": "证据全部指向AI应用板块批量涨停（56亿资金涌入AI应用、小红书概念），无任何光伏相关证据，当日主导叙事明显是另一题材",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-06"
+  },
+  {
+   "code": "603598",
+   "trade_date": "2026-11-05",
+   "theme": "AI营销",
+   "verdict": "rejected",
+   "note": "公司公开澄清AI短剧业务规模小、收入占比不足0.1%，构成明确反证，属蹭概念",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-06"
   }
  ],
  "episode_verdicts": [
