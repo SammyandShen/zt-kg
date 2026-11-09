@@ -70756,5 +70756,107 @@
   "p": "新能源",
   "c": 0.45,
   "model": "claude-sonnet-5"
+ },
+ "智元入主": {
+  "t": "event",
+  "p": "",
+  "c": 0.85,
+  "model": "claude-sonnet-5"
+ },
+ "“东方”": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.2,
+  "model": "claude-sonnet-5"
+ },
+ "人形机器人PCB": {
+  "t": "product",
+  "p": "人形机器人零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "光电科技并购": {
+  "t": "catalyst",
+  "p": "并购重组",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "压力传感器": {
+  "t": "product",
+  "p": "传感器",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "宽带连接终端": {
+  "t": "product",
+  "p": "卫星通信",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "寒潮供暖": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "数据中心制冷": {
+  "t": "product",
+  "p": "数据中心",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "星载算力一体机": {
+  "t": "product",
+  "p": "商业航天",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "汽车洗涤系统": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "猪肉食品": {
+  "t": "product",
+  "p": "猪肉",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "盘龙七片": {
+  "t": "product",
+  "p": "中药",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "航天紧固件": {
+  "t": "product",
+  "p": "航天应用",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "货物贸易": {
+  "t": "product",
+  "p": "供应链物流",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "车轮": {
+  "t": "product",
+  "p": "汽车零部件",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "阿凡达铌微合金": {
+  "t": "product",
+  "p": "机器人材料",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "高端家居": {
+  "t": "product",
+  "p": "家居商贸",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
  }
 }

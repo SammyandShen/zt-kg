@@ -23072,6 +23072,30 @@
    "status": "candidate",
    "confidence": 0.7,
    "rationale": "[llm 2026-11-06] 节能节水装备是设备更新政策直接受益的具体设备品类"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车悬架减振系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-09] 悬架减振系统本身就是汽车零部件产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车流体输送系统",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-09] 流体输送系统（管路/油路等）属于汽车零部件范畴"
+  },
+  {
+   "theme": "氢能",
+   "business_tag_name": "氢能源管路",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-09] 氢能管路是氢气储运环节的直接上游设备"
   }
  ]
 }

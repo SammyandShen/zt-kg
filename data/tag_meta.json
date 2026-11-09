@@ -16763,6 +16763,11 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "智元入主": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "智元入股": {
   "type": "event",
   "status": "retired",
@@ -22875,6 +22880,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "人形机器人PCB": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "人民币贬值受益": {
   "type": "product",
   "status": "candidate"
@@ -24150,6 +24160,10 @@
   "status": "candidate"
  },
  "光电测控": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "光电科技并购": {
   "type": "product",
   "status": "candidate"
  },
@@ -26701,6 +26715,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "压力传感器": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "压力容器": {
   "type": "product",
   "status": "candidate",
@@ -29236,6 +29255,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "宽带连接终端": {
+  "type": "product",
+  "status": "candidate"
+ },
  "密封胶": {
   "type": "product",
   "status": "candidate"
@@ -29257,6 +29280,10 @@
   "status": "candidate"
  },
  "寒潮": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "寒潮供暖": {
   "type": "product",
   "status": "candidate"
  },
@@ -31543,6 +31570,11 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "数据中心制冷": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "数据中心压缩机": {
   "type": "product",
   "status": "candidate"
@@ -32835,6 +32867,10 @@
   "status": "candidate"
  },
  "星空篷": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "星载算力一体机": {
   "type": "product",
   "status": "candidate"
  },
@@ -35516,6 +35552,11 @@
  "汽车注塑": {
   "type": "product",
   "status": "candidate"
+ },
+ "汽车洗涤系统": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "汽车物流": {
   "type": "product",
@@ -38218,6 +38259,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "猪肉食品": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "猪饲料": {
   "type": "product",
   "status": "candidate"
@@ -39893,6 +39939,10 @@
   "status": "candidate"
  },
  "盒子汽车": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "盘龙七片": {
   "type": "product",
   "status": "candidate"
  },
@@ -42728,6 +42778,11 @@
   "type": "product",
   "status": "candidate"
  },
+ "航天紧固件": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "航天铌合金": {
   "type": "product",
   "status": "candidate"
@@ -43692,6 +43747,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "货物贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
  "质子中心": {
   "type": "product",
   "status": "candidate"
@@ -44215,6 +44274,11 @@
  "车身控制": {
   "type": "product",
   "status": "candidate"
+ },
+ "车轮": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
  },
  "车轮业务": {
   "type": "product",
@@ -46759,6 +46823,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "阿凡达铌微合金": {
+  "type": "product",
+  "status": "candidate"
+ },
  "阿尔兹海默症": {
   "type": "product",
   "status": "candidate"
@@ -47944,6 +48012,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高端家居": {
+  "type": "product",
+  "status": "candidate"
  },
  "高端家电": {
   "type": "product",
@@ -51403,5 +51475,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "昨日高换手": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-01·1源2日"
  }
 }
