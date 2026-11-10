@@ -2331,6 +2331,33 @@
    "note": "公司公告自行澄清AI/算力/词元业务占营收比重低，多篇新闻指向算力租赁板块驱动，非机器人叙事",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-09"
+  },
+  {
+   "code": "001308",
+   "trade_date": "2026-11-10",
+   "theme": "AI眼镜",
+   "verdict": "verified",
+   "note": "机构调研新闻标题直接点名'端侧AI+AI眼镜 这家公司封板'，明确以该题材解释当日涨停",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-10"
+  },
+  {
+   "code": "002861",
+   "trade_date": "2026-11-10",
+   "theme": "AI眼镜",
+   "verdict": "verified",
+   "note": "多条新闻标题直接点名'AI眼镜概念异动拉升 瀛通通讯...直线涨停'，叙事主导明确",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-10"
+  },
+  {
+   "code": "002343",
+   "trade_date": "2026-11-10",
+   "theme": "国企改革",
+   "verdict": "rejected",
+   "note": "证据显示当日主导叙事是微短剧/影视传媒板块走强（剧集上映+传媒板块报道），非国企改革",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-10"
   }
  ],
  "episode_verdicts": [
@@ -2473,6 +2500,14 @@
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-10",
    "catalyst": "人形机器人概念板块情绪回暖（征和工业灵巧手等2连板领涨），带动产业链零部件/液冷/减速器等关联股集体涨停；个别成分股（品茗科技因实控人被立案、润建股份AI业务占比低被质疑）叙事存疑，非共同催化主线"
+  },
+  {
+   "theme": "国企改革",
+   "start_date": "2026-11-10",
+   "verdict": "rejected",
+   "note": "三只成员原因标签各异（慈文传媒证据指向微短剧/传媒走强、金杯汽车指向机器人/汽车零部件、黑牡丹指向牛仔布/新型城镇化），国企改革仅为附带标签，无共同催化叙事，属标签巧合各炒各的",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-10"
   }
  ],
  "leaders": []

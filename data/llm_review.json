@@ -70858,5 +70858,203 @@
   "p": "家居商贸",
   "c": 0.55,
   "model": "claude-sonnet-5"
+ },
+ "宝马供应链": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "机器人供货": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "签下算力大单": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "邮政分拣中标": {
+  "t": "catalyst",
+  "p": "中标",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "大模型投资": {
+  "t": "catalyst",
+  "p": "大模型",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "拟收购宏钢光电": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "莆田项目投资": {
+  "t": "event",
+  "p": "",
+  "c": 0.7,
+  "model": "claude-sonnet-5"
+ },
+ "高德合作": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "LCP全产业链": {
+  "t": "product",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "VR/MR": {
+  "t": "theme",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "“东方系”": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "健康服务机器人": {
+  "t": "product",
+  "p": "机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "元宇宙": {
+  "t": "theme",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "关节减速器": {
+  "t": "product",
+  "p": "机器人减速器",
+  "c": 0.65,
+  "model": "claude-sonnet-5"
+ },
+ "具身智能数据": {
+  "t": "product",
+  "p": "具身智能数据集",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "剧集发行": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "协处理器": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "咖啡机": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "地板家居": {
+  "t": "product",
+  "p": "家居商贸",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "数据训练": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "无线耳机": {
+  "t": "product",
+  "p": "TWS耳机",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "智能小家电": {
+  "t": "product",
+  "p": "智能家居",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "机电组件送样": {
+  "t": "event",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "汽车空气管理": {
+  "t": "product",
+  "p": "汽车热管理",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "电机核心零部件": {
+  "t": "product",
+  "p": "机器人零部件",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "电网数字化": {
+  "t": "product",
+  "p": "智能电网",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "票据发行完成": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "精品纸包装": {
+  "t": "product",
+  "p": "包装印刷",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "送奶上户": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "重卡超充": {
+  "t": "theme",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "铂网加工": {
+  "t": "product",
+  "p": "贵金属",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "高性能聚酰胺项目": {
+  "t": "catalyst",
+  "p": "产能扩建",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "昨日高换手": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
  }
 }

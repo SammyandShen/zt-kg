@@ -1559,6 +1559,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-11-10": {
+   "at": "2026-11-10T17:18:27+08:00",
+   "terms": [
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "商业航天",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "冰雪经济",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "煤炭",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "共封装光学",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "PCB",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "中药",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "燃气",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "猪肉",
+     "source": "flash_rss",
+     "hot": 2
+    },
+    {
+     "term": "减速器",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "小金属",
+     "source": "news_terms",
+     "hot": 2
+    },
+    {
+     "term": "AI漫剧",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

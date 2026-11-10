@@ -23096,6 +23096,46 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-11-09] 氢能管路是氢气储运环节的直接上游设备"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "中药配方颗粒",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.95,
+   "rationale": "[llm 2026-11-10] 中药配方颗粒本身就是中药产品形态"
+  },
+  {
+   "theme": "中药",
+   "business_tag_name": "盘龙七片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-10] 盘龙七片是具体中药品种"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车车轮",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-10] 车轮本身就是汽车零部件的一种"
+  },
+  {
+   "theme": "金融科技",
+   "business_tag_name": "金融科技设备与软件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-10] 业务本身即金融科技设备与软件"
+  },
+  {
+   "theme": "风电",
+   "business_tag_name": "风机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-10] 风机为风力发电机组，是风电题材核心设备"
   }
  ]
 }
