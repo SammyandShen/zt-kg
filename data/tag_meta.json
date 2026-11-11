@@ -51424,6 +51424,11 @@
   "status": "candidate",
   "radar": "2026-08-06·1源2日"
  },
+ "全息技术": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-12·1源2日"
+ },
  "农林牧渔": {
   "type": "unknown",
   "status": "candidate",
@@ -51503,6 +51508,11 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "混合现实": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-31·1源2日"
  },
  "生物制药": {
   "type": "unknown",
@@ -51618,15 +51628,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "全息技术": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-12·1源2日"
- },
- "混合现实": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-08-31·1源2日"
  }
 }

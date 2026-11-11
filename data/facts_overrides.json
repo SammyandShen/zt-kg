@@ -2358,6 +2358,24 @@
    "note": "证据显示当日主导叙事是微短剧/影视传媒板块走强（剧集上映+传媒板块报道），非国企改革",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-10"
+  },
+  {
+   "code": "600609",
+   "trade_date": "2026-11-10",
+   "theme": "汽车零部件",
+   "verdict": "rejected",
+   "note": "新闻标题“机器人概念带飞股价？金杯汽车喜提2连板”及公司澄清机器人组装业务仅50万元收入，显示当日主导叙事是机器人概念而非汽车零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  {
+   "code": "600609",
+   "trade_date": "2026-11-09",
+   "theme": "汽车零部件",
+   "verdict": "rejected",
+   "note": "股票交易异常波动公告叠加机器人业务澄清（收入50万元、对利润无重大影响），显示当日炒作主线是机器人概念而非汽车零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
   }
  ],
  "episode_verdicts": [
