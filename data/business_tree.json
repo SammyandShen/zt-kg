@@ -34210,6 +34210,196 @@
    "parent": "五金管件",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-10"
+  },
+  "LCP材料": {
+   "parent": "电子材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "VR/MR业务产品及服务": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "三元锂电池": {
+   "parent": "动力锂电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "人形机器人关节电机": {
+   "parent": "机器人产业",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "储能电站运营": {
+   "parent": "储能系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "减速机配件及维修": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "医疗健康产品": {
+   "parent": "医药医疗",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "发动机冷却系统及散热器": {
+   "parent": "热管理系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "同步器": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "咖啡机": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "固态电池": {
+   "parent": "电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "声学产品及精密零组件": {
+   "parent": "声学产品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "家电压缩机电机零部件": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "工业齿轮箱": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "差速器": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "广电系统集成及服务": {
+   "parent": "电子信息工程服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "影视剧制作投资": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "影院卖品": {
+   "parent": "餐饮服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "扫地机器人": {
+   "parent": "智能家居设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "改性材料": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "新能源电池": {
+   "parent": "电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "新能源电池结构件": {
+   "parent": "电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "无人机电机零部件": {
+   "parent": "低空经济与航天",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "汽车电机零部件": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "油炸锅": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "洁净技术与污染控制工程服务": {
+   "parent": "环保工程",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "环境电器": {
+   "parent": "小家电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "电力技术服务": {
+   "parent": "电力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "电动自行车电机零部件": {
+   "parent": "自行车",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "电源及数据传输产品": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "电网数字化智能感知产品": {
+   "parent": "输配电装备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "磷酸铁锂电池": {
+   "parent": "动力锂电池",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "耳机": {
+   "parent": "声学产品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "通用减速机": {
+   "parent": "传动部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "钙钛矿光伏组件": {
+   "parent": "太阳能光伏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "院线发行": {
+   "parent": "影视内容",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "音响": {
+   "parent": "声学产品",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
+  },
+  "音视频软件产品及解决方案": {
+   "parent": "计算机软件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
   }
  },
  "groups": {

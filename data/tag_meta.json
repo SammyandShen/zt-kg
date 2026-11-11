@@ -51589,6 +51589,11 @@
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
  },
+ "昨日连板": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-08·1源2日"
+ },
  "昨日连板_含一字": {
   "type": "unknown",
   "status": "candidate",
@@ -51618,6 +51623,11 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-07·1源2日"
+ },
+ "电子后视镜": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-11-10·1源2日"
  },
  "疫苗": {
   "type": "unknown",
@@ -51728,15 +51738,5 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
- },
- "昨日连板": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-09-08·1源2日"
- },
- "电子后视镜": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-11-10·1源2日"
  }
 }
