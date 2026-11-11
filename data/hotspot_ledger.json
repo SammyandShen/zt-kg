@@ -1624,6 +1624,71 @@
      "hot": 2
     }
    ]
+  },
+  "2026-11-11": {
+   "at": "2026-11-11T17:19:39+08:00",
+   "terms": [
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "AI眼镜",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "AI短剧",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "端侧AI",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "商业航天",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "PCB",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "算力租赁",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "光模块",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "游戏",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "智能穿戴",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "光伏",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "具身智能",
+     "source": "flash_rss",
+     "hot": 3
+    }
+   ]
   }
  }
 }

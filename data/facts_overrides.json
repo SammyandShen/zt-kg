@@ -2376,6 +2376,15 @@
    "note": "股票交易异常波动公告叠加机器人业务澄清（收入50万元、对利润无重大影响），显示当日炒作主线是机器人概念而非汽车零部件",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-11"
+  },
+  {
+   "code": "002048",
+   "trade_date": "2026-11-10",
+   "theme": "汽车零部件",
+   "verdict": "rejected",
+   "note": "龙虎榜关联新闻点名'物理AI引爆宇树'人形机器人叙事，证据显示当日主导题材是人形机器人而非汽车零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-11"
   }
  ],
  "episode_verdicts": [

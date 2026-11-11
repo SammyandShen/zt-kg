@@ -23136,6 +23136,190 @@
    "status": "candidate",
    "confidence": 0.6,
    "rationale": "[llm 2026-11-10] 风机为风力发电机组，是风电题材核心设备"
+  },
+  {
+   "theme": "6G通信",
+   "business_tag_name": "LCP材料",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-11] LCP是高频高速传输关键绝缘材料，用于6G高频天线/连接器"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "三元锂电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-11] 三元锂电池即锂电池题材的直接交易对象"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "三元锂电池",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-11] 三元锂电池是新能源车动力电池核心上游部件"
+  },
+  {
+   "theme": "人形机器人",
+   "business_tag_name": "人形机器人关节电机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-11] 关节电机是人形机器人核心执行部件"
+  },
+  {
+   "theme": "人形机器人概念",
+   "business_tag_name": "人形机器人关节电机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-11] 关节电机是人形机器人核心执行部件"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "储能电站运营",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-11] 储能电站运营即储能题材直接承载业务"
+  },
+  {
+   "theme": "汽车热管理",
+   "business_tag_name": "发动机冷却系统及散热器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-11] 发动机冷却散热系统是汽车热管理的核心业务"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "发动机冷却系统及散热器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-11] 冷却散热器是汽车零部件的重要组成"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "同步器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-11] 同步器是变速箱核心零部件"
+  },
+  {
+   "theme": "固态电池",
+   "business_tag_name": "固态电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-11] 业务即题材同名直接对象"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "差速器",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-11] 差速器是汽车传动系统核心零部件"
+  },
+  {
+   "theme": "智慧清洁机器人",
+   "business_tag_name": "扫地机器人",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-11] 扫地机器人即智慧清洁机器人题材直接对象"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "新能源电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-11] 新能源电池即锂电池题材的直接承载业务"
+  },
+  {
+   "theme": "新能源汽车",
+   "business_tag_name": "新能源电池",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-11] 新能源电池是新能源汽车动力系统核心上游"
+  },
+  {
+   "theme": "无人机",
+   "business_tag_name": "无人机电机零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-11] 电机零部件是无人机动力系统核心上游部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车电机零部件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-11] 电机零部件是汽车零部件的重要组成"
+  },
+  {
+   "theme": "智能电网",
+   "business_tag_name": "电网数字化智能感知产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-11] 电网智能感知产品是智能电网题材的直接承载业务"
+  },
+  {
+   "theme": "锂电池",
+   "business_tag_name": "磷酸铁锂电池",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-11] 磷酸铁锂电池即锂电池题材的直接交易对象"
+  },
+  {
+   "theme": "储能",
+   "business_tag_name": "磷酸铁锂电池",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-11] 磷酸铁锂电池是储能系统的主流上游电芯"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "耳机",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.7,
+   "rationale": "[llm 2026-11-11] 耳机是消费电子题材的直接终端产品"
+  },
+  {
+   "theme": "钙钛矿组件",
+   "business_tag_name": "钙钛矿光伏组件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-11] 业务即题材同名直接对象"
+  },
+  {
+   "theme": "光伏",
+   "business_tag_name": "钙钛矿光伏组件",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-11] 钙钛矿组件是光伏题材的直接细分产品"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "音响",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-11] 音响是消费电子题材的直接终端产品"
   }
  ]
 }

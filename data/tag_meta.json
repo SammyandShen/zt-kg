@@ -10423,6 +10423,11 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "光通信满产": {
+  "type": "catalyst",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "入围央采": {
   "type": "catalyst",
   "status": "candidate",
@@ -13303,6 +13308,11 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "Woolrich开业": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "adidas合作": {
   "type": "event",
   "status": "retired",
@@ -15788,6 +15798,11 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "拟收购嘉万光": {
+  "type": "event",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
  "拟收购嘉合劲威": {
   "type": "event",
   "status": "retired"
@@ -16313,6 +16328,11 @@
  "接入阿里AI": {
   "type": "event",
   "status": "retired",
+  "llm": "claude-sonnet-5"
+ },
+ "控制权可能变更": {
+  "type": "event",
+  "status": "candidate",
   "llm": "claude-sonnet-5"
  },
  "控股奎芯科技": {
@@ -18898,6 +18918,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "800MW燃机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "800V HVDC架构": {
   "type": "product",
   "status": "candidate"
@@ -19663,6 +19687,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "AI职业培训": {
+  "type": "product",
+  "status": "candidate"
  },
  "AI职业教育": {
   "type": "product",
@@ -22496,6 +22524,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "中高端男装": {
+  "type": "product",
+  "status": "candidate"
+ },
  "临床试验启动": {
   "type": "product",
   "status": "candidate"
@@ -22938,6 +22970,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "人形机器人测试": {
+  "type": "product",
+  "status": "candidate"
  },
  "人民币贬值受益": {
   "type": "product",
@@ -25923,6 +25959,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "北美业务正常推进": {
+  "type": "product",
+  "status": "candidate"
+ },
  "北美变压器": {
   "type": "product",
   "status": "candidate"
@@ -26272,6 +26312,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "半导体LED封装": {
+  "type": "product",
+  "status": "candidate"
  },
  "半导体上游": {
   "type": "product",
@@ -26710,6 +26754,10 @@
   "status": "candidate"
  },
  "卫星锗晶片": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "卫材压敏胶": {
   "type": "product",
   "status": "candidate"
  },
@@ -30526,6 +30574,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "微信小游戏": {
+  "type": "product",
+  "status": "candidate"
+ },
  "微光学": {
   "type": "product",
   "status": "candidate"
@@ -30889,6 +30941,10 @@
   "status": "candidate"
  },
  "手机游戏": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "手游IP储备": {
   "type": "product",
   "status": "candidate"
  },
@@ -32271,6 +32327,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "新能源汽车嵌件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源汽车检测": {
   "type": "product",
   "status": "candidate"
@@ -32843,6 +32903,10 @@
   "status": "candidate"
  },
  "日化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "日化业务": {
   "type": "product",
   "status": "candidate"
  },
@@ -33464,6 +33528,10 @@
   "status": "candidate"
  },
  "智能可穿戴": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智能声学": {
   "type": "product",
   "status": "candidate"
  },
@@ -35762,6 +35830,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "汽车转向": {
+  "type": "product",
+  "status": "candidate"
  },
  "汽车轮毂轴承": {
   "type": "product",
@@ -38450,6 +38522,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "环保整改": {
+  "type": "product",
+  "status": "candidate"
+ },
  "环保材料": {
   "type": "product",
   "status": "candidate"
@@ -40484,6 +40560,10 @@
   "status": "candidate"
  },
  "硅砂矿": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "硅砂采矿权": {
   "type": "product",
   "status": "candidate"
  },
@@ -42704,6 +42784,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "腾讯代理": {
+  "type": "product",
+  "status": "candidate"
+ },
  "膜分离": {
   "type": "product",
   "status": "candidate"
@@ -43261,6 +43345,10 @@
   "status": "candidate"
  },
  "英伟达相关": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "英特尔验证": {
   "type": "product",
   "status": "candidate"
  },
@@ -44633,6 +44721,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "轴承装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "轴承钢球": {
   "type": "product",
   "status": "candidate",
@@ -45656,6 +45748,10 @@
   "status": "candidate"
  },
  "钢帘线": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "钢材产品": {
   "type": "product",
   "status": "candidate"
  },
@@ -48212,6 +48308,10 @@
   "status": "candidate"
  },
  "高端焊材": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高端特种绳索": {
   "type": "product",
   "status": "candidate"
  },
@@ -51628,5 +51728,15 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "昨日连板": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-09-08·1源2日"
+ },
+ "电子后视镜": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-11-10·1源2日"
  }
 }

@@ -71056,5 +71056,161 @@
   "p": "",
   "c": 0.3,
   "model": "claude-sonnet-5"
+ },
+ "拟收购嘉万光": {
+  "t": "event",
+  "p": "",
+  "c": 0.9,
+  "model": "claude-sonnet-5"
+ },
+ "控制权可能变更": {
+  "t": "event",
+  "p": "",
+  "c": 0.75,
+  "model": "claude-sonnet-5"
+ },
+ "800MW燃机": {
+  "t": "product",
+  "p": "燃气轮机",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "AI职业培训": {
+  "t": "product",
+  "p": "教育",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "Woolrich开业": {
+  "t": "event",
+  "p": "",
+  "c": 0.8,
+  "model": "claude-sonnet-5"
+ },
+ "中高端男装": {
+  "t": "product",
+  "p": "男装",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "人形机器人测试": {
+  "t": "product",
+  "p": "人形机器人",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "光通信满产": {
+  "t": "catalyst",
+  "p": "产能满产",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "北美业务正常推进": {
+  "t": "unknown",
+  "p": "",
+  "c": 0.3,
+  "model": "claude-sonnet-5"
+ },
+ "半导体LED封装": {
+  "t": "product",
+  "p": "半导体封装",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "卫材压敏胶": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "微信小游戏": {
+  "t": "product",
+  "p": "游戏",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "手游IP储备": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "新能源汽车嵌件": {
+  "t": "product",
+  "p": "新能源汽车零部件",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "日化业务": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "智能声学": {
+  "t": "product",
+  "p": "消费电子",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "汽车转向": {
+  "t": "product",
+  "p": "汽车传动",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "环保整改": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.45,
+  "model": "claude-sonnet-5"
+ },
+ "硅砂采矿权": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "腾讯代理": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "英特尔验证": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "轴承装备": {
+  "t": "product",
+  "p": "工业母机",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "钢材产品": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "高端特种绳索": {
+  "t": "product",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "全息技术": {
+  "t": "product",
+  "p": "",
+  "c": 0.35,
+  "model": "claude-sonnet-5"
+ },
+ "混合现实": {
+  "t": "product",
+  "p": "AR/VR光学元件",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
  }
 }
