@@ -1689,6 +1689,71 @@
      "hot": 3
     }
    ]
+  },
+  "2026-11-12": {
+   "at": "2026-11-12T17:18:15+08:00",
+   "terms": [
+    {
+     "term": "CPO",
+     "source": "flash_rss",
+     "hot": 5
+    },
+    {
+     "term": "人形机器人",
+     "source": "news_terms",
+     "hot": 5
+    },
+    {
+     "term": "光模块",
+     "source": "flash_rss",
+     "hot": 4
+    },
+    {
+     "term": "液冷服务器",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "PCB",
+     "source": "news_terms",
+     "hot": 4
+    },
+    {
+     "term": "存储芯片",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "固态电池",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "燃气",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "物理AI",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "AI眼镜",
+     "source": "news_terms",
+     "hot": 3
+    },
+    {
+     "term": "减肥药",
+     "source": "flash_rss",
+     "hot": 3
+    },
+    {
+     "term": "商业航天",
+     "source": "news_terms",
+     "hot": 2
+    }
+   ]
   }
  }
 }

@@ -71212,5 +71212,41 @@
   "p": "AR/VR光学元件",
   "c": 0.4,
   "model": "claude-sonnet-5"
+ },
+ "GMP检查": {
+  "t": "catalyst",
+  "p": "",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "天然气压缩机": {
+  "t": "product",
+  "p": "",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
+ },
+ "煤化工装备": {
+  "t": "product",
+  "p": "煤化工",
+  "c": 0.55,
+  "model": "claude-sonnet-5"
+ },
+ "高阶PCB认证": {
+  "t": "catalyst",
+  "p": "产品与资质获批",
+  "c": 0.5,
+  "model": "claude-sonnet-5"
+ },
+ "昨日连板": {
+  "t": "attribute",
+  "p": "",
+  "c": 0.4,
+  "model": "claude-sonnet-5"
+ },
+ "电子后视镜": {
+  "t": "product",
+  "p": "汽车电子",
+  "c": 0.6,
+  "model": "claude-sonnet-5"
  }
 }

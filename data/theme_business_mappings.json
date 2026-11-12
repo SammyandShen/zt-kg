@@ -23320,6 +23320,198 @@
    "status": "candidate",
    "confidence": 0.65,
    "rationale": "[llm 2026-11-11] 音响是消费电子题材的直接终端产品"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "刹车片",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-12] 刹车片本身即是汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "刹车盘",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-12] 刹车盘本身即是汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "头枕",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-12] 头枕是汽车内饰零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车动力传动总成(变速器/平衡箱/新能源减速器)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-12] 动力传动总成是核心汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车动力传动零部件(齿轮/轴/同步器)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.9,
+   "rationale": "[llm 2026-11-12] 齿轮轴同步器属于汽车动力传动零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车压铸件(发动机缸体/转向器壳体)",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-12] 发动机缸体转向器壳体属于汽车零部件"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "汽车电控及汽车电子部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-12] 业务直接即为汽车电子部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车电控及汽车电子部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-12] 汽车电子部件属于汽车零部件范畴"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车电机电泵及机械泵",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-12] 电机电泵机械泵属于汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "汽车隔音隔热轻量化部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-12] 隔音隔热轻量化部件属于汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "遮阳板",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-12] 遮阳板是汽车内饰零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "锻造铝合金轮毂",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-12] 轮毂是汽车零部件"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "顶棚中央控制器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-12] 顶棚中央控制器是汽车零部件"
+  },
+  {
+   "theme": "汽车电子",
+   "business_tag_name": "顶棚中央控制器",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-12] 该控制器属于车载电子控制单元"
+  },
+  {
+   "theme": "汽车零部件",
+   "business_tag_name": "顶棚及顶棚系统集成产品",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.85,
+   "rationale": "[llm 2026-11-12] 顶棚系统集成产品属于汽车零部件"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "数据中心光模块激光器芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-12] 激光器芯片是光模块的核心上游光芯片"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "数据中心光模块激光器芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-12] 数据中心光模块激光芯片是光通信产业链上游核心器件"
+  },
+  {
+   "theme": "光通信",
+   "business_tag_name": "电信市场光通信激光器芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.75,
+   "rationale": "[llm 2026-11-12] 激光器芯片是光通信设备的核心上游光芯片"
+  },
+  {
+   "theme": "光模块",
+   "business_tag_name": "电信市场光通信激光器芯片",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.65,
+   "rationale": "[llm 2026-11-12] 电信光通信激光芯片同样是光模块的核心上游器件"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "晶圆磨切服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-12] 晶圆磨切是半导体制造后段工艺环节"
+  },
+  {
+   "theme": "半导体",
+   "business_tag_name": "集成电路测试服务",
+   "mapping_type": "upstream",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-12] IC测试是半导体封测产业链环节"
+  },
+  {
+   "theme": "电力",
+   "business_tag_name": "电力购销",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.8,
+   "rationale": "[llm 2026-11-12] 电力购销业务即电力交易本身"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "触控显示模组总成",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-12] 触控显示模组是消费电子核心零部件"
+  },
+  {
+   "theme": "消费电子",
+   "business_tag_name": "触控显示零部件",
+   "mapping_type": "exact",
+   "status": "candidate",
+   "confidence": 0.6,
+   "rationale": "[llm 2026-11-12] 触控显示零部件是消费电子核心零部件"
   }
  ]
 }

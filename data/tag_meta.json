@@ -20378,6 +20378,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "GMP检查": {
+  "type": "product",
+  "status": "candidate"
+ },
  "GPC电池": {
   "type": "product",
   "status": "candidate"
@@ -28631,6 +28635,11 @@
   "llm": "claude-sonnet-5"
  },
  "天然气分布式": {
+  "type": "product",
+  "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "天然气压缩机": {
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
@@ -37764,6 +37773,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "煤化工装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "煤层气": {
   "type": "product",
   "status": "candidate"
@@ -39280,6 +39293,12 @@
  "电子分销": {
   "type": "product",
   "status": "candidate",
+  "llm": "claude-sonnet-5"
+ },
+ "电子后视镜": {
+  "type": "product",
+  "status": "candidate",
+  "radar": "2026-11-10·1源2日",
   "llm": "claude-sonnet-5"
  },
  "电子商务": {
@@ -48593,6 +48612,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "高阶PCB认证": {
+  "type": "product",
+  "status": "candidate"
+ },
  "高阻隔PVDC乳液": {
   "type": "product",
   "status": "candidate"
@@ -51623,11 +51646,6 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-07·1源2日"
- },
- "电子后视镜": {
-  "type": "unknown",
-  "status": "candidate",
-  "radar": "2026-11-10·1源2日"
  },
  "疫苗": {
   "type": "unknown",
