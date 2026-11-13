@@ -34400,6 +34400,251 @@
    "parent": "计算机软件",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-11"
+  },
+  "WOOLRICH(沃里奇)户外品牌": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "东博利尼(TOMBOLINI)男装": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "中厚板材": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "乐飞叶(LAFUMA)户外服饰": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "产业园物业租赁": {
+   "parent": "产业园区",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "优质圆钢": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "刹车片": {
+   "parent": "底盘与制动系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "刹车盘": {
+   "parent": "底盘与制动系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "品牌服装": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "哈吉斯(HAZZYS)英伦休闲服装": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "头枕": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "宝鸟职业装团购": {
+   "parent": "团体定制服",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "工业温控设备": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "录井及随钻设备及服务": {
+   "parent": "石油钻采设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "恺米切(CAMICISSIMA)专业衬衫": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "房屋租赁及物业管理": {
+   "parent": "物业管理",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "手机游戏": {
+   "parent": "游戏",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "报喜鸟品牌西服": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "数据中心光模块激光器芯片": {
+   "parent": "光学光电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "日化用品": {
+   "parent": "个护家清",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "晶圆磨切服务": {
+   "parent": "封装测试",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "汽车动力传动总成(变速器/平衡箱/新能源减速器)": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "汽车动力传动零部件(齿轮/轴/同步器)": {
+   "parent": "动力总成系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "汽车压铸件(发动机缸体/转向器壳体)": {
+   "parent": "汽车产业链",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "汽车电控及汽车电子部件": {
+   "parent": "汽车电子网联",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "汽车电机电泵及机械泵": {
+   "parent": "热管理系统",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "汽车隔音隔热轻量化部件": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "测井仪器及服务": {
+   "parent": "石油钻采设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "液体恒温设备": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "游戏机零部件": {
+   "parent": "消费电子",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "煤化工产品": {
+   "parent": "化工新材料",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "物联网连接服务": {
+   "parent": "网络运维服务",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "特种换热器": {
+   "parent": "工业设备零部件",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "电信市场光通信激光器芯片": {
+   "parent": "光学光电",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "电力购销": {
+   "parent": "电力",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "电子连接器": {
+   "parent": "连接器",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "电气箱恒温装置": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "石油产品规格分析仪器": {
+   "parent": "仪器仪表",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "私人量体定制服装": {
+   "parent": "品牌服饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "纯水冷却单元": {
+   "parent": "制冷空调设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "自动化设备": {
+   "parent": "机械设备",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "触控显示模组总成": {
+   "parent": "新型显示",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "触控显示零部件": {
+   "parent": "新型显示",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "遮阳板": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "金属制品用钢材": {
+   "parent": "钢铁煤炭",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "锻造铝合金轮毂": {
+   "parent": "汽车产业链",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "集成电路测试服务": {
+   "parent": "封装测试",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "顶棚中央控制器": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
+  },
+  "顶棚及顶棚系统集成产品": {
+   "parent": "车身与内外饰",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-12"
   }
  },
  "groups": {

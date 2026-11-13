@@ -2385,6 +2385,15 @@
    "note": "龙虎榜关联新闻点名'物理AI引爆宇树'人形机器人叙事，证据显示当日主导题材是人形机器人而非汽车零部件",
    "decided_by": "llm-sonnet",
    "decided_at": "2026-11-11"
+  },
+  {
+   "code": "603366",
+   "trade_date": "2026-11-11",
+   "theme": "储能",
+   "verdict": "rejected",
+   "note": "交易所公告口径多家媒体转载“主营业务未发生重大变动，存在明显的非理性炒作风险”，属公司层面澄清，储能叙事不成立",
+   "decided_by": "llm-sonnet",
+   "decided_at": "2026-11-13"
   }
  ],
  "episode_verdicts": [
