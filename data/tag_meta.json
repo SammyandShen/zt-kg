@@ -18303,6 +18303,10 @@
   "status": "retired",
   "llm": "claude-sonnet-5"
  },
+ "通威入主": {
+  "type": "event",
+  "status": "candidate"
+ },
  "通威合作": {
   "type": "event",
   "status": "retired"
@@ -24771,6 +24775,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "养殖机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "养殖降本": {
   "type": "product",
   "status": "candidate"
@@ -26596,6 +26604,14 @@
   "type": "product",
   "status": "candidate"
  },
+ "华为云": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "华为光模块": {
+  "type": "product",
+  "status": "candidate"
+ },
  "华为昇思": {
   "type": "product",
   "status": "candidate"
@@ -27359,6 +27375,10 @@
   "status": "candidate"
  },
  "商业不动产REITs": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "商业化": {
   "type": "product",
   "status": "candidate"
  },
@@ -28932,6 +28952,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "存储器": {
+  "type": "product",
+  "status": "candidate"
  },
  "存储封测": {
   "type": "product",
@@ -30551,6 +30575,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "影院": {
+  "type": "product",
+  "status": "candidate"
+ },
  "影院多元业态": {
   "type": "product",
   "status": "candidate"
@@ -31297,6 +31325,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "控股权巩固": {
+  "type": "product",
+  "status": "candidate"
  },
  "控股矿业": {
   "type": "product",
@@ -32344,6 +32376,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "新能源汽车测试": {
+  "type": "product",
+  "status": "candidate"
+ },
  "新能源汽车液冷板": {
   "type": "product",
   "status": "candidate",
@@ -32403,6 +32439,10 @@
   "status": "candidate"
  },
  "新能源环卫": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "新能源环卫装备": {
   "type": "product",
   "status": "candidate"
  },
@@ -42573,6 +42613,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "股份解除冻结": {
+  "type": "product",
+  "status": "candidate"
+ },
  "股份过户": {
   "type": "product",
   "status": "candidate"
@@ -43869,6 +43913,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "词元服务": {
+  "type": "product",
+  "status": "candidate"
+ },
  "读者品牌": {
   "type": "product",
   "status": "candidate"
@@ -44888,6 +44936,10 @@
   "status": "candidate"
  },
  "进出口贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "进口片发行": {
   "type": "product",
   "status": "candidate"
  },
@@ -47079,6 +47131,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "阿尔茨海默病新药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "阿洛酮糖": {
   "type": "product",
   "status": "candidate",
@@ -47093,6 +47149,10 @@
   "status": "candidate"
  },
  "阿里健康": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "阿里健康首发": {
   "type": "product",
   "status": "candidate"
  },
