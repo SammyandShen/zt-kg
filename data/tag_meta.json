@@ -19999,6 +19999,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "B股估值提升": {
+  "type": "product",
+  "status": "candidate"
+ },
  "C2M定制": {
   "type": "product",
   "status": "candidate"
@@ -21942,6 +21946,10 @@
   "llm": "claude-sonnet-5"
  },
  "“A": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "“AI": {
   "type": "product",
   "status": "candidate"
  },
@@ -24766,6 +24774,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "具身机器人代工": {
+  "type": "product",
+  "status": "candidate"
+ },
  "具身机器人送样": {
   "type": "product",
   "status": "candidate"
@@ -24837,6 +24849,10 @@
   "status": "candidate"
  },
  "内衣主业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "内销增长": {
   "type": "product",
   "status": "candidate"
  },
@@ -31812,6 +31828,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数据中心配电": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数据中心风机": {
   "type": "product",
   "status": "candidate",
@@ -33971,6 +33991,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "有色金属交易平台": {
+  "type": "product",
+  "status": "candidate"
+ },
  "有色金属采选": {
   "type": "product",
   "status": "candidate"
@@ -34987,6 +35011,10 @@
   "status": "candidate"
  },
  "武装押运服务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "母婴产品": {
   "type": "product",
   "status": "candidate"
  },
@@ -40284,6 +40312,10 @@
   "llm": "claude-sonnet-5"
  },
  "眼科连锁": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "眼部护理": {
   "type": "product",
   "status": "candidate"
  },
@@ -47376,6 +47408,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "零售”": {
+  "type": "product",
+  "status": "candidate"
+ },
  "零售主业": {
   "type": "product",
   "status": "candidate"
@@ -48304,6 +48340,10 @@
   "status": "candidate"
  },
  "高端化、年轻化": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "高端厨小家电": {
   "type": "product",
   "status": "candidate"
  },
