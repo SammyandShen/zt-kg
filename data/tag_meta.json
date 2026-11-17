@@ -9497,6 +9497,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "B股增持": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "CGM上市": {
   "type": "catalyst",
   "status": "candidate",
@@ -11963,6 +11967,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "氯化铵涨价": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "水利合同增长": {
   "type": "catalyst",
@@ -18331,6 +18339,10 @@
   "type": "event",
   "status": "candidate"
  },
+ "重整投资协议": {
+  "type": "event",
+  "status": "candidate"
+ },
  "重整撤回": {
   "type": "event",
   "status": "candidate",
@@ -19654,6 +19666,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "AI算力调度": {
+  "type": "product",
+  "status": "candidate"
  },
  "AI算力需求": {
   "type": "product",
@@ -25921,6 +25937,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "化学试剂": {
+  "type": "product",
+  "status": "candidate"
+ },
  "化工供应链": {
   "type": "product",
   "status": "candidate"
@@ -26468,6 +26488,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "半导体板块拉升": {
+  "type": "product",
+  "status": "candidate"
  },
  "半导体核心零部件": {
   "type": "product",
@@ -27577,6 +27601,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "嘉链AI": {
+  "type": "product",
+  "status": "candidate"
+ },
  "噻唑锌": {
   "type": "product",
   "status": "candidate",
@@ -27657,6 +27685,10 @@
   "status": "candidate"
  },
  "固件信创": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "固危废资源化": {
   "type": "product",
   "status": "candidate"
  },
@@ -30372,6 +30404,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "建材医药": {
+  "type": "product",
+  "status": "candidate"
  },
  "建筑": {
   "type": "product",
@@ -33333,6 +33369,10 @@
   "status": "candidate"
  },
  "智慧康养": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智慧建筑": {
   "type": "product",
   "status": "candidate"
  },
@@ -41188,6 +41228,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "空调压缩机": {
+  "type": "product",
+  "status": "candidate"
+ },
  "空调橡胶件": {
   "type": "product",
   "status": "candidate",
@@ -43008,6 +43052,10 @@
   "llm": "claude-sonnet-5"
  },
  "臭氧": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "臭氧设备": {
   "type": "product",
   "status": "candidate"
  },
@@ -44905,6 +44953,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "边缘AI算力": {
+  "type": "product",
+  "status": "candidate"
+ },
  "边缘算力": {
   "type": "product",
   "status": "candidate",
@@ -45820,6 +45872,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "钠电池正极材料": {
+  "type": "product",
+  "status": "candidate"
  },
  "钠电项目": {
   "type": "product",
@@ -47011,6 +47067,10 @@
   "status": "candidate"
  },
  "长三角深耕": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "长发集团控股": {
   "type": "product",
   "status": "candidate"
  },
