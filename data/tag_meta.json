@@ -18906,6 +18906,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "7N高纯铟": {
+  "type": "product",
+  "status": "candidate"
+ },
  "800G/1.6T光模块": {
   "type": "product",
   "status": "candidate",
@@ -18951,6 +18955,10 @@
   "status": "candidate"
  },
  "A0车型": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "A0车型海外": {
   "type": "product",
   "status": "candidate"
  },
@@ -19649,6 +19657,10 @@
   "llm": "claude-sonnet-5"
  },
  "AI算力业务": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI算力云": {
   "type": "product",
   "status": "candidate"
  },
@@ -20741,6 +20753,10 @@
   "status": "candidate"
  },
  "LED显示": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "LED显示控制": {
   "type": "product",
   "status": "candidate"
  },
@@ -28992,6 +29008,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "存储互连": {
+  "type": "product",
+  "status": "candidate"
+ },
  "存储代理": {
   "type": "product",
   "status": "candidate"
@@ -29421,6 +29441,10 @@
   "status": "candidate"
  },
  "家电": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "家电出口": {
   "type": "product",
   "status": "candidate"
  },
@@ -31415,6 +31439,10 @@
   "status": "candidate"
  },
  "控股股东重组": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "推理算力": {
   "type": "product",
   "status": "candidate"
  },
@@ -33556,6 +33584,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "智能交互显示": {
+  "type": "product",
+  "status": "candidate"
+ },
  "智能交互显示产品": {
   "type": "product",
   "status": "candidate"
@@ -33926,6 +33958,10 @@
   "status": "candidate"
  },
  "智能高铁": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "智芯布局": {
   "type": "product",
   "status": "candidate"
  },
@@ -41442,6 +41478,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "算力运维": {
+  "type": "product",
+  "status": "candidate"
+ },
  "算力连接器": {
   "type": "product",
   "status": "candidate"
@@ -42490,6 +42530,14 @@
   "status": "candidate"
  },
  "职业装": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "联碱": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "聘任会计师事务所": {
   "type": "product",
   "status": "candidate"
  },
@@ -47856,6 +47904,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "风电润滑": {
+  "type": "product",
+  "status": "candidate"
+ },
  "风电混塔": {
   "type": "product",
   "status": "candidate"
@@ -51916,5 +51968,15 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "国资云概念": {
+  "type": "theme",
+  "status": "candidate",
+  "radar": "2026-08-11·1源2日"
+ },
+ "算力租赁运维": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-14·1源2日"
  }
 }
