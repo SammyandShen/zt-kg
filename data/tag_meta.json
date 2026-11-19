@@ -23642,6 +23642,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "储能液冷": {
+  "type": "product",
+  "status": "candidate"
+ },
  "储能温控": {
   "type": "product",
   "status": "candidate",
@@ -26444,6 +26448,10 @@
   "type": "product",
   "status": "retired"
  },
+ "半导体封装装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "半导体封装设备": {
   "type": "product",
   "status": "candidate",
@@ -29060,6 +29068,10 @@
   "status": "candidate"
  },
  "存储芯片分销": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "存储芯片封装": {
   "type": "product",
   "status": "candidate"
  },
@@ -35299,6 +35311,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "氢能物流": {
+  "type": "product",
+  "status": "candidate"
+ },
  "氢能电源": {
   "type": "product",
   "status": "candidate"
@@ -39439,6 +39455,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "电子化学品项目": {
+  "type": "product",
+  "status": "candidate"
+ },
  "电子后视镜": {
   "type": "product",
   "status": "candidate",
@@ -41253,6 +41273,10 @@
   "status": "candidate"
  },
  "空气过滤": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "空港物流": {
   "type": "product",
   "status": "candidate"
  },
