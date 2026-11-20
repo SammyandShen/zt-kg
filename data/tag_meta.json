@@ -8229,6 +8229,10 @@
   "type": "attribute",
   "status": "candidate"
  },
+ "供货台达": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "供货机器人": {
   "type": "attribute",
   "status": "candidate"
@@ -9443,6 +9447,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "8.49亿订单": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "800G放量": {
   "type": "catalyst",
@@ -12937,6 +12945,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "高端PCB扩产": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "高端扩产": {
   "type": "catalyst",
@@ -19674,6 +19686,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "AI算力电源PCB": {
+  "type": "product",
+  "status": "candidate"
+ },
  "AI算力芯片": {
   "type": "product",
   "status": "candidate",
@@ -21494,6 +21510,10 @@
   "status": "candidate"
  },
  "PPS材料": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "PSPI单体": {
   "type": "product",
   "status": "candidate"
  },
@@ -23743,6 +23763,14 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "元件板块拉升": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "元件板块走高": {
+  "type": "product",
+  "status": "candidate"
  },
  "元器件分销": {
   "type": "product",
@@ -29084,6 +29112,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "存储设备集采": {
+  "type": "product",
+  "status": "candidate"
  },
  "存储载板": {
   "type": "product",
@@ -34658,6 +34690,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "柔性自动化装备": {
+  "type": "product",
+  "status": "candidate"
+ },
  "柔性触控": {
   "type": "product",
   "status": "candidate"
@@ -34936,6 +34972,10 @@
   "status": "candidate"
  },
  "植物照明": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "植物生长调节剂": {
   "type": "product",
   "status": "candidate"
  },
@@ -38301,6 +38341,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "物理AI数据基座": {
+  "type": "product",
+  "status": "candidate"
+ },
  "物管": {
   "type": "product",
   "status": "candidate"
@@ -41112,6 +41156,10 @@
   "status": "candidate"
  },
  "种植业": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "种植业板块": {
   "type": "product",
   "status": "candidate"
  },
@@ -44655,6 +44703,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "车规IGBT": {
+  "type": "product",
+  "status": "candidate"
  },
  "车规MCU": {
   "type": "product",
@@ -52002,5 +52054,10 @@
   "type": "unknown",
   "status": "candidate",
   "radar": "2026-08-12·1源2日"
+ },
+ "大盘价值": {
+  "type": "unknown",
+  "status": "candidate",
+  "radar": "2026-08-19·1源2日"
  }
 }
