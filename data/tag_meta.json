@@ -11035,6 +11035,10 @@
   "type": "catalyst",
   "status": "candidate"
  },
+ "回购完毕": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "回购延期": {
   "type": "catalyst",
   "status": "candidate"
@@ -12153,6 +12157,10 @@
   "type": "catalyst",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "生猪现货涨价": {
+  "type": "catalyst",
+  "status": "candidate"
  },
  "生猪销售增长": {
   "type": "catalyst",
@@ -17581,6 +17589,10 @@
   "type": "event",
   "status": "candidate"
  },
+ "破产剥离": {
+  "type": "event",
+  "status": "candidate"
+ },
  "硅片涨价预期": {
   "type": "event",
   "status": "retired"
@@ -22626,6 +22638,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "中药材贸易": {
+  "type": "product",
+  "status": "candidate"
+ },
  "中药牙膏": {
   "type": "product",
   "status": "candidate"
@@ -27047,6 +27063,10 @@
   "status": "candidate"
  },
  "印尼椰子加工": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "印尼血竭进口": {
   "type": "product",
   "status": "candidate"
  },
@@ -31586,6 +31606,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "按摩机器人": {
+  "type": "product",
+  "status": "candidate"
+ },
  "按摩椅": {
   "type": "product",
   "status": "candidate",
@@ -31960,6 +31984,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "数字文化体验": {
+  "type": "product",
+  "status": "candidate"
+ },
  "数字水印": {
   "type": "product",
   "status": "candidate"
@@ -32029,6 +32057,10 @@
   "status": "candidate"
  },
  "数据中心AIDC": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "数据中心EPC": {
   "type": "product",
   "status": "candidate"
  },
@@ -35112,6 +35144,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "核苷原料药": {
+  "type": "product",
+  "status": "candidate"
+ },
  "核酸提取仪": {
   "type": "product",
   "status": "candidate",
@@ -37108,6 +37144,10 @@
   "status": "candidate"
  },
  "海洋探测电缆": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海洋牧场": {
   "type": "product",
   "status": "candidate"
  },
@@ -39498,6 +39538,10 @@
   "llm": "claude-sonnet-5"
  },
  "生鲜超市": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "生鲜食品": {
   "type": "product",
   "status": "candidate"
  },
@@ -44687,6 +44731,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "超声诊断": {
+  "type": "product",
+  "status": "candidate"
+ },
  "超导": {
   "type": "product",
   "status": "candidate"
@@ -45444,6 +45492,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "连锁超市经营": {
+  "type": "product",
+  "status": "candidate"
  },
  "连锁酒店": {
   "type": "product",
