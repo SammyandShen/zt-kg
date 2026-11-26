@@ -9039,6 +9039,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "粮油龙头": {
+  "type": "attribute",
+  "status": "candidate"
+ },
  "红枣龙头": {
   "type": "attribute",
   "status": "candidate",
@@ -12652,6 +12656,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "转债异常波动": {
+  "type": "catalyst",
+  "status": "candidate"
+ },
  "转债强赎": {
   "type": "catalyst",
   "status": "retired"
@@ -13998,6 +14006,10 @@
  "券商研报": {
   "type": "event",
   "status": "retired"
+ },
+ "剥离亏损主体": {
+  "type": "event",
+  "status": "candidate"
  },
  "剥离光伏": {
   "type": "event",
@@ -18978,6 +18990,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "6G试点": {
+  "type": "product",
+  "status": "candidate"
+ },
  "6G预研": {
   "type": "product",
   "status": "candidate"
@@ -19382,6 +19398,10 @@
   "status": "candidate"
  },
  "AI家居": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "AI家装": {
   "type": "product",
   "status": "candidate"
  },
@@ -22836,6 +22856,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "二氧化硅抛光液": {
+  "type": "product",
+  "status": "candidate"
+ },
  "二氧化碳聚醚": {
   "type": "product",
   "status": "candidate"
@@ -24404,6 +24428,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "光模块检测": {
+  "type": "product",
+  "status": "candidate"
+ },
  "光模块测试": {
   "type": "product",
   "status": "candidate",
@@ -24660,6 +24688,10 @@
   "status": "candidate"
  },
  "免税红利": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "免税资产整合": {
   "type": "product",
   "status": "candidate"
  },
@@ -32271,6 +32303,10 @@
   "status": "candidate",
   "llm": "claude-sonnet-5"
  },
+ "数通高增": {
+  "type": "product",
+  "status": "candidate"
+ },
  "整合营销": {
   "type": "product",
   "status": "candidate"
@@ -36975,6 +37011,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "海外建材": {
+  "type": "product",
+  "status": "candidate"
+ },
  "海外扩展": {
   "type": "product",
   "status": "candidate"
@@ -37032,6 +37072,10 @@
   "status": "candidate"
  },
  "海外突破": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "海外算力客户": {
   "type": "product",
   "status": "candidate"
  },
@@ -42456,6 +42500,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "组织变革": {
+  "type": "product",
+  "status": "candidate"
+ },
  "细胞与基因治疗": {
   "type": "product",
   "status": "candidate",
@@ -43137,6 +43185,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "股票期权授予": {
+  "type": "product",
+  "status": "candidate"
+ },
  "育种研发": {
   "type": "product",
   "status": "candidate"
@@ -43621,6 +43673,10 @@
   "type": "product",
   "status": "candidate"
  },
+ "航空航天零部件": {
+  "type": "product",
+  "status": "candidate"
+ },
  "航空货运": {
   "type": "product",
   "status": "candidate"
@@ -43862,6 +43918,10 @@
   "status": "candidate"
  },
  "芯片自研": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "芯瞳半导体": {
   "type": "product",
   "status": "candidate"
  },
@@ -44418,6 +44478,10 @@
   "status": "candidate"
  },
  "词元出海": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "词元工厂": {
   "type": "product",
   "status": "candidate"
  },
@@ -46152,6 +46216,10 @@
   "status": "candidate"
  },
  "金融信息平台": {
+  "type": "product",
+  "status": "candidate"
+ },
+ "金融安全": {
   "type": "product",
   "status": "candidate"
  },
@@ -48552,6 +48620,10 @@
   "type": "product",
   "status": "candidate",
   "llm": "claude-sonnet-5"
+ },
+ "首发经济": {
+  "type": "product",
+  "status": "candidate"
  },
  "首季盈利": {
   "type": "product",
